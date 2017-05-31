@@ -42,37 +42,37 @@ namespace Model
     UpdateObjectAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifier = value; }
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifier.assign(value); }
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline UpdateObjectAttributesResult& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline UpdateObjectAttributesResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> <code>ObjectIdentifier</code> of the updated object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the updated object.</p>
      */
     inline UpdateObjectAttributesResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

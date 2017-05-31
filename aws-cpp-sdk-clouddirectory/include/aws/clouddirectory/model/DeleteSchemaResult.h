@@ -42,44 +42,44 @@ namespace Model
     DeleteSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline DeleteSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline DeleteSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>Input ARN that is returned as part of the response. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The input ARN that is returned as part of the response. For more information,
+     * see <a>arns</a>.</p>
      */
     inline DeleteSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 

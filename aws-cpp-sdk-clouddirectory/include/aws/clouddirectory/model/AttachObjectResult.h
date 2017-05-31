@@ -42,43 +42,43 @@ namespace Model
     AttachObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifier = value; }
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = std::move(value); }
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifier.assign(value); }
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline AttachObjectResult& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline AttachObjectResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Attached <code>ObjectIdentifier</code>, which is the child
+     * <p>The attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
     inline AttachObjectResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}

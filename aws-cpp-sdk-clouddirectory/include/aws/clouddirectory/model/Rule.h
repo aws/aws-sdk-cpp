@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains an ARN and parameters associated with the rule.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains an Amazon Resource Name (ARN) and parameters that are associated
+   * with the rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Rule">AWS
    * API Reference</a></p>
    */
@@ -74,62 +74,62 @@ namespace Model
     inline Rule& WithType(RuleType&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Min and max parameters associated with the rule.</p>
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline Rule& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -43,37 +43,37 @@ namespace Model
     BatchWriteResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline const Aws::Vector<BatchWriteOperationResponse>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline void SetResponses(const Aws::Vector<BatchWriteOperationResponse>& value) { m_responses = value; }
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline void SetResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline BatchWriteResult& WithResponses(const Aws::Vector<BatchWriteOperationResponse>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline BatchWriteResult& WithResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline BatchWriteResult& AddResponses(const BatchWriteOperationResponse& value) { m_responses.push_back(value); return *this; }
 
     /**
-     * <p>List of all the responses for each batch write.</p>
+     * <p>A list of all the responses for each batch write.</p>
      */
     inline BatchWriteResult& AddResponses(BatchWriteOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 

@@ -26,6 +26,7 @@
 #include <aws/clouddirectory/model/AttachObjectResult.h>
 #include <aws/clouddirectory/model/AttachPolicyResult.h>
 #include <aws/clouddirectory/model/AttachToIndexResult.h>
+#include <aws/clouddirectory/model/AttachTypedLinkResult.h>
 #include <aws/clouddirectory/model/BatchReadResult.h>
 #include <aws/clouddirectory/model/BatchWriteResult.h>
 #include <aws/clouddirectory/model/CreateDirectoryResult.h>
@@ -33,10 +34,12 @@
 #include <aws/clouddirectory/model/CreateIndexResult.h>
 #include <aws/clouddirectory/model/CreateObjectResult.h>
 #include <aws/clouddirectory/model/CreateSchemaResult.h>
+#include <aws/clouddirectory/model/CreateTypedLinkFacetResult.h>
 #include <aws/clouddirectory/model/DeleteDirectoryResult.h>
 #include <aws/clouddirectory/model/DeleteFacetResult.h>
 #include <aws/clouddirectory/model/DeleteObjectResult.h>
 #include <aws/clouddirectory/model/DeleteSchemaResult.h>
+#include <aws/clouddirectory/model/DeleteTypedLinkFacetResult.h>
 #include <aws/clouddirectory/model/DetachFromIndexResult.h>
 #include <aws/clouddirectory/model/DetachObjectResult.h>
 #include <aws/clouddirectory/model/DetachPolicyResult.h>
@@ -46,21 +49,26 @@
 #include <aws/clouddirectory/model/GetFacetResult.h>
 #include <aws/clouddirectory/model/GetObjectInformationResult.h>
 #include <aws/clouddirectory/model/GetSchemaAsJsonResult.h>
+#include <aws/clouddirectory/model/GetTypedLinkFacetInformationResult.h>
 #include <aws/clouddirectory/model/ListAppliedSchemaArnsResult.h>
 #include <aws/clouddirectory/model/ListAttachedIndicesResult.h>
 #include <aws/clouddirectory/model/ListDevelopmentSchemaArnsResult.h>
 #include <aws/clouddirectory/model/ListDirectoriesResult.h>
 #include <aws/clouddirectory/model/ListFacetAttributesResult.h>
 #include <aws/clouddirectory/model/ListFacetNamesResult.h>
+#include <aws/clouddirectory/model/ListIncomingTypedLinksResult.h>
 #include <aws/clouddirectory/model/ListIndexResult.h>
 #include <aws/clouddirectory/model/ListObjectAttributesResult.h>
 #include <aws/clouddirectory/model/ListObjectChildrenResult.h>
 #include <aws/clouddirectory/model/ListObjectParentPathsResult.h>
 #include <aws/clouddirectory/model/ListObjectParentsResult.h>
 #include <aws/clouddirectory/model/ListObjectPoliciesResult.h>
+#include <aws/clouddirectory/model/ListOutgoingTypedLinksResult.h>
 #include <aws/clouddirectory/model/ListPolicyAttachmentsResult.h>
 #include <aws/clouddirectory/model/ListPublishedSchemaArnsResult.h>
 #include <aws/clouddirectory/model/ListTagsForResourceResult.h>
+#include <aws/clouddirectory/model/ListTypedLinkFacetAttributesResult.h>
+#include <aws/clouddirectory/model/ListTypedLinkFacetNamesResult.h>
 #include <aws/clouddirectory/model/LookupPolicyResult.h>
 #include <aws/clouddirectory/model/PublishSchemaResult.h>
 #include <aws/clouddirectory/model/PutSchemaFromJsonResult.h>
@@ -70,6 +78,8 @@
 #include <aws/clouddirectory/model/UpdateFacetResult.h>
 #include <aws/clouddirectory/model/UpdateObjectAttributesResult.h>
 #include <aws/clouddirectory/model/UpdateSchemaResult.h>
+#include <aws/clouddirectory/model/UpdateTypedLinkFacetResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -120,6 +130,7 @@ namespace Model
         class AttachObjectRequest;
         class AttachPolicyRequest;
         class AttachToIndexRequest;
+        class AttachTypedLinkRequest;
         class BatchReadRequest;
         class BatchWriteRequest;
         class CreateDirectoryRequest;
@@ -127,34 +138,42 @@ namespace Model
         class CreateIndexRequest;
         class CreateObjectRequest;
         class CreateSchemaRequest;
+        class CreateTypedLinkFacetRequest;
         class DeleteDirectoryRequest;
         class DeleteFacetRequest;
         class DeleteObjectRequest;
         class DeleteSchemaRequest;
+        class DeleteTypedLinkFacetRequest;
         class DetachFromIndexRequest;
         class DetachObjectRequest;
         class DetachPolicyRequest;
+        class DetachTypedLinkRequest;
         class DisableDirectoryRequest;
         class EnableDirectoryRequest;
         class GetDirectoryRequest;
         class GetFacetRequest;
         class GetObjectInformationRequest;
         class GetSchemaAsJsonRequest;
+        class GetTypedLinkFacetInformationRequest;
         class ListAppliedSchemaArnsRequest;
         class ListAttachedIndicesRequest;
         class ListDevelopmentSchemaArnsRequest;
         class ListDirectoriesRequest;
         class ListFacetAttributesRequest;
         class ListFacetNamesRequest;
+        class ListIncomingTypedLinksRequest;
         class ListIndexRequest;
         class ListObjectAttributesRequest;
         class ListObjectChildrenRequest;
         class ListObjectParentPathsRequest;
         class ListObjectParentsRequest;
         class ListObjectPoliciesRequest;
+        class ListOutgoingTypedLinksRequest;
         class ListPolicyAttachmentsRequest;
         class ListPublishedSchemaArnsRequest;
         class ListTagsForResourceRequest;
+        class ListTypedLinkFacetAttributesRequest;
+        class ListTypedLinkFacetNamesRequest;
         class LookupPolicyRequest;
         class PublishSchemaRequest;
         class PutSchemaFromJsonRequest;
@@ -164,12 +183,14 @@ namespace Model
         class UpdateFacetRequest;
         class UpdateObjectAttributesRequest;
         class UpdateSchemaRequest;
+        class UpdateTypedLinkFacetRequest;
 
         typedef Aws::Utils::Outcome<AddFacetToObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> AddFacetToObjectOutcome;
         typedef Aws::Utils::Outcome<ApplySchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> ApplySchemaOutcome;
         typedef Aws::Utils::Outcome<AttachObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> AttachObjectOutcome;
         typedef Aws::Utils::Outcome<AttachPolicyResult, Aws::Client::AWSError<CloudDirectoryErrors>> AttachPolicyOutcome;
         typedef Aws::Utils::Outcome<AttachToIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> AttachToIndexOutcome;
+        typedef Aws::Utils::Outcome<AttachTypedLinkResult, Aws::Client::AWSError<CloudDirectoryErrors>> AttachTypedLinkOutcome;
         typedef Aws::Utils::Outcome<BatchReadResult, Aws::Client::AWSError<CloudDirectoryErrors>> BatchReadOutcome;
         typedef Aws::Utils::Outcome<BatchWriteResult, Aws::Client::AWSError<CloudDirectoryErrors>> BatchWriteOutcome;
         typedef Aws::Utils::Outcome<CreateDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> CreateDirectoryOutcome;
@@ -177,34 +198,42 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> CreateIndexOutcome;
         typedef Aws::Utils::Outcome<CreateObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> CreateObjectOutcome;
         typedef Aws::Utils::Outcome<CreateSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> CreateSchemaOutcome;
+        typedef Aws::Utils::Outcome<CreateTypedLinkFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> CreateTypedLinkFacetOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> DeleteDirectoryOutcome;
         typedef Aws::Utils::Outcome<DeleteFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> DeleteFacetOutcome;
         typedef Aws::Utils::Outcome<DeleteObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> DeleteObjectOutcome;
         typedef Aws::Utils::Outcome<DeleteSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> DeleteSchemaOutcome;
+        typedef Aws::Utils::Outcome<DeleteTypedLinkFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> DeleteTypedLinkFacetOutcome;
         typedef Aws::Utils::Outcome<DetachFromIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachFromIndexOutcome;
         typedef Aws::Utils::Outcome<DetachObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachObjectOutcome;
         typedef Aws::Utils::Outcome<DetachPolicyResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachPolicyOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachTypedLinkOutcome;
         typedef Aws::Utils::Outcome<DisableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> DisableDirectoryOutcome;
         typedef Aws::Utils::Outcome<EnableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> EnableDirectoryOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetDirectoryOutcome;
         typedef Aws::Utils::Outcome<GetFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetFacetOutcome;
         typedef Aws::Utils::Outcome<GetObjectInformationResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetObjectInformationOutcome;
         typedef Aws::Utils::Outcome<GetSchemaAsJsonResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetSchemaAsJsonOutcome;
+        typedef Aws::Utils::Outcome<GetTypedLinkFacetInformationResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetTypedLinkFacetInformationOutcome;
         typedef Aws::Utils::Outcome<ListAppliedSchemaArnsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListAppliedSchemaArnsOutcome;
         typedef Aws::Utils::Outcome<ListAttachedIndicesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListAttachedIndicesOutcome;
         typedef Aws::Utils::Outcome<ListDevelopmentSchemaArnsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListDevelopmentSchemaArnsOutcome;
         typedef Aws::Utils::Outcome<ListDirectoriesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListDirectoriesOutcome;
         typedef Aws::Utils::Outcome<ListFacetAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListFacetAttributesOutcome;
         typedef Aws::Utils::Outcome<ListFacetNamesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListFacetNamesOutcome;
+        typedef Aws::Utils::Outcome<ListIncomingTypedLinksResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListIncomingTypedLinksOutcome;
         typedef Aws::Utils::Outcome<ListIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListIndexOutcome;
         typedef Aws::Utils::Outcome<ListObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<ListObjectChildrenResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectChildrenOutcome;
         typedef Aws::Utils::Outcome<ListObjectParentPathsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectParentPathsOutcome;
         typedef Aws::Utils::Outcome<ListObjectParentsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectParentsOutcome;
         typedef Aws::Utils::Outcome<ListObjectPoliciesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectPoliciesOutcome;
+        typedef Aws::Utils::Outcome<ListOutgoingTypedLinksResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListOutgoingTypedLinksOutcome;
         typedef Aws::Utils::Outcome<ListPolicyAttachmentsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListPolicyAttachmentsOutcome;
         typedef Aws::Utils::Outcome<ListPublishedSchemaArnsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListPublishedSchemaArnsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTypedLinkFacetAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListTypedLinkFacetAttributesOutcome;
+        typedef Aws::Utils::Outcome<ListTypedLinkFacetNamesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListTypedLinkFacetNamesOutcome;
         typedef Aws::Utils::Outcome<LookupPolicyResult, Aws::Client::AWSError<CloudDirectoryErrors>> LookupPolicyOutcome;
         typedef Aws::Utils::Outcome<PublishSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> PublishSchemaOutcome;
         typedef Aws::Utils::Outcome<PutSchemaFromJsonResult, Aws::Client::AWSError<CloudDirectoryErrors>> PutSchemaFromJsonOutcome;
@@ -214,12 +243,14 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateFacetOutcome;
         typedef Aws::Utils::Outcome<UpdateObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateSchemaOutcome;
+        typedef Aws::Utils::Outcome<UpdateTypedLinkFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateTypedLinkFacetOutcome;
 
         typedef std::future<AddFacetToObjectOutcome> AddFacetToObjectOutcomeCallable;
         typedef std::future<ApplySchemaOutcome> ApplySchemaOutcomeCallable;
         typedef std::future<AttachObjectOutcome> AttachObjectOutcomeCallable;
         typedef std::future<AttachPolicyOutcome> AttachPolicyOutcomeCallable;
         typedef std::future<AttachToIndexOutcome> AttachToIndexOutcomeCallable;
+        typedef std::future<AttachTypedLinkOutcome> AttachTypedLinkOutcomeCallable;
         typedef std::future<BatchReadOutcome> BatchReadOutcomeCallable;
         typedef std::future<BatchWriteOutcome> BatchWriteOutcomeCallable;
         typedef std::future<CreateDirectoryOutcome> CreateDirectoryOutcomeCallable;
@@ -227,34 +258,42 @@ namespace Model
         typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
         typedef std::future<CreateObjectOutcome> CreateObjectOutcomeCallable;
         typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
+        typedef std::future<CreateTypedLinkFacetOutcome> CreateTypedLinkFacetOutcomeCallable;
         typedef std::future<DeleteDirectoryOutcome> DeleteDirectoryOutcomeCallable;
         typedef std::future<DeleteFacetOutcome> DeleteFacetOutcomeCallable;
         typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
+        typedef std::future<DeleteTypedLinkFacetOutcome> DeleteTypedLinkFacetOutcomeCallable;
         typedef std::future<DetachFromIndexOutcome> DetachFromIndexOutcomeCallable;
         typedef std::future<DetachObjectOutcome> DetachObjectOutcomeCallable;
         typedef std::future<DetachPolicyOutcome> DetachPolicyOutcomeCallable;
+        typedef std::future<DetachTypedLinkOutcome> DetachTypedLinkOutcomeCallable;
         typedef std::future<DisableDirectoryOutcome> DisableDirectoryOutcomeCallable;
         typedef std::future<EnableDirectoryOutcome> EnableDirectoryOutcomeCallable;
         typedef std::future<GetDirectoryOutcome> GetDirectoryOutcomeCallable;
         typedef std::future<GetFacetOutcome> GetFacetOutcomeCallable;
         typedef std::future<GetObjectInformationOutcome> GetObjectInformationOutcomeCallable;
         typedef std::future<GetSchemaAsJsonOutcome> GetSchemaAsJsonOutcomeCallable;
+        typedef std::future<GetTypedLinkFacetInformationOutcome> GetTypedLinkFacetInformationOutcomeCallable;
         typedef std::future<ListAppliedSchemaArnsOutcome> ListAppliedSchemaArnsOutcomeCallable;
         typedef std::future<ListAttachedIndicesOutcome> ListAttachedIndicesOutcomeCallable;
         typedef std::future<ListDevelopmentSchemaArnsOutcome> ListDevelopmentSchemaArnsOutcomeCallable;
         typedef std::future<ListDirectoriesOutcome> ListDirectoriesOutcomeCallable;
         typedef std::future<ListFacetAttributesOutcome> ListFacetAttributesOutcomeCallable;
         typedef std::future<ListFacetNamesOutcome> ListFacetNamesOutcomeCallable;
+        typedef std::future<ListIncomingTypedLinksOutcome> ListIncomingTypedLinksOutcomeCallable;
         typedef std::future<ListIndexOutcome> ListIndexOutcomeCallable;
         typedef std::future<ListObjectAttributesOutcome> ListObjectAttributesOutcomeCallable;
         typedef std::future<ListObjectChildrenOutcome> ListObjectChildrenOutcomeCallable;
         typedef std::future<ListObjectParentPathsOutcome> ListObjectParentPathsOutcomeCallable;
         typedef std::future<ListObjectParentsOutcome> ListObjectParentsOutcomeCallable;
         typedef std::future<ListObjectPoliciesOutcome> ListObjectPoliciesOutcomeCallable;
+        typedef std::future<ListOutgoingTypedLinksOutcome> ListOutgoingTypedLinksOutcomeCallable;
         typedef std::future<ListPolicyAttachmentsOutcome> ListPolicyAttachmentsOutcomeCallable;
         typedef std::future<ListPublishedSchemaArnsOutcome> ListPublishedSchemaArnsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTypedLinkFacetAttributesOutcome> ListTypedLinkFacetAttributesOutcomeCallable;
+        typedef std::future<ListTypedLinkFacetNamesOutcome> ListTypedLinkFacetNamesOutcomeCallable;
         typedef std::future<LookupPolicyOutcome> LookupPolicyOutcomeCallable;
         typedef std::future<PublishSchemaOutcome> PublishSchemaOutcomeCallable;
         typedef std::future<PutSchemaFromJsonOutcome> PutSchemaFromJsonOutcomeCallable;
@@ -264,6 +303,7 @@ namespace Model
         typedef std::future<UpdateFacetOutcome> UpdateFacetOutcomeCallable;
         typedef std::future<UpdateObjectAttributesOutcome> UpdateObjectAttributesOutcomeCallable;
         typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
+        typedef std::future<UpdateTypedLinkFacetOutcome> UpdateTypedLinkFacetOutcomeCallable;
 } // namespace Model
 
   class CloudDirectoryClient;
@@ -273,6 +313,7 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::AttachObjectRequest&, const Model::AttachObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachObjectResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::AttachPolicyRequest&, const Model::AttachPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::AttachToIndexRequest&, const Model::AttachToIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachToIndexResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::AttachTypedLinkRequest&, const Model::AttachTypedLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachTypedLinkResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::BatchReadRequest&, const Model::BatchReadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchReadResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::BatchWriteRequest&, const Model::BatchWriteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchWriteResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::CreateDirectoryRequest&, const Model::CreateDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectoryResponseReceivedHandler;
@@ -280,34 +321,42 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::CreateObjectRequest&, const Model::CreateObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateObjectResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::CreateTypedLinkFacetRequest&, const Model::CreateTypedLinkFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTypedLinkFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DeleteDirectoryRequest&, const Model::DeleteDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DeleteFacetRequest&, const Model::DeleteFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::DeleteTypedLinkFacetRequest&, const Model::DeleteTypedLinkFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTypedLinkFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DetachFromIndexRequest&, const Model::DetachFromIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachFromIndexResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DetachObjectRequest&, const Model::DetachObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachObjectResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DetachPolicyRequest&, const Model::DetachPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachPolicyResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::DetachTypedLinkRequest&, const Model::DetachTypedLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachTypedLinkResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::DisableDirectoryRequest&, const Model::DisableDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::EnableDirectoryRequest&, const Model::EnableDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetDirectoryRequest&, const Model::GetDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetFacetRequest&, const Model::GetFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetObjectInformationRequest&, const Model::GetObjectInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectInformationResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetSchemaAsJsonRequest&, const Model::GetSchemaAsJsonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaAsJsonResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::GetTypedLinkFacetInformationRequest&, const Model::GetTypedLinkFacetInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTypedLinkFacetInformationResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListAppliedSchemaArnsRequest&, const Model::ListAppliedSchemaArnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppliedSchemaArnsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListAttachedIndicesRequest&, const Model::ListAttachedIndicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttachedIndicesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListDevelopmentSchemaArnsRequest&, const Model::ListDevelopmentSchemaArnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevelopmentSchemaArnsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListDirectoriesRequest&, const Model::ListDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDirectoriesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListFacetAttributesRequest&, const Model::ListFacetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacetAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListFacetNamesRequest&, const Model::ListFacetNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacetNamesResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListIncomingTypedLinksRequest&, const Model::ListIncomingTypedLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIncomingTypedLinksResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListIndexRequest&, const Model::ListIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectAttributesRequest&, const Model::ListObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectChildrenRequest&, const Model::ListObjectChildrenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectChildrenResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectParentPathsRequest&, const Model::ListObjectParentPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectParentPathsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectParentsRequest&, const Model::ListObjectParentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectParentsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectPoliciesRequest&, const Model::ListObjectPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectPoliciesResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListOutgoingTypedLinksRequest&, const Model::ListOutgoingTypedLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutgoingTypedLinksResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListPolicyAttachmentsRequest&, const Model::ListPolicyAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyAttachmentsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListPublishedSchemaArnsRequest&, const Model::ListPublishedSchemaArnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublishedSchemaArnsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListTypedLinkFacetAttributesRequest&, const Model::ListTypedLinkFacetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypedLinkFacetAttributesResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListTypedLinkFacetNamesRequest&, const Model::ListTypedLinkFacetNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypedLinkFacetNamesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::LookupPolicyRequest&, const Model::LookupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::PublishSchemaRequest&, const Model::PublishSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishSchemaResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::PutSchemaFromJsonRequest&, const Model::PutSchemaFromJsonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSchemaFromJsonResponseReceivedHandler;
@@ -317,14 +366,15 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateFacetRequest&, const Model::UpdateFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFacetResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateObjectAttributesRequest&, const Model::UpdateObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateTypedLinkFacetRequest&, const Model::UpdateTypedLinkFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTypedLinkFacetResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Cloud Directory</fullname> <p>Amazon Cloud Directory is a
    * component of the AWS Directory Service that simplifies the development and
-   * management of cloud-scale web, mobile and IoT applications. This guide describes
-   * the Cloud Directory operations that you can call programatically and includes
-   * detailed information on data types and errors. For information about AWS
-   * Directory Services features, see <a
+   * management of cloud-scale web, mobile, and IoT applications. This guide
+   * describes the Cloud Directory operations that you can call programmatically and
+   * includes detailed information on data types and errors. For information about
+   * AWS Directory Services features, see <a
    * href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and
    * the <a
    * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
@@ -382,16 +432,16 @@ namespace Model
         virtual void AddFacetToObjectAsync(const Model::AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies input published schema into <a>Directory</a> with same name and
-         * version as that of published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema into the <a>Directory</a> with the same
+         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          */
         virtual Model::ApplySchemaOutcome ApplySchema(const Model::ApplySchemaRequest& request) const;
 
         /**
-         * <p>Copies input published schema into <a>Directory</a> with same name and
-         * version as that of published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema into the <a>Directory</a> with the same
+         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          *
@@ -400,8 +450,8 @@ namespace Model
         virtual Model::ApplySchemaOutcomeCallable ApplySchemaCallable(const Model::ApplySchemaRequest& request) const;
 
         /**
-         * <p>Copies input published schema into <a>Directory</a> with same name and
-         * version as that of published schema .</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the input published schema into the <a>Directory</a> with the same
+         * name and version as that of the published schema .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
          * API Reference</a></p>
          *
@@ -495,6 +545,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AttachToIndexAsync(const Model::AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches a typed link to a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachTypedLinkOutcome AttachTypedLink(const Model::AttachTypedLinkRequest& request) const;
+
+        /**
+         * <p>Attaches a typed link to a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachTypedLinkOutcomeCallable AttachTypedLinkCallable(const Model::AttachTypedLinkRequest& request) const;
+
+        /**
+         * <p>Attaches a typed link to a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachTypedLinkAsync(const Model::AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Performs all the read operations in a batch. </p><p><h3>See Also:</h3>   <a
@@ -644,10 +728,10 @@ namespace Model
 
         /**
          * <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to
-         * a parent, if a parent reference and LinkName is specified. An object is simply a
-         * collection of <a>Facet</a> attributes. You can also use this API call to create
-         * a policy object, if the facet from which you create the object is a policy
-         * facet. </p><p><h3>See Also:</h3>   <a
+         * a parent, if a parent reference and <code>LinkName</code> is specified. An
+         * object is simply a collection of <a>Facet</a> attributes. You can also use this
+         * API call to create a policy object, if the facet from which you create the
+         * object is a policy facet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
          * API Reference</a></p>
          */
@@ -655,10 +739,10 @@ namespace Model
 
         /**
          * <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to
-         * a parent, if a parent reference and LinkName is specified. An object is simply a
-         * collection of <a>Facet</a> attributes. You can also use this API call to create
-         * a policy object, if the facet from which you create the object is a policy
-         * facet. </p><p><h3>See Also:</h3>   <a
+         * a parent, if a parent reference and <code>LinkName</code> is specified. An
+         * object is simply a collection of <a>Facet</a> attributes. You can also use this
+         * API call to create a policy object, if the facet from which you create the
+         * object is a policy facet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
          * API Reference</a></p>
          *
@@ -668,10 +752,10 @@ namespace Model
 
         /**
          * <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to
-         * a parent, if a parent reference and LinkName is specified. An object is simply a
-         * collection of <a>Facet</a> attributes. You can also use this API call to create
-         * a policy object, if the facet from which you create the object is a policy
-         * facet. </p><p><h3>See Also:</h3>   <a
+         * a parent, if a parent reference and <code>LinkName</code> is specified. An
+         * object is simply a collection of <a>Facet</a> attributes. You can also use this
+         * API call to create a policy object, if the facet from which you create the
+         * object is a policy facet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
          * API Reference</a></p>
          *
@@ -729,6 +813,37 @@ namespace Model
         virtual void CreateSchemaAsync(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTypedLinkFacetOutcome CreateTypedLinkFacet(const Model::CreateTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTypedLinkFacetOutcomeCallable CreateTypedLinkFacetCallable(const Model::CreateTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTypedLinkFacetAsync(const Model::CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a directory. Only disabled directories can be deleted. A deleted
          * directory cannot be undone. Exercise extreme caution when deleting
          * directories.</p><p><h3>See Also:</h3>   <a
@@ -760,18 +875,18 @@ namespace Model
         virtual void DeleteDirectoryAsync(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with
-         * the facet will be deleted. Only development schema facets are allowed
-         * deletion.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
+         * associated with the facet will be deleted. Only development schema facets are
+         * allowed deletion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFacetOutcome DeleteFacet(const Model::DeleteFacetRequest& request) const;
 
         /**
-         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with
-         * the facet will be deleted. Only development schema facets are allowed
-         * deletion.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
+         * associated with the facet will be deleted. Only development schema facets are
+         * allowed deletion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
          * API Reference</a></p>
          *
@@ -780,9 +895,9 @@ namespace Model
         virtual Model::DeleteFacetOutcomeCallable DeleteFacetCallable(const Model::DeleteFacetRequest& request) const;
 
         /**
-         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with
-         * the facet will be deleted. Only development schema facets are allowed
-         * deletion.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
+         * associated with the facet will be deleted. Only development schema facets are
+         * allowed deletion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
          * API Reference</a></p>
          *
@@ -845,6 +960,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSchemaAsync(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTypedLinkFacetOutcome DeleteTypedLinkFacet(const Model::DeleteTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTypedLinkFacetOutcomeCallable DeleteTypedLinkFacetCallable(const Model::DeleteTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTypedLinkFacetAsync(const Model::DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches the specified object from the specified index.</p><p><h3>See
@@ -929,6 +1075,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachPolicyAsync(const Model::DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches a typed link from a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachTypedLinkOutcome DetachTypedLink(const Model::DetachTypedLinkRequest& request) const;
+
+        /**
+         * <p>Detaches a typed link from a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachTypedLinkOutcomeCallable DetachTypedLinkCallable(const Model::DetachTypedLinkRequest& request) const;
+
+        /**
+         * <p>Detaches a typed link from a specified source and target object. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachTypedLinkAsync(const Model::DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the specified directory. Disabled directories cannot be read or
@@ -1018,18 +1198,20 @@ namespace Model
         virtual void GetDirectoryAsync(const Model::GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets details of the <a>Facet</a>, such as Facet Name, Attributes,
-         * <a>Rule</a>s, or ObjectType. You can call this on all kinds of schema facets --
-         * published, development, or applied.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details of the <a>Facet</a>, such as facet name, attributes,
+         * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
+         * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFacetOutcome GetFacet(const Model::GetFacetRequest& request) const;
 
         /**
-         * <p>Gets details of the <a>Facet</a>, such as Facet Name, Attributes,
-         * <a>Rule</a>s, or ObjectType. You can call this on all kinds of schema facets --
-         * published, development, or applied.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details of the <a>Facet</a>, such as facet name, attributes,
+         * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
+         * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
          * API Reference</a></p>
          *
@@ -1038,9 +1220,10 @@ namespace Model
         virtual Model::GetFacetOutcomeCallable GetFacetCallable(const Model::GetFacetRequest& request) const;
 
         /**
-         * <p>Gets details of the <a>Facet</a>, such as Facet Name, Attributes,
-         * <a>Rule</a>s, or ObjectType. You can call this on all kinds of schema facets --
-         * published, development, or applied.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details of the <a>Facet</a>, such as facet name, attributes,
+         * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
+         * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
          * API Reference</a></p>
          *
@@ -1105,6 +1288,40 @@ namespace Model
         virtual void GetSchemaAsJsonAsync(const Model::GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTypedLinkFacetInformationOutcome GetTypedLinkFacetInformation(const Model::GetTypedLinkFacetInformationRequest& request) const;
+
+        /**
+         * <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTypedLinkFacetInformationOutcomeCallable GetTypedLinkFacetInformationCallable(const Model::GetTypedLinkFacetInformationRequest& request) const;
+
+        /**
+         * <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTypedLinkFacetInformationAsync(const Model::GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists schemas applied to a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
@@ -1155,16 +1372,16 @@ namespace Model
         virtual void ListAttachedIndicesAsync(const Model::ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the ARNs of schemas in the development state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
+         * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDevelopmentSchemaArnsOutcome ListDevelopmentSchemaArns(const Model::ListDevelopmentSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves the ARNs of schemas in the development state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
+         * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1173,8 +1390,8 @@ namespace Model
         virtual Model::ListDevelopmentSchemaArnsOutcomeCallable ListDevelopmentSchemaArnsCallable(const Model::ListDevelopmentSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves the ARNs of schemas in the development state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
+         * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1261,6 +1478,43 @@ namespace Model
         virtual void ListFacetNamesAsync(const Model::ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIncomingTypedLinksOutcome ListIncomingTypedLinks(const Model::ListIncomingTypedLinksRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListIncomingTypedLinksOutcomeCallable ListIncomingTypedLinksCallable(const Model::ListIncomingTypedLinksRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListIncomingTypedLinksAsync(const Model::ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
          * API Reference</a></p>
@@ -1286,16 +1540,16 @@ namespace Model
         virtual void ListIndexAsync(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all attributes that are associated with an object. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectAttributesOutcome ListObjectAttributes(const Model::ListObjectAttributesRequest& request) const;
 
         /**
-         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all attributes that are associated with an object. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>
          *
@@ -1304,8 +1558,8 @@ namespace Model
         virtual Model::ListObjectAttributesOutcomeCallable ListObjectAttributesCallable(const Model::ListObjectAttributesRequest& request) const;
 
         /**
-         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all attributes that are associated with an object. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>
          *
@@ -1314,7 +1568,7 @@ namespace Model
         virtual void ListObjectAttributesAsync(const Model::ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a paginated list of child objects associated with a given
+         * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
          * API Reference</a></p>
@@ -1322,7 +1576,7 @@ namespace Model
         virtual Model::ListObjectChildrenOutcome ListObjectChildren(const Model::ListObjectChildrenRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of child objects associated with a given
+         * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
          * API Reference</a></p>
@@ -1332,7 +1586,7 @@ namespace Model
         virtual Model::ListObjectChildrenOutcomeCallable ListObjectChildrenCallable(const Model::ListObjectChildrenRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of child objects associated with a given
+         * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
          * API Reference</a></p>
@@ -1351,8 +1605,8 @@ namespace Model
          * object. The API returns the number of paths based on user-defined
          * <code>MaxResults</code>, in case there are multiple paths to the parent. The
          * order of the paths and nodes returned is consistent among multiple API calls
-         * unless the objects are deleted or moved. Paths not leading to directory root are
-         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * unless the objects are deleted or moved. Paths not leading to the directory root
+         * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
          * API Reference</a></p>
          */
@@ -1368,8 +1622,8 @@ namespace Model
          * object. The API returns the number of paths based on user-defined
          * <code>MaxResults</code>, in case there are multiple paths to the parent. The
          * order of the paths and nodes returned is consistent among multiple API calls
-         * unless the objects are deleted or moved. Paths not leading to directory root are
-         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * unless the objects are deleted or moved. Paths not leading to the directory root
+         * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
          * API Reference</a></p>
          *
@@ -1387,8 +1641,8 @@ namespace Model
          * object. The API returns the number of paths based on user-defined
          * <code>MaxResults</code>, in case there are multiple paths to the parent. The
          * order of the paths and nodes returned is consistent among multiple API calls
-         * unless the objects are deleted or moved. Paths not leading to directory root are
-         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * unless the objects are deleted or moved. Paths not leading to the directory root
+         * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
          * API Reference</a></p>
          *
@@ -1397,7 +1651,7 @@ namespace Model
         virtual void ListObjectParentPathsAsync(const Model::ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists parent objects associated with a given object in pagination
+         * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
          * API Reference</a></p>
@@ -1405,7 +1659,7 @@ namespace Model
         virtual Model::ListObjectParentsOutcome ListObjectParents(const Model::ListObjectParentsRequest& request) const;
 
         /**
-         * <p>Lists parent objects associated with a given object in pagination
+         * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
          * API Reference</a></p>
@@ -1415,7 +1669,7 @@ namespace Model
         virtual Model::ListObjectParentsOutcomeCallable ListObjectParentsCallable(const Model::ListObjectParentsRequest& request) const;
 
         /**
-         * <p>Lists parent objects associated with a given object in pagination
+         * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
          * API Reference</a></p>
@@ -1453,6 +1707,43 @@ namespace Model
         virtual void ListObjectPoliciesAsync(const Model::ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOutgoingTypedLinksOutcome ListOutgoingTypedLinks(const Model::ListOutgoingTypedLinksRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOutgoingTypedLinksOutcomeCallable ListOutgoingTypedLinksCallable(const Model::ListOutgoingTypedLinksRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+         * information for an object. It also supports filtering by typed link facet and
+         * identity attributes. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOutgoingTypedLinksAsync(const Model::ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
@@ -1481,14 +1772,16 @@ namespace Model
         virtual void ListPolicyAttachmentsAsync(const Model::ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves published schema ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPublishedSchemaArnsOutcome ListPublishedSchemaArns(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves published schema ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1497,7 +1790,8 @@ namespace Model
         virtual Model::ListPublishedSchemaArnsOutcomeCallable ListPublishedSchemaArnsCallable(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Retrieves published schema ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves each published schema Amazon Resource Name (ARN).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
@@ -1537,13 +1831,83 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a paginated list of all attribute definitions for a particular
+         * <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypedLinkFacetAttributesOutcome ListTypedLinkFacetAttributes(const Model::ListTypedLinkFacetAttributesRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all attribute definitions for a particular
+         * <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTypedLinkFacetAttributesOutcomeCallable ListTypedLinkFacetAttributesCallable(const Model::ListTypedLinkFacetAttributesRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of all attribute definitions for a particular
+         * <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTypedLinkFacetAttributesAsync(const Model::ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated list of <code>TypedLink</code> facet names for a
+         * particular schema. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypedLinkFacetNamesOutcome ListTypedLinkFacetNames(const Model::ListTypedLinkFacetNamesRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of <code>TypedLink</code> facet names for a
+         * particular schema. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTypedLinkFacetNamesOutcomeCallable ListTypedLinkFacetNamesCallable(const Model::ListTypedLinkFacetNamesRequest& request) const;
+
+        /**
+         * <p>Returns a paginated list of <code>TypedLink</code> facet names for a
+         * particular schema. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTypedLinkFacetNamesAsync(const Model::ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all policies from the root of the <a>Directory</a> to the object
          * specified. If there are no policies present, an empty list is returned. If
          * policies are present, and if some objects don't have the policies attached, it
          * returns the <code>ObjectIdentifier</code> for such objects. If policies are
          * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
          * <code>policyType</code>. Paths that don't lead to the root from the target
-         * object are ignored.</p><p><h3>See Also:</h3>   <a
+         * object are ignored. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          */
@@ -1556,7 +1920,9 @@ namespace Model
          * returns the <code>ObjectIdentifier</code> for such objects. If policies are
          * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
          * <code>policyType</code>. Paths that don't lead to the root from the target
-         * object are ignored.</p><p><h3>See Also:</h3>   <a
+         * object are ignored. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1571,7 +1937,9 @@ namespace Model
          * returns the <code>ObjectIdentifier</code> for such objects. If policies are
          * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
          * <code>policyType</code>. Paths that don't lead to the root from the target
-         * object are ignored.</p><p><h3>See Also:</h3>   <a
+         * object are ignored. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1581,9 +1949,9 @@ namespace Model
 
         /**
          * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, PublishSchema overrides the development schema description and
-         * attributes. If not, the development schema description and attributes are
-         * used.</p><p><h3>See Also:</h3>   <a
+         * are specified, <code>PublishSchema</code> overrides the development schema
+         * description and attributes. If not, the development schema description and
+         * attributes are used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          */
@@ -1591,9 +1959,9 @@ namespace Model
 
         /**
          * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, PublishSchema overrides the development schema description and
-         * attributes. If not, the development schema description and attributes are
-         * used.</p><p><h3>See Also:</h3>   <a
+         * are specified, <code>PublishSchema</code> overrides the development schema
+         * description and attributes. If not, the development schema description and
+         * attributes are used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          *
@@ -1603,9 +1971,9 @@ namespace Model
 
         /**
          * <p>Publishes a development schema with a version. If description and attributes
-         * are specified, PublishSchema overrides the development schema description and
-         * attributes. If not, the development schema description and attributes are
-         * used.</p><p><h3>See Also:</h3>   <a
+         * are specified, <code>PublishSchema</code> overrides the development schema
+         * description and attributes. If not, the development schema description and
+         * attributes are used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
          * API Reference</a></p>
          *
@@ -1676,14 +2044,14 @@ namespace Model
         virtual void RemoveFacetFromObjectAsync(const Model::RemoveFacetFromObjectRequest& request, const RemoveFacetFromObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>API for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>API for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1692,7 +2060,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>API for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1701,14 +2069,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>API for removing tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>API for removing tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1717,7 +2087,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>API for removing tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1818,6 +2189,37 @@ namespace Model
          */
         virtual void UpdateSchemaAsync(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTypedLinkFacetOutcome UpdateTypedLinkFacet(const Model::UpdateTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTypedLinkFacetOutcomeCallable UpdateTypedLinkFacetCallable(const Model::UpdateTypedLinkFacetRequest& request) const;
+
+        /**
+         * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+         * link</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTypedLinkFacetAsync(const Model::UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -1828,6 +2230,7 @@ namespace Model
         void AttachObjectAsyncHelper(const Model::AttachObjectRequest& request, const AttachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachPolicyAsyncHelper(const Model::AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachToIndexAsyncHelper(const Model::AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AttachTypedLinkAsyncHelper(const Model::AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchReadAsyncHelper(const Model::BatchReadRequest& request, const BatchReadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchWriteAsyncHelper(const Model::BatchWriteRequest& request, const BatchWriteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDirectoryAsyncHelper(const Model::CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1835,34 +2238,42 @@ namespace Model
         void CreateIndexAsyncHelper(const Model::CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateObjectAsyncHelper(const Model::CreateObjectRequest& request, const CreateObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTypedLinkFacetAsyncHelper(const Model::CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryAsyncHelper(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacetAsyncHelper(const Model::DeleteFacetRequest& request, const DeleteFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTypedLinkFacetAsyncHelper(const Model::DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachFromIndexAsyncHelper(const Model::DetachFromIndexRequest& request, const DetachFromIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachObjectAsyncHelper(const Model::DetachObjectRequest& request, const DetachObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachPolicyAsyncHelper(const Model::DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachTypedLinkAsyncHelper(const Model::DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableDirectoryAsyncHelper(const Model::DisableDirectoryRequest& request, const DisableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableDirectoryAsyncHelper(const Model::EnableDirectoryRequest& request, const EnableDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryAsyncHelper(const Model::GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFacetAsyncHelper(const Model::GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectInformationAsyncHelper(const Model::GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSchemaAsJsonAsyncHelper(const Model::GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTypedLinkFacetInformationAsyncHelper(const Model::GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAppliedSchemaArnsAsyncHelper(const Model::ListAppliedSchemaArnsRequest& request, const ListAppliedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttachedIndicesAsyncHelper(const Model::ListAttachedIndicesRequest& request, const ListAttachedIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevelopmentSchemaArnsAsyncHelper(const Model::ListDevelopmentSchemaArnsRequest& request, const ListDevelopmentSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDirectoriesAsyncHelper(const Model::ListDirectoriesRequest& request, const ListDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacetAttributesAsyncHelper(const Model::ListFacetAttributesRequest& request, const ListFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacetNamesAsyncHelper(const Model::ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListIncomingTypedLinksAsyncHelper(const Model::ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIndexAsyncHelper(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectAttributesAsyncHelper(const Model::ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectChildrenAsyncHelper(const Model::ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectParentPathsAsyncHelper(const Model::ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectParentsAsyncHelper(const Model::ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectPoliciesAsyncHelper(const Model::ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOutgoingTypedLinksAsyncHelper(const Model::ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPolicyAttachmentsAsyncHelper(const Model::ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPublishedSchemaArnsAsyncHelper(const Model::ListPublishedSchemaArnsRequest& request, const ListPublishedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTypedLinkFacetAttributesAsyncHelper(const Model::ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTypedLinkFacetNamesAsyncHelper(const Model::ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LookupPolicyAsyncHelper(const Model::LookupPolicyRequest& request, const LookupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PublishSchemaAsyncHelper(const Model::PublishSchemaRequest& request, const PublishSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSchemaFromJsonAsyncHelper(const Model::PutSchemaFromJsonRequest& request, const PutSchemaFromJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1872,6 +2283,7 @@ namespace Model
         void UpdateFacetAsyncHelper(const Model::UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateObjectAttributesAsyncHelper(const Model::UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSchemaAsyncHelper(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTypedLinkFacetAsyncHelper(const Model::UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

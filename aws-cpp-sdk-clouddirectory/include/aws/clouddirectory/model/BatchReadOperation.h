@@ -48,27 +48,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline const BatchListObjectAttributes& GetListObjectAttributes() const{ return m_listObjectAttributes; }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline void SetListObjectAttributes(const BatchListObjectAttributes& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = value; }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline void SetListObjectAttributes(BatchListObjectAttributes&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = std::move(value); }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadOperation& WithListObjectAttributes(const BatchListObjectAttributes& value) { SetListObjectAttributes(value); return *this;}
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadOperation& WithListObjectAttributes(BatchListObjectAttributes&& value) { SetListObjectAttributes(std::move(value)); return *this;}
 

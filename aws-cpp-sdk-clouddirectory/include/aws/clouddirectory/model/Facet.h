@@ -84,31 +84,31 @@ namespace Model
     inline Facet& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Object type associated with the facet. See
+     * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline const ObjectType& GetObjectType() const{ return m_objectType; }
 
     /**
-     * <p>Object type associated with the facet. See
+     * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline void SetObjectType(const ObjectType& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
 
     /**
-     * <p>Object type associated with the facet. See
+     * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::move(value); }
 
     /**
-     * <p>Object type associated with the facet. See
+     * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline Facet& WithObjectType(const ObjectType& value) { SetObjectType(value); return *this;}
 
     /**
-     * <p>Object type associated with the facet. See
+     * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline Facet& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}

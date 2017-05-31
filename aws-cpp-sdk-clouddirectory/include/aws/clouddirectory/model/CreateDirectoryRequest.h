@@ -37,79 +37,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline CreateDirectoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline CreateDirectoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
      */
     inline CreateDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the published schema that will be copied into the data
-     * <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 

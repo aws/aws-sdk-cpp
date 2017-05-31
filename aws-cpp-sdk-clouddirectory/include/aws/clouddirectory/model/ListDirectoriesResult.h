@@ -44,37 +44,44 @@ namespace Model
     ListDirectoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline const Aws::Vector<Directory>& GetDirectories() const{ return m_directories; }
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline void SetDirectories(const Aws::Vector<Directory>& value) { m_directories = value; }
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline void SetDirectories(Aws::Vector<Directory>&& value) { m_directories = std::move(value); }
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline ListDirectoriesResult& WithDirectories(const Aws::Vector<Directory>& value) { SetDirectories(value); return *this;}
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline ListDirectoriesResult& WithDirectories(Aws::Vector<Directory>&& value) { SetDirectories(std::move(value)); return *this;}
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline ListDirectoriesResult& AddDirectories(const Directory& value) { m_directories.push_back(value); return *this; }
 
     /**
-     * <p>Lists all directories associated with your account in pagination fashion.</p>
+     * <p>Lists all directories that are associated with your account in pagination
+     * fashion.</p>
      */
     inline ListDirectoriesResult& AddDirectories(Directory&& value) { m_directories.push_back(std::move(value)); return *this; }
 

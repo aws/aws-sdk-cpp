@@ -42,79 +42,79 @@ namespace Model
     CreateDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the <a>Directory</a>. For more information,
+     * see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline CreateDirectoryResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline CreateDirectoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the <a>Directory</a>.</p>
+     * <p>The name of the <a>Directory</a>.</p>
      */
     inline CreateDirectoryResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -154,51 +154,51 @@ namespace Model
     inline CreateDirectoryResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetAppliedSchemaArn() const{ return m_appliedSchemaArn; }
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline void SetAppliedSchemaArn(const Aws::String& value) { m_appliedSchemaArn = value; }
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = std::move(value); }
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline void SetAppliedSchemaArn(const char* value) { m_appliedSchemaArn.assign(value); }
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithAppliedSchemaArn(const Aws::String& value) { SetAppliedSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
-     * is copied into the directory, it has its own ARN which is referred to applied
-     * schema ARN. For more information, see <a>arns</a>.</p>
+     * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+     * schema is copied into the directory, it has its own ARN, which is referred to
+     * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
     inline CreateDirectoryResult& WithAppliedSchemaArn(const char* value) { SetAppliedSchemaArn(value); return *this;}
 

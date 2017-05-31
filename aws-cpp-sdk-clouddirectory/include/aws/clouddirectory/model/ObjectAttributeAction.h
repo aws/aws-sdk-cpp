@@ -47,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Type can be either Update or Delete.</p>
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline const UpdateActionType& GetObjectAttributeActionType() const{ return m_objectAttributeActionType; }
 
     /**
-     * <p>Type can be either Update or Delete.</p>
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline void SetObjectAttributeActionType(const UpdateActionType& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = value; }
 
     /**
-     * <p>Type can be either Update or Delete.</p>
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline void SetObjectAttributeActionType(UpdateActionType&& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = std::move(value); }
 
     /**
-     * <p>Type can be either Update or Delete.</p>
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline ObjectAttributeAction& WithObjectAttributeActionType(const UpdateActionType& value) { SetObjectAttributeActionType(value); return *this;}
 
     /**
-     * <p>Type can be either Update or Delete.</p>
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType&& value) { SetObjectAttributeActionType(std::move(value)); return *this;}
 

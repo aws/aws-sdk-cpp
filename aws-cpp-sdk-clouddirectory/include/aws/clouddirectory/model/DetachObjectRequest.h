@@ -38,109 +38,109 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline DetachObjectRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline DetachObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline DetachObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Parent reference from which the object with the specified link name is
+     * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
     inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
 
     /**
-     * <p>Parent reference from which the object with the specified link name is
+     * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
-     * <p>Parent reference from which the object with the specified link name is
+     * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
     inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
-     * <p>Parent reference from which the object with the specified link name is
+     * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
     inline DetachObjectRequest& WithParentReference(const ObjectReference& value) { SetParentReference(value); return *this;}
 
     /**
-     * <p>Parent reference from which the object with the specified link name is
+     * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
     inline DetachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline DetachObjectRequest& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline DetachObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
-     * <p>Link name associated with the object that needs to be detached.</p>
+     * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline DetachObjectRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 

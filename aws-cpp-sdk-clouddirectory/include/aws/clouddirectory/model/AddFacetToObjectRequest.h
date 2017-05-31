@@ -41,44 +41,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline AddFacetToObjectRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline AddFacetToObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline AddFacetToObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
@@ -108,37 +108,37 @@ namespace Model
     inline AddFacetToObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline void SetObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline AddFacetToObjectRequest& WithObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { SetObjectAttributeList(value); return *this;}
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline AddFacetToObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline AddFacetToObjectRequest& AddObjectAttributeList(const AttributeKeyAndValue& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
 
     /**
-     * <p>Attributes on the facet you are adding to the object.</p>
+     * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline AddFacetToObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 

@@ -47,37 +47,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>ID associated with the object.</p>
+     * <p>ID that is associated with the object.</p>
      */
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

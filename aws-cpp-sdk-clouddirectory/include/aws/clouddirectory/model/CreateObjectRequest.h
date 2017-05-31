@@ -41,128 +41,135 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> in which the object will be created.
-     * For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline const Aws::Vector<SchemaFacet>& GetSchemaFacets() const{ return m_schemaFacets; }
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline void SetSchemaFacets(const Aws::Vector<SchemaFacet>& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = value; }
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = std::move(value); }
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithSchemaFacets(const Aws::Vector<SchemaFacet>& value) { SetSchemaFacets(value); return *this;}
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(std::move(value)); return *this;}
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline CreateObjectRequest& AddSchemaFacets(const SchemaFacet& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(value); return *this; }
 
     /**
-     * <p>List of facet ARNs to be associated with the object. For more information,
-     * see <a>arns</a>.</p>
+     * <p>A list of schema facets to be associated with the object that contains
+     * <code>SchemaArn</code> and facet name. For more information, see
+     * <a>arns</a>.</p>
      */
     inline CreateObjectRequest& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline void SetObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline CreateObjectRequest& WithObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { SetObjectAttributeList(value); return *this;}
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline CreateObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline CreateObjectRequest& AddObjectAttributeList(const AttributeKeyAndValue& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
 
     /**
-     * <p>Attribute map whose attribute ARN contains the key and attribute value as the
-     * map value.</p>
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
      */
     inline CreateObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 

@@ -49,44 +49,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& WithAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& AddAttributes(const AttributeKeyAndValue& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
-     * key; attribute value is the value.</p>
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& AddAttributes(AttributeKeyAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

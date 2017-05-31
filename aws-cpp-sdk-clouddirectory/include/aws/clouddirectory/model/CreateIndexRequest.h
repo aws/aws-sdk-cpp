@@ -75,62 +75,62 @@ namespace Model
     inline CreateIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline const Aws::Vector<AttributeKey>& GetOrderedIndexedAttributeList() const{ return m_orderedIndexedAttributeList; }
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline void SetOrderedIndexedAttributeList(const Aws::Vector<AttributeKey>& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList = value; }
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline void SetOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList = std::move(value); }
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline CreateIndexRequest& WithOrderedIndexedAttributeList(const Aws::Vector<AttributeKey>& value) { SetOrderedIndexedAttributeList(value); return *this;}
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline CreateIndexRequest& WithOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { SetOrderedIndexedAttributeList(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline CreateIndexRequest& AddOrderedIndexedAttributeList(const AttributeKey& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the Attributes that should be indexed on. Currently only a single
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
     inline CreateIndexRequest& AddOrderedIndexedAttributeList(AttributeKey&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates whether objects with the same indexed attribute value can be added
-     * to the index.</p>
+     * <p>Indicates whether the attribute that is being indexed has unique values or
+     * not.</p>
      */
     inline bool GetIsUnique() const{ return m_isUnique; }
 
     /**
-     * <p>Indicates whether objects with the same indexed attribute value can be added
-     * to the index.</p>
+     * <p>Indicates whether the attribute that is being indexed has unique values or
+     * not.</p>
      */
     inline void SetIsUnique(bool value) { m_isUniqueHasBeenSet = true; m_isUnique = value; }
 
     /**
-     * <p>Indicates whether objects with the same indexed attribute value can be added
-     * to the index.</p>
+     * <p>Indicates whether the attribute that is being indexed has unique values or
+     * not.</p>
      */
     inline CreateIndexRequest& WithIsUnique(bool value) { SetIsUnique(value); return *this;}
 

@@ -42,37 +42,37 @@ namespace Model
     CreateObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifier = value; }
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifier.assign(value); }
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline CreateObjectResult& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline CreateObjectResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier associated with the object.</p>
+     * <p>The identifier that is associated with the object.</p>
      */
     inline CreateObjectResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

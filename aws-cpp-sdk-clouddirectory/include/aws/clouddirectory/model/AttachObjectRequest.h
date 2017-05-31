@@ -38,129 +38,129 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline AttachObjectRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline AttachObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline AttachObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline AttachObjectRequest& WithParentReference(const ObjectReference& value) { SetParentReference(value); return *this;}
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline AttachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference to be attached to the object.</p>
      */
     inline const ObjectReference& GetChildReference() const{ return m_childReference; }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference to be attached to the object.</p>
      */
     inline void SetChildReference(const ObjectReference& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference to be attached to the object.</p>
      */
     inline void SetChildReference(ObjectReference&& value) { m_childReferenceHasBeenSet = true; m_childReference = std::move(value); }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference to be attached to the object.</p>
      */
     inline AttachObjectRequest& WithChildReference(const ObjectReference& value) { SetChildReference(value); return *this;}
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference to be attached to the object.</p>
      */
     inline AttachObjectRequest& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline AttachObjectRequest& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline AttachObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
-     * <p>Link name with which the child object is attached to the parent.</p>
+     * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline AttachObjectRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 

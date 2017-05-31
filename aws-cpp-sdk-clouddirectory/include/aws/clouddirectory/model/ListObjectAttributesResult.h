@@ -44,44 +44,44 @@ namespace Model
     ListObjectAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributes = value; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributes = std::move(value); }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline ListObjectAttributesResult& WithAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline ListObjectAttributesResult& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline ListObjectAttributesResult& AddAttributes(const AttributeKeyAndValue& value) { m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key, and
-     * attribute value is the value.</p>
+     * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
+     * is the key, and attribute value is the value.</p>
      */
     inline ListObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(std::move(value)); return *this; }
 

@@ -178,52 +178,52 @@ namespace Model
     inline BatchWriteOperationResponse& WithDeleteObject(BatchDeleteObjectResponse&& value) { SetDeleteObject(std::move(value)); return *this;}
 
     /**
-     * <p>Result of an add facet to object batch operation.</p>
+     * <p>The result of an add facet to object batch operation.</p>
      */
     inline const BatchAddFacetToObjectResponse& GetAddFacetToObject() const{ return m_addFacetToObject; }
 
     /**
-     * <p>Result of an add facet to object batch operation.</p>
+     * <p>The result of an add facet to object batch operation.</p>
      */
     inline void SetAddFacetToObject(const BatchAddFacetToObjectResponse& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = value; }
 
     /**
-     * <p>Result of an add facet to object batch operation.</p>
+     * <p>The result of an add facet to object batch operation.</p>
      */
     inline void SetAddFacetToObject(BatchAddFacetToObjectResponse&& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = std::move(value); }
 
     /**
-     * <p>Result of an add facet to object batch operation.</p>
+     * <p>The result of an add facet to object batch operation.</p>
      */
     inline BatchWriteOperationResponse& WithAddFacetToObject(const BatchAddFacetToObjectResponse& value) { SetAddFacetToObject(value); return *this;}
 
     /**
-     * <p>Result of an add facet to object batch operation.</p>
+     * <p>The result of an add facet to object batch operation.</p>
      */
     inline BatchWriteOperationResponse& WithAddFacetToObject(BatchAddFacetToObjectResponse&& value) { SetAddFacetToObject(std::move(value)); return *this;}
 
     /**
-     * <p>Result of a batch remove facet from object operation.</p>
+     * <p>The result of a batch remove facet from object operation.</p>
      */
     inline const BatchRemoveFacetFromObjectResponse& GetRemoveFacetFromObject() const{ return m_removeFacetFromObject; }
 
     /**
-     * <p>Result of a batch remove facet from object operation.</p>
+     * <p>The result of a batch remove facet from object operation.</p>
      */
     inline void SetRemoveFacetFromObject(const BatchRemoveFacetFromObjectResponse& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = value; }
 
     /**
-     * <p>Result of a batch remove facet from object operation.</p>
+     * <p>The result of a batch remove facet from object operation.</p>
      */
     inline void SetRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = std::move(value); }
 
     /**
-     * <p>Result of a batch remove facet from object operation.</p>
+     * <p>The result of a batch remove facet from object operation.</p>
      */
     inline BatchWriteOperationResponse& WithRemoveFacetFromObject(const BatchRemoveFacetFromObjectResponse& value) { SetRemoveFacetFromObject(value); return *this;}
 
     /**
-     * <p>Result of a batch remove facet from object operation.</p>
+     * <p>The result of a batch remove facet from object operation.</p>
      */
     inline BatchWriteOperationResponse& WithRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { SetRemoveFacetFromObject(std::move(value)); return *this;}
 

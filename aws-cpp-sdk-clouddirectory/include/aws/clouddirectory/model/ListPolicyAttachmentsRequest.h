@@ -39,69 +39,69 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListPolicyAttachmentsRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListPolicyAttachmentsRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListPolicyAttachmentsRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Reference that identifies the policy object.</p>
+     * <p>The reference that identifies the policy object.</p>
      */
     inline const ObjectReference& GetPolicyReference() const{ return m_policyReference; }
 
     /**
-     * <p>Reference that identifies the policy object.</p>
+     * <p>The reference that identifies the policy object.</p>
      */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
 
     /**
-     * <p>Reference that identifies the policy object.</p>
+     * <p>The reference that identifies the policy object.</p>
      */
     inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
 
     /**
-     * <p>Reference that identifies the policy object.</p>
+     * <p>The reference that identifies the policy object.</p>
      */
     inline ListPolicyAttachmentsRequest& WithPolicyReference(const ObjectReference& value) { SetPolicyReference(value); return *this;}
 
     /**
-     * <p>Reference that identifies the policy object.</p>
+     * <p>The reference that identifies the policy object.</p>
      */
     inline ListPolicyAttachmentsRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
 
@@ -141,19 +141,19 @@ namespace Model
     inline ListPolicyAttachmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline ListPolicyAttachmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

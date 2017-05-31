@@ -43,73 +43,73 @@ namespace Model
     ListObjectParentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParents() const{ return m_parents; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline void SetParents(const Aws::Map<Aws::String, Aws::String>& value) { m_parents = value; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline void SetParents(Aws::Map<Aws::String, Aws::String>&& value) { m_parents = std::move(value); }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& WithParents(const Aws::Map<Aws::String, Aws::String>& value) { SetParents(value); return *this;}
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& WithParents(Aws::Map<Aws::String, Aws::String>&& value) { SetParents(std::move(value)); return *this;}
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const Aws::String& key, const Aws::String& value) { m_parents.emplace(key, value); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, const Aws::String& value) { m_parents.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const Aws::String& key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, Aws::String&& value) { m_parents.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const char* key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, const char* value) { m_parents.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the
+     * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const char* key, const char* value) { m_parents.emplace(key, value); return *this; }

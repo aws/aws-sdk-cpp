@@ -40,69 +40,69 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectAttributesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where the object resides. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
 
     /**
-     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
-     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
-     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline ListObjectAttributesRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
 
     /**
-     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline ListObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
@@ -142,19 +142,19 @@ namespace Model
     inline ListObjectAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline ListObjectAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -190,32 +190,32 @@ namespace Model
     inline ListObjectAttributesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
     /**
-     * <p>Used to filter the list of object attributes associated with a certain
-     * facet.</p>
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
      */
     inline const SchemaFacet& GetFacetFilter() const{ return m_facetFilter; }
 
     /**
-     * <p>Used to filter the list of object attributes associated with a certain
-     * facet.</p>
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
      */
     inline void SetFacetFilter(const SchemaFacet& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
 
     /**
-     * <p>Used to filter the list of object attributes associated with a certain
-     * facet.</p>
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
      */
     inline void SetFacetFilter(SchemaFacet&& value) { m_facetFilterHasBeenSet = true; m_facetFilter = std::move(value); }
 
     /**
-     * <p>Used to filter the list of object attributes associated with a certain
-     * facet.</p>
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
      */
     inline ListObjectAttributesRequest& WithFacetFilter(const SchemaFacet& value) { SetFacetFilter(value); return *this;}
 
     /**
-     * <p>Used to filter the list of object attributes associated with a certain
-     * facet.</p>
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
      */
     inline ListObjectAttributesRequest& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(std::move(value)); return *this;}
 

@@ -37,72 +37,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline UpdateSchemaRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline UpdateSchemaRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline UpdateSchemaRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline UpdateSchemaRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline UpdateSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the schema.</p>
+     * <p>The name of the schema.</p>
      */
     inline UpdateSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
 

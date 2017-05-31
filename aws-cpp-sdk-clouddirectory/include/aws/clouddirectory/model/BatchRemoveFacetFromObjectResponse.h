@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Empty result representing success.</p><p><h3>See Also:</h3>   <a
+   * <p>An empty result that represents success.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRemoveFacetFromObjectResponse">AWS
    * API Reference</a></p>
    */

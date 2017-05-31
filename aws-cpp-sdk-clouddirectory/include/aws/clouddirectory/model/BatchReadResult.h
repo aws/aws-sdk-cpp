@@ -43,37 +43,37 @@ namespace Model
     BatchReadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline const Aws::Vector<BatchReadOperationResponse>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline void SetResponses(const Aws::Vector<BatchReadOperationResponse>& value) { m_responses = value; }
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline void SetResponses(Aws::Vector<BatchReadOperationResponse>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline BatchReadResult& WithResponses(const Aws::Vector<BatchReadOperationResponse>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline BatchReadResult& WithResponses(Aws::Vector<BatchReadOperationResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline BatchReadResult& AddResponses(const BatchReadOperationResponse& value) { m_responses.push_back(value); return *this; }
 
     /**
-     * <p>List of all the responses for each batch read.</p>
+     * <p>A list of all the responses for each batch read.</p>
      */
     inline BatchReadResult& AddResponses(BatchReadOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 

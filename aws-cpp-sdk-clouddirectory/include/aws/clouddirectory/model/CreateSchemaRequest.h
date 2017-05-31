@@ -35,44 +35,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline CreateSchemaRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline CreateSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name associated with the schema. This is unique to each account and in each
-     * region.</p>
+     * <p>The name that is associated with the schema. This is unique to each account
+     * and in each region.</p>
      */
     inline CreateSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
 

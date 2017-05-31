@@ -42,37 +42,44 @@ namespace Model
     CreateSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline CreateSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline CreateSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the schema. For more information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
      */
     inline CreateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 

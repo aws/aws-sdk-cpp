@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of an AttachObject operation.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Represents the output of an <code>AttachObject</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachObject">AWS
    * API Reference</a></p>
    */
@@ -48,52 +48,52 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline BatchAttachObject& WithParentReference(const ObjectReference& value) { SetParentReference(value); return *this;}
 
     /**
-     * <p>Parent object reference.</p>
+     * <p>The parent object reference.</p>
      */
     inline BatchAttachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference that is to be attached to the object.</p>
      */
     inline const ObjectReference& GetChildReference() const{ return m_childReference; }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference that is to be attached to the object.</p>
      */
     inline void SetChildReference(const ObjectReference& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference that is to be attached to the object.</p>
      */
     inline void SetChildReference(ObjectReference&& value) { m_childReferenceHasBeenSet = true; m_childReference = std::move(value); }
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference that is to be attached to the object.</p>
      */
     inline BatchAttachObject& WithChildReference(const ObjectReference& value) { SetChildReference(value); return *this;}
 
     /**
-     * <p>Child object reference to be attached to the object.</p>
+     * <p>The child object reference that is to be attached to the object.</p>
      */
     inline BatchAttachObject& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
 

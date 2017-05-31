@@ -42,44 +42,44 @@ namespace Model
     PublishSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline const Aws::String& GetPublishedSchemaArn() const{ return m_publishedSchemaArn; }
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetPublishedSchemaArn(const Aws::String& value) { m_publishedSchemaArn = value; }
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline void SetPublishedSchemaArn(const char* value) { m_publishedSchemaArn.assign(value); }
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline PublishSchemaResult& WithPublishedSchemaArn(const Aws::String& value) { SetPublishedSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline PublishSchemaResult& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the published schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The ARN that is associated with the published schema. For more information,
+     * see <a>arns</a>.</p>
      */
     inline PublishSchemaResult& WithPublishedSchemaArn(const char* value) { SetPublishedSchemaArn(value); return *this;}
 

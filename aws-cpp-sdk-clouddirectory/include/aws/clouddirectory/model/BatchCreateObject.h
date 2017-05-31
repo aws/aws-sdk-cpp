@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a CreateObject operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the output of a <code>CreateObject</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchCreateObject">AWS
    * API Reference</a></p>
    */
@@ -51,86 +51,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline const Aws::Vector<SchemaFacet>& GetSchemaFacet() const{ return m_schemaFacet; }
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaFacet(const Aws::Vector<SchemaFacet>& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaFacet(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline BatchCreateObject& WithSchemaFacet(const Aws::Vector<SchemaFacet>& value) { SetSchemaFacet(value); return *this;}
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline BatchCreateObject& WithSchemaFacet(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline BatchCreateObject& AddSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet.push_back(value); return *this; }
 
     /**
-     * <p>List of FacetArns that will be associated with the object. For more
-     * information, see <a>arns</a>.</p>
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
      */
     inline BatchCreateObject& AddSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline void SetObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline BatchCreateObject& WithObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { SetObjectAttributeList(value); return *this;}
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline BatchCreateObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline BatchCreateObject& AddObjectAttributeList(const AttributeKeyAndValue& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
 
     /**
-     * <p>Attribute map, which contains an attribute ARN as the key and attribute value
-     * as the map value.</p>
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
      */
     inline BatchCreateObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 

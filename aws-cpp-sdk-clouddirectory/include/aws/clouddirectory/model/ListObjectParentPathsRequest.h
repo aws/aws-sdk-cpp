@@ -73,27 +73,27 @@ namespace Model
     inline ListObjectParentPathsRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>Reference that identifies the object whose parent paths are listed.</p>
+     * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
 
     /**
-     * <p>Reference that identifies the object whose parent paths are listed.</p>
+     * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
-     * <p>Reference that identifies the object whose parent paths are listed.</p>
+     * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
-     * <p>Reference that identifies the object whose parent paths are listed.</p>
+     * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline ListObjectParentPathsRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
 
     /**
-     * <p>Reference that identifies the object whose parent paths are listed.</p>
+     * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline ListObjectParentPathsRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
@@ -133,19 +133,19 @@ namespace Model
     inline ListObjectParentPathsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline ListObjectParentPathsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

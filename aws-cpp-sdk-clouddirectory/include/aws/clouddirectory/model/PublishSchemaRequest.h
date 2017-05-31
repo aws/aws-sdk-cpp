@@ -37,121 +37,121 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDevelopmentSchemaArn() const{ return m_developmentSchemaArn; }
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline void SetDevelopmentSchemaArn(const Aws::String& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = value; }
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline void SetDevelopmentSchemaArn(Aws::String&& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline void SetDevelopmentSchemaArn(const char* value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn.assign(value); }
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline PublishSchemaRequest& WithDevelopmentSchemaArn(const Aws::String& value) { SetDevelopmentSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline PublishSchemaRequest& WithDevelopmentSchemaArn(Aws::String&& value) { SetDevelopmentSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the development schema. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
      */
     inline PublishSchemaRequest& WithDevelopmentSchemaArn(const char* value) { SetDevelopmentSchemaArn(value); return *this;}
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline PublishSchemaRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline PublishSchemaRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version under which the schema will be published.</p>
+     * <p>The version under which the schema will be published.</p>
      */
     inline PublishSchemaRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline PublishSchemaRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline PublishSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>New name under which the schema will be published. If this is not provided,
-     * the development schema is considered.</p>
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
      */
     inline PublishSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
 

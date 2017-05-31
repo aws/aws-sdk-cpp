@@ -48,52 +48,57 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline const BatchListObjectAttributesResponse& GetListObjectAttributes() const{ return m_listObjectAttributes; }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline void SetListObjectAttributes(const BatchListObjectAttributesResponse& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = value; }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline void SetListObjectAttributes(BatchListObjectAttributesResponse&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = std::move(value); }
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectAttributes(const BatchListObjectAttributesResponse& value) { SetListObjectAttributes(value); return *this;}
 
     /**
-     * <p>Lists all attributes associated with an object.</p>
+     * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectAttributes(BatchListObjectAttributesResponse&& value) { SetListObjectAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a paginated list of child objects associated with a given object.</p>
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
      */
     inline const BatchListObjectChildrenResponse& GetListObjectChildren() const{ return m_listObjectChildren; }
 
     /**
-     * <p>Returns a paginated list of child objects associated with a given object.</p>
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
      */
     inline void SetListObjectChildren(const BatchListObjectChildrenResponse& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = value; }
 
     /**
-     * <p>Returns a paginated list of child objects associated with a given object.</p>
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
      */
     inline void SetListObjectChildren(BatchListObjectChildrenResponse&& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = std::move(value); }
 
     /**
-     * <p>Returns a paginated list of child objects associated with a given object.</p>
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectChildren(const BatchListObjectChildrenResponse& value) { SetListObjectChildren(value); return *this;}
 
     /**
-     * <p>Returns a paginated list of child objects associated with a given object.</p>
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectChildren(BatchListObjectChildrenResponse&& value) { SetListObjectChildren(std::move(value)); return *this;}
 

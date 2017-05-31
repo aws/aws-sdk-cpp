@@ -38,37 +38,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline AttachToIndexRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline AttachToIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the directory where the object and index exist.</p>
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
      */
     inline AttachToIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 

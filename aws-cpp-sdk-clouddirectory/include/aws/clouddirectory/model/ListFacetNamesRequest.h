@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline ListFacetNamesRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline ListFacetNamesRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN to retrieve facet names from.</p>
+     * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline ListFacetNamesRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
@@ -107,17 +107,17 @@ namespace Model
     inline ListFacetNamesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results to retrieve</p>
+     * <p>The maximum number of results to retrieve.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to retrieve</p>
+     * <p>The maximum number of results to retrieve.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to retrieve</p>
+     * <p>The maximum number of results to retrieve.</p>
      */
     inline ListFacetNamesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

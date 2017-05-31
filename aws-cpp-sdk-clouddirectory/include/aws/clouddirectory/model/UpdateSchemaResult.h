@@ -42,43 +42,43 @@ namespace Model
     UpdateSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline UpdateSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline UpdateSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the updated schema. For more information, see
+     * <p>The ARN that is associated with the updated schema. For more information, see
      * <a>arns</a>.</p>
      */
     inline UpdateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}

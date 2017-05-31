@@ -42,27 +42,27 @@ namespace Model
     GetFacetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> <a>Facet</a> structure associated with the facet.</p>
+     * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
     inline const Facet& GetFacet() const{ return m_facet; }
 
     /**
-     * <p> <a>Facet</a> structure associated with the facet.</p>
+     * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
     inline void SetFacet(const Facet& value) { m_facet = value; }
 
     /**
-     * <p> <a>Facet</a> structure associated with the facet.</p>
+     * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
     inline void SetFacet(Facet&& value) { m_facet = std::move(value); }
 
     /**
-     * <p> <a>Facet</a> structure associated with the facet.</p>
+     * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
     inline GetFacetResult& WithFacet(const Facet& value) { SetFacet(value); return *this;}
 
     /**
-     * <p> <a>Facet</a> structure associated with the facet.</p>
+     * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
     inline GetFacetResult& WithFacet(Facet&& value) { SetFacet(std::move(value)); return *this;}
 

@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Attribute associated with the <a>Facet</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>An attribute that is associated with the <a>Facet</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/FacetAttribute">AWS
    * API Reference</a></p>
    */
@@ -124,35 +125,35 @@ namespace Model
     inline FacetAttribute& WithAttributeDefinition(FacetAttributeDefinition&& value) { SetAttributeDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>Attribute reference associated with the attribute. See <a
+     * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
     inline const FacetAttributeReference& GetAttributeReference() const{ return m_attributeReference; }
 
     /**
-     * <p>Attribute reference associated with the attribute. See <a
+     * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
     inline void SetAttributeReference(const FacetAttributeReference& value) { m_attributeReferenceHasBeenSet = true; m_attributeReference = value; }
 
     /**
-     * <p>Attribute reference associated with the attribute. See <a
+     * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
     inline void SetAttributeReference(FacetAttributeReference&& value) { m_attributeReferenceHasBeenSet = true; m_attributeReference = std::move(value); }
 
     /**
-     * <p>Attribute reference associated with the attribute. See <a
+     * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
     inline FacetAttribute& WithAttributeReference(const FacetAttributeReference& value) { SetAttributeReference(value); return *this;}
 
     /**
-     * <p>Attribute reference associated with the attribute. See <a
+     * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */

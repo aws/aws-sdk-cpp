@@ -43,49 +43,49 @@ namespace Model
     ListObjectPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttachedPolicyIds() const{ return m_attachedPolicyIds; }
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline void SetAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { m_attachedPolicyIds = value; }
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIds = std::move(value); }
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { SetAttachedPolicyIds(value); return *this;}
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(std::move(value)); return *this;}
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const Aws::String& value) { m_attachedPolicyIds.push_back(value); return *this; }
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const char* value) { m_attachedPolicyIds.push_back(value); return *this; }

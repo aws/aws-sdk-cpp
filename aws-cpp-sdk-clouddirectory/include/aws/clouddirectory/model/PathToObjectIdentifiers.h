@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-   * directory.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated
+   * with the directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PathToObjectIdentifiers">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline PathToObjectIdentifiers& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline PathToObjectIdentifiers& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path used to identify the object starting from directory root.</p>
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
      */
     inline PathToObjectIdentifiers& WithPath(const char* value) { SetPath(value); return *this;}
 

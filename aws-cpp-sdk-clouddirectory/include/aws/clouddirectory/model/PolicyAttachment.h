@@ -34,8 +34,10 @@ namespace Model
 
   /**
    * <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the
-   * <code>ObjectIdentifier</code> to which it is attached.</p><p><h3>See Also:</h3> 
+   * <code>ObjectIdentifier</code> to which it is attached. For more information, see
    * <a
+   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyAttachment">AWS
    * API Reference</a></p>
    */
@@ -83,43 +85,43 @@ namespace Model
     inline PolicyAttachment& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ObjectIdentifier</code> associated with
+     * <p>The <code>ObjectIdentifier</code> that is associated with
      * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}

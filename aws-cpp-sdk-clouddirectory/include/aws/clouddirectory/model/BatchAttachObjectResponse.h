@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output batch AttachObject response operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output batch <code>AttachObject</code> response
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachObjectResponse">AWS
    * API Reference</a></p>
    */

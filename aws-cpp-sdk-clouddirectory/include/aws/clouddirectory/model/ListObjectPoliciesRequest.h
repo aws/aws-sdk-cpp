@@ -39,44 +39,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectPoliciesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectPoliciesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Directory</a> where objects reside. For more
-     * information, see <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
      */
     inline ListObjectPoliciesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
@@ -141,19 +141,19 @@ namespace Model
     inline ListObjectPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of items to be retrieved in a single call. This is an
+     * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
     inline ListObjectPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

@@ -47,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Inclusive or exclusive range start.</p>
+     * <p>The inclusive or exclusive range start.</p>
      */
     inline const RangeMode& GetStartMode() const{ return m_startMode; }
 
     /**
-     * <p>Inclusive or exclusive range start.</p>
+     * <p>The inclusive or exclusive range start.</p>
      */
     inline void SetStartMode(const RangeMode& value) { m_startModeHasBeenSet = true; m_startMode = value; }
 
     /**
-     * <p>Inclusive or exclusive range start.</p>
+     * <p>The inclusive or exclusive range start.</p>
      */
     inline void SetStartMode(RangeMode&& value) { m_startModeHasBeenSet = true; m_startMode = std::move(value); }
 
     /**
-     * <p>Inclusive or exclusive range start.</p>
+     * <p>The inclusive or exclusive range start.</p>
      */
     inline TypedAttributeValueRange& WithStartMode(const RangeMode& value) { SetStartMode(value); return *this;}
 
     /**
-     * <p>Inclusive or exclusive range start.</p>
+     * <p>The inclusive or exclusive range start.</p>
      */
     inline TypedAttributeValueRange& WithStartMode(RangeMode&& value) { SetStartMode(std::move(value)); return *this;}
 
@@ -97,27 +97,27 @@ namespace Model
     inline TypedAttributeValueRange& WithStartValue(TypedAttributeValue&& value) { SetStartValue(std::move(value)); return *this;}
 
     /**
-     * <p>Inclusive or exclusive range end.</p>
+     * <p>The inclusive or exclusive range end.</p>
      */
     inline const RangeMode& GetEndMode() const{ return m_endMode; }
 
     /**
-     * <p>Inclusive or exclusive range end.</p>
+     * <p>The inclusive or exclusive range end.</p>
      */
     inline void SetEndMode(const RangeMode& value) { m_endModeHasBeenSet = true; m_endMode = value; }
 
     /**
-     * <p>Inclusive or exclusive range end.</p>
+     * <p>The inclusive or exclusive range end.</p>
      */
     inline void SetEndMode(RangeMode&& value) { m_endModeHasBeenSet = true; m_endMode = std::move(value); }
 
     /**
-     * <p>Inclusive or exclusive range end.</p>
+     * <p>The inclusive or exclusive range end.</p>
      */
     inline TypedAttributeValueRange& WithEndMode(const RangeMode& value) { SetEndMode(value); return *this;}
 
     /**
-     * <p>Inclusive or exclusive range end.</p>
+     * <p>The inclusive or exclusive range end.</p>
      */
     inline TypedAttributeValueRange& WithEndMode(RangeMode&& value) { SetEndMode(std::move(value)); return *this;}
 

@@ -32,6 +32,7 @@
 #include <aws/clouddirectory/model/AttachObjectRequest.h>
 #include <aws/clouddirectory/model/AttachPolicyRequest.h>
 #include <aws/clouddirectory/model/AttachToIndexRequest.h>
+#include <aws/clouddirectory/model/AttachTypedLinkRequest.h>
 #include <aws/clouddirectory/model/BatchReadRequest.h>
 #include <aws/clouddirectory/model/BatchWriteRequest.h>
 #include <aws/clouddirectory/model/CreateDirectoryRequest.h>
@@ -39,34 +40,42 @@
 #include <aws/clouddirectory/model/CreateIndexRequest.h>
 #include <aws/clouddirectory/model/CreateObjectRequest.h>
 #include <aws/clouddirectory/model/CreateSchemaRequest.h>
+#include <aws/clouddirectory/model/CreateTypedLinkFacetRequest.h>
 #include <aws/clouddirectory/model/DeleteDirectoryRequest.h>
 #include <aws/clouddirectory/model/DeleteFacetRequest.h>
 #include <aws/clouddirectory/model/DeleteObjectRequest.h>
 #include <aws/clouddirectory/model/DeleteSchemaRequest.h>
+#include <aws/clouddirectory/model/DeleteTypedLinkFacetRequest.h>
 #include <aws/clouddirectory/model/DetachFromIndexRequest.h>
 #include <aws/clouddirectory/model/DetachObjectRequest.h>
 #include <aws/clouddirectory/model/DetachPolicyRequest.h>
+#include <aws/clouddirectory/model/DetachTypedLinkRequest.h>
 #include <aws/clouddirectory/model/DisableDirectoryRequest.h>
 #include <aws/clouddirectory/model/EnableDirectoryRequest.h>
 #include <aws/clouddirectory/model/GetDirectoryRequest.h>
 #include <aws/clouddirectory/model/GetFacetRequest.h>
 #include <aws/clouddirectory/model/GetObjectInformationRequest.h>
 #include <aws/clouddirectory/model/GetSchemaAsJsonRequest.h>
+#include <aws/clouddirectory/model/GetTypedLinkFacetInformationRequest.h>
 #include <aws/clouddirectory/model/ListAppliedSchemaArnsRequest.h>
 #include <aws/clouddirectory/model/ListAttachedIndicesRequest.h>
 #include <aws/clouddirectory/model/ListDevelopmentSchemaArnsRequest.h>
 #include <aws/clouddirectory/model/ListDirectoriesRequest.h>
 #include <aws/clouddirectory/model/ListFacetAttributesRequest.h>
 #include <aws/clouddirectory/model/ListFacetNamesRequest.h>
+#include <aws/clouddirectory/model/ListIncomingTypedLinksRequest.h>
 #include <aws/clouddirectory/model/ListIndexRequest.h>
 #include <aws/clouddirectory/model/ListObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/ListObjectChildrenRequest.h>
 #include <aws/clouddirectory/model/ListObjectParentPathsRequest.h>
 #include <aws/clouddirectory/model/ListObjectParentsRequest.h>
 #include <aws/clouddirectory/model/ListObjectPoliciesRequest.h>
+#include <aws/clouddirectory/model/ListOutgoingTypedLinksRequest.h>
 #include <aws/clouddirectory/model/ListPolicyAttachmentsRequest.h>
 #include <aws/clouddirectory/model/ListPublishedSchemaArnsRequest.h>
 #include <aws/clouddirectory/model/ListTagsForResourceRequest.h>
+#include <aws/clouddirectory/model/ListTypedLinkFacetAttributesRequest.h>
+#include <aws/clouddirectory/model/ListTypedLinkFacetNamesRequest.h>
 #include <aws/clouddirectory/model/LookupPolicyRequest.h>
 #include <aws/clouddirectory/model/PublishSchemaRequest.h>
 #include <aws/clouddirectory/model/PutSchemaFromJsonRequest.h>
@@ -76,6 +85,7 @@
 #include <aws/clouddirectory/model/UpdateFacetRequest.h>
 #include <aws/clouddirectory/model/UpdateObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/UpdateSchemaRequest.h>
+#include <aws/clouddirectory/model/UpdateTypedLinkFacetRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -309,6 +319,40 @@ void CloudDirectoryClient::AttachToIndexAsync(const AttachToIndexRequest& reques
 void CloudDirectoryClient::AttachToIndexAsyncHelper(const AttachToIndexRequest& request, const AttachToIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AttachToIndex(request), context);
+}
+
+AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/attach";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return AttachTypedLinkOutcome(AttachTypedLinkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AttachTypedLinkOutcome(outcome.GetError());
+  }
+}
+
+AttachTypedLinkOutcomeCallable CloudDirectoryClient::AttachTypedLinkCallable(const AttachTypedLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AttachTypedLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachTypedLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::AttachTypedLinkAsync(const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AttachTypedLinkAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::AttachTypedLinkAsyncHelper(const AttachTypedLinkRequest& request, const AttachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AttachTypedLink(request), context);
 }
 
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const
@@ -549,6 +593,40 @@ void CloudDirectoryClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& re
   handler(this, request, CreateSchema(request), context);
 }
 
+CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return CreateTypedLinkFacetOutcome(CreateTypedLinkFacetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTypedLinkFacetOutcome(outcome.GetError());
+  }
+}
+
+CreateTypedLinkFacetOutcomeCallable CloudDirectoryClient::CreateTypedLinkFacetCallable(const CreateTypedLinkFacetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTypedLinkFacetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTypedLinkFacet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::CreateTypedLinkFacetAsync(const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTypedLinkFacetAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::CreateTypedLinkFacetAsyncHelper(const CreateTypedLinkFacetRequest& request, const CreateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTypedLinkFacet(request), context);
+}
+
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -685,6 +763,40 @@ void CloudDirectoryClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& re
   handler(this, request, DeleteSchema(request), context);
 }
 
+DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTypedLinkFacetOutcome(DeleteTypedLinkFacetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTypedLinkFacetOutcome(outcome.GetError());
+  }
+}
+
+DeleteTypedLinkFacetOutcomeCallable CloudDirectoryClient::DeleteTypedLinkFacetCallable(const DeleteTypedLinkFacetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTypedLinkFacetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTypedLinkFacet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::DeleteTypedLinkFacetAsync(const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTypedLinkFacetAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::DeleteTypedLinkFacetAsyncHelper(const DeleteTypedLinkFacetRequest& request, const DeleteTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTypedLinkFacet(request), context);
+}
+
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const
 {
   Aws::StringStream ss;
@@ -785,6 +897,40 @@ void CloudDirectoryClient::DetachPolicyAsync(const DetachPolicyRequest& request,
 void CloudDirectoryClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetachPolicy(request), context);
+}
+
+DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/detach";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return DetachTypedLinkOutcome(NoResult());
+  }
+  else
+  {
+    return DetachTypedLinkOutcome(outcome.GetError());
+  }
+}
+
+DetachTypedLinkOutcomeCallable CloudDirectoryClient::DetachTypedLinkCallable(const DetachTypedLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetachTypedLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachTypedLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::DetachTypedLinkAsync(const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetachTypedLinkAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::DetachTypedLinkAsyncHelper(const DetachTypedLinkRequest& request, const DetachTypedLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetachTypedLink(request), context);
 }
 
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const
@@ -991,6 +1137,40 @@ void CloudDirectoryClient::GetSchemaAsJsonAsyncHelper(const GetSchemaAsJsonReque
   handler(this, request, GetSchemaAsJson(request), context);
 }
 
+GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(const GetTypedLinkFacetInformationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetTypedLinkFacetInformationOutcome(GetTypedLinkFacetInformationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTypedLinkFacetInformationOutcome(outcome.GetError());
+  }
+}
+
+GetTypedLinkFacetInformationOutcomeCallable CloudDirectoryClient::GetTypedLinkFacetInformationCallable(const GetTypedLinkFacetInformationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTypedLinkFacetInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTypedLinkFacetInformation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::GetTypedLinkFacetInformationAsync(const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTypedLinkFacetInformationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::GetTypedLinkFacetInformationAsyncHelper(const GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTypedLinkFacetInformation(request), context);
+}
+
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1193,6 +1373,40 @@ void CloudDirectoryClient::ListFacetNamesAsync(const ListFacetNamesRequest& requ
 void CloudDirectoryClient::ListFacetNamesAsyncHelper(const ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFacetNames(request), context);
+}
+
+ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListIncomingTypedLinksOutcome(ListIncomingTypedLinksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListIncomingTypedLinksOutcome(outcome.GetError());
+  }
+}
+
+ListIncomingTypedLinksOutcomeCallable CloudDirectoryClient::ListIncomingTypedLinksCallable(const ListIncomingTypedLinksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListIncomingTypedLinksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIncomingTypedLinks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListIncomingTypedLinksAsync(const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListIncomingTypedLinksAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListIncomingTypedLinksAsyncHelper(const ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIncomingTypedLinks(request), context);
 }
 
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const
@@ -1399,6 +1613,40 @@ void CloudDirectoryClient::ListObjectPoliciesAsyncHelper(const ListObjectPolicie
   handler(this, request, ListObjectPolicies(request), context);
 }
 
+ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListOutgoingTypedLinksOutcome(ListOutgoingTypedLinksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOutgoingTypedLinksOutcome(outcome.GetError());
+  }
+}
+
+ListOutgoingTypedLinksOutcomeCallable CloudDirectoryClient::ListOutgoingTypedLinksCallable(const ListOutgoingTypedLinksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOutgoingTypedLinksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOutgoingTypedLinks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListOutgoingTypedLinksAsync(const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOutgoingTypedLinksAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListOutgoingTypedLinksAsyncHelper(const ListOutgoingTypedLinksRequest& request, const ListOutgoingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOutgoingTypedLinks(request), context);
+}
+
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1499,6 +1747,74 @@ void CloudDirectoryClient::ListTagsForResourceAsync(const ListTagsForResourceReq
 void CloudDirectoryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(const ListTypedLinkFacetAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTypedLinkFacetAttributesOutcome(ListTypedLinkFacetAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTypedLinkFacetAttributesOutcome(outcome.GetError());
+  }
+}
+
+ListTypedLinkFacetAttributesOutcomeCallable CloudDirectoryClient::ListTypedLinkFacetAttributesCallable(const ListTypedLinkFacetAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTypedLinkFacetAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTypedLinkFacetAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListTypedLinkFacetAttributesAsync(const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTypedLinkFacetAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListTypedLinkFacetAttributesAsyncHelper(const ListTypedLinkFacetAttributesRequest& request, const ListTypedLinkFacetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTypedLinkFacetAttributes(request), context);
+}
+
+ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTypedLinkFacetNamesOutcome(ListTypedLinkFacetNamesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTypedLinkFacetNamesOutcome(outcome.GetError());
+  }
+}
+
+ListTypedLinkFacetNamesOutcomeCallable CloudDirectoryClient::ListTypedLinkFacetNamesCallable(const ListTypedLinkFacetNamesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTypedLinkFacetNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTypedLinkFacetNames(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListTypedLinkFacetNamesAsync(const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTypedLinkFacetNamesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListTypedLinkFacetNamesAsyncHelper(const ListTypedLinkFacetNamesRequest& request, const ListTypedLinkFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTypedLinkFacetNames(request), context);
 }
 
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const
@@ -1805,5 +2121,39 @@ void CloudDirectoryClient::UpdateSchemaAsync(const UpdateSchemaRequest& request,
 void CloudDirectoryClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSchema(request), context);
+}
+
+UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTypedLinkFacetOutcome(UpdateTypedLinkFacetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTypedLinkFacetOutcome(outcome.GetError());
+  }
+}
+
+UpdateTypedLinkFacetOutcomeCallable CloudDirectoryClient::UpdateTypedLinkFacetCallable(const UpdateTypedLinkFacetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTypedLinkFacetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTypedLinkFacet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::UpdateTypedLinkFacetAsync(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTypedLinkFacetAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::UpdateTypedLinkFacetAsyncHelper(const UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTypedLinkFacet(request), context);
 }
 

@@ -47,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The key of the attribute the attribute range covers.</p>
+     * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline const AttributeKey& GetAttributeKey() const{ return m_attributeKey; }
 
     /**
-     * <p>The key of the attribute the attribute range covers.</p>
+     * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline void SetAttributeKey(const AttributeKey& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
 
     /**
-     * <p>The key of the attribute the attribute range covers.</p>
+     * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline void SetAttributeKey(AttributeKey&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = std::move(value); }
 
     /**
-     * <p>The key of the attribute the attribute range covers.</p>
+     * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline ObjectAttributeRange& WithAttributeKey(const AttributeKey& value) { SetAttributeKey(value); return *this;}
 
     /**
-     * <p>The key of the attribute the attribute range covers.</p>
+     * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline ObjectAttributeRange& WithAttributeKey(AttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
 

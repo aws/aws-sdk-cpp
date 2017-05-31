@@ -44,44 +44,44 @@ namespace Model
     ListObjectParentPathsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline const Aws::Vector<PathToObjectIdentifiers>& GetPathToObjectIdentifiersList() const{ return m_pathToObjectIdentifiersList; }
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline void SetPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { m_pathToObjectIdentifiersList = value; }
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline void SetPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { m_pathToObjectIdentifiersList = std::move(value); }
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { SetPathToObjectIdentifiersList(value); return *this;}
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { SetPathToObjectIdentifiersList(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(const PathToObjectIdentifiers& value) { m_pathToObjectIdentifiersList.push_back(value); return *this; }
 
     /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
-     * directory.</p>
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
      */
     inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
 

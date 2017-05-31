@@ -37,44 +37,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline GetFacetRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline GetFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with the <a>Facet</a>. For more information, see
-     * <a>arns</a>.</p>
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
      */
     inline GetFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
