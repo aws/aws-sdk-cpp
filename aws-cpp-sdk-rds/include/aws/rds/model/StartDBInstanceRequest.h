@@ -1,0 +1,83 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/RDSRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_RDS_API StartDBInstanceRequest : public RDSRequest
+  {
+  public:
+    StartDBInstanceRequest();
+    Aws::String SerializePayload() const override;
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline StartDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline StartDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
+    inline StartDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
+  private:
+    Aws::String m_dBInstanceIdentifier;
+    bool m_dBInstanceIdentifierHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

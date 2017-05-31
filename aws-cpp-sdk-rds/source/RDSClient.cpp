@@ -114,6 +114,8 @@
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeRequest.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressRequest.h>
+#include <aws/rds/model/StartDBInstanceRequest.h>
+#include <aws/rds/model/StopDBInstanceRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -3146,6 +3148,74 @@ void RDSClient::RevokeDBSecurityGroupIngressAsync(const RevokeDBSecurityGroupIng
 void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RevokeDBSecurityGroupIngress(request), context);
+}
+
+StartDBInstanceOutcome RDSClient::StartDBInstance(const StartDBInstanceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri;
+  ss << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartDBInstanceOutcome(StartDBInstanceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDBInstanceOutcome(outcome.GetError());
+  }
+}
+
+StartDBInstanceOutcomeCallable RDSClient::StartDBInstanceCallable(const StartDBInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDBInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDBInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::StartDBInstanceAsync(const StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDBInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::StartDBInstanceAsyncHelper(const StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDBInstance(request), context);
+}
+
+StopDBInstanceOutcome RDSClient::StopDBInstance(const StopDBInstanceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri;
+  ss << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopDBInstanceOutcome(StopDBInstanceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopDBInstanceOutcome(outcome.GetError());
+  }
+}
+
+StopDBInstanceOutcomeCallable RDSClient::StopDBInstanceCallable(const StopDBInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopDBInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDBInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::StopDBInstanceAsync(const StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopDBInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::StopDBInstanceAsyncHelper(const StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopDBInstance(request), context);
 }
 
 
