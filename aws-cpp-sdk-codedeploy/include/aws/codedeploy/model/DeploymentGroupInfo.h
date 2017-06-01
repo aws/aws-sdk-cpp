@@ -23,6 +23,7 @@
 #include <aws/codedeploy/model/DeploymentStyle.h>
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
+#include <aws/codedeploy/model/LastDeploymentInfo.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
@@ -536,6 +537,66 @@ namespace Model
      */
     inline DeploymentGroupInfo& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
 
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline const LastDeploymentInfo& GetLastSuccessfulDeployment() const{ return m_lastSuccessfulDeployment; }
+
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline void SetLastSuccessfulDeployment(const LastDeploymentInfo& value) { m_lastSuccessfulDeploymentHasBeenSet = true; m_lastSuccessfulDeployment = value; }
+
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline void SetLastSuccessfulDeployment(LastDeploymentInfo&& value) { m_lastSuccessfulDeploymentHasBeenSet = true; m_lastSuccessfulDeployment = std::move(value); }
+
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline DeploymentGroupInfo& WithLastSuccessfulDeployment(const LastDeploymentInfo& value) { SetLastSuccessfulDeployment(value); return *this;}
+
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline DeploymentGroupInfo& WithLastSuccessfulDeployment(LastDeploymentInfo&& value) { SetLastSuccessfulDeployment(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
+    inline const LastDeploymentInfo& GetLastAttemptedDeployment() const{ return m_lastAttemptedDeployment; }
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
+    inline void SetLastAttemptedDeployment(const LastDeploymentInfo& value) { m_lastAttemptedDeploymentHasBeenSet = true; m_lastAttemptedDeployment = value; }
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
+    inline void SetLastAttemptedDeployment(LastDeploymentInfo&& value) { m_lastAttemptedDeploymentHasBeenSet = true; m_lastAttemptedDeployment = std::move(value); }
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
+    inline DeploymentGroupInfo& WithLastAttemptedDeployment(const LastDeploymentInfo& value) { SetLastAttemptedDeployment(value); return *this;}
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
+    inline DeploymentGroupInfo& WithLastAttemptedDeployment(LastDeploymentInfo&& value) { SetLastAttemptedDeployment(std::move(value)); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -567,6 +628,10 @@ namespace Model
     bool m_blueGreenDeploymentConfigurationHasBeenSet;
     LoadBalancerInfo m_loadBalancerInfo;
     bool m_loadBalancerInfoHasBeenSet;
+    LastDeploymentInfo m_lastSuccessfulDeployment;
+    bool m_lastSuccessfulDeploymentHasBeenSet;
+    LastDeploymentInfo m_lastAttemptedDeployment;
+    bool m_lastAttemptedDeploymentHasBeenSet;
   };
 
 } // namespace Model

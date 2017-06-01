@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a create deployment configuration
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input of a CreateDeploymentConfig operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfigInput">AWS
    * API Reference</a></p>
    */

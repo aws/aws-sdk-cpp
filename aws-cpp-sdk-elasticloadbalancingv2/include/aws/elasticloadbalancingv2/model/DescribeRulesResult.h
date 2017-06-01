@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/Rule.h>
 #include <utility>
@@ -78,6 +79,48 @@ namespace Model
      */
     inline DescribeRulesResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline DescribeRulesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline DescribeRulesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
+
+    /**
+     * <p>The marker to use when requesting the next set of results. If there are no
+     * additional results, the string is empty.</p>
+     */
+    inline DescribeRulesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -95,6 +138,7 @@ namespace Model
 
   private:
     Aws::Vector<Rule> m_rules;
+    Aws::String m_nextMarker;
     ResponseMetadata m_responseMetadata;
   };
 

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list applications operation.</p><p><h3>See
+   * <p>Represents the input of a ListApplications operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationsInput">AWS
    * API Reference</a></p>

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-RDS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20141031.136;
+        version : 1.0.20141031.137;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Relational Database Service);

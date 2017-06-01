@@ -252,37 +252,37 @@ namespace Model
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The subject of the email verfication message.</p>
+     * <p>The subject of the email verification message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
@@ -531,27 +531,27 @@ namespace Model
     inline UpdateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::move(value); }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline UpdateUserPoolRequest& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline UpdateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 

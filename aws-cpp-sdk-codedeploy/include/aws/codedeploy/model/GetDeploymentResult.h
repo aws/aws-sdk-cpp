@@ -35,7 +35,7 @@ namespace CodeDeploy
 namespace Model
 {
   /**
-   * <p>Represents the output of a get deployment operation.</p><p><h3>See Also:</h3>
+   * <p>Represents the output of a GetDeployment operation.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentOutput">AWS
    * API Reference</a></p>

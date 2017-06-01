@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The SMS configuratoin type.</p><p><h3>See Also:</h3>   <a
+   * <p>The SMS configuration type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType">AWS
    * API Reference</a></p>
    */

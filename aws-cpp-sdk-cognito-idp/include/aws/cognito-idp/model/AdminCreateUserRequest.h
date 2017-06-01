@@ -131,168 +131,210 @@ namespace Model
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUserAttributes(const Aws::Vector<AttributeType>& value) { SetUserAttributes(value); return *this;}
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& AddUserAttributes(const AttributeType& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
      * values to be set for the user to be created. You can create a user without
-     * specifying any attributes other than Username. However, any attributes that you
-     * specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     * console) must be supplied either by you (in your call to AdminCreateUser) or by
-     * the user (when he or she signs up in response to your welcome message).</p>
-     * <p>To send a message inviting the user to sign up, you must specify the user's
-     * email address or phone number. This can be done in your call to AdminCreateUser
-     * or in the <b>Users</b> tab of the Amazon Cognito console for managing your user
-     * pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified
-     * attribute to True, and you can set the phone_number_verified attribute to True.
-     * (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of
-     * the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is
-     * specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p>
-     * <b>phone_number</b>: The phone number of the user to whom the message that
-     * contains the code and username will be sent. Required if the
-     * phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.</p> </li> </ul>
+     * specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a
+     * href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b>
+     * tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in
+     * response to your welcome message).</p> <p>For custom attributes, you must
+     * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a
+     * message inviting the user to sign up, you must specify the user's email address
+     * or phone number. This can be done in your call to AdminCreateUser or in the
+     * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+     * <p>In your call to <code>AdminCreateUser</code>, you can set the
+     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <code>phone_number_verified</code> attribute to <code>True</code>. (You can also
+     * do this by calling <a
+     * href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
+     * that contains the code and username will be sent. Required if the
+     * <code>email_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
+     * to whom the message that contains the code and username will be sent. Required
+     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+     * parameter.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
@@ -389,8 +431,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
 
@@ -403,8 +445,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const Aws::String& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = value; }
 
@@ -417,8 +459,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::move(value); }
 
@@ -431,8 +473,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const char* value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword.assign(value); }
 
@@ -445,8 +487,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const Aws::String& value) { SetTemporaryPassword(value); return *this;}
 
@@ -459,8 +501,8 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
 
@@ -473,128 +515,136 @@ namespace Model
      * do not specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
      * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     * MessageAction parameter.</p>
+     * time limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
 
     /**
-     * <p>This parameter is only used if the phone_number_verified or email_verified
-     * attribute is set to True. Otherwise, it is ignored.</p> <p>If this parameter is
-     * set to True and the phone number or email address specified in the
-     * UserAttributes parameter already exists as an alias with a different user, the
-     * API call will migrate the alias from the previous user to the newly created
-     * user. The previous user will no longer be able to log in using that alias.</p>
-     * <p>If this parameter is set to False, the API throws an AliasExistsException
-     * error if the alias already exists. The default value is False.</p>
+     * <p>This parameter is only used if the <code>phone_number_verified</code> or
+     * <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it
+     * is ignored.</p> <p>If this parameter is set to <code>True</code> and the phone
+     * number or email address specified in the UserAttributes parameter already exists
+     * as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user. The previous user will no longer be
+     * able to log in using that alias.</p> <p>If this parameter is set to
+     * <code>False</code>, the API throws an <code>AliasExistsException</code> error if
+     * the alias already exists. The default value is <code>False</code>.</p>
      */
     inline bool GetForceAliasCreation() const{ return m_forceAliasCreation; }
 
     /**
-     * <p>This parameter is only used if the phone_number_verified or email_verified
-     * attribute is set to True. Otherwise, it is ignored.</p> <p>If this parameter is
-     * set to True and the phone number or email address specified in the
-     * UserAttributes parameter already exists as an alias with a different user, the
-     * API call will migrate the alias from the previous user to the newly created
-     * user. The previous user will no longer be able to log in using that alias.</p>
-     * <p>If this parameter is set to False, the API throws an AliasExistsException
-     * error if the alias already exists. The default value is False.</p>
+     * <p>This parameter is only used if the <code>phone_number_verified</code> or
+     * <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it
+     * is ignored.</p> <p>If this parameter is set to <code>True</code> and the phone
+     * number or email address specified in the UserAttributes parameter already exists
+     * as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user. The previous user will no longer be
+     * able to log in using that alias.</p> <p>If this parameter is set to
+     * <code>False</code>, the API throws an <code>AliasExistsException</code> error if
+     * the alias already exists. The default value is <code>False</code>.</p>
      */
     inline void SetForceAliasCreation(bool value) { m_forceAliasCreationHasBeenSet = true; m_forceAliasCreation = value; }
 
     /**
-     * <p>This parameter is only used if the phone_number_verified or email_verified
-     * attribute is set to True. Otherwise, it is ignored.</p> <p>If this parameter is
-     * set to True and the phone number or email address specified in the
-     * UserAttributes parameter already exists as an alias with a different user, the
-     * API call will migrate the alias from the previous user to the newly created
-     * user. The previous user will no longer be able to log in using that alias.</p>
-     * <p>If this parameter is set to False, the API throws an AliasExistsException
-     * error if the alias already exists. The default value is False.</p>
+     * <p>This parameter is only used if the <code>phone_number_verified</code> or
+     * <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it
+     * is ignored.</p> <p>If this parameter is set to <code>True</code> and the phone
+     * number or email address specified in the UserAttributes parameter already exists
+     * as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user. The previous user will no longer be
+     * able to log in using that alias.</p> <p>If this parameter is set to
+     * <code>False</code>, the API throws an <code>AliasExistsException</code> error if
+     * the alias already exists. The default value is <code>False</code>.</p>
      */
     inline AdminCreateUserRequest& WithForceAliasCreation(bool value) { SetForceAliasCreation(value); return *this;}
 
     /**
-     * <p>Set to "RESEND" to resend the invitation message to a user that already
-     * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
-     * to suppress sending the message. Only one value can be specified.</p>
+     * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
+     * already exists and reset the expiration limit on the user's account. Set to
+     * <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+     * specified.</p>
      */
     inline const MessageActionType& GetMessageAction() const{ return m_messageAction; }
 
     /**
-     * <p>Set to "RESEND" to resend the invitation message to a user that already
-     * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
-     * to suppress sending the message. Only one value can be specified.</p>
+     * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
+     * already exists and reset the expiration limit on the user's account. Set to
+     * <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+     * specified.</p>
      */
     inline void SetMessageAction(const MessageActionType& value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
 
     /**
-     * <p>Set to "RESEND" to resend the invitation message to a user that already
-     * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
-     * to suppress sending the message. Only one value can be specified.</p>
+     * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
+     * already exists and reset the expiration limit on the user's account. Set to
+     * <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+     * specified.</p>
      */
     inline void SetMessageAction(MessageActionType&& value) { m_messageActionHasBeenSet = true; m_messageAction = std::move(value); }
 
     /**
-     * <p>Set to "RESEND" to resend the invitation message to a user that already
-     * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
-     * to suppress sending the message. Only one value can be specified.</p>
+     * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
+     * already exists and reset the expiration limit on the user's account. Set to
+     * <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+     * specified.</p>
      */
     inline AdminCreateUserRequest& WithMessageAction(const MessageActionType& value) { SetMessageAction(value); return *this;}
 
     /**
-     * <p>Set to "RESEND" to resend the invitation message to a user that already
-     * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
-     * to suppress sending the message. Only one value can be specified.</p>
+     * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
+     * already exists and reset the expiration limit on the user's account. Set to
+     * <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+     * specified.</p>
      */
     inline AdminCreateUserRequest& WithMessageAction(MessageActionType&& value) { SetMessageAction(std::move(value)); return *this;}
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline const Aws::Vector<DeliveryMediumType>& GetDesiredDeliveryMediums() const{ return m_desiredDeliveryMediums; }
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline void SetDesiredDeliveryMediums(const Aws::Vector<DeliveryMediumType>& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = value; }
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline void SetDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = std::move(value); }
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline AdminCreateUserRequest& WithDesiredDeliveryMediums(const Aws::Vector<DeliveryMediumType>& value) { SetDesiredDeliveryMediums(value); return *this;}
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline AdminCreateUserRequest& WithDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { SetDesiredDeliveryMediums(std::move(value)); return *this;}
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline AdminCreateUserRequest& AddDesiredDeliveryMediums(const DeliveryMediumType& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(value); return *this; }
 
     /**
-     * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
-     * "SMS" if the phone number will be used. The default value is "SMS". More than
-     * one value can be specified.</p>
+     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
+     * message. Specify <code>"SMS"</code> if the phone number will be used. The
+     * default value is <code>"SMS"</code>. More than one value can be specified.</p>
      */
     inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(std::move(value)); return *this; }
 

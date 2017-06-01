@@ -545,27 +545,27 @@ namespace Model
     inline CreateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::move(value); }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline CreateUserPoolRequest& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 

@@ -42,37 +42,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The user pool ID&gt;</p>
+     * <p>The user pool ID.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 

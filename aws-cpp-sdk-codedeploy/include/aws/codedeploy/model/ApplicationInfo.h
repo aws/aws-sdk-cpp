@@ -159,6 +159,41 @@ namespace Model
      */
     inline ApplicationInfo& WithLinkedToGitHub(bool value) { SetLinkedToGitHub(value); return *this;}
 
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline const Aws::String& GetGitHubAccountName() const{ return m_gitHubAccountName; }
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline void SetGitHubAccountName(const Aws::String& value) { m_gitHubAccountNameHasBeenSet = true; m_gitHubAccountName = value; }
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline void SetGitHubAccountName(Aws::String&& value) { m_gitHubAccountNameHasBeenSet = true; m_gitHubAccountName = std::move(value); }
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline void SetGitHubAccountName(const char* value) { m_gitHubAccountNameHasBeenSet = true; m_gitHubAccountName.assign(value); }
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline ApplicationInfo& WithGitHubAccountName(const Aws::String& value) { SetGitHubAccountName(value); return *this;}
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline ApplicationInfo& WithGitHubAccountName(Aws::String&& value) { SetGitHubAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline ApplicationInfo& WithGitHubAccountName(const char* value) { SetGitHubAccountName(value); return *this;}
+
   private:
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
@@ -168,6 +203,8 @@ namespace Model
     bool m_createTimeHasBeenSet;
     bool m_linkedToGitHub;
     bool m_linkedToGitHubHasBeenSet;
+    Aws::String m_gitHubAccountName;
+    bool m_gitHubAccountNameHasBeenSet;
   };
 
 } // namespace Model

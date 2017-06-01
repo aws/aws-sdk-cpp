@@ -47,6 +47,7 @@ static const int INVALID_DEPLOYMENT_CONFIG_NAME_HASH = HashingUtils::HashString(
 static const int ALARMS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AlarmsLimitExceededException");
 static const int DEPLOYMENT_ID_REQUIRED_HASH = HashingUtils::HashString("DeploymentIdRequiredException");
 static const int INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH = HashingUtils::HashString("InvalidDeploymentInstanceTypeException");
+static const int RESOURCE_VALIDATION_HASH = HashingUtils::HashString("ResourceValidationException");
 static const int APPLICATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ApplicationDoesNotExistException");
 static const int INVALID_LOAD_BALANCER_INFO_HASH = HashingUtils::HashString("InvalidLoadBalancerInfoException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
@@ -186,6 +187,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_INSTANCE_TYPE), false);
+  }
+  else if (hashCode == RESOURCE_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::RESOURCE_VALIDATION), false);
   }
   else if (hashCode == APPLICATION_DOES_NOT_EXIST_HASH)
   {

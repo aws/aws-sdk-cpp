@@ -46,27 +46,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A container with information about the user pool password policy.</p>
+     * <p>A container for information about the user pool password policy.</p>
      */
     inline const PasswordPolicyType& GetPasswordPolicy() const{ return m_passwordPolicy; }
 
     /**
-     * <p>A container with information about the user pool password policy.</p>
+     * <p>A container for information about the user pool password policy.</p>
      */
     inline void SetPasswordPolicy(const PasswordPolicyType& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = value; }
 
     /**
-     * <p>A container with information about the user pool password policy.</p>
+     * <p>A container for information about the user pool password policy.</p>
      */
     inline void SetPasswordPolicy(PasswordPolicyType&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::move(value); }
 
     /**
-     * <p>A container with information about the user pool password policy.</p>
+     * <p>A container for information about the user pool password policy.</p>
      */
     inline UserPoolPolicyType& WithPasswordPolicy(const PasswordPolicyType& value) { SetPasswordPolicy(value); return *this;}
 
     /**
-     * <p>A container with information about the user pool password policy.</p>
+     * <p>A container for information about the user pool password policy.</p>
      */
     inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(std::move(value)); return *this;}
 

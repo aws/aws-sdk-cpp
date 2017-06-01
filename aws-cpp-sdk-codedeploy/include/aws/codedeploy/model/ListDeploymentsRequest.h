@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list deployments operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a ListDeployments operation.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentsInput">AWS
    * API Reference</a></p>
    */

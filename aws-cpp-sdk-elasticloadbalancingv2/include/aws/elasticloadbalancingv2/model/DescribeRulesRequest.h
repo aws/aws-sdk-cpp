@@ -114,11 +114,72 @@ namespace Model
      */
     inline DescribeRulesRequest& AddRuleArns(const char* value) { m_ruleArnsHasBeenSet = true; m_ruleArns.push_back(value); return *this; }
 
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline DescribeRulesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline DescribeRulesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline DescribeRulesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
+    /**
+     * <p>The maximum number of results to return with this call.</p>
+     */
+    inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of results to return with this call.</p>
+     */
+    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
+
+    /**
+     * <p>The maximum number of results to return with this call.</p>
+     */
+    inline DescribeRulesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
   private:
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
     Aws::Vector<Aws::String> m_ruleArns;
     bool m_ruleArnsHasBeenSet;
+    Aws::String m_marker;
+    bool m_markerHasBeenSet;
+    int m_pageSize;
+    bool m_pageSizeHasBeenSet;
   };
 
 } // namespace Model

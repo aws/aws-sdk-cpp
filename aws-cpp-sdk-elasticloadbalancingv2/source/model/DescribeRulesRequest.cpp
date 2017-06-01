@@ -22,7 +22,10 @@ using namespace Aws::Utils;
 
 DescribeRulesRequest::DescribeRulesRequest() : 
     m_listenerArnHasBeenSet(false),
-    m_ruleArnsHasBeenSet(false)
+    m_ruleArnsHasBeenSet(false),
+    m_markerHasBeenSet(false),
+    m_pageSize(0),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -44,6 +47,16 @@ Aws::String DescribeRulesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       ruleArnsCount++;
     }
+  }
+
+  if(m_markerHasBeenSet)
+  {
+    ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  if(m_pageSizeHasBeenSet)
+  {
+    ss << "PageSize=" << m_pageSize << "&";
   }
 
   ss << "Version=2015-12-01";

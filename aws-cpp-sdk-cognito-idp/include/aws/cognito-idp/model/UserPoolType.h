@@ -47,7 +47,7 @@ namespace Model
 {
 
   /**
-   * <p>A container with information about the user pool type.</p><p><h3>See
+   * <p>A container for information about the user pool type.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
    * API Reference</a></p>
@@ -131,57 +131,52 @@ namespace Model
     inline UserPoolType& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>A container describing the policies associated with a user pool.</p>
+     * <p>A container for the policies associated with a user pool.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
 
     /**
-     * <p>A container describing the policies associated with a user pool.</p>
+     * <p>A container for the policies associated with a user pool.</p>
      */
     inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
-     * <p>A container describing the policies associated with a user pool.</p>
+     * <p>A container for the policies associated with a user pool.</p>
      */
     inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
-     * <p>A container describing the policies associated with a user pool.</p>
+     * <p>A container for the policies associated with a user pool.</p>
      */
     inline UserPoolType& WithPolicies(const UserPoolPolicyType& value) { SetPolicies(value); return *this;}
 
     /**
-     * <p>A container describing the policies associated with a user pool.</p>
+     * <p>A container for the policies associated with a user pool.</p>
      */
     inline UserPoolType& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>A container describing the AWS Lambda triggers associated with a user
-     * pool.</p>
+     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>A container describing the AWS Lambda triggers associated with a user
-     * pool.</p>
+     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>A container describing the AWS Lambda triggers associated with a user
-     * pool.</p>
+     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>A container describing the AWS Lambda triggers associated with a user
-     * pool.</p>
+     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>A container describing the AWS Lambda triggers associated with a user
-     * pool.</p>
+     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -211,52 +206,52 @@ namespace Model
     inline UserPoolType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The last modified date of a user pool.</p>
+     * <p>The date the user pool was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The last modified date of a user pool.</p>
+     * <p>The date the user pool was last modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The last modified date of a user pool.</p>
+     * <p>The date the user pool was last modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The last modified date of a user pool.</p>
+     * <p>The date the user pool was last modified.</p>
      */
     inline UserPoolType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The last modified date of a user pool.</p>
+     * <p>The date the user pool was last modified.</p>
      */
     inline UserPoolType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The creation date of a user pool.</p>
+     * <p>The date the user pool was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The creation date of a user pool.</p>
+     * <p>The date the user pool was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The creation date of a user pool.</p>
+     * <p>The date the user pool was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The creation date of a user pool.</p>
+     * <p>The date the user pool was created.</p>
      */
     inline UserPoolType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The creation date of a user pool.</p>
+     * <p>The date the user pool was created.</p>
      */
     inline UserPoolType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
@@ -730,43 +725,43 @@ namespace Model
     inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline void SetSmsConfigurationFailure(const Aws::String& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline void SetSmsConfigurationFailure(Aws::String&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = std::move(value); }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline void SetSmsConfigurationFailure(const char* value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure.assign(value); }
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const Aws::String& value) { SetSmsConfigurationFailure(value); return *this;}
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline UserPoolType& WithSmsConfigurationFailure(Aws::String&& value) { SetSmsConfigurationFailure(std::move(value)); return *this;}
 
     /**
-     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
@@ -814,27 +809,27 @@ namespace Model
     inline UserPoolType& WithEmailConfigurationFailure(const char* value) { SetEmailConfigurationFailure(value); return *this;}
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::move(value); }
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline UserPoolType& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
 
     /**
-     * <p>The configuration for AdminCreateUser requests.</p>
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline UserPoolType& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 

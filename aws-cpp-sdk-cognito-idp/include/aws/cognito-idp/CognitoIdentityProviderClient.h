@@ -43,23 +43,30 @@
 #include <aws/cognito-idp/model/ConfirmForgotPasswordResult.h>
 #include <aws/cognito-idp/model/ConfirmSignUpResult.h>
 #include <aws/cognito-idp/model/CreateGroupResult.h>
+#include <aws/cognito-idp/model/CreateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/CreateUserImportJobResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientResult.h>
+#include <aws/cognito-idp/model/CreateUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesResult.h>
+#include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
+#include <aws/cognito-idp/model/DescribeIdentityProviderResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientResult.h>
+#include <aws/cognito-idp/model/DescribeUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/ForgotPasswordResult.h>
 #include <aws/cognito-idp/model/GetCSVHeaderResult.h>
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
+#include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
 #include <aws/cognito-idp/model/GlobalSignOutResult.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
 #include <aws/cognito-idp/model/ListDevicesResult.h>
 #include <aws/cognito-idp/model/ListGroupsResult.h>
+#include <aws/cognito-idp/model/ListIdentityProvidersResult.h>
 #include <aws/cognito-idp/model/ListUserImportJobsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolsResult.h>
@@ -73,6 +80,7 @@
 #include <aws/cognito-idp/model/StopUserImportJobResult.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusResult.h>
 #include <aws/cognito-idp/model/UpdateGroupResult.h>
+#include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
@@ -149,28 +157,36 @@ namespace Model
         class ConfirmForgotPasswordRequest;
         class ConfirmSignUpRequest;
         class CreateGroupRequest;
+        class CreateIdentityProviderRequest;
         class CreateUserImportJobRequest;
         class CreateUserPoolRequest;
         class CreateUserPoolClientRequest;
+        class CreateUserPoolDomainRequest;
         class DeleteGroupRequest;
+        class DeleteIdentityProviderRequest;
         class DeleteUserRequest;
         class DeleteUserAttributesRequest;
         class DeleteUserPoolRequest;
         class DeleteUserPoolClientRequest;
+        class DeleteUserPoolDomainRequest;
+        class DescribeIdentityProviderRequest;
         class DescribeUserImportJobRequest;
         class DescribeUserPoolRequest;
         class DescribeUserPoolClientRequest;
+        class DescribeUserPoolDomainRequest;
         class ForgetDeviceRequest;
         class ForgotPasswordRequest;
         class GetCSVHeaderRequest;
         class GetDeviceRequest;
         class GetGroupRequest;
+        class GetIdentityProviderByIdentifierRequest;
         class GetUserRequest;
         class GetUserAttributeVerificationCodeRequest;
         class GlobalSignOutRequest;
         class InitiateAuthRequest;
         class ListDevicesRequest;
         class ListGroupsRequest;
+        class ListIdentityProvidersRequest;
         class ListUserImportJobsRequest;
         class ListUserPoolClientsRequest;
         class ListUserPoolsRequest;
@@ -184,6 +200,7 @@ namespace Model
         class StopUserImportJobRequest;
         class UpdateDeviceStatusRequest;
         class UpdateGroupRequest;
+        class UpdateIdentityProviderRequest;
         class UpdateUserAttributesRequest;
         class UpdateUserPoolRequest;
         class UpdateUserPoolClientRequest;
@@ -215,28 +232,36 @@ namespace Model
         typedef Aws::Utils::Outcome<ConfirmForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmForgotPasswordOutcome;
         typedef Aws::Utils::Outcome<ConfirmSignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmSignUpOutcome;
         typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<CreateUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolOutcome;
         typedef Aws::Utils::Outcome<CreateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<CreateUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolDomainOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserAttributesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<DescribeUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserImportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolDomainOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgetDeviceOutcome;
         typedef Aws::Utils::Outcome<ForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgotPasswordOutcome;
         typedef Aws::Utils::Outcome<GetCSVHeaderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetCSVHeaderOutcome;
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetDeviceOutcome;
         typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetIdentityProviderByIdentifierOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserAttributeVerificationCodeOutcome;
         typedef Aws::Utils::Outcome<GlobalSignOutResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GlobalSignOutOutcome;
         typedef Aws::Utils::Outcome<InitiateAuthResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> InitiateAuthOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityProvidersResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListIdentityProvidersOutcome;
         typedef Aws::Utils::Outcome<ListUserImportJobsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListUserPoolClientsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserPoolClientsOutcome;
         typedef Aws::Utils::Outcome<ListUserPoolsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserPoolsOutcome;
@@ -250,6 +275,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> StopUserImportJobOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateDeviceStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<UpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolClientOutcome;
@@ -281,28 +307,36 @@ namespace Model
         typedef std::future<ConfirmForgotPasswordOutcome> ConfirmForgotPasswordOutcomeCallable;
         typedef std::future<ConfirmSignUpOutcome> ConfirmSignUpOutcomeCallable;
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+        typedef std::future<CreateIdentityProviderOutcome> CreateIdentityProviderOutcomeCallable;
         typedef std::future<CreateUserImportJobOutcome> CreateUserImportJobOutcomeCallable;
         typedef std::future<CreateUserPoolOutcome> CreateUserPoolOutcomeCallable;
         typedef std::future<CreateUserPoolClientOutcome> CreateUserPoolClientOutcomeCallable;
+        typedef std::future<CreateUserPoolDomainOutcome> CreateUserPoolDomainOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+        typedef std::future<DeleteIdentityProviderOutcome> DeleteIdentityProviderOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserAttributesOutcome> DeleteUserAttributesOutcomeCallable;
         typedef std::future<DeleteUserPoolOutcome> DeleteUserPoolOutcomeCallable;
         typedef std::future<DeleteUserPoolClientOutcome> DeleteUserPoolClientOutcomeCallable;
+        typedef std::future<DeleteUserPoolDomainOutcome> DeleteUserPoolDomainOutcomeCallable;
+        typedef std::future<DescribeIdentityProviderOutcome> DescribeIdentityProviderOutcomeCallable;
         typedef std::future<DescribeUserImportJobOutcome> DescribeUserImportJobOutcomeCallable;
         typedef std::future<DescribeUserPoolOutcome> DescribeUserPoolOutcomeCallable;
         typedef std::future<DescribeUserPoolClientOutcome> DescribeUserPoolClientOutcomeCallable;
+        typedef std::future<DescribeUserPoolDomainOutcome> DescribeUserPoolDomainOutcomeCallable;
         typedef std::future<ForgetDeviceOutcome> ForgetDeviceOutcomeCallable;
         typedef std::future<ForgotPasswordOutcome> ForgotPasswordOutcomeCallable;
         typedef std::future<GetCSVHeaderOutcome> GetCSVHeaderOutcomeCallable;
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
+        typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
         typedef std::future<GlobalSignOutOutcome> GlobalSignOutOutcomeCallable;
         typedef std::future<InitiateAuthOutcome> InitiateAuthOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
+        typedef std::future<ListIdentityProvidersOutcome> ListIdentityProvidersOutcomeCallable;
         typedef std::future<ListUserImportJobsOutcome> ListUserImportJobsOutcomeCallable;
         typedef std::future<ListUserPoolClientsOutcome> ListUserPoolClientsOutcomeCallable;
         typedef std::future<ListUserPoolsOutcome> ListUserPoolsOutcomeCallable;
@@ -316,6 +350,7 @@ namespace Model
         typedef std::future<StopUserImportJobOutcome> StopUserImportJobOutcomeCallable;
         typedef std::future<UpdateDeviceStatusOutcome> UpdateDeviceStatusOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
+        typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
         typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
         typedef std::future<UpdateUserPoolOutcome> UpdateUserPoolOutcomeCallable;
         typedef std::future<UpdateUserPoolClientOutcome> UpdateUserPoolClientOutcomeCallable;
@@ -350,28 +385,36 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmForgotPasswordRequest&, const Model::ConfirmForgotPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmForgotPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmSignUpRequest&, const Model::ConfirmSignUpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmSignUpResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateIdentityProviderRequest&, const Model::CreateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserImportJobRequest&, const Model::CreateUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolRequest&, const Model::CreateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolClientRequest&, const Model::CreateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolClientResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolDomainRequest&, const Model::CreateUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolDomainResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteIdentityProviderRequest&, const Model::DeleteIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserAttributesRequest&, const Model::DeleteUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolRequest&, const Model::DeleteUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolClientRequest&, const Model::DeleteUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolClientResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolDomainRequest&, const Model::DeleteUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolDomainResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeIdentityProviderRequest&, const Model::DescribeIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserImportJobRequest&, const Model::DescribeUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolRequest&, const Model::DescribeUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolClientRequest&, const Model::DescribeUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolClientResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolDomainRequest&, const Model::DescribeUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolDomainResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ForgetDeviceRequest&, const Model::ForgetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ForgetDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ForgotPasswordRequest&, const Model::ForgotPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ForgotPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetCSVHeaderRequest&, const Model::GetCSVHeaderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCSVHeaderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetIdentityProviderByIdentifierRequest&, const Model::GetIdentityProviderByIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderByIdentifierResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GlobalSignOutRequest&, const Model::GlobalSignOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GlobalSignOutResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::InitiateAuthRequest&, const Model::InitiateAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateAuthResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListIdentityProvidersRequest&, const Model::ListIdentityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProvidersResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserImportJobsRequest&, const Model::ListUserImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserImportJobsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolClientsRequest&, const Model::ListUserPoolClientsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoolClientsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolsRequest&, const Model::ListUserPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoolsResponseReceivedHandler;
@@ -385,16 +428,17 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StopUserImportJobRequest&, const Model::StopUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateDeviceStatusRequest&, const Model::UpdateDeviceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStatusResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateIdentityProviderRequest&, const Model::UpdateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserAttributesRequest&, const Model::UpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolRequest&, const Model::UpdateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolClientRequest&, const Model::UpdateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolClientResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifyUserAttributeRequest&, const Model::VerifyUserAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyUserAttributeResponseReceivedHandler;
 
   /**
-   * <p>Using the Amazon Cognito Your User Pools API, you can create a user pool to
-   * manage directories and users. You can authenticate a user to obtain tokens
-   * related to user identity and access policies.</p> <p>This API reference provides
-   * information about user pools in Amazon Cognito Your User Pools.</p> <p>For more
+   * <p>Using the Amazon Cognito User Pools API, you can create a user pool to manage
+   * directories and users. You can authenticate a user to obtain tokens related to
+   * user identity and access policies.</p> <p>This API reference provides
+   * information about user pools in Amazon Cognito User Pools.</p> <p>For more
    * information, see the Amazon Cognito Documentation.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient : public Aws::Client::AWSJsonClient
@@ -513,7 +557,8 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool and sends a welcome message via
          * email or phone (SMS). This message is based on a template that you configured in
-         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
+         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
          * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
@@ -524,7 +569,8 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool and sends a welcome message via
          * email or phone (SMS). This message is based on a template that you configured in
-         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
+         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
          * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
@@ -537,7 +583,8 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool and sends a welcome message via
          * email or phone (SMS). This message is based on a template that you configured in
-         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
+         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
          * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
@@ -999,8 +1046,11 @@ namespace Model
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * an administrator. Works on any user.</p> <p>For custom attributes, you must
+         * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
+         * addition to updating user attributes, this API can also be used to mark phone
+         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          */
@@ -1008,8 +1058,11 @@ namespace Model
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * an administrator. Works on any user.</p> <p>For custom attributes, you must
+         * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
+         * addition to updating user attributes, this API can also be used to mark phone
+         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -1019,8 +1072,11 @@ namespace Model
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * an administrator. Works on any user.</p> <p>For custom attributes, you must
+         * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
+         * addition to updating user attributes, this API can also be used to mark phone
+         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -1085,7 +1141,7 @@ namespace Model
         virtual void ChangePasswordAsync(const Model::ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Confirms tracking of the device. This API call is the call that beings device
+         * <p>Confirms tracking of the device. This API call is the call that begins device
          * tracking.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
          * API Reference</a></p>
@@ -1093,7 +1149,7 @@ namespace Model
         virtual Model::ConfirmDeviceOutcome ConfirmDevice(const Model::ConfirmDeviceRequest& request) const;
 
         /**
-         * <p>Confirms tracking of the device. This API call is the call that beings device
+         * <p>Confirms tracking of the device. This API call is the call that begins device
          * tracking.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
          * API Reference</a></p>
@@ -1103,7 +1159,7 @@ namespace Model
         virtual Model::ConfirmDeviceOutcomeCallable ConfirmDeviceCallable(const Model::ConfirmDeviceRequest& request) const;
 
         /**
-         * <p>Confirms tracking of the device. This API call is the call that beings device
+         * <p>Confirms tracking of the device. This API call is the call that begins device
          * tracking.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
          * API Reference</a></p>
@@ -1113,16 +1169,16 @@ namespace Model
         virtual void ConfirmDeviceAsync(const Model::ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a user to enter a confirmation code to reset a forgotten
+         * password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
          * API Reference</a></p>
          */
         virtual Model::ConfirmForgotPasswordOutcome ConfirmForgotPassword(const Model::ConfirmForgotPasswordRequest& request) const;
 
         /**
-         * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a user to enter a confirmation code to reset a forgotten
+         * password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -1131,8 +1187,8 @@ namespace Model
         virtual Model::ConfirmForgotPasswordOutcomeCallable ConfirmForgotPasswordCallable(const Model::ConfirmForgotPasswordRequest& request) const;
 
         /**
-         * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a user to enter a confirmation code to reset a forgotten
+         * password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -1195,6 +1251,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIdentityProviderOutcome CreateIdentityProvider(const Model::CreateIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Creates an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateIdentityProviderOutcomeCallable CreateIdentityProviderCallable(const Model::CreateIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Creates an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateIdentityProviderAsync(const Model::CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the user import job.</p><p><h3>See Also:</h3>   <a
@@ -1275,6 +1356,31 @@ namespace Model
         virtual void CreateUserPoolClientAsync(const Model::CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserPoolDomainOutcome CreateUserPoolDomain(const Model::CreateUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Creates a new domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUserPoolDomainOutcomeCallable CreateUserPoolDomainCallable(const Model::CreateUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Creates a new domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUserPoolDomainAsync(const Model::CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
          * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
@@ -1301,6 +1407,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIdentityProviderOutcome DeleteIdentityProvider(const Model::DeleteIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Deletes an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteIdentityProviderOutcomeCallable DeleteIdentityProviderCallable(const Model::DeleteIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Deletes an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteIdentityProviderAsync(const Model::DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a user to delete one's self.</p><p><h3>See Also:</h3>   <a
@@ -1406,6 +1537,59 @@ namespace Model
         virtual void DeleteUserPoolClientAsync(const Model::DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserPoolDomainOutcome DeleteUserPoolDomain(const Model::DeleteUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Deletes a domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserPoolDomainOutcomeCallable DeleteUserPoolDomainCallable(const Model::DeleteUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Deletes a domain for a user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserPoolDomainAsync(const Model::DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about a specific identity provider.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIdentityProviderOutcome DescribeIdentityProvider(const Model::DescribeIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific identity provider.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIdentityProviderOutcomeCallable DescribeIdentityProviderCallable(const Model::DescribeIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific identity provider.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIdentityProviderAsync(const Model::DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">AWS
          * API Reference</a></p>
@@ -1487,6 +1671,31 @@ namespace Model
         virtual void DescribeUserPoolClientAsync(const Model::DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about a domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUserPoolDomainOutcome DescribeUserPoolDomain(const Model::DescribeUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Gets information about a domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUserPoolDomainOutcomeCallable DescribeUserPoolDomainCallable(const Model::DescribeUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Gets information about a domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUserPoolDomainAsync(const Model::DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Forgets the specified device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">AWS
          * API Reference</a></p>
@@ -1512,7 +1721,15 @@ namespace Model
         virtual void ForgetDeviceAsync(const Model::ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * <p>Calling this API causes a message to be sent to the end user with a
+         * confirmation code that is required to change the user's password. For the
+         * <code>Username</code> parameter, you can use the username or user alias. If a
+         * verified phone number exists for the user, the confirmation code is sent to the
+         * phone number. Otherwise, if a verified email exists, the confirmation code is
+         * sent to the email. If neither a verified phone number nor a verified email
+         * exists, <code>InvalidParameterException</code> is thrown. To use the
+         * confirmation code for resetting the password, call <a
+         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
@@ -1520,7 +1737,15 @@ namespace Model
         virtual Model::ForgotPasswordOutcome ForgotPassword(const Model::ForgotPasswordRequest& request) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * <p>Calling this API causes a message to be sent to the end user with a
+         * confirmation code that is required to change the user's password. For the
+         * <code>Username</code> parameter, you can use the username or user alias. If a
+         * verified phone number exists for the user, the confirmation code is sent to the
+         * phone number. Otherwise, if a verified email exists, the confirmation code is
+         * sent to the email. If neither a verified phone number nor a verified email
+         * exists, <code>InvalidParameterException</code> is thrown. To use the
+         * confirmation code for resetting the password, call <a
+         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
@@ -1530,7 +1755,15 @@ namespace Model
         virtual Model::ForgotPasswordOutcomeCallable ForgotPasswordCallable(const Model::ForgotPasswordRequest& request) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * <p>Calling this API causes a message to be sent to the end user with a
+         * confirmation code that is required to change the user's password. For the
+         * <code>Username</code> parameter, you can use the username or user alias. If a
+         * verified phone number exists for the user, the confirmation code is sent to the
+         * phone number. Otherwise, if a verified email exists, the confirmation code is
+         * sent to the email. If neither a verified phone number nor a verified email
+         * exists, <code>InvalidParameterException</code> is thrown. To use the
+         * confirmation code for resetting the password, call <a
+         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
@@ -1619,6 +1852,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the specified identity provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIdentityProviderByIdentifierOutcome GetIdentityProviderByIdentifier(const Model::GetIdentityProviderByIdentifierRequest& request) const;
+
+        /**
+         * <p>Gets the specified identity provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIdentityProviderByIdentifierOutcomeCallable GetIdentityProviderByIdentifierCallable(const Model::GetIdentityProviderByIdentifierRequest& request) const;
+
+        /**
+         * <p>Gets the specified identity provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIdentityProviderByIdentifierAsync(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the user attributes and metadata for a user.</p><p><h3>See Also:</h3>  
@@ -1778,6 +2036,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists information about all identity providers for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request) const;
+
+        /**
+         * <p>Lists information about all identity providers for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const Model::ListIdentityProvidersRequest& request) const;
+
+        /**
+         * <p>Lists information about all identity providers for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListIdentityProvidersAsync(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the user import jobs.</p><p><h3>See Also:</h3>   <a
@@ -2135,6 +2421,34 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates identity provider information for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIdentityProviderOutcome UpdateIdentityProvider(const Model::UpdateIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Updates identity provider information for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateIdentityProviderOutcomeCallable UpdateIdentityProviderCallable(const Model::UpdateIdentityProviderRequest& request) const;
+
+        /**
+         * <p>Updates identity provider information for a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateIdentityProviderAsync(const Model::UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows a user to update a specific attribute (one at a time).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">AWS
@@ -2277,28 +2591,36 @@ namespace Model
         void ConfirmForgotPasswordAsyncHelper(const Model::ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmSignUpAsyncHelper(const Model::ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateIdentityProviderAsyncHelper(const Model::CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserImportJobAsyncHelper(const Model::CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserPoolAsyncHelper(const Model::CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserPoolClientAsyncHelper(const Model::CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUserPoolDomainAsyncHelper(const Model::CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteIdentityProviderAsyncHelper(const Model::DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAttributesAsyncHelper(const Model::DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserPoolAsyncHelper(const Model::DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserPoolClientAsyncHelper(const Model::DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserPoolDomainAsyncHelper(const Model::DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIdentityProviderAsyncHelper(const Model::DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserImportJobAsyncHelper(const Model::DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserPoolAsyncHelper(const Model::DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserPoolClientAsyncHelper(const Model::DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUserPoolDomainAsyncHelper(const Model::DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ForgetDeviceAsyncHelper(const Model::ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ForgotPasswordAsyncHelper(const Model::ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCSVHeaderAsyncHelper(const Model::GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIdentityProviderByIdentifierAsyncHelper(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAttributeVerificationCodeAsyncHelper(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GlobalSignOutAsyncHelper(const Model::GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateAuthAsyncHelper(const Model::InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListIdentityProvidersAsyncHelper(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserImportJobsAsyncHelper(const Model::ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserPoolClientsAsyncHelper(const Model::ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserPoolsAsyncHelper(const Model::ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2312,6 +2634,7 @@ namespace Model
         void StopUserImportJobAsyncHelper(const Model::StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceStatusAsyncHelper(const Model::UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateIdentityProviderAsyncHelper(const Model::UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAttributesAsyncHelper(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolAsyncHelper(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolClientAsyncHelper(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

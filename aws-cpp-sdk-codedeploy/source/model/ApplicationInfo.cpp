@@ -33,7 +33,8 @@ ApplicationInfo::ApplicationInfo() :
     m_applicationNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
-    m_linkedToGitHubHasBeenSet(false)
+    m_linkedToGitHubHasBeenSet(false),
+    m_gitHubAccountNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ApplicationInfo::ApplicationInfo(const JsonValue& jsonValue) :
     m_applicationNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
-    m_linkedToGitHubHasBeenSet(false)
+    m_linkedToGitHubHasBeenSet(false),
+    m_gitHubAccountNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ ApplicationInfo& ApplicationInfo::operator =(const JsonValue& jsonValue)
     m_linkedToGitHubHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("gitHubAccountName"))
+  {
+    m_gitHubAccountName = jsonValue.GetString("gitHubAccountName");
+
+    m_gitHubAccountNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +113,12 @@ JsonValue ApplicationInfo::Jsonize() const
   if(m_linkedToGitHubHasBeenSet)
   {
    payload.WithBool("linkedToGitHub", m_linkedToGitHub);
+
+  }
+
+  if(m_gitHubAccountNameHasBeenSet)
+  {
+   payload.WithString("gitHubAccountName", m_gitHubAccountName);
 
   }
 

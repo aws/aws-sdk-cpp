@@ -42,182 +42,393 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The authentication flow.</p>
+     * <p>The authentication flow for this call to execute. The API action will depend
+     * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
+     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP
+     * variables to be used for next challenge execution.</p> </li> </ul> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication
+     * flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
+     * for refreshing the access token and ID token by supplying a valid refresh
+     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
+     * flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid
+     * value.</p>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
 
     /**
-     * <p>The authentication flow.</p>
+     * <p>The authentication flow for this call to execute. The API action will depend
+     * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
+     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP
+     * variables to be used for next challenge execution.</p> </li> </ul> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication
+     * flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
+     * for refreshing the access token and ID token by supplying a valid refresh
+     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
+     * flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid
+     * value.</p>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
 
     /**
-     * <p>The authentication flow.</p>
+     * <p>The authentication flow for this call to execute. The API action will depend
+     * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
+     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP
+     * variables to be used for next challenge execution.</p> </li> </ul> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication
+     * flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
+     * for refreshing the access token and ID token by supplying a valid refresh
+     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
+     * flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid
+     * value.</p>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
 
     /**
-     * <p>The authentication flow.</p>
+     * <p>The authentication flow for this call to execute. The API action will depend
+     * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
+     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP
+     * variables to be used for next challenge execution.</p> </li> </ul> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication
+     * flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
+     * for refreshing the access token and ID token by supplying a valid refresh
+     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
+     * flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid
+     * value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
 
     /**
-     * <p>The authentication flow.</p>
+     * <p>The authentication flow for this call to execute. The API action will depend
+     * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
+     * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
+     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP
+     * variables to be used for next challenge execution.</p> </li> </ul> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication
+     * flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
+     * for refreshing the access token and ID token by supplying a valid refresh
+     * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
+     * flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid
+     * value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAuthParameters() const{ return m_authParameters; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline void SetAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_authParametersHasBeenSet = true; m_authParameters = value; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline void SetAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& WithAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthParameters(value); return *this;}
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& WithAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(const Aws::String& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(Aws::String&& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(const Aws::String& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(Aws::String&& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(const char* key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(Aws::String&& key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The authentication parameters.</p>
+     * <p>The authentication parameters. These are inputs corresponding to the
+     * <code>AuthFlow</code> that you are invoking. The required values depend on the
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
     inline InitiateAuthRequest& AddAuthParameters(const char* key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The client app's metadata.</p>
+     * <p>This is a random key-value pair map which can contain any key and will be
+     * passed to your PreAuthentication Lambda trigger as-is. It can be used to
+     * implement additional validations around authentication.</p>
      */
     inline InitiateAuthRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline InitiateAuthRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline InitiateAuthRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline InitiateAuthRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 

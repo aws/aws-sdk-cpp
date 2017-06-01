@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a get application operation.</p><p><h3>See Also:</h3>
+   * <p>Represents the input of a GetApplication operation.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationInput">AWS
    * API Reference</a></p>

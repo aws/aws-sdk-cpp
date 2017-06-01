@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a register application revision
+   * <p>Represents the input of a RegisterApplicationRevision
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevisionInput">AWS
    * API Reference</a></p>

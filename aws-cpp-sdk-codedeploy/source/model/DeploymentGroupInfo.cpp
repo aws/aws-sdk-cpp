@@ -43,7 +43,9 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_autoRollbackConfigurationHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false)
+    m_loadBalancerInfoHasBeenSet(false),
+    m_lastSuccessfulDeploymentHasBeenSet(false),
+    m_lastAttemptedDeploymentHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
     m_autoRollbackConfigurationHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false)
+    m_loadBalancerInfoHasBeenSet(false),
+    m_lastSuccessfulDeploymentHasBeenSet(false),
+    m_lastAttemptedDeploymentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -186,6 +190,20 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
     m_loadBalancerInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastSuccessfulDeployment"))
+  {
+    m_lastSuccessfulDeployment = jsonValue.GetObject("lastSuccessfulDeployment");
+
+    m_lastSuccessfulDeploymentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastAttemptedDeployment"))
+  {
+    m_lastAttemptedDeployment = jsonValue.GetObject("lastAttemptedDeployment");
+
+    m_lastAttemptedDeploymentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -300,6 +318,18 @@ JsonValue DeploymentGroupInfo::Jsonize() const
   if(m_loadBalancerInfoHasBeenSet)
   {
    payload.WithObject("loadBalancerInfo", m_loadBalancerInfo.Jsonize());
+
+  }
+
+  if(m_lastSuccessfulDeploymentHasBeenSet)
+  {
+   payload.WithObject("lastSuccessfulDeployment", m_lastSuccessfulDeployment.Jsonize());
+
+  }
+
+  if(m_lastAttemptedDeploymentHasBeenSet)
+  {
+   payload.WithObject("lastAttemptedDeployment", m_lastAttemptedDeployment.Jsonize());
 
   }
 

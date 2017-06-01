@@ -52,6 +52,12 @@ SignUpResult& SignUpResult::operator =(const AmazonWebServiceResult<JsonValue>& 
 
   }
 
+  if(jsonValue.ValueExists("UserSub"))
+  {
+    m_userSub = jsonValue.GetString("UserSub");
+
+  }
+
 
 
   return *this;

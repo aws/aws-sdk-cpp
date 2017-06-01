@@ -169,52 +169,52 @@ namespace Model
     inline UserPoolDescriptionType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The last modified date in a user pool description.</p>
+     * <p>The date the user pool description was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The last modified date in a user pool description.</p>
+     * <p>The date the user pool description was last modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The last modified date in a user pool description.</p>
+     * <p>The date the user pool description was last modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The last modified date in a user pool description.</p>
+     * <p>The date the user pool description was last modified.</p>
      */
     inline UserPoolDescriptionType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The last modified date in a user pool description.</p>
+     * <p>The date the user pool description was last modified.</p>
      */
     inline UserPoolDescriptionType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The creation date in a user pool description.</p>
+     * <p>The date the user pool description was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The creation date in a user pool description.</p>
+     * <p>The date the user pool description was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The creation date in a user pool description.</p>
+     * <p>The date the user pool description was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The creation date in a user pool description.</p>
+     * <p>The date the user pool description was created.</p>
      */
     inline UserPoolDescriptionType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The creation date in a user pool description.</p>
+     * <p>The date the user pool description was created.</p>
      */
     inline UserPoolDescriptionType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

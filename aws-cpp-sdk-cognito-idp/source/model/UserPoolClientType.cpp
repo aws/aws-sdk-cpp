@@ -39,7 +39,15 @@ UserPoolClientType::UserPoolClientType() :
     m_refreshTokenValidityHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
-    m_explicitAuthFlowsHasBeenSet(false)
+    m_explicitAuthFlowsHasBeenSet(false),
+    m_supportedIdentityProvidersHasBeenSet(false),
+    m_callbackURLsHasBeenSet(false),
+    m_logoutURLsHasBeenSet(false),
+    m_defaultRedirectURIHasBeenSet(false),
+    m_allowedOAuthFlowsHasBeenSet(false),
+    m_allowedOAuthScopesHasBeenSet(false),
+    m_allowedOAuthFlowsUserPoolClient(false),
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false)
 {
 }
 
@@ -54,7 +62,15 @@ UserPoolClientType::UserPoolClientType(const JsonValue& jsonValue) :
     m_refreshTokenValidityHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
-    m_explicitAuthFlowsHasBeenSet(false)
+    m_explicitAuthFlowsHasBeenSet(false),
+    m_supportedIdentityProvidersHasBeenSet(false),
+    m_callbackURLsHasBeenSet(false),
+    m_logoutURLsHasBeenSet(false),
+    m_defaultRedirectURIHasBeenSet(false),
+    m_allowedOAuthFlowsHasBeenSet(false),
+    m_allowedOAuthScopesHasBeenSet(false),
+    m_allowedOAuthFlowsUserPoolClient(false),
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +156,70 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
     m_explicitAuthFlowsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SupportedIdentityProviders"))
+  {
+    Array<JsonValue> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
+    for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
+    {
+      m_supportedIdentityProviders.push_back(supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString());
+    }
+    m_supportedIdentityProvidersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CallbackURLs"))
+  {
+    Array<JsonValue> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
+    for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
+    {
+      m_callbackURLs.push_back(callbackURLsJsonList[callbackURLsIndex].AsString());
+    }
+    m_callbackURLsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogoutURLs"))
+  {
+    Array<JsonValue> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
+    for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
+    {
+      m_logoutURLs.push_back(logoutURLsJsonList[logoutURLsIndex].AsString());
+    }
+    m_logoutURLsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultRedirectURI"))
+  {
+    m_defaultRedirectURI = jsonValue.GetString("DefaultRedirectURI");
+
+    m_defaultRedirectURIHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowedOAuthFlows"))
+  {
+    Array<JsonValue> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
+    for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
+    {
+      m_allowedOAuthFlows.push_back(OAuthFlowTypeMapper::GetOAuthFlowTypeForName(allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString()));
+    }
+    m_allowedOAuthFlowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowedOAuthScopes"))
+  {
+    Array<JsonValue> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
+    for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
+    {
+      m_allowedOAuthScopes.push_back(allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString());
+    }
+    m_allowedOAuthScopesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowedOAuthFlowsUserPoolClient"))
+  {
+    m_allowedOAuthFlowsUserPoolClient = jsonValue.GetBool("AllowedOAuthFlowsUserPoolClient");
+
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -217,6 +297,73 @@ JsonValue UserPoolClientType::Jsonize() const
      explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString(ExplicitAuthFlowsTypeMapper::GetNameForExplicitAuthFlowsType(m_explicitAuthFlows[explicitAuthFlowsIndex]));
    }
    payload.WithArray("ExplicitAuthFlows", std::move(explicitAuthFlowsJsonList));
+
+  }
+
+  if(m_supportedIdentityProvidersHasBeenSet)
+  {
+   Array<JsonValue> supportedIdentityProvidersJsonList(m_supportedIdentityProviders.size());
+   for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
+   {
+     supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString(m_supportedIdentityProviders[supportedIdentityProvidersIndex]);
+   }
+   payload.WithArray("SupportedIdentityProviders", std::move(supportedIdentityProvidersJsonList));
+
+  }
+
+  if(m_callbackURLsHasBeenSet)
+  {
+   Array<JsonValue> callbackURLsJsonList(m_callbackURLs.size());
+   for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
+   {
+     callbackURLsJsonList[callbackURLsIndex].AsString(m_callbackURLs[callbackURLsIndex]);
+   }
+   payload.WithArray("CallbackURLs", std::move(callbackURLsJsonList));
+
+  }
+
+  if(m_logoutURLsHasBeenSet)
+  {
+   Array<JsonValue> logoutURLsJsonList(m_logoutURLs.size());
+   for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
+   {
+     logoutURLsJsonList[logoutURLsIndex].AsString(m_logoutURLs[logoutURLsIndex]);
+   }
+   payload.WithArray("LogoutURLs", std::move(logoutURLsJsonList));
+
+  }
+
+  if(m_defaultRedirectURIHasBeenSet)
+  {
+   payload.WithString("DefaultRedirectURI", m_defaultRedirectURI);
+
+  }
+
+  if(m_allowedOAuthFlowsHasBeenSet)
+  {
+   Array<JsonValue> allowedOAuthFlowsJsonList(m_allowedOAuthFlows.size());
+   for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
+   {
+     allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString(OAuthFlowTypeMapper::GetNameForOAuthFlowType(m_allowedOAuthFlows[allowedOAuthFlowsIndex]));
+   }
+   payload.WithArray("AllowedOAuthFlows", std::move(allowedOAuthFlowsJsonList));
+
+  }
+
+  if(m_allowedOAuthScopesHasBeenSet)
+  {
+   Array<JsonValue> allowedOAuthScopesJsonList(m_allowedOAuthScopes.size());
+   for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
+   {
+     allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString(m_allowedOAuthScopes[allowedOAuthScopesIndex]);
+   }
+   payload.WithArray("AllowedOAuthScopes", std::move(allowedOAuthScopesJsonList));
+
+  }
+
+  if(m_allowedOAuthFlowsUserPoolClientHasBeenSet)
+  {
+   payload.WithBool("AllowedOAuthFlowsUserPoolClient", m_allowedOAuthFlowsUserPoolClient);
 
   }
 

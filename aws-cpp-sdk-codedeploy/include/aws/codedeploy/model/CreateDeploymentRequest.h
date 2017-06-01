@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a create deployment operation.</p><p><h3>See
+   * <p>Represents the input of a CreateDeployment operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentInput">AWS
    * API Reference</a></p>

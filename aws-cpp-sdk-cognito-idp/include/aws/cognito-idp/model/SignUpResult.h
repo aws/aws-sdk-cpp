@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/CodeDeliveryDetailsType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -95,9 +96,52 @@ namespace Model
      */
     inline SignUpResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
 
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline const Aws::String& GetUserSub() const{ return m_userSub; }
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline void SetUserSub(const Aws::String& value) { m_userSub = value; }
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline void SetUserSub(Aws::String&& value) { m_userSub = std::move(value); }
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline void SetUserSub(const char* value) { m_userSub.assign(value); }
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline SignUpResult& WithUserSub(const Aws::String& value) { SetUserSub(value); return *this;}
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline SignUpResult& WithUserSub(Aws::String&& value) { SetUserSub(std::move(value)); return *this;}
+
+    /**
+     * <p>The UUID of the authenticated user. This is not the same as
+     * <code>username</code>.</p>
+     */
+    inline SignUpResult& WithUserSub(const char* value) { SetUserSub(value); return *this;}
+
   private:
     bool m_userConfirmed;
     CodeDeliveryDetailsType m_codeDeliveryDetails;
+    Aws::String m_userSub;
   };
 
 } // namespace Model

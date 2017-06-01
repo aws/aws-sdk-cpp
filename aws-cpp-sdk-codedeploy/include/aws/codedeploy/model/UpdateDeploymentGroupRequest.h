@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an update deployment group operation.</p><p><h3>See
+   * <p>Represents the input of an UpdateDeploymentGroup operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroupInput">AWS
    * API Reference</a></p>

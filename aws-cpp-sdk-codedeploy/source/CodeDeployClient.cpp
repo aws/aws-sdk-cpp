@@ -56,6 +56,7 @@
 #include <aws/codedeploy/model/ListDeploymentGroupsRequest.h>
 #include <aws/codedeploy/model/ListDeploymentInstancesRequest.h>
 #include <aws/codedeploy/model/ListDeploymentsRequest.h>
+#include <aws/codedeploy/model/ListGitHubAccountTokenNamesRequest.h>
 #include <aws/codedeploy/model/ListOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/RegisterApplicationRevisionRequest.h>
 #include <aws/codedeploy/model/RegisterOnPremisesInstanceRequest.h>
@@ -1113,6 +1114,40 @@ void CodeDeployClient::ListDeploymentsAsync(const ListDeploymentsRequest& reques
 void CodeDeployClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDeployments(request), context);
+}
+
+ListGitHubAccountTokenNamesOutcome CodeDeployClient::ListGitHubAccountTokenNames(const ListGitHubAccountTokenNamesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListGitHubAccountTokenNamesOutcome(ListGitHubAccountTokenNamesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGitHubAccountTokenNamesOutcome(outcome.GetError());
+  }
+}
+
+ListGitHubAccountTokenNamesOutcomeCallable CodeDeployClient::ListGitHubAccountTokenNamesCallable(const ListGitHubAccountTokenNamesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGitHubAccountTokenNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGitHubAccountTokenNames(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeDeployClient::ListGitHubAccountTokenNamesAsync(const ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGitHubAccountTokenNamesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeDeployClient::ListGitHubAccountTokenNamesAsyncHelper(const ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGitHubAccountTokenNames(request), context);
 }
 
 ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const

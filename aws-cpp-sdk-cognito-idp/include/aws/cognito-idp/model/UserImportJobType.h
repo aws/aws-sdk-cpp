@@ -160,62 +160,62 @@ namespace Model
     inline UserImportJobType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline UserImportJobType& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline UserImportJobType& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The pre-signed URL to be used to upload the .csv file.</p>
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
     inline UserImportJobType& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>The date when the user import job was created.</p>
+     * <p>The date the user import job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date when the user import job was created.</p>
+     * <p>The date the user import job was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date when the user import job was created.</p>
+     * <p>The date the user import job was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date when the user import job was created.</p>
+     * <p>The date the user import job was created.</p>
      */
     inline UserImportJobType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date when the user import job was created.</p>
+     * <p>The date the user import job was created.</p>
      */
     inline UserImportJobType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
@@ -245,102 +245,112 @@ namespace Model
     inline UserImportJobType& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date when the user imoprt job was completed.</p>
+     * <p>The date when the user import job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
 
     /**
-     * <p>The date when the user imoprt job was completed.</p>
+     * <p>The date when the user import job was completed.</p>
      */
     inline void SetCompletionDate(const Aws::Utils::DateTime& value) { m_completionDateHasBeenSet = true; m_completionDate = value; }
 
     /**
-     * <p>The date when the user imoprt job was completed.</p>
+     * <p>The date when the user import job was completed.</p>
      */
     inline void SetCompletionDate(Aws::Utils::DateTime&& value) { m_completionDateHasBeenSet = true; m_completionDate = std::move(value); }
 
     /**
-     * <p>The date when the user imoprt job was completed.</p>
+     * <p>The date when the user import job was completed.</p>
      */
     inline UserImportJobType& WithCompletionDate(const Aws::Utils::DateTime& value) { SetCompletionDate(value); return *this;}
 
     /**
-     * <p>The date when the user imoprt job was completed.</p>
+     * <p>The date when the user import job was completed.</p>
      */
     inline UserImportJobType& WithCompletionDate(Aws::Utils::DateTime&& value) { SetCompletionDate(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the user import job. One of the following:</p> <ul> <li>
-     * <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A
-     * transition state. You have started the job, but it has not begun importing users
-     * yet.</p> </li> <li> <p>InProgress - The job has started, and users are being
-     * imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has
-     * not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped
-     * the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded -
-     * The job has completed successfully.</p> </li> <li> <p>Failed - The job has
-     * stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did
-     * not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.</p> </li> </ul>
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
      */
     inline const UserImportJobStatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the user import job. One of the following:</p> <ul> <li>
-     * <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A
-     * transition state. You have started the job, but it has not begun importing users
-     * yet.</p> </li> <li> <p>InProgress - The job has started, and users are being
-     * imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has
-     * not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped
-     * the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded -
-     * The job has completed successfully.</p> </li> <li> <p>Failed - The job has
-     * stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did
-     * not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.</p> </li> </ul>
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
      */
     inline void SetStatus(const UserImportJobStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the user import job. One of the following:</p> <ul> <li>
-     * <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A
-     * transition state. You have started the job, but it has not begun importing users
-     * yet.</p> </li> <li> <p>InProgress - The job has started, and users are being
-     * imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has
-     * not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped
-     * the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded -
-     * The job has completed successfully.</p> </li> <li> <p>Failed - The job has
-     * stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did
-     * not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.</p> </li> </ul>
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
      */
     inline void SetStatus(UserImportJobStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the user import job. One of the following:</p> <ul> <li>
-     * <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A
-     * transition state. You have started the job, but it has not begun importing users
-     * yet.</p> </li> <li> <p>InProgress - The job has started, and users are being
-     * imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has
-     * not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped
-     * the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded -
-     * The job has completed successfully.</p> </li> <li> <p>Failed - The job has
-     * stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did
-     * not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.</p> </li> </ul>
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
      */
     inline UserImportJobType& WithStatus(const UserImportJobStatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the user import job. One of the following:</p> <ul> <li>
-     * <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A
-     * transition state. You have started the job, but it has not begun importing users
-     * yet.</p> </li> <li> <p>InProgress - The job has started, and users are being
-     * imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has
-     * not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped
-     * the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded -
-     * The job has completed successfully.</p> </li> <li> <p>Failed - The job has
-     * stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did
-     * not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.</p> </li> </ul>
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
      */
     inline UserImportJobType& WithStatus(UserImportJobStatusType&& value) { SetStatus(std::move(value)); return *this;}
 

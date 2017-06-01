@@ -76,37 +76,37 @@ namespace Model
     inline AdminEnableUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline AdminEnableUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline AdminEnableUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you wish to ebable.</p>
+     * <p>The user name of the user you wish to enable.</p>
      */
     inline AdminEnableUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

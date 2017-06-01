@@ -39,16 +39,20 @@ static const int TOO_MANY_FAILED_ATTEMPTS_HASH = HashingUtils::HashString("TooMa
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int UNEXPECTED_LAMBDA_HASH = HashingUtils::HashString("UnexpectedLambdaException");
 static const int INVALID_EMAIL_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidEmailRoleAccessPolicyException");
+static const int SCOPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ScopeDoesNotExistException");
 static const int USER_LAMBDA_VALIDATION_HASH = HashingUtils::HashString("UserLambdaValidationException");
 static const int CODE_MISMATCH_HASH = HashingUtils::HashString("CodeMismatchException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
+static const int UNSUPPORTED_IDENTITY_PROVIDER_HASH = HashingUtils::HashString("UnsupportedIdentityProviderException");
 static const int USER_IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("UserImportInProgressException");
 static const int EXPIRED_CODE_HASH = HashingUtils::HashString("ExpiredCodeException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int INVALID_LAMBDA_RESPONSE_HASH = HashingUtils::HashString("InvalidLambdaResponseException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int DUPLICATE_PROVIDER_HASH = HashingUtils::HashString("DuplicateProviderException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
+static const int INVALID_O_AUTH_FLOW_HASH = HashingUtils::HashString("InvalidOAuthFlowException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
 static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
 static const int UNSUPPORTED_USER_STATE_HASH = HashingUtils::HashString("UnsupportedUserStateException");
@@ -107,6 +111,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INVALID_EMAIL_ROLE_ACCESS_POLICY), false);
   }
+  else if (hashCode == SCOPE_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::SCOPE_DOES_NOT_EXIST), false);
+  }
   else if (hashCode == USER_LAMBDA_VALIDATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_LAMBDA_VALIDATION), false);
@@ -122,6 +130,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == USER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_NOT_FOUND), false);
+  }
+  else if (hashCode == UNSUPPORTED_IDENTITY_PROVIDER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_IDENTITY_PROVIDER), false);
   }
   else if (hashCode == USER_IMPORT_IN_PROGRESS_HASH)
   {
@@ -143,9 +155,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INTERNAL_ERROR), false);
   }
+  else if (hashCode == DUPLICATE_PROVIDER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::DUPLICATE_PROVIDER), false);
+  }
   else if (hashCode == PRECONDITION_NOT_MET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::PRECONDITION_NOT_MET), false);
+  }
+  else if (hashCode == INVALID_O_AUTH_FLOW_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INVALID_O_AUTH_FLOW), false);
   }
   else if (hashCode == INVALID_PASSWORD_HASH)
   {

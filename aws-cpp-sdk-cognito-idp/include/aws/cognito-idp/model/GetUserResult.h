@@ -86,37 +86,51 @@ namespace Model
     inline GetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributes = value; }
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributes = std::move(value); }
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline GetUserResult& WithUserAttributes(const Aws::Vector<AttributeType>& value) { SetUserAttributes(value); return *this;}
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline GetUserResult& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline GetUserResult& AddUserAttributes(const AttributeType& value) { m_userAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
      */
     inline GetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(std::move(value)); return *this; }
 

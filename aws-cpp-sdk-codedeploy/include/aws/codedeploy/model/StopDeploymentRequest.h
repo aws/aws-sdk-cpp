@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a stop deployment operation.</p><p><h3>See Also:</h3>
+   * <p>Represents the input of a StopDeployment operation.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeploymentInput">AWS
    * API Reference</a></p>

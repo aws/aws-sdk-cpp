@@ -78,157 +78,394 @@ namespace Model
     inline AdminRespondToAuthChallengeRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The client ID.</p>
+     * <p>The app client ID.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The name of the challenge.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
 
     /**
-     * <p>The name of the challenge.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
-     * <p>The name of the challenge.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline void SetChallengeName(ChallengeNameType&& value) { m_challengeNameHasBeenSet = true; m_challengeName = std::move(value); }
 
     /**
-     * <p>The name of the challenge.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
 
     /**
-     * <p>The name of the challenge.</p>
+     * <p>The challenge name. For more information, see <a
+     * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The challenge response.</p>
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
-     * <p>The session.</p>
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithSession(const char* value) { SetSession(value); return *this;}
 
