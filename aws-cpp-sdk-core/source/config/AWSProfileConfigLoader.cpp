@@ -115,6 +115,7 @@ namespace Aws
                             FlushProfileAndReset(line, openPos, closePos);
                             break;
                         }
+                        // fall through
                     case PROFILE_FOUND:
                     {
                         auto keyValuePair = StringUtils::Split(line, EQ);

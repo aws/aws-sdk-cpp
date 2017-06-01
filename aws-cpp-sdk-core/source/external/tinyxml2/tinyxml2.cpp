@@ -337,14 +337,17 @@ namespace tinyxml2
       --output;
       *output = (char)((input | BYTE_MARK) & BYTE_MASK);
       input >>= 6;
+      // fall through
     case 3:
       --output;
       *output = (char)((input | BYTE_MARK) & BYTE_MASK);
       input >>= 6;
+      // fall through
     case 2:
       --output;
       *output = (char)((input | BYTE_MARK) & BYTE_MASK);
       input >>= 6;
+      // fall through
     case 1:
       --output;
       *output = (char)(input | FIRST_BYTE_MARK[*length]);

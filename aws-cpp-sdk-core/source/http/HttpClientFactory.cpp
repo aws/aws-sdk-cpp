@@ -53,6 +53,7 @@ namespace Aws
             {
                 case SIGPIPE:
                     AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Received a SIGPIPE error");
+                    break;
                 default:
                     AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Unhandled system SIGNAL error"  << signal);
             }
