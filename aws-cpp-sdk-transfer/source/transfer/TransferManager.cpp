@@ -377,8 +377,8 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                TriggerUploadProgressCallback(*transferContext->handle);
                 transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
+                TriggerUploadProgressCallback(*transferContext->handle);
             }
             else
             {

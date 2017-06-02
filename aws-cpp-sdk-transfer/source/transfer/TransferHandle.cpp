@@ -75,7 +75,7 @@ namespace Aws
             m_key(keyName), 
             m_fileName(targetFilePath),
             m_versionId(""),
-            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
             m_createDownloadStreamFn(), 
             m_downloadStream(nullptr)
@@ -90,7 +90,7 @@ namespace Aws
             m_key(keyName), 
             m_fileName(targetFilePath),
             m_versionId(""),
-            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
             m_createDownloadStreamFn(), 
             m_downloadStream(nullptr)
@@ -105,7 +105,7 @@ namespace Aws
             m_key(keyName), 
             m_fileName(""), 
             m_versionId(""),
-            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
             m_createDownloadStreamFn(createDownloadStreamFn), 
             m_downloadStream(nullptr)
@@ -208,8 +208,17 @@ namespace Aws
 
         static bool IsFinishedStatus(TransferStatus value)
         {
-            return value == TransferStatus::ABORTED || value == TransferStatus::COMPLETED || value == TransferStatus::FAILED || 
-                value == TransferStatus::CANCELED || value == TransferStatus::EXACT_OBJECT_ALREADY_EXISTS;
+            switch(value)
+            {
+                case TransferStatus::ABORTED:
+                case TransferStatus::COMPLETED:
+                case TransferStatus::FAILED:
+                case TransferStatus::CANCELED:
+                case TransferStatus::EXACT_OBJECT_ALREADY_EXISTS:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         static bool IsTransitionAllowed(TransferStatus currentValue, TransferStatus nextState)
@@ -225,12 +234,10 @@ namespace Aws
 
         void TransferHandle::UpdateStatus(TransferStatus value)
         {            
-            auto currentStatus = static_cast<TransferStatus>(m_status.load());
-
-            if(IsTransitionAllowed(currentStatus, value))
+            std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
+            if(IsTransitionAllowed(m_status, value))
             {
-                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
-                m_status.store(static_cast<long>(value));
+                m_status = value;
 
                 if (IsFinishedStatus(value))
                 {
@@ -239,6 +246,7 @@ namespace Aws
                         CleanupDownloadStream();
                     }
 
+                    semaphoreLock.unlock();
                     m_waitUntilFinishedSignal.notify_all();
                 }
             }
@@ -247,10 +255,9 @@ namespace Aws
         void TransferHandle::WaitUntilFinished() const
         {
             std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
-            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || HasPendingParts())
+            while (!IsFinishedStatus(m_status) || HasPendingParts())
             {
-                m_waitUntilFinishedSignal.wait(semaphoreLock, [this]()
-                    { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && !HasPendingParts(); });
+                m_waitUntilFinishedSignal.wait(semaphoreLock); 
             }
         }
 
@@ -261,7 +268,7 @@ namespace Aws
 
         void TransferHandle::Restart()
         {
-            m_cancel = false;
+            m_cancel.store(false);
         }
 
         bool TransferHandle::ShouldContinue() const
@@ -298,6 +305,12 @@ namespace Aws
                 Aws::Delete(m_downloadStream);
                 m_downloadStream = nullptr;
             }
+        }
+
+        TransferStatus TransferHandle::GetStatus() const
+        {
+            std::lock_guard<std::mutex> lock(m_statusLock);
+            return m_status;
         }
     }
 }

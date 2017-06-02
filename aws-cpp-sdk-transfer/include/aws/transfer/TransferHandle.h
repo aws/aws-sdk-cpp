@@ -301,7 +301,7 @@ namespace Aws
             /**
              * The current status of the operation
              */
-            inline TransferStatus GetStatus() const { return static_cast<TransferStatus>(m_status.load()); }
+            TransferStatus GetStatus() const;
             /**
             * The current status of the operation
             */
@@ -347,7 +347,7 @@ namespace Aws
             Aws::String m_contentType;
             Aws::String m_versionId;
             Aws::Map<Aws::String, Aws::String> m_metadata;
-            std::atomic<long> m_status;
+            TransferStatus m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
 
