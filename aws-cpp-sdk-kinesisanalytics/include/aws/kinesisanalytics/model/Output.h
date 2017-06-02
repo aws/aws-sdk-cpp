@@ -39,9 +39,10 @@ namespace Model
    * <p> Describes application output configuration in which you identify an
    * in-application stream and a destination where you want the in-application stream
    * data to be written. The destination can be an Amazon Kinesis stream or an Amazon
-   * Kinesis Firehose delivery stream. </p> <p/> <p>You can configure your
-   * application to write output to up to five destinations.</p><p><h3>See Also:</h3>
-   * <a
+   * Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many
+   * destinations an application can write and other limitations, see <a
+   * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Output">AWS
    * API Reference</a></p>
    */

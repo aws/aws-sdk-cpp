@@ -22,6 +22,7 @@
 #include <aws/kinesisanalytics/model/InputDescription.h>
 #include <aws/kinesisanalytics/model/OutputDescription.h>
 #include <aws/kinesisanalytics/model/ReferenceDataSourceDescription.h>
+#include <aws/kinesisanalytics/model/CloudWatchLoggingOptionDescription.h>
 #include <utility>
 
 namespace Aws
@@ -388,6 +389,69 @@ namespace Model
     inline ApplicationDetail& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescription&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = value; }
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::move(value); }
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the CloudWatch log streams configured to receive application
+     * messages. For more information about using CloudWatch log streams with Amazon
+     * Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>. </p>
+     */
+    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>Returns the application code that you provided to perform data analysis on
      * any of the in-application streams in your application.</p>
      */
@@ -463,6 +527,8 @@ namespace Model
     bool m_outputDescriptionsHasBeenSet;
     Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
     bool m_referenceDataSourceDescriptionsHasBeenSet;
+    Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
+    bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
     Aws::String m_applicationCode;
     bool m_applicationCodeHasBeenSet;
     long long m_applicationVersionId;

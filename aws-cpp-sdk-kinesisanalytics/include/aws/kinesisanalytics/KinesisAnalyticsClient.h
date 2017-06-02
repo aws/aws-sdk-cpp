@@ -21,11 +21,13 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationInputResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationOutputResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalytics/model/CreateApplicationResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationResult.h>
+#include <aws/kinesisanalytics/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationOutputResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalytics/model/DescribeApplicationResult.h>
@@ -79,11 +81,13 @@ namespace KinesisAnalytics
 
 namespace Model
 {
+        class AddApplicationCloudWatchLoggingOptionRequest;
         class AddApplicationInputRequest;
         class AddApplicationOutputRequest;
         class AddApplicationReferenceDataSourceRequest;
         class CreateApplicationRequest;
         class DeleteApplicationRequest;
+        class DeleteApplicationCloudWatchLoggingOptionRequest;
         class DeleteApplicationOutputRequest;
         class DeleteApplicationReferenceDataSourceRequest;
         class DescribeApplicationRequest;
@@ -93,11 +97,13 @@ namespace Model
         class StopApplicationRequest;
         class UpdateApplicationRequest;
 
+        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationCloudWatchLoggingOptionOutcome;
         typedef Aws::Utils::Outcome<AddApplicationInputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationInputOutcome;
         typedef Aws::Utils::Outcome<AddApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationCloudWatchLoggingOptionOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DescribeApplicationOutcome;
@@ -107,11 +113,13 @@ namespace Model
         typedef Aws::Utils::Outcome<StopApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> StopApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> UpdateApplicationOutcome;
 
+        typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
         typedef std::future<AddApplicationOutputOutcome> AddApplicationOutputOutcomeCallable;
         typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
+        typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<DeleteApplicationOutputOutcome> DeleteApplicationOutputOutcomeCallable;
         typedef std::future<DeleteApplicationReferenceDataSourceOutcome> DeleteApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
@@ -124,11 +132,13 @@ namespace Model
 
   class KinesisAnalyticsClient;
 
+    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationCloudWatchLoggingOptionRequest&, const Model::AddApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationCloudWatchLoggingOptionResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationInputRequest&, const Model::AddApplicationInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationOutputRequest&, const Model::AddApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationCloudWatchLoggingOptionRequest&, const Model::DeleteApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationOutputRequest&, const Model::DeleteApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationReferenceDataSourceRequest&, const Model::DeleteApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
@@ -163,6 +173,43 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~KinesisAnalyticsClient();
+
+        /**
+         * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
+         * more information about using CloudWatch log streams with Amazon Kinesis
+         * Analytics applications, see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddApplicationCloudWatchLoggingOptionOutcome AddApplicationCloudWatchLoggingOption(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
+
+        /**
+         * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
+         * more information about using CloudWatch log streams with Amazon Kinesis
+         * Analytics applications, see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddApplicationCloudWatchLoggingOptionOutcomeCallable AddApplicationCloudWatchLoggingOptionCallable(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
+
+        /**
+         * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
+         * more information about using CloudWatch log streams with Amazon Kinesis
+         * Analytics applications, see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddApplicationCloudWatchLoggingOptionAsync(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Adds a streaming source to your Amazon Kinesis application. For conceptual
@@ -379,11 +426,10 @@ namespace Model
          * to an in-application stream, which you can think of as a constantly updating
          * table. In the mapping, you must provide a schema for the in-application stream
          * and map each data column in the in-application stream to a data element in the
-         * streaming source, with the option of renaming, casting and dropping columns as
-         * desired.</p> <p>Your application code is one or more SQL statements that read
-         * input data, transform it, and generate output. Your application code can create
-         * one or more SQL artifacts like SQL streams or pumps.</p> <p>In the output
-         * configuration, you can configure the application to write data from
+         * streaming source.</p> <p>Your application code is one or more SQL statements
+         * that read input data, transform it, and generate output. Your application code
+         * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
+         * output configuration, you can configure the application to write data from
          * in-application streams created in your applications to up to five streaming
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
@@ -408,11 +454,10 @@ namespace Model
          * to an in-application stream, which you can think of as a constantly updating
          * table. In the mapping, you must provide a schema for the in-application stream
          * and map each data column in the in-application stream to a data element in the
-         * streaming source, with the option of renaming, casting and dropping columns as
-         * desired.</p> <p>Your application code is one or more SQL statements that read
-         * input data, transform it, and generate output. Your application code can create
-         * one or more SQL artifacts like SQL streams or pumps.</p> <p>In the output
-         * configuration, you can configure the application to write data from
+         * streaming source.</p> <p>Your application code is one or more SQL statements
+         * that read input data, transform it, and generate output. Your application code
+         * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
+         * output configuration, you can configure the application to write data from
          * in-application streams created in your applications to up to five streaming
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
@@ -439,11 +484,10 @@ namespace Model
          * to an in-application stream, which you can think of as a constantly updating
          * table. In the mapping, you must provide a schema for the in-application stream
          * and map each data column in the in-application stream to a data element in the
-         * streaming source, with the option of renaming, casting and dropping columns as
-         * desired.</p> <p>Your application code is one or more SQL statements that read
-         * input data, transform it, and generate output. Your application code can create
-         * one or more SQL artifacts like SQL streams or pumps.</p> <p>In the output
-         * configuration, you can configure the application to write data from
+         * streaming source.</p> <p>Your application code is one or more SQL statements
+         * that read input data, transform it, and generate output. Your application code
+         * can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the
+         * output configuration, you can configure the application to write data from
          * in-application streams created in your applications to up to five streaming
          * destinations.</p> <p> To read data from your source stream or write data to
          * destination streams, Amazon Kinesis Analytics needs your permissions. You grant
@@ -498,6 +542,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a CloudWatch log stream from an application. For more information
+         * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
+         * see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcome DeleteApplicationCloudWatchLoggingOption(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
+
+        /**
+         * <p>Deletes a CloudWatch log stream from an application. For more information
+         * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
+         * see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcomeCallable DeleteApplicationCloudWatchLoggingOptionCallable(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
+
+        /**
+         * <p>Deletes a CloudWatch log stream from an application. For more information
+         * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
+         * see <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApplicationCloudWatchLoggingOptionAsync(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes output destination configuration from your application configuration.
@@ -840,11 +921,11 @@ namespace Model
         virtual void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing Kinesis Analytics application. Using this API, you can
-         * update application code, input configuration, and output configuration. </p>
-         * <p>Note that Kinesis Analytics updates the
+         * <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you
+         * can update application code, input configuration, and output configuration. </p>
+         * <p>Note that Amazon Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
-         * </p> <p>This opeation requires permission for the
+         * </p> <p>This operation requires permission for the
          * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
@@ -853,11 +934,11 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing Kinesis Analytics application. Using this API, you can
-         * update application code, input configuration, and output configuration. </p>
-         * <p>Note that Kinesis Analytics updates the
+         * <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you
+         * can update application code, input configuration, and output configuration. </p>
+         * <p>Note that Amazon Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
-         * </p> <p>This opeation requires permission for the
+         * </p> <p>This operation requires permission for the
          * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
@@ -868,11 +949,11 @@ namespace Model
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing Kinesis Analytics application. Using this API, you can
-         * update application code, input configuration, and output configuration. </p>
-         * <p>Note that Kinesis Analytics updates the
+         * <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you
+         * can update application code, input configuration, and output configuration. </p>
+         * <p>Note that Amazon Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
-         * </p> <p>This opeation requires permission for the
+         * </p> <p>This operation requires permission for the
          * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
@@ -887,11 +968,13 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddApplicationCloudWatchLoggingOptionAsyncHelper(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationInputAsyncHelper(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationOutputAsyncHelper(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationOutputAsyncHelper(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationReferenceDataSourceAsyncHelper(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

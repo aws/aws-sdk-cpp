@@ -39,6 +39,7 @@ ApplicationDetail::ApplicationDetail() :
     m_inputDescriptionsHasBeenSet(false),
     m_outputDescriptionsHasBeenSet(false),
     m_referenceDataSourceDescriptionsHasBeenSet(false),
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
     m_applicationCodeHasBeenSet(false),
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false)
@@ -56,6 +57,7 @@ ApplicationDetail::ApplicationDetail(const JsonValue& jsonValue) :
     m_inputDescriptionsHasBeenSet(false),
     m_outputDescriptionsHasBeenSet(false),
     m_referenceDataSourceDescriptionsHasBeenSet(false),
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
     m_applicationCodeHasBeenSet(false),
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false)
@@ -135,6 +137,16 @@ ApplicationDetail& ApplicationDetail::operator =(const JsonValue& jsonValue)
       m_referenceDataSourceDescriptions.push_back(referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject());
     }
     m_referenceDataSourceDescriptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchLoggingOptionDescriptions"))
+  {
+    Array<JsonValue> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
+    for(unsigned cloudWatchLoggingOptionDescriptionsIndex = 0; cloudWatchLoggingOptionDescriptionsIndex < cloudWatchLoggingOptionDescriptionsJsonList.GetLength(); ++cloudWatchLoggingOptionDescriptionsIndex)
+    {
+      m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());
+    }
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ApplicationCode"))
@@ -221,6 +233,17 @@ JsonValue ApplicationDetail::Jsonize() const
      referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject(m_referenceDataSourceDescriptions[referenceDataSourceDescriptionsIndex].Jsonize());
    }
    payload.WithArray("ReferenceDataSourceDescriptions", std::move(referenceDataSourceDescriptionsJsonList));
+
+  }
+
+  if(m_cloudWatchLoggingOptionDescriptionsHasBeenSet)
+  {
+   Array<JsonValue> cloudWatchLoggingOptionDescriptionsJsonList(m_cloudWatchLoggingOptionDescriptions.size());
+   for(unsigned cloudWatchLoggingOptionDescriptionsIndex = 0; cloudWatchLoggingOptionDescriptionsIndex < cloudWatchLoggingOptionDescriptionsJsonList.GetLength(); ++cloudWatchLoggingOptionDescriptionsIndex)
+   {
+     cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject(m_cloudWatchLoggingOptionDescriptions[cloudWatchLoggingOptionDescriptionsIndex].Jsonize());
+   }
+   payload.WithArray("CloudWatchLoggingOptionDescriptions", std::move(cloudWatchLoggingOptionDescriptionsJsonList));
 
   }
 

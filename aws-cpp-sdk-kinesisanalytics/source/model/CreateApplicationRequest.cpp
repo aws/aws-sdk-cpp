@@ -27,6 +27,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationDescriptionHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
     m_applicationCodeHasBeenSet(false)
 {
 }
@@ -66,6 +67,17 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
    }
    payload.WithArray("Outputs", std::move(outputsJsonList));
+
+  }
+
+  if(m_cloudWatchLoggingOptionsHasBeenSet)
+  {
+   Array<JsonValue> cloudWatchLoggingOptionsJsonList(m_cloudWatchLoggingOptions.size());
+   for(unsigned cloudWatchLoggingOptionsIndex = 0; cloudWatchLoggingOptionsIndex < cloudWatchLoggingOptionsJsonList.GetLength(); ++cloudWatchLoggingOptionsIndex)
+   {
+     cloudWatchLoggingOptionsJsonList[cloudWatchLoggingOptionsIndex].AsObject(m_cloudWatchLoggingOptions[cloudWatchLoggingOptionsIndex].Jsonize());
+   }
+   payload.WithArray("CloudWatchLoggingOptions", std::move(cloudWatchLoggingOptionsJsonList));
 
   }
 

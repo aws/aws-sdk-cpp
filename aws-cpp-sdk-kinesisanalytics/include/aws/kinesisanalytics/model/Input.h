@@ -55,64 +55,64 @@ namespace Model
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline Input& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline Input& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
-     * prefix "MyInApplicationStream". Kinesis Analytics will then create one or more
-     * (as per the <code>InputParallelism</code> count you specified) in-application
-     * streams with names "MyInApplicationStream_001", "MyInApplicationStream_002" and
-     * so on. </p>
+     * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
+     * more (as per the <code>InputParallelism</code> count you specified)
+     * in-application streams with names "MyInApplicationStream_001",
+     * "MyInApplicationStream_002" and so on. </p>
      */
     inline Input& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
 

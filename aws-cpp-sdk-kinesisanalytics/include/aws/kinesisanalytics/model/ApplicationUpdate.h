@@ -20,6 +20,7 @@
 #include <aws/kinesisanalytics/model/InputUpdate.h>
 #include <aws/kinesisanalytics/model/OutputUpdate.h>
 #include <aws/kinesisanalytics/model/ReferenceDataSourceUpdate.h>
+#include <aws/kinesisanalytics/model/CloudWatchLoggingOptionUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -37,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to apply to an existing Kinesis Analytics
+   * <p>Describes updates to apply to an existing Amazon Kinesis Analytics
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate">AWS
    * API Reference</a></p>
@@ -190,6 +191,41 @@ namespace Model
      */
     inline ApplicationUpdate& AddReferenceDataSourceUpdates(ReferenceDataSourceUpdate&& value) { m_referenceDataSourceUpdatesHasBeenSet = true; m_referenceDataSourceUpdates.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline const Aws::Vector<CloudWatchLoggingOptionUpdate>& GetCloudWatchLoggingOptionUpdates() const{ return m_cloudWatchLoggingOptionUpdates; }
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline void SetCloudWatchLoggingOptionUpdates(const Aws::Vector<CloudWatchLoggingOptionUpdate>& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates = value; }
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline void SetCloudWatchLoggingOptionUpdates(Aws::Vector<CloudWatchLoggingOptionUpdate>&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates = std::move(value); }
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline ApplicationUpdate& WithCloudWatchLoggingOptionUpdates(const Aws::Vector<CloudWatchLoggingOptionUpdate>& value) { SetCloudWatchLoggingOptionUpdates(value); return *this;}
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline ApplicationUpdate& WithCloudWatchLoggingOptionUpdates(Aws::Vector<CloudWatchLoggingOptionUpdate>&& value) { SetCloudWatchLoggingOptionUpdates(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline ApplicationUpdate& AddCloudWatchLoggingOptionUpdates(const CloudWatchLoggingOptionUpdate& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(value); return *this; }
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline ApplicationUpdate& AddCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdate&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(std::move(value)); return *this; }
+
   private:
     Aws::Vector<InputUpdate> m_inputUpdates;
     bool m_inputUpdatesHasBeenSet;
@@ -199,6 +235,8 @@ namespace Model
     bool m_outputUpdatesHasBeenSet;
     Aws::Vector<ReferenceDataSourceUpdate> m_referenceDataSourceUpdates;
     bool m_referenceDataSourceUpdatesHasBeenSet;
+    Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
+    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
   };
 
 } // namespace Model

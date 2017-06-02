@@ -32,7 +32,7 @@ namespace Model
 
   /**
    * <p>Describes the number of in-application streams to create for a given
-   * streaming source. For information about parallellism, see <a
+   * streaming source. For information about parallelism, see <a
    * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
    * Application Input</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelism">AWS

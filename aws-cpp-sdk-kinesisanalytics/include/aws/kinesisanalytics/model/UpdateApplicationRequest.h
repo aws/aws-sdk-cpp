@@ -38,37 +38,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline UpdateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Kinesis Analytics application to update.</p>
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 

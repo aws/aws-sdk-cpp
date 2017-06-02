@@ -103,19 +103,29 @@ namespace Model
      */
     inline AddApplicationInputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline const Input& GetInput() const{ return m_input; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline AddApplicationInputRequest& WithInput(const Input& value) { SetInput(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 
   private:

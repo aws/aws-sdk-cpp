@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalytics/model/Input.h>
 #include <aws/kinesisanalytics/model/Output.h>
+#include <aws/kinesisanalytics/model/CloudWatchLoggingOption.h>
 #include <utility>
 
 namespace Aws
@@ -337,12 +338,73 @@ namespace Model
     inline CreateApplicationRequest& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline const Aws::Vector<CloudWatchLoggingOption>& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(const Aws::Vector<CloudWatchLoggingOption>& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(Aws::Vector<CloudWatchLoggingOption>&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline CreateApplicationRequest& WithCloudWatchLoggingOptions(const Aws::Vector<CloudWatchLoggingOption>& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline CreateApplicationRequest& WithCloudWatchLoggingOptions(Aws::Vector<CloudWatchLoggingOption>&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline CreateApplicationRequest& AddCloudWatchLoggingOptions(const CloudWatchLoggingOption& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions.push_back(value); return *this; }
+
+    /**
+     * <p>Use this parameter to configure a CloudWatch log stream to monitor
+     * application configuration errors. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.</p>
+     */
+    inline CreateApplicationRequest& AddCloudWatchLoggingOptions(CloudWatchLoggingOption&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -352,11 +414,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -366,11 +433,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -380,11 +452,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -394,11 +471,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -408,11 +490,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -422,11 +509,16 @@ namespace Model
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
-     * output. For example, you can write a SQL statement that reads input data and
-     * generates a running average of the number of advertisement clicks by vendor.</p>
-     * <p>You can also provide a series of SQL statements, where output of one
-     * statement can be used as the input for the next statement.</p> <p>Note that the
-     * application code must create the streams with names specified in the
+     * output. For example, you can write a SQL statement that reads data from one
+     * in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another
+     * in-application stream using pumps. For more inforamtion about the typical
+     * pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     * Code</a>. </p> <p>You can provide such series of SQL statements, where output of
+     * one statement can be used as the input for the next statement. You store
+     * intermediate results by creating in-application streams and pumps.</p> <p>Note
+     * that the application code must create the streams with names specified in the
      * <code>Outputs</code>. For example, if your <code>Outputs</code> defines output
      * streams named <code>ExampleOutputStream1</code> and
      * <code>ExampleOutputStream2</code>, then your application code must create these
@@ -443,6 +535,8 @@ namespace Model
     bool m_inputsHasBeenSet;
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+    Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
+    bool m_cloudWatchLoggingOptionsHasBeenSet;
     Aws::String m_applicationCode;
     bool m_applicationCodeHasBeenSet;
   };

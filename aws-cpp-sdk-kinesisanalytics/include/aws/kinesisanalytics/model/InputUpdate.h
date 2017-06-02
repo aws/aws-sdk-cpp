@@ -86,44 +86,44 @@ namespace Model
     inline InputUpdate& WithInputId(const char* value) { SetInputId(value); return *this;}
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline const Aws::String& GetNamePrefixUpdate() const{ return m_namePrefixUpdate; }
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline void SetNamePrefixUpdate(const Aws::String& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = value; }
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline void SetNamePrefixUpdate(Aws::String&& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = std::move(value); }
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline void SetNamePrefixUpdate(const char* value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate.assign(value); }
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline InputUpdate& WithNamePrefixUpdate(const Aws::String& value) { SetNamePrefixUpdate(value); return *this;}
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline InputUpdate& WithNamePrefixUpdate(Aws::String&& value) { SetNamePrefixUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
-     * the specific streaming source.</p>
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
      */
     inline InputUpdate& WithNamePrefixUpdate(const char* value) { SetNamePrefixUpdate(value); return *this;}
 
@@ -228,32 +228,32 @@ namespace Model
     inline InputUpdate& WithInputSchemaUpdate(InputSchemaUpdate&& value) { SetInputSchemaUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the parallelism updates (the number in-application streams Kinesis
-     * Analytics creates for the specific streaming source).</p>
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline const InputParallelismUpdate& GetInputParallelismUpdate() const{ return m_inputParallelismUpdate; }
 
     /**
-     * <p>Describes the parallelism updates (the number in-application streams Kinesis
-     * Analytics creates for the specific streaming source).</p>
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline void SetInputParallelismUpdate(const InputParallelismUpdate& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = value; }
 
     /**
-     * <p>Describes the parallelism updates (the number in-application streams Kinesis
-     * Analytics creates for the specific streaming source).</p>
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline void SetInputParallelismUpdate(InputParallelismUpdate&& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = std::move(value); }
 
     /**
-     * <p>Describes the parallelism updates (the number in-application streams Kinesis
-     * Analytics creates for the specific streaming source).</p>
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline InputUpdate& WithInputParallelismUpdate(const InputParallelismUpdate& value) { SetInputParallelismUpdate(value); return *this;}
 
     /**
-     * <p>Describes the parallelism updates (the number in-application streams Kinesis
-     * Analytics creates for the specific streaming source).</p>
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline InputUpdate& WithInputParallelismUpdate(InputParallelismUpdate&& value) { SetInputParallelismUpdate(std::move(value)); return *this;}
 
