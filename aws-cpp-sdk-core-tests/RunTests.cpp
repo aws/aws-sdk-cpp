@@ -21,8 +21,18 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/MemoryTesting.h>
 
+#ifndef _MSC_VER
+#include <sys/stat.h>
+#endif
+
 int main(int argc, char** argv)
 {
+#ifndef _MSC_VER
+	// In order to fix github issue at https://github.com/aws/aws-sdk-cpp/issues/232
+    // Created dir by this process will be set with mode 0777, so that multiple users can build on the same machine
+	umask(0);
+#endif
+
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     Aws::SDKOptions options;	
