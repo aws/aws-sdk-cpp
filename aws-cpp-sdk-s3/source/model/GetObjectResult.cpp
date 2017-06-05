@@ -50,6 +50,8 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_eTag(std::move(toMove.m_eTag)),
     m_missingMeta(toMove.m_missingMeta),
     m_versionId(std::move(toMove.m_versionId)),
+    m_id2(std::move(toMove.m_id2)),
+    m_requestId(std::move(toMove.m_requestId)),
     m_cacheControl(std::move(toMove.m_cacheControl)),
     m_contentDisposition(std::move(toMove.m_contentDisposition)),
     m_contentEncoding(std::move(toMove.m_contentEncoding)),
@@ -88,6 +90,8 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_eTag = std::move(toMove.m_eTag);
    m_missingMeta = toMove.m_missingMeta;
    m_versionId = std::move(toMove.m_versionId);
+   m_id2 = std::move(toMove.m_id2);
+   m_requestId = std::move(toMove.m_requestId);
    m_cacheControl = std::move(toMove.m_cacheControl);
    m_contentDisposition = std::move(toMove.m_contentDisposition);
    m_contentEncoding = std::move(toMove.m_contentEncoding);
@@ -181,6 +185,18 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   if(versionIdIter != headers.end())
   {
     m_versionId = versionIdIter->second;
+  }
+
+  const auto& id2Iter = headers.find("x-amz-id-2");
+  if(id2Iter != headers.end())
+  {
+    m_id2 = id2Iter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
   const auto& cacheControlIter = headers.find("cache-control");

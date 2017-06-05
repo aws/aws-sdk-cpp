@@ -2799,6 +2799,18 @@
           "location":"header",
           "locationName":"x-amz-version-id"
         },
+        "Id2":{
+          "shape":"ObjectId2",
+          "documentation":"A special token that helps AWS troubleshoot problems.",
+          "location":"header",
+          "locationName":"x-amz-id-2"
+        },
+        "RequestId":{
+          "shape":"ObjectRequestId",
+          "documentation":"A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.",
+          "location":"header",
+          "locationName":"x-amz-request-id"
+        },
         "CacheControl":{
           "shape":"CacheControl",
           "documentation":"Specifies caching behavior along the request/reply chain.",
@@ -4638,6 +4650,8 @@
         "Owner":{"shape":"Owner"}
       }
     },
+    "ObjectId2":{"type":"string"},
+    "ObjectRequestId":{"type":"string"},
     "ObjectVersionId":{"type":"string"},
     "ObjectVersionList":{
       "type":"list",

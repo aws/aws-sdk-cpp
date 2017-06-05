@@ -341,6 +341,90 @@ namespace Model
     inline GetObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
     /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline const Aws::String& GetId2() const{ return m_id2; }
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline void SetId2(const Aws::String& value) { m_id2 = value; }
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline void SetId2(Aws::String&& value) { m_id2 = std::move(value); }
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline void SetId2(const char* value) { m_id2.assign(value); }
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline GetObjectResult& WithId2(const Aws::String& value) { SetId2(value); return *this;}
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline GetObjectResult& WithId2(Aws::String&& value) { SetId2(std::move(value)); return *this;}
+
+    /**
+     * A special token that helps AWS troubleshoot problems.
+     */
+    inline GetObjectResult& WithId2(const char* value) { SetId2(value); return *this;}
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline GetObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline GetObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    /**
+     * A value created by Amazon S3 that uniquely identifies the request. In the
+     * unlikely event that you have problems with Amazon S3, AWS can use this value to
+     * troubleshoot the problem.
+     */
+    inline GetObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+    /**
      * Specifies caching behavior along the request/reply chain.
      */
     inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
@@ -947,6 +1031,8 @@ namespace Model
     Aws::String m_eTag;
     int m_missingMeta;
     Aws::String m_versionId;
+    Aws::String m_id2;
+    Aws::String m_requestId;
     Aws::String m_cacheControl;
     Aws::String m_contentDisposition;
     Aws::String m_contentEncoding;
