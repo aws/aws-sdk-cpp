@@ -471,7 +471,7 @@ namespace Model
         virtual void AttachThingPrincipalAsync(const Model::AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
+         * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
@@ -485,7 +485,7 @@ namespace Model
         virtual Model::CancelCertificateTransferOutcome CancelCertificateTransfer(const Model::CancelCertificateTransferRequest& request) const;
 
         /**
-         * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
+         * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
@@ -501,7 +501,7 @@ namespace Model
         virtual Model::CancelCertificateTransferOutcomeCallable CancelCertificateTransferCallable(const Model::CancelCertificateTransferRequest& request) const;
 
         /**
-         * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
+         * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
@@ -518,28 +518,30 @@ namespace Model
 
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
-         * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
-         * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory, copying multiple .csr files into that
-         * directory, and then specifying that directory on the command line. The following
-         * commands show how to create a batch of certificates given a batch of CSRs. </p>
-         * <p>Assuming a set of CSRs are located inside of the directory
+         * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
+         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
+         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
+         * certificates in a batch by creating a directory, copying multiple .csr files
+         * into that directory, and then specifying that directory on the command line. The
+         * following commands show how to create a batch of certificates given a batch of
+         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
          * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
+         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
          * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
          * the command can also be run in parallel to speed up the certificate creation
-         * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
-         * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
-         * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
+         * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
+         * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows
          * command prompt, the command to create certificates for all CSRs in
-         * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
-         * iot create-certificate-from-csr --certificate-signing-request
+         * my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot
+         * create-certificate-from-csr --certificate-signing-request
          * file://@path"</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">AWS
          * API Reference</a></p>
@@ -548,28 +550,30 @@ namespace Model
 
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
-         * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
-         * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory, copying multiple .csr files into that
-         * directory, and then specifying that directory on the command line. The following
-         * commands show how to create a batch of certificates given a batch of CSRs. </p>
-         * <p>Assuming a set of CSRs are located inside of the directory
+         * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
+         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
+         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
+         * certificates in a batch by creating a directory, copying multiple .csr files
+         * into that directory, and then specifying that directory on the command line. The
+         * following commands show how to create a batch of certificates given a batch of
+         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
          * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
+         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
          * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
          * the command can also be run in parallel to speed up the certificate creation
-         * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
-         * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
-         * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
+         * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
+         * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows
          * command prompt, the command to create certificates for all CSRs in
-         * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
-         * iot create-certificate-from-csr --certificate-signing-request
+         * my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot
+         * create-certificate-from-csr --certificate-signing-request
          * file://@path"</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">AWS
          * API Reference</a></p>
@@ -580,28 +584,30 @@ namespace Model
 
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
-         * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
-         * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory, copying multiple .csr files into that
-         * directory, and then specifying that directory on the command line. The following
-         * commands show how to create a batch of certificates given a batch of CSRs. </p>
-         * <p>Assuming a set of CSRs are located inside of the directory
+         * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
+         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
+         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
+         * certificates in a batch by creating a directory, copying multiple .csr files
+         * into that directory, and then specifying that directory on the command line. The
+         * following commands show how to create a batch of certificates given a batch of
+         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
          * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
+         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
          * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
          * the command can also be run in parallel to speed up the certificate creation
-         * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
-         * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
-         * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
+         * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
+         * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows
          * command prompt, the command to create certificates for all CSRs in
-         * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
-         * iot create-certificate-from-csr --certificate-signing-request
+         * my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot
+         * create-certificate-from-csr --certificate-signing-request
          * file://@path"</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">AWS
          * API Reference</a></p>
@@ -612,7 +618,7 @@ namespace Model
 
         /**
          * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
-         * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
+         * issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
          * private key for this certificate, so it is important to keep it in a secure
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
@@ -622,7 +628,7 @@ namespace Model
 
         /**
          * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
-         * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
+         * issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
          * private key for this certificate, so it is important to keep it in a secure
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
@@ -634,7 +640,7 @@ namespace Model
 
         /**
          * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
-         * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
+         * issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
          * private key for this certificate, so it is important to keep it in a secure
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
@@ -1838,10 +1844,10 @@ namespace Model
          * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
          * to sign device certificates, which can be then registered with AWS IoT. You can
          * register up to 10 CA certificates per AWS account that have the same subject
-         * field and public key. This enables you to have up to 10 certificate authorities
-         * sign your device certificates. If you have more than one CA certificate
-         * registered, make sure you pass the CA certificate when you register your device
-         * certificates with the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * field. This enables you to have up to 10 certificate authorities sign your
+         * device certificates. If you have more than one CA certificate registered, make
+         * sure you pass the CA certificate when you register your device certificates with
+         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          */
@@ -1851,10 +1857,10 @@ namespace Model
          * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
          * to sign device certificates, which can be then registered with AWS IoT. You can
          * register up to 10 CA certificates per AWS account that have the same subject
-         * field and public key. This enables you to have up to 10 certificate authorities
-         * sign your device certificates. If you have more than one CA certificate
-         * registered, make sure you pass the CA certificate when you register your device
-         * certificates with the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * field. This enables you to have up to 10 certificate authorities sign your
+         * device certificates. If you have more than one CA certificate registered, make
+         * sure you pass the CA certificate when you register your device certificates with
+         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          *
@@ -1866,10 +1872,10 @@ namespace Model
          * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
          * to sign device certificates, which can be then registered with AWS IoT. You can
          * register up to 10 CA certificates per AWS account that have the same subject
-         * field and public key. This enables you to have up to 10 certificate authorities
-         * sign your device certificates. If you have more than one CA certificate
-         * registered, make sure you pass the CA certificate when you register your device
-         * certificates with the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * field. This enables you to have up to 10 certificate authorities sign your
+         * device certificates. If you have more than one CA certificate registered, make
+         * sure you pass the CA certificate when you register your device certificates with
+         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          *

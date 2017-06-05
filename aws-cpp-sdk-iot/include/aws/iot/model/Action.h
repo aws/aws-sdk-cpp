@@ -27,6 +27,7 @@
 #include <aws/iot/model/CloudwatchMetricAction.h>
 #include <aws/iot/model/CloudwatchAlarmAction.h>
 #include <aws/iot/model/ElasticsearchAction.h>
+#include <aws/iot/model/SalesforceAction.h>
 #include <utility>
 
 namespace Aws
@@ -366,6 +367,31 @@ namespace Model
      */
     inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(std::move(value)); return *this;}
 
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
+    inline const SalesforceAction& GetSalesforce() const{ return m_salesforce; }
+
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
+    inline void SetSalesforce(const SalesforceAction& value) { m_salesforceHasBeenSet = true; m_salesforce = value; }
+
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
+    inline void SetSalesforce(SalesforceAction&& value) { m_salesforceHasBeenSet = true; m_salesforce = std::move(value); }
+
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
+    inline Action& WithSalesforce(const SalesforceAction& value) { SetSalesforce(value); return *this;}
+
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
+    inline Action& WithSalesforce(SalesforceAction&& value) { SetSalesforce(std::move(value)); return *this;}
+
   private:
     DynamoDBAction m_dynamoDB;
     bool m_dynamoDBHasBeenSet;
@@ -391,6 +417,8 @@ namespace Model
     bool m_cloudwatchAlarmHasBeenSet;
     ElasticsearchAction m_elasticsearch;
     bool m_elasticsearchHasBeenSet;
+    SalesforceAction m_salesforce;
+    bool m_salesforceHasBeenSet;
   };
 
 } // namespace Model

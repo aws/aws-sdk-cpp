@@ -23,20 +23,19 @@ namespace AppStream
 {
 namespace Model
 {
-  enum class AuthenticationType
+  enum class FleetAttribute
   {
     NOT_SET,
-    API,
-    SAML,
-    USERPOOL
+    VPC_CONFIGURATION,
+    VPC_CONFIGURATION_SECURITY_GROUP_IDS
   };
 
-namespace AuthenticationTypeMapper
+namespace FleetAttributeMapper
 {
-AWS_APPSTREAM_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);
+AWS_APPSTREAM_API FleetAttribute GetFleetAttributeForName(const Aws::String& name);
 
-AWS_APPSTREAM_API Aws::String GetNameForAuthenticationType(AuthenticationType value);
-} // namespace AuthenticationTypeMapper
+AWS_APPSTREAM_API Aws::String GetNameForFleetAttribute(FleetAttribute value);
+} // namespace FleetAttributeMapper
 } // namespace Model
 } // namespace AppStream
 } // namespace Aws

@@ -42,9 +42,9 @@ namespace Model
    * runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can
    * specify any valid expression in a WHERE or SELECT clause, including JSON
    * properties, comparisons, calculations, and functions. For example, the following
-   * field uses the third level of the topic:</p> <p><code>"hashKeyValue":
-   * "${topic(3)}"</code></p> <p>The following field uses the timestamp:</p>
-   * <p><code>"rangeKeyValue": "${timestamp()}"</code></p><p><h3>See Also:</h3>   <a
+   * field uses the third level of the topic:</p> <p> <code>"hashKeyValue":
+   * "${topic(3)}"</code> </p> <p>The following field uses the timestamp:</p> <p>
+   * <code>"rangeKeyValue": "${timestamp()}"</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DynamoDBAction">AWS
    * API Reference</a></p>
    */

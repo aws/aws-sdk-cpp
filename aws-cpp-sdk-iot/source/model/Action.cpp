@@ -40,7 +40,8 @@ Action::Action() :
     m_firehoseHasBeenSet(false),
     m_cloudwatchMetricHasBeenSet(false),
     m_cloudwatchAlarmHasBeenSet(false),
-    m_elasticsearchHasBeenSet(false)
+    m_elasticsearchHasBeenSet(false),
+    m_salesforceHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Action::Action(const JsonValue& jsonValue) :
     m_firehoseHasBeenSet(false),
     m_cloudwatchMetricHasBeenSet(false),
     m_cloudwatchAlarmHasBeenSet(false),
-    m_elasticsearchHasBeenSet(false)
+    m_elasticsearchHasBeenSet(false),
+    m_salesforceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,13 @@ Action& Action::operator =(const JsonValue& jsonValue)
     m_elasticsearchHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("salesforce"))
+  {
+    m_salesforce = jsonValue.GetObject("salesforce");
+
+    m_salesforceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue Action::Jsonize() const
   if(m_elasticsearchHasBeenSet)
   {
    payload.WithObject("elasticsearch", m_elasticsearch.Jsonize());
+
+  }
+
+  if(m_salesforceHasBeenSet)
+  {
+   payload.WithObject("salesforce", m_salesforce.Jsonize());
 
   }
 

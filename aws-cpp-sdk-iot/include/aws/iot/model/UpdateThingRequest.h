@@ -110,35 +110,35 @@ namespace Model
 
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
-     * example:</p> <p><code>{\"attributes\":{\"name1\":\"value2\"}})</code></p>
+     * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
 
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
-     * example:</p> <p><code>{\"attributes\":{\"name1\":\"value2\"}})</code></p>
+     * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
-     * example:</p> <p><code>{\"attributes\":{\"name1\":\"value2\"}})</code></p>
+     * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
     inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::move(value); }
 
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
-     * example:</p> <p><code>{\"attributes\":{\"name1\":\"value2\"}})</code></p>
+     * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
     inline UpdateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
 
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
-     * example:</p> <p><code>{\"attributes\":{\"name1\":\"value2\"}})</code></p>
+     * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
     inline UpdateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}

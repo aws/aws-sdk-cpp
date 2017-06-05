@@ -110,36 +110,36 @@ namespace Model
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
-     * JSON document. For example:</p>
-     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
-     * JSON document. For example:</p>
-     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
-     * JSON document. For example:</p>
-     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
     inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::move(value); }
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
-     * JSON document. For example:</p>
-     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
     inline CreateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
-     * JSON document. For example:</p>
-     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
     inline CreateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
 

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/appstream/model/AuthenticationType.h>
+#include <aws/appstream/model/FleetAttribute.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,49 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace AuthenticationTypeMapper
+      namespace FleetAttributeMapper
       {
 
-        static const int API_HASH = HashingUtils::HashString("API");
-        static const int SAML_HASH = HashingUtils::HashString("SAML");
-        static const int USERPOOL_HASH = HashingUtils::HashString("USERPOOL");
+        static const int VPC_CONFIGURATION_HASH = HashingUtils::HashString("VPC_CONFIGURATION");
+        static const int VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = HashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
 
 
-        AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
+        FleetAttribute GetFleetAttributeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == API_HASH)
+          if (hashCode == VPC_CONFIGURATION_HASH)
           {
-            return AuthenticationType::API;
+            return FleetAttribute::VPC_CONFIGURATION;
           }
-          else if (hashCode == SAML_HASH)
+          else if (hashCode == VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH)
           {
-            return AuthenticationType::SAML;
-          }
-          else if (hashCode == USERPOOL_HASH)
-          {
-            return AuthenticationType::USERPOOL;
+            return FleetAttribute::VPC_CONFIGURATION_SECURITY_GROUP_IDS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthenticationType>(hashCode);
+            return static_cast<FleetAttribute>(hashCode);
           }
 
-          return AuthenticationType::NOT_SET;
+          return FleetAttribute::NOT_SET;
         }
 
-        Aws::String GetNameForAuthenticationType(AuthenticationType enumValue)
+        Aws::String GetNameForFleetAttribute(FleetAttribute enumValue)
         {
           switch(enumValue)
           {
-          case AuthenticationType::API:
-            return "API";
-          case AuthenticationType::SAML:
-            return "SAML";
-          case AuthenticationType::USERPOOL:
-            return "USERPOOL";
+          case FleetAttribute::VPC_CONFIGURATION:
+            return "VPC_CONFIGURATION";
+          case FleetAttribute::VPC_CONFIGURATION_SECURITY_GROUP_IDS:
+            return "VPC_CONFIGURATION_SECURITY_GROUP_IDS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -81,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace AuthenticationTypeMapper
+      } // namespace FleetAttributeMapper
     } // namespace Model
   } // namespace AppStream
 } // namespace Aws

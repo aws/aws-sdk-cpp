@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/ComputeCapacity.h>
 #include <aws/appstream/model/VpcConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/FleetAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -243,21 +245,6 @@ namespace Model
     inline UpdateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 
     /**
-     * <p>Delete the VPC association for the specified fleet.</p>
-     */
-    inline bool GetDeleteVpcConfig() const{ return m_deleteVpcConfig; }
-
-    /**
-     * <p>Delete the VPC association for the specified fleet.</p>
-     */
-    inline void SetDeleteVpcConfig(bool value) { m_deleteVpcConfigHasBeenSet = true; m_deleteVpcConfig = value; }
-
-    /**
-     * <p>Delete the VPC association for the specified fleet.</p>
-     */
-    inline UpdateFleetRequest& WithDeleteVpcConfig(bool value) { SetDeleteVpcConfig(value); return *this;}
-
-    /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -342,6 +329,41 @@ namespace Model
      */
     inline UpdateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
 
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline const Aws::Vector<FleetAttribute>& GetAttributesToDelete() const{ return m_attributesToDelete; }
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline void SetAttributesToDelete(const Aws::Vector<FleetAttribute>& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = value; }
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline void SetAttributesToDelete(Aws::Vector<FleetAttribute>&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = std::move(value); }
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline UpdateFleetRequest& WithAttributesToDelete(const Aws::Vector<FleetAttribute>& value) { SetAttributesToDelete(value); return *this;}
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline UpdateFleetRequest& WithAttributesToDelete(Aws::Vector<FleetAttribute>&& value) { SetAttributesToDelete(std::move(value)); return *this;}
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline UpdateFleetRequest& AddAttributesToDelete(const FleetAttribute& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(value); return *this; }
+
+    /**
+     * <p>Fleet attributes to be deleted.</p>
+     */
+    inline UpdateFleetRequest& AddAttributesToDelete(FleetAttribute&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(std::move(value)); return *this; }
+
   private:
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
@@ -357,14 +379,14 @@ namespace Model
     bool m_maxUserDurationInSecondsHasBeenSet;
     int m_disconnectTimeoutInSeconds;
     bool m_disconnectTimeoutInSecondsHasBeenSet;
-    bool m_deleteVpcConfig;
-    bool m_deleteVpcConfigHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+    Aws::Vector<FleetAttribute> m_attributesToDelete;
+    bool m_attributesToDeleteHasBeenSet;
   };
 
 } // namespace Model

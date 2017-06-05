@@ -108,19 +108,39 @@ namespace Model
      */
     inline ThingTypeDefinition& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
     inline const ThingTypeMetadata& GetThingTypeMetadata() const{ return m_thingTypeMetadata; }
 
-    
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
     inline void SetThingTypeMetadata(const ThingTypeMetadata& value) { m_thingTypeMetadataHasBeenSet = true; m_thingTypeMetadata = value; }
 
-    
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
     inline void SetThingTypeMetadata(ThingTypeMetadata&& value) { m_thingTypeMetadataHasBeenSet = true; m_thingTypeMetadata = std::move(value); }
 
-    
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
     inline ThingTypeDefinition& WithThingTypeMetadata(const ThingTypeMetadata& value) { SetThingTypeMetadata(value); return *this;}
 
-    
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
     inline ThingTypeDefinition& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
 
   private:

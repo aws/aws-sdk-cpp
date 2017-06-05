@@ -32,12 +32,11 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_maxUserDurationInSecondsHasBeenSet(false),
     m_disconnectTimeoutInSeconds(0),
     m_disconnectTimeoutInSecondsHasBeenSet(false),
-    m_deleteVpcConfig(false),
-    m_deleteVpcConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false)
+    m_enableDefaultInternetAccessHasBeenSet(false),
+    m_attributesToDeleteHasBeenSet(false)
 {
 }
 
@@ -87,12 +86,6 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   }
 
-  if(m_deleteVpcConfigHasBeenSet)
-  {
-   payload.WithBool("DeleteVpcConfig", m_deleteVpcConfig);
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -108,6 +101,17 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_enableDefaultInternetAccessHasBeenSet)
   {
    payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
+
+  }
+
+  if(m_attributesToDeleteHasBeenSet)
+  {
+   Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+   for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
+   {
+     attributesToDeleteJsonList[attributesToDeleteIndex].AsString(FleetAttributeMapper::GetNameForFleetAttribute(m_attributesToDelete[attributesToDeleteIndex]));
+   }
+   payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
 
   }
 

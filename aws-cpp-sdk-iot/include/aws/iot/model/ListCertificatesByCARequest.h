@@ -46,43 +46,43 @@ namespace Model
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline const Aws::String& GetCaCertificateId() const{ return m_caCertificateId; }
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline void SetCaCertificateId(const Aws::String& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = std::move(value); }
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline void SetCaCertificateId(const char* value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId.assign(value); }
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline ListCertificatesByCARequest& WithCaCertificateId(const Aws::String& value) { SetCaCertificateId(value); return *this;}
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline ListCertificatesByCARequest& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate. </p>
+     * certificate that were signed by this CA certificate.</p>
      */
     inline ListCertificatesByCARequest& WithCaCertificateId(const char* value) { SetCaCertificateId(value); return *this;}
 

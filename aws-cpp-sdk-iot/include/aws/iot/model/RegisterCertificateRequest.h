@@ -108,19 +108,29 @@ namespace Model
      */
     inline RegisterCertificateRequest& WithCaCertificatePem(const char* value) { SetCaCertificatePem(value); return *this;}
 
-    
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
     inline RegisterCertificateRequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
     inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:

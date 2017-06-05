@@ -29,12 +29,14 @@ namespace Model
 {
 
 VpcConfig::VpcConfig() : 
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
 VpcConfig::VpcConfig(const JsonValue& jsonValue) : 
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ VpcConfig& VpcConfig::operator =(const JsonValue& jsonValue)
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityGroupIds"))
+  {
+    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +78,17 @@ JsonValue VpcConfig::Jsonize() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
 
   }
 
