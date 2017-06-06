@@ -61,6 +61,8 @@ namespace Aws
         class HttpRequest;
 
         class HttpResponse;
+
+        class URI;
     } // namespace Http
 
     class AmazonWebServiceRequest;
@@ -138,7 +140,7 @@ namespace Aws
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable.
              */
-            HttpResponseOutcome AttemptExhaustively(const Aws::String& uri,
+            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod httpMethod) const;
 
@@ -146,13 +148,13 @@ namespace Aws
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable. This method is for payloadless requests e.g. GET, DELETE, HEAD
              */
-            HttpResponseOutcome AttemptExhaustively(const Aws::String& uri, Http::HttpMethod httpMethod) const;
+            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, Http::HttpMethod httpMethod) const;
 
             /**
              * Constructs and Http Request from the uri and AmazonWebServiceRequest object. Signs the request, sends it accross the wire
              * then reports the http response.
              */
-            HttpResponseOutcome AttemptOneRequest(const Aws::String& uri,
+            HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod httpMethod) const;
 
@@ -160,13 +162,13 @@ namespace Aws
             * Constructs and Http Request from the uri and AmazonWebServiceRequest object. Signs the request, sends it accross the wire
             * then reports the http response. This method is for payloadless requests e.g. GET, DELETE, HEAD
             */
-            HttpResponseOutcome AttemptOneRequest(const Aws::String& uri, Http::HttpMethod httpMethod) const;
+            HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri, Http::HttpMethod httpMethod) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
              * return transfers ownership of the underlying stream for the http response to the caller.
              */
-            StreamOutcome MakeRequestWithUnparsedResponse(const Aws::String& uri,
+            StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
 
@@ -242,7 +244,7 @@ namespace Aws
              *
              * method defaults to POST
              */
-            JsonOutcome MakeRequest(const Aws::String& uri,
+            JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
 
@@ -252,9 +254,8 @@ namespace Aws
              *
              * method defaults to POST
              */
-            JsonOutcome MakeRequest(const Aws::String& uri,
+            JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
-
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors>> XmlOutcome;
@@ -287,7 +288,7 @@ namespace Aws
              *
              * method defaults to POST
              */
-            XmlOutcome MakeRequest(const Aws::String& uri,
+            XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
 
@@ -297,7 +298,7 @@ namespace Aws
              *
              * method defaults to POST
              */
-            XmlOutcome MakeRequest(const Aws::String& uri,
+            XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
         };
 

@@ -37,7 +37,7 @@
 #include <thread>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
-
+#include <aws/core/http/URI.h>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -139,7 +139,7 @@ void AWSClient::EnableRequestProcessing()
     m_httpClient->EnableRequestProcessing();
 }
 
-HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
+HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method) const
 {
@@ -216,7 +216,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
     }
 }
 
-HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri, HttpMethod method) const
+HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method) const
 {
     for (long retries = 0;; retries++)
     {
@@ -242,8 +242,7 @@ static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& respo
 
 }
 
-
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
+HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method) const
 {
@@ -271,7 +270,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     return HttpResponseOutcome(httpResponse);
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMethod method) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method) const
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     
@@ -299,7 +298,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMet
     return HttpResponseOutcome(httpResponse);
 }
 
-StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::String& uri,
+StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method) const
 {
@@ -493,7 +492,7 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 {
 }
 
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::String& uri,
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method) const
 {
@@ -513,7 +512,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::String& uri,
         return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
 }
 
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::String& uri,
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method) const
 {
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method));
@@ -613,7 +612,7 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
 {
 }
 
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method) const
 {
@@ -640,7 +639,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
     return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
 }
 
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method) const
 {
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method));
