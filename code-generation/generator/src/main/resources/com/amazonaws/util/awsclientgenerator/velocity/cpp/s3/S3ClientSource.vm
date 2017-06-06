@@ -14,7 +14,11 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, co
 Aws::String ${className}::ComputeEndpointString(const Aws::String& bucket) const
 {
     Aws::StringStream ss;
-    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket))
+    // when using virtual hosting of buckets, the bucket name has to follow some rules.
+    // Mainly, it has to be a valid DNS label, and it must be lowercase.
+    // For more information see http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) && 
+            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str())) 
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }
