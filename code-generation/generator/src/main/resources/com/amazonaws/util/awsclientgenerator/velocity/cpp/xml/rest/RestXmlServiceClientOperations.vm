@@ -2,6 +2,7 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
+  Aws::StringStream ss;
 #set($startIndex = 0)
 #set($skipFirst = false)
 #if($virtualAddressingSupported)
@@ -21,42 +22,37 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #set($queryStart = false)
 #if($uriParts.size() > $startIndex)
 #set($uriPartString = ${uriParts.get($startIndex)})
+  ss << "$uriPartString";
 #if($uriPartString.contains("?"))
 #set($queryStart = true)
-  uri.SetQueryString(uri.GetQueryString() + "$uriPartString");
-#else
-  uri.SetPath(uri.GetPath() + "$uriPartString");
 #end
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
 #if(!$skipFirst)
 #set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
 #if($partShapeMember.shape.enum)
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}()));
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
 #else
-  uri.SetQueryString(uri.GetQueryString() + ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}()));
-#end
-#else
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
-#else
-  uri.SetQueryString(uri.GetQueryString() + request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
-#end
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
 #end
 #if($uriParts.size() > $partIndex)
 #set($uriPartString = "${uriParts.get($partIndex)}")
 #if(!$queryStart && $uriPartString.contains("?"))
 #set($queryStart = true)
-  uri.SetQueryString(uri.GetQueryString() + "$uriPartString");
-#else
-  uri.SetPath(uri.GetPath() + "$uriPartString");
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("");
 #end
+  ss << "$uriPartString";
 #end
 #end
 #set($partIndex = $partIndex + 1)
 #set($skipFirst = false)
 #end
+#end
+#if(!$queryStart)
+  uri.SetPath(uri.GetPath() + ss.str());
+#else
+  uri.SetQueryString(ss.str());
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_${operation.http.method});
