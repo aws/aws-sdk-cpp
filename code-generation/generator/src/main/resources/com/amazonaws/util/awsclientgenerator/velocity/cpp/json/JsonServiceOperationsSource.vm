@@ -26,9 +26,10 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #if(!$queryStart && $uriPartString.contains("?"))
 #set($queryStart = true)
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-#end
+  ss.str("$uriPartString");
+#else
   ss << "$uriPartString";
+#end
 #end
 #set($partIndex = $partIndex + 1)
 #end
