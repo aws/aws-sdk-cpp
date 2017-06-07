@@ -309,8 +309,7 @@ CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipa
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?uploads";
+  ss.str("?uploads");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -733,8 +732,7 @@ DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggi
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?tagging";
+  ss.str("?tagging");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
@@ -1403,8 +1401,7 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?acl";
+  ss.str("?acl");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -1442,8 +1439,7 @@ GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?tagging";
+  ss.str("?tagging");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -1481,8 +1477,7 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?torrent";
+  ss.str("?torrent");
   uri.SetQueryString(ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
@@ -2464,8 +2459,7 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?acl";
+  ss.str("?acl");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
@@ -2503,8 +2497,7 @@ PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?tagging";
+  ss.str("?tagging");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
@@ -2542,8 +2535,7 @@ RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "?restore";
+  ss.str("?restore");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -2660,7 +2652,11 @@ Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const 
 Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
 {
     Aws::StringStream ss;
-    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket))
+    // when using virtual hosting of buckets, the bucket name has to follow some rules.
+    // Mainly, it has to be a valid DNS label, and it must be lowercase.
+    // For more information see http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) && 
+            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str())) 
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }

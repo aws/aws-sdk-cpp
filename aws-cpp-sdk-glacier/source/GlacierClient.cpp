@@ -213,8 +213,7 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
   ss << "/vaults/";
   ss << request.GetVaultName();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "/tags?operation=add";
+  ss.str("/tags?operation=add");
  uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -1186,8 +1185,7 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
   ss << "/vaults/";
   ss << request.GetVaultName();
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("");
-  ss << "/tags?operation=remove";
+  ss.str("/tags?operation=remove");
  uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
