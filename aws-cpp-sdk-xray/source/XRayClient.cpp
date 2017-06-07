@@ -101,9 +101,10 @@ void XRayClient::init(const ClientConfiguration& config)
 BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/Traces";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/Traces";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return BatchGetTracesOutcome(BatchGetTracesResult(outcome.GetResult()));
@@ -135,9 +136,10 @@ void XRayClient::BatchGetTracesAsyncHelper(const BatchGetTracesRequest& request,
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/ServiceGraph";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/ServiceGraph";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetServiceGraphOutcome(GetServiceGraphResult(outcome.GetResult()));
@@ -169,9 +171,10 @@ void XRayClient::GetServiceGraphAsyncHelper(const GetServiceGraphRequest& reques
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/TraceGraph";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/TraceGraph";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTraceGraphOutcome(GetTraceGraphResult(outcome.GetResult()));
@@ -203,9 +206,10 @@ void XRayClient::GetTraceGraphAsyncHelper(const GetTraceGraphRequest& request, c
 GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/TraceSummaries";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/TraceSummaries";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTraceSummariesOutcome(GetTraceSummariesResult(outcome.GetResult()));
@@ -237,9 +241,10 @@ void XRayClient::GetTraceSummariesAsyncHelper(const GetTraceSummariesRequest& re
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/TelemetryRecords";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/TelemetryRecords";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutTelemetryRecordsOutcome(PutTelemetryRecordsResult(outcome.GetResult()));
@@ -271,9 +276,10 @@ void XRayClient::PutTelemetryRecordsAsyncHelper(const PutTelemetryRecordsRequest
 PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/TraceSegments";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/TraceSegments";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutTraceSegmentsOutcome(PutTraceSegmentsResult(outcome.GetResult()));

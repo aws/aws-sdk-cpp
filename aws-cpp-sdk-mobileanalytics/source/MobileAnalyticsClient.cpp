@@ -96,9 +96,10 @@ void MobileAnalyticsClient::init(const ClientConfiguration& config)
 PutEventsOutcome MobileAnalyticsClient::PutEvents(const PutEventsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2014-06-05/events";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2014-06-05/events";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutEventsOutcome(NoResult());

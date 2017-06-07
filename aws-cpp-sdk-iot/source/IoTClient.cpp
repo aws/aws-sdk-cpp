@@ -152,10 +152,11 @@ void IoTClient::init(const ClientConfiguration& config)
 AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const AcceptCertificateTransferRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/accept-certificate-transfer/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/accept-certificate-transfer/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return AcceptCertificateTransferOutcome(NoResult());
@@ -187,10 +188,11 @@ void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTran
 AttachPrincipalPolicyOutcome IoTClient::AttachPrincipalPolicy(const AttachPrincipalPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/principal-policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/principal-policies/";
   ss << request.GetPolicyName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachPrincipalPolicyOutcome(NoResult());
@@ -222,11 +224,12 @@ void IoTClient::AttachPrincipalPolicyAsyncHelper(const AttachPrincipalPolicyRequ
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachThingPrincipalOutcome(AttachThingPrincipalResult(outcome.GetResult()));
@@ -258,10 +261,11 @@ void IoTClient::AttachThingPrincipalAsyncHelper(const AttachThingPrincipalReques
 CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const CancelCertificateTransferRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cancel-certificate-transfer/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/cancel-certificate-transfer/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return CancelCertificateTransferOutcome(NoResult());
@@ -293,9 +297,10 @@ void IoTClient::CancelCertificateTransferAsyncHelper(const CancelCertificateTran
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateCertificateFromCsrOutcome(CreateCertificateFromCsrResult(outcome.GetResult()));
@@ -327,9 +332,10 @@ void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromC
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/keys-and-certificate";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/keys-and-certificate";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateKeysAndCertificateOutcome(CreateKeysAndCertificateResult(outcome.GetResult()));
@@ -361,10 +367,11 @@ void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertifica
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePolicyOutcome(CreatePolicyResult(outcome.GetResult()));
@@ -396,11 +403,12 @@ void IoTClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, cons
 CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePolicyVersionOutcome(CreatePolicyVersionResult(outcome.GetResult()));
@@ -432,10 +440,11 @@ void IoTClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest&
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateThingOutcome(CreateThingResult(outcome.GetResult()));
@@ -467,10 +476,11 @@ void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/thing-types/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-types/";
   ss << request.GetThingTypeName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateThingTypeOutcome(CreateThingTypeResult(outcome.GetResult()));
@@ -502,10 +512,11 @@ void IoTClient::CreateThingTypeAsyncHelper(const CreateThingTypeRequest& request
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTopicRuleOutcome(NoResult());
@@ -537,10 +548,11 @@ void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cacertificate/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/cacertificate/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteCACertificateOutcome(DeleteCACertificateResult(outcome.GetResult()));
@@ -572,10 +584,11 @@ void IoTClient::DeleteCACertificateAsyncHelper(const DeleteCACertificateRequest&
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteCertificateOutcome(NoResult());
@@ -607,10 +620,11 @@ void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& req
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeletePolicyOutcome(NoResult());
@@ -642,12 +656,13 @@ void IoTClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, cons
 DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
   ss << request.GetPolicyVersionId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeletePolicyVersionOutcome(NoResult());
@@ -679,9 +694,10 @@ void IoTClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest&
 DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/registrationcode";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  Aws::Http::URI uri = m_uri;
+  ss << "/registrationcode";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteRegistrationCodeOutcome(DeleteRegistrationCodeResult(outcome.GetResult()));
@@ -713,10 +729,11 @@ void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRe
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteThingOutcome(DeleteThingResult(outcome.GetResult()));
@@ -748,10 +765,11 @@ void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/thing-types/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-types/";
   ss << request.GetThingTypeName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteThingTypeOutcome(DeleteThingTypeResult(outcome.GetResult()));
@@ -783,10 +801,11 @@ void IoTClient::DeleteThingTypeAsyncHelper(const DeleteThingTypeRequest& request
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteTopicRuleOutcome(NoResult());
@@ -818,11 +837,12 @@ void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/thing-types/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-types/";
   ss << request.GetThingTypeName();
   ss << "/deprecate";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeprecateThingTypeOutcome(DeprecateThingTypeResult(outcome.GetResult()));
@@ -854,10 +874,11 @@ void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& r
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cacertificate/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/cacertificate/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeCACertificateOutcome(DescribeCACertificateResult(outcome.GetResult()));
@@ -889,10 +910,11 @@ void IoTClient::DescribeCACertificateAsyncHelper(const DescribeCACertificateRequ
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeCertificateOutcome(DescribeCertificateResult(outcome.GetResult()));
@@ -924,9 +946,10 @@ void IoTClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest&
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/endpoint";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/endpoint";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeEndpointOutcome(DescribeEndpointResult(outcome.GetResult()));
@@ -958,10 +981,11 @@ void IoTClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& reque
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeThingOutcome(DescribeThingResult(outcome.GetResult()));
@@ -993,10 +1017,11 @@ void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, co
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/thing-types/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-types/";
   ss << request.GetThingTypeName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeThingTypeOutcome(DescribeThingTypeResult(outcome.GetResult()));
@@ -1028,10 +1053,11 @@ void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& req
 DetachPrincipalPolicyOutcome IoTClient::DetachPrincipalPolicy(const DetachPrincipalPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/principal-policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/principal-policies/";
   ss << request.GetPolicyName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DetachPrincipalPolicyOutcome(NoResult());
@@ -1063,11 +1089,12 @@ void IoTClient::DetachPrincipalPolicyAsyncHelper(const DetachPrincipalPolicyRequ
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DetachThingPrincipalOutcome(DetachThingPrincipalResult(outcome.GetResult()));
@@ -1099,11 +1126,12 @@ void IoTClient::DetachThingPrincipalAsyncHelper(const DetachThingPrincipalReques
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/disable";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DisableTopicRuleOutcome(NoResult());
@@ -1135,11 +1163,12 @@ void IoTClient::DisableTopicRuleAsyncHelper(const DisableTopicRuleRequest& reque
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/enable";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EnableTopicRuleOutcome(NoResult());
@@ -1171,9 +1200,10 @@ void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/loggingOptions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/loggingOptions";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetLoggingOptionsOutcome(GetLoggingOptionsResult(outcome.GetResult()));
@@ -1205,10 +1235,11 @@ void IoTClient::GetLoggingOptionsAsyncHelper(const GetLoggingOptionsRequest& req
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
@@ -1240,12 +1271,13 @@ void IoTClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetP
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
   ss << request.GetPolicyVersionId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPolicyVersionOutcome(GetPolicyVersionResult(outcome.GetResult()));
@@ -1277,9 +1309,10 @@ void IoTClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& reque
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/registrationcode";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/registrationcode";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetRegistrationCodeOutcome(GetRegistrationCodeResult(outcome.GetResult()));
@@ -1311,10 +1344,11 @@ void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest&
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetTopicRuleOutcome(GetTopicRuleResult(outcome.GetResult()));
@@ -1346,9 +1380,10 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cacertificates";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/cacertificates";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListCACertificatesOutcome(ListCACertificatesResult(outcome.GetResult()));
@@ -1380,9 +1415,10 @@ void IoTClient::ListCACertificatesAsyncHelper(const ListCACertificatesRequest& r
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListCertificatesOutcome(ListCertificatesResult(outcome.GetResult()));
@@ -1414,10 +1450,11 @@ void IoTClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& reque
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates-by-ca/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates-by-ca/";
   ss << request.GetCaCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListCertificatesByCAOutcome(ListCertificatesByCAResult(outcome.GetResult()));
@@ -1449,9 +1486,10 @@ void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCAReques
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates-out-going";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates-out-going";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListOutgoingCertificatesOutcome(ListOutgoingCertificatesResult(outcome.GetResult()));
@@ -1483,9 +1521,10 @@ void IoTClient::ListOutgoingCertificatesAsyncHelper(const ListOutgoingCertificat
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPoliciesOutcome(ListPoliciesResult(outcome.GetResult()));
@@ -1517,9 +1556,10 @@ void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, cons
 ListPolicyPrincipalsOutcome IoTClient::ListPolicyPrincipals(const ListPolicyPrincipalsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policy-principals";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/policy-principals";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPolicyPrincipalsOutcome(ListPolicyPrincipalsResult(outcome.GetResult()));
@@ -1551,11 +1591,12 @@ void IoTClient::ListPolicyPrincipalsAsyncHelper(const ListPolicyPrincipalsReques
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPolicyVersionsOutcome(ListPolicyVersionsResult(outcome.GetResult()));
@@ -1587,9 +1628,10 @@ void IoTClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& r
 ListPrincipalPoliciesOutcome IoTClient::ListPrincipalPolicies(const ListPrincipalPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/principal-policies";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/principal-policies";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPrincipalPoliciesOutcome(ListPrincipalPoliciesResult(outcome.GetResult()));
@@ -1621,9 +1663,10 @@ void IoTClient::ListPrincipalPoliciesAsyncHelper(const ListPrincipalPoliciesRequ
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/principals/things";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/principals/things";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPrincipalThingsOutcome(ListPrincipalThingsResult(outcome.GetResult()));
@@ -1655,11 +1698,12 @@ void IoTClient::ListPrincipalThingsAsyncHelper(const ListPrincipalThingsRequest&
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListThingPrincipalsOutcome(ListThingPrincipalsResult(outcome.GetResult()));
@@ -1691,9 +1735,10 @@ void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest&
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/thing-types";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/thing-types";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListThingTypesOutcome(ListThingTypesResult(outcome.GetResult()));
@@ -1725,9 +1770,10 @@ void IoTClient::ListThingTypesAsyncHelper(const ListThingTypesRequest& request, 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/things";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListThingsOutcome(ListThingsResult(outcome.GetResult()));
@@ -1759,9 +1805,10 @@ void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const Li
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTopicRulesOutcome(ListTopicRulesResult(outcome.GetResult()));
@@ -1793,9 +1840,10 @@ void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cacertificate";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/cacertificate";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterCACertificateOutcome(RegisterCACertificateResult(outcome.GetResult()));
@@ -1827,9 +1875,10 @@ void IoTClient::RegisterCACertificateAsyncHelper(const RegisterCACertificateRequ
 RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificate/register";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificate/register";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterCertificateOutcome(RegisterCertificateResult(outcome.GetResult()));
@@ -1861,10 +1910,11 @@ void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest&
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/reject-certificate-transfer/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/reject-certificate-transfer/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return RejectCertificateTransferOutcome(NoResult());
@@ -1896,10 +1946,11 @@ void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTran
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/rules/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/rules/";
   ss << request.GetRuleName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return ReplaceTopicRuleOutcome(NoResult());
@@ -1931,12 +1982,13 @@ void IoTClient::ReplaceTopicRuleAsyncHelper(const ReplaceTopicRuleRequest& reque
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/policies/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
   ss << request.GetPolicyVersionId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return SetDefaultPolicyVersionOutcome(NoResult());
@@ -1968,9 +2020,10 @@ void IoTClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersion
 SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/loggingOptions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/loggingOptions";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetLoggingOptionsOutcome(NoResult());
@@ -2002,10 +2055,11 @@ void IoTClient::SetLoggingOptionsAsyncHelper(const SetLoggingOptionsRequest& req
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/transfer-certificate/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/transfer-certificate/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return TransferCertificateOutcome(TransferCertificateResult(outcome.GetResult()));
@@ -2037,10 +2091,11 @@ void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest&
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/cacertificate/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/cacertificate/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateCACertificateOutcome(NoResult());
@@ -2072,10 +2127,11 @@ void IoTClient::UpdateCACertificateAsyncHelper(const UpdateCACertificateRequest&
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/certificates/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/certificates/";
   ss << request.GetCertificateId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateCertificateOutcome(NoResult());
@@ -2107,10 +2163,11 @@ void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& req
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/things/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/things/";
   ss << request.GetThingName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
   if(outcome.IsSuccess())
   {
     return UpdateThingOutcome(UpdateThingResult(outcome.GetResult()));

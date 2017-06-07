@@ -112,11 +112,12 @@ void CognitoSyncClient::init(const ClientConfiguration& config)
 BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/bulkpublish";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return BulkPublishOutcome(BulkPublishResult(outcome.GetResult()));
@@ -148,14 +149,15 @@ void CognitoSyncClient::BulkPublishAsyncHelper(const BulkPublishRequest& request
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
   ss << "/datasets/";
   ss << request.GetDatasetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteDatasetOutcome(DeleteDatasetResult(outcome.GetResult()));
@@ -187,14 +189,15 @@ void CognitoSyncClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& req
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
   ss << "/datasets/";
   ss << request.GetDatasetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeDatasetOutcome(DescribeDatasetResult(outcome.GetResult()));
@@ -226,10 +229,11 @@ void CognitoSyncClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest&
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeIdentityPoolUsageOutcome(DescribeIdentityPoolUsageResult(outcome.GetResult()));
@@ -261,12 +265,13 @@ void CognitoSyncClient::DescribeIdentityPoolUsageAsyncHelper(const DescribeIdent
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeIdentityUsageOutcome(DescribeIdentityUsageResult(outcome.GetResult()));
@@ -298,11 +303,12 @@ void CognitoSyncClient::DescribeIdentityUsageAsyncHelper(const DescribeIdentityU
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/getBulkPublishDetails";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetBulkPublishDetailsOutcome(GetBulkPublishDetailsResult(outcome.GetResult()));
@@ -334,11 +340,12 @@ void CognitoSyncClient::GetBulkPublishDetailsAsyncHelper(const GetBulkPublishDet
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/events";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCognitoEventsOutcome(GetCognitoEventsResult(outcome.GetResult()));
@@ -370,11 +377,12 @@ void CognitoSyncClient::GetCognitoEventsAsyncHelper(const GetCognitoEventsReques
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(const GetIdentityPoolConfigurationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetIdentityPoolConfigurationOutcome(GetIdentityPoolConfigurationResult(outcome.GetResult()));
@@ -406,13 +414,14 @@ void CognitoSyncClient::GetIdentityPoolConfigurationAsyncHelper(const GetIdentit
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
   ss << "/datasets";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListDatasetsOutcome(ListDatasetsResult(outcome.GetResult()));
@@ -444,9 +453,10 @@ void CognitoSyncClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& reque
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListIdentityPoolUsageOutcome(ListIdentityPoolUsageResult(outcome.GetResult()));
@@ -478,15 +488,16 @@ void CognitoSyncClient::ListIdentityPoolUsageAsyncHelper(const ListIdentityPoolU
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
   ss << "/datasets/";
   ss << request.GetDatasetName();
   ss << "/records";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListRecordsOutcome(ListRecordsResult(outcome.GetResult()));
@@ -518,13 +529,14 @@ void CognitoSyncClient::ListRecordsAsyncHelper(const ListRecordsRequest& request
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identity/";
   ss << request.GetIdentityId();
   ss << "/device";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterDeviceOutcome(RegisterDeviceResult(outcome.GetResult()));
@@ -556,11 +568,12 @@ void CognitoSyncClient::RegisterDeviceAsyncHelper(const RegisterDeviceRequest& r
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/events";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetCognitoEventsOutcome(NoResult());
@@ -592,11 +605,12 @@ void CognitoSyncClient::SetCognitoEventsAsyncHelper(const SetCognitoEventsReques
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(const SetIdentityPoolConfigurationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityPoolConfigurationOutcome(SetIdentityPoolConfigurationResult(outcome.GetResult()));
@@ -628,7 +642,8 @@ void CognitoSyncClient::SetIdentityPoolConfigurationAsyncHelper(const SetIdentit
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
@@ -636,8 +651,8 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
   ss << request.GetDatasetName();
   ss << "/subscriptions/";
   ss << request.GetDeviceId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SubscribeToDatasetOutcome(SubscribeToDatasetResult(outcome.GetResult()));
@@ -669,7 +684,8 @@ void CognitoSyncClient::SubscribeToDatasetAsyncHelper(const SubscribeToDatasetRe
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
@@ -677,8 +693,8 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
   ss << request.GetDatasetName();
   ss << "/subscriptions/";
   ss << request.GetDeviceId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return UnsubscribeFromDatasetOutcome(UnsubscribeFromDatasetResult(outcome.GetResult()));
@@ -710,14 +726,15 @@ void CognitoSyncClient::UnsubscribeFromDatasetAsyncHelper(const UnsubscribeFromD
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/identitypools/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/identitypools/";
   ss << request.GetIdentityPoolId();
   ss << "/identities/";
   ss << request.GetIdentityId();
   ss << "/datasets/";
   ss << request.GetDatasetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateRecordsOutcome(UpdateRecordsResult(outcome.GetResult()));

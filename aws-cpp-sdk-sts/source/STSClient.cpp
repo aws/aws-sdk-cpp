@@ -113,9 +113,10 @@ Aws::String STSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
 AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleOutcome(AssumeRoleResult(outcome.GetResult()));
@@ -147,9 +148,10 @@ void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const As
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleWithSAMLOutcome(AssumeRoleWithSAMLResult(outcome.GetResult()));
@@ -181,9 +183,10 @@ void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& r
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleWithWebIdentityOutcome(AssumeRoleWithWebIdentityResult(outcome.GetResult()));
@@ -215,9 +218,10 @@ void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIden
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DecodeAuthorizationMessageOutcome(DecodeAuthorizationMessageResult(outcome.GetResult()));
@@ -249,9 +253,10 @@ void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationM
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.GetResult()));
@@ -283,9 +288,10 @@ void STSClient::GetCallerIdentityAsyncHelper(const GetCallerIdentityRequest& req
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetFederationTokenOutcome(GetFederationTokenResult(outcome.GetResult()));
@@ -317,9 +323,10 @@ void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& r
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSessionTokenOutcome(GetSessionTokenResult(outcome.GetResult()));

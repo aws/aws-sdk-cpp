@@ -130,9 +130,10 @@ void InspectorClient::init(const ClientConfiguration& config)
 AddAttributesToFindingsOutcome InspectorClient::AddAttributesToFindings(const AddAttributesToFindingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddAttributesToFindingsOutcome(AddAttributesToFindingsResult(outcome.GetResult()));
@@ -164,9 +165,10 @@ void InspectorClient::AddAttributesToFindingsAsyncHelper(const AddAttributesToFi
 AttachAssessmentAndRulesPackageOutcome InspectorClient::AttachAssessmentAndRulesPackage(const AttachAssessmentAndRulesPackageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachAssessmentAndRulesPackageOutcome(AttachAssessmentAndRulesPackageResult(outcome.GetResult()));
@@ -198,9 +200,10 @@ void InspectorClient::AttachAssessmentAndRulesPackageAsyncHelper(const AttachAss
 CreateApplicationOutcome InspectorClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
@@ -232,9 +235,10 @@ void InspectorClient::CreateApplicationAsyncHelper(const CreateApplicationReques
 CreateAssessmentOutcome InspectorClient::CreateAssessment(const CreateAssessmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAssessmentOutcome(CreateAssessmentResult(outcome.GetResult()));
@@ -266,9 +270,10 @@ void InspectorClient::CreateAssessmentAsyncHelper(const CreateAssessmentRequest&
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateResourceGroupOutcome(CreateResourceGroupResult(outcome.GetResult()));
@@ -300,9 +305,10 @@ void InspectorClient::CreateResourceGroupAsyncHelper(const CreateResourceGroupRe
 DeleteApplicationOutcome InspectorClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationOutcome(DeleteApplicationResult(outcome.GetResult()));
@@ -334,9 +340,10 @@ void InspectorClient::DeleteApplicationAsyncHelper(const DeleteApplicationReques
 DeleteAssessmentOutcome InspectorClient::DeleteAssessment(const DeleteAssessmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteAssessmentOutcome(DeleteAssessmentResult(outcome.GetResult()));
@@ -368,9 +375,10 @@ void InspectorClient::DeleteAssessmentAsyncHelper(const DeleteAssessmentRequest&
 DeleteRunOutcome InspectorClient::DeleteRun(const DeleteRunRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRunOutcome(DeleteRunResult(outcome.GetResult()));
@@ -402,9 +410,10 @@ void InspectorClient::DeleteRunAsyncHelper(const DeleteRunRequest& request, cons
 DescribeApplicationOutcome InspectorClient::DescribeApplication(const DescribeApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeApplicationOutcome(DescribeApplicationResult(outcome.GetResult()));
@@ -436,9 +445,10 @@ void InspectorClient::DescribeApplicationAsyncHelper(const DescribeApplicationRe
 DescribeAssessmentOutcome InspectorClient::DescribeAssessment(const DescribeAssessmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAssessmentOutcome(DescribeAssessmentResult(outcome.GetResult()));
@@ -504,9 +514,10 @@ void InspectorClient::DescribeCrossAccountAccessRoleAsyncHelper(const DescribeCr
 DescribeFindingOutcome InspectorClient::DescribeFinding(const DescribeFindingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeFindingOutcome(DescribeFindingResult(outcome.GetResult()));
@@ -538,9 +549,10 @@ void InspectorClient::DescribeFindingAsyncHelper(const DescribeFindingRequest& r
 DescribeResourceGroupOutcome InspectorClient::DescribeResourceGroup(const DescribeResourceGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeResourceGroupOutcome(DescribeResourceGroupResult(outcome.GetResult()));
@@ -572,9 +584,10 @@ void InspectorClient::DescribeResourceGroupAsyncHelper(const DescribeResourceGro
 DescribeRulesPackageOutcome InspectorClient::DescribeRulesPackage(const DescribeRulesPackageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeRulesPackageOutcome(DescribeRulesPackageResult(outcome.GetResult()));
@@ -606,9 +619,10 @@ void InspectorClient::DescribeRulesPackageAsyncHelper(const DescribeRulesPackage
 DescribeRunOutcome InspectorClient::DescribeRun(const DescribeRunRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeRunOutcome(DescribeRunResult(outcome.GetResult()));
@@ -640,9 +654,10 @@ void InspectorClient::DescribeRunAsyncHelper(const DescribeRunRequest& request, 
 DetachAssessmentAndRulesPackageOutcome InspectorClient::DetachAssessmentAndRulesPackage(const DetachAssessmentAndRulesPackageRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachAssessmentAndRulesPackageOutcome(DetachAssessmentAndRulesPackageResult(outcome.GetResult()));
@@ -674,9 +689,10 @@ void InspectorClient::DetachAssessmentAndRulesPackageAsyncHelper(const DetachAss
 GetAssessmentTelemetryOutcome InspectorClient::GetAssessmentTelemetry(const GetAssessmentTelemetryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAssessmentTelemetryOutcome(GetAssessmentTelemetryResult(outcome.GetResult()));
@@ -708,9 +724,10 @@ void InspectorClient::GetAssessmentTelemetryAsyncHelper(const GetAssessmentTelem
 ListApplicationsOutcome InspectorClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListApplicationsOutcome(ListApplicationsResult(outcome.GetResult()));
@@ -742,9 +759,10 @@ void InspectorClient::ListApplicationsAsyncHelper(const ListApplicationsRequest&
 ListAssessmentAgentsOutcome InspectorClient::ListAssessmentAgents(const ListAssessmentAgentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAssessmentAgentsOutcome(ListAssessmentAgentsResult(outcome.GetResult()));
@@ -776,9 +794,10 @@ void InspectorClient::ListAssessmentAgentsAsyncHelper(const ListAssessmentAgents
 ListAssessmentsOutcome InspectorClient::ListAssessments(const ListAssessmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAssessmentsOutcome(ListAssessmentsResult(outcome.GetResult()));
@@ -810,9 +829,10 @@ void InspectorClient::ListAssessmentsAsyncHelper(const ListAssessmentsRequest& r
 ListAttachedAssessmentsOutcome InspectorClient::ListAttachedAssessments(const ListAttachedAssessmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedAssessmentsOutcome(ListAttachedAssessmentsResult(outcome.GetResult()));
@@ -844,9 +864,10 @@ void InspectorClient::ListAttachedAssessmentsAsyncHelper(const ListAttachedAsses
 ListAttachedRulesPackagesOutcome InspectorClient::ListAttachedRulesPackages(const ListAttachedRulesPackagesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedRulesPackagesOutcome(ListAttachedRulesPackagesResult(outcome.GetResult()));
@@ -878,9 +899,10 @@ void InspectorClient::ListAttachedRulesPackagesAsyncHelper(const ListAttachedRul
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListFindingsOutcome(ListFindingsResult(outcome.GetResult()));
@@ -912,9 +934,10 @@ void InspectorClient::ListFindingsAsyncHelper(const ListFindingsRequest& request
 ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPackagesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListRulesPackagesOutcome(ListRulesPackagesResult(outcome.GetResult()));
@@ -946,9 +969,10 @@ void InspectorClient::ListRulesPackagesAsyncHelper(const ListRulesPackagesReques
 ListRunsOutcome InspectorClient::ListRuns(const ListRunsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListRunsOutcome(ListRunsResult(outcome.GetResult()));
@@ -980,9 +1004,10 @@ void InspectorClient::ListRunsAsyncHelper(const ListRunsRequest& request, const 
 ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1014,9 +1039,10 @@ void InspectorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRe
 LocalizeTextOutcome InspectorClient::LocalizeText(const LocalizeTextRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return LocalizeTextOutcome(LocalizeTextResult(outcome.GetResult()));
@@ -1048,9 +1074,10 @@ void InspectorClient::LocalizeTextAsyncHelper(const LocalizeTextRequest& request
 PreviewAgentsForResourceGroupOutcome InspectorClient::PreviewAgentsForResourceGroup(const PreviewAgentsForResourceGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PreviewAgentsForResourceGroupOutcome(PreviewAgentsForResourceGroupResult(outcome.GetResult()));
@@ -1082,9 +1109,10 @@ void InspectorClient::PreviewAgentsForResourceGroupAsyncHelper(const PreviewAgen
 RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAccessRole(const RegisterCrossAccountAccessRoleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterCrossAccountAccessRoleOutcome(RegisterCrossAccountAccessRoleResult(outcome.GetResult()));
@@ -1116,9 +1144,10 @@ void InspectorClient::RegisterCrossAccountAccessRoleAsyncHelper(const RegisterCr
 RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFindings(const RemoveAttributesFromFindingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveAttributesFromFindingsOutcome(RemoveAttributesFromFindingsResult(outcome.GetResult()));
@@ -1150,9 +1179,10 @@ void InspectorClient::RemoveAttributesFromFindingsAsyncHelper(const RemoveAttrib
 RunAssessmentOutcome InspectorClient::RunAssessment(const RunAssessmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RunAssessmentOutcome(RunAssessmentResult(outcome.GetResult()));
@@ -1184,9 +1214,10 @@ void InspectorClient::RunAssessmentAsyncHelper(const RunAssessmentRequest& reque
 SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetTagsForResourceOutcome(SetTagsForResourceResult(outcome.GetResult()));
@@ -1218,9 +1249,10 @@ void InspectorClient::SetTagsForResourceAsyncHelper(const SetTagsForResourceRequ
 StartDataCollectionOutcome InspectorClient::StartDataCollection(const StartDataCollectionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return StartDataCollectionOutcome(StartDataCollectionResult(outcome.GetResult()));
@@ -1252,9 +1284,10 @@ void InspectorClient::StartDataCollectionAsyncHelper(const StartDataCollectionRe
 StopDataCollectionOutcome InspectorClient::StopDataCollection(const StopDataCollectionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return StopDataCollectionOutcome(StopDataCollectionResult(outcome.GetResult()));
@@ -1286,9 +1319,10 @@ void InspectorClient::StopDataCollectionAsyncHelper(const StopDataCollectionRequ
 UpdateApplicationOutcome InspectorClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));
@@ -1320,9 +1354,10 @@ void InspectorClient::UpdateApplicationAsyncHelper(const UpdateApplicationReques
 UpdateAssessmentOutcome InspectorClient::UpdateAssessment(const UpdateAssessmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAssessmentOutcome(UpdateAssessmentResult(outcome.GetResult()));

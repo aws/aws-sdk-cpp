@@ -128,14 +128,15 @@ void GlacierClient::init(const ClientConfiguration& config)
 AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads/";
   ss << request.GetUploadId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return AbortMultipartUploadOutcome(NoResult());
@@ -167,13 +168,14 @@ void GlacierClient::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRe
 AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/lock-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return AbortVaultLockOutcome(NoResult());
@@ -205,13 +207,16 @@ void GlacierClient::AbortVaultLockAsyncHelper(const AbortVaultLockRequest& reque
 AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("");
   ss << "/tags?operation=add";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddTagsToVaultOutcome(NoResult());
@@ -243,14 +248,15 @@ void GlacierClient::AddTagsToVaultAsyncHelper(const AddTagsToVaultRequest& reque
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads/";
   ss << request.GetUploadId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CompleteMultipartUploadOutcome(CompleteMultipartUploadResult(outcome.GetResult()));
@@ -282,14 +288,15 @@ void GlacierClient::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUp
 CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLockRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/lock-policy/";
   ss << request.GetLockId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CompleteVaultLockOutcome(NoResult());
@@ -321,12 +328,13 @@ void GlacierClient::CompleteVaultLockAsyncHelper(const CompleteVaultLockRequest&
 CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateVaultOutcome(CreateVaultResult(outcome.GetResult()));
@@ -358,14 +366,15 @@ void GlacierClient::CreateVaultAsyncHelper(const CreateVaultRequest& request, co
 DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/archives/";
   ss << request.GetArchiveId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteArchiveOutcome(NoResult());
@@ -397,12 +406,13 @@ void GlacierClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request
 DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteVaultOutcome(NoResult());
@@ -434,13 +444,14 @@ void GlacierClient::DeleteVaultAsyncHelper(const DeleteVaultRequest& request, co
 DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const DeleteVaultAccessPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/access-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteVaultAccessPolicyOutcome(NoResult());
@@ -472,13 +483,14 @@ void GlacierClient::DeleteVaultAccessPolicyAsyncHelper(const DeleteVaultAccessPo
 DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const DeleteVaultNotificationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/notification-configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteVaultNotificationsOutcome(NoResult());
@@ -510,14 +522,15 @@ void GlacierClient::DeleteVaultNotificationsAsyncHelper(const DeleteVaultNotific
 DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/jobs/";
   ss << request.GetJobId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeJobOutcome(DescribeJobResult(outcome.GetResult()));
@@ -549,12 +562,13 @@ void GlacierClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, co
 DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeVaultOutcome(DescribeVaultResult(outcome.GetResult()));
@@ -586,11 +600,12 @@ void GlacierClient::DescribeVaultAsyncHelper(const DescribeVaultRequest& request
 GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDataRetrievalPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/policies/data-retrieval";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetDataRetrievalPolicyOutcome(GetDataRetrievalPolicyResult(outcome.GetResult()));
@@ -622,15 +637,16 @@ void GlacierClient::GetDataRetrievalPolicyAsyncHelper(const GetDataRetrievalPoli
 GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/output";
-
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetJobOutputOutcome(GetJobOutputResult(outcome.GetResultWithOwnership()));
@@ -662,13 +678,14 @@ void GlacierClient::GetJobOutputAsyncHelper(const GetJobOutputRequest& request, 
 GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAccessPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/access-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetVaultAccessPolicyOutcome(GetVaultAccessPolicyResult(outcome.GetResult()));
@@ -700,13 +717,14 @@ void GlacierClient::GetVaultAccessPolicyAsyncHelper(const GetVaultAccessPolicyRe
 GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/lock-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetVaultLockOutcome(GetVaultLockResult(outcome.GetResult()));
@@ -738,13 +756,14 @@ void GlacierClient::GetVaultLockAsyncHelper(const GetVaultLockRequest& request, 
 GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVaultNotificationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/notification-configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetVaultNotificationsOutcome(GetVaultNotificationsResult(outcome.GetResult()));
@@ -776,13 +795,14 @@ void GlacierClient::GetVaultNotificationsAsyncHelper(const GetVaultNotifications
 InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/jobs";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return InitiateJobOutcome(InitiateJobResult(outcome.GetResult()));
@@ -814,13 +834,14 @@ void GlacierClient::InitiateJobAsyncHelper(const InitiateJobRequest& request, co
 InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const InitiateMultipartUploadRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return InitiateMultipartUploadOutcome(InitiateMultipartUploadResult(outcome.GetResult()));
@@ -852,13 +873,14 @@ void GlacierClient::InitiateMultipartUploadAsyncHelper(const InitiateMultipartUp
 InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLockRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/lock-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return InitiateVaultLockOutcome(InitiateVaultLockResult(outcome.GetResult()));
@@ -890,13 +912,14 @@ void GlacierClient::InitiateVaultLockAsyncHelper(const InitiateVaultLockRequest&
 ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/jobs";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
@@ -928,13 +951,14 @@ void GlacierClient::ListJobsAsyncHelper(const ListJobsRequest& request, const Li
 ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListMultipartUploadsOutcome(ListMultipartUploadsResult(outcome.GetResult()));
@@ -966,14 +990,15 @@ void GlacierClient::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRe
 ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads/";
   ss << request.GetUploadId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPartsOutcome(ListPartsResult(outcome.GetResult()));
@@ -1005,11 +1030,12 @@ void GlacierClient::ListPartsAsyncHelper(const ListPartsRequest& request, const 
 ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/provisioned-capacity";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListProvisionedCapacityOutcome(ListProvisionedCapacityResult(outcome.GetResult()));
@@ -1041,13 +1067,14 @@ void GlacierClient::ListProvisionedCapacityAsyncHelper(const ListProvisionedCapa
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/tags";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTagsForVaultOutcome(ListTagsForVaultResult(outcome.GetResult()));
@@ -1079,11 +1106,12 @@ void GlacierClient::ListTagsForVaultAsyncHelper(const ListTagsForVaultRequest& r
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListVaultsOutcome(ListVaultsResult(outcome.GetResult()));
@@ -1115,11 +1143,12 @@ void GlacierClient::ListVaultsAsyncHelper(const ListVaultsRequest& request, cons
 PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/provisioned-capacity";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PurchaseProvisionedCapacityOutcome(PurchaseProvisionedCapacityResult(outcome.GetResult()));
@@ -1151,13 +1180,16 @@ void GlacierClient::PurchaseProvisionedCapacityAsyncHelper(const PurchaseProvisi
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("");
   ss << "/tags?operation=remove";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveTagsFromVaultOutcome(NoResult());
@@ -1189,11 +1221,12 @@ void GlacierClient::RemoveTagsFromVaultAsyncHelper(const RemoveTagsFromVaultRequ
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/policies/data-retrieval";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return SetDataRetrievalPolicyOutcome(NoResult());
@@ -1225,13 +1258,14 @@ void GlacierClient::SetDataRetrievalPolicyAsyncHelper(const SetDataRetrievalPoli
 SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAccessPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/access-policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return SetVaultAccessPolicyOutcome(NoResult());
@@ -1263,13 +1297,14 @@ void GlacierClient::SetVaultAccessPolicyAsyncHelper(const SetVaultAccessPolicyRe
 SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVaultNotificationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/notification-configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return SetVaultNotificationsOutcome(NoResult());
@@ -1301,13 +1336,14 @@ void GlacierClient::SetVaultNotificationsAsyncHelper(const SetVaultNotifications
 UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/archives";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UploadArchiveOutcome(UploadArchiveResult(outcome.GetResult()));
@@ -1339,14 +1375,15 @@ void GlacierClient::UploadArchiveAsyncHelper(const UploadArchiveRequest& request
 UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultipartPartRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
   ss << "/multipart-uploads/";
   ss << request.GetUploadId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UploadMultipartPartOutcome(UploadMultipartPartResult(outcome.GetResult()));

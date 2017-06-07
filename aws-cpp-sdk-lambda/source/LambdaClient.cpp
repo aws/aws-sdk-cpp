@@ -122,11 +122,12 @@ void LambdaClient::init(const ClientConfiguration& config)
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddPermissionOutcome(AddPermissionResult(outcome.GetResult()));
@@ -158,11 +159,12 @@ void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request,
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAliasOutcome(CreateAliasResult(outcome.GetResult()));
@@ -194,9 +196,10 @@ void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, con
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/event-source-mappings/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/event-source-mappings/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateEventSourceMappingOutcome(CreateEventSourceMappingResult(outcome.GetResult()));
@@ -228,9 +231,10 @@ void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMa
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateFunctionOutcome(CreateFunctionResult(outcome.GetResult()));
@@ -262,12 +266,13 @@ void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reques
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteAliasOutcome(NoResult());
@@ -299,10 +304,11 @@ void LambdaClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, con
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/event-source-mappings/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteEventSourceMappingOutcome(DeleteEventSourceMappingResult(outcome.GetResult()));
@@ -334,10 +340,11 @@ void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMa
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteFunctionOutcome(NoResult());
@@ -369,9 +376,10 @@ void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& reques
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2016-08-19/account-settings/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2016-08-19/account-settings/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetAccountSettingsOutcome(GetAccountSettingsResult(outcome.GetResult()));
@@ -403,12 +411,13 @@ void LambdaClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetAliasOutcome(GetAliasResult(outcome.GetResult()));
@@ -440,10 +449,11 @@ void LambdaClient::GetAliasAsyncHelper(const GetAliasRequest& request, const Get
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/event-source-mappings/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetEventSourceMappingOutcome(GetEventSourceMappingResult(outcome.GetResult()));
@@ -475,10 +485,11 @@ void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingR
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFunctionOutcome(GetFunctionResult(outcome.GetResult()));
@@ -510,11 +521,12 @@ void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, con
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFunctionConfigurationOutcome(GetFunctionConfigurationResult(outcome.GetResult()));
@@ -546,11 +558,12 @@ void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigur
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
@@ -582,11 +595,12 @@ void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const G
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/invocations";
-
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return InvokeOutcome(InvokeResult(outcome.GetResultWithOwnership()));
@@ -618,11 +632,12 @@ void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request, const InvokeR
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListAliasesOutcome(ListAliasesResult(outcome.GetResult()));
@@ -654,9 +669,10 @@ void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, con
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/event-source-mappings/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/event-source-mappings/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListEventSourceMappingsOutcome(ListEventSourceMappingsResult(outcome.GetResult()));
@@ -688,9 +704,10 @@ void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappi
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListFunctionsOutcome(ListFunctionsResult(outcome.GetResult()));
@@ -722,10 +739,11 @@ void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request,
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2017-03-31/tags/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-03-31/tags/";
   ss << request.GetResource();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
@@ -757,11 +775,12 @@ void LambdaClient::ListTagsAsyncHelper(const ListTagsRequest& request, const Lis
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListVersionsByFunctionOutcome(ListVersionsByFunctionResult(outcome.GetResult()));
@@ -793,11 +812,12 @@ void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctio
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PublishVersionOutcome(PublishVersionResult(outcome.GetResult()));
@@ -829,12 +849,13 @@ void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& reques
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy/";
   ss << request.GetStatementId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return RemovePermissionOutcome(NoResult());
@@ -866,10 +887,11 @@ void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& re
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2017-03-31/tags/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-03-31/tags/";
   ss << request.GetResource();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -901,10 +923,11 @@ void LambdaClient::TagResourceAsyncHelper(const TagResourceRequest& request, con
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2017-03-31/tags/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-03-31/tags/";
   ss << request.GetResource();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());
@@ -936,12 +959,13 @@ void LambdaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request,
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateAliasOutcome(UpdateAliasResult(outcome.GetResult()));
@@ -973,10 +997,11 @@ void LambdaClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, con
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/event-source-mappings/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateEventSourceMappingOutcome(UpdateEventSourceMappingResult(outcome.GetResult()));
@@ -1008,11 +1033,12 @@ void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMa
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/code";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateFunctionCodeOutcome(UpdateFunctionCodeResult(outcome.GetResult()));
@@ -1044,11 +1070,12 @@ void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2015-03-31/functions/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateFunctionConfigurationOutcome(UpdateFunctionConfigurationResult(outcome.GetResult()));

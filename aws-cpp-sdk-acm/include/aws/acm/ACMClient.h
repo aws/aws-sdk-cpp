@@ -607,8 +607,10 @@ namespace Model
          * Therefore, if you do not receive the original mail, you can request that the
          * mail be resent within 72 hours of requesting the ACM Certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
-         * resend validation mail, you must request a new certificate.</p><p><h3>See
-         * Also:</h3>   <a
+         * resend validation mail, you must request a new certificate. For more information
+         * about setting up your contact email addresses, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
          */
@@ -623,8 +625,10 @@ namespace Model
          * Therefore, if you do not receive the original mail, you can request that the
          * mail be resent within 72 hours of requesting the ACM Certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
-         * resend validation mail, you must request a new certificate.</p><p><h3>See
-         * Also:</h3>   <a
+         * resend validation mail, you must request a new certificate. For more information
+         * about setting up your contact email addresses, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
          *
@@ -641,8 +645,10 @@ namespace Model
          * Therefore, if you do not receive the original mail, you can request that the
          * mail be resent within 72 hours of requesting the ACM Certificate. If more than
          * 72 hours have elapsed since your original request or since your last attempt to
-         * resend validation mail, you must request a new certificate.</p><p><h3>See
-         * Also:</h3>   <a
+         * resend validation mail, you must request a new certificate. For more information
+         * about setting up your contact email addresses, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+         * Email for your Domain</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">AWS
          * API Reference</a></p>
          *

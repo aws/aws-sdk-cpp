@@ -98,9 +98,10 @@ void CloudSearchDomainClient::init(const ClientConfiguration& config)
 SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2013-01-01/search?format=sdk&pretty=true";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-01-01/search?format=sdk&pretty=true";
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return SearchOutcome(SearchResult(outcome.GetResult()));
@@ -132,9 +133,10 @@ void CloudSearchDomainClient::SearchAsyncHelper(const SearchRequest& request, co
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2013-01-01/suggest?format=sdk&pretty=true";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-01-01/suggest?format=sdk&pretty=true";
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return SuggestOutcome(SuggestResult(outcome.GetResult()));
@@ -166,9 +168,10 @@ void CloudSearchDomainClient::SuggestAsyncHelper(const SuggestRequest& request, 
 UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocumentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/2013-01-01/documents/batch?format=sdk";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-01-01/documents/batch?format=sdk";
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UploadDocumentsOutcome(UploadDocumentsResult(outcome.GetResult()));

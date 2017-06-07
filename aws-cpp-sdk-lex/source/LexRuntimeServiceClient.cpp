@@ -97,15 +97,16 @@ void LexRuntimeServiceClient::init(const ClientConfiguration& config)
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bot/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bot/";
   ss << request.GetBotName();
   ss << "/alias/";
   ss << request.GetBotAlias();
   ss << "/user/";
   ss << request.GetUserId();
   ss << "/content";
-
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PostContentOutcome(PostContentResult(outcome.GetResultWithOwnership()));
@@ -137,15 +138,16 @@ void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& r
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bot/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bot/";
   ss << request.GetBotName();
   ss << "/alias/";
   ss << request.GetBotAlias();
   ss << "/user/";
   ss << request.GetUserId();
   ss << "/text";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PostTextOutcome(PostTextResult(outcome.GetResult()));

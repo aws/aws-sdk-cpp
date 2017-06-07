@@ -104,9 +104,10 @@ void ShieldClient::init(const ClientConfiguration& config)
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateProtectionOutcome(CreateProtectionResult(outcome.GetResult()));
@@ -138,9 +139,10 @@ void ShieldClient::CreateProtectionAsyncHelper(const CreateProtectionRequest& re
 CreateSubscriptionOutcome ShieldClient::CreateSubscription(const CreateSubscriptionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateSubscriptionOutcome(CreateSubscriptionResult(outcome.GetResult()));
@@ -172,9 +174,10 @@ void ShieldClient::CreateSubscriptionAsyncHelper(const CreateSubscriptionRequest
 DeleteProtectionOutcome ShieldClient::DeleteProtection(const DeleteProtectionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteProtectionOutcome(DeleteProtectionResult(outcome.GetResult()));
@@ -206,9 +209,10 @@ void ShieldClient::DeleteProtectionAsyncHelper(const DeleteProtectionRequest& re
 DeleteSubscriptionOutcome ShieldClient::DeleteSubscription(const DeleteSubscriptionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteSubscriptionOutcome(DeleteSubscriptionResult(outcome.GetResult()));
@@ -240,9 +244,10 @@ void ShieldClient::DeleteSubscriptionAsyncHelper(const DeleteSubscriptionRequest
 DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAttackOutcome(DescribeAttackResult(outcome.GetResult()));
@@ -274,9 +279,10 @@ void ShieldClient::DescribeAttackAsyncHelper(const DescribeAttackRequest& reques
 DescribeProtectionOutcome ShieldClient::DescribeProtection(const DescribeProtectionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeProtectionOutcome(DescribeProtectionResult(outcome.GetResult()));
@@ -308,9 +314,10 @@ void ShieldClient::DescribeProtectionAsyncHelper(const DescribeProtectionRequest
 DescribeSubscriptionOutcome ShieldClient::DescribeSubscription(const DescribeSubscriptionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeSubscriptionOutcome(DescribeSubscriptionResult(outcome.GetResult()));
@@ -342,9 +349,10 @@ void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionReq
 ListAttacksOutcome ShieldClient::ListAttacks(const ListAttacksRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttacksOutcome(ListAttacksResult(outcome.GetResult()));
@@ -376,9 +384,10 @@ void ShieldClient::ListAttacksAsyncHelper(const ListAttacksRequest& request, con
 ListProtectionsOutcome ShieldClient::ListProtections(const ListProtectionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListProtectionsOutcome(ListProtectionsResult(outcome.GetResult()));

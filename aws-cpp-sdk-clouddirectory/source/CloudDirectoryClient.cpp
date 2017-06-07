@@ -154,9 +154,10 @@ void CloudDirectoryClient::init(const ClientConfiguration& config)
 AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/facets";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/facets";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AddFacetToObjectOutcome(AddFacetToObjectResult(outcome.GetResult()));
@@ -188,9 +189,10 @@ void CloudDirectoryClient::AddFacetToObjectAsyncHelper(const AddFacetToObjectReq
 ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/apply";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/apply";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return ApplySchemaOutcome(ApplySchemaResult(outcome.GetResult()));
@@ -222,9 +224,10 @@ void CloudDirectoryClient::ApplySchemaAsyncHelper(const ApplySchemaRequest& requ
 AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/attach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/attach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachObjectOutcome(AttachObjectResult(outcome.GetResult()));
@@ -256,9 +259,10 @@ void CloudDirectoryClient::AttachObjectAsyncHelper(const AttachObjectRequest& re
 AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/policy/attach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/policy/attach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachPolicyOutcome(AttachPolicyResult(outcome.GetResult()));
@@ -290,9 +294,10 @@ void CloudDirectoryClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& re
 AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/index/attach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/index/attach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachToIndexOutcome(AttachToIndexResult(outcome.GetResult()));
@@ -324,9 +329,10 @@ void CloudDirectoryClient::AttachToIndexAsyncHelper(const AttachToIndexRequest& 
 AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/attach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/attach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return AttachTypedLinkOutcome(AttachTypedLinkResult(outcome.GetResult()));
@@ -358,9 +364,10 @@ void CloudDirectoryClient::AttachTypedLinkAsyncHelper(const AttachTypedLinkReque
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/batchread";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/batchread";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return BatchReadOutcome(BatchReadResult(outcome.GetResult()));
@@ -392,9 +399,10 @@ void CloudDirectoryClient::BatchReadAsyncHelper(const BatchReadRequest& request,
 BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/batchwrite";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/batchwrite";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return BatchWriteOutcome(BatchWriteResult(outcome.GetResult()));
@@ -426,9 +434,10 @@ void CloudDirectoryClient::BatchWriteAsyncHelper(const BatchWriteRequest& reques
 CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirectoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory/create";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory/create";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateDirectoryOutcome(CreateDirectoryResult(outcome.GetResult()));
@@ -460,9 +469,10 @@ void CloudDirectoryClient::CreateDirectoryAsyncHelper(const CreateDirectoryReque
 CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet/create";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet/create";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateFacetOutcome(CreateFacetResult(outcome.GetResult()));
@@ -494,9 +504,10 @@ void CloudDirectoryClient::CreateFacetAsyncHelper(const CreateFacetRequest& requ
 CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/index";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/index";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateIndexOutcome(CreateIndexResult(outcome.GetResult()));
@@ -528,9 +539,10 @@ void CloudDirectoryClient::CreateIndexAsyncHelper(const CreateIndexRequest& requ
 CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateObjectOutcome(CreateObjectResult(outcome.GetResult()));
@@ -562,9 +574,10 @@ void CloudDirectoryClient::CreateObjectAsyncHelper(const CreateObjectRequest& re
 CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/create";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/create";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateSchemaOutcome(CreateSchemaResult(outcome.GetResult()));
@@ -596,9 +609,10 @@ void CloudDirectoryClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& re
 CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateTypedLinkFacetOutcome(CreateTypedLinkFacetResult(outcome.GetResult()));
@@ -630,9 +644,10 @@ void CloudDirectoryClient::CreateTypedLinkFacetAsyncHelper(const CreateTypedLink
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DeleteDirectoryOutcome(DeleteDirectoryResult(outcome.GetResult()));
@@ -664,9 +679,10 @@ void CloudDirectoryClient::DeleteDirectoryAsyncHelper(const DeleteDirectoryReque
 DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet/delete";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet/delete";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DeleteFacetOutcome(DeleteFacetResult(outcome.GetResult()));
@@ -698,9 +714,10 @@ void CloudDirectoryClient::DeleteFacetAsyncHelper(const DeleteFacetRequest& requ
 DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/delete";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/delete";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
@@ -732,9 +749,10 @@ void CloudDirectoryClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& re
 DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DeleteSchemaOutcome(DeleteSchemaResult(outcome.GetResult()));
@@ -766,9 +784,10 @@ void CloudDirectoryClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& re
 DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DeleteTypedLinkFacetOutcome(DeleteTypedLinkFacetResult(outcome.GetResult()));
@@ -800,9 +819,10 @@ void CloudDirectoryClient::DeleteTypedLinkFacetAsyncHelper(const DeleteTypedLink
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/index/detach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/index/detach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DetachFromIndexOutcome(DetachFromIndexResult(outcome.GetResult()));
@@ -834,9 +854,10 @@ void CloudDirectoryClient::DetachFromIndexAsyncHelper(const DetachFromIndexReque
 DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/detach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/detach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DetachObjectOutcome(DetachObjectResult(outcome.GetResult()));
@@ -868,9 +889,10 @@ void CloudDirectoryClient::DetachObjectAsyncHelper(const DetachObjectRequest& re
 DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/policy/detach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/policy/detach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DetachPolicyOutcome(DetachPolicyResult(outcome.GetResult()));
@@ -902,9 +924,10 @@ void CloudDirectoryClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& re
 DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/detach";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/detach";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DetachTypedLinkOutcome(NoResult());
@@ -936,9 +959,10 @@ void CloudDirectoryClient::DetachTypedLinkAsyncHelper(const DetachTypedLinkReque
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory/disable";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory/disable";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return DisableDirectoryOutcome(DisableDirectoryResult(outcome.GetResult()));
@@ -970,9 +994,10 @@ void CloudDirectoryClient::DisableDirectoryAsyncHelper(const DisableDirectoryReq
 EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirectoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory/enable";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory/enable";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return EnableDirectoryOutcome(EnableDirectoryResult(outcome.GetResult()));
@@ -1004,9 +1029,10 @@ void CloudDirectoryClient::EnableDirectoryAsyncHelper(const EnableDirectoryReque
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory/get";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory/get";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetDirectoryOutcome(GetDirectoryResult(outcome.GetResult()));
@@ -1038,9 +1064,10 @@ void CloudDirectoryClient::GetDirectoryAsyncHelper(const GetDirectoryRequest& re
 GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetFacetOutcome(GetFacetResult(outcome.GetResult()));
@@ -1072,9 +1099,10 @@ void CloudDirectoryClient::GetFacetAsyncHelper(const GetFacetRequest& request, c
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/information";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/information";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetObjectInformationOutcome(GetObjectInformationResult(outcome.GetResult()));
@@ -1106,9 +1134,10 @@ void CloudDirectoryClient::GetObjectInformationAsyncHelper(const GetObjectInform
 GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJsonRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/json";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/json";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSchemaAsJsonOutcome(GetSchemaAsJsonResult(outcome.GetResult()));
@@ -1140,9 +1169,10 @@ void CloudDirectoryClient::GetSchemaAsJsonAsyncHelper(const GetSchemaAsJsonReque
 GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(const GetTypedLinkFacetInformationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTypedLinkFacetInformationOutcome(GetTypedLinkFacetInformationResult(outcome.GetResult()));
@@ -1174,9 +1204,10 @@ void CloudDirectoryClient::GetTypedLinkFacetInformationAsyncHelper(const GetType
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/applied";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/applied";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAppliedSchemaArnsOutcome(ListAppliedSchemaArnsResult(outcome.GetResult()));
@@ -1208,9 +1239,10 @@ void CloudDirectoryClient::ListAppliedSchemaArnsAsyncHelper(const ListAppliedSch
 ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListAttachedIndicesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/indices";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/indices";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedIndicesOutcome(ListAttachedIndicesResult(outcome.GetResult()));
@@ -1242,9 +1274,10 @@ void CloudDirectoryClient::ListAttachedIndicesAsyncHelper(const ListAttachedIndi
 ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns(const ListDevelopmentSchemaArnsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/development";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/development";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListDevelopmentSchemaArnsOutcome(ListDevelopmentSchemaArnsResult(outcome.GetResult()));
@@ -1276,9 +1309,10 @@ void CloudDirectoryClient::ListDevelopmentSchemaArnsAsyncHelper(const ListDevelo
 ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectoriesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/directory/list";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/directory/list";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListDirectoriesOutcome(ListDirectoriesResult(outcome.GetResult()));
@@ -1310,9 +1344,10 @@ void CloudDirectoryClient::ListDirectoriesAsyncHelper(const ListDirectoriesReque
 ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListFacetAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet/attributes";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet/attributes";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListFacetAttributesOutcome(ListFacetAttributesResult(outcome.GetResult()));
@@ -1344,9 +1379,10 @@ void CloudDirectoryClient::ListFacetAttributesAsyncHelper(const ListFacetAttribu
 ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet/list";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet/list";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListFacetNamesOutcome(ListFacetNamesResult(outcome.GetResult()));
@@ -1378,9 +1414,10 @@ void CloudDirectoryClient::ListFacetNamesAsyncHelper(const ListFacetNamesRequest
 ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListIncomingTypedLinksOutcome(ListIncomingTypedLinksResult(outcome.GetResult()));
@@ -1412,9 +1449,10 @@ void CloudDirectoryClient::ListIncomingTypedLinksAsyncHelper(const ListIncomingT
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/index/targets";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/index/targets";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListIndexOutcome(ListIndexResult(outcome.GetResult()));
@@ -1446,9 +1484,10 @@ void CloudDirectoryClient::ListIndexAsyncHelper(const ListIndexRequest& request,
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/attributes";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/attributes";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListObjectAttributesOutcome(ListObjectAttributesResult(outcome.GetResult()));
@@ -1480,9 +1519,10 @@ void CloudDirectoryClient::ListObjectAttributesAsyncHelper(const ListObjectAttri
 ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObjectChildrenRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/children";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/children";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListObjectChildrenOutcome(ListObjectChildrenResult(outcome.GetResult()));
@@ -1514,9 +1554,10 @@ void CloudDirectoryClient::ListObjectChildrenAsyncHelper(const ListObjectChildre
 ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/parentpaths";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/parentpaths";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListObjectParentPathsOutcome(ListObjectParentPathsResult(outcome.GetResult()));
@@ -1548,9 +1589,10 @@ void CloudDirectoryClient::ListObjectParentPathsAsyncHelper(const ListObjectPare
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/parent";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/parent";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListObjectParentsOutcome(ListObjectParentsResult(outcome.GetResult()));
@@ -1582,9 +1624,10 @@ void CloudDirectoryClient::ListObjectParentsAsyncHelper(const ListObjectParentsR
 ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObjectPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/policy";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/policy";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListObjectPoliciesOutcome(ListObjectPoliciesResult(outcome.GetResult()));
@@ -1616,9 +1659,10 @@ void CloudDirectoryClient::ListObjectPoliciesAsyncHelper(const ListObjectPolicie
 ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListOutgoingTypedLinksOutcome(ListOutgoingTypedLinksResult(outcome.GetResult()));
@@ -1650,9 +1694,10 @@ void CloudDirectoryClient::ListOutgoingTypedLinksAsyncHelper(const ListOutgoingT
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/policy/attachment";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/policy/attachment";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPolicyAttachmentsOutcome(ListPolicyAttachmentsResult(outcome.GetResult()));
@@ -1684,9 +1729,10 @@ void CloudDirectoryClient::ListPolicyAttachmentsAsyncHelper(const ListPolicyAtta
 ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(const ListPublishedSchemaArnsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/published";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/published";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPublishedSchemaArnsOutcome(ListPublishedSchemaArnsResult(outcome.GetResult()));
@@ -1718,9 +1764,10 @@ void CloudDirectoryClient::ListPublishedSchemaArnsAsyncHelper(const ListPublishe
 ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/tags";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/tags";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1752,9 +1799,10 @@ void CloudDirectoryClient::ListTagsForResourceAsyncHelper(const ListTagsForResou
 ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(const ListTypedLinkFacetAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTypedLinkFacetAttributesOutcome(ListTypedLinkFacetAttributesResult(outcome.GetResult()));
@@ -1786,9 +1834,10 @@ void CloudDirectoryClient::ListTypedLinkFacetAttributesAsyncHelper(const ListTyp
 ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTypedLinkFacetNamesOutcome(ListTypedLinkFacetNamesResult(outcome.GetResult()));
@@ -1820,9 +1869,10 @@ void CloudDirectoryClient::ListTypedLinkFacetNamesAsyncHelper(const ListTypedLin
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/policy/lookup";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/policy/lookup";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return LookupPolicyOutcome(LookupPolicyResult(outcome.GetResult()));
@@ -1854,9 +1904,10 @@ void CloudDirectoryClient::LookupPolicyAsyncHelper(const LookupPolicyRequest& re
 PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/publish";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/publish";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PublishSchemaOutcome(PublishSchemaResult(outcome.GetResult()));
@@ -1888,9 +1939,10 @@ void CloudDirectoryClient::PublishSchemaAsyncHelper(const PublishSchemaRequest& 
 PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchemaFromJsonRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/json";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/json";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutSchemaFromJsonOutcome(PutSchemaFromJsonResult(outcome.GetResult()));
@@ -1922,9 +1974,10 @@ void CloudDirectoryClient::PutSchemaFromJsonAsyncHelper(const PutSchemaFromJsonR
 RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const RemoveFacetFromObjectRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/facets/delete";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/facets/delete";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return RemoveFacetFromObjectOutcome(RemoveFacetFromObjectResult(outcome.GetResult()));
@@ -1956,9 +2009,10 @@ void CloudDirectoryClient::RemoveFacetFromObjectAsyncHelper(const RemoveFacetFro
 TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/tags/add";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/tags/add";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1990,9 +2044,10 @@ void CloudDirectoryClient::TagResourceAsyncHelper(const TagResourceRequest& requ
 UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/tags/remove";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/tags/remove";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -2024,9 +2079,10 @@ void CloudDirectoryClient::UntagResourceAsyncHelper(const UntagResourceRequest& 
 UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/facet";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/facet";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateFacetOutcome(UpdateFacetResult(outcome.GetResult()));
@@ -2058,9 +2114,10 @@ void CloudDirectoryClient::UpdateFacetAsyncHelper(const UpdateFacetRequest& requ
 UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const UpdateObjectAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/update";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/object/update";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateObjectAttributesOutcome(UpdateObjectAttributesResult(outcome.GetResult()));
@@ -2092,9 +2149,10 @@ void CloudDirectoryClient::UpdateObjectAttributesAsyncHelper(const UpdateObjectA
 UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/schema/update";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/schema/update";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateSchemaOutcome(UpdateSchemaResult(outcome.GetResult()));
@@ -2126,9 +2184,10 @@ void CloudDirectoryClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& re
 UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/amazonclouddirectory/2017-01-11/typedlink/facet";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  Aws::Http::URI uri = m_uri;
+  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateTypedLinkFacetOutcome(UpdateTypedLinkFacetResult(outcome.GetResult()));

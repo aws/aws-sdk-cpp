@@ -145,11 +145,12 @@ void Route53Client::init(const ClientConfiguration& config)
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/associatevpc";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssociateVPCWithHostedZoneOutcome(AssociateVPCWithHostedZoneResult(outcome.GetResult()));
@@ -181,11 +182,12 @@ void Route53Client::AssociateVPCWithHostedZoneAsyncHelper(const AssociateVPCWith
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/rrset/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ChangeResourceRecordSetsOutcome(ChangeResourceRecordSetsResult(outcome.GetResult()));
@@ -217,12 +219,13 @@ void Route53Client::ChangeResourceRecordSetsAsyncHelper(const ChangeResourceReco
 ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/tags/";
   ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
   ss << "/";
   ss << request.GetResourceId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ChangeTagsForResourceOutcome(ChangeTagsForResourceResult(outcome.GetResult()));
@@ -254,9 +257,10 @@ void Route53Client::ChangeTagsForResourceAsyncHelper(const ChangeTagsForResource
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateHealthCheckOutcome(CreateHealthCheckResult(outcome.GetResult()));
@@ -288,9 +292,10 @@ void Route53Client::CreateHealthCheckAsyncHelper(const CreateHealthCheckRequest&
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateHostedZoneOutcome(CreateHostedZoneResult(outcome.GetResult()));
@@ -322,9 +327,10 @@ void Route53Client::CreateHostedZoneAsyncHelper(const CreateHostedZoneRequest& r
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/delegationset";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateReusableDelegationSetOutcome(CreateReusableDelegationSetResult(outcome.GetResult()));
@@ -356,9 +362,10 @@ void Route53Client::CreateReusableDelegationSetAsyncHelper(const CreateReusableD
 CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicy";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTrafficPolicyOutcome(CreateTrafficPolicyResult(outcome.GetResult()));
@@ -390,9 +397,10 @@ void Route53Client::CreateTrafficPolicyAsyncHelper(const CreateTrafficPolicyRequ
 CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(const CreateTrafficPolicyInstanceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstance";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTrafficPolicyInstanceOutcome(CreateTrafficPolicyInstanceResult(outcome.GetResult()));
@@ -424,10 +432,11 @@ void Route53Client::CreateTrafficPolicyInstanceAsyncHelper(const CreateTrafficPo
 CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(const CreateTrafficPolicyVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicy/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTrafficPolicyVersionOutcome(CreateTrafficPolicyVersionResult(outcome.GetResult()));
@@ -459,11 +468,12 @@ void Route53Client::CreateTrafficPolicyVersionAsyncHelper(const CreateTrafficPol
 CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(const CreateVPCAssociationAuthorizationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/authorizevpcassociation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateVPCAssociationAuthorizationOutcome(CreateVPCAssociationAuthorizationResult(outcome.GetResult()));
@@ -495,10 +505,11 @@ void Route53Client::CreateVPCAssociationAuthorizationAsyncHelper(const CreateVPC
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck/";
   ss << request.GetHealthCheckId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteHealthCheckOutcome(DeleteHealthCheckResult(outcome.GetResult()));
@@ -530,10 +541,11 @@ void Route53Client::DeleteHealthCheckAsyncHelper(const DeleteHealthCheckRequest&
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteHostedZoneOutcome(DeleteHostedZoneResult(outcome.GetResult()));
@@ -565,10 +577,11 @@ void Route53Client::DeleteHostedZoneAsyncHelper(const DeleteHostedZoneRequest& r
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/delegationset/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteReusableDelegationSetOutcome(DeleteReusableDelegationSetResult(outcome.GetResult()));
@@ -600,12 +613,13 @@ void Route53Client::DeleteReusableDelegationSetAsyncHelper(const DeleteReusableD
 DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicy/";
   ss << request.GetId();
   ss << "/";
   ss << request.GetVersion();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteTrafficPolicyOutcome(DeleteTrafficPolicyResult(outcome.GetResult()));
@@ -637,10 +651,11 @@ void Route53Client::DeleteTrafficPolicyAsyncHelper(const DeleteTrafficPolicyRequ
 DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(const DeleteTrafficPolicyInstanceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstance/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteTrafficPolicyInstanceOutcome(DeleteTrafficPolicyInstanceResult(outcome.GetResult()));
@@ -672,11 +687,12 @@ void Route53Client::DeleteTrafficPolicyInstanceAsyncHelper(const DeleteTrafficPo
 DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(const DeleteVPCAssociationAuthorizationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/deauthorizevpcassociation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteVPCAssociationAuthorizationOutcome(DeleteVPCAssociationAuthorizationResult(outcome.GetResult()));
@@ -708,11 +724,12 @@ void Route53Client::DeleteVPCAssociationAuthorizationAsyncHelper(const DeleteVPC
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/disassociatevpc";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DisassociateVPCFromHostedZoneOutcome(DisassociateVPCFromHostedZoneResult(outcome.GetResult()));
@@ -744,10 +761,11 @@ void Route53Client::DisassociateVPCFromHostedZoneAsyncHelper(const DisassociateV
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/change/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetChangeOutcome(GetChangeResult(outcome.GetResult()));
@@ -779,9 +797,10 @@ void Route53Client::GetChangeAsyncHelper(const GetChangeRequest& request, const 
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/checkeripranges";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCheckerIpRangesOutcome(GetCheckerIpRangesResult(outcome.GetResult()));
@@ -813,9 +832,10 @@ void Route53Client::GetCheckerIpRangesAsyncHelper(const GetCheckerIpRangesReques
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/geolocation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetGeoLocationOutcome(GetGeoLocationResult(outcome.GetResult()));
@@ -847,10 +867,11 @@ void Route53Client::GetGeoLocationAsyncHelper(const GetGeoLocationRequest& reque
 GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck/";
   ss << request.GetHealthCheckId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHealthCheckOutcome(GetHealthCheckResult(outcome.GetResult()));
@@ -882,9 +903,10 @@ void Route53Client::GetHealthCheckAsyncHelper(const GetHealthCheckRequest& reque
 GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthCheckCountRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheckcount";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHealthCheckCountOutcome(GetHealthCheckCountResult(outcome.GetResult()));
@@ -916,11 +938,12 @@ void Route53Client::GetHealthCheckCountAsyncHelper(const GetHealthCheckCountRequ
 GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureReason(const GetHealthCheckLastFailureReasonRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck/";
   ss << request.GetHealthCheckId();
   ss << "/lastfailurereason";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHealthCheckLastFailureReasonOutcome(GetHealthCheckLastFailureReasonResult(outcome.GetResult()));
@@ -952,11 +975,12 @@ void Route53Client::GetHealthCheckLastFailureReasonAsyncHelper(const GetHealthCh
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck/";
   ss << request.GetHealthCheckId();
   ss << "/status";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHealthCheckStatusOutcome(GetHealthCheckStatusResult(outcome.GetResult()));
@@ -988,10 +1012,11 @@ void Route53Client::GetHealthCheckStatusAsyncHelper(const GetHealthCheckStatusRe
 GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHostedZoneOutcome(GetHostedZoneResult(outcome.GetResult()));
@@ -1023,9 +1048,10 @@ void Route53Client::GetHostedZoneAsyncHelper(const GetHostedZoneRequest& request
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzonecount";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetHostedZoneCountOutcome(GetHostedZoneCountResult(outcome.GetResult()));
@@ -1057,10 +1083,11 @@ void Route53Client::GetHostedZoneCountAsyncHelper(const GetHostedZoneCountReques
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/delegationset/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetReusableDelegationSetOutcome(GetReusableDelegationSetResult(outcome.GetResult()));
@@ -1092,12 +1119,13 @@ void Route53Client::GetReusableDelegationSetAsyncHelper(const GetReusableDelegat
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicy/";
   ss << request.GetId();
   ss << "/";
   ss << request.GetVersion();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetTrafficPolicyOutcome(GetTrafficPolicyResult(outcome.GetResult()));
@@ -1129,10 +1157,11 @@ void Route53Client::GetTrafficPolicyAsyncHelper(const GetTrafficPolicyRequest& r
 GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const GetTrafficPolicyInstanceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstance/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetTrafficPolicyInstanceOutcome(GetTrafficPolicyInstanceResult(outcome.GetResult()));
@@ -1164,9 +1193,10 @@ void Route53Client::GetTrafficPolicyInstanceAsyncHelper(const GetTrafficPolicyIn
 GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCount(const GetTrafficPolicyInstanceCountRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstancecount";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetTrafficPolicyInstanceCountOutcome(GetTrafficPolicyInstanceCountResult(outcome.GetResult()));
@@ -1198,9 +1228,10 @@ void Route53Client::GetTrafficPolicyInstanceCountAsyncHelper(const GetTrafficPol
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/geolocations";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListGeoLocationsOutcome(ListGeoLocationsResult(outcome.GetResult()));
@@ -1232,9 +1263,10 @@ void Route53Client::ListGeoLocationsAsyncHelper(const ListGeoLocationsRequest& r
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListHealthChecksOutcome(ListHealthChecksResult(outcome.GetResult()));
@@ -1266,9 +1298,10 @@ void Route53Client::ListHealthChecksAsyncHelper(const ListHealthChecksRequest& r
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListHostedZonesOutcome(ListHostedZonesResult(outcome.GetResult()));
@@ -1300,9 +1333,10 @@ void Route53Client::ListHostedZonesAsyncHelper(const ListHostedZonesRequest& req
 ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHostedZonesByNameRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzonesbyname";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListHostedZonesByNameOutcome(ListHostedZonesByNameResult(outcome.GetResult()));
@@ -1334,11 +1368,12 @@ void Route53Client::ListHostedZonesByNameAsyncHelper(const ListHostedZonesByName
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/rrset";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListResourceRecordSetsOutcome(ListResourceRecordSetsResult(outcome.GetResult()));
@@ -1370,9 +1405,10 @@ void Route53Client::ListResourceRecordSetsAsyncHelper(const ListResourceRecordSe
 ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(const ListReusableDelegationSetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/delegationset";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListReusableDelegationSetsOutcome(ListReusableDelegationSetsResult(outcome.GetResult()));
@@ -1404,12 +1440,13 @@ void Route53Client::ListReusableDelegationSetsAsyncHelper(const ListReusableDele
 ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/tags/";
   ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
   ss << "/";
   ss << request.GetResourceId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1441,10 +1478,11 @@ void Route53Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
 ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsForResourcesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/tags/";
   ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourcesOutcome(ListTagsForResourcesResult(outcome.GetResult()));
@@ -1476,9 +1514,10 @@ void Route53Client::ListTagsForResourcesAsyncHelper(const ListTagsForResourcesRe
 ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicies";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTrafficPoliciesOutcome(ListTrafficPoliciesResult(outcome.GetResult()));
@@ -1510,9 +1549,10 @@ void Route53Client::ListTrafficPoliciesAsyncHelper(const ListTrafficPoliciesRequ
 ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(const ListTrafficPolicyInstancesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstances";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTrafficPolicyInstancesOutcome(ListTrafficPolicyInstancesResult(outcome.GetResult()));
@@ -1544,9 +1584,10 @@ void Route53Client::ListTrafficPolicyInstancesAsyncHelper(const ListTrafficPolic
 ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyInstancesByHostedZone(const ListTrafficPolicyInstancesByHostedZoneRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstances/hostedzone";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTrafficPolicyInstancesByHostedZoneOutcome(ListTrafficPolicyInstancesByHostedZoneResult(outcome.GetResult()));
@@ -1578,9 +1619,10 @@ void Route53Client::ListTrafficPolicyInstancesByHostedZoneAsyncHelper(const List
 ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstancesByPolicy(const ListTrafficPolicyInstancesByPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstances/trafficpolicy";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTrafficPolicyInstancesByPolicyOutcome(ListTrafficPolicyInstancesByPolicyResult(outcome.GetResult()));
@@ -1612,11 +1654,12 @@ void Route53Client::ListTrafficPolicyInstancesByPolicyAsyncHelper(const ListTraf
 ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const ListTrafficPolicyVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicies/";
   ss << request.GetId();
   ss << "/versions";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTrafficPolicyVersionsOutcome(ListTrafficPolicyVersionsResult(outcome.GetResult()));
@@ -1648,11 +1691,12 @@ void Route53Client::ListTrafficPolicyVersionsAsyncHelper(const ListTrafficPolicy
 ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(const ListVPCAssociationAuthorizationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetHostedZoneId();
   ss << "/authorizevpcassociation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListVPCAssociationAuthorizationsOutcome(ListVPCAssociationAuthorizationsResult(outcome.GetResult()));
@@ -1684,9 +1728,10 @@ void Route53Client::ListVPCAssociationAuthorizationsAsyncHelper(const ListVPCAss
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/testdnsanswer";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return TestDNSAnswerOutcome(TestDNSAnswerResult(outcome.GetResult()));
@@ -1718,10 +1763,11 @@ void Route53Client::TestDNSAnswerAsyncHelper(const TestDNSAnswerRequest& request
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/healthcheck/";
   ss << request.GetHealthCheckId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateHealthCheckOutcome(UpdateHealthCheckResult(outcome.GetResult()));
@@ -1753,10 +1799,11 @@ void Route53Client::UpdateHealthCheckAsyncHelper(const UpdateHealthCheckRequest&
 UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const UpdateHostedZoneCommentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/hostedzone/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateHostedZoneCommentOutcome(UpdateHostedZoneCommentResult(outcome.GetResult()));
@@ -1788,12 +1835,13 @@ void Route53Client::UpdateHostedZoneCommentAsyncHelper(const UpdateHostedZoneCom
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicy/";
   ss << request.GetId();
   ss << "/";
   ss << request.GetVersion();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateTrafficPolicyCommentOutcome(UpdateTrafficPolicyCommentResult(outcome.GetResult()));
@@ -1825,10 +1873,11 @@ void Route53Client::UpdateTrafficPolicyCommentAsyncHelper(const UpdateTrafficPol
 UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(const UpdateTrafficPolicyInstanceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2013-04-01/trafficpolicyinstance/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateTrafficPolicyInstanceOutcome(UpdateTrafficPolicyInstanceResult(outcome.GetResult()));

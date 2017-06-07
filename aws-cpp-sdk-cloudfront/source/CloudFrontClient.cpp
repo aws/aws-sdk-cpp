@@ -118,9 +118,10 @@ void CloudFrontClient::init(const ClientConfiguration& config)
 CreateCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2016_01_28(const CreateCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateCloudFrontOriginAccessIdentity2016_01_28Outcome(CreateCloudFrontOriginAccessIdentity2016_01_28Result(outcome.GetResult()));
@@ -152,9 +153,10 @@ void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2016_01_28AsyncHelper
 CreateDistribution2016_01_28Outcome CloudFrontClient::CreateDistribution2016_01_28(const CreateDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDistribution2016_01_28Outcome(CreateDistribution2016_01_28Result(outcome.GetResult()));
@@ -186,11 +188,12 @@ void CloudFrontClient::CreateDistribution2016_01_28AsyncHelper(const CreateDistr
 CreateInvalidation2016_01_28Outcome CloudFrontClient::CreateInvalidation2016_01_28(const CreateInvalidation2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateInvalidation2016_01_28Outcome(CreateInvalidation2016_01_28Result(outcome.GetResult()));
@@ -222,9 +225,10 @@ void CloudFrontClient::CreateInvalidation2016_01_28AsyncHelper(const CreateInval
 CreateStreamingDistribution2016_01_28Outcome CloudFrontClient::CreateStreamingDistribution2016_01_28(const CreateStreamingDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStreamingDistribution2016_01_28Outcome(CreateStreamingDistribution2016_01_28Result(outcome.GetResult()));
@@ -256,10 +260,11 @@ void CloudFrontClient::CreateStreamingDistribution2016_01_28AsyncHelper(const Cr
 DeleteCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2016_01_28(const DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteCloudFrontOriginAccessIdentity2016_01_28Outcome(NoResult());
@@ -291,10 +296,11 @@ void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2016_01_28AsyncHelper
 DeleteDistribution2016_01_28Outcome CloudFrontClient::DeleteDistribution2016_01_28(const DeleteDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteDistribution2016_01_28Outcome(NoResult());
@@ -326,10 +332,11 @@ void CloudFrontClient::DeleteDistribution2016_01_28AsyncHelper(const DeleteDistr
 DeleteStreamingDistribution2016_01_28Outcome CloudFrontClient::DeleteStreamingDistribution2016_01_28(const DeleteStreamingDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteStreamingDistribution2016_01_28Outcome(NoResult());
@@ -361,10 +368,11 @@ void CloudFrontClient::DeleteStreamingDistribution2016_01_28AsyncHelper(const De
 GetCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2016_01_28(const GetCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCloudFrontOriginAccessIdentity2016_01_28Outcome(GetCloudFrontOriginAccessIdentity2016_01_28Result(outcome.GetResult()));
@@ -396,11 +404,12 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentity2016_01_28AsyncHelper(co
 GetCloudFrontOriginAccessIdentityConfig2016_01_28Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2016_01_28(const GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCloudFrontOriginAccessIdentityConfig2016_01_28Outcome(GetCloudFrontOriginAccessIdentityConfig2016_01_28Result(outcome.GetResult()));
@@ -432,10 +441,11 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2016_01_28AsyncHel
 GetDistribution2016_01_28Outcome CloudFrontClient::GetDistribution2016_01_28(const GetDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetDistribution2016_01_28Outcome(GetDistribution2016_01_28Result(outcome.GetResult()));
@@ -467,11 +477,12 @@ void CloudFrontClient::GetDistribution2016_01_28AsyncHelper(const GetDistributio
 GetDistributionConfig2016_01_28Outcome CloudFrontClient::GetDistributionConfig2016_01_28(const GetDistributionConfig2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetDistributionConfig2016_01_28Outcome(GetDistributionConfig2016_01_28Result(outcome.GetResult()));
@@ -503,12 +514,13 @@ void CloudFrontClient::GetDistributionConfig2016_01_28AsyncHelper(const GetDistr
 GetInvalidation2016_01_28Outcome CloudFrontClient::GetInvalidation2016_01_28(const GetInvalidation2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetInvalidation2016_01_28Outcome(GetInvalidation2016_01_28Result(outcome.GetResult()));
@@ -540,10 +552,11 @@ void CloudFrontClient::GetInvalidation2016_01_28AsyncHelper(const GetInvalidatio
 GetStreamingDistribution2016_01_28Outcome CloudFrontClient::GetStreamingDistribution2016_01_28(const GetStreamingDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution/";
   ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetStreamingDistribution2016_01_28Outcome(GetStreamingDistribution2016_01_28Result(outcome.GetResult()));
@@ -575,11 +588,12 @@ void CloudFrontClient::GetStreamingDistribution2016_01_28AsyncHelper(const GetSt
 GetStreamingDistributionConfig2016_01_28Outcome CloudFrontClient::GetStreamingDistributionConfig2016_01_28(const GetStreamingDistributionConfig2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetStreamingDistributionConfig2016_01_28Outcome(GetStreamingDistributionConfig2016_01_28Result(outcome.GetResult()));
@@ -611,9 +625,10 @@ void CloudFrontClient::GetStreamingDistributionConfig2016_01_28AsyncHelper(const
 ListCloudFrontOriginAccessIdentities2016_01_28Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2016_01_28(const ListCloudFrontOriginAccessIdentities2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListCloudFrontOriginAccessIdentities2016_01_28Outcome(ListCloudFrontOriginAccessIdentities2016_01_28Result(outcome.GetResult()));
@@ -645,9 +660,10 @@ void CloudFrontClient::ListCloudFrontOriginAccessIdentities2016_01_28AsyncHelper
 ListDistributions2016_01_28Outcome CloudFrontClient::ListDistributions2016_01_28(const ListDistributions2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListDistributions2016_01_28Outcome(ListDistributions2016_01_28Result(outcome.GetResult()));
@@ -679,10 +695,11 @@ void CloudFrontClient::ListDistributions2016_01_28AsyncHelper(const ListDistribu
 ListDistributionsByWebACLId2016_01_28Outcome CloudFrontClient::ListDistributionsByWebACLId2016_01_28(const ListDistributionsByWebACLId2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distributionsByWebACLId/";
   ss << request.GetWebACLId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListDistributionsByWebACLId2016_01_28Outcome(ListDistributionsByWebACLId2016_01_28Result(outcome.GetResult()));
@@ -714,11 +731,12 @@ void CloudFrontClient::ListDistributionsByWebACLId2016_01_28AsyncHelper(const Li
 ListInvalidations2016_01_28Outcome CloudFrontClient::ListInvalidations2016_01_28(const ListInvalidations2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListInvalidations2016_01_28Outcome(ListInvalidations2016_01_28Result(outcome.GetResult()));
@@ -750,9 +768,10 @@ void CloudFrontClient::ListInvalidations2016_01_28AsyncHelper(const ListInvalida
 ListStreamingDistributions2016_01_28Outcome CloudFrontClient::ListStreamingDistributions2016_01_28(const ListStreamingDistributions2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListStreamingDistributions2016_01_28Outcome(ListStreamingDistributions2016_01_28Result(outcome.GetResult()));
@@ -784,11 +803,12 @@ void CloudFrontClient::ListStreamingDistributions2016_01_28AsyncHelper(const Lis
 UpdateCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2016_01_28(const UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateCloudFrontOriginAccessIdentity2016_01_28Outcome(UpdateCloudFrontOriginAccessIdentity2016_01_28Result(outcome.GetResult()));
@@ -820,11 +840,12 @@ void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2016_01_28AsyncHelper
 UpdateDistribution2016_01_28Outcome CloudFrontClient::UpdateDistribution2016_01_28(const UpdateDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/distribution/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateDistribution2016_01_28Outcome(UpdateDistribution2016_01_28Result(outcome.GetResult()));
@@ -856,11 +877,12 @@ void CloudFrontClient::UpdateDistribution2016_01_28AsyncHelper(const UpdateDistr
 UpdateStreamingDistribution2016_01_28Outcome CloudFrontClient::UpdateStreamingDistribution2016_01_28(const UpdateStreamingDistribution2016_01_28Request& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri;
+  Aws::Http::URI uri = m_uri;
   ss << "/2016-01-28/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateStreamingDistribution2016_01_28Outcome(UpdateStreamingDistribution2016_01_28Result(outcome.GetResult()));
