@@ -34,7 +34,9 @@ ProjectEnvironment::ProjectEnvironment() :
     m_imageHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) :
     m_imageHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +86,13 @@ ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
     m_environmentVariablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("privilegedMode"))
+  {
+    m_privilegedMode = jsonValue.GetBool("privilegedMode");
+
+    m_privilegedModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +124,12 @@ JsonValue ProjectEnvironment::Jsonize() const
      environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
    }
    payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
+
+  }
+
+  if(m_privilegedModeHasBeenSet)
+  {
+   payload.WithBool("privilegedMode", m_privilegedMode);
 
   }
 
