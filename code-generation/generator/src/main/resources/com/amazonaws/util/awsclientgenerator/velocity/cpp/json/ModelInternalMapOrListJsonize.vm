@@ -57,6 +57,8 @@
 #if($template.currentShape.listMember.shape.enum)
 #set($enumName = $template.currentShape.listMember.shape.name)
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString(${enumName}Mapper::GetNameFor${enumName}(${template.containerVar}[${template.lowerCaseVarName}Index]));
+#elseif($template.currentShape.listMember.shape.blob)
+  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(HashingUtils::Base64Encode(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)}));
 #else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
 #end

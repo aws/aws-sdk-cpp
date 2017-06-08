@@ -71,6 +71,8 @@
 #if($template.currentShape.listMember.shape.enum)
 #set($enumName = $template.currentShape.listMember.shape.name)
   ${template.currentSpaces}  ${template.containerVar}.push_back(${enumName}Mapper::Get${enumName}ForName(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString()));
+#elseif($template.currentShape.listMember.shape.blob)
+  ${template.currentSpaces}  ${template.containerVar}.push_back(HashingUtils::Base64Decode(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}()));
 #else
   ${template.currentSpaces}  ${template.containerVar}.push_back(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}());
 #end
