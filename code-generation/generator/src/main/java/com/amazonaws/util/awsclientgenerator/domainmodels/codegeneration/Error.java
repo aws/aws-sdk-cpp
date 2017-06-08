@@ -16,8 +16,10 @@
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(of={"name"})
 public class Error {
     private String name;
     private String text;
