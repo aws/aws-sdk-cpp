@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/Format.h>
 #include <utility>
@@ -43,6 +44,46 @@ namespace Model
     SegmentImportResource(const Aws::Utils::Json::JsonValue& jsonValue);
     SegmentImportResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * Channel type counts
+     */
+    inline const Aws::Map<Aws::String, int>& GetChannelCounts() const{ return m_channelCounts; }
+
+    /**
+     * Channel type counts
+     */
+    inline void SetChannelCounts(const Aws::Map<Aws::String, int>& value) { m_channelCountsHasBeenSet = true; m_channelCounts = value; }
+
+    /**
+     * Channel type counts
+     */
+    inline void SetChannelCounts(Aws::Map<Aws::String, int>&& value) { m_channelCountsHasBeenSet = true; m_channelCounts = std::move(value); }
+
+    /**
+     * Channel type counts
+     */
+    inline SegmentImportResource& WithChannelCounts(const Aws::Map<Aws::String, int>& value) { SetChannelCounts(value); return *this;}
+
+    /**
+     * Channel type counts
+     */
+    inline SegmentImportResource& WithChannelCounts(Aws::Map<Aws::String, int>&& value) { SetChannelCounts(std::move(value)); return *this;}
+
+    /**
+     * Channel type counts
+     */
+    inline SegmentImportResource& AddChannelCounts(const Aws::String& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
+
+    /**
+     * Channel type counts
+     */
+    inline SegmentImportResource& AddChannelCounts(Aws::String&& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(std::move(key), value); return *this; }
+
+    /**
+     * Channel type counts
+     */
+    inline SegmentImportResource& AddChannelCounts(const char* key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
 
     /**
      * A unique, custom ID assigned to the IAM role that restricts who can assume the
@@ -221,6 +262,8 @@ Valid values: CSV, JSON
     inline SegmentImportResource& WithSize(int value) { SetSize(value); return *this;}
 
   private:
+    Aws::Map<Aws::String, int> m_channelCounts;
+    bool m_channelCountsHasBeenSet;
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
     Format m_format;

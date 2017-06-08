@@ -31,6 +31,8 @@ namespace Model
 APNSChannelResponse::APNSChannelResponse() : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -45,6 +47,8 @@ APNSChannelResponse::APNSChannelResponse() :
 APNSChannelResponse::APNSChannelResponse(const JsonValue& jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -71,6 +75,13 @@ APNSChannelResponse& APNSChannelResponse::operator =(const JsonValue& jsonValue)
     m_creationDate = jsonValue.GetString("CreationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Enabled"))
+  {
+    m_enabled = jsonValue.GetBool("Enabled");
+
+    m_enabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -131,6 +142,12 @@ JsonValue APNSChannelResponse::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
 
   }
 

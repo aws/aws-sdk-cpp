@@ -30,20 +30,40 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
-        static const int APNS_HASH = HashingUtils::HashString("APNS");
         static const int GCM_HASH = HashingUtils::HashString("GCM");
+        static const int APNS_HASH = HashingUtils::HashString("APNS");
+        static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
+        static const int ADM_HASH = HashingUtils::HashString("ADM");
+        static const int SMS_HASH = HashingUtils::HashString("SMS");
+        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == APNS_HASH)
+          if (hashCode == GCM_HASH)
+          {
+            return ChannelType::GCM;
+          }
+          else if (hashCode == APNS_HASH)
           {
             return ChannelType::APNS;
           }
-          else if (hashCode == GCM_HASH)
+          else if (hashCode == APNS_SANDBOX_HASH)
           {
-            return ChannelType::GCM;
+            return ChannelType::APNS_SANDBOX;
+          }
+          else if (hashCode == ADM_HASH)
+          {
+            return ChannelType::ADM;
+          }
+          else if (hashCode == SMS_HASH)
+          {
+            return ChannelType::SMS;
+          }
+          else if (hashCode == EMAIL_HASH)
+          {
+            return ChannelType::EMAIL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,10 +79,18 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ChannelType::APNS:
-            return "APNS";
           case ChannelType::GCM:
             return "GCM";
+          case ChannelType::APNS:
+            return "APNS";
+          case ChannelType::APNS_SANDBOX:
+            return "APNS_SANDBOX";
+          case ChannelType::ADM:
+            return "ADM";
+          case ChannelType::SMS:
+            return "SMS";
+          case ChannelType::EMAIL:
+            return "EMAIL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

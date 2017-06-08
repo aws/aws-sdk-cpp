@@ -38,6 +38,8 @@ namespace Model
     DescribeCertificateRequest();
     Aws::String SerializePayload() const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -73,9 +75,46 @@ namespace Model
      */
     inline DescribeCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::move(value); }
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline void SetCertificatePem(const char* value) { m_certificatePemHasBeenSet = true; m_certificatePem.assign(value); }
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline DescribeCertificateRequest& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline DescribeCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
+
+    /**
+     * <p>The PEM of the certificate.</p>
+     */
+    inline DescribeCertificateRequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+
   private:
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+    Aws::String m_certificatePem;
+    bool m_certificatePemHasBeenSet;
   };
 
 } // namespace Model

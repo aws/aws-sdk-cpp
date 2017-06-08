@@ -31,14 +31,18 @@ namespace Model
 MessageConfiguration::MessageConfiguration() : 
     m_aPNSMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
-    m_gCMMessageHasBeenSet(false)
+    m_emailMessageHasBeenSet(false),
+    m_gCMMessageHasBeenSet(false),
+    m_sMSMessageHasBeenSet(false)
 {
 }
 
 MessageConfiguration::MessageConfiguration(const JsonValue& jsonValue) : 
     m_aPNSMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
-    m_gCMMessageHasBeenSet(false)
+    m_emailMessageHasBeenSet(false),
+    m_gCMMessageHasBeenSet(false),
+    m_sMSMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,11 +63,25 @@ MessageConfiguration& MessageConfiguration::operator =(const JsonValue& jsonValu
     m_defaultMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EmailMessage"))
+  {
+    m_emailMessage = jsonValue.GetObject("EmailMessage");
+
+    m_emailMessageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GCMMessage"))
   {
     m_gCMMessage = jsonValue.GetObject("GCMMessage");
 
     m_gCMMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SMSMessage"))
+  {
+    m_sMSMessage = jsonValue.GetObject("SMSMessage");
+
+    m_sMSMessageHasBeenSet = true;
   }
 
   return *this;
@@ -85,9 +103,21 @@ JsonValue MessageConfiguration::Jsonize() const
 
   }
 
+  if(m_emailMessageHasBeenSet)
+  {
+   payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
+
+  }
+
   if(m_gCMMessageHasBeenSet)
   {
    payload.WithObject("GCMMessage", m_gCMMessage.Jsonize());
+
+  }
+
+  if(m_sMSMessageHasBeenSet)
+  {
+   payload.WithObject("SMSMessage", m_sMSMessage.Jsonize());
 
   }
 

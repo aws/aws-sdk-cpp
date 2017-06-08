@@ -15,6 +15,7 @@
 
 #include <aws/iot/model/DescribeCertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,13 +24,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeCertificateRequest::DescribeCertificateRequest() : 
-    m_certificateIdHasBeenSet(false)
+    m_certificateIdHasBeenSet(false),
+    m_certificatePemHasBeenSet(false)
 {
 }
 
 Aws::String DescribeCertificateRequest::SerializePayload() const
 {
   return "";
+}
+
+Aws::Http::HeaderValueCollection DescribeCertificateRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_certificatePemHasBeenSet)
+  {
+    ss << m_certificatePem;
+    headers.insert(Aws::Http::HeaderValuePair("x-amzn-iot-certificate-pem", ss.str()));
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

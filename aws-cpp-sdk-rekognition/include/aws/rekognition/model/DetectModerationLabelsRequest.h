@@ -36,19 +36,29 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>The input image as bytes or an S3 object.</p>
+     */
     inline const Image& GetImage() const{ return m_image; }
 
-    
+    /**
+     * <p>The input image as bytes or an S3 object.</p>
+     */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
-    
+    /**
+     * <p>The input image as bytes or an S3 object.</p>
+     */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
-    
+    /**
+     * <p>The input image as bytes or an S3 object.</p>
+     */
     inline DetectModerationLabelsRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
-    
+    /**
+     * <p>The input image as bytes or an S3 object.</p>
+     */
     inline DetectModerationLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**

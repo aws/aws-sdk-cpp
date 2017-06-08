@@ -83,10 +83,10 @@ namespace Model
      * application displays the image, you can use this value to correct image
      * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
      * represent face locations before the image orientation is corrected. </p> <note>
-     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * <p>If the input image is in .jpeg format, it might contain exchangeable image
      * (Exif) metadata that includes the image's orientation. If so, and the Exif
-     * metadata for the source image populates the orientation field, the value of
-     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * metadata for the input image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is null and the <code>FaceDetails</code>
      * bounding box coordinates represent face locations after Exif metadata is used to
      * correct the image orientation. Images in .png format don't contain Exif
      * metadata.</p> </note>
@@ -98,10 +98,10 @@ namespace Model
      * application displays the image, you can use this value to correct image
      * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
      * represent face locations before the image orientation is corrected. </p> <note>
-     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * <p>If the input image is in .jpeg format, it might contain exchangeable image
      * (Exif) metadata that includes the image's orientation. If so, and the Exif
-     * metadata for the source image populates the orientation field, the value of
-     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * metadata for the input image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is null and the <code>FaceDetails</code>
      * bounding box coordinates represent face locations after Exif metadata is used to
      * correct the image orientation. Images in .png format don't contain Exif
      * metadata.</p> </note>
@@ -113,10 +113,10 @@ namespace Model
      * application displays the image, you can use this value to correct image
      * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
      * represent face locations before the image orientation is corrected. </p> <note>
-     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * <p>If the input image is in .jpeg format, it might contain exchangeable image
      * (Exif) metadata that includes the image's orientation. If so, and the Exif
-     * metadata for the source image populates the orientation field, the value of
-     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * metadata for the input image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is null and the <code>FaceDetails</code>
      * bounding box coordinates represent face locations after Exif metadata is used to
      * correct the image orientation. Images in .png format don't contain Exif
      * metadata.</p> </note>
@@ -128,10 +128,10 @@ namespace Model
      * application displays the image, you can use this value to correct image
      * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
      * represent face locations before the image orientation is corrected. </p> <note>
-     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * <p>If the input image is in .jpeg format, it might contain exchangeable image
      * (Exif) metadata that includes the image's orientation. If so, and the Exif
-     * metadata for the source image populates the orientation field, the value of
-     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * metadata for the input image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is null and the <code>FaceDetails</code>
      * bounding box coordinates represent face locations after Exif metadata is used to
      * correct the image orientation. Images in .png format don't contain Exif
      * metadata.</p> </note>
@@ -143,10 +143,10 @@ namespace Model
      * application displays the image, you can use this value to correct image
      * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
      * represent face locations before the image orientation is corrected. </p> <note>
-     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * <p>If the input image is in .jpeg format, it might contain exchangeable image
      * (Exif) metadata that includes the image's orientation. If so, and the Exif
-     * metadata for the source image populates the orientation field, the value of
-     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * metadata for the input image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is null and the <code>FaceDetails</code>
      * bounding box coordinates represent face locations after Exif metadata is used to
      * correct the image orientation. Images in .png format don't contain Exif
      * metadata.</p> </note>

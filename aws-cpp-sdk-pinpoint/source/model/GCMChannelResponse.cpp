@@ -32,6 +32,8 @@ GCMChannelResponse::GCMChannelResponse() :
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_credentialHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -47,6 +49,8 @@ GCMChannelResponse::GCMChannelResponse(const JsonValue& jsonValue) :
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_credentialHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -80,6 +84,13 @@ GCMChannelResponse& GCMChannelResponse::operator =(const JsonValue& jsonValue)
     m_credential = jsonValue.GetString("Credential");
 
     m_credentialHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Enabled"))
+  {
+    m_enabled = jsonValue.GetBool("Enabled");
+
+    m_enabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -146,6 +157,12 @@ JsonValue GCMChannelResponse::Jsonize() const
   if(m_credentialHasBeenSet)
   {
    payload.WithString("Credential", m_credential);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
 
   }
 

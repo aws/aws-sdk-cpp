@@ -29,12 +29,16 @@ namespace Model
 {
 
 GCMChannelRequest::GCMChannelRequest() : 
-    m_apiKeyHasBeenSet(false)
+    m_apiKeyHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
 GCMChannelRequest::GCMChannelRequest(const JsonValue& jsonValue) : 
-    m_apiKeyHasBeenSet(false)
+    m_apiKeyHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ GCMChannelRequest& GCMChannelRequest::operator =(const JsonValue& jsonValue)
     m_apiKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Enabled"))
+  {
+    m_enabled = jsonValue.GetBool("Enabled");
+
+    m_enabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +69,12 @@ JsonValue GCMChannelRequest::Jsonize() const
   if(m_apiKeyHasBeenSet)
   {
    payload.WithString("ApiKey", m_apiKey);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
 
   }
 

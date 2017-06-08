@@ -26,8 +26,12 @@ namespace Model
   enum class ChannelType
   {
     NOT_SET,
+    GCM,
     APNS,
-    GCM
+    APNS_SANDBOX,
+    ADM,
+    SMS,
+    EMAIL
   };
 
 namespace ChannelTypeMapper

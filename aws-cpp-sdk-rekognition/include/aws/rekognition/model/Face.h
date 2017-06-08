@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Describes the face properties such as the bounding box, face ID, image ID of
-   * the source image, and external image ID that you assigned. </p><p><h3>See
+   * the input image, and external image ID that you assigned. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Face">AWS
    * API Reference</a></p>
@@ -83,53 +83,63 @@ namespace Model
      */
     inline Face& WithFaceId(const char* value) { SetFaceId(value); return *this;}
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline Face& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline Face& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline Face& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline Face& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
+     * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
      */
     inline Face& WithImageId(const char* value) { SetImageId(value); return *this;}
 

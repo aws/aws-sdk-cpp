@@ -114,37 +114,52 @@ namespace Model
     inline APNSChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
     /**
-     * The unique channel ID.
+     * If the channel is enabled for sending messages.
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline APNSChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline APNSChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline APNSChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      */
     inline APNSChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
@@ -288,6 +303,8 @@ namespace Model
     bool m_applicationIdHasBeenSet;
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+    bool m_enabled;
+    bool m_enabledHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
     bool m_isArchived;

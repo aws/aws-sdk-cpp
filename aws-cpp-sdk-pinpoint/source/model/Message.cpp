@@ -33,6 +33,7 @@ Message::Message() :
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
+    m_imageSmallIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
@@ -48,6 +49,7 @@ Message::Message(const JsonValue& jsonValue) :
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
+    m_imageSmallIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
@@ -80,6 +82,13 @@ Message& Message::operator =(const JsonValue& jsonValue)
     m_imageIconUrl = jsonValue.GetString("ImageIconUrl");
 
     m_imageIconUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageSmallIconUrl"))
+  {
+    m_imageSmallIconUrl = jsonValue.GetString("ImageSmallIconUrl");
+
+    m_imageSmallIconUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ImageUrl"))
@@ -145,6 +154,12 @@ JsonValue Message::Jsonize() const
   if(m_imageIconUrlHasBeenSet)
   {
    payload.WithString("ImageIconUrl", m_imageIconUrl);
+
+  }
+
+  if(m_imageSmallIconUrlHasBeenSet)
+  {
+   payload.WithString("ImageSmallIconUrl", m_imageSmallIconUrl);
 
   }
 

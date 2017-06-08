@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-LexModelBuildingService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20170419.144;
+        version : 1.0.20170419.145;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Lex Model Building Service);

@@ -29,6 +29,7 @@ namespace Model
 {
 
 SegmentImportResource::SegmentImportResource() : 
+    m_channelCountsHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
@@ -40,6 +41,7 @@ SegmentImportResource::SegmentImportResource() :
 }
 
 SegmentImportResource::SegmentImportResource(const JsonValue& jsonValue) : 
+    m_channelCountsHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
@@ -53,6 +55,16 @@ SegmentImportResource::SegmentImportResource(const JsonValue& jsonValue) :
 
 SegmentImportResource& SegmentImportResource::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("ChannelCounts"))
+  {
+    Aws::Map<Aws::String, JsonValue> channelCountsJsonMap = jsonValue.GetObject("ChannelCounts").GetAllObjects();
+    for(auto& channelCountsItem : channelCountsJsonMap)
+    {
+      m_channelCounts[channelCountsItem.first] = channelCountsItem.second.AsInteger();
+    }
+    m_channelCountsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
@@ -94,6 +106,17 @@ SegmentImportResource& SegmentImportResource::operator =(const JsonValue& jsonVa
 JsonValue SegmentImportResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_channelCountsHasBeenSet)
+  {
+   JsonValue channelCountsJsonMap;
+   for(auto& channelCountsItem : m_channelCounts)
+   {
+     channelCountsJsonMap.WithInteger(channelCountsItem.first, channelCountsItem.second);
+   }
+   payload.WithObject("ChannelCounts", std::move(channelCountsJsonMap));
+
+  }
 
   if(m_externalIdHasBeenSet)
   {

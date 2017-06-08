@@ -81,45 +81,45 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
 
     /**
      * The recency dimension type:
-ACTIVE – Users who have used your app within the
+ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
-INACTIVE – Users who have not
+INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline const RecencyType& GetRecencyType() const{ return m_recencyType; }
 
     /**
      * The recency dimension type:
-ACTIVE – Users who have used your app within the
+ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
-INACTIVE – Users who have not
+INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline void SetRecencyType(const RecencyType& value) { m_recencyTypeHasBeenSet = true; m_recencyType = value; }
 
     /**
      * The recency dimension type:
-ACTIVE – Users who have used your app within the
+ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
-INACTIVE – Users who have not
+INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline void SetRecencyType(RecencyType&& value) { m_recencyTypeHasBeenSet = true; m_recencyType = std::move(value); }
 
     /**
      * The recency dimension type:
-ACTIVE – Users who have used your app within the
+ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
-INACTIVE – Users who have not
+INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline RecencyDimension& WithRecencyType(const RecencyType& value) { SetRecencyType(value); return *this;}
 
     /**
      * The recency dimension type:
-ACTIVE – Users who have used your app within the
+ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
-INACTIVE – Users who have not
+INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline RecencyDimension& WithRecencyType(RecencyType&& value) { SetRecencyType(std::move(value)); return *this;}

@@ -30,12 +30,16 @@ namespace Model
 
 APNSChannelRequest::APNSChannelRequest() : 
     m_certificateHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_privateKeyHasBeenSet(false)
 {
 }
 
 APNSChannelRequest::APNSChannelRequest(const JsonValue& jsonValue) : 
     m_certificateHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_privateKeyHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +52,13 @@ APNSChannelRequest& APNSChannelRequest::operator =(const JsonValue& jsonValue)
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Enabled"))
+  {
+    m_enabled = jsonValue.GetBool("Enabled");
+
+    m_enabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PrivateKey"))
@@ -67,6 +78,12 @@ JsonValue APNSChannelRequest::Jsonize() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
 
   }
 

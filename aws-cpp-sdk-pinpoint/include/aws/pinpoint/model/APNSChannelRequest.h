@@ -79,6 +79,21 @@ namespace Model
     inline APNSChannelRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
     /**
+     * If the channel is enabled for sending messages.
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline APNSChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
+    /**
      * The certificate private key.
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
@@ -116,6 +131,8 @@ namespace Model
   private:
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+    bool m_enabled;
+    bool m_enabledHasBeenSet;
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
   };

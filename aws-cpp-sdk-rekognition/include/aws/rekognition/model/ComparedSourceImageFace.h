@@ -49,19 +49,29 @@ namespace Model
     ComparedSourceImageFace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline ComparedSourceImageFace& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline ComparedSourceImageFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**

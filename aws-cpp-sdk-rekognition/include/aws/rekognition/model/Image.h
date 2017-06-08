@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides the source image either as bytes or an S3 object.</p> <p>You pass
+   * <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass
    * image bytes to a Rekognition API operation by using the <code>Bytes</code>
    * property. For example, you would use the <code>Bytes</code> property to pass an
    * image loaded from a local file system. Image bytes passed by using the

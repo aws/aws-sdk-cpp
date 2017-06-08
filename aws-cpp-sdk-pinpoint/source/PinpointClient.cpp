@@ -31,17 +31,22 @@
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
+#include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
+#include <aws/pinpoint/model/DeleteEmailChannelRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
+#include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
+#include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/GetApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/GetCampaignRequest.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionsRequest.h>
 #include <aws/pinpoint/model/GetCampaignsRequest.h>
+#include <aws/pinpoint/model/GetEmailChannelRequest.h>
 #include <aws/pinpoint/model/GetEndpointRequest.h>
 #include <aws/pinpoint/model/GetEventStreamRequest.h>
 #include <aws/pinpoint/model/GetGcmChannelRequest.h>
@@ -52,14 +57,19 @@
 #include <aws/pinpoint/model/GetSegmentVersionRequest.h>
 #include <aws/pinpoint/model/GetSegmentVersionsRequest.h>
 #include <aws/pinpoint/model/GetSegmentsRequest.h>
+#include <aws/pinpoint/model/GetSmsChannelRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
+#include <aws/pinpoint/model/SendMessagesRequest.h>
 #include <aws/pinpoint/model/UpdateApnsChannelRequest.h>
+#include <aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/UpdateCampaignRequest.h>
+#include <aws/pinpoint/model/UpdateEmailChannelRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointsBatchRequest.h>
 #include <aws/pinpoint/model/UpdateGcmChannelRequest.h>
 #include <aws/pinpoint/model/UpdateSegmentRequest.h>
+#include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -265,6 +275,41 @@ void PinpointClient::DeleteApnsChannelAsyncHelper(const DeleteApnsChannelRequest
   handler(this, request, DeleteApnsChannel(request), context);
 }
 
+DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const DeleteApnsSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApnsSandboxChannelOutcome(DeleteApnsSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApnsSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteApnsSandboxChannelOutcomeCallable PinpointClient::DeleteApnsSandboxChannelCallable(const DeleteApnsSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApnsSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApnsSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteApnsSandboxChannelAsync(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteApnsSandboxChannelAsyncHelper(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApnsSandboxChannel(request), context);
+}
+
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
 {
   Aws::StringStream ss;
@@ -298,6 +343,41 @@ void PinpointClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, c
 void PinpointClient::DeleteCampaignAsyncHelper(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCampaign(request), context);
+}
+
+DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/email";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteEmailChannelOutcome(DeleteEmailChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteEmailChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteEmailChannelOutcomeCallable PinpointClient::DeleteEmailChannelCallable(const DeleteEmailChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteEmailChannelAsync(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteEmailChannelAsyncHelper(const DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailChannel(request), context);
 }
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const
@@ -405,6 +485,41 @@ void PinpointClient::DeleteSegmentAsyncHelper(const DeleteSegmentRequest& reques
   handler(this, request, DeleteSegment(request), context);
 }
 
+DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/sms";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSmsChannelOutcome(DeleteSmsChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSmsChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteSmsChannelOutcomeCallable PinpointClient::DeleteSmsChannelCallable(const DeleteSmsChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSmsChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSmsChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteSmsChannelAsync(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSmsChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSmsChannel(request), context);
+}
+
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -438,6 +553,41 @@ void PinpointClient::GetApnsChannelAsync(const GetApnsChannelRequest& request, c
 void PinpointClient::GetApnsChannelAsyncHelper(const GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApnsChannel(request), context);
+}
+
+GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApnsSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetApnsSandboxChannelOutcome(GetApnsSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetApnsSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+GetApnsSandboxChannelOutcomeCallable PinpointClient::GetApnsSandboxChannelCallable(const GetApnsSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApnsSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApnsSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetApnsSandboxChannelAsync(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetApnsSandboxChannelAsyncHelper(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApnsSandboxChannel(request), context);
 }
 
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
@@ -649,6 +799,41 @@ void PinpointClient::GetCampaignsAsync(const GetCampaignsRequest& request, const
 void PinpointClient::GetCampaignsAsyncHelper(const GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCampaigns(request), context);
+}
+
+GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/email";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetEmailChannelOutcome(GetEmailChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEmailChannelOutcome(outcome.GetError());
+  }
+}
+
+GetEmailChannelOutcomeCallable PinpointClient::GetEmailChannelCallable(const GetEmailChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEmailChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEmailChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetEmailChannelAsync(const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEmailChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetEmailChannelAsyncHelper(const GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEmailChannel(request), context);
 }
 
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const
@@ -1002,6 +1187,41 @@ void PinpointClient::GetSegmentsAsyncHelper(const GetSegmentsRequest& request, c
   handler(this, request, GetSegments(request), context);
 }
 
+GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/sms";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetSmsChannelOutcome(GetSmsChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSmsChannelOutcome(outcome.GetError());
+  }
+}
+
+GetSmsChannelOutcomeCallable PinpointClient::GetSmsChannelCallable(const GetSmsChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSmsChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSmsChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetSmsChannelAsync(const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSmsChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetSmsChannelAsyncHelper(const GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSmsChannel(request), context);
+}
+
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const
 {
   Aws::StringStream ss;
@@ -1037,6 +1257,41 @@ void PinpointClient::PutEventStreamAsyncHelper(const PutEventStreamRequest& requ
   handler(this, request, PutEventStream(request), context);
 }
 
+SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/messages";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendMessagesOutcome(SendMessagesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendMessagesOutcome(outcome.GetError());
+  }
+}
+
+SendMessagesOutcomeCallable PinpointClient::SendMessagesCallable(const SendMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::SendMessagesAsync(const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::SendMessagesAsyncHelper(const SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendMessages(request), context);
+}
+
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -1070,6 +1325,41 @@ void PinpointClient::UpdateApnsChannelAsync(const UpdateApnsChannelRequest& requ
 void PinpointClient::UpdateApnsChannelAsyncHelper(const UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateApnsChannel(request), context);
+}
+
+UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const UpdateApnsSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApnsSandboxChannelOutcome(UpdateApnsSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApnsSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateApnsSandboxChannelOutcomeCallable PinpointClient::UpdateApnsSandboxChannelCallable(const UpdateApnsSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApnsSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApnsSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateApnsSandboxChannelAsync(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateApnsSandboxChannelAsyncHelper(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApnsSandboxChannel(request), context);
 }
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
@@ -1140,6 +1430,41 @@ void PinpointClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, c
 void PinpointClient::UpdateCampaignAsyncHelper(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateCampaign(request), context);
+}
+
+UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/email";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UpdateEmailChannelOutcome(UpdateEmailChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateEmailChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateEmailChannelOutcomeCallable PinpointClient::UpdateEmailChannelCallable(const UpdateEmailChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEmailChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEmailChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateEmailChannelAsync(const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateEmailChannelAsyncHelper(const UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEmailChannel(request), context);
 }
 
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -1280,5 +1605,40 @@ void PinpointClient::UpdateSegmentAsync(const UpdateSegmentRequest& request, con
 void PinpointClient::UpdateSegmentAsyncHelper(const UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSegment(request), context);
+}
+
+UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/sms";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UpdateSmsChannelOutcome(UpdateSmsChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateSmsChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateSmsChannelOutcomeCallable PinpointClient::UpdateSmsChannelCallable(const UpdateSmsChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSmsChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSmsChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateSmsChannelAsync(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSmsChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateSmsChannelAsyncHelper(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSmsChannel(request), context);
 }
 

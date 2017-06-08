@@ -69,6 +69,31 @@ namespace Model
     inline SegmentDemographics& WithAppVersion(SetDimension&& value) { SetAppVersion(std::move(value)); return *this;}
 
     /**
+     * The channel criteria for the segment.
+     */
+    inline const SetDimension& GetChannel() const{ return m_channel; }
+
+    /**
+     * The channel criteria for the segment.
+     */
+    inline void SetChannel(const SetDimension& value) { m_channelHasBeenSet = true; m_channel = value; }
+
+    /**
+     * The channel criteria for the segment.
+     */
+    inline void SetChannel(SetDimension&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
+
+    /**
+     * The channel criteria for the segment.
+     */
+    inline SegmentDemographics& WithChannel(const SetDimension& value) { SetChannel(value); return *this;}
+
+    /**
+     * The channel criteria for the segment.
+     */
+    inline SegmentDemographics& WithChannel(SetDimension&& value) { SetChannel(std::move(value)); return *this;}
+
+    /**
      * The device type criteria for the segment.
      */
     inline const SetDimension& GetDeviceType() const{ return m_deviceType; }
@@ -171,6 +196,8 @@ namespace Model
   private:
     SetDimension m_appVersion;
     bool m_appVersionHasBeenSet;
+    SetDimension m_channel;
+    bool m_channelHasBeenSet;
     SetDimension m_deviceType;
     bool m_deviceTypeHasBeenSet;
     SetDimension m_make;

@@ -34,9 +34,11 @@
 #include <aws/rekognition/model/DetectFacesRequest.h>
 #include <aws/rekognition/model/DetectLabelsRequest.h>
 #include <aws/rekognition/model/DetectModerationLabelsRequest.h>
+#include <aws/rekognition/model/GetCelebrityInfoRequest.h>
 #include <aws/rekognition/model/IndexFacesRequest.h>
 #include <aws/rekognition/model/ListCollectionsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
+#include <aws/rekognition/model/RecognizeCelebritiesRequest.h>
 #include <aws/rekognition/model/SearchFacesRequest.h>
 #include <aws/rekognition/model/SearchFacesByImageRequest.h>
 
@@ -349,6 +351,41 @@ void RekognitionClient::DetectModerationLabelsAsyncHelper(const DetectModeration
   handler(this, request, DetectModerationLabels(request), context);
 }
 
+GetCelebrityInfoOutcome RekognitionClient::GetCelebrityInfo(const GetCelebrityInfoRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCelebrityInfoOutcome(GetCelebrityInfoResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCelebrityInfoOutcome(outcome.GetError());
+  }
+}
+
+GetCelebrityInfoOutcomeCallable RekognitionClient::GetCelebrityInfoCallable(const GetCelebrityInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCelebrityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCelebrityInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::GetCelebrityInfoAsync(const GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCelebrityInfoAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::GetCelebrityInfoAsyncHelper(const GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCelebrityInfo(request), context);
+}
+
 IndexFacesOutcome RekognitionClient::IndexFaces(const IndexFacesRequest& request) const
 {
   Aws::StringStream ss;
@@ -452,6 +489,41 @@ void RekognitionClient::ListFacesAsync(const ListFacesRequest& request, const Li
 void RekognitionClient::ListFacesAsyncHelper(const ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFaces(request), context);
+}
+
+RecognizeCelebritiesOutcome RekognitionClient::RecognizeCelebrities(const RecognizeCelebritiesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RecognizeCelebritiesOutcome(RecognizeCelebritiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RecognizeCelebritiesOutcome(outcome.GetError());
+  }
+}
+
+RecognizeCelebritiesOutcomeCallable RekognitionClient::RecognizeCelebritiesCallable(const RecognizeCelebritiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RecognizeCelebritiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RecognizeCelebrities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::RecognizeCelebritiesAsync(const RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RecognizeCelebritiesAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::RecognizeCelebritiesAsyncHelper(const RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RecognizeCelebrities(request), context);
 }
 
 SearchFacesOutcome RekognitionClient::SearchFaces(const SearchFacesRequest& request) const

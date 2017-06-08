@@ -38,7 +38,8 @@ namespace Model
 
   /**
    * <p>Provides face metadata for target image faces that are analysed by
-   * <code>CompareFaces</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedFace">AWS
    * API Reference</a></p>
    */
@@ -50,19 +51,29 @@ namespace Model
     ComparedFace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline ComparedFace& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
-    
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline ComparedFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**

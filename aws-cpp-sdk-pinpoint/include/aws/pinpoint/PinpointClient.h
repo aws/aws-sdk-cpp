@@ -25,17 +25,22 @@
 #include <aws/pinpoint/model/CreateImportJobResult.h>
 #include <aws/pinpoint/model/CreateSegmentResult.h>
 #include <aws/pinpoint/model/DeleteApnsChannelResult.h>
+#include <aws/pinpoint/model/DeleteApnsSandboxChannelResult.h>
 #include <aws/pinpoint/model/DeleteCampaignResult.h>
+#include <aws/pinpoint/model/DeleteEmailChannelResult.h>
 #include <aws/pinpoint/model/DeleteEventStreamResult.h>
 #include <aws/pinpoint/model/DeleteGcmChannelResult.h>
 #include <aws/pinpoint/model/DeleteSegmentResult.h>
+#include <aws/pinpoint/model/DeleteSmsChannelResult.h>
 #include <aws/pinpoint/model/GetApnsChannelResult.h>
+#include <aws/pinpoint/model/GetApnsSandboxChannelResult.h>
 #include <aws/pinpoint/model/GetApplicationSettingsResult.h>
 #include <aws/pinpoint/model/GetCampaignResult.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesResult.h>
 #include <aws/pinpoint/model/GetCampaignVersionResult.h>
 #include <aws/pinpoint/model/GetCampaignVersionsResult.h>
 #include <aws/pinpoint/model/GetCampaignsResult.h>
+#include <aws/pinpoint/model/GetEmailChannelResult.h>
 #include <aws/pinpoint/model/GetEndpointResult.h>
 #include <aws/pinpoint/model/GetEventStreamResult.h>
 #include <aws/pinpoint/model/GetGcmChannelResult.h>
@@ -46,14 +51,19 @@
 #include <aws/pinpoint/model/GetSegmentVersionResult.h>
 #include <aws/pinpoint/model/GetSegmentVersionsResult.h>
 #include <aws/pinpoint/model/GetSegmentsResult.h>
+#include <aws/pinpoint/model/GetSmsChannelResult.h>
 #include <aws/pinpoint/model/PutEventStreamResult.h>
+#include <aws/pinpoint/model/SendMessagesResult.h>
 #include <aws/pinpoint/model/UpdateApnsChannelResult.h>
+#include <aws/pinpoint/model/UpdateApnsSandboxChannelResult.h>
 #include <aws/pinpoint/model/UpdateApplicationSettingsResult.h>
 #include <aws/pinpoint/model/UpdateCampaignResult.h>
+#include <aws/pinpoint/model/UpdateEmailChannelResult.h>
 #include <aws/pinpoint/model/UpdateEndpointResult.h>
 #include <aws/pinpoint/model/UpdateEndpointsBatchResult.h>
 #include <aws/pinpoint/model/UpdateGcmChannelResult.h>
 #include <aws/pinpoint/model/UpdateSegmentResult.h>
+#include <aws/pinpoint/model/UpdateSmsChannelResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -103,17 +113,22 @@ namespace Model
         class CreateImportJobRequest;
         class CreateSegmentRequest;
         class DeleteApnsChannelRequest;
+        class DeleteApnsSandboxChannelRequest;
         class DeleteCampaignRequest;
+        class DeleteEmailChannelRequest;
         class DeleteEventStreamRequest;
         class DeleteGcmChannelRequest;
         class DeleteSegmentRequest;
+        class DeleteSmsChannelRequest;
         class GetApnsChannelRequest;
+        class GetApnsSandboxChannelRequest;
         class GetApplicationSettingsRequest;
         class GetCampaignRequest;
         class GetCampaignActivitiesRequest;
         class GetCampaignVersionRequest;
         class GetCampaignVersionsRequest;
         class GetCampaignsRequest;
+        class GetEmailChannelRequest;
         class GetEndpointRequest;
         class GetEventStreamRequest;
         class GetGcmChannelRequest;
@@ -124,30 +139,40 @@ namespace Model
         class GetSegmentVersionRequest;
         class GetSegmentVersionsRequest;
         class GetSegmentsRequest;
+        class GetSmsChannelRequest;
         class PutEventStreamRequest;
+        class SendMessagesRequest;
         class UpdateApnsChannelRequest;
+        class UpdateApnsSandboxChannelRequest;
         class UpdateApplicationSettingsRequest;
         class UpdateCampaignRequest;
+        class UpdateEmailChannelRequest;
         class UpdateEndpointRequest;
         class UpdateEndpointsBatchRequest;
         class UpdateGcmChannelRequest;
         class UpdateSegmentRequest;
+        class UpdateSmsChannelRequest;
 
         typedef Aws::Utils::Outcome<CreateCampaignResult, Aws::Client::AWSError<PinpointErrors>> CreateCampaignOutcome;
         typedef Aws::Utils::Outcome<CreateImportJobResult, Aws::Client::AWSError<PinpointErrors>> CreateImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateSegmentResult, Aws::Client::AWSError<PinpointErrors>> CreateSegmentOutcome;
         typedef Aws::Utils::Outcome<DeleteApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteApnsChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteApnsSandboxChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteCampaignResult, Aws::Client::AWSError<PinpointErrors>> DeleteCampaignOutcome;
+        typedef Aws::Utils::Outcome<DeleteEmailChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteEmailChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteEventStreamResult, Aws::Client::AWSError<PinpointErrors>> DeleteEventStreamOutcome;
         typedef Aws::Utils::Outcome<DeleteGcmChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteGcmChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteSegmentResult, Aws::Client::AWSError<PinpointErrors>> DeleteSegmentOutcome;
+        typedef Aws::Utils::Outcome<DeleteSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteSmsChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsChannelOutcome;
+        typedef Aws::Utils::Outcome<GetApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsSandboxChannelOutcome;
         typedef Aws::Utils::Outcome<GetApplicationSettingsResult, Aws::Client::AWSError<PinpointErrors>> GetApplicationSettingsOutcome;
         typedef Aws::Utils::Outcome<GetCampaignResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignOutcome;
         typedef Aws::Utils::Outcome<GetCampaignActivitiesResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignActivitiesOutcome;
         typedef Aws::Utils::Outcome<GetCampaignVersionResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionOutcome;
         typedef Aws::Utils::Outcome<GetCampaignVersionsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionsOutcome;
         typedef Aws::Utils::Outcome<GetCampaignsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignsOutcome;
+        typedef Aws::Utils::Outcome<GetEmailChannelResult, Aws::Client::AWSError<PinpointErrors>> GetEmailChannelOutcome;
         typedef Aws::Utils::Outcome<GetEndpointResult, Aws::Client::AWSError<PinpointErrors>> GetEndpointOutcome;
         typedef Aws::Utils::Outcome<GetEventStreamResult, Aws::Client::AWSError<PinpointErrors>> GetEventStreamOutcome;
         typedef Aws::Utils::Outcome<GetGcmChannelResult, Aws::Client::AWSError<PinpointErrors>> GetGcmChannelOutcome;
@@ -158,30 +183,40 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSegmentVersionResult, Aws::Client::AWSError<PinpointErrors>> GetSegmentVersionOutcome;
         typedef Aws::Utils::Outcome<GetSegmentVersionsResult, Aws::Client::AWSError<PinpointErrors>> GetSegmentVersionsOutcome;
         typedef Aws::Utils::Outcome<GetSegmentsResult, Aws::Client::AWSError<PinpointErrors>> GetSegmentsOutcome;
+        typedef Aws::Utils::Outcome<GetSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> GetSmsChannelOutcome;
         typedef Aws::Utils::Outcome<PutEventStreamResult, Aws::Client::AWSError<PinpointErrors>> PutEventStreamOutcome;
+        typedef Aws::Utils::Outcome<SendMessagesResult, Aws::Client::AWSError<PinpointErrors>> SendMessagesOutcome;
         typedef Aws::Utils::Outcome<UpdateApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateApnsChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateApnsSandboxChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationSettingsResult, Aws::Client::AWSError<PinpointErrors>> UpdateApplicationSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateCampaignResult, Aws::Client::AWSError<PinpointErrors>> UpdateCampaignOutcome;
+        typedef Aws::Utils::Outcome<UpdateEmailChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateEmailChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointResult, Aws::Client::AWSError<PinpointErrors>> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointsBatchResult, Aws::Client::AWSError<PinpointErrors>> UpdateEndpointsBatchOutcome;
         typedef Aws::Utils::Outcome<UpdateGcmChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateGcmChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateSegmentResult, Aws::Client::AWSError<PinpointErrors>> UpdateSegmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateSmsChannelOutcome;
 
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
         typedef std::future<CreateImportJobOutcome> CreateImportJobOutcomeCallable;
         typedef std::future<CreateSegmentOutcome> CreateSegmentOutcomeCallable;
         typedef std::future<DeleteApnsChannelOutcome> DeleteApnsChannelOutcomeCallable;
+        typedef std::future<DeleteApnsSandboxChannelOutcome> DeleteApnsSandboxChannelOutcomeCallable;
         typedef std::future<DeleteCampaignOutcome> DeleteCampaignOutcomeCallable;
+        typedef std::future<DeleteEmailChannelOutcome> DeleteEmailChannelOutcomeCallable;
         typedef std::future<DeleteEventStreamOutcome> DeleteEventStreamOutcomeCallable;
         typedef std::future<DeleteGcmChannelOutcome> DeleteGcmChannelOutcomeCallable;
         typedef std::future<DeleteSegmentOutcome> DeleteSegmentOutcomeCallable;
+        typedef std::future<DeleteSmsChannelOutcome> DeleteSmsChannelOutcomeCallable;
         typedef std::future<GetApnsChannelOutcome> GetApnsChannelOutcomeCallable;
+        typedef std::future<GetApnsSandboxChannelOutcome> GetApnsSandboxChannelOutcomeCallable;
         typedef std::future<GetApplicationSettingsOutcome> GetApplicationSettingsOutcomeCallable;
         typedef std::future<GetCampaignOutcome> GetCampaignOutcomeCallable;
         typedef std::future<GetCampaignActivitiesOutcome> GetCampaignActivitiesOutcomeCallable;
         typedef std::future<GetCampaignVersionOutcome> GetCampaignVersionOutcomeCallable;
         typedef std::future<GetCampaignVersionsOutcome> GetCampaignVersionsOutcomeCallable;
         typedef std::future<GetCampaignsOutcome> GetCampaignsOutcomeCallable;
+        typedef std::future<GetEmailChannelOutcome> GetEmailChannelOutcomeCallable;
         typedef std::future<GetEndpointOutcome> GetEndpointOutcomeCallable;
         typedef std::future<GetEventStreamOutcome> GetEventStreamOutcomeCallable;
         typedef std::future<GetGcmChannelOutcome> GetGcmChannelOutcomeCallable;
@@ -192,14 +227,19 @@ namespace Model
         typedef std::future<GetSegmentVersionOutcome> GetSegmentVersionOutcomeCallable;
         typedef std::future<GetSegmentVersionsOutcome> GetSegmentVersionsOutcomeCallable;
         typedef std::future<GetSegmentsOutcome> GetSegmentsOutcomeCallable;
+        typedef std::future<GetSmsChannelOutcome> GetSmsChannelOutcomeCallable;
         typedef std::future<PutEventStreamOutcome> PutEventStreamOutcomeCallable;
+        typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
         typedef std::future<UpdateApnsChannelOutcome> UpdateApnsChannelOutcomeCallable;
+        typedef std::future<UpdateApnsSandboxChannelOutcome> UpdateApnsSandboxChannelOutcomeCallable;
         typedef std::future<UpdateApplicationSettingsOutcome> UpdateApplicationSettingsOutcomeCallable;
         typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
+        typedef std::future<UpdateEmailChannelOutcome> UpdateEmailChannelOutcomeCallable;
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointsBatchOutcome> UpdateEndpointsBatchOutcomeCallable;
         typedef std::future<UpdateGcmChannelOutcome> UpdateGcmChannelOutcomeCallable;
         typedef std::future<UpdateSegmentOutcome> UpdateSegmentOutcomeCallable;
+        typedef std::future<UpdateSmsChannelOutcome> UpdateSmsChannelOutcomeCallable;
 } // namespace Model
 
   class PinpointClient;
@@ -208,17 +248,22 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::CreateImportJobRequest&, const Model::CreateImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImportJobResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateSegmentRequest&, const Model::CreateSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSegmentResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteApnsChannelRequest&, const Model::DeleteApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApnsChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteApnsSandboxChannelRequest&, const Model::DeleteApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApnsSandboxChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteCampaignRequest&, const Model::DeleteCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCampaignResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteEmailChannelRequest&, const Model::DeleteEmailChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteEventStreamRequest&, const Model::DeleteEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventStreamResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteGcmChannelRequest&, const Model::DeleteGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGcmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteSegmentRequest&, const Model::DeleteSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSegmentResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteSmsChannelRequest&, const Model::DeleteSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSmsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsChannelRequest&, const Model::GetApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetApnsSandboxChannelRequest&, const Model::GetApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsSandboxChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApplicationSettingsRequest&, const Model::GetApplicationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationSettingsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignRequest&, const Model::GetCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignActivitiesRequest&, const Model::GetCampaignActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignActivitiesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionRequest&, const Model::GetCampaignVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionsRequest&, const Model::GetCampaignVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignsRequest&, const Model::GetCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetEmailChannelRequest&, const Model::GetEmailChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetEndpointRequest&, const Model::GetEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetEventStreamRequest&, const Model::GetEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventStreamResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetGcmChannelRequest&, const Model::GetGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGcmChannelResponseReceivedHandler;
@@ -229,14 +274,19 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetSegmentVersionRequest&, const Model::GetSegmentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetSegmentVersionsRequest&, const Model::GetSegmentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetSegmentsRequest&, const Model::GetSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetSmsChannelRequest&, const Model::GetSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSmsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PutEventStreamRequest&, const Model::PutEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventStreamResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::SendMessagesRequest&, const Model::SendMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateApnsChannelRequest&, const Model::UpdateApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApnsChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateApnsSandboxChannelRequest&, const Model::UpdateApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApnsSandboxChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateApplicationSettingsRequest&, const Model::UpdateApplicationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationSettingsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateEmailChannelRequest&, const Model::UpdateEmailChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmailChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateEndpointsBatchRequest&, const Model::UpdateEndpointsBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointsBatchResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateGcmChannelRequest&, const Model::UpdateGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGcmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateSegmentRequest&, const Model::UpdateSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSegmentResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateSmsChannelRequest&, const Model::UpdateSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsChannelResponseReceivedHandler;
 
   class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient
   {
@@ -341,6 +391,25 @@ namespace Model
         virtual void DeleteApnsChannelAsync(const Model::DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Delete an APNS sandbox channel
+         */
+        virtual Model::DeleteApnsSandboxChannelOutcome DeleteApnsSandboxChannel(const Model::DeleteApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Delete an APNS sandbox channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApnsSandboxChannelOutcomeCallable DeleteApnsSandboxChannelCallable(const Model::DeleteApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Delete an APNS sandbox channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApnsSandboxChannelAsync(const Model::DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Deletes a campaign.
          */
         virtual Model::DeleteCampaignOutcome DeleteCampaign(const Model::DeleteCampaignRequest& request) const;
@@ -358,6 +427,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCampaignAsync(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Delete an email channel
+         */
+        virtual Model::DeleteEmailChannelOutcome DeleteEmailChannel(const Model::DeleteEmailChannelRequest& request) const;
+
+        /**
+         * Delete an email channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEmailChannelOutcomeCallable DeleteEmailChannelCallable(const Model::DeleteEmailChannelRequest& request) const;
+
+        /**
+         * Delete an email channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEmailChannelAsync(const Model::DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes the event stream for an app.
@@ -417,6 +505,25 @@ namespace Model
         virtual void DeleteSegmentAsync(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Delete an SMS channel
+         */
+        virtual Model::DeleteSmsChannelOutcome DeleteSmsChannel(const Model::DeleteSmsChannelRequest& request) const;
+
+        /**
+         * Delete an SMS channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSmsChannelOutcomeCallable DeleteSmsChannelCallable(const Model::DeleteSmsChannelRequest& request) const;
+
+        /**
+         * Delete an SMS channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSmsChannelAsync(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Returns information about the APNs channel for an app.
          */
         virtual Model::GetApnsChannelOutcome GetApnsChannel(const Model::GetApnsChannelRequest& request) const;
@@ -434,6 +541,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApnsChannelAsync(const Model::GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Get an APNS sandbox channel
+         */
+        virtual Model::GetApnsSandboxChannelOutcome GetApnsSandboxChannel(const Model::GetApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Get an APNS sandbox channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetApnsSandboxChannelOutcomeCallable GetApnsSandboxChannelCallable(const Model::GetApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Get an APNS sandbox channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetApnsSandboxChannelAsync(const Model::GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Used to request the settings for an app.
@@ -548,6 +674,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCampaignsAsync(const Model::GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Get an email channel
+         */
+        virtual Model::GetEmailChannelOutcome GetEmailChannel(const Model::GetEmailChannelRequest& request) const;
+
+        /**
+         * Get an email channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEmailChannelOutcomeCallable GetEmailChannelCallable(const Model::GetEmailChannelRequest& request) const;
+
+        /**
+         * Get an email channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEmailChannelAsync(const Model::GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns information about an endpoint.
@@ -740,6 +885,25 @@ namespace Model
         virtual void GetSegmentsAsync(const Model::GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Get an SMS channel
+         */
+        virtual Model::GetSmsChannelOutcome GetSmsChannel(const Model::GetSmsChannelRequest& request) const;
+
+        /**
+         * Get an SMS channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSmsChannelOutcomeCallable GetSmsChannelCallable(const Model::GetSmsChannelRequest& request) const;
+
+        /**
+         * Get an SMS channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSmsChannelAsync(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Use to create or update the event stream for an app.
          */
         virtual Model::PutEventStreamOutcome PutEventStream(const Model::PutEventStreamRequest& request) const;
@@ -759,6 +923,25 @@ namespace Model
         virtual void PutEventStreamAsync(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Send a batch of messages
+         */
+        virtual Model::SendMessagesOutcome SendMessages(const Model::SendMessagesRequest& request) const;
+
+        /**
+         * Send a batch of messages
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request) const;
+
+        /**
+         * Send a batch of messages
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Use to update the APNs channel for an app.
          */
         virtual Model::UpdateApnsChannelOutcome UpdateApnsChannel(const Model::UpdateApnsChannelRequest& request) const;
@@ -776,6 +959,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApnsChannelAsync(const Model::UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Update an APNS sandbox channel
+         */
+        virtual Model::UpdateApnsSandboxChannelOutcome UpdateApnsSandboxChannel(const Model::UpdateApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Update an APNS sandbox channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApnsSandboxChannelOutcomeCallable UpdateApnsSandboxChannelCallable(const Model::UpdateApnsSandboxChannelRequest& request) const;
+
+        /**
+         * Update an APNS sandbox channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApnsSandboxChannelAsync(const Model::UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Used to update the settings for an app.
@@ -814,6 +1016,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Update an email channel
+         */
+        virtual Model::UpdateEmailChannelOutcome UpdateEmailChannel(const Model::UpdateEmailChannelRequest& request) const;
+
+        /**
+         * Update an email channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEmailChannelOutcomeCallable UpdateEmailChannelCallable(const Model::UpdateEmailChannelRequest& request) const;
+
+        /**
+         * Update an email channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEmailChannelAsync(const Model::UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Use to update an endpoint.
@@ -891,6 +1112,25 @@ namespace Model
          */
         virtual void UpdateSegmentAsync(const Model::UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Update an SMS channel
+         */
+        virtual Model::UpdateSmsChannelOutcome UpdateSmsChannel(const Model::UpdateSmsChannelRequest& request) const;
+
+        /**
+         * Update an SMS channel
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSmsChannelOutcomeCallable UpdateSmsChannelCallable(const Model::UpdateSmsChannelRequest& request) const;
+
+        /**
+         * Update an SMS channel
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSmsChannelAsync(const Model::UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -900,17 +1140,22 @@ namespace Model
         void CreateImportJobAsyncHelper(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSegmentAsyncHelper(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApnsChannelAsyncHelper(const Model::DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApnsSandboxChannelAsyncHelper(const Model::DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCampaignAsyncHelper(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEmailChannelAsyncHelper(const Model::DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventStreamAsyncHelper(const Model::DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGcmChannelAsyncHelper(const Model::DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSegmentAsyncHelper(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSmsChannelAsyncHelper(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsChannelAsyncHelper(const Model::GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetApnsSandboxChannelAsyncHelper(const Model::GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationSettingsAsyncHelper(const Model::GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignAsyncHelper(const Model::GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignActivitiesAsyncHelper(const Model::GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignVersionAsyncHelper(const Model::GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignVersionsAsyncHelper(const Model::GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignsAsyncHelper(const Model::GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEmailChannelAsyncHelper(const Model::GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEndpointAsyncHelper(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventStreamAsyncHelper(const Model::GetEventStreamRequest& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGcmChannelAsyncHelper(const Model::GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -921,14 +1166,19 @@ namespace Model
         void GetSegmentVersionAsyncHelper(const Model::GetSegmentVersionRequest& request, const GetSegmentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSegmentVersionsAsyncHelper(const Model::GetSegmentVersionsRequest& request, const GetSegmentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSegmentsAsyncHelper(const Model::GetSegmentsRequest& request, const GetSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSmsChannelAsyncHelper(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventStreamAsyncHelper(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendMessagesAsyncHelper(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApnsChannelAsyncHelper(const Model::UpdateApnsChannelRequest& request, const UpdateApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApnsSandboxChannelAsyncHelper(const Model::UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationSettingsAsyncHelper(const Model::UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCampaignAsyncHelper(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEmailChannelAsyncHelper(const Model::UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointsBatchAsyncHelper(const Model::UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGcmChannelAsyncHelper(const Model::UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSegmentAsyncHelper(const Model::UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSmsChannelAsyncHelper(const Model::UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

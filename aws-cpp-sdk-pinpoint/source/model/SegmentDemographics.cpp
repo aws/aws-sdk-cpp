@@ -30,6 +30,7 @@ namespace Model
 
 SegmentDemographics::SegmentDemographics() : 
     m_appVersionHasBeenSet(false),
+    m_channelHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_makeHasBeenSet(false),
     m_modelHasBeenSet(false),
@@ -39,6 +40,7 @@ SegmentDemographics::SegmentDemographics() :
 
 SegmentDemographics::SegmentDemographics(const JsonValue& jsonValue) : 
     m_appVersionHasBeenSet(false),
+    m_channelHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_makeHasBeenSet(false),
     m_modelHasBeenSet(false),
@@ -54,6 +56,13 @@ SegmentDemographics& SegmentDemographics::operator =(const JsonValue& jsonValue)
     m_appVersion = jsonValue.GetObject("AppVersion");
 
     m_appVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Channel"))
+  {
+    m_channel = jsonValue.GetObject("Channel");
+
+    m_channelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DeviceType"))
@@ -94,6 +103,12 @@ JsonValue SegmentDemographics::Jsonize() const
   if(m_appVersionHasBeenSet)
   {
    payload.WithObject("AppVersion", m_appVersion.Jsonize());
+
+  }
+
+  if(m_channelHasBeenSet)
+  {
+   payload.WithObject("Channel", m_channel.Jsonize());
 
   }
 

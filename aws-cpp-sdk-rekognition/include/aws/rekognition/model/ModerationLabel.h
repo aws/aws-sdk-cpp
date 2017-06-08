@@ -35,8 +35,8 @@ namespace Model
   /**
    * <p>Provides information about a single type of moderated content found in an
    * image. Each type of moderated content has a label within a hierarchical
-   * taxonomy. For more information, see
-   * <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+   * taxonomy. For more information, see <a>image-moderation</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ModerationLabel">AWS
    * API Reference</a></p>
    */

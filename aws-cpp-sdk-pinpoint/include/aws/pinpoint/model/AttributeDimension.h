@@ -47,45 +47,45 @@ namespace Model
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline AttributeDimension& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline AttributeDimension& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}

@@ -78,9 +78,26 @@ namespace Model
      */
     inline GCMChannelRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline GCMChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
   private:
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet;
+    bool m_enabled;
+    bool m_enabledHasBeenSet;
   };
 
 } // namespace Model

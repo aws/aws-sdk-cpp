@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/Message.h>
+#include <aws/pinpoint/model/CampaignEmailMessage.h>
+#include <aws/pinpoint/model/CampaignSmsMessage.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +101,31 @@ namespace Model
     inline MessageConfiguration& WithDefaultMessage(Message&& value) { SetDefaultMessage(std::move(value)); return *this;}
 
     /**
+     * The email message configuration.
+     */
+    inline const CampaignEmailMessage& GetEmailMessage() const{ return m_emailMessage; }
+
+    /**
+     * The email message configuration.
+     */
+    inline void SetEmailMessage(const CampaignEmailMessage& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
+
+    /**
+     * The email message configuration.
+     */
+    inline void SetEmailMessage(CampaignEmailMessage&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
+
+    /**
+     * The email message configuration.
+     */
+    inline MessageConfiguration& WithEmailMessage(const CampaignEmailMessage& value) { SetEmailMessage(value); return *this;}
+
+    /**
+     * The email message configuration.
+     */
+    inline MessageConfiguration& WithEmailMessage(CampaignEmailMessage&& value) { SetEmailMessage(std::move(value)); return *this;}
+
+    /**
      * The message that the campaign delivers to GCM channels. Overrides the default
      * message.
      */
@@ -128,13 +155,42 @@ namespace Model
      */
     inline MessageConfiguration& WithGCMMessage(Message&& value) { SetGCMMessage(std::move(value)); return *this;}
 
+    /**
+     * The SMS message configuration.
+     */
+    inline const CampaignSmsMessage& GetSMSMessage() const{ return m_sMSMessage; }
+
+    /**
+     * The SMS message configuration.
+     */
+    inline void SetSMSMessage(const CampaignSmsMessage& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = value; }
+
+    /**
+     * The SMS message configuration.
+     */
+    inline void SetSMSMessage(CampaignSmsMessage&& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = std::move(value); }
+
+    /**
+     * The SMS message configuration.
+     */
+    inline MessageConfiguration& WithSMSMessage(const CampaignSmsMessage& value) { SetSMSMessage(value); return *this;}
+
+    /**
+     * The SMS message configuration.
+     */
+    inline MessageConfiguration& WithSMSMessage(CampaignSmsMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
+
   private:
     Message m_aPNSMessage;
     bool m_aPNSMessageHasBeenSet;
     Message m_defaultMessage;
     bool m_defaultMessageHasBeenSet;
+    CampaignEmailMessage m_emailMessage;
+    bool m_emailMessageHasBeenSet;
     Message m_gCMMessage;
     bool m_gCMMessageHasBeenSet;
+    CampaignSmsMessage m_sMSMessage;
+    bool m_sMSMessageHasBeenSet;
   };
 
 } // namespace Model

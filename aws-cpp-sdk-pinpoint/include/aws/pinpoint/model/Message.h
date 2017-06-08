@@ -44,14 +44,14 @@ namespace Model
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
-OPEN_APP – Your app launches, or it becomes the foreground app if it
+OPEN_APP - Your app launches, or it becomes the foreground app if it
      * has been sent to the background. This is the default action.
 
-DEEP_LINK – Uses
+DEEP_LINK - Uses
      * deep linking features in iOS and Android to open your app and display a
      * designated user interface within the app.
 
-URL – The default mobile browser on
+URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
     inline const Action& GetAction() const{ return m_action; }
@@ -59,14 +59,14 @@ URL – The default mobile browser on
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
-OPEN_APP – Your app launches, or it becomes the foreground app if it
+OPEN_APP - Your app launches, or it becomes the foreground app if it
      * has been sent to the background. This is the default action.
 
-DEEP_LINK – Uses
+DEEP_LINK - Uses
      * deep linking features in iOS and Android to open your app and display a
      * designated user interface within the app.
 
-URL – The default mobile browser on
+URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
@@ -74,14 +74,14 @@ URL – The default mobile browser on
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
-OPEN_APP – Your app launches, or it becomes the foreground app if it
+OPEN_APP - Your app launches, or it becomes the foreground app if it
      * has been sent to the background. This is the default action.
 
-DEEP_LINK – Uses
+DEEP_LINK - Uses
      * deep linking features in iOS and Android to open your app and display a
      * designated user interface within the app.
 
-URL – The default mobile browser on
+URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
@@ -89,14 +89,14 @@ URL – The default mobile browser on
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
-OPEN_APP – Your app launches, or it becomes the foreground app if it
+OPEN_APP - Your app launches, or it becomes the foreground app if it
      * has been sent to the background. This is the default action.
 
-DEEP_LINK – Uses
+DEEP_LINK - Uses
      * deep linking features in iOS and Android to open your app and display a
      * designated user interface within the app.
 
-URL – The default mobile browser on
+URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
     inline Message& WithAction(const Action& value) { SetAction(value); return *this;}
@@ -104,14 +104,14 @@ URL – The default mobile browser on
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
-OPEN_APP – Your app launches, or it becomes the foreground app if it
+OPEN_APP - Your app launches, or it becomes the foreground app if it
      * has been sent to the background. This is the default action.
 
-DEEP_LINK – Uses
+DEEP_LINK - Uses
      * deep linking features in iOS and Android to open your app and display a
      * designated user interface within the app.
 
-URL – The default mobile browser on
+URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
     inline Message& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
@@ -192,6 +192,48 @@ URL – The default mobile browser on
      * example, the app icon.
      */
     inline Message& WithImageIconUrl(const char* value) { SetImageIconUrl(value); return *this;}
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline const Aws::String& GetImageSmallIconUrl() const{ return m_imageSmallIconUrl; }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline void SetImageSmallIconUrl(const Aws::String& value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl = value; }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline void SetImageSmallIconUrl(Aws::String&& value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl = std::move(value); }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline void SetImageSmallIconUrl(const char* value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl.assign(value); }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline Message& WithImageSmallIconUrl(const Aws::String& value) { SetImageSmallIconUrl(value); return *this;}
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline Message& WithImageSmallIconUrl(Aws::String&& value) { SetImageSmallIconUrl(std::move(value)); return *this;}
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline Message& WithImageSmallIconUrl(const char* value) { SetImageSmallIconUrl(value); return *this;}
 
     /**
      * The URL that points to an image used in the push notification.
@@ -406,6 +448,8 @@ Silent pushes can
     bool m_bodyHasBeenSet;
     Aws::String m_imageIconUrl;
     bool m_imageIconUrlHasBeenSet;
+    Aws::String m_imageSmallIconUrl;
+    bool m_imageSmallIconUrlHasBeenSet;
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
     Aws::String m_jsonBody;

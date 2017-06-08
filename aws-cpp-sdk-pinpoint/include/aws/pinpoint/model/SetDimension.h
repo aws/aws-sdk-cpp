@@ -47,45 +47,45 @@ namespace Model
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline const DimensionType& GetDimensionType() const{ return m_dimensionType; }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline void SetDimensionType(const DimensionType& value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = value; }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline void SetDimensionType(DimensionType&& value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = std::move(value); }
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline SetDimension& WithDimensionType(const DimensionType& value) { SetDimensionType(value); return *this;}
 
     /**
      * The type of dimension:
-INCLUSIVE – Endpoints that match the criteria are
+INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
-EXCLUSIVE – Endpoints that match the criteria are
+EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline SetDimension& WithDimensionType(DimensionType&& value) { SetDimensionType(std::move(value)); return *this;}

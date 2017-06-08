@@ -61,19 +61,34 @@ namespace Model
      */
     inline FaceMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
 
-    
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
     inline const Face& GetFace() const{ return m_face; }
 
-    
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
     inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
 
-    
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
     inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
 
-    
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
     inline FaceMatch& WithFace(const Face& value) { SetFace(value); return *this;}
 
-    
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
     inline FaceMatch& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
 
   private:
