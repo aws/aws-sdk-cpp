@@ -29,8 +29,8 @@ namespace Model
 {
 
 RulesPackage::RulesPackage() : 
-    m_rulesPackageArnHasBeenSet(false),
-    m_rulesPackageNameHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -38,8 +38,8 @@ RulesPackage::RulesPackage() :
 }
 
 RulesPackage::RulesPackage(const JsonValue& jsonValue) : 
-    m_rulesPackageArnHasBeenSet(false),
-    m_rulesPackageNameHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -49,18 +49,18 @@ RulesPackage::RulesPackage(const JsonValue& jsonValue) :
 
 RulesPackage& RulesPackage::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("rulesPackageArn"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_rulesPackageArn = jsonValue.GetString("rulesPackageArn");
+    m_arn = jsonValue.GetString("arn");
 
-    m_rulesPackageArnHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("rulesPackageName"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_rulesPackageName = jsonValue.GetString("rulesPackageName");
+    m_name = jsonValue.GetString("name");
 
-    m_rulesPackageNameHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("version"))
@@ -79,7 +79,7 @@ RulesPackage& RulesPackage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("description"))
   {
-    m_description = jsonValue.GetObject("description");
+    m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
   }
@@ -91,15 +91,15 @@ JsonValue RulesPackage::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_rulesPackageArnHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("rulesPackageArn", m_rulesPackageArn);
+   payload.WithString("arn", m_arn);
 
   }
 
-  if(m_rulesPackageNameHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("rulesPackageName", m_rulesPackageName);
+   payload.WithString("name", m_name);
 
   }
 
@@ -117,7 +117,7 @@ JsonValue RulesPackage::Jsonize() const
 
   if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("description", m_description.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 

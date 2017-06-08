@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/client/AWSError.h>
 #include <aws/lex-models/LexModelBuildingServiceErrorMarshaller.h>
 #include <aws/lex-models/LexModelBuildingServiceErrors.h>

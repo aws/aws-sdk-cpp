@@ -28,40 +28,37 @@
 #include <aws/inspector/InspectorEndpoint.h>
 #include <aws/inspector/InspectorErrorMarshaller.h>
 #include <aws/inspector/model/AddAttributesToFindingsRequest.h>
-#include <aws/inspector/model/AttachAssessmentAndRulesPackageRequest.h>
-#include <aws/inspector/model/CreateApplicationRequest.h>
-#include <aws/inspector/model/CreateAssessmentRequest.h>
+#include <aws/inspector/model/CreateAssessmentTargetRequest.h>
+#include <aws/inspector/model/CreateAssessmentTemplateRequest.h>
 #include <aws/inspector/model/CreateResourceGroupRequest.h>
-#include <aws/inspector/model/DeleteApplicationRequest.h>
-#include <aws/inspector/model/DeleteAssessmentRequest.h>
-#include <aws/inspector/model/DeleteRunRequest.h>
-#include <aws/inspector/model/DescribeApplicationRequest.h>
-#include <aws/inspector/model/DescribeAssessmentRequest.h>
-#include <aws/inspector/model/DescribeFindingRequest.h>
-#include <aws/inspector/model/DescribeResourceGroupRequest.h>
-#include <aws/inspector/model/DescribeRulesPackageRequest.h>
-#include <aws/inspector/model/DescribeRunRequest.h>
-#include <aws/inspector/model/DetachAssessmentAndRulesPackageRequest.h>
-#include <aws/inspector/model/GetAssessmentTelemetryRequest.h>
-#include <aws/inspector/model/ListApplicationsRequest.h>
-#include <aws/inspector/model/ListAssessmentAgentsRequest.h>
-#include <aws/inspector/model/ListAssessmentsRequest.h>
-#include <aws/inspector/model/ListAttachedAssessmentsRequest.h>
-#include <aws/inspector/model/ListAttachedRulesPackagesRequest.h>
+#include <aws/inspector/model/DeleteAssessmentRunRequest.h>
+#include <aws/inspector/model/DeleteAssessmentTargetRequest.h>
+#include <aws/inspector/model/DeleteAssessmentTemplateRequest.h>
+#include <aws/inspector/model/DescribeAssessmentRunsRequest.h>
+#include <aws/inspector/model/DescribeAssessmentTargetsRequest.h>
+#include <aws/inspector/model/DescribeAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/DescribeFindingsRequest.h>
+#include <aws/inspector/model/DescribeResourceGroupsRequest.h>
+#include <aws/inspector/model/DescribeRulesPackagesRequest.h>
+#include <aws/inspector/model/GetAssessmentReportRequest.h>
+#include <aws/inspector/model/GetTelemetryMetadataRequest.h>
+#include <aws/inspector/model/ListAssessmentRunAgentsRequest.h>
+#include <aws/inspector/model/ListAssessmentRunsRequest.h>
+#include <aws/inspector/model/ListAssessmentTargetsRequest.h>
+#include <aws/inspector/model/ListAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/ListEventSubscriptionsRequest.h>
 #include <aws/inspector/model/ListFindingsRequest.h>
 #include <aws/inspector/model/ListRulesPackagesRequest.h>
-#include <aws/inspector/model/ListRunsRequest.h>
 #include <aws/inspector/model/ListTagsForResourceRequest.h>
-#include <aws/inspector/model/LocalizeTextRequest.h>
-#include <aws/inspector/model/PreviewAgentsForResourceGroupRequest.h>
+#include <aws/inspector/model/PreviewAgentsRequest.h>
 #include <aws/inspector/model/RegisterCrossAccountAccessRoleRequest.h>
 #include <aws/inspector/model/RemoveAttributesFromFindingsRequest.h>
-#include <aws/inspector/model/RunAssessmentRequest.h>
 #include <aws/inspector/model/SetTagsForResourceRequest.h>
-#include <aws/inspector/model/StartDataCollectionRequest.h>
-#include <aws/inspector/model/StopDataCollectionRequest.h>
-#include <aws/inspector/model/UpdateApplicationRequest.h>
-#include <aws/inspector/model/UpdateAssessmentRequest.h>
+#include <aws/inspector/model/StartAssessmentRunRequest.h>
+#include <aws/inspector/model/StopAssessmentRunRequest.h>
+#include <aws/inspector/model/SubscribeToEventRequest.h>
+#include <aws/inspector/model/UnsubscribeFromEventRequest.h>
+#include <aws/inspector/model/UpdateAssessmentTargetRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -162,7 +159,7 @@ void InspectorClient::AddAttributesToFindingsAsyncHelper(const AddAttributesToFi
   handler(this, request, AddAttributesToFindings(request), context);
 }
 
-AttachAssessmentAndRulesPackageOutcome InspectorClient::AttachAssessmentAndRulesPackage(const AttachAssessmentAndRulesPackageRequest& request) const
+CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const CreateAssessmentTargetRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -171,33 +168,33 @@ AttachAssessmentAndRulesPackageOutcome InspectorClient::AttachAssessmentAndRules
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return AttachAssessmentAndRulesPackageOutcome(AttachAssessmentAndRulesPackageResult(outcome.GetResult()));
+    return CreateAssessmentTargetOutcome(CreateAssessmentTargetResult(outcome.GetResult()));
   }
   else
   {
-    return AttachAssessmentAndRulesPackageOutcome(outcome.GetError());
+    return CreateAssessmentTargetOutcome(outcome.GetError());
   }
 }
 
-AttachAssessmentAndRulesPackageOutcomeCallable InspectorClient::AttachAssessmentAndRulesPackageCallable(const AttachAssessmentAndRulesPackageRequest& request) const
+CreateAssessmentTargetOutcomeCallable InspectorClient::CreateAssessmentTargetCallable(const CreateAssessmentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AttachAssessmentAndRulesPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachAssessmentAndRulesPackage(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssessmentTarget(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::AttachAssessmentAndRulesPackageAsync(const AttachAssessmentAndRulesPackageRequest& request, const AttachAssessmentAndRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTargetAsync(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachAssessmentAndRulesPackageAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentTargetAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::AttachAssessmentAndRulesPackageAsyncHelper(const AttachAssessmentAndRulesPackageRequest& request, const AttachAssessmentAndRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTargetAsyncHelper(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AttachAssessmentAndRulesPackage(request), context);
+  handler(this, request, CreateAssessmentTarget(request), context);
 }
 
-CreateApplicationOutcome InspectorClient::CreateApplication(const CreateApplicationRequest& request) const
+CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const CreateAssessmentTemplateRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -206,65 +203,30 @@ CreateApplicationOutcome InspectorClient::CreateApplication(const CreateApplicat
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
+    return CreateAssessmentTemplateOutcome(CreateAssessmentTemplateResult(outcome.GetResult()));
   }
   else
   {
-    return CreateApplicationOutcome(outcome.GetError());
+    return CreateAssessmentTemplateOutcome(outcome.GetError());
   }
 }
 
-CreateApplicationOutcomeCallable InspectorClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
+CreateAssessmentTemplateOutcomeCallable InspectorClient::CreateAssessmentTemplateCallable(const CreateAssessmentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateAssessmentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssessmentTemplate(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTemplateAsync(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentTemplateAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::CreateAssessmentTemplateAsyncHelper(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, CreateApplication(request), context);
-}
-
-CreateAssessmentOutcome InspectorClient::CreateAssessment(const CreateAssessmentRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateAssessmentOutcome(CreateAssessmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAssessmentOutcome(outcome.GetError());
-  }
-}
-
-CreateAssessmentOutcomeCallable InspectorClient::CreateAssessmentCallable(const CreateAssessmentRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void InspectorClient::CreateAssessmentAsync(const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssessmentAsyncHelper( request, handler, context ); } );
-}
-
-void InspectorClient::CreateAssessmentAsyncHelper(const CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAssessment(request), context);
+  handler(this, request, CreateAssessmentTemplate(request), context);
 }
 
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const
@@ -302,7 +264,7 @@ void InspectorClient::CreateResourceGroupAsyncHelper(const CreateResourceGroupRe
   handler(this, request, CreateResourceGroup(request), context);
 }
 
-DeleteApplicationOutcome InspectorClient::DeleteApplication(const DeleteApplicationRequest& request) const
+DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAssessmentRunRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -311,33 +273,33 @@ DeleteApplicationOutcome InspectorClient::DeleteApplication(const DeleteApplicat
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DeleteApplicationOutcome(DeleteApplicationResult(outcome.GetResult()));
+    return DeleteAssessmentRunOutcome(NoResult());
   }
   else
   {
-    return DeleteApplicationOutcome(outcome.GetError());
+    return DeleteAssessmentRunOutcome(outcome.GetError());
   }
 }
 
-DeleteApplicationOutcomeCallable InspectorClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
+DeleteAssessmentRunOutcomeCallable InspectorClient::DeleteAssessmentRunCallable(const DeleteAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentRun(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentRunAsync(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentRunAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentRunAsyncHelper(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteApplication(request), context);
+  handler(this, request, DeleteAssessmentRun(request), context);
 }
 
-DeleteAssessmentOutcome InspectorClient::DeleteAssessment(const DeleteAssessmentRequest& request) const
+DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const DeleteAssessmentTargetRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -346,33 +308,33 @@ DeleteAssessmentOutcome InspectorClient::DeleteAssessment(const DeleteAssessment
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DeleteAssessmentOutcome(DeleteAssessmentResult(outcome.GetResult()));
+    return DeleteAssessmentTargetOutcome(NoResult());
   }
   else
   {
-    return DeleteAssessmentOutcome(outcome.GetError());
+    return DeleteAssessmentTargetOutcome(outcome.GetError());
   }
 }
 
-DeleteAssessmentOutcomeCallable InspectorClient::DeleteAssessmentCallable(const DeleteAssessmentRequest& request) const
+DeleteAssessmentTargetOutcomeCallable InspectorClient::DeleteAssessmentTargetCallable(const DeleteAssessmentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessment(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentTarget(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DeleteAssessmentAsync(const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTargetAsync(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentTargetAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DeleteAssessmentAsyncHelper(const DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTargetAsyncHelper(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteAssessment(request), context);
+  handler(this, request, DeleteAssessmentTarget(request), context);
 }
 
-DeleteRunOutcome InspectorClient::DeleteRun(const DeleteRunRequest& request) const
+DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const DeleteAssessmentTemplateRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -381,33 +343,33 @@ DeleteRunOutcome InspectorClient::DeleteRun(const DeleteRunRequest& request) con
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DeleteRunOutcome(DeleteRunResult(outcome.GetResult()));
+    return DeleteAssessmentTemplateOutcome(NoResult());
   }
   else
   {
-    return DeleteRunOutcome(outcome.GetError());
+    return DeleteAssessmentTemplateOutcome(outcome.GetError());
   }
 }
 
-DeleteRunOutcomeCallable InspectorClient::DeleteRunCallable(const DeleteRunRequest& request) const
+DeleteAssessmentTemplateOutcomeCallable InspectorClient::DeleteAssessmentTemplateCallable(const DeleteAssessmentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRun(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentTemplate(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DeleteRunAsync(const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTemplateAsync(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRunAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentTemplateAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DeleteRunAsyncHelper(const DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DeleteAssessmentTemplateAsyncHelper(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DeleteRun(request), context);
+  handler(this, request, DeleteAssessmentTemplate(request), context);
 }
 
-DescribeApplicationOutcome InspectorClient::DescribeApplication(const DescribeApplicationRequest& request) const
+DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const DescribeAssessmentRunsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -416,33 +378,33 @@ DescribeApplicationOutcome InspectorClient::DescribeApplication(const DescribeAp
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeApplicationOutcome(DescribeApplicationResult(outcome.GetResult()));
+    return DescribeAssessmentRunsOutcome(DescribeAssessmentRunsResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeApplicationOutcome(outcome.GetError());
+    return DescribeAssessmentRunsOutcome(outcome.GetError());
   }
 }
 
-DescribeApplicationOutcomeCallable InspectorClient::DescribeApplicationCallable(const DescribeApplicationRequest& request) const
+DescribeAssessmentRunsOutcomeCallable InspectorClient::DescribeAssessmentRunsCallable(const DescribeAssessmentRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplication(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentRuns(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentRunsAsync(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentRunsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeApplicationAsyncHelper(const DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentRunsAsyncHelper(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeApplication(request), context);
+  handler(this, request, DescribeAssessmentRuns(request), context);
 }
 
-DescribeAssessmentOutcome InspectorClient::DescribeAssessment(const DescribeAssessmentRequest& request) const
+DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(const DescribeAssessmentTargetsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -451,30 +413,65 @@ DescribeAssessmentOutcome InspectorClient::DescribeAssessment(const DescribeAsse
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeAssessmentOutcome(DescribeAssessmentResult(outcome.GetResult()));
+    return DescribeAssessmentTargetsOutcome(DescribeAssessmentTargetsResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeAssessmentOutcome(outcome.GetError());
+    return DescribeAssessmentTargetsOutcome(outcome.GetError());
   }
 }
 
-DescribeAssessmentOutcomeCallable InspectorClient::DescribeAssessmentCallable(const DescribeAssessmentRequest& request) const
+DescribeAssessmentTargetsOutcomeCallable InspectorClient::DescribeAssessmentTargetsCallable(const DescribeAssessmentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessment(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentTargets(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeAssessmentAsync(const DescribeAssessmentRequest& request, const DescribeAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentTargetsAsync(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentTargetsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeAssessmentAsyncHelper(const DescribeAssessmentRequest& request, const DescribeAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeAssessmentTargetsAsyncHelper(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeAssessment(request), context);
+  handler(this, request, DescribeAssessmentTargets(request), context);
+}
+
+DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(const DescribeAssessmentTemplatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAssessmentTemplatesOutcome(DescribeAssessmentTemplatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAssessmentTemplatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeAssessmentTemplatesOutcomeCallable InspectorClient::DescribeAssessmentTemplatesCallable(const DescribeAssessmentTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::DescribeAssessmentTemplatesAsync(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssessmentTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::DescribeAssessmentTemplatesAsyncHelper(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAssessmentTemplates(request), context);
 }
 
 DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAccessRole() const
@@ -511,7 +508,7 @@ void InspectorClient::DescribeCrossAccountAccessRoleAsyncHelper(const DescribeCr
   handler(this, DescribeCrossAccountAccessRole(), context);
 }
 
-DescribeFindingOutcome InspectorClient::DescribeFinding(const DescribeFindingRequest& request) const
+DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindingsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -520,33 +517,33 @@ DescribeFindingOutcome InspectorClient::DescribeFinding(const DescribeFindingReq
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeFindingOutcome(DescribeFindingResult(outcome.GetResult()));
+    return DescribeFindingsOutcome(DescribeFindingsResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeFindingOutcome(outcome.GetError());
+    return DescribeFindingsOutcome(outcome.GetError());
   }
 }
 
-DescribeFindingOutcomeCallable InspectorClient::DescribeFindingCallable(const DescribeFindingRequest& request) const
+DescribeFindingsOutcomeCallable InspectorClient::DescribeFindingsCallable(const DescribeFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFindingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFinding(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFindings(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeFindingAsync(const DescribeFindingRequest& request, const DescribeFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeFindingsAsync(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFindingAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFindingsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeFindingAsyncHelper(const DescribeFindingRequest& request, const DescribeFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeFindingsAsyncHelper(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeFinding(request), context);
+  handler(this, request, DescribeFindings(request), context);
 }
 
-DescribeResourceGroupOutcome InspectorClient::DescribeResourceGroup(const DescribeResourceGroupRequest& request) const
+DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const DescribeResourceGroupsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -555,33 +552,33 @@ DescribeResourceGroupOutcome InspectorClient::DescribeResourceGroup(const Descri
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeResourceGroupOutcome(DescribeResourceGroupResult(outcome.GetResult()));
+    return DescribeResourceGroupsOutcome(DescribeResourceGroupsResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeResourceGroupOutcome(outcome.GetError());
+    return DescribeResourceGroupsOutcome(outcome.GetError());
   }
 }
 
-DescribeResourceGroupOutcomeCallable InspectorClient::DescribeResourceGroupCallable(const DescribeResourceGroupRequest& request) const
+DescribeResourceGroupsOutcomeCallable InspectorClient::DescribeResourceGroupsCallable(const DescribeResourceGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceGroup(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceGroups(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeResourceGroupAsync(const DescribeResourceGroupRequest& request, const DescribeResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceGroupAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceGroupsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeResourceGroupAsyncHelper(const DescribeResourceGroupRequest& request, const DescribeResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeResourceGroupsAsyncHelper(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeResourceGroup(request), context);
+  handler(this, request, DescribeResourceGroups(request), context);
 }
 
-DescribeRulesPackageOutcome InspectorClient::DescribeRulesPackage(const DescribeRulesPackageRequest& request) const
+DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const DescribeRulesPackagesRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -590,33 +587,33 @@ DescribeRulesPackageOutcome InspectorClient::DescribeRulesPackage(const Describe
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeRulesPackageOutcome(DescribeRulesPackageResult(outcome.GetResult()));
+    return DescribeRulesPackagesOutcome(DescribeRulesPackagesResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeRulesPackageOutcome(outcome.GetError());
+    return DescribeRulesPackagesOutcome(outcome.GetError());
   }
 }
 
-DescribeRulesPackageOutcomeCallable InspectorClient::DescribeRulesPackageCallable(const DescribeRulesPackageRequest& request) const
+DescribeRulesPackagesOutcomeCallable InspectorClient::DescribeRulesPackagesCallable(const DescribeRulesPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRulesPackage(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRulesPackages(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeRulesPackageAsync(const DescribeRulesPackageRequest& request, const DescribeRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeRulesPackagesAsync(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesPackageAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesPackagesAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeRulesPackageAsyncHelper(const DescribeRulesPackageRequest& request, const DescribeRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::DescribeRulesPackagesAsyncHelper(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRulesPackage(request), context);
+  handler(this, request, DescribeRulesPackages(request), context);
 }
 
-DescribeRunOutcome InspectorClient::DescribeRun(const DescribeRunRequest& request) const
+GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessmentReportRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -625,33 +622,33 @@ DescribeRunOutcome InspectorClient::DescribeRun(const DescribeRunRequest& reques
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DescribeRunOutcome(DescribeRunResult(outcome.GetResult()));
+    return GetAssessmentReportOutcome(GetAssessmentReportResult(outcome.GetResult()));
   }
   else
   {
-    return DescribeRunOutcome(outcome.GetError());
+    return GetAssessmentReportOutcome(outcome.GetError());
   }
 }
 
-DescribeRunOutcomeCallable InspectorClient::DescribeRunCallable(const DescribeRunRequest& request) const
+GetAssessmentReportOutcomeCallable InspectorClient::GetAssessmentReportCallable(const GetAssessmentReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRun(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetAssessmentReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssessmentReport(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DescribeRunAsync(const DescribeRunRequest& request, const DescribeRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetAssessmentReportAsync(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRunAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentReportAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DescribeRunAsyncHelper(const DescribeRunRequest& request, const DescribeRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetAssessmentReportAsyncHelper(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DescribeRun(request), context);
+  handler(this, request, GetAssessmentReport(request), context);
 }
 
-DetachAssessmentAndRulesPackageOutcome InspectorClient::DetachAssessmentAndRulesPackage(const DetachAssessmentAndRulesPackageRequest& request) const
+GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelemetryMetadataRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -660,33 +657,33 @@ DetachAssessmentAndRulesPackageOutcome InspectorClient::DetachAssessmentAndRules
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return DetachAssessmentAndRulesPackageOutcome(DetachAssessmentAndRulesPackageResult(outcome.GetResult()));
+    return GetTelemetryMetadataOutcome(GetTelemetryMetadataResult(outcome.GetResult()));
   }
   else
   {
-    return DetachAssessmentAndRulesPackageOutcome(outcome.GetError());
+    return GetTelemetryMetadataOutcome(outcome.GetError());
   }
 }
 
-DetachAssessmentAndRulesPackageOutcomeCallable InspectorClient::DetachAssessmentAndRulesPackageCallable(const DetachAssessmentAndRulesPackageRequest& request) const
+GetTelemetryMetadataOutcomeCallable InspectorClient::GetTelemetryMetadataCallable(const GetTelemetryMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetachAssessmentAndRulesPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachAssessmentAndRulesPackage(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetTelemetryMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTelemetryMetadata(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::DetachAssessmentAndRulesPackageAsync(const DetachAssessmentAndRulesPackageRequest& request, const DetachAssessmentAndRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetTelemetryMetadataAsync(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachAssessmentAndRulesPackageAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->GetTelemetryMetadataAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::DetachAssessmentAndRulesPackageAsyncHelper(const DetachAssessmentAndRulesPackageRequest& request, const DetachAssessmentAndRulesPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::GetTelemetryMetadataAsyncHelper(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetachAssessmentAndRulesPackage(request), context);
+  handler(this, request, GetTelemetryMetadata(request), context);
 }
 
-GetAssessmentTelemetryOutcome InspectorClient::GetAssessmentTelemetry(const GetAssessmentTelemetryRequest& request) const
+ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const ListAssessmentRunAgentsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -695,33 +692,33 @@ GetAssessmentTelemetryOutcome InspectorClient::GetAssessmentTelemetry(const GetA
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return GetAssessmentTelemetryOutcome(GetAssessmentTelemetryResult(outcome.GetResult()));
+    return ListAssessmentRunAgentsOutcome(ListAssessmentRunAgentsResult(outcome.GetResult()));
   }
   else
   {
-    return GetAssessmentTelemetryOutcome(outcome.GetError());
+    return ListAssessmentRunAgentsOutcome(outcome.GetError());
   }
 }
 
-GetAssessmentTelemetryOutcomeCallable InspectorClient::GetAssessmentTelemetryCallable(const GetAssessmentTelemetryRequest& request) const
+ListAssessmentRunAgentsOutcomeCallable InspectorClient::ListAssessmentRunAgentsCallable(const ListAssessmentRunAgentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssessmentTelemetryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssessmentTelemetry(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentRunAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentRunAgents(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::GetAssessmentTelemetryAsync(const GetAssessmentTelemetryRequest& request, const GetAssessmentTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunAgentsAsync(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssessmentTelemetryAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentRunAgentsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::GetAssessmentTelemetryAsyncHelper(const GetAssessmentTelemetryRequest& request, const GetAssessmentTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunAgentsAsyncHelper(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetAssessmentTelemetry(request), context);
+  handler(this, request, ListAssessmentRunAgents(request), context);
 }
 
-ListApplicationsOutcome InspectorClient::ListApplications(const ListApplicationsRequest& request) const
+ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessmentRunsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -730,33 +727,33 @@ ListApplicationsOutcome InspectorClient::ListApplications(const ListApplications
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return ListApplicationsOutcome(ListApplicationsResult(outcome.GetResult()));
+    return ListAssessmentRunsOutcome(ListAssessmentRunsResult(outcome.GetResult()));
   }
   else
   {
-    return ListApplicationsOutcome(outcome.GetError());
+    return ListAssessmentRunsOutcome(outcome.GetError());
   }
 }
 
-ListApplicationsOutcomeCallable InspectorClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
+ListAssessmentRunsOutcomeCallable InspectorClient::ListAssessmentRunsCallable(const ListAssessmentRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentRuns(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunsAsync(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentRunsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentRunsAsyncHelper(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListApplications(request), context);
+  handler(this, request, ListAssessmentRuns(request), context);
 }
 
-ListAssessmentAgentsOutcome InspectorClient::ListAssessmentAgents(const ListAssessmentAgentsRequest& request) const
+ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAssessmentTargetsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -765,33 +762,33 @@ ListAssessmentAgentsOutcome InspectorClient::ListAssessmentAgents(const ListAsse
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return ListAssessmentAgentsOutcome(ListAssessmentAgentsResult(outcome.GetResult()));
+    return ListAssessmentTargetsOutcome(ListAssessmentTargetsResult(outcome.GetResult()));
   }
   else
   {
-    return ListAssessmentAgentsOutcome(outcome.GetError());
+    return ListAssessmentTargetsOutcome(outcome.GetError());
   }
 }
 
-ListAssessmentAgentsOutcomeCallable InspectorClient::ListAssessmentAgentsCallable(const ListAssessmentAgentsRequest& request) const
+ListAssessmentTargetsOutcomeCallable InspectorClient::ListAssessmentTargetsCallable(const ListAssessmentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentAgents(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentTargets(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentAgentsAsync(const ListAssessmentAgentsRequest& request, const ListAssessmentAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTargetsAsync(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentAgentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentTargetsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::ListAssessmentAgentsAsyncHelper(const ListAssessmentAgentsRequest& request, const ListAssessmentAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTargetsAsyncHelper(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessmentAgents(request), context);
+  handler(this, request, ListAssessmentTargets(request), context);
 }
 
-ListAssessmentsOutcome InspectorClient::ListAssessments(const ListAssessmentsRequest& request) const
+ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const ListAssessmentTemplatesRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -800,33 +797,33 @@ ListAssessmentsOutcome InspectorClient::ListAssessments(const ListAssessmentsReq
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return ListAssessmentsOutcome(ListAssessmentsResult(outcome.GetResult()));
+    return ListAssessmentTemplatesOutcome(ListAssessmentTemplatesResult(outcome.GetResult()));
   }
   else
   {
-    return ListAssessmentsOutcome(outcome.GetError());
+    return ListAssessmentTemplatesOutcome(outcome.GetError());
   }
 }
 
-ListAssessmentsOutcomeCallable InspectorClient::ListAssessmentsCallable(const ListAssessmentsRequest& request) const
+ListAssessmentTemplatesOutcomeCallable InspectorClient::ListAssessmentTemplatesCallable(const ListAssessmentTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessments(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentTemplates(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::ListAssessmentsAsync(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTemplatesAsync(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentTemplatesAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::ListAssessmentsAsyncHelper(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListAssessmentTemplatesAsyncHelper(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAssessments(request), context);
+  handler(this, request, ListAssessmentTemplates(request), context);
 }
 
-ListAttachedAssessmentsOutcome InspectorClient::ListAttachedAssessments(const ListAttachedAssessmentsRequest& request) const
+ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const ListEventSubscriptionsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -835,65 +832,30 @@ ListAttachedAssessmentsOutcome InspectorClient::ListAttachedAssessments(const Li
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return ListAttachedAssessmentsOutcome(ListAttachedAssessmentsResult(outcome.GetResult()));
+    return ListEventSubscriptionsOutcome(ListEventSubscriptionsResult(outcome.GetResult()));
   }
   else
   {
-    return ListAttachedAssessmentsOutcome(outcome.GetError());
+    return ListEventSubscriptionsOutcome(outcome.GetError());
   }
 }
 
-ListAttachedAssessmentsOutcomeCallable InspectorClient::ListAttachedAssessmentsCallable(const ListAttachedAssessmentsRequest& request) const
+ListEventSubscriptionsOutcomeCallable InspectorClient::ListEventSubscriptionsCallable(const ListEventSubscriptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAttachedAssessmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttachedAssessments(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListEventSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventSubscriptions(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::ListAttachedAssessmentsAsync(const ListAttachedAssessmentsRequest& request, const ListAttachedAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListEventSubscriptionsAsync(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedAssessmentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventSubscriptionsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::ListAttachedAssessmentsAsyncHelper(const ListAttachedAssessmentsRequest& request, const ListAttachedAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::ListEventSubscriptionsAsyncHelper(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListAttachedAssessments(request), context);
-}
-
-ListAttachedRulesPackagesOutcome InspectorClient::ListAttachedRulesPackages(const ListAttachedRulesPackagesRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListAttachedRulesPackagesOutcome(ListAttachedRulesPackagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAttachedRulesPackagesOutcome(outcome.GetError());
-  }
-}
-
-ListAttachedRulesPackagesOutcomeCallable InspectorClient::ListAttachedRulesPackagesCallable(const ListAttachedRulesPackagesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListAttachedRulesPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttachedRulesPackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void InspectorClient::ListAttachedRulesPackagesAsync(const ListAttachedRulesPackagesRequest& request, const ListAttachedRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedRulesPackagesAsyncHelper( request, handler, context ); } );
-}
-
-void InspectorClient::ListAttachedRulesPackagesAsyncHelper(const ListAttachedRulesPackagesRequest& request, const ListAttachedRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAttachedRulesPackages(request), context);
+  handler(this, request, ListEventSubscriptions(request), context);
 }
 
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const
@@ -966,41 +928,6 @@ void InspectorClient::ListRulesPackagesAsyncHelper(const ListRulesPackagesReques
   handler(this, request, ListRulesPackages(request), context);
 }
 
-ListRunsOutcome InspectorClient::ListRuns(const ListRunsRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListRunsOutcome(ListRunsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRunsOutcome(outcome.GetError());
-  }
-}
-
-ListRunsOutcomeCallable InspectorClient::ListRunsCallable(const ListRunsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void InspectorClient::ListRunsAsync(const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListRunsAsyncHelper( request, handler, context ); } );
-}
-
-void InspectorClient::ListRunsAsyncHelper(const ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRuns(request), context);
-}
-
 ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1036,7 +963,7 @@ void InspectorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRe
   handler(this, request, ListTagsForResource(request), context);
 }
 
-LocalizeTextOutcome InspectorClient::LocalizeText(const LocalizeTextRequest& request) const
+PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -1045,65 +972,30 @@ LocalizeTextOutcome InspectorClient::LocalizeText(const LocalizeTextRequest& req
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return LocalizeTextOutcome(LocalizeTextResult(outcome.GetResult()));
+    return PreviewAgentsOutcome(PreviewAgentsResult(outcome.GetResult()));
   }
   else
   {
-    return LocalizeTextOutcome(outcome.GetError());
+    return PreviewAgentsOutcome(outcome.GetError());
   }
 }
 
-LocalizeTextOutcomeCallable InspectorClient::LocalizeTextCallable(const LocalizeTextRequest& request) const
+PreviewAgentsOutcomeCallable InspectorClient::PreviewAgentsCallable(const PreviewAgentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< LocalizeTextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->LocalizeText(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< PreviewAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PreviewAgents(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::LocalizeTextAsync(const LocalizeTextRequest& request, const LocalizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::PreviewAgentsAsync(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LocalizeTextAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->PreviewAgentsAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::LocalizeTextAsyncHelper(const LocalizeTextRequest& request, const LocalizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::PreviewAgentsAsyncHelper(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, LocalizeText(request), context);
-}
-
-PreviewAgentsForResourceGroupOutcome InspectorClient::PreviewAgentsForResourceGroup(const PreviewAgentsForResourceGroupRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return PreviewAgentsForResourceGroupOutcome(PreviewAgentsForResourceGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PreviewAgentsForResourceGroupOutcome(outcome.GetError());
-  }
-}
-
-PreviewAgentsForResourceGroupOutcomeCallable InspectorClient::PreviewAgentsForResourceGroupCallable(const PreviewAgentsForResourceGroupRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< PreviewAgentsForResourceGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PreviewAgentsForResourceGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void InspectorClient::PreviewAgentsForResourceGroupAsync(const PreviewAgentsForResourceGroupRequest& request, const PreviewAgentsForResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->PreviewAgentsForResourceGroupAsyncHelper( request, handler, context ); } );
-}
-
-void InspectorClient::PreviewAgentsForResourceGroupAsyncHelper(const PreviewAgentsForResourceGroupRequest& request, const PreviewAgentsForResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PreviewAgentsForResourceGroup(request), context);
+  handler(this, request, PreviewAgents(request), context);
 }
 
 RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAccessRole(const RegisterCrossAccountAccessRoleRequest& request) const
@@ -1115,7 +1007,7 @@ RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAcces
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return RegisterCrossAccountAccessRoleOutcome(RegisterCrossAccountAccessRoleResult(outcome.GetResult()));
+    return RegisterCrossAccountAccessRoleOutcome(NoResult());
   }
   else
   {
@@ -1176,41 +1068,6 @@ void InspectorClient::RemoveAttributesFromFindingsAsyncHelper(const RemoveAttrib
   handler(this, request, RemoveAttributesFromFindings(request), context);
 }
 
-RunAssessmentOutcome InspectorClient::RunAssessment(const RunAssessmentRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RunAssessmentOutcome(RunAssessmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RunAssessmentOutcome(outcome.GetError());
-  }
-}
-
-RunAssessmentOutcomeCallable InspectorClient::RunAssessmentCallable(const RunAssessmentRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< RunAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RunAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void InspectorClient::RunAssessmentAsync(const RunAssessmentRequest& request, const RunAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->RunAssessmentAsyncHelper( request, handler, context ); } );
-}
-
-void InspectorClient::RunAssessmentAsyncHelper(const RunAssessmentRequest& request, const RunAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RunAssessment(request), context);
-}
-
 SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1220,7 +1077,7 @@ SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForRe
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return SetTagsForResourceOutcome(SetTagsForResourceResult(outcome.GetResult()));
+    return SetTagsForResourceOutcome(NoResult());
   }
   else
   {
@@ -1246,7 +1103,7 @@ void InspectorClient::SetTagsForResourceAsyncHelper(const SetTagsForResourceRequ
   handler(this, request, SetTagsForResource(request), context);
 }
 
-StartDataCollectionOutcome InspectorClient::StartDataCollection(const StartDataCollectionRequest& request) const
+StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessmentRunRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -1255,33 +1112,33 @@ StartDataCollectionOutcome InspectorClient::StartDataCollection(const StartDataC
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return StartDataCollectionOutcome(StartDataCollectionResult(outcome.GetResult()));
+    return StartAssessmentRunOutcome(StartAssessmentRunResult(outcome.GetResult()));
   }
   else
   {
-    return StartDataCollectionOutcome(outcome.GetError());
+    return StartAssessmentRunOutcome(outcome.GetError());
   }
 }
 
-StartDataCollectionOutcomeCallable InspectorClient::StartDataCollectionCallable(const StartDataCollectionRequest& request) const
+StartAssessmentRunOutcomeCallable InspectorClient::StartAssessmentRunCallable(const StartAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDataCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDataCollection(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StartAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAssessmentRun(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::StartDataCollectionAsync(const StartDataCollectionRequest& request, const StartDataCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StartAssessmentRunAsync(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDataCollectionAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->StartAssessmentRunAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::StartDataCollectionAsyncHelper(const StartDataCollectionRequest& request, const StartDataCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StartAssessmentRunAsyncHelper(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StartDataCollection(request), context);
+  handler(this, request, StartAssessmentRun(request), context);
 }
 
-StopDataCollectionOutcome InspectorClient::StopDataCollection(const StopDataCollectionRequest& request) const
+StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessmentRunRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -1290,33 +1147,33 @@ StopDataCollectionOutcome InspectorClient::StopDataCollection(const StopDataColl
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return StopDataCollectionOutcome(StopDataCollectionResult(outcome.GetResult()));
+    return StopAssessmentRunOutcome(NoResult());
   }
   else
   {
-    return StopDataCollectionOutcome(outcome.GetError());
+    return StopAssessmentRunOutcome(outcome.GetError());
   }
 }
 
-StopDataCollectionOutcomeCallable InspectorClient::StopDataCollectionCallable(const StopDataCollectionRequest& request) const
+StopAssessmentRunOutcomeCallable InspectorClient::StopAssessmentRunCallable(const StopAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopDataCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDataCollection(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StopAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAssessmentRun(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::StopDataCollectionAsync(const StopDataCollectionRequest& request, const StopDataCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StopAssessmentRunAsync(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDataCollectionAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->StopAssessmentRunAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::StopDataCollectionAsyncHelper(const StopDataCollectionRequest& request, const StopDataCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::StopAssessmentRunAsyncHelper(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, StopDataCollection(request), context);
+  handler(this, request, StopAssessmentRun(request), context);
 }
 
-UpdateApplicationOutcome InspectorClient::UpdateApplication(const UpdateApplicationRequest& request) const
+SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEventRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -1325,33 +1182,33 @@ UpdateApplicationOutcome InspectorClient::UpdateApplication(const UpdateApplicat
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));
+    return SubscribeToEventOutcome(NoResult());
   }
   else
   {
-    return UpdateApplicationOutcome(outcome.GetError());
+    return SubscribeToEventOutcome(outcome.GetError());
   }
 }
 
-UpdateApplicationOutcomeCallable InspectorClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
+SubscribeToEventOutcomeCallable InspectorClient::SubscribeToEventCallable(const SubscribeToEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< SubscribeToEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubscribeToEvent(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::SubscribeToEventAsync(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->SubscribeToEventAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::SubscribeToEventAsyncHelper(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateApplication(request), context);
+  handler(this, request, SubscribeToEvent(request), context);
 }
 
-UpdateAssessmentOutcome InspectorClient::UpdateAssessment(const UpdateAssessmentRequest& request) const
+UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const UnsubscribeFromEventRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
@@ -1360,29 +1217,64 @@ UpdateAssessmentOutcome InspectorClient::UpdateAssessment(const UpdateAssessment
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return UpdateAssessmentOutcome(UpdateAssessmentResult(outcome.GetResult()));
+    return UnsubscribeFromEventOutcome(NoResult());
   }
   else
   {
-    return UpdateAssessmentOutcome(outcome.GetError());
+    return UnsubscribeFromEventOutcome(outcome.GetError());
   }
 }
 
-UpdateAssessmentOutcomeCallable InspectorClient::UpdateAssessmentCallable(const UpdateAssessmentRequest& request) const
+UnsubscribeFromEventOutcomeCallable InspectorClient::UnsubscribeFromEventCallable(const UnsubscribeFromEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAssessment(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeFromEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnsubscribeFromEvent(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void InspectorClient::UpdateAssessmentAsync(const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::UnsubscribeFromEventAsync(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->UnsubscribeFromEventAsyncHelper( request, handler, context ); } );
 }
 
-void InspectorClient::UpdateAssessmentAsyncHelper(const UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void InspectorClient::UnsubscribeFromEventAsyncHelper(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, UpdateAssessment(request), context);
+  handler(this, request, UnsubscribeFromEvent(request), context);
+}
+
+UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const UpdateAssessmentTargetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAssessmentTargetOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateAssessmentTargetOutcome(outcome.GetError());
+  }
+}
+
+UpdateAssessmentTargetOutcomeCallable InspectorClient::UpdateAssessmentTargetCallable(const UpdateAssessmentTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAssessmentTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::UpdateAssessmentTargetAsync(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentTargetAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::UpdateAssessmentTargetAsyncHelper(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAssessmentTarget(request), context);
 }
 

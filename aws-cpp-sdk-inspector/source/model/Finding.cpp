@@ -29,108 +29,160 @@ namespace Model
 {
 
 Finding::Finding() : 
-    m_findingArnHasBeenSet(false),
-    m_runArnHasBeenSet(false),
-    m_rulesPackageArnHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_findingHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_schemaVersion(0),
+    m_schemaVersionHasBeenSet(false),
+    m_serviceHasBeenSet(false),
+    m_serviceAttributesHasBeenSet(false),
+    m_assetType(AssetType::NOT_SET),
+    m_assetTypeHasBeenSet(false),
+    m_assetAttributesHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_recommendationHasBeenSet(false),
+    m_severity(Severity::NOT_SET),
+    m_severityHasBeenSet(false),
+    m_numericSeverity(0.0),
+    m_numericSeverityHasBeenSet(false),
+    m_confidence(0),
+    m_confidenceHasBeenSet(false),
+    m_indicatorOfCompromise(false),
+    m_indicatorOfCompromiseHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_userAttributesHasBeenSet(false)
+    m_userAttributesHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
 Finding::Finding(const JsonValue& jsonValue) : 
-    m_findingArnHasBeenSet(false),
-    m_runArnHasBeenSet(false),
-    m_rulesPackageArnHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_findingHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_schemaVersion(0),
+    m_schemaVersionHasBeenSet(false),
+    m_serviceHasBeenSet(false),
+    m_serviceAttributesHasBeenSet(false),
+    m_assetType(AssetType::NOT_SET),
+    m_assetTypeHasBeenSet(false),
+    m_assetAttributesHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_recommendationHasBeenSet(false),
+    m_severity(Severity::NOT_SET),
+    m_severityHasBeenSet(false),
+    m_numericSeverity(0.0),
+    m_numericSeverityHasBeenSet(false),
+    m_confidence(0),
+    m_confidenceHasBeenSet(false),
+    m_indicatorOfCompromise(false),
+    m_indicatorOfCompromiseHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_userAttributesHasBeenSet(false)
+    m_userAttributesHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Finding& Finding::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("findingArn"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_findingArn = jsonValue.GetString("findingArn");
+    m_arn = jsonValue.GetString("arn");
 
-    m_findingArnHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("runArn"))
+  if(jsonValue.ValueExists("schemaVersion"))
   {
-    m_runArn = jsonValue.GetString("runArn");
+    m_schemaVersion = jsonValue.GetInteger("schemaVersion");
 
-    m_runArnHasBeenSet = true;
+    m_schemaVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("rulesPackageArn"))
+  if(jsonValue.ValueExists("service"))
   {
-    m_rulesPackageArn = jsonValue.GetString("rulesPackageArn");
+    m_service = jsonValue.GetString("service");
 
-    m_rulesPackageArnHasBeenSet = true;
+    m_serviceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ruleName"))
+  if(jsonValue.ValueExists("serviceAttributes"))
   {
-    m_ruleName = jsonValue.GetString("ruleName");
+    m_serviceAttributes = jsonValue.GetObject("serviceAttributes");
 
-    m_ruleNameHasBeenSet = true;
+    m_serviceAttributesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("agentId"))
+  if(jsonValue.ValueExists("assetType"))
   {
-    m_agentId = jsonValue.GetString("agentId");
+    m_assetType = AssetTypeMapper::GetAssetTypeForName(jsonValue.GetString("assetType"));
 
-    m_agentIdHasBeenSet = true;
+    m_assetTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("autoScalingGroup"))
+  if(jsonValue.ValueExists("assetAttributes"))
   {
-    m_autoScalingGroup = jsonValue.GetString("autoScalingGroup");
+    m_assetAttributes = jsonValue.GetObject("assetAttributes");
 
-    m_autoScalingGroupHasBeenSet = true;
+    m_assetAttributesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("severity"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_severity = jsonValue.GetString("severity");
+    m_id = jsonValue.GetString("id");
 
-    m_severityHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("finding"))
+  if(jsonValue.ValueExists("title"))
   {
-    m_finding = jsonValue.GetObject("finding");
+    m_title = jsonValue.GetString("title");
 
-    m_findingHasBeenSet = true;
+    m_titleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
   {
-    m_description = jsonValue.GetObject("description");
+    m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("recommendation"))
   {
-    m_recommendation = jsonValue.GetObject("recommendation");
+    m_recommendation = jsonValue.GetString("recommendation");
 
     m_recommendationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("severity"))
+  {
+    m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("severity"));
+
+    m_severityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("numericSeverity"))
+  {
+    m_numericSeverity = jsonValue.GetDouble("numericSeverity");
+
+    m_numericSeverityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("confidence"))
+  {
+    m_confidence = jsonValue.GetInteger("confidence");
+
+    m_confidenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("indicatorOfCompromise"))
+  {
+    m_indicatorOfCompromise = jsonValue.GetBool("indicatorOfCompromise");
+
+    m_indicatorOfCompromiseHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("attributes"))
@@ -153,6 +205,20 @@ Finding& Finding::operator =(const JsonValue& jsonValue)
     m_userAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,63 +226,85 @@ JsonValue Finding::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_findingArnHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("findingArn", m_findingArn);
+   payload.WithString("arn", m_arn);
 
   }
 
-  if(m_runArnHasBeenSet)
+  if(m_schemaVersionHasBeenSet)
   {
-   payload.WithString("runArn", m_runArn);
+   payload.WithInteger("schemaVersion", m_schemaVersion);
 
   }
 
-  if(m_rulesPackageArnHasBeenSet)
+  if(m_serviceHasBeenSet)
   {
-   payload.WithString("rulesPackageArn", m_rulesPackageArn);
+   payload.WithString("service", m_service);
 
   }
 
-  if(m_ruleNameHasBeenSet)
+  if(m_serviceAttributesHasBeenSet)
   {
-   payload.WithString("ruleName", m_ruleName);
+   payload.WithObject("serviceAttributes", m_serviceAttributes.Jsonize());
 
   }
 
-  if(m_agentIdHasBeenSet)
+  if(m_assetTypeHasBeenSet)
   {
-   payload.WithString("agentId", m_agentId);
+   payload.WithString("assetType", AssetTypeMapper::GetNameForAssetType(m_assetType));
+  }
+
+  if(m_assetAttributesHasBeenSet)
+  {
+   payload.WithObject("assetAttributes", m_assetAttributes.Jsonize());
 
   }
 
-  if(m_autoScalingGroupHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("autoScalingGroup", m_autoScalingGroup);
+   payload.WithString("id", m_id);
 
   }
 
-  if(m_severityHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   payload.WithString("severity", m_severity);
-
-  }
-
-  if(m_findingHasBeenSet)
-  {
-   payload.WithObject("finding", m_finding.Jsonize());
+   payload.WithString("title", m_title);
 
   }
 
   if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("description", m_description.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 
   if(m_recommendationHasBeenSet)
   {
-   payload.WithObject("recommendation", m_recommendation.Jsonize());
+   payload.WithString("recommendation", m_recommendation);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("severity", SeverityMapper::GetNameForSeverity(m_severity));
+  }
+
+  if(m_numericSeverityHasBeenSet)
+  {
+   payload.WithDouble("numericSeverity", m_numericSeverity);
+
+  }
+
+  if(m_confidenceHasBeenSet)
+  {
+   payload.WithInteger("confidence", m_confidence);
+
+  }
+
+  if(m_indicatorOfCompromiseHasBeenSet)
+  {
+   payload.WithBool("indicatorOfCompromise", m_indicatorOfCompromise);
 
   }
 
@@ -240,6 +328,16 @@ JsonValue Finding::Jsonize() const
    }
    payload.WithArray("userAttributes", std::move(userAttributesJsonList));
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;

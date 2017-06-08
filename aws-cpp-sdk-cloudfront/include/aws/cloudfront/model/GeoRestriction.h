@@ -35,13 +35,10 @@ namespace Model
 {
 
   /**
-   * A complex type that controls the countries in which your content is distributed.
-   * For more information about geo restriction, go to Customizing Error Responses in
-   * the Amazon CloudFront Developer Guide. CloudFront determines the location of
-   * your users using MaxMind GeoIP databases. For information about the accuracy of
-   * these databases, see How accurate are your GeoIP databases? on the MaxMind
-   * website.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GeoRestriction">AWS
+   * <p>A complex type that controls the countries in which your content is
+   * distributed. CloudFront determines the location of your users using
+   * <code>MaxMind</code> GeoIP databases. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GeoRestriction">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API GeoRestriction
@@ -54,177 +51,214 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The method that you want to use to restrict distribution of your content by
-     * country: - none: No geo restriction is enabled, meaning access to content is not
-     * restricted by client geo location. - blacklist: The Location elements specify
-     * the countries in which you do not want CloudFront to distribute your content. -
-     * whitelist: The Location elements specify the countries in which you want
-     * CloudFront to distribute your content.
+     * <p>The method that you want to use to restrict distribution of your content by
+     * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
+     * meaning access to content is not restricted by client geo location.</p> </li>
+     * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
+     * countries in which you do not want CloudFront to distribute your content.</p>
+     * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.</p> </li> </ul>
      */
     inline const GeoRestrictionType& GetRestrictionType() const{ return m_restrictionType; }
 
     /**
-     * The method that you want to use to restrict distribution of your content by
-     * country: - none: No geo restriction is enabled, meaning access to content is not
-     * restricted by client geo location. - blacklist: The Location elements specify
-     * the countries in which you do not want CloudFront to distribute your content. -
-     * whitelist: The Location elements specify the countries in which you want
-     * CloudFront to distribute your content.
+     * <p>The method that you want to use to restrict distribution of your content by
+     * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
+     * meaning access to content is not restricted by client geo location.</p> </li>
+     * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
+     * countries in which you do not want CloudFront to distribute your content.</p>
+     * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.</p> </li> </ul>
      */
     inline void SetRestrictionType(const GeoRestrictionType& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = value; }
 
     /**
-     * The method that you want to use to restrict distribution of your content by
-     * country: - none: No geo restriction is enabled, meaning access to content is not
-     * restricted by client geo location. - blacklist: The Location elements specify
-     * the countries in which you do not want CloudFront to distribute your content. -
-     * whitelist: The Location elements specify the countries in which you want
-     * CloudFront to distribute your content.
+     * <p>The method that you want to use to restrict distribution of your content by
+     * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
+     * meaning access to content is not restricted by client geo location.</p> </li>
+     * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
+     * countries in which you do not want CloudFront to distribute your content.</p>
+     * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.</p> </li> </ul>
      */
     inline void SetRestrictionType(GeoRestrictionType&& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = std::move(value); }
 
     /**
-     * The method that you want to use to restrict distribution of your content by
-     * country: - none: No geo restriction is enabled, meaning access to content is not
-     * restricted by client geo location. - blacklist: The Location elements specify
-     * the countries in which you do not want CloudFront to distribute your content. -
-     * whitelist: The Location elements specify the countries in which you want
-     * CloudFront to distribute your content.
+     * <p>The method that you want to use to restrict distribution of your content by
+     * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
+     * meaning access to content is not restricted by client geo location.</p> </li>
+     * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
+     * countries in which you do not want CloudFront to distribute your content.</p>
+     * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.</p> </li> </ul>
      */
     inline GeoRestriction& WithRestrictionType(const GeoRestrictionType& value) { SetRestrictionType(value); return *this;}
 
     /**
-     * The method that you want to use to restrict distribution of your content by
-     * country: - none: No geo restriction is enabled, meaning access to content is not
-     * restricted by client geo location. - blacklist: The Location elements specify
-     * the countries in which you do not want CloudFront to distribute your content. -
-     * whitelist: The Location elements specify the countries in which you want
-     * CloudFront to distribute your content.
+     * <p>The method that you want to use to restrict distribution of your content by
+     * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
+     * meaning access to content is not restricted by client geo location.</p> </li>
+     * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
+     * countries in which you do not want CloudFront to distribute your content.</p>
+     * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.</p> </li> </ul>
      */
     inline GeoRestriction& WithRestrictionType(GeoRestrictionType&& value) { SetRestrictionType(std::move(value)); return *this;}
 
     /**
-     * When geo restriction is enabled, this is the number of countries in your
-     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
-     * you can omit Items.
+     * <p>When geo restriction is <code>enabled</code>, this is the number of countries
+     * in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is
+     * not enabled, <code>Quantity</code> is <code>0</code>, and you can omit
+     * <code>Items</code>.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * When geo restriction is enabled, this is the number of countries in your
-     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
-     * you can omit Items.
+     * <p>When geo restriction is <code>enabled</code>, this is the number of countries
+     * in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is
+     * not enabled, <code>Quantity</code> is <code>0</code>, and you can omit
+     * <code>Items</code>.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * When geo restriction is enabled, this is the number of countries in your
-     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
-     * you can omit Items.
+     * <p>When geo restriction is <code>enabled</code>, this is the number of countries
+     * in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is
+     * not enabled, <code>Quantity</code> is <code>0</code>, and you can omit
+     * <code>Items</code>.</p>
      */
     inline GeoRestriction& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * A complex type that contains a Location element for each country in which you
-     * want CloudFront either to distribute your content (whitelist) or not distribute
-     * your content (blacklist). The Location element is a two-letter, uppercase
-     * country code for a country that you want to include in your blacklist or
-     * whitelist. Include one Location element for each country. CloudFront and MaxMind
-     * both use ISO 3166 country codes. For the current list of countries and the
-     * corresponding codes, see ISO 3166-1-alpha-2 code on the International
-     * Organization for Standardization website. You can also refer to the country list
-     * in the CloudFront console, which includes both country names and codes.
+     * <p> A complex type that contains a <code>Location</code> element for each
+     * country in which you want CloudFront either to distribute your content
+     * (<code>whitelist</code>) or not distribute your content
+     * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
+     * two-letter, uppercase country code for a country that you want to include in
+     * your <code>blacklist</code> or <code>whitelist</code>. Include one
+     * <code>Location</code> element for each country.</p> <p>CloudFront and
+     * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+     * current list of countries and the corresponding codes, see <code>ISO
+     * 3166-1-alpha-2</code> code on the <i>International Organization for
+     * Standardization</i> website. You can also refer to the country list in the
+     * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Summary of an invalidation request.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/InvalidationSummary">AWS
+   * <p>A summary of an invalidation request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/InvalidationSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationSummary
@@ -48,37 +48,37 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline InvalidationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline InvalidationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The unique ID for an invalidation request.
+     * <p>The unique ID for an invalidation request.</p>
      */
     inline InvalidationSummary& WithId(const char* value) { SetId(value); return *this;}
 
@@ -98,37 +98,37 @@ namespace Model
     inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline InvalidationSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline InvalidationSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * The status of an invalidation request.
+     * <p>The status of an invalidation request.</p>
      */
     inline InvalidationSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 

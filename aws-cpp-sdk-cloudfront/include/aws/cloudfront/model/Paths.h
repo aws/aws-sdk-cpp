@@ -34,9 +34,12 @@ namespace Model
 {
 
   /**
-   * A complex type that contains information about the objects that you want to
-   * invalidate.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Paths">AWS
+   * <p>A complex type that contains information about the objects that you want to
+   * invalidate. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+   * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Paths">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Paths
@@ -49,57 +52,65 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The number of objects that you want to invalidate.
+     * <p>The number of objects that you want to invalidate.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of objects that you want to invalidate.
+     * <p>The number of objects that you want to invalidate.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of objects that you want to invalidate.
+     * <p>The number of objects that you want to invalidate.</p>
      */
     inline Paths& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline Paths& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline Paths& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
      */
     inline Paths& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

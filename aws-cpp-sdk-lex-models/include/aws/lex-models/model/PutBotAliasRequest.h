@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/LexModelBuildingServiceRequest.h>
@@ -32,7 +33,6 @@ namespace Model
   public:
     PutBotAliasRequest();
     Aws::String SerializePayload() const override;
-
 
     /**
      * <p>The name of the alias. The name is <i>not</i> case sensitive.</p>

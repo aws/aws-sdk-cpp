@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * A streaming distribution.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/StreamingDistribution">AWS
+   * <p>A streaming distribution. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/StreamingDistribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistribution
@@ -50,244 +50,299 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline StreamingDistribution& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline StreamingDistribution& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>The identifier for the RTMP distribution. For example:
+     * <code>EGTXBD79EXAMPLE</code>.</p>
      */
     inline StreamingDistribution& WithId(const char* value) { SetId(value); return *this;}
 
+    
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    
+    inline StreamingDistribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    
+    inline StreamingDistribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    
+    inline StreamingDistribution& WithARN(const char* value) { SetARN(value); return *this;}
+
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline StreamingDistribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline StreamingDistribution& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p>The current status of the RTMP distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline StreamingDistribution& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time that the distribution was last modified. </p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time that the distribution was last modified. </p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time that the distribution was last modified. </p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time that the distribution was last modified. </p>
      */
     inline StreamingDistribution& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time that the distribution was last modified. </p>
      */
     inline StreamingDistribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline StreamingDistribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline StreamingDistribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the streaming distribution. For example:
-     * s5c39gqb8ow64r.cloudfront.net.
+     * <p>The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline StreamingDistribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up
-     * the distribution to serve private content with signed URLs. The element lists
-     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
-     * child element lists the AWS account number of the trusted signer (or an empty
-     * Self element if the signer is you). The Signer element also includes the IDs of
-     * any active key pairs associated with the trusted signer's AWS account. If no
-     * KeyPairId element appears for a Signer, that signer can't create working signed
-     * URLs.
+     * <p>A complex type that lists the AWS accounts, if any, that you included in the
+     * <code>TrustedSigners</code> complex type for this distribution. These are the
+     * accounts that you want to allow to create signed URLs for private content.</p>
+     * <p>The <code>Signer</code> complex type lists the AWS account number of the
+     * trusted signer or <code>self</code> if the signer is the AWS account that
+     * created the distribution. The <code>Signer</code> element also includes the IDs
+     * of any active CloudFront key pairs that are associated with the trusted signer's
+     * AWS account. If no <code>KeyPairId</code> element appears for a
+     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up
-     * the distribution to serve private content with signed URLs. The element lists
-     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
-     * child element lists the AWS account number of the trusted signer (or an empty
-     * Self element if the signer is you). The Signer element also includes the IDs of
-     * any active key pairs associated with the trusted signer's AWS account. If no
-     * KeyPairId element appears for a Signer, that signer can't create working signed
-     * URLs.
+     * <p>A complex type that lists the AWS accounts, if any, that you included in the
+     * <code>TrustedSigners</code> complex type for this distribution. These are the
+     * accounts that you want to allow to create signed URLs for private content.</p>
+     * <p>The <code>Signer</code> complex type lists the AWS account number of the
+     * trusted signer or <code>self</code> if the signer is the AWS account that
+     * created the distribution. The <code>Signer</code> element also includes the IDs
+     * of any active CloudFront key pairs that are associated with the trusted signer's
+     * AWS account. If no <code>KeyPairId</code> element appears for a
+     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up
-     * the distribution to serve private content with signed URLs. The element lists
-     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
-     * child element lists the AWS account number of the trusted signer (or an empty
-     * Self element if the signer is you). The Signer element also includes the IDs of
-     * any active key pairs associated with the trusted signer's AWS account. If no
-     * KeyPairId element appears for a Signer, that signer can't create working signed
-     * URLs.
+     * <p>A complex type that lists the AWS accounts, if any, that you included in the
+     * <code>TrustedSigners</code> complex type for this distribution. These are the
+     * accounts that you want to allow to create signed URLs for private content.</p>
+     * <p>The <code>Signer</code> complex type lists the AWS account number of the
+     * trusted signer or <code>self</code> if the signer is the AWS account that
+     * created the distribution. The <code>Signer</code> element also includes the IDs
+     * of any active CloudFront key pairs that are associated with the trusted signer's
+     * AWS account. If no <code>KeyPairId</code> element appears for a
+     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up
-     * the distribution to serve private content with signed URLs. The element lists
-     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
-     * child element lists the AWS account number of the trusted signer (or an empty
-     * Self element if the signer is you). The Signer element also includes the IDs of
-     * any active key pairs associated with the trusted signer's AWS account. If no
-     * KeyPairId element appears for a Signer, that signer can't create working signed
-     * URLs.
+     * <p>A complex type that lists the AWS accounts, if any, that you included in the
+     * <code>TrustedSigners</code> complex type for this distribution. These are the
+     * accounts that you want to allow to create signed URLs for private content.</p>
+     * <p>The <code>Signer</code> complex type lists the AWS account number of the
+     * trusted signer or <code>self</code> if the signer is the AWS account that
+     * created the distribution. The <code>Signer</code> element also includes the IDs
+     * of any active CloudFront key pairs that are associated with the trusted signer's
+     * AWS account. If no <code>KeyPairId</code> element appears for a
+     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline StreamingDistribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up
-     * the distribution to serve private content with signed URLs. The element lists
-     * the key pair IDs that CloudFront is aware of for each trusted signer. The Signer
-     * child element lists the AWS account number of the trusted signer (or an empty
-     * Self element if the signer is you). The Signer element also includes the IDs of
-     * any active key pairs associated with the trusted signer's AWS account. If no
-     * KeyPairId element appears for a Signer, that signer can't create working signed
-     * URLs.
+     * <p>A complex type that lists the AWS accounts, if any, that you included in the
+     * <code>TrustedSigners</code> complex type for this distribution. These are the
+     * accounts that you want to allow to create signed URLs for private content.</p>
+     * <p>The <code>Signer</code> complex type lists the AWS account number of the
+     * trusted signer or <code>self</code> if the signer is the AWS account that
+     * created the distribution. The <code>Signer</code> element also includes the IDs
+     * of any active CloudFront key pairs that are associated with the trusted signer's
+     * AWS account. If no <code>KeyPairId</code> element appears for a
+     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>The current configuration information for the RTMP distribution.</p>
      */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>The current configuration information for the RTMP distribution.</p>
      */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>The current configuration information for the RTMP distribution.</p>
      */
     inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>The current configuration information for the RTMP distribution.</p>
      */
     inline StreamingDistribution& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>The current configuration information for the RTMP distribution.</p>
      */
     inline StreamingDistribution& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
     Aws::Utils::DateTime m_lastModifiedTime;

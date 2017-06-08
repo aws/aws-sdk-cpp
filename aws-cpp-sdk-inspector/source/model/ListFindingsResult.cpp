@@ -38,12 +38,12 @@ ListFindingsResult::ListFindingsResult(const AmazonWebServiceResult<JsonValue>& 
 ListFindingsResult& ListFindingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("findingArnList"))
+  if(jsonValue.ValueExists("findingArns"))
   {
-    Array<JsonValue> findingArnListJsonList = jsonValue.GetArray("findingArnList");
-    for(unsigned findingArnListIndex = 0; findingArnListIndex < findingArnListJsonList.GetLength(); ++findingArnListIndex)
+    Array<JsonValue> findingArnsJsonList = jsonValue.GetArray("findingArns");
+    for(unsigned findingArnsIndex = 0; findingArnsIndex < findingArnsJsonList.GetLength(); ++findingArnsIndex)
     {
-      m_findingArnList.push_back(findingArnListJsonList[findingArnListIndex].AsString());
+      m_findingArns.push_back(findingArnsJsonList[findingArnsIndex].AsString());
     }
   }
 

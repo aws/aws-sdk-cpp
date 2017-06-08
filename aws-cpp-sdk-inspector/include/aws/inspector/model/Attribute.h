@@ -33,9 +33,11 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the
-   * <a>AddAttributesToFindings</a> action and a request parameter in the
-   * <a>CreateAssessment</a> action.</p>
+   * <p>This data type is used as a request parameter in the
+   * <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a>
+   * actions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Attribute">AWS
+   * API Reference</a></p>
    */
   class AWS_INSPECTOR_API Attribute
   {

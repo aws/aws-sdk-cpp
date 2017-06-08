@@ -32,6 +32,7 @@ namespace Model
 
 StreamingDistributionSummary::StreamingDistributionSummary() : 
     m_idHasBeenSet(false),
+    m_aRNHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
@@ -48,6 +49,7 @@ StreamingDistributionSummary::StreamingDistributionSummary() :
 
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
+    m_aRNHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
@@ -74,6 +76,12 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
+    }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = StringUtils::Trim(aRNNode.GetText().c_str());
+      m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -141,6 +149,12 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
   {
    XmlNode idNode = parentNode.CreateChildElement("Id");
    idNode.SetText(m_id);
+  }
+
+  if(m_aRNHasBeenSet)
+  {
+   XmlNode aRNNode = parentNode.CreateChildElement("ARN");
+   aRNNode.SetText(m_aRN);
   }
 
   if(m_statusHasBeenSet)

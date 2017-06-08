@@ -29,36 +29,36 @@ namespace Model
 {
 
 DurationRange::DurationRange() : 
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0),
-    m_maximumHasBeenSet(false)
+    m_minSeconds(0),
+    m_minSecondsHasBeenSet(false),
+    m_maxSeconds(0),
+    m_maxSecondsHasBeenSet(false)
 {
 }
 
 DurationRange::DurationRange(const JsonValue& jsonValue) : 
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0),
-    m_maximumHasBeenSet(false)
+    m_minSeconds(0),
+    m_minSecondsHasBeenSet(false),
+    m_maxSeconds(0),
+    m_maxSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DurationRange& DurationRange::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("minimum"))
+  if(jsonValue.ValueExists("minSeconds"))
   {
-    m_minimum = jsonValue.GetInteger("minimum");
+    m_minSeconds = jsonValue.GetInteger("minSeconds");
 
-    m_minimumHasBeenSet = true;
+    m_minSecondsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("maximum"))
+  if(jsonValue.ValueExists("maxSeconds"))
   {
-    m_maximum = jsonValue.GetInteger("maximum");
+    m_maxSeconds = jsonValue.GetInteger("maxSeconds");
 
-    m_maximumHasBeenSet = true;
+    m_maxSecondsHasBeenSet = true;
   }
 
   return *this;
@@ -68,15 +68,15 @@ JsonValue DurationRange::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_minimumHasBeenSet)
+  if(m_minSecondsHasBeenSet)
   {
-   payload.WithInteger("minimum", m_minimum);
+   payload.WithInteger("minSeconds", m_minSeconds);
 
   }
 
-  if(m_maximumHasBeenSet)
+  if(m_maxSecondsHasBeenSet)
   {
-   payload.WithInteger("maximum", m_maximum);
+   payload.WithInteger("maxSeconds", m_maxSeconds);
 
   }
 

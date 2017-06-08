@@ -15,7 +15,9 @@
 
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/model/FailedItemDetails.h>
 #include <utility>
 
 namespace Aws
@@ -42,42 +44,73 @@ namespace Model
     AddAttributesToFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const{ return m_failedItems; }
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { m_failedItems = value; }
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+    inline void SetFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { m_failedItems = std::move(value); }
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline AddAttributesToFindingsResult& WithFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { SetFailedItems(value); return *this;}
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline AddAttributesToFindingsResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline AddAttributesToFindingsResult& WithFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { SetFailedItems(std::move(value)); return *this;}
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline AddAttributesToFindingsResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline AddAttributesToFindingsResult& AddFailedItems(const Aws::String& key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
     /**
-     * <p>Confirmation details of the action performed.</p>
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
      */
-    inline AddAttributesToFindingsResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline AddAttributesToFindingsResult& AddFailedItems(Aws::String&& key, const FailedItemDetails& value) { m_failedItems.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
+     */
+    inline AddAttributesToFindingsResult& AddFailedItems(const Aws::String& key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
+     */
+    inline AddAttributesToFindingsResult& AddFailedItems(Aws::String&& key, FailedItemDetails&& value) { m_failedItems.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
+     */
+    inline AddAttributesToFindingsResult& AddFailedItems(const char* key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Attribute details that cannot be described. An error code is provided for
+     * each failed item.</p>
+     */
+    inline AddAttributesToFindingsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
-    Aws::String m_message;
+    Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 
 } // namespace Model

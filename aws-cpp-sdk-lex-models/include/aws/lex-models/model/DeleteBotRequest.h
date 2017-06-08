@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/LexModelBuildingServiceRequest.h>
@@ -32,7 +33,6 @@ namespace Model
   public:
     DeleteBotRequest();
     Aws::String SerializePayload() const override;
-
 
     /**
      * <p>The name of the bot. The name is case sensitive. </p>
@@ -69,46 +69,9 @@ namespace Model
      */
     inline DeleteBotRequest& WithName(const char* value) { SetName(value); return *this;}
 
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline DeleteBotRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline DeleteBotRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the bot.</p>
-     */
-    inline DeleteBotRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    Aws::String m_version;
-    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

@@ -33,10 +33,10 @@ namespace Model
 {
 
   /**
-   * A complex type that contains information about the Amazon S3 bucket from which
-   * you want CloudFront to get your media files for distribution.<p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/S3Origin">AWS
+   * <p>A complex type that contains information about the Amazon S3 bucket from
+   * which you want CloudFront to get your media files for
+   * distribution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/S3Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API S3Origin
@@ -49,72 +49,156 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline S3Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline S3Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity.assign(value); }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline S3Origin& WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline S3Origin& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline S3Origin& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
 

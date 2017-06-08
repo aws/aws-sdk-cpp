@@ -38,57 +38,64 @@ namespace Model
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListRulesPackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListRulesPackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.
+     * parameter to null on your first call to the <b>ListRulesPackages</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListRulesPackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

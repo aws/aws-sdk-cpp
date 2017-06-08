@@ -38,12 +38,12 @@ ListRulesPackagesResult::ListRulesPackagesResult(const AmazonWebServiceResult<Js
 ListRulesPackagesResult& ListRulesPackagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("rulesPackageArnList"))
+  if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonValue> rulesPackageArnListJsonList = jsonValue.GetArray("rulesPackageArnList");
-    for(unsigned rulesPackageArnListIndex = 0; rulesPackageArnListIndex < rulesPackageArnListJsonList.GetLength(); ++rulesPackageArnListIndex)
+    Array<JsonValue> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
-      m_rulesPackageArnList.push_back(rulesPackageArnListJsonList[rulesPackageArnListIndex].AsString());
+      m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
     }
   }
 

@@ -29,32 +29,32 @@ namespace Model
 {
 
 TimestampRange::TimestampRange() : 
-    m_minimumHasBeenSet(false),
-    m_maximumHasBeenSet(false)
+    m_beginDateHasBeenSet(false),
+    m_endDateHasBeenSet(false)
 {
 }
 
 TimestampRange::TimestampRange(const JsonValue& jsonValue) : 
-    m_minimumHasBeenSet(false),
-    m_maximumHasBeenSet(false)
+    m_beginDateHasBeenSet(false),
+    m_endDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TimestampRange& TimestampRange::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("minimum"))
+  if(jsonValue.ValueExists("beginDate"))
   {
-    m_minimum = jsonValue.GetDouble("minimum");
+    m_beginDate = jsonValue.GetDouble("beginDate");
 
-    m_minimumHasBeenSet = true;
+    m_beginDateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("maximum"))
+  if(jsonValue.ValueExists("endDate"))
   {
-    m_maximum = jsonValue.GetDouble("maximum");
+    m_endDate = jsonValue.GetDouble("endDate");
 
-    m_maximumHasBeenSet = true;
+    m_endDateHasBeenSet = true;
   }
 
   return *this;
@@ -64,14 +64,14 @@ JsonValue TimestampRange::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_minimumHasBeenSet)
+  if(m_beginDateHasBeenSet)
   {
-   payload.WithDouble("minimum", m_minimum.SecondsWithMSPrecision());
+   payload.WithDouble("beginDate", m_beginDate.SecondsWithMSPrecision());
   }
 
-  if(m_maximumHasBeenSet)
+  if(m_endDateHasBeenSet)
   {
-   payload.WithDouble("maximum", m_maximum.SecondsWithMSPrecision());
+   payload.WithDouble("endDate", m_endDate.SecondsWithMSPrecision());
   }
 
   return payload;

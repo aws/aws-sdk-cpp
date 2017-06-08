@@ -16,8 +16,12 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector/model/LocalizedText.h>
+#include <aws/inspector/model/InspectorServiceAttributes.h>
+#include <aws/inspector/model/AssetType.h>
+#include <aws/inspector/model/AssetAttributes.h>
+#include <aws/inspector/model/Severity.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/inspector/model/Attribute.h>
 #include <utility>
 
@@ -36,8 +40,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an Inspector finding.</p> <p>This data type is
-   * used as the response element in the <a>DescribeFinding</a> action.</p>
+   * <p>Contains information about an Amazon Inspector finding. This data type is
+   * used as the response element in the <a>DescribeFindings</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Finding">AWS
+   * API Reference</a></p>
    */
   class AWS_INSPECTOR_API Finding
   {
@@ -48,378 +55,417 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
+    inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline void SetFindingArn(const Aws::String& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline void SetFindingArn(const char* value) { m_findingArnHasBeenSet = true; m_findingArn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline Finding& WithFindingArn(const Aws::String& value) { SetFindingArn(value); return *this;}
+    inline Finding& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline Finding& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
+    inline Finding& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN specifying the finding.</p>
+     * <p>The ARN that specifies the finding.</p>
      */
-    inline Finding& WithFindingArn(const char* value) { SetFindingArn(value); return *this;}
+    inline Finding& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The schema version of this data type.</p>
      */
-    inline const Aws::String& GetRunArn() const{ return m_runArn; }
+    inline int GetSchemaVersion() const{ return m_schemaVersion; }
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The schema version of this data type.</p>
      */
-    inline void SetRunArn(const Aws::String& value) { m_runArnHasBeenSet = true; m_runArn = value; }
+    inline void SetSchemaVersion(int value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The schema version of this data type.</p>
      */
-    inline void SetRunArn(Aws::String&& value) { m_runArnHasBeenSet = true; m_runArn = std::move(value); }
+    inline Finding& WithSchemaVersion(int value) { SetSchemaVersion(value); return *this;}
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline void SetRunArn(const char* value) { m_runArnHasBeenSet = true; m_runArn.assign(value); }
+    inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline Finding& WithRunArn(const Aws::String& value) { SetRunArn(value); return *this;}
+    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline Finding& WithRunArn(Aws::String&& value) { SetRunArn(std::move(value)); return *this;}
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The ARN of the assessment run that generated the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline Finding& WithRunArn(const char* value) { SetRunArn(value); return *this;}
+    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline const Aws::String& GetRulesPackageArn() const{ return m_rulesPackageArn; }
+    inline Finding& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline void SetRulesPackageArn(const Aws::String& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = value; }
+    inline Finding& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>The data element is set to "Inspector".</p>
      */
-    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = std::move(value); }
+    inline Finding& WithService(const char* value) { SetService(value); return *this;}
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
-    inline void SetRulesPackageArn(const char* value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn.assign(value); }
+    inline const InspectorServiceAttributes& GetServiceAttributes() const{ return m_serviceAttributes; }
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
-    inline Finding& WithRulesPackageArn(const Aws::String& value) { SetRulesPackageArn(value); return *this;}
+    inline void SetServiceAttributes(const InspectorServiceAttributes& value) { m_serviceAttributesHasBeenSet = true; m_serviceAttributes = value; }
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
-    inline Finding& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(std::move(value)); return *this;}
+    inline void SetServiceAttributes(InspectorServiceAttributes&& value) { m_serviceAttributesHasBeenSet = true; m_serviceAttributes = std::move(value); }
 
     /**
-     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
-    inline Finding& WithRulesPackageArn(const char* value) { SetRulesPackageArn(value); return *this;}
+    inline Finding& WithServiceAttributes(const InspectorServiceAttributes& value) { SetServiceAttributes(value); return *this;}
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline Finding& WithServiceAttributes(InspectorServiceAttributes&& value) { SetServiceAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>The type of the host from which the finding is generated.</p>
      */
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline const AssetType& GetAssetType() const{ return m_assetType; }
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>The type of the host from which the finding is generated.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
+    inline void SetAssetType(const AssetType& value) { m_assetTypeHasBeenSet = true; m_assetType = value; }
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>The type of the host from which the finding is generated.</p>
      */
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
+    inline void SetAssetType(AssetType&& value) { m_assetTypeHasBeenSet = true; m_assetType = std::move(value); }
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>The type of the host from which the finding is generated.</p>
      */
-    inline Finding& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+    inline Finding& WithAssetType(const AssetType& value) { SetAssetType(value); return *this;}
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>The type of the host from which the finding is generated.</p>
      */
-    inline Finding& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
+    inline Finding& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
 
     /**
-     * <p>The rule name that is used to generate the finding.</p>
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
      */
-    inline Finding& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    inline const AssetAttributes& GetAssetAttributes() const{ return m_assetAttributes; }
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline void SetAssetAttributes(const AssetAttributes& value) { m_assetAttributesHasBeenSet = true; m_assetAttributes = value; }
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
      */
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAssetAttributes(AssetAttributes&& value) { m_assetAttributesHasBeenSet = true; m_assetAttributes = std::move(value); }
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
      */
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
+    inline Finding& WithAssetAttributes(const AssetAttributes& value) { SetAssetAttributes(value); return *this;}
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
      */
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
+    inline Finding& WithAssetAttributes(AssetAttributes&& value) { SetAssetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>The ID of the finding.</p>
      */
-    inline Finding& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
+    inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>The ID of the finding.</p>
      */
-    inline Finding& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding. </p>
+     * <p>The ID of the finding.</p>
      */
-    inline Finding& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The ID of the finding.</p>
      */
-    inline const Aws::String& GetAutoScalingGroup() const{ return m_autoScalingGroup; }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The ID of the finding.</p>
      */
-    inline void SetAutoScalingGroup(const Aws::String& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
+    inline Finding& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The ID of the finding.</p>
      */
-    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
+    inline Finding& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The ID of the finding.</p>
      */
-    inline void SetAutoScalingGroup(const char* value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup.assign(value); }
+    inline Finding& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The name of the finding.</p>
      */
-    inline Finding& WithAutoScalingGroup(const Aws::String& value) { SetAutoScalingGroup(value); return *this;}
+    inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The name of the finding.</p>
      */
-    inline Finding& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
+    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The autoscaling group of the EC2 instance where the agent is installed that
-     * is used during the assessment that generates the finding.</p>
+     * <p>The name of the finding.</p>
      */
-    inline Finding& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
+     * <p>The name of the finding.</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
+     * <p>The name of the finding.</p>
      */
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline Finding& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
+     * <p>The name of the finding.</p>
      */
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+    inline Finding& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
+     * <p>The name of the finding.</p>
      */
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-
-    /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
-     */
-    inline Finding& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-
-    /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
-     */
-    inline Finding& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-
-    /**
-     * <p>The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.</p>
-     */
-    inline Finding& WithSeverity(const char* value) { SetSeverity(value); return *this;}
-
-    /**
-     * <p>A short description that identifies the finding.</p>
-     */
-    inline const LocalizedText& GetFinding() const{ return m_finding; }
-
-    /**
-     * <p>A short description that identifies the finding.</p>
-     */
-    inline void SetFinding(const LocalizedText& value) { m_findingHasBeenSet = true; m_finding = value; }
-
-    /**
-     * <p>A short description that identifies the finding.</p>
-     */
-    inline void SetFinding(LocalizedText&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-
-    /**
-     * <p>A short description that identifies the finding.</p>
-     */
-    inline Finding& WithFinding(const LocalizedText& value) { SetFinding(value); return *this;}
-
-    /**
-     * <p>A short description that identifies the finding.</p>
-     */
-    inline Finding& WithFinding(LocalizedText&& value) { SetFinding(std::move(value)); return *this;}
+    inline Finding& WithTitle(const char* value) { SetTitle(value); return *this;}
 
     /**
      * <p>The description of the finding.</p>
      */
-    inline const LocalizedText& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>The description of the finding.</p>
      */
-    inline void SetDescription(const LocalizedText& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>The description of the finding.</p>
      */
-    inline void SetDescription(LocalizedText&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the finding.</p>
      */
-    inline Finding& WithDescription(const LocalizedText& value) { SetDescription(value); return *this;}
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>The description of the finding.</p>
      */
-    inline Finding& WithDescription(LocalizedText&& value) { SetDescription(std::move(value)); return *this;}
+    inline Finding& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The recommendation for the finding. </p>
+     * <p>The description of the finding.</p>
      */
-    inline const LocalizedText& GetRecommendation() const{ return m_recommendation; }
+    inline Finding& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The recommendation for the finding. </p>
+     * <p>The description of the finding.</p>
      */
-    inline void SetRecommendation(const LocalizedText& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
+    inline Finding& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The recommendation for the finding. </p>
+     * <p>The recommendation for the finding.</p>
      */
-    inline void SetRecommendation(LocalizedText&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
+    inline const Aws::String& GetRecommendation() const{ return m_recommendation; }
 
     /**
-     * <p>The recommendation for the finding. </p>
+     * <p>The recommendation for the finding.</p>
      */
-    inline Finding& WithRecommendation(const LocalizedText& value) { SetRecommendation(value); return *this;}
+    inline void SetRecommendation(const Aws::String& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
 
     /**
-     * <p>The recommendation for the finding. </p>
+     * <p>The recommendation for the finding.</p>
      */
-    inline Finding& WithRecommendation(LocalizedText&& value) { SetRecommendation(std::move(value)); return *this;}
+    inline void SetRecommendation(Aws::String&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The recommendation for the finding.</p>
+     */
+    inline void SetRecommendation(const char* value) { m_recommendationHasBeenSet = true; m_recommendation.assign(value); }
+
+    /**
+     * <p>The recommendation for the finding.</p>
+     */
+    inline Finding& WithRecommendation(const Aws::String& value) { SetRecommendation(value); return *this;}
+
+    /**
+     * <p>The recommendation for the finding.</p>
+     */
+    inline Finding& WithRecommendation(Aws::String&& value) { SetRecommendation(std::move(value)); return *this;}
+
+    /**
+     * <p>The recommendation for the finding.</p>
+     */
+    inline Finding& WithRecommendation(const char* value) { SetRecommendation(value); return *this;}
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
+    inline const Severity& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
+    inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
+    inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
+    inline Finding& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
+    inline Finding& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
+
+    /**
+     * <p>The numeric value of the finding severity.</p>
+     */
+    inline double GetNumericSeverity() const{ return m_numericSeverity; }
+
+    /**
+     * <p>The numeric value of the finding severity.</p>
+     */
+    inline void SetNumericSeverity(double value) { m_numericSeverityHasBeenSet = true; m_numericSeverity = value; }
+
+    /**
+     * <p>The numeric value of the finding severity.</p>
+     */
+    inline Finding& WithNumericSeverity(double value) { SetNumericSeverity(value); return *this;}
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline int GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline void SetConfidence(int value) { m_confidenceHasBeenSet = true; m_confidence = value; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline Finding& WithConfidence(int value) { SetConfidence(value); return *this;}
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline bool GetIndicatorOfCompromise() const{ return m_indicatorOfCompromise; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline void SetIndicatorOfCompromise(bool value) { m_indicatorOfCompromiseHasBeenSet = true; m_indicatorOfCompromise = value; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline Finding& WithIndicatorOfCompromise(bool value) { SetIndicatorOfCompromise(value); return *this;}
+
+    /**
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline Finding& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline Finding& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline Finding& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>The system-defined attributes for the finding. </p>
+     * <p>The system-defined attributes for the finding.</p>
      */
     inline Finding& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
@@ -458,31 +504,93 @@ namespace Model
      */
     inline Finding& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
+    inline Finding& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
+    inline Finding& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline Finding& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline Finding& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+
   private:
-    Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet;
-    Aws::String m_runArn;
-    bool m_runArnHasBeenSet;
-    Aws::String m_rulesPackageArn;
-    bool m_rulesPackageArnHasBeenSet;
-    Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
-    Aws::String m_autoScalingGroup;
-    bool m_autoScalingGroupHasBeenSet;
-    Aws::String m_severity;
-    bool m_severityHasBeenSet;
-    LocalizedText m_finding;
-    bool m_findingHasBeenSet;
-    LocalizedText m_description;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+    int m_schemaVersion;
+    bool m_schemaVersionHasBeenSet;
+    Aws::String m_service;
+    bool m_serviceHasBeenSet;
+    InspectorServiceAttributes m_serviceAttributes;
+    bool m_serviceAttributesHasBeenSet;
+    AssetType m_assetType;
+    bool m_assetTypeHasBeenSet;
+    AssetAttributes m_assetAttributes;
+    bool m_assetAttributesHasBeenSet;
+    Aws::String m_id;
+    bool m_idHasBeenSet;
+    Aws::String m_title;
+    bool m_titleHasBeenSet;
+    Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    LocalizedText m_recommendation;
+    Aws::String m_recommendation;
     bool m_recommendationHasBeenSet;
+    Severity m_severity;
+    bool m_severityHasBeenSet;
+    double m_numericSeverity;
+    bool m_numericSeverityHasBeenSet;
+    int m_confidence;
+    bool m_confidenceHasBeenSet;
+    bool m_indicatorOfCompromise;
+    bool m_indicatorOfCompromiseHasBeenSet;
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
     Aws::Vector<Attribute> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet;
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet;
   };
 
 } // namespace Model

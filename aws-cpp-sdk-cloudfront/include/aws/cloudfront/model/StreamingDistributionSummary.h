@@ -38,9 +38,9 @@ namespace Model
 {
 
   /**
-   * A summary of the information for an Amazon CloudFront streaming
-   * distribution.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/StreamingDistributionSummary">AWS
+   * <p> A summary of the information for an Amazon CloudFront streaming
+   * distribution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/StreamingDistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionSummary
@@ -53,323 +53,389 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline StreamingDistributionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline StreamingDistributionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline StreamingDistributionSummary& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline StreamingDistributionSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline StreamingDistributionSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline StreamingDistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
+
+    /**
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline StreamingDistributionSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline StreamingDistributionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed,
-     * the distribution's information is fully propagated throughout the Amazon
-     * CloudFront system.
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
      */
     inline StreamingDistributionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline StreamingDistributionSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline StreamingDistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline StreamingDistributionSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline StreamingDistributionSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name corresponding to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline StreamingDistributionSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * A complex type that contains information about the Amazon S3 bucket from which
-     * you want CloudFront to get your media files for distribution.
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline const S3Origin& GetS3Origin() const{ return m_s3Origin; }
 
     /**
-     * A complex type that contains information about the Amazon S3 bucket from which
-     * you want CloudFront to get your media files for distribution.
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline void SetS3Origin(const S3Origin& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
 
     /**
-     * A complex type that contains information about the Amazon S3 bucket from which
-     * you want CloudFront to get your media files for distribution.
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
 
     /**
-     * A complex type that contains information about the Amazon S3 bucket from which
-     * you want CloudFront to get your media files for distribution.
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline StreamingDistributionSummary& WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
 
     /**
-     * A complex type that contains information about the Amazon S3 bucket from which
-     * you want CloudFront to get your media files for distribution.
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline StreamingDistributionSummary& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this streaming distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
      */
     inline const Aliases& GetAliases() const{ return m_aliases; }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this streaming distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
      */
     inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this streaming distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
      */
     inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this streaming distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
      */
     inline StreamingDistributionSummary& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this streaming distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
      */
     inline StreamingDistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
-     * A complex type that specifies the AWS accounts, if any, that you want to allow
-     * to create signed URLs for private content. If you want to require signed URLs in
-     * requests for objects in the target origin that match the PathPattern for this
-     * cache behavior, specify true for Enabled, and specify the applicable values for
-     * Quantity and Items. For more information, go to Using a Signed URL to Serve
-     * Private Content in the Amazon CloudFront Developer Guide. If you don't want to
-     * require signed URLs in requests for objects that match PathPattern, specify
-     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     * or more trusted signers, change Enabled to true (if it's currently false),
-     * change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
     /**
-     * A complex type that specifies the AWS accounts, if any, that you want to allow
-     * to create signed URLs for private content. If you want to require signed URLs in
-     * requests for objects in the target origin that match the PathPattern for this
-     * cache behavior, specify true for Enabled, and specify the applicable values for
-     * Quantity and Items. For more information, go to Using a Signed URL to Serve
-     * Private Content in the Amazon CloudFront Developer Guide. If you don't want to
-     * require signed URLs in requests for objects that match PathPattern, specify
-     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     * or more trusted signers, change Enabled to true (if it's currently false),
-     * change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
      */
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
     /**
-     * A complex type that specifies the AWS accounts, if any, that you want to allow
-     * to create signed URLs for private content. If you want to require signed URLs in
-     * requests for objects in the target origin that match the PathPattern for this
-     * cache behavior, specify true for Enabled, and specify the applicable values for
-     * Quantity and Items. For more information, go to Using a Signed URL to Serve
-     * Private Content in the Amazon CloudFront Developer Guide. If you don't want to
-     * require signed URLs in requests for objects that match PathPattern, specify
-     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     * or more trusted signers, change Enabled to true (if it's currently false),
-     * change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
      */
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
-     * A complex type that specifies the AWS accounts, if any, that you want to allow
-     * to create signed URLs for private content. If you want to require signed URLs in
-     * requests for objects in the target origin that match the PathPattern for this
-     * cache behavior, specify true for Enabled, and specify the applicable values for
-     * Quantity and Items. For more information, go to Using a Signed URL to Serve
-     * Private Content in the Amazon CloudFront Developer Guide. If you don't want to
-     * require signed URLs in requests for objects that match PathPattern, specify
-     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     * or more trusted signers, change Enabled to true (if it's currently false),
-     * change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
     /**
-     * A complex type that specifies the AWS accounts, if any, that you want to allow
-     * to create signed URLs for private content. If you want to require signed URLs in
-     * requests for objects in the target origin that match the PathPattern for this
-     * cache behavior, specify true for Enabled, and specify the applicable values for
-     * Quantity and Items. For more information, go to Using a Signed URL to Serve
-     * Private Content in the Amazon CloudFront Developer Guide. If you don't want to
-     * require signed URLs in requests for objects that match PathPattern, specify
-     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     * or more trusted signers, change Enabled to true (if it's currently false),
-     * change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline StreamingDistributionSummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline StreamingDistributionSummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline StreamingDistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -389,23 +455,28 @@ namespace Model
     inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept end user requests for
+     * content.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept end user requests for
+     * content.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept end user requests for
+     * content.</p>
      */
     inline StreamingDistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
     Aws::Utils::DateTime m_lastModifiedTime;

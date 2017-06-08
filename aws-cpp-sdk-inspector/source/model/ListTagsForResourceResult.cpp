@@ -38,12 +38,12 @@ ListTagsForResourceResult::ListTagsForResourceResult(const AmazonWebServiceResul
 ListTagsForResourceResult& ListTagsForResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("tagList"))
+  if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagListJsonList = jsonValue.GetArray("tagList");
-    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
-      m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
   }
 

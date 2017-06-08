@@ -55,11 +55,14 @@ enum class InspectorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AGENTS_ALREADY_RUNNING_ASSESSMENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ASSESSMENT_RUN_IN_PROGRESS,
+  INTERNAL,
   INVALID_CROSS_ACCOUNT_ROLE,
   INVALID_INPUT,
+  LIMIT_EXCEEDED,
   NO_SUCH_ENTITY,
-  OPERATION_IN_PROGRESS
+  UNSUPPORTED_FEATURE
 };
 namespace InspectorErrorMapper
 {

@@ -17,7 +17,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector/model/FindingsFilter.h>
+#include <aws/inspector/model/FindingFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -42,49 +42,49 @@ namespace Model
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRunArns() const{ return m_runArns; }
+    inline const Aws::Vector<Aws::String>& GetAssessmentRunArns() const{ return m_assessmentRunArns; }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline void SetRunArns(const Aws::Vector<Aws::String>& value) { m_runArnsHasBeenSet = true; m_runArns = value; }
+    inline void SetAssessmentRunArns(const Aws::Vector<Aws::String>& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = value; }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline void SetRunArns(Aws::Vector<Aws::String>&& value) { m_runArnsHasBeenSet = true; m_runArns = std::move(value); }
+    inline void SetAssessmentRunArns(Aws::Vector<Aws::String>&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = std::move(value); }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& WithRunArns(const Aws::Vector<Aws::String>& value) { SetRunArns(value); return *this;}
+    inline ListFindingsRequest& WithAssessmentRunArns(const Aws::Vector<Aws::String>& value) { SetAssessmentRunArns(value); return *this;}
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& WithRunArns(Aws::Vector<Aws::String>&& value) { SetRunArns(std::move(value)); return *this;}
+    inline ListFindingsRequest& WithAssessmentRunArns(Aws::Vector<Aws::String>&& value) { SetAssessmentRunArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& AddRunArns(const Aws::String& value) { m_runArnsHasBeenSet = true; m_runArns.push_back(value); return *this; }
+    inline ListFindingsRequest& AddAssessmentRunArns(const Aws::String& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(value); return *this; }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& AddRunArns(Aws::String&& value) { m_runArnsHasBeenSet = true; m_runArns.push_back(std::move(value)); return *this; }
+    inline ListFindingsRequest& AddAssessmentRunArns(Aws::String&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& AddRunArns(const char* value) { m_runArnsHasBeenSet = true; m_runArns.push_back(value); return *this; }
+    inline ListFindingsRequest& AddAssessmentRunArns(const char* value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(value); return *this; }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -92,7 +92,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline const FindingsFilter& GetFilter() const{ return m_filter; }
+    inline const FindingFilter& GetFilter() const{ return m_filter; }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -100,7 +100,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline void SetFilter(const FindingsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(const FindingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -108,7 +108,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline void SetFilter(FindingsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+    inline void SetFilter(FindingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -116,7 +116,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline ListFindingsRequest& WithFilter(const FindingsFilter& value) { SetFilter(value); return *this;}
+    inline ListFindingsRequest& WithFilter(const FindingFilter& value) { SetFilter(value); return *this;}
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -124,61 +124,68 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline ListFindingsRequest& WithFilter(FindingsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline ListFindingsRequest& WithFilter(FindingFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
-     * value of <b>NextToken</b> from previous response to continue listing data.</p>
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -201,9 +208,9 @@ namespace Model
     inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
-    Aws::Vector<Aws::String> m_runArns;
-    bool m_runArnsHasBeenSet;
-    FindingsFilter m_filter;
+    Aws::Vector<Aws::String> m_assessmentRunArns;
+    bool m_assessmentRunArnsHasBeenSet;
+    FindingFilter m_filter;
     bool m_filterHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

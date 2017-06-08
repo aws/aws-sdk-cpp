@@ -34,9 +34,15 @@ namespace Model
 {
 
   /**
-   * A complex type that contains zero or more CustomErrorResponse
-   * elements.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CustomErrorResponses">AWS
+   * <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces
+   * HTTP status codes in the 4xx and 5xx range with custom error messages before
+   * returning the response to the viewer.</p> </li> <li> <p>How long CloudFront
+   * caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more
+   * information about custom error pages, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+   * Error Responses</a> in the <i>Amazon CloudFront Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CustomErrorResponses">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponses
@@ -49,59 +55,72 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>The number of HTTP status codes for which you want to specify a custom error
+     * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
+     * can omit <code>Items</code>.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>The number of HTTP status codes for which you want to specify a custom error
+     * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
+     * can omit <code>Items</code>.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>The number of HTTP status codes for which you want to specify a custom error
+     * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
+     * can omit <code>Items</code>.</p>
      */
     inline CustomErrorResponses& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline const Aws::Vector<CustomErrorResponse>& GetItems() const{ return m_items; }
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline void SetItems(const Aws::Vector<CustomErrorResponse>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline void SetItems(Aws::Vector<CustomErrorResponse>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline CustomErrorResponses& WithItems(const Aws::Vector<CustomErrorResponse>& value) { SetItems(value); return *this;}
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline CustomErrorResponses& WithItems(Aws::Vector<CustomErrorResponse>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline CustomErrorResponses& AddItems(const CustomErrorResponse& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * Optional: A complex type that contains custom error responses for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
      */
     inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

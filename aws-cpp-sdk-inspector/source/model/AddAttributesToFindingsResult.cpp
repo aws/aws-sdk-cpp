@@ -38,10 +38,13 @@ AddAttributesToFindingsResult::AddAttributesToFindingsResult(const AmazonWebServ
 AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("message"))
+  if(jsonValue.ValueExists("failedItems"))
   {
-    m_message = jsonValue.GetString("message");
-
+    Aws::Map<Aws::String, JsonValue> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
+    for(auto& failedItemsItem : failedItemsJsonMap)
+    {
+      m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();
+    }
   }
 
 

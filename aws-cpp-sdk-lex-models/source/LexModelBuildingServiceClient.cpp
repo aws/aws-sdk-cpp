@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -32,8 +33,11 @@
 #include <aws/lex-models/model/DeleteBotRequest.h>
 #include <aws/lex-models/model/DeleteBotAliasRequest.h>
 #include <aws/lex-models/model/DeleteBotChannelAssociationRequest.h>
+#include <aws/lex-models/model/DeleteBotVersionRequest.h>
 #include <aws/lex-models/model/DeleteIntentRequest.h>
+#include <aws/lex-models/model/DeleteIntentVersionRequest.h>
 #include <aws/lex-models/model/DeleteSlotTypeRequest.h>
+#include <aws/lex-models/model/DeleteSlotTypeVersionRequest.h>
 #include <aws/lex-models/model/DeleteUtterancesRequest.h>
 #include <aws/lex-models/model/GetBotRequest.h>
 #include <aws/lex-models/model/GetBotAliasRequest.h>
@@ -124,11 +128,12 @@ void LexModelBuildingServiceClient::init(const ClientConfiguration& config)
 CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const CreateBotVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetName();
   ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateBotVersionOutcome(CreateBotVersionResult(outcome.GetResult()));
@@ -160,11 +165,12 @@ void LexModelBuildingServiceClient::CreateBotVersionAsyncHelper(const CreateBotV
 CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(const CreateIntentVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
   ss << request.GetName();
   ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateIntentVersionOutcome(CreateIntentVersionResult(outcome.GetResult()));
@@ -196,11 +202,12 @@ void LexModelBuildingServiceClient::CreateIntentVersionAsyncHelper(const CreateI
 CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersion(const CreateSlotTypeVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
   ss << request.GetName();
   ss << "/versions";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateSlotTypeVersionOutcome(CreateSlotTypeVersionResult(outcome.GetResult()));
@@ -232,10 +239,11 @@ void LexModelBuildingServiceClient::CreateSlotTypeVersionAsyncHelper(const Creat
 DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBotOutcome(NoResult());
@@ -267,12 +275,13 @@ void LexModelBuildingServiceClient::DeleteBotAsyncHelper(const DeleteBotRequest&
 DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const DeleteBotAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBotAliasOutcome(NoResult());
@@ -304,14 +313,15 @@ void LexModelBuildingServiceClient::DeleteBotAliasAsyncHelper(const DeleteBotAli
 DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChannelAssociation(const DeleteBotChannelAssociationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetBotAlias();
   ss << "/channels/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBotChannelAssociationOutcome(NoResult());
@@ -340,13 +350,52 @@ void LexModelBuildingServiceClient::DeleteBotChannelAssociationAsyncHelper(const
   handler(this, request, DeleteBotChannelAssociation(request), context);
 }
 
+DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const DeleteBotVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
+  ss << request.GetName();
+  ss << "/versions/";
+  ss << request.GetVersion();
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBotVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBotVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteBotVersionOutcomeCallable LexModelBuildingServiceClient::DeleteBotVersionCallable(const DeleteBotVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBotVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBotVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::DeleteBotVersionAsync(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBotVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::DeleteBotVersionAsyncHelper(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBotVersion(request), context);
+}
+
 DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteIntentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteIntentOutcome(NoResult());
@@ -375,13 +424,52 @@ void LexModelBuildingServiceClient::DeleteIntentAsyncHelper(const DeleteIntentRe
   handler(this, request, DeleteIntent(request), context);
 }
 
+DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(const DeleteIntentVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
+  ss << request.GetName();
+  ss << "/versions/";
+  ss << request.GetVersion();
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteIntentVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteIntentVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteIntentVersionOutcomeCallable LexModelBuildingServiceClient::DeleteIntentVersionCallable(const DeleteIntentVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIntentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIntentVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::DeleteIntentVersionAsync(const DeleteIntentVersionRequest& request, const DeleteIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteIntentVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::DeleteIntentVersionAsyncHelper(const DeleteIntentVersionRequest& request, const DeleteIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteIntentVersion(request), context);
+}
+
 DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const DeleteSlotTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteSlotTypeOutcome(NoResult());
@@ -410,15 +498,54 @@ void LexModelBuildingServiceClient::DeleteSlotTypeAsyncHelper(const DeleteSlotTy
   handler(this, request, DeleteSlotType(request), context);
 }
 
+DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersion(const DeleteSlotTypeVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
+  ss << request.GetName();
+  ss << "/version/";
+  ss << request.GetVersion();
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSlotTypeVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteSlotTypeVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteSlotTypeVersionOutcomeCallable LexModelBuildingServiceClient::DeleteSlotTypeVersionCallable(const DeleteSlotTypeVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSlotTypeVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlotTypeVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::DeleteSlotTypeVersionAsync(const DeleteSlotTypeVersionRequest& request, const DeleteSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSlotTypeVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::DeleteSlotTypeVersionAsyncHelper(const DeleteSlotTypeVersionRequest& request, const DeleteSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSlotTypeVersion(request), context);
+}
+
 DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const DeleteUtterancesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/utterances/";
   ss << request.GetUserId();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteUtterancesOutcome(NoResult());
@@ -450,12 +577,13 @@ void LexModelBuildingServiceClient::DeleteUtterancesAsyncHelper(const DeleteUtte
 GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetName();
   ss << "/versions/";
   ss << request.GetVersionOrAlias();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotOutcome(GetBotResult(outcome.GetResult()));
@@ -487,12 +615,13 @@ void LexModelBuildingServiceClient::GetBotAsyncHelper(const GetBotRequest& reque
 GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotAliasOutcome(GetBotAliasResult(outcome.GetResult()));
@@ -524,11 +653,12 @@ void LexModelBuildingServiceClient::GetBotAliasAsyncHelper(const GetBotAliasRequ
 GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAliasesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotAliasesOutcome(GetBotAliasesResult(outcome.GetResult()));
@@ -560,14 +690,15 @@ void LexModelBuildingServiceClient::GetBotAliasesAsyncHelper(const GetBotAliases
 GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAssociation(const GetBotChannelAssociationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetBotAlias();
   ss << "/channels/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotChannelAssociationOutcome(GetBotChannelAssociationResult(outcome.GetResult()));
@@ -599,13 +730,14 @@ void LexModelBuildingServiceClient::GetBotChannelAssociationAsyncHelper(const Ge
 GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAssociations(const GetBotChannelAssociationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetBotAlias();
   ss << "/channels/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotChannelAssociationsOutcome(GetBotChannelAssociationsResult(outcome.GetResult()));
@@ -637,11 +769,12 @@ void LexModelBuildingServiceClient::GetBotChannelAssociationsAsyncHelper(const G
 GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBotVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetName();
   ss << "/versions/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotVersionsOutcome(GetBotVersionsResult(outcome.GetResult()));
@@ -673,9 +806,10 @@ void LexModelBuildingServiceClient::GetBotVersionsAsyncHelper(const GetBotVersio
 GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBotsOutcome(GetBotsResult(outcome.GetResult()));
@@ -707,10 +841,11 @@ void LexModelBuildingServiceClient::GetBotsAsyncHelper(const GetBotsRequest& req
 GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const GetBuiltinIntentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/builtins/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/builtins/intents/";
   ss << request.GetSignature();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBuiltinIntentOutcome(GetBuiltinIntentResult(outcome.GetResult()));
@@ -742,9 +877,10 @@ void LexModelBuildingServiceClient::GetBuiltinIntentAsyncHelper(const GetBuiltin
 GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const GetBuiltinIntentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/builtins/intents/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/builtins/intents/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBuiltinIntentsOutcome(GetBuiltinIntentsResult(outcome.GetResult()));
@@ -776,9 +912,10 @@ void LexModelBuildingServiceClient::GetBuiltinIntentsAsyncHelper(const GetBuilti
 GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(const GetBuiltinSlotTypesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/builtins/slottypes/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/builtins/slottypes/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBuiltinSlotTypesOutcome(GetBuiltinSlotTypesResult(outcome.GetResult()));
@@ -810,12 +947,13 @@ void LexModelBuildingServiceClient::GetBuiltinSlotTypesAsyncHelper(const GetBuil
 GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
   ss << request.GetName();
   ss << "/versions/";
   ss << request.GetVersion();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetIntentOutcome(GetIntentResult(outcome.GetResult()));
@@ -847,11 +985,12 @@ void LexModelBuildingServiceClient::GetIntentAsyncHelper(const GetIntentRequest&
 GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const GetIntentVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
   ss << request.GetName();
   ss << "/versions/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetIntentVersionsOutcome(GetIntentVersionsResult(outcome.GetResult()));
@@ -883,9 +1022,10 @@ void LexModelBuildingServiceClient::GetIntentVersionsAsyncHelper(const GetIntent
 GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetIntentsOutcome(GetIntentsResult(outcome.GetResult()));
@@ -917,12 +1057,13 @@ void LexModelBuildingServiceClient::GetIntentsAsyncHelper(const GetIntentsReques
 GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
   ss << request.GetName();
   ss << "/versions/";
   ss << request.GetVersion();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetSlotTypeOutcome(GetSlotTypeResult(outcome.GetResult()));
@@ -954,11 +1095,12 @@ void LexModelBuildingServiceClient::GetSlotTypeAsyncHelper(const GetSlotTypeRequ
 GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(const GetSlotTypeVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
   ss << request.GetName();
   ss << "/versions/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetSlotTypeVersionsOutcome(GetSlotTypeVersionsResult(outcome.GetResult()));
@@ -990,9 +1132,10 @@ void LexModelBuildingServiceClient::GetSlotTypeVersionsAsyncHelper(const GetSlot
 GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTypesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetSlotTypesOutcome(GetSlotTypesResult(outcome.GetResult()));
@@ -1024,11 +1167,13 @@ void LexModelBuildingServiceClient::GetSlotTypesAsyncHelper(const GetSlotTypesRe
 GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const GetUtterancesViewRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
-  ss << "/utterances?view=aggregation";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("/utterances?view=aggregation");
+ uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetUtterancesViewOutcome(GetUtterancesViewResult(outcome.GetResult()));
@@ -1060,11 +1205,12 @@ void LexModelBuildingServiceClient::GetUtterancesViewAsyncHelper(const GetUttera
 PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetName();
   ss << "/versions/$LATEST";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBotOutcome(PutBotResult(outcome.GetResult()));
@@ -1096,12 +1242,13 @@ void LexModelBuildingServiceClient::PutBotAsyncHelper(const PutBotRequest& reque
 PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/bots/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/bots/";
   ss << request.GetBotName();
   ss << "/aliases/";
   ss << request.GetName();
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBotAliasOutcome(PutBotAliasResult(outcome.GetResult()));
@@ -1133,11 +1280,12 @@ void LexModelBuildingServiceClient::PutBotAliasAsyncHelper(const PutBotAliasRequ
 PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/intents/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/intents/";
   ss << request.GetName();
   ss << "/versions/$LATEST";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutIntentOutcome(PutIntentResult(outcome.GetResult()));
@@ -1169,11 +1317,12 @@ void LexModelBuildingServiceClient::PutIntentAsyncHelper(const PutIntentRequest&
 PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/slottypes/";
+  Aws::Http::URI uri = m_uri;
+  ss << "/slottypes/";
   ss << request.GetName();
   ss << "/versions/$LATEST";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutSlotTypeOutcome(PutSlotTypeResult(outcome.GetResult()));

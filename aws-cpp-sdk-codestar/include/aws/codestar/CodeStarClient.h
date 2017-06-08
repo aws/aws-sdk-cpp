@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/codestar/CodeStarErrors.h>
@@ -152,17 +153,15 @@ namespace Model
    * This reference provides descriptions of the operations and data types for the
    * AWS CodeStar API along with usage examples.</p> <p>You can use the AWS CodeStar
    * API to work with:</p> <p>Projects and their resources, by calling the
-   * following:</p> <ul> <li> <p> <a>CreateProject</a>, which creates an empty
-   * project in AWS CodeStar with no resources.</p> </li> <li> <p>
-   * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.</p> </li> <li>
-   * <p> <a>DescribeProject</a>, which lists the attributes of a project.</p> </li>
-   * <li> <p> <a>ListProjects</a>, which lists all AWS CodeStar projects associated
-   * with your AWS account.</p> </li> <li> <p> <a>ListResources</a>, which lists the
-   * resources associated with an AWS CodeStar project.</p> </li> <li> <p>
-   * <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar
-   * project.</p> </li> </ul> <p>Teams and team members, by calling the
-   * following:</p> <ul> <li> <p> <a>AssociateTeamMember</a>, which adds an IAM user
-   * to the team for an AWS CodeStar project.</p> </li> <li> <p>
+   * following:</p> <ul> <li> <p> <a>DeleteProject</a>, which deletes a project in
+   * AWS CodeStar.</p> </li> <li> <p> <a>DescribeProject</a>, which lists the
+   * attributes of a project.</p> </li> <li> <p> <a>ListProjects</a>, which lists all
+   * AWS CodeStar projects associated with your AWS account.</p> </li> <li> <p>
+   * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar
+   * project.</p> </li> <li> <p> <a>UpdateProject</a>, which updates the attributes
+   * of an AWS CodeStar project.</p> </li> </ul> <p>Teams and team members, by
+   * calling the following:</p> <ul> <li> <p> <a>AssociateTeamMember</a>, which adds
+   * an IAM user to the team for an AWS CodeStar project.</p> </li> <li> <p>
    * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an
    * AWS CodeStar project.</p> </li> <li> <p> <a>ListTeamMembers</a>, which lists all
    * the IAM users in the team for an AWS CodeStar project, including their roles and
@@ -231,16 +230,16 @@ namespace Model
         virtual void AssociateTeamMemberAsync(const Model::AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a project in AWS CodeStar with minimal structure and no
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Reserved for future use. To create a project, use the AWS CodeStar
+         * console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a project in AWS CodeStar with minimal structure and no
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Reserved for future use. To create a project, use the AWS CodeStar
+         * console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -249,8 +248,8 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a project in AWS CodeStar with minimal structure and no
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Reserved for future use. To create a project, use the AWS CodeStar
+         * console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          *

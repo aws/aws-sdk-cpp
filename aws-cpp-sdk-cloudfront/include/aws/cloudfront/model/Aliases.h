@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * A complex type that contains information about CNAMEs (alternate domain names),
-   * if any, for this distribution.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Aliases">AWS
+   * <p>A complex type that contains information about CNAMEs (alternate domain
+   * names), if any, for this distribution. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Aliases">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Aliases
@@ -49,65 +49,68 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>The number of CNAME aliases, if any, that you want to associate with this
+     * distribution.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>The number of CNAME aliases, if any, that you want to associate with this
+     * distribution.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>The number of CNAME aliases, if any, that you want to associate with this
+     * distribution.</p>
      */
     inline Aliases& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline Aliases& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline Aliases& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline Aliases& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline Aliases& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this
-     * distribution. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
      */
     inline Aliases& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

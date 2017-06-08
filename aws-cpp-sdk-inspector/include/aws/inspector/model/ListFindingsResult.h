@@ -43,50 +43,50 @@ namespace Model
     ListFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFindingArnList() const{ return m_findingArnList; }
+    inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline void SetFindingArnList(const Aws::Vector<Aws::String>& value) { m_findingArnList = value; }
+    inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArns = value; }
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline void SetFindingArnList(Aws::Vector<Aws::String>&& value) { m_findingArnList = std::move(value); }
+    inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArns = std::move(value); }
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline ListFindingsResult& WithFindingArnList(const Aws::Vector<Aws::String>& value) { SetFindingArnList(value); return *this;}
+    inline ListFindingsResult& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline ListFindingsResult& WithFindingArnList(Aws::Vector<Aws::String>&& value) { SetFindingArnList(std::move(value)); return *this;}
+    inline ListFindingsResult& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline ListFindingsResult& AddFindingArnList(const Aws::String& value) { m_findingArnList.push_back(value); return *this; }
+    inline ListFindingsResult& AddFindingArns(const Aws::String& value) { m_findingArns.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline ListFindingsResult& AddFindingArnList(Aws::String&& value) { m_findingArnList.push_back(std::move(value)); return *this; }
+    inline ListFindingsResult& AddFindingArns(Aws::String&& value) { m_findingArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ARNs specifying the findings returned by the action.</p>
+     * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
-    inline ListFindingsResult& AddFindingArnList(const char* value) { m_findingArnList.push_back(value); return *this; }
+    inline ListFindingsResult& AddFindingArns(const char* value) { m_findingArns.push_back(value); return *this; }
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -94,7 +94,7 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -102,7 +102,7 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -110,7 +110,7 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -118,7 +118,7 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline ListFindingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline ListFindingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -134,12 +134,12 @@ namespace Model
      * <p> When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for the
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
-     * more data to be listed, this parameter is set to 'null'.</p>
+     * more data to be listed, this parameter is set to null.</p>
      */
     inline ListFindingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    Aws::Vector<Aws::String> m_findingArnList;
+    Aws::Vector<Aws::String> m_findingArns;
     Aws::String m_nextToken;
   };
 

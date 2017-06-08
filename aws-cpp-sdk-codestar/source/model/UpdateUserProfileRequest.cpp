@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/codestar/model/UpdateUserProfileRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 

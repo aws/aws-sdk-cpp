@@ -52,6 +52,12 @@ DescribeCrossAccountAccessRoleResult& DescribeCrossAccountAccessRoleResult::oper
 
   }
 
+  if(jsonValue.ValueExists("registeredAt"))
+  {
+    m_registeredAt = jsonValue.GetDouble("registeredAt");
+
+  }
+
 
 
   return *this;

@@ -37,44 +37,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the IAM role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
+     * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
      */
     inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

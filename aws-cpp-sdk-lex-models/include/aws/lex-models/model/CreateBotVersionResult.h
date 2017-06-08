@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -373,79 +374,79 @@ namespace Model
     inline CreateBotVersionResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline void SetVoiceId(const Aws::String& value) { m_voiceId = value; }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline void SetVoiceId(Aws::String&& value) { m_voiceId = std::move(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline void SetVoiceId(const char* value) { m_voiceId.assign(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline CreateBotVersionResult& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline CreateBotVersionResult& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
     inline CreateBotVersionResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline CreateBotVersionResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline CreateBotVersionResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
-     * <p>Checksum identifying the version of the boat that was created.</p>
+     * <p>Checksum identifying the version of the bot that was created.</p>
      */
     inline CreateBotVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 

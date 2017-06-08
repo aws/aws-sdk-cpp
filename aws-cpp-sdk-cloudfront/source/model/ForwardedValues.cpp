@@ -34,7 +34,8 @@ ForwardedValues::ForwardedValues() :
     m_queryString(false),
     m_queryStringHasBeenSet(false),
     m_cookiesHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_queryStringCacheKeysHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ForwardedValues::ForwardedValues(const XmlNode& xmlNode) :
     m_queryString(false),
     m_queryStringHasBeenSet(false),
     m_cookiesHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_queryStringCacheKeysHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,12 @@ ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
       m_headers = headersNode;
       m_headersHasBeenSet = true;
     }
+    XmlNode queryStringCacheKeysNode = resultNode.FirstChild("QueryStringCacheKeys");
+    if(!queryStringCacheKeysNode.IsNull())
+    {
+      m_queryStringCacheKeys = queryStringCacheKeysNode;
+      m_queryStringCacheKeysHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +105,12 @@ void ForwardedValues::AddToNode(XmlNode& parentNode) const
   {
    XmlNode headersNode = parentNode.CreateChildElement("Headers");
    m_headers.AddToNode(headersNode);
+  }
+
+  if(m_queryStringCacheKeysHasBeenSet)
+  {
+   XmlNode queryStringCacheKeysNode = parentNode.CreateChildElement("QueryStringCacheKeys");
+   m_queryStringCacheKeys.AddToNode(queryStringCacheKeysNode);
   }
 
 }

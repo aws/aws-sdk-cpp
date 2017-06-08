@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/lex-models/model/DeleteIntentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -22,22 +23,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteIntentRequest::DeleteIntentRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
 Aws::String DeleteIntentRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
-  }
-
-  return payload.WriteReadable();
+  return "";
 }
 
 

@@ -33,9 +33,9 @@ namespace Model
 {
 
   /**
-   * Summary of the information about a CloudFront origin access identity.<p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CloudFrontOriginAccessIdentitySummary">AWS
+   * <p>Summary of the information about a CloudFront origin access
+   * identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CloudFrontOriginAccessIdentitySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentitySummary
@@ -48,128 +48,135 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline const Aws::String& GetS3CanonicalUserId() const{ return m_s3CanonicalUserId; }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline void SetS3CanonicalUserId(const Aws::String& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = std::move(value); }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline void SetS3CanonicalUserId(const char* value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId.assign(value); }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithS3CanonicalUserId(const Aws::String& value) { SetS3CanonicalUserId(value); return *this;}
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(std::move(value)); return *this;}
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
      * when giving the origin access identity read permission to an object in Amazon
-     * S3.
+     * S3.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithS3CanonicalUserId(const char* value) { SetS3CanonicalUserId(value); return *this;}
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
      */
     inline CloudFrontOriginAccessIdentitySummary& WithComment(const char* value) { SetComment(value); return *this;}
 

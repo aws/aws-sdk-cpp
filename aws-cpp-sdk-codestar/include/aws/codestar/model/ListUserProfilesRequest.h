@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/codestar/CodeStarRequest.h>
@@ -34,7 +35,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The continuation token for the next set of results, if the results cannot be

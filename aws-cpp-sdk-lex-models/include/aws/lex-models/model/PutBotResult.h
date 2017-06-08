@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -388,44 +389,44 @@ namespace Model
     inline PutBotResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline void SetVoiceId(const Aws::String& value) { m_voiceId = value; }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline void SetVoiceId(Aws::String&& value) { m_voiceId = std::move(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline void SetVoiceId(const char* value) { m_voiceId.assign(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline PutBotResult& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline PutBotResult& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with
-     * the user. For more information, see .</p>
+     * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+     * user. For more information, see .</p>
      */
     inline PutBotResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 

@@ -28,20 +28,35 @@ namespace Inspector
 namespace InspectorErrorMapper
 {
 
+static const int ASSESSMENT_RUN_IN_PROGRESS_HASH = HashingUtils::HashString("AssessmentRunInProgressException");
+static const int AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH = HashingUtils::HashString("AgentsAlreadyRunningAssessmentException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_INPUT_HASH)
+  if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), false);
+  }
+  else if (hashCode == AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT), false);
+  }
+  else if (hashCode == INVALID_INPUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
+  }
+  else if (hashCode == UNSUPPORTED_FEATURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::UNSUPPORTED_FEATURE), false);
   }
   else if (hashCode == INVALID_CROSS_ACCOUNT_ROLE_HASH)
   {
@@ -51,13 +66,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), false);
   }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
-  }
-  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::OPERATION_IN_PROGRESS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

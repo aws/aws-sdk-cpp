@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/lex-models/model/Locale.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>

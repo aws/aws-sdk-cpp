@@ -35,8 +35,12 @@ namespace Model
 {
 
   /**
-   * An invalidation list.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/InvalidationList">AWS
+   * <p>The <code>InvalidationList</code> complex type describes the list of
+   * invalidation objects. For more information about invalidation, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+   * Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/InvalidationList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationList
@@ -49,182 +53,195 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline InvalidationList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline InvalidationList& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
      */
     inline InvalidationList& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline InvalidationList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline InvalidationList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can
-     * use for the Marker request parameter to continue listing your invalidation
-     * batches where they left off.
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value that you can use for the <code>Marker</code> request
+     * parameter to continue listing your invalidation batches where they left off.</p>
      */
     inline InvalidationList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>The value that you provided for the <code>MaxItems</code> request
+     * parameter.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>The value that you provided for the <code>MaxItems</code> request
+     * parameter.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>The value that you provided for the <code>MaxItems</code> request
+     * parameter.</p>
      */
     inline InvalidationList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to be
+     * <p>A flag that indicates whether more invalidation batch requests remain to be
      * listed. If your results were truncated, you can make a follow-up pagination
-     * request using the Marker request parameter to retrieve more invalidation batches
-     * in the list.
+     * request using the <code>Marker</code> request parameter to retrieve more
+     * invalidation batches in the list.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to be
+     * <p>A flag that indicates whether more invalidation batch requests remain to be
      * listed. If your results were truncated, you can make a follow-up pagination
-     * request using the Marker request parameter to retrieve more invalidation batches
-     * in the list.
+     * request using the <code>Marker</code> request parameter to retrieve more
+     * invalidation batches in the list.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
 
     /**
-     * A flag that indicates whether more invalidation batch requests remain to be
+     * <p>A flag that indicates whether more invalidation batch requests remain to be
      * listed. If your results were truncated, you can make a follow-up pagination
-     * request using the Marker request parameter to retrieve more invalidation batches
-     * in the list.
+     * request using the <code>Marker</code> request parameter to retrieve more
+     * invalidation batches in the list.</p>
      */
     inline InvalidationList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
-     * The number of invalidation batches that were created by the current AWS account.
+     * <p>The number of invalidation batches that were created by the current AWS
+     * account. </p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of invalidation batches that were created by the current AWS account.
+     * <p>The number of invalidation batches that were created by the current AWS
+     * account. </p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of invalidation batches that were created by the current AWS account.
+     * <p>The number of invalidation batches that were created by the current AWS
+     * account. </p>
      */
     inline InvalidationList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline const Aws::Vector<InvalidationSummary>& GetItems() const{ return m_items; }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline void SetItems(const Aws::Vector<InvalidationSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline void SetItems(Aws::Vector<InvalidationSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline InvalidationList& WithItems(const Aws::Vector<InvalidationSummary>& value) { SetItems(value); return *this;}
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline InvalidationList& WithItems(Aws::Vector<InvalidationSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline InvalidationList& AddItems(const InvalidationSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * A complex type that contains one InvalidationSummary element for each
-     * invalidation batch that was created by the current AWS account.
+     * <p>A complex type that contains one <code>InvalidationSummary</code> element for
+     * each invalidation batch created by the current AWS account.</p>
      */
     inline InvalidationList& AddItems(InvalidationSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

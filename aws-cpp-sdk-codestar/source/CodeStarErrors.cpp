@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/codestar/CodeStarErrors.h>
@@ -28,16 +29,16 @@ namespace CodeStarErrorMapper
 {
 
 static const int TEAM_MEMBER_NOT_FOUND_HASH = HashingUtils::HashString("TeamMemberNotFoundException");
-static const int PROJECT_CONFIGURATION_HASH = HashingUtils::HashString("ProjectConfigurationException");
+static const int INVALID_SERVICE_ROLE_HASH = HashingUtils::HashString("InvalidServiceRoleException");
+static const int PROJECT_NOT_FOUND_HASH = HashingUtils::HashString("ProjectNotFoundException");
+static const int TEAM_MEMBER_ALREADY_ASSOCIATED_HASH = HashingUtils::HashString("TeamMemberAlreadyAssociatedException");
 static const int PROJECT_ALREADY_EXISTS_HASH = HashingUtils::HashString("ProjectAlreadyExistsException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int USER_PROFILE_ALREADY_EXISTS_HASH = HashingUtils::HashString("UserProfileAlreadyExistsException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int PROJECT_CREATION_FAILED_HASH = HashingUtils::HashString("ProjectCreationFailedException");
-static const int USER_PROFILE_ALREADY_EXISTS_HASH = HashingUtils::HashString("UserProfileAlreadyExistsException");
-static const int TEAM_MEMBER_ALREADY_ASSOCIATED_HASH = HashingUtils::HashString("TeamMemberAlreadyAssociatedException");
-static const int PROJECT_NOT_FOUND_HASH = HashingUtils::HashString("ProjectNotFoundException");
-static const int INVALID_SERVICE_ROLE_HASH = HashingUtils::HashString("InvalidServiceRoleException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int PROJECT_CONFIGURATION_HASH = HashingUtils::HashString("ProjectConfigurationException");
 static const int USER_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("UserProfileNotFoundException");
 
 
@@ -49,21 +50,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_NOT_FOUND), false);
   }
-  else if (hashCode == PROJECT_CONFIGURATION_HASH)
+  else if (hashCode == INVALID_SERVICE_ROLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_SERVICE_ROLE), false);
+  }
+  else if (hashCode == PROJECT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_NOT_FOUND), false);
+  }
+  else if (hashCode == TEAM_MEMBER_ALREADY_ASSOCIATED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_ALREADY_ASSOCIATED), false);
   }
   else if (hashCode == PROJECT_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_ALREADY_EXISTS), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  else if (hashCode == USER_PROFILE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_ALREADY_EXISTS), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
@@ -73,21 +78,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CREATION_FAILED), false);
   }
-  else if (hashCode == USER_PROFILE_ALREADY_EXISTS_HASH)
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_NEXT_TOKEN), false);
   }
-  else if (hashCode == TEAM_MEMBER_ALREADY_ASSOCIATED_HASH)
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_ALREADY_ASSOCIATED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == PROJECT_NOT_FOUND_HASH)
+  else if (hashCode == PROJECT_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_NOT_FOUND), false);
-  }
-  else if (hashCode == INVALID_SERVICE_ROLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_SERVICE_ROLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CONFIGURATION), false);
   }
   else if (hashCode == USER_PROFILE_NOT_FOUND_HASH)
   {

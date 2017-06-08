@@ -1,0 +1,93 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
+  enum class InvalidInputErrorCode
+  {
+    NOT_SET,
+    INVALID_ASSESSMENT_TARGET_ARN,
+    INVALID_ASSESSMENT_TEMPLATE_ARN,
+    INVALID_ASSESSMENT_RUN_ARN,
+    INVALID_FINDING_ARN,
+    INVALID_RESOURCE_GROUP_ARN,
+    INVALID_RULES_PACKAGE_ARN,
+    INVALID_RESOURCE_ARN,
+    INVALID_SNS_TOPIC_ARN,
+    INVALID_IAM_ROLE_ARN,
+    INVALID_ASSESSMENT_TARGET_NAME,
+    INVALID_ASSESSMENT_TARGET_NAME_PATTERN,
+    INVALID_ASSESSMENT_TEMPLATE_NAME,
+    INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN,
+    INVALID_ASSESSMENT_TEMPLATE_DURATION,
+    INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE,
+    INVALID_ASSESSMENT_RUN_DURATION_RANGE,
+    INVALID_ASSESSMENT_RUN_START_TIME_RANGE,
+    INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE,
+    INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE,
+    INVALID_ASSESSMENT_RUN_STATE,
+    INVALID_TAG,
+    INVALID_TAG_KEY,
+    INVALID_TAG_VALUE,
+    INVALID_RESOURCE_GROUP_TAG_KEY,
+    INVALID_RESOURCE_GROUP_TAG_VALUE,
+    INVALID_ATTRIBUTE,
+    INVALID_USER_ATTRIBUTE,
+    INVALID_USER_ATTRIBUTE_KEY,
+    INVALID_USER_ATTRIBUTE_VALUE,
+    INVALID_PAGINATION_TOKEN,
+    INVALID_MAX_RESULTS,
+    INVALID_AGENT_ID,
+    INVALID_AUTO_SCALING_GROUP,
+    INVALID_RULE_NAME,
+    INVALID_SEVERITY,
+    INVALID_LOCALE,
+    INVALID_EVENT,
+    ASSESSMENT_TARGET_NAME_ALREADY_TAKEN,
+    ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN,
+    INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS,
+    INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS,
+    INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS,
+    INVALID_NUMBER_OF_FINDING_ARNS,
+    INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS,
+    INVALID_NUMBER_OF_RULES_PACKAGE_ARNS,
+    INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES,
+    INVALID_NUMBER_OF_TAGS,
+    INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS,
+    INVALID_NUMBER_OF_ATTRIBUTES,
+    INVALID_NUMBER_OF_USER_ATTRIBUTES,
+    INVALID_NUMBER_OF_AGENT_IDS,
+    INVALID_NUMBER_OF_AUTO_SCALING_GROUPS,
+    INVALID_NUMBER_OF_RULE_NAMES,
+    INVALID_NUMBER_OF_SEVERITIES
+  };
+
+namespace InvalidInputErrorCodeMapper
+{
+AWS_INSPECTOR_API InvalidInputErrorCode GetInvalidInputErrorCodeForName(const Aws::String& name);
+
+AWS_INSPECTOR_API Aws::String GetNameForInvalidInputErrorCode(InvalidInputErrorCode value);
+} // namespace InvalidInputErrorCodeMapper
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

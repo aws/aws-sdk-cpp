@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/LexModelBuildingServiceRequest.h>
@@ -38,7 +39,6 @@ namespace Model
   public:
     PutBotRequest();
     Aws::String SerializePayload() const override;
-
 
     /**
      * <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
@@ -335,7 +335,7 @@ namespace Model
     inline PutBotRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -344,7 +344,7 @@ namespace Model
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -353,7 +353,7 @@ namespace Model
     inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -362,7 +362,7 @@ namespace Model
     inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -371,7 +371,7 @@ namespace Model
     inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -380,7 +380,7 @@ namespace Model
     inline PutBotRequest& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
@@ -389,7 +389,7 @@ namespace Model
     inline PutBotRequest& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice
+     * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in

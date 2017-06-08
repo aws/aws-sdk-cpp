@@ -34,10 +34,10 @@ namespace Model
 {
 
   /**
-   * A complex type that lists the AWS accounts that were included in the
-   * TrustedSigners complex type, as well as their active CloudFront key pair IDs, if
-   * any.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Signer">AWS
+   * <p>A complex type that lists the AWS accounts that were included in the
+   * <code>TrustedSigners</code> complex type, as well as their active CloudFront key
+   * pair IDs, if any. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Signer">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Signer
@@ -50,88 +50,88 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline const Aws::String& GetAwsAccountNumber() const{ return m_awsAccountNumber; }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = std::move(value); }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline void SetAwsAccountNumber(const char* value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber.assign(value); }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline Signer& WithAwsAccountNumber(const Aws::String& value) { SetAwsAccountNumber(value); return *this;}
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline Signer& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(std::move(value)); return *this;}
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution can
-     * created signed URLs, or an AWS account number. Omit the dashes in the account
-     * number.
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline Signer& WithAwsAccountNumber(const char* value) { SetAwsAccountNumber(value); return *this;}
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with AwsAccountNumber.
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with AwsAccountNumber.
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline void SetKeyPairIds(const KeyPairIds& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with AwsAccountNumber.
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline void SetKeyPairIds(KeyPairIds&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::move(value); }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with AwsAccountNumber.
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline Signer& WithKeyPairIds(const KeyPairIds& value) { SetKeyPairIds(value); return *this;}
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are
-     * associated with AwsAccountNumber.
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline Signer& WithKeyPairIds(KeyPairIds&& value) { SetKeyPairIds(std::move(value)); return *this;}
 

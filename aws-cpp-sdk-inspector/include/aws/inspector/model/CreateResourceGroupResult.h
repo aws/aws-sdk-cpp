@@ -42,37 +42,37 @@ namespace Model
     CreateResourceGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArn = value; }
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArn = std::move(value); }
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline void SetResourceGroupArn(const char* value) { m_resourceGroupArn.assign(value); }
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline CreateResourceGroupResult& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline CreateResourceGroupResult& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN specifying the resource group that is created.</p>
+     * <p>The ARN that specifies the resource group that is created.</p>
      */
     inline CreateResourceGroupResult& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 

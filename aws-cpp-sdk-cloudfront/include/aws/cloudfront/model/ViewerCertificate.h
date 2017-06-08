@@ -35,9 +35,16 @@ namespace Model
 {
 
   /**
-   * A complex type that contains information about viewer certificates for this
-   * distribution.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ViewerCertificate">AWS
+   * <p>A complex type that specifies the following:</p> <ul> <li> <p>Which SSL/TLS
+   * certificate to use when viewers request objects using HTTPS</p> </li> <li>
+   * <p>Whether you want CloudFront to use dedicated IP addresses or SNI when you're
+   * using alternate domain names in your object names</p> </li> <li> <p>The minimum
+   * protocol version that you want CloudFront to use when communicating with
+   * viewers</p> </li> </ul> <p>For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+   * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon Amazon
+   * CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ViewerCertificate">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ViewerCertificate
@@ -49,293 +56,284 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using the
-     * CloudFront domain name of your distribution in your object URLs (for example,
-     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an ACMCertificateArn or IAMCertificateId.
-     */
+    
     inline bool GetCloudFrontDefaultCertificate() const{ return m_cloudFrontDefaultCertificate; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using the
-     * CloudFront domain name of your distribution in your object URLs (for example,
-     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an ACMCertificateArn or IAMCertificateId.
-     */
+    
     inline void SetCloudFrontDefaultCertificate(bool value) { m_cloudFrontDefaultCertificateHasBeenSet = true; m_cloudFrontDefaultCertificate = value; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using the
-     * CloudFront domain name of your distribution in your object URLs (for example,
-     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an ACMCertificateArn or IAMCertificateId.
-     */
+    
     inline ViewerCertificate& WithCloudFrontDefaultCertificate(bool value) { SetCloudFrontDefaultCertificate(value); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = std::move(value); }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(std::move(value)); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value,
-     * ACMCertificateArn, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetACMCertificateArn(const Aws::String& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetACMCertificateArn(Aws::String&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = std::move(value); }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline void SetACMCertificateArn(const char* value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn.assign(value); }
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithACMCertificateArn(const Aws::String& value) { SetACMCertificateArn(value); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithACMCertificateArn(Aws::String&& value) { SetACMCertificateArn(std::move(value)); return *this;}
 
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value,
-     * IAMCertificateId, or CloudFrontDefaultCertificate.
-     */
+    
     inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
 
     /**
-     * If you specify a value for IAMCertificateId, you must also specify how you want
-     * CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you
-     * specify vip, CloudFront uses dedicated IP addresses for your content and can
-     * respond to HTTPS requests from any viewer. However, you must request permission
-     * to use this feature, and you incur additional monthly charges. If you specify
-     * sni-only, CloudFront can only respond to HTTPS requests from viewers that
-     * support Server Name Indication (SNI). All modern browsers support SNI, but some
-     * browsers still in use don't support SNI. Do not specify a value for
-     * SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+     * <p>If you specify a value for <code>ACMCertificateArn</code> or for
+     * <code>IAMCertificateId</code>, you must also specify how you want CloudFront to
+     * serve HTTPS requests: using a method that works for all clients or one that
+     * works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses
+     * dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, you will incur additional monthly charges.</p> </li> <li>
+     * <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers
+     * that support Server Name Indication (SNI). All modern browsers support SNI, but
+     * some browsers still in use don't support SNI. If some of your users' browsers
+     * don't support SNI, we recommend that you do one of the following:</p> <ul> <li>
+     * <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
 
     /**
-     * If you specify a value for IAMCertificateId, you must also specify how you want
-     * CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you
-     * specify vip, CloudFront uses dedicated IP addresses for your content and can
-     * respond to HTTPS requests from any viewer. However, you must request permission
-     * to use this feature, and you incur additional monthly charges. If you specify
-     * sni-only, CloudFront can only respond to HTTPS requests from viewers that
-     * support Server Name Indication (SNI). All modern browsers support SNI, but some
-     * browsers still in use don't support SNI. Do not specify a value for
-     * SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+     * <p>If you specify a value for <code>ACMCertificateArn</code> or for
+     * <code>IAMCertificateId</code>, you must also specify how you want CloudFront to
+     * serve HTTPS requests: using a method that works for all clients or one that
+     * works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses
+     * dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, you will incur additional monthly charges.</p> </li> <li>
+     * <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers
+     * that support Server Name Indication (SNI). All modern browsers support SNI, but
+     * some browsers still in use don't support SNI. If some of your users' browsers
+     * don't support SNI, we recommend that you do one of the following:</p> <ul> <li>
+     * <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetSSLSupportMethod(const SSLSupportMethod& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
 
     /**
-     * If you specify a value for IAMCertificateId, you must also specify how you want
-     * CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you
-     * specify vip, CloudFront uses dedicated IP addresses for your content and can
-     * respond to HTTPS requests from any viewer. However, you must request permission
-     * to use this feature, and you incur additional monthly charges. If you specify
-     * sni-only, CloudFront can only respond to HTTPS requests from viewers that
-     * support Server Name Indication (SNI). All modern browsers support SNI, but some
-     * browsers still in use don't support SNI. Do not specify a value for
-     * SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+     * <p>If you specify a value for <code>ACMCertificateArn</code> or for
+     * <code>IAMCertificateId</code>, you must also specify how you want CloudFront to
+     * serve HTTPS requests: using a method that works for all clients or one that
+     * works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses
+     * dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, you will incur additional monthly charges.</p> </li> <li>
+     * <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers
+     * that support Server Name Indication (SNI). All modern browsers support SNI, but
+     * some browsers still in use don't support SNI. If some of your users' browsers
+     * don't support SNI, we recommend that you do one of the following:</p> <ul> <li>
+     * <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetSSLSupportMethod(SSLSupportMethod&& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = std::move(value); }
 
     /**
-     * If you specify a value for IAMCertificateId, you must also specify how you want
-     * CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you
-     * specify vip, CloudFront uses dedicated IP addresses for your content and can
-     * respond to HTTPS requests from any viewer. However, you must request permission
-     * to use this feature, and you incur additional monthly charges. If you specify
-     * sni-only, CloudFront can only respond to HTTPS requests from viewers that
-     * support Server Name Indication (SNI). All modern browsers support SNI, but some
-     * browsers still in use don't support SNI. Do not specify a value for
-     * SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+     * <p>If you specify a value for <code>ACMCertificateArn</code> or for
+     * <code>IAMCertificateId</code>, you must also specify how you want CloudFront to
+     * serve HTTPS requests: using a method that works for all clients or one that
+     * works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses
+     * dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, you will incur additional monthly charges.</p> </li> <li>
+     * <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers
+     * that support Server Name Indication (SNI). All modern browsers support SNI, but
+     * some browsers still in use don't support SNI. If some of your users' browsers
+     * don't support SNI, we recommend that you do one of the following:</p> <ul> <li>
+     * <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(const SSLSupportMethod& value) { SetSSLSupportMethod(value); return *this;}
 
     /**
-     * If you specify a value for IAMCertificateId, you must also specify how you want
-     * CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you
-     * specify vip, CloudFront uses dedicated IP addresses for your content and can
-     * respond to HTTPS requests from any viewer. However, you must request permission
-     * to use this feature, and you incur additional monthly charges. If you specify
-     * sni-only, CloudFront can only respond to HTTPS requests from viewers that
-     * support Server Name Indication (SNI). All modern browsers support SNI, but some
-     * browsers still in use don't support SNI. Do not specify a value for
-     * SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+     * <p>If you specify a value for <code>ACMCertificateArn</code> or for
+     * <code>IAMCertificateId</code>, you must also specify how you want CloudFront to
+     * serve HTTPS requests: using a method that works for all clients or one that
+     * works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses
+     * dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, you will incur additional monthly charges.</p> </li> <li>
+     * <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers
+     * that support Server Name Indication (SNI). All modern browsers support SNI, but
+     * some browsers still in use don't support SNI. If some of your users' browsers
+     * don't support SNI, we recommend that you do one of the following:</p> <ul> <li>
+     * <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
 
     /**
-     * Specify the minimum version of the SSL protocol that you want CloudFront to use,
-     * SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only
-     * to browsers or devices that support at least the SSL version that you specify.
-     * The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only
-     * if your users are using browsers or devices that don't support TLSv1. If you're
-     * using a custom certificate (if you specify a value for IAMCertificateId) and if
-     * you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
-     * choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom
-     * certificate (if you specify a value for IAMCertificateId) and if you're using
-     * SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for
-     * MinimumProtocolVersion.
+     * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
+     * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
+     * or <code>TLSv1</code>. CloudFront serves your objects only to viewers that
+     * support SSL/TLS version that you specify and later versions. The
+     * <code>TLSv1</code> protocol is more secure, so we recommend that you specify
+     * <code>SSLv3</code> only if your users are using browsers or devices that don't
+     * support <code>TLSv1</code>. Note the following:</p> <ul> <li> <p>If you specify
+     * &lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;,
+     * the minimum SSL protocol version is <code>TLSv1</code> and can't be changed.</p>
+     * </li> <li> <p>If you're using a custom certificate (if you specify a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>) and if
+     * you're using SNI (if you specify <code>sni-only</code> for
+     * <code>SSLSupportMethod</code>), you must specify <code>TLSv1</code> for
+     * <code>MinimumProtocolVersion</code>.</p> </li> </ul>
      */
     inline const MinimumProtocolVersion& GetMinimumProtocolVersion() const{ return m_minimumProtocolVersion; }
 
     /**
-     * Specify the minimum version of the SSL protocol that you want CloudFront to use,
-     * SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only
-     * to browsers or devices that support at least the SSL version that you specify.
-     * The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only
-     * if your users are using browsers or devices that don't support TLSv1. If you're
-     * using a custom certificate (if you specify a value for IAMCertificateId) and if
-     * you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
-     * choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom
-     * certificate (if you specify a value for IAMCertificateId) and if you're using
-     * SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for
-     * MinimumProtocolVersion.
+     * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
+     * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
+     * or <code>TLSv1</code>. CloudFront serves your objects only to viewers that
+     * support SSL/TLS version that you specify and later versions. The
+     * <code>TLSv1</code> protocol is more secure, so we recommend that you specify
+     * <code>SSLv3</code> only if your users are using browsers or devices that don't
+     * support <code>TLSv1</code>. Note the following:</p> <ul> <li> <p>If you specify
+     * &lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;,
+     * the minimum SSL protocol version is <code>TLSv1</code> and can't be changed.</p>
+     * </li> <li> <p>If you're using a custom certificate (if you specify a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>) and if
+     * you're using SNI (if you specify <code>sni-only</code> for
+     * <code>SSLSupportMethod</code>), you must specify <code>TLSv1</code> for
+     * <code>MinimumProtocolVersion</code>.</p> </li> </ul>
      */
     inline void SetMinimumProtocolVersion(const MinimumProtocolVersion& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = value; }
 
     /**
-     * Specify the minimum version of the SSL protocol that you want CloudFront to use,
-     * SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only
-     * to browsers or devices that support at least the SSL version that you specify.
-     * The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only
-     * if your users are using browsers or devices that don't support TLSv1. If you're
-     * using a custom certificate (if you specify a value for IAMCertificateId) and if
-     * you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
-     * choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom
-     * certificate (if you specify a value for IAMCertificateId) and if you're using
-     * SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for
-     * MinimumProtocolVersion.
+     * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
+     * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
+     * or <code>TLSv1</code>. CloudFront serves your objects only to viewers that
+     * support SSL/TLS version that you specify and later versions. The
+     * <code>TLSv1</code> protocol is more secure, so we recommend that you specify
+     * <code>SSLv3</code> only if your users are using browsers or devices that don't
+     * support <code>TLSv1</code>. Note the following:</p> <ul> <li> <p>If you specify
+     * &lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;,
+     * the minimum SSL protocol version is <code>TLSv1</code> and can't be changed.</p>
+     * </li> <li> <p>If you're using a custom certificate (if you specify a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>) and if
+     * you're using SNI (if you specify <code>sni-only</code> for
+     * <code>SSLSupportMethod</code>), you must specify <code>TLSv1</code> for
+     * <code>MinimumProtocolVersion</code>.</p> </li> </ul>
      */
     inline void SetMinimumProtocolVersion(MinimumProtocolVersion&& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = std::move(value); }
 
     /**
-     * Specify the minimum version of the SSL protocol that you want CloudFront to use,
-     * SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only
-     * to browsers or devices that support at least the SSL version that you specify.
-     * The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only
-     * if your users are using browsers or devices that don't support TLSv1. If you're
-     * using a custom certificate (if you specify a value for IAMCertificateId) and if
-     * you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
-     * choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom
-     * certificate (if you specify a value for IAMCertificateId) and if you're using
-     * SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for
-     * MinimumProtocolVersion.
+     * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
+     * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
+     * or <code>TLSv1</code>. CloudFront serves your objects only to viewers that
+     * support SSL/TLS version that you specify and later versions. The
+     * <code>TLSv1</code> protocol is more secure, so we recommend that you specify
+     * <code>SSLv3</code> only if your users are using browsers or devices that don't
+     * support <code>TLSv1</code>. Note the following:</p> <ul> <li> <p>If you specify
+     * &lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;,
+     * the minimum SSL protocol version is <code>TLSv1</code> and can't be changed.</p>
+     * </li> <li> <p>If you're using a custom certificate (if you specify a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>) and if
+     * you're using SNI (if you specify <code>sni-only</code> for
+     * <code>SSLSupportMethod</code>), you must specify <code>TLSv1</code> for
+     * <code>MinimumProtocolVersion</code>.</p> </li> </ul>
      */
     inline ViewerCertificate& WithMinimumProtocolVersion(const MinimumProtocolVersion& value) { SetMinimumProtocolVersion(value); return *this;}
 
     /**
-     * Specify the minimum version of the SSL protocol that you want CloudFront to use,
-     * SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only
-     * to browsers or devices that support at least the SSL version that you specify.
-     * The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only
-     * if your users are using browsers or devices that don't support TLSv1. If you're
-     * using a custom certificate (if you specify a value for IAMCertificateId) and if
-     * you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
-     * choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom
-     * certificate (if you specify a value for IAMCertificateId) and if you're using
-     * SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for
-     * MinimumProtocolVersion.
+     * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
+     * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
+     * or <code>TLSv1</code>. CloudFront serves your objects only to viewers that
+     * support SSL/TLS version that you specify and later versions. The
+     * <code>TLSv1</code> protocol is more secure, so we recommend that you specify
+     * <code>SSLv3</code> only if your users are using browsers or devices that don't
+     * support <code>TLSv1</code>. Note the following:</p> <ul> <li> <p>If you specify
+     * &lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;,
+     * the minimum SSL protocol version is <code>TLSv1</code> and can't be changed.</p>
+     * </li> <li> <p>If you're using a custom certificate (if you specify a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>) and if
+     * you're using SNI (if you specify <code>sni-only</code> for
+     * <code>SSLSupportMethod</code>), you must specify <code>TLSv1</code> for
+     * <code>MinimumProtocolVersion</code>.</p> </li> </ul>
      */
     inline ViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersion&& value) { SetMinimumProtocolVersion(std::move(value)); return *this;}
 

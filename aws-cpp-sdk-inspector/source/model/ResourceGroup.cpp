@@ -29,32 +29,44 @@ namespace Model
 {
 
 ResourceGroup::ResourceGroup() : 
-    m_resourceGroupArnHasBeenSet(false),
-    m_resourceGroupTagsHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
 ResourceGroup::ResourceGroup(const JsonValue& jsonValue) : 
-    m_resourceGroupArnHasBeenSet(false),
-    m_resourceGroupTagsHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ResourceGroup& ResourceGroup::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("resourceGroupArn"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_resourceGroupArn = jsonValue.GetString("resourceGroupArn");
+    m_arn = jsonValue.GetString("arn");
 
-    m_resourceGroupArnHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("resourceGroupTags"))
+  if(jsonValue.ValueExists("tags"))
   {
-    m_resourceGroupTags = jsonValue.GetString("resourceGroupTags");
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
 
-    m_resourceGroupTagsHasBeenSet = true;
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   return *this;
@@ -64,16 +76,26 @@ JsonValue ResourceGroup::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_resourceGroupArnHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("resourceGroupArn", m_resourceGroupArn);
+   payload.WithString("arn", m_arn);
 
   }
 
-  if(m_resourceGroupTagsHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("resourceGroupTags", m_resourceGroupTags);
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   return payload;

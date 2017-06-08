@@ -43,16 +43,16 @@ Tag::Tag(const JsonValue& jsonValue) :
 
 Tag& Tag::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("Key"))
+  if(jsonValue.ValueExists("key"))
   {
-    m_key = jsonValue.GetString("Key");
+    m_key = jsonValue.GetString("key");
 
     m_keyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Value"))
+  if(jsonValue.ValueExists("value"))
   {
-    m_value = jsonValue.GetString("Value");
+    m_value = jsonValue.GetString("value");
 
     m_valueHasBeenSet = true;
   }
@@ -66,13 +66,13 @@ JsonValue Tag::Jsonize() const
 
   if(m_keyHasBeenSet)
   {
-   payload.WithString("Key", m_key);
+   payload.WithString("key", m_key);
 
   }
 
   if(m_valueHasBeenSet)
   {
-   payload.WithString("Value", m_value);
+   payload.WithString("value", m_value);
 
   }
 

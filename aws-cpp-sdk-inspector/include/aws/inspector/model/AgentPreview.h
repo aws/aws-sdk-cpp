@@ -33,8 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the
-   * <a>PreviewAgentsForResourceGroup</a> action.</p>
+   * <p>Used as a response element in the <a>PreviewAgents</a> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentPreview">AWS
+   * API Reference</a></p>
    */
   class AWS_INSPECTOR_API AgentPreview
   {
@@ -45,72 +47,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
-     * <p>The id of the EC2 instance where the agent is intalled.</p>
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline const Aws::String& GetAutoScalingGroup() const{ return m_autoScalingGroup; }
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline void SetAutoScalingGroup(const Aws::String& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline void SetAutoScalingGroup(const char* value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup.assign(value); }
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAutoScalingGroup(const Aws::String& value) { SetAutoScalingGroup(value); return *this;}
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
 

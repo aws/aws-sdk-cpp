@@ -46,7 +46,8 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_maxTTL(0),
     m_maxTTLHasBeenSet(false),
     m_compress(false),
-    m_compressHasBeenSet(false)
+    m_compressHasBeenSet(false),
+    m_lambdaFunctionAssociationsHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) :
     m_maxTTL(0),
     m_maxTTLHasBeenSet(false),
     m_compress(false),
-    m_compressHasBeenSet(false)
+    m_compressHasBeenSet(false),
+    m_lambdaFunctionAssociationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -136,6 +138,12 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_compress = StringUtils::ConvertToBool(StringUtils::Trim(compressNode.GetText().c_str()).c_str());
       m_compressHasBeenSet = true;
+    }
+    XmlNode lambdaFunctionAssociationsNode = resultNode.FirstChild("LambdaFunctionAssociations");
+    if(!lambdaFunctionAssociationsNode.IsNull())
+    {
+      m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
+      m_lambdaFunctionAssociationsHasBeenSet = true;
     }
   }
 
@@ -213,6 +221,12 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   ss << m_compress;
    compressNode.SetText(ss.str());
   ss.str("");
+  }
+
+  if(m_lambdaFunctionAssociationsHasBeenSet)
+  {
+   XmlNode lambdaFunctionAssociationsNode = parentNode.CreateChildElement("LambdaFunctionAssociations");
+   m_lambdaFunctionAssociations.AddToNode(lambdaFunctionAssociationsNode);
   }
 
 }

@@ -1,0 +1,78 @@
+add_project(aws-cpp-sdk-athena "C++ SDK for the AWS athena service" aws-cpp-sdk-core)
+
+file(GLOB AWS_ATHENA_HEADERS
+    "include/aws/athena/*.h"
+)
+
+file(GLOB AWS_ATHENA_MODEL_HEADERS
+    "include/aws/athena/model/*.h"
+)
+
+file(GLOB AWS_ATHENA_SOURCE
+    "source/*.cpp"
+)
+
+file(GLOB AWS_ATHENA_MODEL_SOURCE
+    "source/model/*.cpp"
+)
+
+file(GLOB ATHENA_UNIFIED_HEADERS
+    ${AWS_ATHENA_HEADERS}
+    ${AWS_ATHENA_MODEL_HEADERS}
+)
+
+file(GLOB ATHENA_UNITY_SRC
+    ${AWS_ATHENA_SOURCE}
+    ${AWS_ATHENA_MODEL_SOURCE}
+)
+
+if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ATHENA" ATHENA_UNITY_SRC)
+endif()
+
+file(GLOB ATHENA_SRC
+    ${ATHENA_UNIFIED_HEADERS}
+    ${ATHENA_UNITY_SRC}
+)
+
+if(WIN32)
+    #if we are compiling for visual studio, create a sane directory tree.
+    if(MSVC)
+        source_group("Header Files\\aws\\athena" FILES ${AWS_ATHENA_HEADERS})
+        source_group("Header Files\\aws\\athena\\model" FILES ${AWS_ATHENA_MODEL_HEADERS})
+        source_group("Source Files" FILES ${AWS_ATHENA_SOURCE})
+        source_group("Source Files\\model" FILES ${AWS_ATHENA_MODEL_SOURCE})
+    endif(MSVC)
+endif()
+
+set(ATHENA_INCLUDES
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+)
+
+include_directories(${ATHENA_INCLUDES})
+
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+    add_definitions("-DAWS_ATHENA_EXPORTS")
+endif()
+
+add_library(${PROJECT_NAME} ${LIBTYPE} ${ATHENA_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+  
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+setup_install()
+
+install (FILES ${AWS_ATHENA_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/athena)
+install (FILES ${AWS_ATHENA_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/athena/model)
+
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
+
+do_packaging()
+
+

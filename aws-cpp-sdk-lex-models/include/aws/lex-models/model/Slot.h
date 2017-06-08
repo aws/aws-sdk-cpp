@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -245,29 +246,26 @@ namespace Model
     inline Slot& WithValueElicitationPrompt(Prompt&& value) { SetValueElicitationPrompt(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies the order in which to elicit slot values from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex
-     * first elicits a value for the slot with priority 1.</p> <p>If multiple slots
-     * share the same priority, the order in which Amazon Lex elicits values is
-     * arbitrary.</p>
+     * <p> Directs Lex the order in which to elicit this slot value from the user. For
+     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
+     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
+     * same priority, the order in which Lex elicits values is arbitrary.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p> Specifies the order in which to elicit slot values from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex
-     * first elicits a value for the slot with priority 1.</p> <p>If multiple slots
-     * share the same priority, the order in which Amazon Lex elicits values is
-     * arbitrary.</p>
+     * <p> Directs Lex the order in which to elicit this slot value from the user. For
+     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
+     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
+     * same priority, the order in which Lex elicits values is arbitrary.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p> Specifies the order in which to elicit slot values from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex
-     * first elicits a value for the slot with priority 1.</p> <p>If multiple slots
-     * share the same priority, the order in which Amazon Lex elicits values is
-     * arbitrary.</p>
+     * <p> Directs Lex the order in which to elicit this slot value from the user. For
+     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
+     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
+     * same priority, the order in which Lex elicits values is arbitrary.</p>
      */
     inline Slot& WithPriority(int value) { SetPriority(value); return *this;}
 

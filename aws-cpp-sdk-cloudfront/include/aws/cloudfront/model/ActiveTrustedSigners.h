@@ -34,11 +34,20 @@ namespace Model
 {
 
   /**
-   * A complex type that lists the AWS accounts, if any, that you included in the
-   * TrustedSigners complex type for the default cache behavior or for any of the
-   * other cache behaviors for this distribution. These are accounts that you want to
-   * allow to create signed URLs for private content.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ActiveTrustedSigners">AWS
+   * <p>A complex type that lists the AWS accounts, if any, that you included in the
+   * <code>TrustedSigners</code> complex type for this distribution. These are the
+   * accounts that you want to allow to create signed URLs for private content.</p>
+   * <p>The <code>Signer</code> complex type lists the AWS account number of the
+   * trusted signer or <code>self</code> if the signer is the AWS account that
+   * created the distribution. The <code>Signer</code> element also includes the IDs
+   * of any active CloudFront key pairs that are associated with the trusted signer's
+   * AWS account. If no <code>KeyPairId</code> element appears for a
+   * <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more
+   * information, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+   * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ActiveTrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ActiveTrustedSigners
@@ -51,87 +60,96 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * Each active trusted signer.
+     * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
+     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * Each active trusted signer.
+     * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
+     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * Each active trusted signer.
+     * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
+     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For
-     * example, if three cache behaviors all list the same three AWS accounts, the
-     * value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For
-     * example, if three cache behaviors all list the same three AWS accounts, the
-     * value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For
-     * example, if three cache behaviors all list the same three AWS accounts, the
-     * value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline ActiveTrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline const Aws::Vector<Signer>& GetItems() const{ return m_items; }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline void SetItems(const Aws::Vector<Signer>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline ActiveTrustedSigners& WithItems(const Aws::Vector<Signer>& value) { SetItems(value); return *this;}
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline ActiveTrustedSigners& AddItems(const Signer& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted
-     * signer that is specified in the TrustedSigners complex type, including trusted
-     * signers in the default cache behavior and in all of the other cache behaviors.
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

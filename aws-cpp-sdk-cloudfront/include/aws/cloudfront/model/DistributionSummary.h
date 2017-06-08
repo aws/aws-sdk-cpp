@@ -25,6 +25,7 @@
 #include <aws/cloudfront/model/PriceClass.h>
 #include <aws/cloudfront/model/ViewerCertificate.h>
 #include <aws/cloudfront/model/Restrictions.h>
+#include <aws/cloudfront/model/HttpVersion.h>
 #include <utility>
 
 namespace Aws
@@ -42,9 +43,9 @@ namespace Model
 {
 
   /**
-   * A summary of the information for an Amazon CloudFront distribution.<p><h3>See
+   * <p>A summary of the information about a CloudFront distribution.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionSummary
@@ -57,328 +58,404 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline DistributionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline DistributionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline DistributionSummary& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline DistributionSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline DistributionSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline DistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline DistributionSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline DistributionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * This response element indicates the current status of the distribution. When the
-     * status is Deployed, the distribution's information is fully propagated
-     * throughout the Amazon CloudFront system.
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
      */
     inline DistributionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline DistributionSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>The date and time the distribution was last modified.</p>
      */
     inline DistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline DistributionSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline DistributionSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The domain name corresponding to the distribution. For example:
-     * d604721fxaaqy9.cloudfront.net.
+     * <p>The domain name that corresponds to the distribution. For example:
+     * <code>d604721fxaaqy9.cloudfront.net</code>.</p>
      */
     inline DistributionSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
      */
     inline const Aliases& GetAliases() const{ return m_aliases; }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
      */
     inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
      */
     inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
      */
     inline DistributionSummary& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
 
     /**
-     * A complex type that contains information about CNAMEs (alternate domain names),
-     * if any, for this distribution.
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
      */
     inline DistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains information about origins for this distribution.
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline const Origins& GetOrigins() const{ return m_origins; }
 
     /**
-     * A complex type that contains information about origins for this distribution.
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline void SetOrigins(const Origins& value) { m_originsHasBeenSet = true; m_origins = value; }
 
     /**
-     * A complex type that contains information about origins for this distribution.
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline void SetOrigins(Origins&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
 
     /**
-     * A complex type that contains information about origins for this distribution.
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline DistributionSummary& WithOrigins(const Origins& value) { SetOrigins(value); return *this;}
 
     /**
-     * A complex type that contains information about origins for this distribution.
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline DistributionSummary& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a
-     * CacheBehavior element or if files don't match any of the values of PathPattern
-     * in CacheBehavior elements.You must create exactly one default cache behavior.
+     * <p>A complex type that describes the default cache behavior if you do not
+     * specify a <code>CacheBehavior</code> element or if files don't match any of the
+     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+     * must create exactly one default cache behavior.</p>
      */
     inline const DefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a
-     * CacheBehavior element or if files don't match any of the values of PathPattern
-     * in CacheBehavior elements.You must create exactly one default cache behavior.
+     * <p>A complex type that describes the default cache behavior if you do not
+     * specify a <code>CacheBehavior</code> element or if files don't match any of the
+     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+     * must create exactly one default cache behavior.</p>
      */
     inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a
-     * CacheBehavior element or if files don't match any of the values of PathPattern
-     * in CacheBehavior elements.You must create exactly one default cache behavior.
+     * <p>A complex type that describes the default cache behavior if you do not
+     * specify a <code>CacheBehavior</code> element or if files don't match any of the
+     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+     * must create exactly one default cache behavior.</p>
      */
     inline void SetDefaultCacheBehavior(DefaultCacheBehavior&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::move(value); }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a
-     * CacheBehavior element or if files don't match any of the values of PathPattern
-     * in CacheBehavior elements.You must create exactly one default cache behavior.
+     * <p>A complex type that describes the default cache behavior if you do not
+     * specify a <code>CacheBehavior</code> element or if files don't match any of the
+     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+     * must create exactly one default cache behavior.</p>
      */
     inline DistributionSummary& WithDefaultCacheBehavior(const DefaultCacheBehavior& value) { SetDefaultCacheBehavior(value); return *this;}
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a
-     * CacheBehavior element or if files don't match any of the values of PathPattern
-     * in CacheBehavior elements.You must create exactly one default cache behavior.
+     * <p>A complex type that describes the default cache behavior if you do not
+     * specify a <code>CacheBehavior</code> element or if files don't match any of the
+     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+     * must create exactly one default cache behavior.</p>
      */
     inline DistributionSummary& WithDefaultCacheBehavior(DefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
      */
     inline const CacheBehaviors& GetCacheBehaviors() const{ return m_cacheBehaviors; }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
      */
     inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
      */
     inline void SetCacheBehaviors(CacheBehaviors&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::move(value); }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
      */
     inline DistributionSummary& WithCacheBehaviors(const CacheBehaviors& value) { SetCacheBehaviors(value); return *this;}
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
      */
     inline DistributionSummary& WithCacheBehaviors(CacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
      */
     inline const CustomErrorResponses& GetCustomErrorResponses() const{ return m_customErrorResponses; }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
      */
     inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = value; }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
      */
     inline void SetCustomErrorResponses(CustomErrorResponses&& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = std::move(value); }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
      */
     inline DistributionSummary& WithCustomErrorResponses(const CustomErrorResponses& value) { SetCustomErrorResponses(value); return *this;}
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
      */
     inline DistributionSummary& WithCustomErrorResponses(CustomErrorResponses&& value) { SetCustomErrorResponses(std::move(value)); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline DistributionSummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline DistributionSummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * The comment originally specified when this distribution was created.
+     * <p>The comment originally specified when this distribution was created.</p>
      */
     inline DistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -398,17 +475,17 @@ namespace Model
     inline DistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept user requests for content.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept user requests for content.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>Whether the distribution is enabled to accept user requests for content.</p>
      */
     inline DistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -443,43 +520,103 @@ namespace Model
     inline DistributionSummary& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline DistributionSummary& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline DistributionSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
-     * The Web ACL Id (if any) associated with the distribution.
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline DistributionSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
+    inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
+    inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
+    inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
+    inline DistributionSummary& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
+    inline DistributionSummary& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for
+     * your distribution.</p>
+     */
+    inline bool GetIsIPV6Enabled() const{ return m_isIPV6Enabled; }
+
+    /**
+     * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for
+     * your distribution.</p>
+     */
+    inline void SetIsIPV6Enabled(bool value) { m_isIPV6EnabledHasBeenSet = true; m_isIPV6Enabled = value; }
+
+    /**
+     * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for
+     * your distribution.</p>
+     */
+    inline DistributionSummary& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
     Aws::Utils::DateTime m_lastModifiedTime;
@@ -508,6 +645,10 @@ namespace Model
     bool m_restrictionsHasBeenSet;
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+    HttpVersion m_httpVersion;
+    bool m_httpVersionHasBeenSet;
+    bool m_isIPV6Enabled;
+    bool m_isIPV6EnabledHasBeenSet;
   };
 
 } // namespace Model

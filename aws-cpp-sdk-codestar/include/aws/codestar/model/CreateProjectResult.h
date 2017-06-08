@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -41,156 +42,142 @@ namespace Model
     CreateProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. It can also be used to identify which user or system made
-     * the request in DescribeProject and ListProjects.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetProjectTemplateId() const{ return m_projectTemplateId; }
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetProjectTemplateId(const Aws::String& value) { m_projectTemplateId = value; }
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetProjectTemplateId(Aws::String&& value) { m_projectTemplateId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetProjectTemplateId(const char* value) { m_projectTemplateId.assign(value); }
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithProjectTemplateId(const Aws::String& value) { SetProjectTemplateId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithProjectTemplateId(Aws::String&& value) { SetProjectTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS CodeStar project template used to create the project.</p>
+     * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithProjectTemplateId(const char* value) { SetProjectTemplateId(value); return *this;}
 

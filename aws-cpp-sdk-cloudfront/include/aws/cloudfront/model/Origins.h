@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * A complex type that contains information about origins for this
-   * distribution.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Origins">AWS
+   * <p>A complex type that contains information about origins for this distribution.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Origins">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origins
@@ -49,52 +49,52 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The number of origins for this distribution.
+     * <p>The number of origins for this distribution.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of origins for this distribution.
+     * <p>The number of origins for this distribution.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of origins for this distribution.
+     * <p>The number of origins for this distribution.</p>
      */
     inline Origins& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline const Aws::Vector<Origin>& GetItems() const{ return m_items; }
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline void SetItems(const Aws::Vector<Origin>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline void SetItems(Aws::Vector<Origin>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline Origins& WithItems(const Aws::Vector<Origin>& value) { SetItems(value); return *this;}
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline Origins& WithItems(Aws::Vector<Origin>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline Origins& AddItems(const Origin& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * A complex type that contains origins for this distribution.
+     * <p>A complex type that contains origins for this distribution.</p>
      */
     inline Origins& AddItems(Origin&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

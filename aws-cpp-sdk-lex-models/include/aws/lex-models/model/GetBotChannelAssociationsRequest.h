@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/LexModelBuildingServiceRequest.h>
@@ -38,7 +39,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
 
     /**
      * <p>The name of the Amazon Lex bot in the association.</p>
@@ -194,49 +194,56 @@ namespace Model
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline GetBotChannelAssociationsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline GetBotChannelAssociationsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
      * <p>Substring to match in channel association names. An association will be
      * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz."</p>
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline GetBotChannelAssociationsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 

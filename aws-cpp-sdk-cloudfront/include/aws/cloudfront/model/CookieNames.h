@@ -34,10 +34,13 @@ namespace Model
 {
 
   /**
-   * A complex type that specifies the whitelisted cookies, if any, that you want
-   * CloudFront to forward to your origin that is associated with this cache
-   * behavior.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CookieNames">AWS
+   * <p>A complex type that specifies whether you want CloudFront to forward cookies
+   * to the origin and, if so, which ones. For more information about forwarding
+   * cookies to the origin, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+   * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CookieNames">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CookieNames
@@ -50,65 +53,68 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>The number of different cookies that you want CloudFront to forward to the
+     * origin for this cache behavior.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>The number of different cookies that you want CloudFront to forward to the
+     * origin for this cache behavior.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>The number of different cookies that you want CloudFront to forward to the
+     * origin for this cache behavior.</p>
      */
     inline CookieNames& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline CookieNames& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline CookieNames& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline CookieNames& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline CookieNames& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache
-     * behavior. If Quantity is 0, you can omit Items.
+     * <p>A complex type that contains one <code>Name</code> element for each cookie
+     * that you want CloudFront to forward to the origin for this cache behavior.</p>
      */
     inline CookieNames& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

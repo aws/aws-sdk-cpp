@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/LexModelBuildingServiceErrors.h>
@@ -96,8 +97,11 @@ namespace Model
         class DeleteBotRequest;
         class DeleteBotAliasRequest;
         class DeleteBotChannelAssociationRequest;
+        class DeleteBotVersionRequest;
         class DeleteIntentRequest;
+        class DeleteIntentVersionRequest;
         class DeleteSlotTypeRequest;
+        class DeleteSlotTypeVersionRequest;
         class DeleteUtterancesRequest;
         class GetBotRequest;
         class GetBotAliasRequest;
@@ -127,8 +131,11 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotAliasOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotChannelAssociationOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotVersionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentVersionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeVersionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteUtterancesOutcome;
         typedef Aws::Utils::Outcome<GetBotResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotOutcome;
         typedef Aws::Utils::Outcome<GetBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotAliasOutcome;
@@ -158,8 +165,11 @@ namespace Model
         typedef std::future<DeleteBotOutcome> DeleteBotOutcomeCallable;
         typedef std::future<DeleteBotAliasOutcome> DeleteBotAliasOutcomeCallable;
         typedef std::future<DeleteBotChannelAssociationOutcome> DeleteBotChannelAssociationOutcomeCallable;
+        typedef std::future<DeleteBotVersionOutcome> DeleteBotVersionOutcomeCallable;
         typedef std::future<DeleteIntentOutcome> DeleteIntentOutcomeCallable;
+        typedef std::future<DeleteIntentVersionOutcome> DeleteIntentVersionOutcomeCallable;
         typedef std::future<DeleteSlotTypeOutcome> DeleteSlotTypeOutcomeCallable;
+        typedef std::future<DeleteSlotTypeVersionOutcome> DeleteSlotTypeVersionOutcomeCallable;
         typedef std::future<DeleteUtterancesOutcome> DeleteUtterancesOutcomeCallable;
         typedef std::future<GetBotOutcome> GetBotOutcomeCallable;
         typedef std::future<GetBotAliasOutcome> GetBotAliasOutcomeCallable;
@@ -192,8 +202,11 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteBotRequest&, const Model::DeleteBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteBotAliasRequest&, const Model::DeleteBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteBotChannelAssociationRequest&, const Model::DeleteBotChannelAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotChannelAssociationResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteBotVersionRequest&, const Model::DeleteBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteIntentRequest&, const Model::DeleteIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntentResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteIntentVersionRequest&, const Model::DeleteIntentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntentVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteSlotTypeRequest&, const Model::DeleteSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteSlotTypeVersionRequest&, const Model::DeleteSlotTypeVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::DeleteUtterancesRequest&, const Model::DeleteUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUtterancesResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBotRequest&, const Model::GetBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBotResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBotAliasRequest&, const Model::GetBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBotAliasResponseReceivedHandler;
@@ -412,12 +425,11 @@ namespace Model
         virtual void CreateSlotTypeVersionAsync(const Model::CreateSlotTypeVersionRequest& request, const CreateSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a bot. If you specify a bot version in the request, the API deletes
-         * only the specified bot version. If you don't specify a version, the API deletes
-         * all versions of the bot, including the <code>$LATEST</code> version. </p> <p>If
-         * a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code>
-         * operation returns a <code>ResourceInUseException</code> exception that includes
-         * a reference to the alias that refers to the bot. To remove the reference to the
+         * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
+         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
+         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
+         * returns a <code>ResourceInUseException</code> exception that includes a
+         * reference to the alias that refers to the bot. To remove the reference to the
          * bot, delete the alias. If you get the same exception again, delete the referring
          * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
          * operation requires permissions for the <code>lex:DeleteBot</code>
@@ -428,12 +440,11 @@ namespace Model
         virtual Model::DeleteBotOutcome DeleteBot(const Model::DeleteBotRequest& request) const;
 
         /**
-         * <p>Deletes a bot. If you specify a bot version in the request, the API deletes
-         * only the specified bot version. If you don't specify a version, the API deletes
-         * all versions of the bot, including the <code>$LATEST</code> version. </p> <p>If
-         * a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code>
-         * operation returns a <code>ResourceInUseException</code> exception that includes
-         * a reference to the alias that refers to the bot. To remove the reference to the
+         * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
+         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
+         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
+         * returns a <code>ResourceInUseException</code> exception that includes a
+         * reference to the alias that refers to the bot. To remove the reference to the
          * bot, delete the alias. If you get the same exception again, delete the referring
          * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
          * operation requires permissions for the <code>lex:DeleteBot</code>
@@ -446,12 +457,11 @@ namespace Model
         virtual Model::DeleteBotOutcomeCallable DeleteBotCallable(const Model::DeleteBotRequest& request) const;
 
         /**
-         * <p>Deletes a bot. If you specify a bot version in the request, the API deletes
-         * only the specified bot version. If you don't specify a version, the API deletes
-         * all versions of the bot, including the <code>$LATEST</code> version. </p> <p>If
-         * a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code>
-         * operation returns a <code>ResourceInUseException</code> exception that includes
-         * a reference to the alias that refers to the bot. To remove the reference to the
+         * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
+         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
+         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
+         * returns a <code>ResourceInUseException</code> exception that includes a
+         * reference to the alias that refers to the bot. To remove the reference to the
          * bot, delete the alias. If you get the same exception again, delete the referring
          * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
          * operation requires permissions for the <code>lex:DeleteBot</code>
@@ -547,38 +557,67 @@ namespace Model
         virtual void DeleteBotChannelAssociationAsync(const Model::DeleteBotChannelAssociationRequest& request, const DeleteBotChannelAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an intent. If you specify a version in the request, the API deletes
-         * only the specified version of the intent. If you don't specify a version in the
-         * request, the API deletes all of the versions of the intent, including the
-         * <code>$LATEST</code> version. </p> <p> You can delete a version of an intent
-         * only if it is not referenced. To delete an intent that is referred to in one or
-         * more bots (see <a>how-it-works</a>), you must remove those references first.
-         * </p> <note> <p> If you get the <code>ResourceInUseException</code> exception, it
-         * provides an example reference that shows where the intent is referenced. To
-         * remove the reference to the intent, either update the bot or delete it. If you
-         * get the same exception when you attempt to delete the intent again, repeat until
-         * the intent has no references and the call to <code>DeleteIntent</code> is
-         * successful. </p> </note> <p> This operation requires permission for the
-         * <code>lex:DeleteIntent</code> action. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
+         * operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBotVersionOutcome DeleteBotVersion(const Model::DeleteBotVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
+         * operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBotVersionOutcomeCallable DeleteBotVersionCallable(const Model::DeleteBotVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
+         * operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBotVersionAsync(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
+         * version. To delete a specific version of the intent, use the operation.</p> <p>
+         * You can delete a version of an intent only if it is not referenced. To delete an
+         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
+         * must remove those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, it provides an example reference
+         * that shows where the intent is referenced. To remove the reference to the
+         * intent, either update the bot or delete it. If you get the same exception when
+         * you attempt to delete the intent again, repeat until the intent has no
+         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
+         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIntentOutcome DeleteIntent(const Model::DeleteIntentRequest& request) const;
 
         /**
-         * <p>Deletes an intent. If you specify a version in the request, the API deletes
-         * only the specified version of the intent. If you don't specify a version in the
-         * request, the API deletes all of the versions of the intent, including the
-         * <code>$LATEST</code> version. </p> <p> You can delete a version of an intent
-         * only if it is not referenced. To delete an intent that is referred to in one or
-         * more bots (see <a>how-it-works</a>), you must remove those references first.
-         * </p> <note> <p> If you get the <code>ResourceInUseException</code> exception, it
-         * provides an example reference that shows where the intent is referenced. To
-         * remove the reference to the intent, either update the bot or delete it. If you
-         * get the same exception when you attempt to delete the intent again, repeat until
-         * the intent has no references and the call to <code>DeleteIntent</code> is
-         * successful. </p> </note> <p> This operation requires permission for the
-         * <code>lex:DeleteIntent</code> action. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
+         * version. To delete a specific version of the intent, use the operation.</p> <p>
+         * You can delete a version of an intent only if it is not referenced. To delete an
+         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
+         * must remove those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, it provides an example reference
+         * that shows where the intent is referenced. To remove the reference to the
+         * intent, either update the bot or delete it. If you get the same exception when
+         * you attempt to delete the intent again, repeat until the intent has no
+         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
+         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          *
@@ -587,19 +626,18 @@ namespace Model
         virtual Model::DeleteIntentOutcomeCallable DeleteIntentCallable(const Model::DeleteIntentRequest& request) const;
 
         /**
-         * <p>Deletes an intent. If you specify a version in the request, the API deletes
-         * only the specified version of the intent. If you don't specify a version in the
-         * request, the API deletes all of the versions of the intent, including the
-         * <code>$LATEST</code> version. </p> <p> You can delete a version of an intent
-         * only if it is not referenced. To delete an intent that is referred to in one or
-         * more bots (see <a>how-it-works</a>), you must remove those references first.
-         * </p> <note> <p> If you get the <code>ResourceInUseException</code> exception, it
-         * provides an example reference that shows where the intent is referenced. To
-         * remove the reference to the intent, either update the bot or delete it. If you
-         * get the same exception when you attempt to delete the intent again, repeat until
-         * the intent has no references and the call to <code>DeleteIntent</code> is
-         * successful. </p> </note> <p> This operation requires permission for the
-         * <code>lex:DeleteIntent</code> action. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
+         * version. To delete a specific version of the intent, use the operation.</p> <p>
+         * You can delete a version of an intent only if it is not referenced. To delete an
+         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
+         * must remove those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, it provides an example reference
+         * that shows where the intent is referenced. To remove the reference to the
+         * intent, either update the bot or delete it. If you get the same exception when
+         * you attempt to delete the intent again, repeat until the intent has no
+         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
+         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          *
@@ -608,18 +646,48 @@ namespace Model
         virtual void DeleteIntentAsync(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a slot type. If you specify a version in the request, the API deletes
-         * the specific version. If you don't specify a version in the request, the API
-         * deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. </p> <p> You can delete a version of a slot type only if it is not
-         * referenced. To delete a slot type that is referred to in one or more intents,
-         * you must remove those references first. </p> <note> <p> If you get the
-         * <code>SlotTypeInUse</code> exception, the exception provides an example
+         * <p>Deletes a specific version of an intent. To delete all versions of a intent,
+         * use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntentVersionOutcome DeleteIntentVersion(const Model::DeleteIntentVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of an intent. To delete all versions of a intent,
+         * use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteIntentVersionOutcomeCallable DeleteIntentVersionCallable(const Model::DeleteIntentVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of an intent. To delete all versions of a intent,
+         * use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteIntentVersionAsync(const Model::DeleteIntentVersionRequest& request, const DeleteIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
+         * version. To delete a specific version of the slot type, use the operation.</p>
+         * <p> You can delete a version of a slot type only if it is not referenced. To
+         * delete a slot type that is referred to in one or more intents, you must remove
+         * those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, the exception provides an example
          * reference that shows the intent where the slot type is referenced. To remove the
          * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the intent again, repeat until the
-         * intent has no references and the <code>DeleteSlotType</code> call is successful.
-         * </p> </note> <p>This operation requires permission for the
+         * the same exception when you attempt to delete the slot type again, repeat until
+         * the slot type has no references and the <code>DeleteSlotType</code> call is
+         * successful. </p> </note> <p>This operation requires permission for the
          * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
@@ -627,18 +695,17 @@ namespace Model
         virtual Model::DeleteSlotTypeOutcome DeleteSlotType(const Model::DeleteSlotTypeRequest& request) const;
 
         /**
-         * <p>Deletes a slot type. If you specify a version in the request, the API deletes
-         * the specific version. If you don't specify a version in the request, the API
-         * deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. </p> <p> You can delete a version of a slot type only if it is not
-         * referenced. To delete a slot type that is referred to in one or more intents,
-         * you must remove those references first. </p> <note> <p> If you get the
-         * <code>SlotTypeInUse</code> exception, the exception provides an example
+         * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
+         * version. To delete a specific version of the slot type, use the operation.</p>
+         * <p> You can delete a version of a slot type only if it is not referenced. To
+         * delete a slot type that is referred to in one or more intents, you must remove
+         * those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, the exception provides an example
          * reference that shows the intent where the slot type is referenced. To remove the
          * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the intent again, repeat until the
-         * intent has no references and the <code>DeleteSlotType</code> call is successful.
-         * </p> </note> <p>This operation requires permission for the
+         * the same exception when you attempt to delete the slot type again, repeat until
+         * the slot type has no references and the <code>DeleteSlotType</code> call is
+         * successful. </p> </note> <p>This operation requires permission for the
          * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
@@ -648,18 +715,17 @@ namespace Model
         virtual Model::DeleteSlotTypeOutcomeCallable DeleteSlotTypeCallable(const Model::DeleteSlotTypeRequest& request) const;
 
         /**
-         * <p>Deletes a slot type. If you specify a version in the request, the API deletes
-         * the specific version. If you don't specify a version in the request, the API
-         * deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. </p> <p> You can delete a version of a slot type only if it is not
-         * referenced. To delete a slot type that is referred to in one or more intents,
-         * you must remove those references first. </p> <note> <p> If you get the
-         * <code>SlotTypeInUse</code> exception, the exception provides an example
+         * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
+         * version. To delete a specific version of the slot type, use the operation.</p>
+         * <p> You can delete a version of a slot type only if it is not referenced. To
+         * delete a slot type that is referred to in one or more intents, you must remove
+         * those references first. </p> <note> <p> If you get the
+         * <code>ResourceInUseException</code> exception, the exception provides an example
          * reference that shows the intent where the slot type is referenced. To remove the
          * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the intent again, repeat until the
-         * intent has no references and the <code>DeleteSlotType</code> call is successful.
-         * </p> </note> <p>This operation requires permission for the
+         * the same exception when you attempt to delete the slot type again, repeat until
+         * the slot type has no references and the <code>DeleteSlotType</code> call is
+         * successful. </p> </note> <p>This operation requires permission for the
          * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
@@ -669,24 +735,59 @@ namespace Model
         virtual void DeleteSlotTypeAsync(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes stored utterances.</p> <p>When you create or update a bot using the
-         * operation, configure your bot to store user utterances by setting
-         * <code>privacySetting</code> to <code>STORE_UTTERANCES</code>. Use
-         * <code>DeleteUtterances</code> to remove the stored utterances for a specific
-         * user .</p> <p>This operation requires permissions for the
-         * <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific version of a slot type. To delete all versions of a slot
+         * type, use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSlotTypeVersionOutcome DeleteSlotTypeVersion(const Model::DeleteSlotTypeVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of a slot type. To delete all versions of a slot
+         * type, use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSlotTypeVersionOutcomeCallable DeleteSlotTypeVersionCallable(const Model::DeleteSlotTypeVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a specific version of a slot type. To delete all versions of a slot
+         * type, use the operation. </p> <p>This operation requires permissions for the
+         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSlotTypeVersionAsync(const Model::DeleteSlotTypeVersionRequest& request, const DeleteSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot unless the <code>childDirected</code> field in the bot is set
+         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * operation, and then stored indefinately for use in improving the ability of your
+         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
+         * operation to manually delete stored utterances for a specific user.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUtterancesOutcome DeleteUtterances(const Model::DeleteUtterancesRequest& request) const;
 
         /**
-         * <p>Deletes stored utterances.</p> <p>When you create or update a bot using the
-         * operation, configure your bot to store user utterances by setting
-         * <code>privacySetting</code> to <code>STORE_UTTERANCES</code>. Use
-         * <code>DeleteUtterances</code> to remove the stored utterances for a specific
-         * user .</p> <p>This operation requires permissions for the
-         * <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot unless the <code>childDirected</code> field in the bot is set
+         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * operation, and then stored indefinately for use in improving the ability of your
+         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
+         * operation to manually delete stored utterances for a specific user.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -695,12 +796,14 @@ namespace Model
         virtual Model::DeleteUtterancesOutcomeCallable DeleteUtterancesCallable(const Model::DeleteUtterancesRequest& request) const;
 
         /**
-         * <p>Deletes stored utterances.</p> <p>When you create or update a bot using the
-         * operation, configure your bot to store user utterances by setting
-         * <code>privacySetting</code> to <code>STORE_UTTERANCES</code>. Use
-         * <code>DeleteUtterances</code> to remove the stored utterances for a specific
-         * user .</p> <p>This operation requires permissions for the
-         * <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot unless the <code>childDirected</code> field in the bot is set
+         * to <code>true</code>. Utterances are stored for 15 days for use with the
+         * operation, and then stored indefinately for use in improving the ability of your
+         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
+         * operation to manually delete stored utterances for a specific user.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -744,7 +847,9 @@ namespace Model
 
         /**
          * <p>Returns information about an Amazon Lex bot alias. For more information about
-         * aliases, see <a>versioning-aliases</a>.</p><p><h3>See Also:</h3>   <a
+         * aliases, see <a>versioning-aliases</a>.</p> <p>This operation requires
+         * permissions for the <code>lex:GetBotAlias</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">AWS
          * API Reference</a></p>
          */
@@ -752,7 +857,9 @@ namespace Model
 
         /**
          * <p>Returns information about an Amazon Lex bot alias. For more information about
-         * aliases, see <a>versioning-aliases</a>.</p><p><h3>See Also:</h3>   <a
+         * aliases, see <a>versioning-aliases</a>.</p> <p>This operation requires
+         * permissions for the <code>lex:GetBotAlias</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">AWS
          * API Reference</a></p>
          *
@@ -762,7 +869,9 @@ namespace Model
 
         /**
          * <p>Returns information about an Amazon Lex bot alias. For more information about
-         * aliases, see <a>versioning-aliases</a>.</p><p><h3>See Also:</h3>   <a
+         * aliases, see <a>versioning-aliases</a>.</p> <p>This operation requires
+         * permissions for the <code>lex:GetBotAlias</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">AWS
          * API Reference</a></p>
          *
@@ -771,16 +880,18 @@ namespace Model
         virtual void GetBotAliasAsync(const Model::GetBotAliasRequest& request, const GetBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p> <p>This
+         * operation requires permissions for the <code>lex:GetBotAliases</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBotAliasesOutcome GetBotAliases(const Model::GetBotAliasesRequest& request) const;
 
         /**
-         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p> <p>This
+         * operation requires permissions for the <code>lex:GetBotAliases</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">AWS
          * API Reference</a></p>
          *
@@ -789,8 +900,9 @@ namespace Model
         virtual Model::GetBotAliasesOutcomeCallable GetBotAliasesCallable(const Model::GetBotAliasesRequest& request) const;
 
         /**
-         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of aliases for a specified Amazon Lex bot.</p> <p>This
+         * operation requires permissions for the <code>lex:GetBotAliases</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">AWS
          * API Reference</a></p>
          *
@@ -800,7 +912,8 @@ namespace Model
 
         /**
          * <p>Returns information about the association between an Amazon Lex bot and a
-         * messaging platform.</p><p><h3>See Also:</h3>   <a
+         * messaging platform.</p> <p>This operation requires permissions for the
+         * <code>lex:GetBotChannelAssociation</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">AWS
          * API Reference</a></p>
          */
@@ -808,7 +921,8 @@ namespace Model
 
         /**
          * <p>Returns information about the association between an Amazon Lex bot and a
-         * messaging platform.</p><p><h3>See Also:</h3>   <a
+         * messaging platform.</p> <p>This operation requires permissions for the
+         * <code>lex:GetBotChannelAssociation</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">AWS
          * API Reference</a></p>
          *
@@ -818,7 +932,8 @@ namespace Model
 
         /**
          * <p>Returns information about the association between an Amazon Lex bot and a
-         * messaging platform.</p><p><h3>See Also:</h3>   <a
+         * messaging platform.</p> <p>This operation requires permissions for the
+         * <code>lex:GetBotChannelAssociation</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">AWS
          * API Reference</a></p>
          *
@@ -828,7 +943,9 @@ namespace Model
 
         /**
          * <p> Returns a list of all of the channels associated with the specified bot.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>The <code>GetBotChannelAssociations</code> operation requires
+         * permissions for the <code>lex:GetBotChannelAssociations</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">AWS
          * API Reference</a></p>
          */
@@ -836,7 +953,9 @@ namespace Model
 
         /**
          * <p> Returns a list of all of the channels associated with the specified bot.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>The <code>GetBotChannelAssociations</code> operation requires
+         * permissions for the <code>lex:GetBotChannelAssociations</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">AWS
          * API Reference</a></p>
          *
@@ -846,7 +965,9 @@ namespace Model
 
         /**
          * <p> Returns a list of all of the channels associated with the specified bot.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>The <code>GetBotChannelAssociations</code> operation requires
+         * permissions for the <code>lex:GetBotChannelAssociations</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">AWS
          * API Reference</a></p>
          *
@@ -861,8 +982,9 @@ namespace Model
          * the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code>
          * objects in the response, one for each numbered version and one for the
          * <code>$LATEST</code> version. </p> <p>The <code>GetBotVersions</code> operation
-         * always returns at least one version, the <code>$LATEST</code>
-         * version.</p><p><h3>See Also:</h3>   <a
+         * always returns at least one version, the <code>$LATEST</code> version.</p>
+         * <p>This operation requires permissions for the <code>lex:GetBotVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">AWS
          * API Reference</a></p>
          */
@@ -875,8 +997,9 @@ namespace Model
          * the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code>
          * objects in the response, one for each numbered version and one for the
          * <code>$LATEST</code> version. </p> <p>The <code>GetBotVersions</code> operation
-         * always returns at least one version, the <code>$LATEST</code>
-         * version.</p><p><h3>See Also:</h3>   <a
+         * always returns at least one version, the <code>$LATEST</code> version.</p>
+         * <p>This operation requires permissions for the <code>lex:GetBotVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">AWS
          * API Reference</a></p>
          *
@@ -891,8 +1014,9 @@ namespace Model
          * the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code>
          * objects in the response, one for each numbered version and one for the
          * <code>$LATEST</code> version. </p> <p>The <code>GetBotVersions</code> operation
-         * always returns at least one version, the <code>$LATEST</code>
-         * version.</p><p><h3>See Also:</h3>   <a
+         * always returns at least one version, the <code>$LATEST</code> version.</p>
+         * <p>This operation requires permissions for the <code>lex:GetBotVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">AWS
          * API Reference</a></p>
          *
@@ -1084,7 +1208,8 @@ namespace Model
          * <code>IntentMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetIntentVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetIntentVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">AWS
          * API Reference</a></p>
          */
@@ -1098,7 +1223,8 @@ namespace Model
          * <code>IntentMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetIntentVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetIntentVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">AWS
          * API Reference</a></p>
          *
@@ -1114,7 +1240,8 @@ namespace Model
          * <code>IntentMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetIntentVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetIntentVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">AWS
          * API Reference</a></p>
          *
@@ -1208,7 +1335,8 @@ namespace Model
          * <code>SlotTypeMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetSlotTypeVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetSlotTypeVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">AWS
          * API Reference</a></p>
          */
@@ -1223,7 +1351,8 @@ namespace Model
          * <code>SlotTypeMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetSlotTypeVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetSlotTypeVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">AWS
          * API Reference</a></p>
          *
@@ -1240,7 +1369,8 @@ namespace Model
          * <code>SlotTypeMetadata</code> objects in the response, one for each numbered
          * version and one for the <code>$LATEST</code> version. </p> <p>The
          * <code>GetSlotTypeVersions</code> operation always returns at least one version,
-         * the <code>$LATEST</code> version.</p><p><h3>See Also:</h3>   <a
+         * the <code>$LATEST</code> version.</p> <p>This operation requires permissions for
+         * the <code>lex:GetSlotTypeVersions</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">AWS
          * API Reference</a></p>
          *
@@ -1302,9 +1432,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>You can request information for up
-         * to 5 versions in each request. The response contains information about a maximum
-         * of 100 utterances for each version.</p><p><h3>See Also:</h3>   <a
+         * performance across the two versions. </p> <p>Data is available for the last 15
+         * days. You can request information for up to 5 versions in each request. The
+         * response contains information about a maximum of 100 utterances for each
+         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
+         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
+         * with the <code>GetUtterancesView</code> operation. For more information, see
+         * .</p> <p>This operation requires permissions for the
+         * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
          */
@@ -1321,9 +1456,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>You can request information for up
-         * to 5 versions in each request. The response contains information about a maximum
-         * of 100 utterances for each version.</p><p><h3>See Also:</h3>   <a
+         * performance across the two versions. </p> <p>Data is available for the last 15
+         * days. You can request information for up to 5 versions in each request. The
+         * response contains information about a maximum of 100 utterances for each
+         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
+         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
+         * with the <code>GetUtterancesView</code> operation. For more information, see
+         * .</p> <p>This operation requires permissions for the
+         * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
          *
@@ -1342,9 +1482,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <p>You can request information for up
-         * to 5 versions in each request. The response contains information about a maximum
-         * of 100 utterances for each version.</p><p><h3>See Also:</h3>   <a
+         * performance across the two versions. </p> <p>Data is available for the last 15
+         * days. You can request information for up to 5 versions in each request. The
+         * response contains information about a maximum of 100 utterances for each
+         * version.</p> <p>If the bot's <code>childDirected</code> field is set to
+         * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
+         * with the <code>GetUtterancesView</code> operation. For more information, see
+         * .</p> <p>This operation requires permissions for the
+         * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
          *
@@ -1354,11 +1499,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update an intent you only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
-         * returns the <code/> response <code>FAILED</code>. You can build the bot after
-         * you add one or more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you only required to specify a name. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
+         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
+         * more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values
@@ -1375,11 +1520,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update an intent you only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
-         * returns the <code/> response <code>FAILED</code>. You can build the bot after
-         * you add one or more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you only required to specify a name. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
+         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
+         * more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values
@@ -1398,11 +1543,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update an intent you only required to specify a name. You can use
-         * this to add intents later, or to remove intents from an existing bot. When you
-         * create a bot with a name only, the bot is created or updated but Amazon Lex
-         * returns the <code/> response <code>FAILED</code>. You can build the bot after
-         * you add one or more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you only required to specify a name. You can use this
+         * to add intents later, or to remove intents from an existing bot. When you create
+         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
+         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
+         * more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values
@@ -1484,8 +1629,7 @@ namespace Model
          * Amazon Lex removes fields that you don't provide in the request. If you don't
          * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
          * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          */
@@ -1519,8 +1663,7 @@ namespace Model
          * Amazon Lex removes fields that you don't provide in the request. If you don't
          * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
          * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          *
@@ -1556,8 +1699,7 @@ namespace Model
          * Amazon Lex removes fields that you don't provide in the request. If you don't
          * specify the required fields, Amazon Lex throws an exception.</p> <p>For more
          * information, see <a>how-it-works</a>.</p> <p>This operation requires permissions
-         * for the <code>lex:PutIntent</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * for the <code>lex:PutIntent</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">AWS
          * API Reference</a></p>
          *
@@ -1625,8 +1767,11 @@ namespace Model
         void DeleteBotAsyncHelper(const Model::DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotAliasAsyncHelper(const Model::DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotChannelAssociationAsyncHelper(const Model::DeleteBotChannelAssociationRequest& request, const DeleteBotChannelAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBotVersionAsyncHelper(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntentAsyncHelper(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteIntentVersionAsyncHelper(const Model::DeleteIntentVersionRequest& request, const DeleteIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotTypeAsyncHelper(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSlotTypeVersionAsyncHelper(const Model::DeleteSlotTypeVersionRequest& request, const DeleteSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUtterancesAsyncHelper(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBotAsyncHelper(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBotAliasAsyncHelper(const Model::GetBotAliasRequest& request, const GetBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

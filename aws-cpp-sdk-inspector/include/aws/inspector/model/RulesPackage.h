@@ -16,7 +16,6 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector/model/LocalizedText.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +33,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an Inspector rules package.</p> <p>This data type
-   * is used as the response element in the <a>DescribeRulesPackage</a> action.</p>
+   * <p>Contains information about an Amazon Inspector rules package. This data type
+   * is used as the response element in the <a>DescribeRulesPackages</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RulesPackage">AWS
+   * API Reference</a></p>
    */
   class AWS_INSPECTOR_API RulesPackage
   {
@@ -46,107 +48,107 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline const Aws::String& GetRulesPackageArn() const{ return m_rulesPackageArn; }
+    inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline void SetRulesPackageArn(const Aws::String& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = std::move(value); }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline void SetRulesPackageArn(const char* value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageArn(const Aws::String& value) { SetRulesPackageArn(value); return *this;}
+    inline RulesPackage& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(std::move(value)); return *this;}
+    inline RulesPackage& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the rules package.</p>
+     * <p>The ARN of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageArn(const char* value) { SetRulesPackageArn(value); return *this;}
-
-    /**
-     * <p>The name of the rules package.</p>
-     */
-    inline const Aws::String& GetRulesPackageName() const{ return m_rulesPackageName; }
+    inline RulesPackage& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline void SetRulesPackageName(const Aws::String& value) { m_rulesPackageNameHasBeenSet = true; m_rulesPackageName = value; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline void SetRulesPackageName(Aws::String&& value) { m_rulesPackageNameHasBeenSet = true; m_rulesPackageName = std::move(value); }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline void SetRulesPackageName(const char* value) { m_rulesPackageNameHasBeenSet = true; m_rulesPackageName.assign(value); }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageName(const Aws::String& value) { SetRulesPackageName(value); return *this;}
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageName(Aws::String&& value) { SetRulesPackageName(std::move(value)); return *this;}
+    inline RulesPackage& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageName(const char* value) { SetRulesPackageName(value); return *this;}
+    inline RulesPackage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The name of the rules package.</p>
+     */
+    inline RulesPackage& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>The version ID of the rules package.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline RulesPackage& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline RulesPackage& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version id of the rules package.</p>
+     * <p>The version ID of the rules package.</p>
      */
     inline RulesPackage& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -188,38 +190,48 @@ namespace Model
     /**
      * <p>The description of the rules package.</p>
      */
-    inline const LocalizedText& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>The description of the rules package.</p>
      */
-    inline void SetDescription(const LocalizedText& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>The description of the rules package.</p>
      */
-    inline void SetDescription(LocalizedText&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the rules package.</p>
      */
-    inline RulesPackage& WithDescription(const LocalizedText& value) { SetDescription(value); return *this;}
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>The description of the rules package.</p>
      */
-    inline RulesPackage& WithDescription(LocalizedText&& value) { SetDescription(std::move(value)); return *this;}
+    inline RulesPackage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the rules package.</p>
+     */
+    inline RulesPackage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the rules package.</p>
+     */
+    inline RulesPackage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
-    Aws::String m_rulesPackageArn;
-    bool m_rulesPackageArnHasBeenSet;
-    Aws::String m_rulesPackageName;
-    bool m_rulesPackageNameHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_version;
     bool m_versionHasBeenSet;
     Aws::String m_provider;
     bool m_providerHasBeenSet;
-    LocalizedText m_description;
+    Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };
 

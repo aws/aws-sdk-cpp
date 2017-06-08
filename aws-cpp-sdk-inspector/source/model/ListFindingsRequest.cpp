@@ -23,7 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListFindingsRequest::ListFindingsRequest() : 
-    m_runArnsHasBeenSet(false),
+    m_assessmentRunArnsHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -35,14 +35,14 @@ Aws::String ListFindingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_runArnsHasBeenSet)
+  if(m_assessmentRunArnsHasBeenSet)
   {
-   Array<JsonValue> runArnsJsonList(m_runArns.size());
-   for(unsigned runArnsIndex = 0; runArnsIndex < runArnsJsonList.GetLength(); ++runArnsIndex)
+   Array<JsonValue> assessmentRunArnsJsonList(m_assessmentRunArns.size());
+   for(unsigned assessmentRunArnsIndex = 0; assessmentRunArnsIndex < assessmentRunArnsJsonList.GetLength(); ++assessmentRunArnsIndex)
    {
-     runArnsJsonList[runArnsIndex].AsString(m_runArns[runArnsIndex]);
+     assessmentRunArnsJsonList[assessmentRunArnsIndex].AsString(m_assessmentRunArns[assessmentRunArnsIndex]);
    }
-   payload.WithArray("runArns", std::move(runArnsJsonList));
+   payload.WithArray("assessmentRunArns", std::move(assessmentRunArnsJsonList));
 
   }
 
