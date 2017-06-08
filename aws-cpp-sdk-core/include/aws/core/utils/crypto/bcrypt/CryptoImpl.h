@@ -125,6 +125,28 @@ namespace Aws
             };
 
             /**
+            * Bcrypt based sha1 hmac hash implementation.
+            */
+            class Sha1HMACBcryptImpl : public HMAC
+            {
+            public:
+
+                /**
+                 * Initializes the algorithm handles and sets up state. You don't want to call this very often
+                 */
+                Sha1HMACBcryptImpl();
+                virtual ~Sha1HMACBcryptImpl() {}
+
+                /**
+                 * Calculates an sha1 HMAC on toSign using secret
+                 */
+                virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+
+            private:
+                BCryptHashImpl m_impl;
+            };
+
+            /**
             * Bcrypt based sha256 hash implementation.
             */
             class Sha256BcryptImpl : public Hash

@@ -111,6 +111,17 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            HashResult Sha1HMACCommonCryptoImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+            {
+                unsigned int length = CC_SHA1_DIGEST_LENGTH;
+                ByteBuffer digest(length);
+                std::memset(digest.GetUnderlyingData(), 0, length);
+
+                CCHmac(kCCHmacAlgSHA1, secret.GetUnderlyingData(), secret.GetLength(), toSign.GetUnderlyingData(), toSign.GetLength(), digest.GetUnderlyingData());
+
+                return HashResult(std::move(digest));
+            }
+
             HashResult Sha256CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_SHA256_DIGEST_LENGTH);

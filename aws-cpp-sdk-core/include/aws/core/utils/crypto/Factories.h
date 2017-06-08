@@ -53,6 +53,12 @@ namespace Aws
              * Create an MD5 Hash provider
              */
             AWS_CORE_API std::shared_ptr<Hash> CreateMD5Implementation();
+
+            /**
+             * Create a Sha1 HMAC Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<HMAC> CreateSha1HMACImplementation();
+
             /**
              * Create a Sha256 Hash provider
              */

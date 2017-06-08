@@ -25,6 +25,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/crypto/Sha1HMAC.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
 
@@ -468,4 +469,120 @@ const Aws::Utils::Array<unsigned char>& AWSAuthV4Signer::ComputeLongLivedHash(co
     }
 
     return m_partialSignature;
+}
+
+// ============================================================================
+// AWSAuthv2Signer implementation
+// ============================================================================
+
+static const char v2LogTag[] = "AWSAuthV2Signer";
+
+static bool authV2ShouldSignHeader(const Aws::String& header)
+{
+    static const Aws::String prefix("x-amz-");
+    return header.compare(0, prefix.size(), prefix) == 0;
+}
+
+template <typename T>
+static void filterHeadersToSign(Http::HeaderValueCollection& headersToSign, const T& headersToCheck)
+{
+    for (const auto& header : headersToCheck)
+    {
+        const Aws::String headerName(Aws::Utils::StringUtils::ToLower(header.first.c_str()));
+        if (authV2ShouldSignHeader(headerName))
+        {
+            headersToSign[headerName] = header.second;
+        }
+    }
+}
+
+static Aws::String makeAuthV2CanonicalRequestSigningString(Aws::Http::HttpRequest& request)
+{
+    Http::HeaderValueCollection headersToSign;
+    filterHeadersToSign(headersToSign, CanonicalizeHeaders(request.GetHeaders()));
+    filterHeadersToSign(headersToSign, request.GetQueryStringParameters());
+
+    Aws::StringStream headersStream;
+    for (const auto& header : headersToSign)
+    {
+        headersStream << header.first << ":" << header.second << NEWLINE;
+    }
+
+    Aws::String canonicalHeadersString = headersStream.str();
+
+    Aws::StringStream signingStringStream;
+    signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())
+        << NEWLINE << (request.HasHeader(CONTENT_MD5_HEADER) ? request.GetHeaderValue(CONTENT_MD5_HEADER) : "")
+        << NEWLINE << (request.HasHeader(CONTENT_TYPE_HEADER) ? request.GetContentType() : "")
+        << NEWLINE << request.GetDate();
+
+    if (canonicalHeadersString.size() > 0) {
+        signingStringStream << NEWLINE << canonicalHeadersString;
+    }
+    signingStringStream << NEWLINE << request.GetUri().GetURLEncodedPath();
+
+    return signingStringStream.str();
+}
+
+AWSAuthV2Signer::AWSAuthV2Signer(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider) :
+m_credentialsProvider(credentialsProvider),
+m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha1HMAC>(v2LogTag))
+{
+}
+
+AWSAuthV2Signer::AWSAuthV2Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey) :
+m_credentialsProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(v2LogTag, awsAccessKeyId, awsSecretAccessKey)),
+m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha1HMAC>(v2LogTag))
+{
+}
+
+AWSAuthV2Signer::~AWSAuthV2Signer()
+{
+}
+
+bool AWSAuthV2Signer::SignRequest(HttpRequest& request) const
+{
+    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+    AWS_LOGSTREAM_DEBUG(v2LogTag, "Using Access Key: " << credentials.GetAWSAccessKeyId());
+
+    DateTime now = GetSigningTimestamp();
+    Aws::String dateHeaderValue = now.ToGmtString(DateFormat::RFC822);
+    request.SetHeaderValue(DATE_HEADER, dateHeaderValue);
+
+    Aws::String canonicalRequestSigningString = makeAuthV2CanonicalRequestSigningString(request);
+    AWS_LOGSTREAM_DEBUG(v2LogTag, "Computed signing string: " << canonicalRequestSigningString);
+
+    const Aws::String& secretKey = credentials.GetAWSSecretKey();
+
+    auto hashResult = m_HMAC->Calculate(
+            ByteBuffer((unsigned char*)canonicalRequestSigningString.c_str(), canonicalRequestSigningString.length()),
+            ByteBuffer((unsigned char*)secretKey.c_str(), secretKey.length()));
+    if (!hashResult.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(v2LogTag, "Unable to hmac (sha1) signing string \"" << canonicalRequestSigningString << "\"");
+        return false;
+    }
+
+    ByteBuffer digest = hashResult.GetResult();
+
+    Aws::String base64HMAC = HashingUtils::Base64Encode(digest);
+    AWS_LOGSTREAM_DEBUG(v2LogTag, "Computed hash: " << base64HMAC);
+
+    Aws::StringStream authorizationStream;
+    authorizationStream << "AWS " << credentials.GetAWSAccessKeyId() << ":" << base64HMAC;
+    request.SetHeaderValue("Authorization", authorizationStream.str());
+
+    return true;
+}
+
+bool AWSAuthV2Signer::PresignRequest(Aws::Http::HttpRequest&, long long) const
+{
+    AWS_LOGSTREAM_WARN(v2LogTag, "AWSAuthV2Signer::PresignRequest Called! Not Implemented!");
+    return false;
+}
+
+bool AWSAuthV2Signer::PresignRequest(Aws::Http::HttpRequest&, const char*, long long) const
+{
+    AWS_LOGSTREAM_WARN(v2LogTag, "AWSAuthV2Signer::PresignRequest Called! Not Implemented!");
+    return false;
 }

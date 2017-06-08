@@ -67,6 +67,18 @@ namespace Aws
 
             };
 
+            class Sha1HMACCommonCryptoImpl : public HMAC
+            {
+            public:
+
+                Sha1HMACCommonCryptoImpl() {}
+                virtual ~Sha1HMACCommonCryptoImpl() {}
+
+                virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+
+
+            };
+
             class Sha256CommonCryptoImpl : public Hash
             {
             public:
