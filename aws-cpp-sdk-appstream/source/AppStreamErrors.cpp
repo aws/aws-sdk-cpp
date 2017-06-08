@@ -28,13 +28,13 @@ namespace AppStream
 namespace AppStreamErrorMapper
 {
 
+static const int RESOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("ResourceNotAvailableException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INCOMPATIBLE_IMAGE_HASH = HashingUtils::HashString("IncompatibleImageException");
-static const int RESOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("ResourceNotAvailableException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 
 
@@ -42,7 +42,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_IN_USE_HASH)
+  if (hashCode == RESOURCE_NOT_AVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_NOT_AVAILABLE), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_IN_USE), false);
   }
@@ -50,25 +58,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_ALREADY_EXISTS), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::LIMIT_EXCEEDED), false);
-  }
   else if (hashCode == INVALID_ROLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::INVALID_ROLE), false);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == INCOMPATIBLE_IMAGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::INCOMPATIBLE_IMAGE), false);
   }
-  else if (hashCode == RESOURCE_NOT_AVAILABLE_HASH)
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::RESOURCE_NOT_AVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::LIMIT_EXCEEDED), false);
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {

@@ -28,17 +28,21 @@ namespace ResourceGroupsTaggingAPI
 namespace ResourceGroupsTaggingAPIErrorMapper
 {
 
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int THROTTLED_HASH = HashingUtils::HashString("ThrottledException");
 static const int PAGINATION_TOKEN_EXPIRED_HASH = HashingUtils::HashString("PaginationTokenExpiredException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == THROTTLED_HASH)
+  if (hashCode == INVALID_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == THROTTLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::THROTTLED), false);
   }
@@ -49,10 +53,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::INTERNAL_SERVICE), false);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::INVALID_PARAMETER), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

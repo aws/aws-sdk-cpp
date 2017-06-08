@@ -28,26 +28,18 @@ namespace Inspector
 namespace InspectorErrorMapper
 {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
-  }
-  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::OPERATION_IN_PROGRESS), false);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
+  if (hashCode == INVALID_INPUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
   }
@@ -58,6 +50,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_SUCH_ENTITY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), false);
+  }
+  else if (hashCode == INTERNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
+  }
+  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::OPERATION_IN_PROGRESS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

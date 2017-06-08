@@ -28,20 +28,24 @@ namespace DataPipeline
 namespace DataPipelineErrorMapper
 {
 
-static const int PIPELINE_DELETED_HASH = HashingUtils::HashString("PipelineDeletedException");
-static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
 static const int TASK_NOT_FOUND_HASH = HashingUtils::HashString("TaskNotFoundException");
+static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int PIPELINE_DELETED_HASH = HashingUtils::HashString("PipelineDeletedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == PIPELINE_DELETED_HASH)
+  if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::PIPELINE_DELETED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::INTERNAL_SERVICE), false);
+  }
+  else if (hashCode == TASK_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::TASK_NOT_FOUND), false);
   }
   else if (hashCode == PIPELINE_NOT_FOUND_HASH)
   {
@@ -51,13 +55,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::INVALID_REQUEST), false);
   }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
+  else if (hashCode == PIPELINE_DELETED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::INTERNAL_SERVICE), false);
-  }
-  else if (hashCode == TASK_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::TASK_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataPipelineErrors::PIPELINE_DELETED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -28,31 +28,19 @@ namespace DeviceFarm
 namespace DeviceFarmErrorMapper
 {
 
-static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
-static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
+static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == ARGUMENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
-  }
-  else if (hashCode == NOT_ELIGIBLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == SERVICE_ACCOUNT_HASH)
+  if (hashCode == SERVICE_ACCOUNT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), false);
   }
@@ -63,6 +51,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == ARGUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
+  }
+  else if (hashCode == NOT_ELIGIBLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

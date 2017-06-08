@@ -28,27 +28,35 @@ namespace Shield
 namespace ShieldErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
+static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceededException");
+static const int LOCKED_SUBSCRIPTION_HASH = HashingUtils::HashString("LockedSubscriptionException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int OPTIMISTIC_LOCK_HASH = HashingUtils::HashString("OptimisticLockException");
-static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceededException");
-static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
-static const int LOCKED_SUBSCRIPTION_HASH = HashingUtils::HashString("LockedSubscriptionException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_ERROR_HASH)
+  if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PARAMETER), false);
   }
-  else if (hashCode == INVALID_OPERATION_HASH)
+  else if (hashCode == INVALID_RESOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_RESOURCE), false);
+  }
+  else if (hashCode == LIMITS_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LIMITS_EXCEEDED), false);
+  }
+  else if (hashCode == LOCKED_SUBSCRIPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LOCKED_SUBSCRIPTION), false);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
@@ -58,21 +66,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::OPTIMISTIC_LOCK), false);
   }
-  else if (hashCode == LIMITS_EXCEEDED_HASH)
+  else if (hashCode == INVALID_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LIMITS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_OPERATION), false);
   }
-  else if (hashCode == INVALID_RESOURCE_HASH)
+  else if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_RESOURCE), false);
-  }
-  else if (hashCode == LOCKED_SUBSCRIPTION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LOCKED_SUBSCRIPTION), false);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INTERNAL_ERROR), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

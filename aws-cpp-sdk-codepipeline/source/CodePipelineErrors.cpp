@@ -28,41 +28,81 @@ namespace CodePipeline
 namespace CodePipelineErrorMapper
 {
 
-static const int ACTION_NOT_FOUND_HASH = HashingUtils::HashString("ActionNotFoundException");
+static const int STAGE_NOT_FOUND_HASH = HashingUtils::HashString("StageNotFoundException");
+static const int ACTION_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("ActionTypeNotFoundException");
+static const int STAGE_NOT_RETRYABLE_HASH = HashingUtils::HashString("StageNotRetryableException");
+static const int INVALID_BLOCKER_DECLARATION_HASH = HashingUtils::HashString("InvalidBlockerDeclarationException");
+static const int APPROVAL_ALREADY_COMPLETED_HASH = HashingUtils::HashString("ApprovalAlreadyCompletedException");
 static const int INVALID_NONCE_HASH = HashingUtils::HashString("InvalidNonceException");
+static const int INVALID_CLIENT_TOKEN_HASH = HashingUtils::HashString("InvalidClientTokenException");
+static const int PIPELINE_NAME_IN_USE_HASH = HashingUtils::HashString("PipelineNameInUseException");
+static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundException");
+static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int INVALID_APPROVAL_TOKEN_HASH = HashingUtils::HashString("InvalidApprovalTokenException");
 static const int INVALID_STRUCTURE_HASH = HashingUtils::HashString("InvalidStructureException");
 static const int INVALID_STAGE_DECLARATION_HASH = HashingUtils::HashString("InvalidStageDeclarationException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_CLIENT_TOKEN_HASH = HashingUtils::HashString("InvalidClientTokenException");
-static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
-static const int INVALID_BLOCKER_DECLARATION_HASH = HashingUtils::HashString("InvalidBlockerDeclarationException");
-static const int STAGE_NOT_RETRYABLE_HASH = HashingUtils::HashString("StageNotRetryableException");
-static const int NOT_LATEST_PIPELINE_EXECUTION_HASH = HashingUtils::HashString("NotLatestPipelineExecutionException");
+static const int ACTION_NOT_FOUND_HASH = HashingUtils::HashString("ActionNotFoundException");
+static const int INVALID_ACTION_DECLARATION_HASH = HashingUtils::HashString("InvalidActionDeclarationException");
+static const int INVALID_JOB_HASH = HashingUtils::HashString("InvalidJobException");
+static const int PIPELINE_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineExecutionNotFoundException");
 static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int PIPELINE_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineVersionNotFoundException");
-static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundException");
-static const int INVALID_ACTION_DECLARATION_HASH = HashingUtils::HashString("InvalidActionDeclarationException");
-static const int PIPELINE_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineExecutionNotFoundException");
-static const int ACTION_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("ActionTypeNotFoundException");
-static const int APPROVAL_ALREADY_COMPLETED_HASH = HashingUtils::HashString("ApprovalAlreadyCompletedException");
-static const int STAGE_NOT_FOUND_HASH = HashingUtils::HashString("StageNotFoundException");
-static const int INVALID_APPROVAL_TOKEN_HASH = HashingUtils::HashString("InvalidApprovalTokenException");
-static const int PIPELINE_NAME_IN_USE_HASH = HashingUtils::HashString("PipelineNameInUseException");
-static const int INVALID_JOB_HASH = HashingUtils::HashString("InvalidJobException");
+static const int NOT_LATEST_PIPELINE_EXECUTION_HASH = HashingUtils::HashString("NotLatestPipelineExecutionException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == ACTION_NOT_FOUND_HASH)
+  if (hashCode == STAGE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_FOUND), false);
+  }
+  else if (hashCode == ACTION_TYPE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_TYPE_NOT_FOUND), false);
+  }
+  else if (hashCode == STAGE_NOT_RETRYABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_RETRYABLE), false);
+  }
+  else if (hashCode == INVALID_BLOCKER_DECLARATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_BLOCKER_DECLARATION), false);
+  }
+  else if (hashCode == APPROVAL_ALREADY_COMPLETED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), false);
   }
   else if (hashCode == INVALID_NONCE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NONCE), false);
+  }
+  else if (hashCode == INVALID_CLIENT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_CLIENT_TOKEN), false);
+  }
+  else if (hashCode == PIPELINE_NAME_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NAME_IN_USE), false);
+  }
+  else if (hashCode == JOB_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::JOB_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_JOB_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB_STATE), false);
+  }
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == INVALID_APPROVAL_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_APPROVAL_TOKEN), false);
   }
   else if (hashCode == INVALID_STRUCTURE_HASH)
   {
@@ -72,29 +112,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_STAGE_DECLARATION), false);
   }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  else if (hashCode == ACTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_NOT_FOUND), false);
   }
-  else if (hashCode == INVALID_CLIENT_TOKEN_HASH)
+  else if (hashCode == INVALID_ACTION_DECLARATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_CLIENT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), false);
   }
-  else if (hashCode == INVALID_JOB_STATE_HASH)
+  else if (hashCode == INVALID_JOB_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB), false);
   }
-  else if (hashCode == INVALID_BLOCKER_DECLARATION_HASH)
+  else if (hashCode == PIPELINE_EXECUTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_BLOCKER_DECLARATION), false);
-  }
-  else if (hashCode == STAGE_NOT_RETRYABLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_RETRYABLE), false);
-  }
-  else if (hashCode == NOT_LATEST_PIPELINE_EXECUTION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::NOT_LATEST_PIPELINE_EXECUTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_FOUND), false);
   }
   else if (hashCode == PIPELINE_NOT_FOUND_HASH)
   {
@@ -108,41 +140,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_VERSION_NOT_FOUND), false);
   }
-  else if (hashCode == JOB_NOT_FOUND_HASH)
+  else if (hashCode == NOT_LATEST_PIPELINE_EXECUTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::JOB_NOT_FOUND), false);
-  }
-  else if (hashCode == INVALID_ACTION_DECLARATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), false);
-  }
-  else if (hashCode == PIPELINE_EXECUTION_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_FOUND), false);
-  }
-  else if (hashCode == ACTION_TYPE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_TYPE_NOT_FOUND), false);
-  }
-  else if (hashCode == APPROVAL_ALREADY_COMPLETED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), false);
-  }
-  else if (hashCode == STAGE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_FOUND), false);
-  }
-  else if (hashCode == INVALID_APPROVAL_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_APPROVAL_TOKEN), false);
-  }
-  else if (hashCode == PIPELINE_NAME_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NAME_IN_USE), false);
-  }
-  else if (hashCode == INVALID_JOB_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::NOT_LATEST_PIPELINE_EXECUTION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

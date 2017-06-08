@@ -28,31 +28,31 @@ namespace OpsWorksCM
 namespace OpsWorksCMErrorMapper
 {
 
-static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_STATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::INVALID_STATE), false);
-  }
-  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::RESOURCE_ALREADY_EXISTS), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  else if (hashCode == INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::INVALID_STATE), false);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpsWorksCMErrors::LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

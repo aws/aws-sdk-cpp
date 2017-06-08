@@ -28,26 +28,26 @@ namespace CodeBuild
 namespace CodeBuildErrorMapper
 {
 
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountLimitExceededException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  if (hashCode == INVALID_INPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::INVALID_INPUT), false);
+  }
+  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::RESOURCE_ALREADY_EXISTS), false);
   }
   else if (hashCode == ACCOUNT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::ACCOUNT_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::INVALID_INPUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

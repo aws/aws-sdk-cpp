@@ -28,45 +28,33 @@ namespace CognitoIdentity
 namespace CognitoIdentityErrorMapper
 {
 
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INVALID_IDENTITY_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidIdentityPoolConfigurationException");
 static const int EXTERNAL_SERVICE_HASH = HashingUtils::HashString("ExternalServiceException");
 static const int DEVELOPER_USER_ALREADY_REGISTERED_HASH = HashingUtils::HashString("DeveloperUserAlreadyRegisteredException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_ERROR_HASH)
+  if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INTERNAL_ERROR), false);
-  }
-  else if (hashCode == NOT_AUTHORIZED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::NOT_AUTHORIZED), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::CONCURRENT_MODIFICATION), false);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_PARAMETER), false);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::RESOURCE_CONFLICT), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == INVALID_IDENTITY_POOL_CONFIGURATION_HASH)
   {
@@ -80,9 +68,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::DEVELOPER_USER_ALREADY_REGISTERED), false);
   }
-  else if (hashCode == INVALID_PARAMETER_HASH)
+  else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::NOT_AUTHORIZED), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INTERNAL_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INTERNAL_ERROR), false);
+  }
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::TOO_MANY_REQUESTS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

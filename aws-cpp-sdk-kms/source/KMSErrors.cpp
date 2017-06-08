@@ -28,108 +28,60 @@ namespace KMS
 namespace KMSErrorMapper
 {
 
-static const int INVALID_ALIAS_NAME_HASH = HashingUtils::HashString("InvalidAliasNameException");
-static const int K_M_S_INTERNAL_HASH = HashingUtils::HashString("KMSInternalException");
 static const int INVALID_KEY_USAGE_HASH = HashingUtils::HashString("InvalidKeyUsageException");
-static const int INVALID_IMPORT_TOKEN_HASH = HashingUtils::HashString("InvalidImportTokenException");
-static const int INVALID_GRANT_ID_HASH = HashingUtils::HashString("InvalidGrantIdException");
-static const int INCORRECT_KEY_MATERIAL_HASH = HashingUtils::HashString("IncorrectKeyMaterialException");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int DISABLED_HASH = HashingUtils::HashString("DisabledException");
-static const int INVALID_CIPHERTEXT_HASH = HashingUtils::HashString("InvalidCiphertextException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_GRANT_TOKEN_HASH = HashingUtils::HashString("InvalidGrantTokenException");
-static const int TAG_HASH = HashingUtils::HashString("TagException");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
-static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeoutException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
-static const int INVALID_MARKER_HASH = HashingUtils::HashString("InvalidMarkerException");
-static const int EXPIRED_IMPORT_TOKEN_HASH = HashingUtils::HashString("ExpiredImportTokenException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int DISABLED_HASH = HashingUtils::HashString("DisabledException");
+static const int INVALID_GRANT_ID_HASH = HashingUtils::HashString("InvalidGrantIdException");
+static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeoutException");
+static const int INVALID_GRANT_TOKEN_HASH = HashingUtils::HashString("InvalidGrantTokenException");
+static const int K_M_S_INTERNAL_HASH = HashingUtils::HashString("KMSInternalException");
 static const int KEY_UNAVAILABLE_HASH = HashingUtils::HashString("KeyUnavailableException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
+static const int TAG_HASH = HashingUtils::HashString("TagException");
+static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
+static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int INCORRECT_KEY_MATERIAL_HASH = HashingUtils::HashString("IncorrectKeyMaterialException");
+static const int INVALID_MARKER_HASH = HashingUtils::HashString("InvalidMarkerException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int EXPIRED_IMPORT_TOKEN_HASH = HashingUtils::HashString("ExpiredImportTokenException");
+static const int INVALID_CIPHERTEXT_HASH = HashingUtils::HashString("InvalidCiphertextException");
+static const int INVALID_ALIAS_NAME_HASH = HashingUtils::HashString("InvalidAliasNameException");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
+static const int INVALID_IMPORT_TOKEN_HASH = HashingUtils::HashString("InvalidImportTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_ALIAS_NAME_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_ALIAS_NAME), false);
-  }
-  else if (hashCode == K_M_S_INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::K_M_S_INTERNAL), false);
-  }
-  else if (hashCode == INVALID_KEY_USAGE_HASH)
+  if (hashCode == INVALID_KEY_USAGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_KEY_USAGE), false);
   }
-  else if (hashCode == INVALID_IMPORT_TOKEN_HASH)
+  else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_IMPORT_TOKEN), false);
-  }
-  else if (hashCode == INVALID_GRANT_ID_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_ID), false);
-  }
-  else if (hashCode == INCORRECT_KEY_MATERIAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INCORRECT_KEY_MATERIAL), false);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::NOT_FOUND), false);
-  }
-  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::ALREADY_EXISTS), false);
   }
   else if (hashCode == DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::DISABLED), false);
   }
-  else if (hashCode == INVALID_CIPHERTEXT_HASH)
+  else if (hashCode == INVALID_GRANT_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_CIPHERTEXT), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_GRANT_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_TOKEN), false);
-  }
-  else if (hashCode == TAG_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::TAG), false);
-  }
-  else if (hashCode == K_M_S_INVALID_STATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::K_M_S_INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_ID), false);
   }
   else if (hashCode == DEPENDENCY_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::DEPENDENCY_TIMEOUT), false);
   }
-  else if (hashCode == INVALID_ARN_HASH)
+  else if (hashCode == INVALID_GRANT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_TOKEN), false);
   }
-  else if (hashCode == INVALID_MARKER_HASH)
+  else if (hashCode == K_M_S_INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_MARKER), false);
-  }
-  else if (hashCode == EXPIRED_IMPORT_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::EXPIRED_IMPORT_TOKEN), false);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::K_M_S_INTERNAL), false);
   }
   else if (hashCode == KEY_UNAVAILABLE_HASH)
   {
@@ -138,6 +90,54 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::MALFORMED_POLICY_DOCUMENT), false);
+  }
+  else if (hashCode == TAG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::TAG), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_ARN), false);
+  }
+  else if (hashCode == K_M_S_INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::K_M_S_INVALID_STATE), false);
+  }
+  else if (hashCode == INCORRECT_KEY_MATERIAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INCORRECT_KEY_MATERIAL), false);
+  }
+  else if (hashCode == INVALID_MARKER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_MARKER), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == EXPIRED_IMPORT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::EXPIRED_IMPORT_TOKEN), false);
+  }
+  else if (hashCode == INVALID_CIPHERTEXT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_CIPHERTEXT), false);
+  }
+  else if (hashCode == INVALID_ALIAS_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_ALIAS_NAME), false);
+  }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::UNSUPPORTED_OPERATION), false);
+  }
+  else if (hashCode == INVALID_IMPORT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_IMPORT_TOKEN), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

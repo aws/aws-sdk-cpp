@@ -28,56 +28,56 @@ namespace MarketplaceMetering
 namespace MarketplaceMeteringErrorMapper
 {
 
-static const int INVALID_PRODUCT_CODE_HASH = HashingUtils::HashString("InvalidProductCodeException");
-static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
-static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
-static const int INVALID_CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("InvalidCustomerIdentifierException");
-static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("InvalidUsageDimensionException");
 static const int TIMESTAMP_OUT_OF_BOUNDS_HASH = HashingUtils::HashString("TimestampOutOfBoundsException");
+static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
+static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
+static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("InvalidUsageDimensionException");
+static const int INVALID_PRODUCT_CODE_HASH = HashingUtils::HashString("InvalidProductCodeException");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
+static const int INVALID_CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("InvalidCustomerIdentifierException");
+static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PRODUCT_CODE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_PRODUCT_CODE), false);
-  }
-  else if (hashCode == INVALID_ENDPOINT_REGION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_ENDPOINT_REGION), false);
-  }
-  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INTERNAL_SERVICE_ERROR), false);
-  }
-  else if (hashCode == INVALID_TOKEN_HASH)
+  if (hashCode == INVALID_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_TOKEN), false);
-  }
-  else if (hashCode == EXPIRED_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::EXPIRED_TOKEN), false);
-  }
-  else if (hashCode == INVALID_CUSTOMER_IDENTIFIER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_CUSTOMER_IDENTIFIER), false);
-  }
-  else if (hashCode == INVALID_USAGE_DIMENSION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_USAGE_DIMENSION), false);
   }
   else if (hashCode == TIMESTAMP_OUT_OF_BOUNDS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::TIMESTAMP_OUT_OF_BOUNDS), false);
   }
+  else if (hashCode == EXPIRED_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::EXPIRED_TOKEN), false);
+  }
+  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INTERNAL_SERVICE_ERROR), false);
+  }
+  else if (hashCode == INVALID_USAGE_DIMENSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_USAGE_DIMENSION), false);
+  }
+  else if (hashCode == INVALID_PRODUCT_CODE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_PRODUCT_CODE), false);
+  }
   else if (hashCode == DUPLICATE_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::DUPLICATE_REQUEST), false);
+  }
+  else if (hashCode == INVALID_CUSTOMER_IDENTIFIER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_CUSTOMER_IDENTIFIER), false);
+  }
+  else if (hashCode == INVALID_ENDPOINT_REGION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_ENDPOINT_REGION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
