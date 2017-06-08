@@ -68,6 +68,7 @@ license you like.
 This file has been modified from its original version by Amazon:
   (1) Memory management operations use aws memory management api
   (2) #includes all use <>
+  (3) included <cmath> as std::isfinite is defined in <cmath>
 */
 
 // //////////////////////////////////////////////////////////////////////
@@ -3091,6 +3092,7 @@ Value& Path::make(Value& root) const {
 #if defined(_MSC_VER) && _MSC_VER < 1500 // VC++ 8.0 and below
 
 #include <float.h>
+
 #define IS_FINITE _finite
 #define snprintf _snprintf
 
@@ -3101,6 +3103,7 @@ Value& Path::make(Value& root) const {
 
 #else
 
+#include <cmath>
 #ifdef isfinite
 #define IS_FINITE isfinite
 #else
