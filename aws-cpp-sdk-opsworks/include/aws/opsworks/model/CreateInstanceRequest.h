@@ -268,18 +268,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -298,18 +299,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -328,18 +330,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -358,18 +361,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -388,18 +392,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -418,18 +423,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
@@ -448,18 +454,19 @@ namespace Model
     /**
      * <p>The instance's operating system, which must be set to one of the
      * following.</p> <ul> <li> <p>A supported Linux operating system: An Amazon Linux
-     * version, such as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>.</p> </li> </ul>
-     * <p>For more information on the supported operating systems, see <a
+     * version, such as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>.</p> </li> </ul> <p>For more information on the supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
      * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must

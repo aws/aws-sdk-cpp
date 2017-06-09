@@ -53,6 +53,27 @@ namespace Model
     Layer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+    
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    
+    inline Layer& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline Layer& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    
+    inline Layer& WithArn(const char* value) { SetArn(value); return *this;}
+
     /**
      * <p>The layer stack ID.</p>
      */
@@ -838,6 +859,8 @@ namespace Model
     inline Layer& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(std::move(value)); return *this;}
 
   private:
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
     Aws::String m_layerId;

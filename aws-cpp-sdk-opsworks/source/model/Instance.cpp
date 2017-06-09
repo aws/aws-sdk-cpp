@@ -33,6 +33,7 @@ Instance::Instance() :
     m_amiIdHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -83,6 +84,7 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_amiIdHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -150,6 +152,13 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("Architecture"));
 
     m_architectureHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AutoScalingType"))
@@ -442,6 +451,12 @@ JsonValue Instance::Jsonize() const
   if(m_architectureHasBeenSet)
   {
    payload.WithString("Architecture", ArchitectureMapper::GetNameForArchitecture(m_architecture));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
   }
 
   if(m_autoScalingTypeHasBeenSet)

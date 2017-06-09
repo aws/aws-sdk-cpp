@@ -348,79 +348,86 @@ namespace Model
     inline Command& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline Command& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline Command& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
-     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
-     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
-     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
+     * <p> <code>deploy</code> </p> </li> <li> <p> <code>execute_recipes</code> </p>
      * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
-     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
-     * <code>execute_recipes</code> </p> </li> </ul>
+     * <code>restart</code> </p> </li> <li> <p> <code>rollback</code> </p> </li> <li>
+     * <p> <code>setup</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li>
+     * <p> <code>stop</code> </p> </li> <li> <p> <code>undeploy</code> </p> </li> <li>
+     * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>update_dependencies</code> </p> </li> </ul>
      */
     inline Command& WithType(const char* value) { SetType(value); return *this;}
 
