@@ -182,6 +182,27 @@ namespace Model
      */
     inline Instance& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
+    
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    
+    inline Instance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline Instance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    
+    inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
+
     /**
      * <p>For load-based or time-based instances, the type.</p>
      */
@@ -894,37 +915,37 @@ namespace Model
     inline Instance& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline const Aws::String& GetPrivateDns() const{ return m_privateDns; }
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline void SetPrivateDns(const Aws::String& value) { m_privateDnsHasBeenSet = true; m_privateDns = value; }
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline void SetPrivateDns(Aws::String&& value) { m_privateDnsHasBeenSet = true; m_privateDns = std::move(value); }
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline void SetPrivateDns(const char* value) { m_privateDnsHasBeenSet = true; m_privateDns.assign(value); }
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline Instance& WithPrivateDns(const Aws::String& value) { SetPrivateDns(value); return *this;}
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline Instance& WithPrivateDns(Aws::String&& value) { SetPrivateDns(std::move(value)); return *this;}
 
     /**
-     * <p>The The instance's private DNS name.</p>
+     * <p>The instance's private DNS name.</p>
      */
     inline Instance& WithPrivateDns(const char* value) { SetPrivateDns(value); return *this;}
 
@@ -1597,6 +1618,8 @@ namespace Model
     bool m_amiIdHasBeenSet;
     Architecture m_architecture;
     bool m_architectureHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
     AutoScalingType m_autoScalingType;
     bool m_autoScalingTypeHasBeenSet;
     Aws::String m_availabilityZone;

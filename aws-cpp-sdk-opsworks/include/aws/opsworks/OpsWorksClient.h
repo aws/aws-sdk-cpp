@@ -51,6 +51,7 @@
 #include <aws/opsworks/model/DescribeVolumesResult.h>
 #include <aws/opsworks/model/GetHostnameSuggestionResult.h>
 #include <aws/opsworks/model/GrantAccessResult.h>
+#include <aws/opsworks/model/ListTagsResult.h>
 #include <aws/opsworks/model/RegisterEcsClusterResult.h>
 #include <aws/opsworks/model/RegisterElasticIpResult.h>
 #include <aws/opsworks/model/RegisterInstanceResult.h>
@@ -146,6 +147,7 @@ namespace Model
         class DisassociateElasticIpRequest;
         class GetHostnameSuggestionRequest;
         class GrantAccessRequest;
+        class ListTagsRequest;
         class RebootInstanceRequest;
         class RegisterEcsClusterRequest;
         class RegisterElasticIpRequest;
@@ -159,8 +161,10 @@ namespace Model
         class StartStackRequest;
         class StopInstanceRequest;
         class StopStackRequest;
+        class TagResourceRequest;
         class UnassignInstanceRequest;
         class UnassignVolumeRequest;
+        class UntagResourceRequest;
         class UpdateAppRequest;
         class UpdateElasticIpRequest;
         class UpdateInstanceRequest;
@@ -217,6 +221,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DisassociateElasticIpOutcome;
         typedef Aws::Utils::Outcome<GetHostnameSuggestionResult, Aws::Client::AWSError<OpsWorksErrors>> GetHostnameSuggestionOutcome;
         typedef Aws::Utils::Outcome<GrantAccessResult, Aws::Client::AWSError<OpsWorksErrors>> GrantAccessOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<OpsWorksErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> RebootInstanceOutcome;
         typedef Aws::Utils::Outcome<RegisterEcsClusterResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterEcsClusterOutcome;
         typedef Aws::Utils::Outcome<RegisterElasticIpResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterElasticIpOutcome;
@@ -230,8 +235,10 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartStackOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopInstanceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopStackOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignInstanceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignVolumeOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateAppOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateElasticIpOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateInstanceOutcome;
@@ -288,6 +295,7 @@ namespace Model
         typedef std::future<DisassociateElasticIpOutcome> DisassociateElasticIpOutcomeCallable;
         typedef std::future<GetHostnameSuggestionOutcome> GetHostnameSuggestionOutcomeCallable;
         typedef std::future<GrantAccessOutcome> GrantAccessOutcomeCallable;
+        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
         typedef std::future<RegisterEcsClusterOutcome> RegisterEcsClusterOutcomeCallable;
         typedef std::future<RegisterElasticIpOutcome> RegisterElasticIpOutcomeCallable;
@@ -301,8 +309,10 @@ namespace Model
         typedef std::future<StartStackOutcome> StartStackOutcomeCallable;
         typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
         typedef std::future<StopStackOutcome> StopStackOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnassignInstanceOutcome> UnassignInstanceOutcomeCallable;
         typedef std::future<UnassignVolumeOutcome> UnassignVolumeOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAppOutcome> UpdateAppOutcomeCallable;
         typedef std::future<UpdateElasticIpOutcome> UpdateElasticIpOutcomeCallable;
         typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
@@ -362,6 +372,7 @@ namespace Model
     typedef std::function<void(const OpsWorksClient*, const Model::DisassociateElasticIpRequest&, const Model::DisassociateElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateElasticIpResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::GetHostnameSuggestionRequest&, const Model::GetHostnameSuggestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostnameSuggestionResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::GrantAccessRequest&, const Model::GrantAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GrantAccessResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstanceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::RegisterEcsClusterRequest&, const Model::RegisterEcsClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEcsClusterResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::RegisterElasticIpRequest&, const Model::RegisterElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterElasticIpResponseReceivedHandler;
@@ -375,8 +386,10 @@ namespace Model
     typedef std::function<void(const OpsWorksClient*, const Model::StartStackRequest&, const Model::StartStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStackResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::StopStackRequest&, const Model::StopStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::UnassignInstanceRequest&, const Model::UnassignInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignInstanceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::UnassignVolumeRequest&, const Model::UnassignVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignVolumeResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::UpdateElasticIpRequest&, const Model::UpdateElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateElasticIpResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::UpdateInstanceRequest&, const Model::UpdateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceResponseReceivedHandler;
@@ -628,9 +641,10 @@ namespace Model
         virtual void AssociateElasticIpAsync(const Model::AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS
+         * OpsWorks Stacks does not support Application Load Balancer. You can only use
+         * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
          * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
@@ -647,9 +661,10 @@ namespace Model
         virtual Model::AttachElasticLoadBalancerOutcome AttachElasticLoadBalancer(const Model::AttachElasticLoadBalancerRequest& request) const;
 
         /**
-         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS
+         * OpsWorks Stacks does not support Application Load Balancer. You can only use
+         * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
          * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
@@ -668,9 +683,10 @@ namespace Model
         virtual Model::AttachElasticLoadBalancerOutcomeCallable AttachElasticLoadBalancerCallable(const Model::AttachElasticLoadBalancerRequest& request) const;
 
         /**
-         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS
+         * OpsWorks Stacks does not support Application Load Balancer. You can only use
+         * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
          * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
@@ -2533,6 +2549,34 @@ namespace Model
         virtual void GrantAccessAsync(const Model::GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of tags that are applied to the specified stack or
+         * layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified stack or
+         * layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified stack or
+         * layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Reboots a specified instance. For more information, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
          * Stopping, and Rebooting Instances</a>.</p> <p> <b>Required Permissions</b>: To
@@ -3200,6 +3244,40 @@ namespace Model
         virtual void StopStackAsync(const Model::StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
+         * Stacks. For more information about how tagging works, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+         * in the AWS OpsWorks User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
+         * Stacks. For more information about how tagging works, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+         * in the AWS OpsWorks User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
+         * Stacks. For more information about how tagging works, see <a
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+         * in the AWS OpsWorks User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Unassigns a registered instance from all of it's layers. The instance remains
          * in the stack as an unassigned instance and can be assigned to another layer, as
          * needed. You cannot use this action with instances that were created with AWS
@@ -3296,6 +3374,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnassignVolumeAsync(const Model::UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a specified stack or layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a specified stack or layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a specified stack or layer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified app.</p> <p> <b>Required Permissions</b>: To use this
@@ -3720,6 +3823,7 @@ namespace Model
         void DisassociateElasticIpAsyncHelper(const Model::DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostnameSuggestionAsyncHelper(const Model::GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GrantAccessAsyncHelper(const Model::GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterEcsClusterAsyncHelper(const Model::RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterElasticIpAsyncHelper(const Model::RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3733,8 +3837,10 @@ namespace Model
         void StartStackAsyncHelper(const Model::StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStackAsyncHelper(const Model::StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnassignInstanceAsyncHelper(const Model::UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnassignVolumeAsyncHelper(const Model::UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAppAsyncHelper(const Model::UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateElasticIpAsyncHelper(const Model::UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceAsyncHelper(const Model::UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

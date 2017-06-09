@@ -77,37 +77,44 @@ namespace Model
     inline Source& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline Source& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline Source& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The source URL.</p>
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline Source& WithUrl(const char* value) { SetUrl(value); return *this;}
 

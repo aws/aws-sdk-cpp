@@ -29,6 +29,7 @@ namespace Model
 {
 
 Layer::Layer() : 
+    m_arnHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
     m_type(LayerType::NOT_SET),
@@ -61,6 +62,7 @@ Layer::Layer() :
 }
 
 Layer::Layer(const JsonValue& jsonValue) : 
+    m_arnHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
     m_type(LayerType::NOT_SET),
@@ -95,6 +97,13 @@ Layer::Layer(const JsonValue& jsonValue) :
 
 Layer& Layer::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
@@ -270,6 +279,12 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
 JsonValue Layer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
 
   if(m_stackIdHasBeenSet)
   {

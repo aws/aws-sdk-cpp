@@ -72,6 +72,7 @@
 #include <aws/opsworks/model/DisassociateElasticIpRequest.h>
 #include <aws/opsworks/model/GetHostnameSuggestionRequest.h>
 #include <aws/opsworks/model/GrantAccessRequest.h>
+#include <aws/opsworks/model/ListTagsRequest.h>
 #include <aws/opsworks/model/RebootInstanceRequest.h>
 #include <aws/opsworks/model/RegisterEcsClusterRequest.h>
 #include <aws/opsworks/model/RegisterElasticIpRequest.h>
@@ -85,8 +86,10 @@
 #include <aws/opsworks/model/StartStackRequest.h>
 #include <aws/opsworks/model/StopInstanceRequest.h>
 #include <aws/opsworks/model/StopStackRequest.h>
+#include <aws/opsworks/model/TagResourceRequest.h>
 #include <aws/opsworks/model/UnassignInstanceRequest.h>
 #include <aws/opsworks/model/UnassignVolumeRequest.h>
+#include <aws/opsworks/model/UntagResourceRequest.h>
 #include <aws/opsworks/model/UpdateAppRequest.h>
 #include <aws/opsworks/model/UpdateElasticIpRequest.h>
 #include <aws/opsworks/model/UpdateInstanceRequest.h>
@@ -1770,6 +1773,41 @@ void OpsWorksClient::GrantAccessAsyncHelper(const GrantAccessRequest& request, c
   handler(this, request, GrantAccess(request), context);
 }
 
+ListTagsOutcome OpsWorksClient::ListTags(const ListTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsOutcome(outcome.GetError());
+  }
+}
+
+ListTagsOutcomeCallable OpsWorksClient::ListTagsCallable(const ListTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpsWorksClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+}
+
+void OpsWorksClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTags(request), context);
+}
+
 RebootInstanceOutcome OpsWorksClient::RebootInstance(const RebootInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -2225,6 +2263,41 @@ void OpsWorksClient::StopStackAsyncHelper(const StopStackRequest& request, const
   handler(this, request, StopStack(request), context);
 }
 
+TagResourceOutcome OpsWorksClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable OpsWorksClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpsWorksClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void OpsWorksClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 UnassignInstanceOutcome OpsWorksClient::UnassignInstance(const UnassignInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -2293,6 +2366,41 @@ void OpsWorksClient::UnassignVolumeAsync(const UnassignVolumeRequest& request, c
 void OpsWorksClient::UnassignVolumeAsyncHelper(const UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UnassignVolume(request), context);
+}
+
+UntagResourceOutcome OpsWorksClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable OpsWorksClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpsWorksClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void OpsWorksClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAppOutcome OpsWorksClient::UpdateApp(const UpdateAppRequest& request) const
