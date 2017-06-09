@@ -24,8 +24,7 @@ The GitHub issues are intended for bug reports and feature requests. For help an
 ### Introducing the AWS SDK for C++ from AWS re:invent 2015
 The following video explains many of the core features and also high-level SDKs
 
-[![Introducing the AWS SDK for C++](https://img.youtube.com/vi/fm4Aa3Whwos/0.jpg)]
-(https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9 "Introducing the AWS SDK for C++")
+[![Introducing the AWS SDK for C++](https://img.youtube.com/vi/fm4Aa3Whwos/0.jpg)](https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9 "Introducing the AWS SDK for C++")
 
 ### Building the SDK:
 Use the information below to build the entire source tree for your platform, run unit tests, and build integration tests.  
