@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Rekognition;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20160627.146;
+        version : 1.0.20160627.147;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Rekognition);
