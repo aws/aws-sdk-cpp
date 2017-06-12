@@ -33,6 +33,8 @@ public class APIGatewayRestJsonCppClientGenerator extends JsonCppClientGenerator
 
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
 
+        serviceModel.getMetadata().setAcceptHeader("application/json");
+
         Shape invokeMethodRequest = serviceModel.getShapes().get("TestInvokeMethodRequest");
         Map<String, ShapeMember> members = invokeMethodRequest.getMembers();
 

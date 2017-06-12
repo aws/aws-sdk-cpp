@@ -111,7 +111,17 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
         INTERNET_FLAG_NO_CACHE_WRITE |
         (m_allowRedirects ? 0 : INTERNET_FLAG_NO_AUTO_REDIRECT);
 
-    static LPCSTR accept[2] = { "*/*", nullptr };
+    LPCSTR accept[2] = { nullptr, nullptr };
+
+    Aws::String acceptHeader("*/*");
+
+    if (request.HasHeader(Aws::Http::ACCEPT_HEADER))
+    {
+        acceptHeader = request.GetHeaderValue(Aws::Http::ACCEPT_HEADER).c_str();
+    }
+
+    accept[0] = acceptHeader.c_str();
+
     HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle " << hHttpRequest);
