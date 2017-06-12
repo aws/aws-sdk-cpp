@@ -886,7 +886,7 @@ namespace Aws
             }
         }
 
-        bool TransferManager::MultipartUploadSupported(size_t length) const
+        bool TransferManager::MultipartUploadSupported(uint64_t length) const
         {
             return length > m_transferConfig.bufferSize && 
                    m_transferConfig.s3Client            && 

@@ -213,7 +213,7 @@ namespace Aws
             std::shared_ptr<TransferHandle> DoUploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
                     const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName = "");
 
-            bool MultipartUploadSupported(size_t length) const;
+            bool MultipartUploadSupported(uint64_t length) const;
             bool InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle);
 
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
