@@ -117,7 +117,7 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
 
     if (request.HasHeader(Aws::Http::ACCEPT_HEADER))
     {
-        acceptHeader = request.GetHeaderValue(Aws::Http::ACCEPT_HEADER).c_str();
+        acceptHeader = request.GetHeaderValue(Aws::Http::ACCEPT_HEADER);
     }
 
     accept[0] = acceptHeader.c_str();
