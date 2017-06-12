@@ -40,13 +40,14 @@ def main():
         
     for release in releaseDoc["releases"]:
         for feature in release["features"]:
-            response = requests.get(feature["c2jModels"])
-            if response.status_code != 200:
-                print("Error downloading {0} artifacts skipping.", json.dumps(feature))
-                continue
+            if feature["c2jModels"] != None:
+                response = requests.get(feature["c2jModels"])
+                if response.status_code != 200:
+                    print("Error downloading {0} artifacts skipping.", json.dumps(feature))
+                    continue
                 
-            body_stream_to_file(response.content)
-            copy_model_files(modelsDir)
+                body_stream_to_file(response.content)
+                copy_model_files(modelsDir)
             cat_release_notes(feature["releaseNotes"], modelsDir)
            
         cat_pending_releases(release["id"], modelsDir)
