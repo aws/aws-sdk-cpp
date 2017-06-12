@@ -122,18 +122,26 @@ WinHttpSyncHttpClient::~WinHttpSyncHttpClient()
 
 void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
 {
+    LPCWSTR accept[2] = { nullptr, nullptr };
 
     DWORD requestFlags = WINHTTP_FLAG_REFRESH |
         (request.GetUri().GetScheme() == Scheme::HTTPS ? WINHTTP_FLAG_SECURE : 0);
 
-    static LPCWSTR accept[2] = { L"*/*", nullptr };
+    Aws::WString acceptHeader(L"*/*");
+
+    if (request.HasHeader(Aws::Http::ACCEPT_HEADER)) 
+    {
+        acceptHeader = Aws::Utils::StringUtils::ToWString(request.GetHeaderValue(Aws::Http::ACCEPT_HEADER).c_str());  
+    }
+
+    accept[0] = acceptHeader.c_str();
 
     Aws::WString wss = StringUtils::ToWString(ss.str().c_str());
 
     HINTERNET hHttpRequest = WinHttpOpenRequest(connection, StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())).c_str(),
         wss.c_str(), nullptr, nullptr, accept, requestFlags);
 
-    //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest
+      //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest
     if (!m_allowRedirects)
     {
         requestFlags = WINHTTP_DISABLE_REDIRECTS;

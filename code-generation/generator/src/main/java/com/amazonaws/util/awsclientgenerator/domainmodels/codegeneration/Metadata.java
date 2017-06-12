@@ -34,5 +34,6 @@ public class Metadata {
     private String protocol;
     private String projectName;
     private String classNamePrefix;
+    private String acceptHeader;
     private Map<String, String> additionalHeaders;
 }
