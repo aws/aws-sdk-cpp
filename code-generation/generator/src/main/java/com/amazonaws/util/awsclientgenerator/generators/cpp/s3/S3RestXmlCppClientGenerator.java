@@ -18,6 +18,7 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.s3;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import org.apache.velocity.Template;
@@ -52,6 +53,9 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+		
+        // Add ID2 and RequestId to GetObjectResult
+        hackGetObjectOutputResponse(serviceModel);
 
         //if an operation should precompute md5, make sure it is added here.
         serviceModel.getOperations().values().stream()
@@ -75,6 +79,47 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         return super.generateSourceFiles(serviceModel);
     }
+
+    protected void hackGetObjectOutputResponse(ServiceModel serviceModel) {
+        Shape getObjectResult  = serviceModel.getShapes().get("GetObjectResult");
+        if (getObjectResult == null) return;
+
+        Shape id2 = new Shape();
+        id2.setName("ObjectId2");
+        id2.setType("string");
+        if (serviceModel.getShapes().get("ObjectId2") == null) {
+            serviceModel.getShapes().put("ObjectId2", id2);
+        } else {
+            id2 = serviceModel.getShapes().get("ObjectId2");
+        }
+
+        Shape requestId = new Shape();
+        requestId.setName("ObjectRequestId");
+        requestId.setType("string");
+        if (serviceModel.getShapes().get("ObjectRequestId") == null) {
+            serviceModel.getShapes().put("ObjectRequestId", requestId);
+        } else {
+            requestId = serviceModel.getShapes().get("ObjectRequestId");
+        }
+
+        ShapeMember id2ShapeMember = new ShapeMember();
+        id2ShapeMember.setShape(id2);
+        id2ShapeMember.setLocation("header");
+        id2ShapeMember.setLocationName("x-amz-id-2");
+
+        ShapeMember requestIdShapeMember = new ShapeMember();
+        requestIdShapeMember.setShape(requestId);
+        requestIdShapeMember.setLocation("header");
+        requestIdShapeMember.setLocationName("x-amz-request-id");
+
+
+        if (getObjectResult.getMembers().get("Id2") == null) {
+            getObjectResult.getMembers().put("Id2", id2ShapeMember);
+        }
+        if (getObjectResult.getMembers().get("RequestId") == null) {
+            getObjectResult.getMembers().put("RequestId", requestIdShapeMember);
+        }
+	}
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
