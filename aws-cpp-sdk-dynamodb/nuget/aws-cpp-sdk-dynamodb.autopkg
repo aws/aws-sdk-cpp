@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DynamoDB;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20120810.147;
+        version : 1.0.20120810.148;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon DynamoDB);

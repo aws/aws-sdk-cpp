@@ -70,6 +70,7 @@ DBCluster::DBCluster() :
     m_associatedRolesHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false)
 {
 }
@@ -114,6 +115,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_associatedRolesHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -359,6 +361,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode cloneGroupIdNode = resultNode.FirstChild("CloneGroupId");
+    if(!cloneGroupIdNode.IsNull())
+    {
+      m_cloneGroupId = StringUtils::Trim(cloneGroupIdNode.GetText().c_str());
+      m_cloneGroupIdHasBeenSet = true;
+    }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
@@ -569,6 +577,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_cloneGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CloneGroupId=" << StringUtils::URLEncode(m_cloneGroupId.c_str()) << "&";
+  }
+
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -741,6 +754,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_cloneGroupIdHasBeenSet)
+  {
+      oStream << location << ".CloneGroupId=" << StringUtils::URLEncode(m_cloneGroupId.c_str()) << "&";
   }
   if(m_clusterCreateTimeHasBeenSet)
   {

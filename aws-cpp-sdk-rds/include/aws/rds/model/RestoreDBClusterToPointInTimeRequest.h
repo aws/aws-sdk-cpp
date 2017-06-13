@@ -101,6 +101,90 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
+     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
+
+    /**
      * <p>The identifier of the source DB cluster from which to restore.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
      * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
@@ -167,9 +251,12 @@ namespace Model
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
-     * the DB instance</p> </li> <li> <p>Cannot be specified if
-     * <code>UseLatestRestorableTime</code> parameter is true</p> </li> </ul>
-     * <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+     * the DB instance</p> </li> <li> <p>Must be specified if
+     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline const Aws::Utils::DateTime& GetRestoreToTime() const{ return m_restoreToTime; }
 
@@ -177,9 +264,12 @@ namespace Model
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
-     * the DB instance</p> </li> <li> <p>Cannot be specified if
-     * <code>UseLatestRestorableTime</code> parameter is true</p> </li> </ul>
-     * <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+     * the DB instance</p> </li> <li> <p>Must be specified if
+     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreToTime(const Aws::Utils::DateTime& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
 
@@ -187,9 +277,12 @@ namespace Model
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
-     * the DB instance</p> </li> <li> <p>Cannot be specified if
-     * <code>UseLatestRestorableTime</code> parameter is true</p> </li> </ul>
-     * <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+     * the DB instance</p> </li> <li> <p>Must be specified if
+     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreToTime(Aws::Utils::DateTime&& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = std::move(value); }
 
@@ -197,9 +290,12 @@ namespace Model
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
-     * the DB instance</p> </li> <li> <p>Cannot be specified if
-     * <code>UseLatestRestorableTime</code> parameter is true</p> </li> </ul>
-     * <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+     * the DB instance</p> </li> <li> <p>Must be specified if
+     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(const Aws::Utils::DateTime& value) { SetRestoreToTime(value); return *this;}
 
@@ -207,9 +303,12 @@ namespace Model
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
-     * the DB instance</p> </li> <li> <p>Cannot be specified if
-     * <code>UseLatestRestorableTime</code> parameter is true</p> </li> </ul>
-     * <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+     * the DB instance</p> </li> <li> <p>Must be specified if
+     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(Aws::Utils::DateTime&& value) { SetRestoreToTime(std::move(value)); return *this;}
 
@@ -350,42 +449,42 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A lst of VPC security groups that the new DB cluster belongs to.</p>
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -425,7 +524,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -445,7 +544,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
@@ -465,7 +564,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
@@ -485,7 +584,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
@@ -505,7 +604,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
@@ -525,7 +624,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
@@ -545,7 +644,7 @@ namespace Model
      * cluster is encrypted using the KMS key that was used to encrypt the source DB
      * cluster.</p> </li> <li> <p>If the DB cluster is not encrypted, then the restored
      * DB cluster is not encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
+     * <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
      * then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -574,6 +673,8 @@ namespace Model
   private:
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+    Aws::String m_restoreType;
+    bool m_restoreTypeHasBeenSet;
     Aws::String m_sourceDBClusterIdentifier;
     bool m_sourceDBClusterIdentifierHasBeenSet;
     Aws::Utils::DateTime m_restoreToTime;

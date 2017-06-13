@@ -48,7 +48,8 @@ namespace Model
    * <p>Contains the result of a successful invocation of the following actions:</p>
    * <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p>
    * <a>DeleteDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li>
-   * </ul> <p>This data type is used as a response element in the
+   * <li> <p> <a>StopDBInstance</a> </p> </li> <li> <p> <a>StartDBInstance</a> </p>
+   * </li> </ul> <p>This data type is used as a response element in the
    * <a>DescribeDBInstances</a> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance">AWS API
    * Reference</a></p>
