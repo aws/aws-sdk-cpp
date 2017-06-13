@@ -16,7 +16,9 @@
 #include <aws/core/http/HttpClientFactory.h>
 
 #if ENABLE_CURL_CLIENT
-    #include <aws/core/http/curl/CurlHttpClient.h>
+#include <aws/core/http/curl/CurlHttpClient.h>
+#include <signal.h>
+
 #elif ENABLE_WINDOWS_CLIENT
 #include <aws/core/client/ClientConfiguration.h>
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
@@ -30,7 +32,6 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cassert>
-#include <signal.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
