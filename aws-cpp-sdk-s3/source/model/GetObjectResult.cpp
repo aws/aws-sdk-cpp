@@ -67,7 +67,9 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_requestCharged(toMove.m_requestCharged),
     m_replicationStatus(toMove.m_replicationStatus),
     m_partsCount(toMove.m_partsCount),
-    m_tagCount(toMove.m_tagCount)
+    m_tagCount(toMove.m_tagCount),
+    m_id2(std::move(toMove.m_id2)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -106,6 +108,8 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_replicationStatus = toMove.m_replicationStatus;
    m_partsCount = toMove.m_partsCount;
    m_tagCount = toMove.m_tagCount;
+   m_id2 = std::move(toMove.m_id2);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -294,6 +298,18 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   if(tagCountIter != headers.end())
   {
      m_tagCount = StringUtils::ConvertToInt32(tagCountIter->second.c_str());
+  }
+
+  const auto& id2Iter = headers.find("x-amz-id-2");
+  if(id2Iter != headers.end())
+  {
+    m_id2 = id2Iter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

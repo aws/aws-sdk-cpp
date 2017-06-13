@@ -936,6 +936,48 @@ namespace Model
      */
     inline GetObjectResult& WithTagCount(int value) { SetTagCount(value); return *this;}
 
+    
+    inline const Aws::String& GetId2() const{ return m_id2; }
+
+    
+    inline void SetId2(const Aws::String& value) { m_id2 = value; }
+
+    
+    inline void SetId2(Aws::String&& value) { m_id2 = std::move(value); }
+
+    
+    inline void SetId2(const char* value) { m_id2.assign(value); }
+
+    
+    inline GetObjectResult& WithId2(const Aws::String& value) { SetId2(value); return *this;}
+
+    
+    inline GetObjectResult& WithId2(Aws::String&& value) { SetId2(std::move(value)); return *this;}
+
+    
+    inline GetObjectResult& WithId2(const char* value) { SetId2(value); return *this;}
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
     Utils::Stream::ResponseStream m_body;
     bool m_deleteMarker;
@@ -965,6 +1007,8 @@ namespace Model
     ReplicationStatus m_replicationStatus;
     int m_partsCount;
     int m_tagCount;
+    Aws::String m_id2;
+    Aws::String m_requestId;
   };
 
 } // namespace Model
