@@ -77,6 +77,14 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                         !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
                 .forEach(operationEntry -> operationEntry.setVirtualAddressMemberName("Bucket"));
 
+        Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
+
+        if(locationConstraints != null) {
+            if(!locationConstraints.getEnumValues().contains("us-east-2")) {
+                locationConstraints.getEnumValues().add("us-east-2");
+            }
+        }
+
         return super.generateSourceFiles(serviceModel);
     }
 
