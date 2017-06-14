@@ -291,15 +291,15 @@ double StringUtils::ConvertToDouble(const char* source)
 
 Aws::WString StringUtils::ToWString(const char* source)
 {
-    const auto len = std::strlen(source);
+    const auto len = static_cast<int>(std::strlen(source));
     Aws::WString outString;
     outString.resize(len); // there is no way UTF-16 would require _more_ code-points than UTF-8 for the _same_ string
-    const auto result = MultiByteToWideChar(CP_UTF8            /*CodePage*/,
-                                            0                  /*dwFlags*/,
-                                            source             /*lpMultiByteStr*/,
-                                            len                /*cbMultiByte*/,
-                                            &outString[0]      /*lpWideCharStr*/,
-                                            outString.length() /*cchWideChar*/);
+    const auto result = MultiByteToWideChar(CP_UTF8                             /*CodePage*/,
+                                            0                                   /*dwFlags*/,
+                                            source                              /*lpMultiByteStr*/,
+                                            len                                 /*cbMultiByte*/,
+                                            &outString[0]                       /*lpWideCharStr*/,
+                                            static_cast<int>(outString.length())/*cchWideChar*/);
     if (!result)
     {
         return L"";
@@ -310,7 +310,7 @@ Aws::WString StringUtils::ToWString(const char* source)
 
 Aws::String StringUtils::FromWString(const wchar_t* source)
 {
-    const auto len = wcslen(source);
+    const auto len = static_cast<int>(std::wcslen(source));
     Aws::String output;
     if (int requiredSizeInBytes = WideCharToMultiByte(CP_UTF8 /*CodePage*/,
                                                       0       /*dwFlags*/,
@@ -323,14 +323,14 @@ Aws::String StringUtils::FromWString(const wchar_t* source)
     {
         output.resize(requiredSizeInBytes);
     }
-    const auto result = WideCharToMultiByte(CP_UTF8         /*CodePage*/,
-                                            0               /*dwFlags*/,
-                                            source          /*lpWideCharStr*/,
-                                            len             /*cchWideChar*/,
-                                            &output[0]      /*lpMultiByteStr*/,
-                                            output.length() /*cbMultiByte*/,
-                                            nullptr         /*lpDefaultChar*/,
-                                            nullptr         /*lpUsedDefaultChar*/);
+    const auto result = WideCharToMultiByte(CP_UTF8                           /*CodePage*/,
+                                            0                                 /*dwFlags*/,
+                                            source                            /*lpWideCharStr*/,
+                                            len                               /*cchWideChar*/,
+                                            &output[0]                        /*lpMultiByteStr*/,
+                                            static_cast<int>(output.length()) /*cbMultiByte*/,
+                                            nullptr                           /*lpDefaultChar*/,
+                                            nullptr                           /*lpUsedDefaultChar*/);
     if (!result)
     {
         return "";
