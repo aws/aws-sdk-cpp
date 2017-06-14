@@ -22,6 +22,10 @@
 #include <cstring>
 #include <functional>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 using namespace Aws::Utils;
 
 void StringUtils::Replace(Aws::String& s, const char* search, const char* replace)
@@ -287,21 +291,52 @@ double StringUtils::ConvertToDouble(const char* source)
 
 Aws::WString StringUtils::ToWString(const char* source)
 {
+    const auto len = std::strlen(source);
     Aws::WString outString;
-
-    outString.resize(std::strlen(source));
-    std::copy(source, source + std::strlen(source), outString.begin());
+    outString.resize(len); // there is no way UTF-16 would require _more_ code-points than UTF-8 for the _same_ string
+    const auto result = MultiByteToWideChar(CP_UTF8            /*CodePage*/,
+                                            0                  /*dwFlags*/,
+                                            source             /*lpMultiByteStr*/,
+                                            len                /*cbMultiByte*/,
+                                            &outString[0]      /*lpWideCharStr*/,
+                                            outString.length() /*cchWideChar*/);
+    if (!result)
+    {
+        return L"";
+    }
+    outString.resize(result);
     return outString;
 }
 
 Aws::String StringUtils::FromWString(const wchar_t* source)
 {
-    Aws::WString inWString(source);
-
-    Aws::String outString(inWString.begin(), inWString.end());
-    return outString;
+    const auto len = wcslen(source);
+    Aws::String output;
+    if (int requiredSizeInBytes = WideCharToMultiByte(CP_UTF8 /*CodePage*/,
+                                                      0       /*dwFlags*/,
+                                                      source  /*lpWideCharStr*/,
+                                                      len     /*cchWideChar*/,
+                                                      nullptr /*lpMultiByteStr*/,
+                                                      0       /*cbMultiByte*/,
+                                                      nullptr /*lpDefaultChar*/,
+                                                      nullptr /*lpUsedDefaultChar*/))
+    {
+        output.resize(requiredSizeInBytes);
+    }
+    const auto result = WideCharToMultiByte(CP_UTF8         /*CodePage*/,
+                                            0               /*dwFlags*/,
+                                            source          /*lpWideCharStr*/,
+                                            len             /*cchWideChar*/,
+                                            &output[0]      /*lpMultiByteStr*/,
+                                            output.length() /*cbMultiByte*/,
+                                            nullptr         /*lpDefaultChar*/,
+                                            nullptr         /*lpUsedDefaultChar*/);
+    if (!result)
+    {
+        return "";
+    }
+    output.resize(result);
+    return output;
 }
 
 #endif
-
-

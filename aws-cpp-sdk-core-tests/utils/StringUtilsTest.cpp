@@ -201,87 +201,36 @@ TEST(StringUtilsTest, TestDoubleURLEncoding)
 
 TEST(StringUtilsTest, TestUnicodeURLEncoding)
 {
-    ASSERT_EQ("sample%E4%B8%AD%E5%9B%BD", StringUtils::URLEncode("sample中国"));
+    // 中国 in UTF-8 hex notation
+    ASSERT_STREQ("sample%E4%B8%AD%E5%9B%BD", StringUtils::URLEncode("sample\xE4\xB8\xAD\xE5\x9B\xBD").c_str());
 }
 
 TEST(StringUtilsTest, TestUnicodeURLDecoding)
 {
-    ASSERT_EQ("sample中国", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD"));
+    // 中国 in UTF-8 hex notation
+    ASSERT_STREQ("sample\xE4\xB8\xAD\xE5\x9B\xBD", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD").c_str());
 }
 
 #ifdef _WIN32
 
 TEST(StringUtilsTest, TestWCharToString)
 {
-    static const wchar_t* wcharString = L"Test this string";
+    static const wchar_t wcharString[] = L"simple \x6837\x54C1"; // 样品 in UTF-16 hex notation 
+    static const char expected[] = "simple \xE6\xA0\xB7\xE5\x93\x81"; // 样品 in UTF-8 hex notation 
 
     Aws::String outString = StringUtils::FromWString(wcharString);
 
-    ASSERT_STREQ("Test this string", outString.c_str());
+    ASSERT_STREQ(expected, outString.c_str());
 }
 
 TEST(StringUtilsTest, TestCharToWString)
 {
-    static const char* charString = "Test this string";
+    static const char charString[] = "simple \xE6\xA0\xB7\xE5\x93\x81"; // 样品 in UTF-8 hex notation 
+    static const wchar_t expected[] = L"simple \x6837\x54C1"; // 样品 in UTF-16 hex notation 
 
-    Aws::WString outString = StringUtils::ToWString(charString);
+    const Aws::WString outString = StringUtils::ToWString(charString);
 
-    ASSERT_STREQ(L"Test this string", outString.c_str());
-}
-
-TEST(StringUtilsTest, TestWStringNonAsciiToString)
-{
-    Aws::WString startString;
-
-    // Toss in a couple ascii characters to start, then go over 127
-    const char startVal = 115;
-    int addValue = startVal;
-    const char incrementVal = 10;
-    const char loopCount = 10;
-    for (char i = 0; i < loopCount; ++i)
-    {
-        startString.push_back(static_cast<wchar_t>(addValue));
-        addValue += incrementVal;
-    }
-
-    Aws::String outString = StringUtils::FromWString(startString.c_str());
-    ASSERT_EQ(outString.length(), loopCount);
-
-    for (size_t i = 0; i < outString.length(); ++i)
-    {
-        char testValue = outString[i];
-        ASSERT_EQ(testValue, static_cast<char>(startVal + incrementVal * i));
-    }
-
-    // This loop will cross the byte limit
-    for (char i = 0; i < loopCount; ++i)
-    {
-        startString.push_back(static_cast<wchar_t>(addValue));
-        addValue += incrementVal;
-    }
-    // Verify the length, not the values though
-    outString = StringUtils::FromWString(startString.c_str());
-    ASSERT_EQ(outString.length(), loopCount * 2);
-}
-
-TEST(StringUtilsTest, TestStringNonAsciiToWString)
-{
-    Aws::String startString;
-
-    const char startVal = 115;
-    
-    const char incrementVal = 10;
-    const char loopCount = 10;
-    for (char i = 0; i < loopCount; ++i)
-    {
-        startString.push_back(static_cast<char>(startVal + incrementVal * i));
-    }
-
-    Aws::WString outString = StringUtils::ToWString(startString.c_str());
-    ASSERT_EQ(outString.length(), loopCount);
+    ASSERT_STREQ(expected, outString.c_str());
 }
 
 #endif
-
-
-
