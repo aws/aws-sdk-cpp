@@ -19,42 +19,58 @@ if(PLATFORM_WINDOWS)
     set(PLATFORM_LIBS ${PLATFORM_LIBS} Winmm)
 endif()
 
-if(HAVE_PULSE)
-    file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/linux/*.h" )
-	file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/linux/*.cpp" )
+if (PLATFORM_LINUX)
+    if(HAVE_PULSE)
+        file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/linux/*.h" )
+        file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/linux/*.cpp" )
 
-	message(STATUS "Pulse audio header files have been detected, included pulse audio as a possible sound driver implementation.")
-    add_definitions("-DPULSE")
-    set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse pulse-simple)
-elseif(PLATFORM_LINUX)
-    message(WARNING "We've detected that you are building on linux, but the header files for pulseaudio are not available.\
-                    If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
-                    However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for pulseudio.\
-                    e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
+        message(STATUS "Pulse audio header files have been detected, included pulse audio as a possible sound driver implementation.")
+        add_definitions("-DPULSE")
+        set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse pulse-simple)
+    else()
+        message(WARNING "We've detected that you are building on linux, but the header files for pulseaudio are not available.\
+                If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
+                However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for pulseAudio.\
+                e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
+    endif()
 endif()
 
 if(PLATFORM_APPLE)
-    file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/apple/*.h" )
-	file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/apple/*.cpp" )
-
 	find_library(COREAUDIO_LIBRARY CoreAudio)
-    find_path(COREAUDIO_INCLUDE_DIR CoreAudioTypes.h)
+    if (${COREAUDIO_LIBRARY} STREQUAL "${COREAUDIO_LIBRARY}-NOTFOUND")
+        if (HAVE_PULSE)
+            file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/linux/*.h" )
+            file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/linux/*.cpp" )
+            message(STATUS "Pulse audio header files have been detected, included pulse audio as a possible sound driver implementation.")
+            add_definitions("-DPULSE")
+            set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse pulse-simple)
+        else()
+            message(FATAL "We've detected that you are building on macos, but there is no coreAudio library and pulseAudio library available.\
+                    If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
+                    However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for coreAudio or pulseAudio.\
+                    e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
+        endif()
+    else()
+        file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/apple/*.h" )
+        file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/apple/*.cpp" )
+        find_path(COREAUDIO_INCLUDE_DIR CoreAudioTypes.h)
 
-    include_directories(${COREAUDIO_INCLUDE_DIR})
-    set(PLATFORM_LIBS ${PLATFORM_LIBS} ${COREAUDIO_LIBRARY})
+        include_directories(${COREAUDIO_INCLUDE_DIR})
+        set(PLATFORM_LIBS ${PLATFORM_LIBS} ${COREAUDIO_LIBRARY})
 
-    find_library(AUDIOTOOLBOX_LIBRARY AudioToolbox)
-    find_path(AUDIOTOOLBOX_INCLUDE_DIR AudioQueue.h)
+        find_library(AUDIOTOOLBOX_LIBRARY AudioToolbox)
+        find_path(AUDIOTOOLBOX_INCLUDE_DIR AudioQueue.h)
 
-    include_directories(${AUDIOTOOLBOX_INCLUDE_DIR})
-    set(PLATFORM_LIBS ${PLATFORM_LIBS} ${AUDIOTOOLBOX_LIBRARY})
+        include_directories(${AUDIOTOOLBOX_INCLUDE_DIR})
+        set(PLATFORM_LIBS ${PLATFORM_LIBS} ${AUDIOTOOLBOX_LIBRARY})
 
-    find_library(FOUNDATION_LIBRARY CoreFoundation)
+        find_library(FOUNDATION_LIBRARY CoreFoundation)
 
-    set(PLATFORM_LIBS ${PLATFORM_LIBS} ${FOUNDATION_LIBRARY})
+        set(PLATFORM_LIBS ${PLATFORM_LIBS} ${FOUNDATION_LIBRARY})
 
-    add_definitions("-DCORE_AUDIO")
-    add_definitions("-Wno-gnu-zero-variadic-macro-arguments -Wno-four-char-constants -Wno-nullability-extension")
+        add_definitions("-DCORE_AUDIO")
+        add_definitions("-Wno-gnu-zero-variadic-macro-arguments -Wno-four-char-constants -Wno-nullability-extension")
+    endif()
 endif()
 
 file( GLOB TEXT_TO_SPEECH_SOURCE "source/text-to-speech/*.cpp" )
