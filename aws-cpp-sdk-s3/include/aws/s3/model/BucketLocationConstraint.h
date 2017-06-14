@@ -36,7 +36,8 @@ namespace Model
     ap_northeast_1,
     sa_east_1,
     cn_north_1,
-    eu_central_1
+    eu_central_1,
+    us_east_2
   };
 
 namespace BucketLocationConstraintMapper
