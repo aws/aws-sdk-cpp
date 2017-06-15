@@ -22,9 +22,8 @@ namespace Aws
 
 class AWS_CORE_API NoResult
 {
-private:
-    //TODO: Remove this once we figure out how to make an empty class compile in a move on gcc.
-    int m_giveSomeSize;
+public:
+    virtual ~NoResult() {};
 };
 
 } // namespace Aws
