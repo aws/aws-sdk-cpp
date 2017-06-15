@@ -14,8 +14,9 @@
   */
 
 #include <aws/external/gtest.h>
+#if ENABLE_CURL_CLIENT
 #include <signal.h>
-
+#endif
 
 TEST(SignalHandlerTest, RaisingSIGPIPEShouldNotTerminateProcess)
 {
