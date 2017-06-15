@@ -31,7 +31,8 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_scalableDimensionHasBeenSet(false),
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
-    m_stepScalingPolicyConfigurationHasBeenSet(false)
+    m_stepScalingPolicyConfigurationHasBeenSet(false),
+    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_stepScalingPolicyConfigurationHasBeenSet)
   {
    payload.WithObject("StepScalingPolicyConfiguration", m_stepScalingPolicyConfiguration.Jsonize());
+
+  }
+
+  if(m_targetTrackingScalingPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetTrackingScalingPolicyConfiguration", m_targetTrackingScalingPolicyConfiguration.Jsonize());
 
   }
 

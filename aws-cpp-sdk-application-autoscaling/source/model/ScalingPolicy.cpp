@@ -39,6 +39,7 @@ ScalingPolicy::ScalingPolicy() :
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_stepScalingPolicyConfigurationHasBeenSet(false),
+    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false),
     m_alarmsHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -55,6 +56,7 @@ ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) :
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_stepScalingPolicyConfigurationHasBeenSet(false),
+    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false),
     m_alarmsHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -110,6 +112,13 @@ ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
     m_stepScalingPolicyConfiguration = jsonValue.GetObject("StepScalingPolicyConfiguration");
 
     m_stepScalingPolicyConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetTrackingScalingPolicyConfiguration"))
+  {
+    m_targetTrackingScalingPolicyConfiguration = jsonValue.GetObject("TargetTrackingScalingPolicyConfiguration");
+
+    m_targetTrackingScalingPolicyConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Alarms"))
@@ -172,6 +181,12 @@ JsonValue ScalingPolicy::Jsonize() const
   if(m_stepScalingPolicyConfigurationHasBeenSet)
   {
    payload.WithObject("StepScalingPolicyConfiguration", m_stepScalingPolicyConfiguration.Jsonize());
+
+  }
+
+  if(m_targetTrackingScalingPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetTrackingScalingPolicyConfiguration", m_targetTrackingScalingPolicyConfiguration.Jsonize());
 
   }
 

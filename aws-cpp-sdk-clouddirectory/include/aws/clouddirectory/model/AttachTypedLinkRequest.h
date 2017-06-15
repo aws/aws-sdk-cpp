@@ -158,37 +158,37 @@ namespace Model
     inline AttachTypedLinkRequest& WithTypedLinkFacet(TypedLinkSchemaAndFacetName&& value) { SetTypedLinkFacet(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline const Aws::Vector<AttributeNameAndValue>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline void SetAttributes(const Aws::Vector<AttributeNameAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline void SetAttributes(Aws::Vector<AttributeNameAndValue>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline AttachTypedLinkRequest& WithAttributes(const Aws::Vector<AttributeNameAndValue>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline AttachTypedLinkRequest& WithAttributes(Aws::Vector<AttributeNameAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline AttachTypedLinkRequest& AddAttributes(const AttributeNameAndValue& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>An ordered set of attributes that are associated with the typed link.</p>
+     * <p>A set of attributes that are associated with the typed link.</p>
      */
     inline AttachTypedLinkRequest& AddAttributes(AttributeNameAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

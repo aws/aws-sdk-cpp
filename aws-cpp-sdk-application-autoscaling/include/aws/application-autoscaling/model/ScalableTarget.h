@@ -97,7 +97,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -115,7 +119,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -133,7 +141,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -151,7 +163,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -169,7 +185,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline ScalableTarget& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -187,7 +207,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline ScalableTarget& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -205,7 +229,11 @@ namespace Model
      * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> </ul>
      */
     inline ScalableTarget& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -219,7 +247,15 @@ namespace Model
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
-     * AppStream 2.0 fleet.</p> </li> </ul>
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -233,7 +269,15 @@ namespace Model
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
-     * AppStream 2.0 fleet.</p> </li> </ul>
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -247,7 +291,15 @@ namespace Model
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
-     * AppStream 2.0 fleet.</p> </li> </ul>
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -261,7 +313,15 @@ namespace Model
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
-     * AppStream 2.0 fleet.</p> </li> </ul>
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> </ul>
      */
     inline ScalableTarget& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -275,7 +335,15 @@ namespace Model
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
-     * AppStream 2.0 fleet.</p> </li> </ul>
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> </ul>
      */
     inline ScalableTarget& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

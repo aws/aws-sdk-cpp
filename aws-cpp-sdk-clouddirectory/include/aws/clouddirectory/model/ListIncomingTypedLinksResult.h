@@ -44,37 +44,37 @@ namespace Model
     ListIncomingTypedLinksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline const Aws::Vector<TypedLinkSpecifier>& GetLinkSpecifiers() const{ return m_linkSpecifiers; }
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline void SetLinkSpecifiers(const Aws::Vector<TypedLinkSpecifier>& value) { m_linkSpecifiers = value; }
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline void SetLinkSpecifiers(Aws::Vector<TypedLinkSpecifier>&& value) { m_linkSpecifiers = std::move(value); }
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline ListIncomingTypedLinksResult& WithLinkSpecifiers(const Aws::Vector<TypedLinkSpecifier>& value) { SetLinkSpecifiers(value); return *this;}
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline ListIncomingTypedLinksResult& WithLinkSpecifiers(Aws::Vector<TypedLinkSpecifier>&& value) { SetLinkSpecifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline ListIncomingTypedLinksResult& AddLinkSpecifiers(const TypedLinkSpecifier& value) { m_linkSpecifiers.push_back(value); return *this; }
 
     /**
-     * <p>Returns a typed link specifier as output.</p>
+     * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline ListIncomingTypedLinksResult& AddLinkSpecifiers(TypedLinkSpecifier&& value) { m_linkSpecifiers.push_back(std::move(value)); return *this; }
 

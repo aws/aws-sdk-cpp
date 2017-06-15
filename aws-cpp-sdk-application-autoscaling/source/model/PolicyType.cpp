@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int StepScaling_HASH = HashingUtils::HashString("StepScaling");
+        static const int TargetTrackingScaling_HASH = HashingUtils::HashString("TargetTrackingScaling");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == StepScaling_HASH)
           {
             return PolicyType::StepScaling;
+          }
+          else if (hashCode == TargetTrackingScaling_HASH)
+          {
+            return PolicyType::TargetTrackingScaling;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case PolicyType::StepScaling:
             return "StepScaling";
+          case PolicyType::TargetTrackingScaling:
+            return "TargetTrackingScaling";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

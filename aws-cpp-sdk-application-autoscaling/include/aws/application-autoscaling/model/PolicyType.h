@@ -26,7 +26,8 @@ namespace Model
   enum class PolicyType
   {
     NOT_SET,
-    StepScaling
+    StepScaling,
+    TargetTrackingScaling
   };
 
 namespace PolicyTypeMapper

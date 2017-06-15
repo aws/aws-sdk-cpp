@@ -151,90 +151,114 @@ namespace Model
     inline UpdateTypedLinkFacetRequest& AddAttributeUpdates(TypedLinkFacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to a typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 

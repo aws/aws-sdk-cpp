@@ -34,6 +34,10 @@ namespace Aws
         static const int ec2_spot_fleet_request_TargetCapacity_HASH = HashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
         static const int elasticmapreduce_instancegroup_InstanceCount_HASH = HashingUtils::HashString("elasticmapreduce:instancegroup:InstanceCount");
         static const int appstream_fleet_DesiredCapacity_HASH = HashingUtils::HashString("appstream:fleet:DesiredCapacity");
+        static const int dynamodb_table_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:ReadCapacityUnits");
+        static const int dynamodb_table_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:table:WriteCapacityUnits");
+        static const int dynamodb_index_ReadCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:ReadCapacityUnits");
+        static const int dynamodb_index_WriteCapacityUnits_HASH = HashingUtils::HashString("dynamodb:index:WriteCapacityUnits");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -54,6 +58,22 @@ namespace Aws
           else if (hashCode == appstream_fleet_DesiredCapacity_HASH)
           {
             return ScalableDimension::appstream_fleet_DesiredCapacity;
+          }
+          else if (hashCode == dynamodb_table_ReadCapacityUnits_HASH)
+          {
+            return ScalableDimension::dynamodb_table_ReadCapacityUnits;
+          }
+          else if (hashCode == dynamodb_table_WriteCapacityUnits_HASH)
+          {
+            return ScalableDimension::dynamodb_table_WriteCapacityUnits;
+          }
+          else if (hashCode == dynamodb_index_ReadCapacityUnits_HASH)
+          {
+            return ScalableDimension::dynamodb_index_ReadCapacityUnits;
+          }
+          else if (hashCode == dynamodb_index_WriteCapacityUnits_HASH)
+          {
+            return ScalableDimension::dynamodb_index_WriteCapacityUnits;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +97,14 @@ namespace Aws
             return "elasticmapreduce:instancegroup:InstanceCount";
           case ScalableDimension::appstream_fleet_DesiredCapacity:
             return "appstream:fleet:DesiredCapacity";
+          case ScalableDimension::dynamodb_table_ReadCapacityUnits:
+            return "dynamodb:table:ReadCapacityUnits";
+          case ScalableDimension::dynamodb_table_WriteCapacityUnits:
+            return "dynamodb:table:WriteCapacityUnits";
+          case ScalableDimension::dynamodb_index_ReadCapacityUnits:
+            return "dynamodb:index:ReadCapacityUnits";
+          case ScalableDimension::dynamodb_index_WriteCapacityUnits:
+            return "dynamodb:index:WriteCapacityUnits";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

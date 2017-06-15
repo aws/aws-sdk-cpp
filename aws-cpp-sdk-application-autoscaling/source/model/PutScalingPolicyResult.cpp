@@ -44,6 +44,15 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("Alarms"))
+  {
+    Array<JsonValue> alarmsJsonList = jsonValue.GetArray("Alarms");
+    for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
+    {
+      m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

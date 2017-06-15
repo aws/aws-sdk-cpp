@@ -34,6 +34,7 @@ namespace Aws
         static const int elasticmapreduce_HASH = HashingUtils::HashString("elasticmapreduce");
         static const int ec2_HASH = HashingUtils::HashString("ec2");
         static const int appstream_HASH = HashingUtils::HashString("appstream");
+        static const int dynamodb_HASH = HashingUtils::HashString("dynamodb");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == appstream_HASH)
           {
             return ServiceNamespace::appstream;
+          }
+          else if (hashCode == dynamodb_HASH)
+          {
+            return ServiceNamespace::dynamodb;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "ec2";
           case ServiceNamespace::appstream:
             return "appstream";
+          case ServiceNamespace::dynamodb:
+            return "dynamodb";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

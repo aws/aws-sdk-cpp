@@ -29,7 +29,11 @@ namespace Model
     ecs_service_DesiredCount,
     ec2_spot_fleet_request_TargetCapacity,
     elasticmapreduce_instancegroup_InstanceCount,
-    appstream_fleet_DesiredCapacity
+    appstream_fleet_DesiredCapacity,
+    dynamodb_table_ReadCapacityUnits,
+    dynamodb_table_WriteCapacityUnits,
+    dynamodb_index_ReadCapacityUnits,
+    dynamodb_index_WriteCapacityUnits
   };
 
 namespace ScalableDimensionMapper

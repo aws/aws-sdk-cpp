@@ -84,146 +84,129 @@ namespace Model
     inline TypedLinkFacet& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline const Aws::Vector<TypedLinkAttributeDefinition>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline void SetAttributes(const Aws::Vector<TypedLinkAttributeDefinition>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline void SetAttributes(Aws::Vector<TypedLinkAttributeDefinition>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline TypedLinkFacet& WithAttributes(const Aws::Vector<TypedLinkAttributeDefinition>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline TypedLinkFacet& WithAttributes(Aws::Vector<TypedLinkAttributeDefinition>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline TypedLinkFacet& AddAttributes(const TypedLinkAttributeDefinition& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>An ordered set of attributes that are associate with the typed link. You can
-     * use typed link attributes when you need to represent the relationship between
-     * two objects or allow for quick filtering of incoming or outgoing typed
-     * links.</p>
+     * <p>A set of key-value pairs associated with the typed link. Typed link
+     * attributes are used when you have data values that are related to the link
+     * itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same
+     * objects.</p>
      */
     inline TypedLinkFacet& AddAttributes(TypedLinkAttributeDefinition&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline TypedLinkFacet& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline TypedLinkFacet& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A range filter that you provide for multiple attributes. The ability to
-     * filter typed links considers the order that the attributes are defined on the
-     * typed link facet. When providing ranges to typed link selection, any inexact
-     * ranges must be specified at the end. Any attributes that do not have a range
-     * specified are presumed to match the entire range. Filters are interpreted in the
-     * order of the attributes on the typed link facet, not the order in which they are
-     * supplied to any API calls.</p>
+     * <p>The set of attributes that distinguish links made from this facet from each
+     * other, in the order of significance. Listing typed links can filter on the
+     * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 

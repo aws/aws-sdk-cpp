@@ -1,0 +1,193 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
+#include <aws/application-autoscaling/model/PredefinedMetricSpecification.h>
+#include <aws/application-autoscaling/model/CustomizedMetricSpecification.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace ApplicationAutoScaling
+{
+namespace Model
+{
+
+  /**
+   * <p>Represents a target tracking scaling policy configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TargetTrackingScalingPolicyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  class AWS_APPLICATIONAUTOSCALING_API TargetTrackingScalingPolicyConfiguration
+  {
+  public:
+    TargetTrackingScalingPolicyConfiguration();
+    TargetTrackingScalingPolicyConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
+    TargetTrackingScalingPolicyConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
+     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     */
+    inline double GetTargetValue() const{ return m_targetValue; }
+
+    /**
+     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
+     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     */
+    inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
+
+    /**
+     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
+     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
+
+    /**
+     * <p>A predefined metric.</p>
+     */
+    inline const PredefinedMetricSpecification& GetPredefinedMetricSpecification() const{ return m_predefinedMetricSpecification; }
+
+    /**
+     * <p>A predefined metric.</p>
+     */
+    inline void SetPredefinedMetricSpecification(const PredefinedMetricSpecification& value) { m_predefinedMetricSpecificationHasBeenSet = true; m_predefinedMetricSpecification = value; }
+
+    /**
+     * <p>A predefined metric.</p>
+     */
+    inline void SetPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { m_predefinedMetricSpecificationHasBeenSet = true; m_predefinedMetricSpecification = std::move(value); }
+
+    /**
+     * <p>A predefined metric.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithPredefinedMetricSpecification(const PredefinedMetricSpecification& value) { SetPredefinedMetricSpecification(value); return *this;}
+
+    /**
+     * <p>A predefined metric.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { SetPredefinedMetricSpecification(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const CustomizedMetricSpecification& GetCustomizedMetricSpecification() const{ return m_customizedMetricSpecification; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { SetCustomizedMetricSpecification(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
+
+    /**
+     * <p>The amount of time, in seconds, after a scale out activity completes before
+     * another scale out activity can start.</p> <p>While the cooldown period is in
+     * effect, the capacity that has been added by the previous scale out event that
+     * initiated the cooldown is calculated as part of the desired capacity for the
+     * next scale out. The intention is to continuously (but not excessively) scale
+     * out.</p>
+     */
+    inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale out activity completes before
+     * another scale out activity can start.</p> <p>While the cooldown period is in
+     * effect, the capacity that has been added by the previous scale out event that
+     * initiated the cooldown is calculated as part of the desired capacity for the
+     * next scale out. The intention is to continuously (but not excessively) scale
+     * out.</p>
+     */
+    inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale out activity completes before
+     * another scale out activity can start.</p> <p>While the cooldown period is in
+     * effect, the capacity that has been added by the previous scale out event that
+     * initiated the cooldown is calculated as part of the desired capacity for the
+     * next scale out. The intention is to continuously (but not excessively) scale
+     * out.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
+
+    /**
+     * <p>The amount of time, in seconds, after a scale in activity completes before
+     * another scale in activity can start.</p> <p>The cooldown period is used to block
+     * subsequent scale in requests until it has expired. The intention is to scale in
+     * conservatively to protect your application's availability. However, if another
+     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * Application Auto Scaling scales out your scalable target immediately.</p>
+     */
+    inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale in activity completes before
+     * another scale in activity can start.</p> <p>The cooldown period is used to block
+     * subsequent scale in requests until it has expired. The intention is to scale in
+     * conservatively to protect your application's availability. However, if another
+     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * Application Auto Scaling scales out your scalable target immediately.</p>
+     */
+    inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale in activity completes before
+     * another scale in activity can start.</p> <p>The cooldown period is used to block
+     * subsequent scale in requests until it has expired. The intention is to scale in
+     * conservatively to protect your application's availability. However, if another
+     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * Application Auto Scaling scales out your scalable target immediately.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
+
+  private:
+    double m_targetValue;
+    bool m_targetValueHasBeenSet;
+    PredefinedMetricSpecification m_predefinedMetricSpecification;
+    bool m_predefinedMetricSpecificationHasBeenSet;
+    CustomizedMetricSpecification m_customizedMetricSpecification;
+    bool m_customizedMetricSpecificationHasBeenSet;
+    int m_scaleOutCooldown;
+    bool m_scaleOutCooldownHasBeenSet;
+    int m_scaleInCooldown;
+    bool m_scaleInCooldownHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ApplicationAutoScaling
+} // namespace Aws
