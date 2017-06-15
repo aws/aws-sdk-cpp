@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/SummaryStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SummaryStatus.h>
 #include <aws/ec2/model/InstanceStatusDetails.h>
 #include <utility>
 
@@ -49,31 +49,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The status.</p>
-     */
-    inline const SummaryStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status.</p>
-     */
-    inline void SetStatus(const SummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status.</p>
-     */
-    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status.</p>
-     */
-    inline InstanceStatusSummary& WithStatus(const SummaryStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status.</p>
-     */
-    inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The system instance health or application instance health.</p>
@@ -110,11 +85,36 @@ namespace Model
      */
     inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The status.</p>
+     */
+    inline const SummaryStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline void SetStatus(const SummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline InstanceStatusSummary& WithStatus(const SummaryStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status.</p>
+     */
+    inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
-    SummaryStatus m_status;
-    bool m_statusHasBeenSet;
     Aws::Vector<InstanceStatusDetails> m_details;
     bool m_detailsHasBeenSet;
+    SummaryStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

@@ -23,8 +23,8 @@ using namespace Aws::Utils;
 AssociateRouteTableRequest::AssociateRouteTableRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+    m_routeTableIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -37,14 +37,14 @@ Aws::String AssociateRouteTableRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
   if(m_routeTableIdHasBeenSet)
   {
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

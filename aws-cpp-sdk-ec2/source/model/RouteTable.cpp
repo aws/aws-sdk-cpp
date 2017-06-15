@@ -31,22 +31,22 @@ namespace Model
 {
 
 RouteTable::RouteTable() : 
-    m_routeTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routesHasBeenSet(false),
     m_associationsHasBeenSet(false),
+    m_propagatingVgwsHasBeenSet(false),
+    m_routeTableIdHasBeenSet(false),
+    m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_propagatingVgwsHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
 RouteTable::RouteTable(const XmlNode& xmlNode) : 
-    m_routeTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routesHasBeenSet(false),
     m_associationsHasBeenSet(false),
+    m_propagatingVgwsHasBeenSet(false),
+    m_routeTableIdHasBeenSet(false),
+    m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_propagatingVgwsHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,30 +57,6 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
-    if(!routeTableIdNode.IsNull())
-    {
-      m_routeTableId = StringUtils::Trim(routeTableIdNode.GetText().c_str());
-      m_routeTableIdHasBeenSet = true;
-    }
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
-    }
-    XmlNode routesNode = resultNode.FirstChild("routeSet");
-    if(!routesNode.IsNull())
-    {
-      XmlNode routesMember = routesNode.FirstChild("item");
-      while(!routesMember.IsNull())
-      {
-        m_routes.push_back(routesMember);
-        routesMember = routesMember.NextNode("item");
-      }
-
-      m_routesHasBeenSet = true;
-    }
     XmlNode associationsNode = resultNode.FirstChild("associationSet");
     if(!associationsNode.IsNull())
     {
@@ -92,18 +68,6 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
       }
 
       m_associationsHasBeenSet = true;
-    }
-    XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
-      XmlNode tagsMember = tagsNode.FirstChild("item");
-      while(!tagsMember.IsNull())
-      {
-        m_tags.push_back(tagsMember);
-        tagsMember = tagsMember.NextNode("item");
-      }
-
-      m_tagsHasBeenSet = true;
     }
     XmlNode propagatingVgwsNode = resultNode.FirstChild("propagatingVgwSet");
     if(!propagatingVgwsNode.IsNull())
@@ -117,6 +81,42 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
       m_propagatingVgwsHasBeenSet = true;
     }
+    XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
+    if(!routeTableIdNode.IsNull())
+    {
+      m_routeTableId = StringUtils::Trim(routeTableIdNode.GetText().c_str());
+      m_routeTableIdHasBeenSet = true;
+    }
+    XmlNode routesNode = resultNode.FirstChild("routeSet");
+    if(!routesNode.IsNull())
+    {
+      XmlNode routesMember = routesNode.FirstChild("item");
+      while(!routesMember.IsNull())
+      {
+        m_routes.push_back(routesMember);
+        routesMember = routesMember.NextNode("item");
+      }
+
+      m_routesHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -124,27 +124,6 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
 
 void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_routeTableIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
-  if(m_routesHasBeenSet)
-  {
-      unsigned routesIdx = 1;
-      for(auto& item : m_routes)
-      {
-        Aws::StringStream routesSs;
-        routesSs << location << index << locationValue << ".RouteSet." << routesIdx++;
-        item.OutputToStream(oStream, routesSs.str().c_str());
-      }
-  }
-
   if(m_associationsHasBeenSet)
   {
       unsigned associationsIdx = 1;
@@ -153,17 +132,6 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location, uns
         Aws::StringStream associationsSs;
         associationsSs << location << index << locationValue << ".AssociationSet." << associationsIdx++;
         item.OutputToStream(oStream, associationsSs.str().c_str());
-      }
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 
@@ -178,17 +146,65 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_routeTableIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
+  }
+
+  if(m_routesHasBeenSet)
+  {
+      unsigned routesIdx = 1;
+      for(auto& item : m_routes)
+      {
+        Aws::StringStream routesSs;
+        routesSs << location << index << locationValue << ".RouteSet." << routesIdx++;
+        item.OutputToStream(oStream, routesSs.str().c_str());
+      }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
 }
 
 void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_associationsHasBeenSet)
+  {
+      unsigned associationsIdx = 1;
+      for(auto& item : m_associations)
+      {
+        Aws::StringStream associationsSs;
+        associationsSs << location <<  ".AssociationSet." << associationsIdx++;
+        item.OutputToStream(oStream, associationsSs.str().c_str());
+      }
+  }
+  if(m_propagatingVgwsHasBeenSet)
+  {
+      unsigned propagatingVgwsIdx = 1;
+      for(auto& item : m_propagatingVgws)
+      {
+        Aws::StringStream propagatingVgwsSs;
+        propagatingVgwsSs << location <<  ".PropagatingVgwSet." << propagatingVgwsIdx++;
+        item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
+      }
+  }
   if(m_routeTableIdHasBeenSet)
   {
       oStream << location << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
-  }
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
   if(m_routesHasBeenSet)
   {
@@ -198,16 +214,6 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
         Aws::StringStream routesSs;
         routesSs << location <<  ".RouteSet." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
-      }
-  }
-  if(m_associationsHasBeenSet)
-  {
-      unsigned associationsIdx = 1;
-      for(auto& item : m_associations)
-      {
-        Aws::StringStream associationsSs;
-        associationsSs << location <<  ".AssociationSet." << associationsIdx++;
-        item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
@@ -220,15 +226,9 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
-  if(m_propagatingVgwsHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-      unsigned propagatingVgwsIdx = 1;
-      for(auto& item : m_propagatingVgws)
-      {
-        Aws::StringStream propagatingVgwsSs;
-        propagatingVgwsSs << location <<  ".PropagatingVgwSet." << propagatingVgwsIdx++;
-        item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
-      }
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

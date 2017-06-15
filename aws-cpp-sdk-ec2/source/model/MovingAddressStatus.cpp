@@ -31,16 +31,16 @@ namespace Model
 {
 
 MovingAddressStatus::MovingAddressStatus() : 
-    m_publicIpHasBeenSet(false),
     m_moveStatus(MoveStatus::NOT_SET),
-    m_moveStatusHasBeenSet(false)
+    m_moveStatusHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
 MovingAddressStatus::MovingAddressStatus(const XmlNode& xmlNode) : 
-    m_publicIpHasBeenSet(false),
     m_moveStatus(MoveStatus::NOT_SET),
-    m_moveStatusHasBeenSet(false)
+    m_moveStatusHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,17 +51,17 @@ MovingAddressStatus& MovingAddressStatus::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
-    if(!publicIpNode.IsNull())
-    {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
-      m_publicIpHasBeenSet = true;
-    }
     XmlNode moveStatusNode = resultNode.FirstChild("moveStatus");
     if(!moveStatusNode.IsNull())
     {
       m_moveStatus = MoveStatusMapper::GetMoveStatusForName(StringUtils::Trim(moveStatusNode.GetText().c_str()).c_str());
       m_moveStatusHasBeenSet = true;
+    }
+    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
+    if(!publicIpNode.IsNull())
+    {
+      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIpHasBeenSet = true;
     }
   }
 
@@ -70,27 +70,27 @@ MovingAddressStatus& MovingAddressStatus::operator =(const XmlNode& xmlNode)
 
 void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
-
   if(m_moveStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
+  }
+
+  if(m_publicIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
 }
 
 void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
   if(m_moveStatusHasBeenSet)
   {
       oStream << location << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
+  }
+  if(m_publicIpHasBeenSet)
+  {
+      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 }
 

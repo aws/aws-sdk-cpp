@@ -48,11 +48,6 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
-    {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-    }
     XmlNode autoEnableIONode = resultNode.FirstChild("autoEnableIO");
     if(!autoEnableIONode.IsNull())
     {
@@ -68,6 +63,11 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
         productCodesMember = productCodesMember.NextNode("item");
       }
 
+    }
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
+    {
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
     }
   }
 

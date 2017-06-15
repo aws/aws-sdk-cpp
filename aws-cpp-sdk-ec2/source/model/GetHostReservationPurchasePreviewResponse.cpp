@@ -50,6 +50,11 @@ GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResp
 
   if(!resultNode.IsNull())
   {
+    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
+    if(!currencyCodeNode.IsNull())
+    {
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+    }
     XmlNode purchaseNode = resultNode.FirstChild("purchase");
     if(!purchaseNode.IsNull())
     {
@@ -61,20 +66,15 @@ GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResp
       }
 
     }
-    XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
-    if(!totalUpfrontPriceNode.IsNull())
-    {
-      m_totalUpfrontPrice = StringUtils::Trim(totalUpfrontPriceNode.GetText().c_str());
-    }
     XmlNode totalHourlyPriceNode = resultNode.FirstChild("totalHourlyPrice");
     if(!totalHourlyPriceNode.IsNull())
     {
       m_totalHourlyPrice = StringUtils::Trim(totalHourlyPriceNode.GetText().c_str());
     }
-    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
-    if(!currencyCodeNode.IsNull())
+    XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
+    if(!totalUpfrontPriceNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_totalUpfrontPrice = StringUtils::Trim(totalUpfrontPriceNode.GetText().c_str());
     }
   }
 

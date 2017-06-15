@@ -50,6 +50,24 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The number of instances that can still be launched onto the Dedicated
+     * Host.</p>
+     */
+    inline int GetAvailableCapacity() const{ return m_availableCapacity; }
+
+    /**
+     * <p>The number of instances that can still be launched onto the Dedicated
+     * Host.</p>
+     */
+    inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
+
+    /**
+     * <p>The number of instances that can still be launched onto the Dedicated
+     * Host.</p>
+     */
+    inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
+
+    /**
      * <p>The instance type size supported by the Dedicated Host.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -85,24 +103,6 @@ namespace Model
     inline InstanceCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
-     */
-    inline int GetAvailableCapacity() const{ return m_availableCapacity; }
-
-    /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
-     */
-    inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
-
-    /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
-     */
-    inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
-
-    /**
      * <p>The total number of instances that can be launched onto the Dedicated
      * Host.</p>
      */
@@ -121,10 +121,10 @@ namespace Model
     inline InstanceCapacity& WithTotalCapacity(int value) { SetTotalCapacity(value); return *this;}
 
   private:
-    Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
     int m_availableCapacity;
     bool m_availableCapacityHasBeenSet;
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     int m_totalCapacity;
     bool m_totalCapacityHasBeenSet;
   };

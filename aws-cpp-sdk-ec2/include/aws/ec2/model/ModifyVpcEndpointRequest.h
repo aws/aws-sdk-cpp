@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,46 @@ namespace Model
 
   public:
     /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more route tables IDs to associate with the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -65,59 +105,6 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ModifyVpcEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>Specify <code>true</code> to reset the policy document to the default policy.
-     * The default policy allows access to the service.</p>
-     */
-    inline bool GetResetPolicy() const{ return m_resetPolicy; }
-
-    /**
-     * <p>Specify <code>true</code> to reset the policy document to the default policy.
-     * The default policy allows access to the service.</p>
-     */
-    inline void SetResetPolicy(bool value) { m_resetPolicyHasBeenSet = true; m_resetPolicy = value; }
-
-    /**
-     * <p>Specify <code>true</code> to reset the policy document to the default policy.
-     * The default policy allows access to the service.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithResetPolicy(bool value) { SetResetPolicy(value); return *this;}
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
@@ -162,46 +149,6 @@ namespace Model
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more route tables IDs to associate with the endpoint.</p>
-     */
-    inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more route table IDs to disassociate from the endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
@@ -241,19 +188,72 @@ namespace Model
      */
     inline ModifyVpcEndpointRequest& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
 
+    /**
+     * <p>Specify <code>true</code> to reset the policy document to the default policy.
+     * The default policy allows access to the service.</p>
+     */
+    inline bool GetResetPolicy() const{ return m_resetPolicy; }
+
+    /**
+     * <p>Specify <code>true</code> to reset the policy document to the default policy.
+     * The default policy allows access to the service.</p>
+     */
+    inline void SetResetPolicy(bool value) { m_resetPolicyHasBeenSet = true; m_resetPolicy = value; }
+
+    /**
+     * <p>Specify <code>true</code> to reset the policy document to the default policy.
+     * The default policy allows access to the service.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithResetPolicy(bool value) { SetResetPolicy(value); return *this;}
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
-    bool m_resetPolicy;
-    bool m_resetPolicyHasBeenSet;
-    Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
     Aws::Vector<Aws::String> m_addRouteTableIds;
     bool m_addRouteTableIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet;
     Aws::Vector<Aws::String> m_removeRouteTableIds;
     bool m_removeRouteTableIdsHasBeenSet;
+    bool m_resetPolicy;
+    bool m_resetPolicyHasBeenSet;
+    Aws::String m_vpcEndpointId;
+    bool m_vpcEndpointIdHasBeenSet;
   };
 
 } // namespace Model

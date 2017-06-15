@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/SpotFleetRequestConfig.h>
 #include <utility>
@@ -49,41 +49,6 @@ namespace Model
     DescribeSpotFleetRequestsResponse();
     DescribeSpotFleetRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSpotFleetRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline const Aws::Vector<SpotFleetRequestConfig>& GetSpotFleetRequestConfigs() const{ return m_spotFleetRequestConfigs; }
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline void SetSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { m_spotFleetRequestConfigs = value; }
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline void SetSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { m_spotFleetRequestConfigs = std::move(value); }
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { SetSpotFleetRequestConfigs(value); return *this;}
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { SetSpotFleetRequestConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(const SpotFleetRequestConfig& value) { m_spotFleetRequestConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the configuration of your Spot fleet.</p>
-     */
-    inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(SpotFleetRequestConfig&& value) { m_spotFleetRequestConfigs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -127,6 +92,41 @@ namespace Model
      */
     inline DescribeSpotFleetRequestsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline const Aws::Vector<SpotFleetRequestConfig>& GetSpotFleetRequestConfigs() const{ return m_spotFleetRequestConfigs; }
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline void SetSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { m_spotFleetRequestConfigs = value; }
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline void SetSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { m_spotFleetRequestConfigs = std::move(value); }
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(const Aws::Vector<SpotFleetRequestConfig>& value) { SetSpotFleetRequestConfigs(value); return *this;}
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline DescribeSpotFleetRequestsResponse& WithSpotFleetRequestConfigs(Aws::Vector<SpotFleetRequestConfig>&& value) { SetSpotFleetRequestConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(const SpotFleetRequestConfig& value) { m_spotFleetRequestConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the configuration of your Spot fleet.</p>
+     */
+    inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(SpotFleetRequestConfig&& value) { m_spotFleetRequestConfigs.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +143,8 @@ namespace Model
     inline DescribeSpotFleetRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<SpotFleetRequestConfig> m_spotFleetRequestConfigs;
     Aws::String m_nextToken;
+    Aws::Vector<SpotFleetRequestConfig> m_spotFleetRequestConfigs;
     ResponseMetadata m_responseMetadata;
   };
 

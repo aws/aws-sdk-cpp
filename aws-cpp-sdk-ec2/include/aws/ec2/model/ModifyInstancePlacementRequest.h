@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/ec2/model/Affinity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/HostTenancy.h>
-#include <aws/ec2/model/Affinity.h>
 #include <utility>
 
 namespace Aws
@@ -44,66 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline ModifyInstancePlacementRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline ModifyInstancePlacementRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The tenancy of the instance that you are modifying.</p>
-     */
-    inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
-
-    /**
-     * <p>The tenancy of the instance that you are modifying.</p>
-     */
-    inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-
-    /**
-     * <p>The tenancy of the instance that you are modifying.</p>
-     */
-    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-
-    /**
-     * <p>The tenancy of the instance that you are modifying.</p>
-     */
-    inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
-
-    /**
-     * <p>The tenancy of the instance that you are modifying.</p>
-     */
-    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
-
     /**
      * <p>The new affinity setting for the instance.</p>
      */
@@ -164,15 +104,75 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
 
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The tenancy of the instance that you are modifying.</p>
+     */
+    inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
+
+    /**
+     * <p>The tenancy of the instance that you are modifying.</p>
+     */
+    inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The tenancy of the instance that you are modifying.</p>
+     */
+    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
+
+    /**
+     * <p>The tenancy of the instance that you are modifying.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The tenancy of the instance that you are modifying.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
+
   private:
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
-    HostTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
     Affinity m_affinity;
     bool m_affinityHasBeenSet;
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
+    HostTenancy m_tenancy;
+    bool m_tenancyHasBeenSet;
   };
 
 } // namespace Model

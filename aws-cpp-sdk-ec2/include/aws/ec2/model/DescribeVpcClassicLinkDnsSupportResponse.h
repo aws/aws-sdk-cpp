@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ClassicLinkDnsSupport.h>
 #include <utility>
@@ -49,41 +49,6 @@ namespace Model
     DescribeVpcClassicLinkDnsSupportResponse();
     DescribeVpcClassicLinkDnsSupportResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcClassicLinkDnsSupportResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline const Aws::Vector<ClassicLinkDnsSupport>& GetVpcs() const{ return m_vpcs; }
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline void SetVpcs(const Aws::Vector<ClassicLinkDnsSupport>& value) { m_vpcs = value; }
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline void SetVpcs(Aws::Vector<ClassicLinkDnsSupport>&& value) { m_vpcs = std::move(value); }
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportResponse& WithVpcs(const Aws::Vector<ClassicLinkDnsSupport>& value) { SetVpcs(value); return *this;}
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportResponse& WithVpcs(Aws::Vector<ClassicLinkDnsSupport>&& value) { SetVpcs(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportResponse& AddVpcs(const ClassicLinkDnsSupport& value) { m_vpcs.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportResponse& AddVpcs(ClassicLinkDnsSupport&& value) { m_vpcs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items.</p>
@@ -120,6 +85,41 @@ namespace Model
      */
     inline DescribeVpcClassicLinkDnsSupportResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline const Aws::Vector<ClassicLinkDnsSupport>& GetVpcs() const{ return m_vpcs; }
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline void SetVpcs(const Aws::Vector<ClassicLinkDnsSupport>& value) { m_vpcs = value; }
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline void SetVpcs(Aws::Vector<ClassicLinkDnsSupport>&& value) { m_vpcs = std::move(value); }
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportResponse& WithVpcs(const Aws::Vector<ClassicLinkDnsSupport>& value) { SetVpcs(value); return *this;}
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportResponse& WithVpcs(Aws::Vector<ClassicLinkDnsSupport>&& value) { SetVpcs(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportResponse& AddVpcs(const ClassicLinkDnsSupport& value) { m_vpcs.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportResponse& AddVpcs(ClassicLinkDnsSupport&& value) { m_vpcs.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -136,8 +136,8 @@ namespace Model
     inline DescribeVpcClassicLinkDnsSupportResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<ClassicLinkDnsSupport> m_vpcs;
     Aws::String m_nextToken;
+    Aws::Vector<ClassicLinkDnsSupport> m_vpcs;
     ResponseMetadata m_responseMetadata;
   };
 

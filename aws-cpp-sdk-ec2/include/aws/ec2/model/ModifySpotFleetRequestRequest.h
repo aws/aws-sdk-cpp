@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,41 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
+
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
@@ -93,48 +128,13 @@ namespace Model
      */
     inline ModifySpotFleetRequestRequest& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
 
-    /**
-     * <p>Indicates whether running Spot instances should be terminated if the target
-     * capacity of the Spot fleet request is decreased below the current size of the
-     * Spot fleet.</p>
-     */
-    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
-
-    /**
-     * <p>Indicates whether running Spot instances should be terminated if the target
-     * capacity of the Spot fleet request is decreased below the current size of the
-     * Spot fleet.</p>
-     */
-    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
-
-    /**
-     * <p>Indicates whether running Spot instances should be terminated if the target
-     * capacity of the Spot fleet request is decreased below the current size of the
-     * Spot fleet.</p>
-     */
-    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
-
-    /**
-     * <p>Indicates whether running Spot instances should be terminated if the target
-     * capacity of the Spot fleet request is decreased below the current size of the
-     * Spot fleet.</p>
-     */
-    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
-
-    /**
-     * <p>Indicates whether running Spot instances should be terminated if the target
-     * capacity of the Spot fleet request is decreased below the current size of the
-     * Spot fleet.</p>
-     */
-    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
-
   private:
+    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
+    bool m_excessCapacityTerminationPolicyHasBeenSet;
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
     int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
-    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
   };
 
 } // namespace Model

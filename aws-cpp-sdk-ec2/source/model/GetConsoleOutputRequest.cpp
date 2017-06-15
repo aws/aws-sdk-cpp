@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 GetConsoleOutputRequest::GetConsoleOutputRequest() : 
+    m_instanceIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String GetConsoleOutputRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetConsoleOutput&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

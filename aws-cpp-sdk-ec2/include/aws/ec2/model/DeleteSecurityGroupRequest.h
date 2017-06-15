@@ -43,28 +43,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
-    inline DeleteSecurityGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+
+    /**
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     */
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+
+    /**
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     */
+    inline DeleteSecurityGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     */
+    inline DeleteSecurityGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     */
+    inline DeleteSecurityGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
@@ -109,47 +120,36 @@ namespace Model
     inline DeleteSecurityGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
-     */
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
-     */
-    inline DeleteSecurityGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
-     */
-    inline DeleteSecurityGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
-     */
-    inline DeleteSecurityGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    inline DeleteSecurityGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

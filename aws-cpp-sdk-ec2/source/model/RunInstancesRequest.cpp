@@ -21,39 +21,39 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 RunInstancesRequest::RunInstancesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_blockDeviceMappingsHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_minCount(0),
-    m_minCountHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_userDataHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_disableApiTermination(false),
-    m_disableApiTerminationHasBeenSet(false),
-    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
     m_ipv6AddressCount(0),
     m_ipv6AddressCountHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_kernelIdHasBeenSet(false),
+    m_keyNameHasBeenSet(false),
+    m_maxCount(0),
+    m_maxCountHasBeenSet(false),
+    m_minCount(0),
+    m_minCountHasBeenSet(false),
+    m_monitoringHasBeenSet(false),
+    m_placementHasBeenSet(false),
+    m_ramdiskIdHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_userDataHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_disableApiTermination(false),
+    m_disableApiTerminationHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
+    m_iamInstanceProfileHasBeenSet(false),
+    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
+    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -62,9 +62,14 @@ Aws::String RunInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RunInstances&";
-  if(m_dryRunHasBeenSet)
+  if(m_blockDeviceMappingsHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    unsigned blockDeviceMappingsCount = 1;
+    for(auto& item : m_blockDeviceMappings)
+    {
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
+      blockDeviceMappingsCount++;
+    }
   }
 
   if(m_imageIdHasBeenSet)
@@ -72,14 +77,29 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_minCountHasBeenSet)
+  if(m_instanceTypeHasBeenSet)
   {
-    ss << "MinCount=" << m_minCount << "&";
+    ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
 
-  if(m_maxCountHasBeenSet)
+  if(m_ipv6AddressCountHasBeenSet)
   {
-    ss << "MaxCount=" << m_maxCount << "&";
+    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+  }
+
+  if(m_ipv6AddressesHasBeenSet)
+  {
+    unsigned ipv6AddressesCount = 1;
+    for(auto& item : m_ipv6Addresses)
+    {
+      item.OutputToStream(ss, "Ipv6Address.", ipv6AddressesCount, "");
+      ipv6AddressesCount++;
+    }
+  }
+
+  if(m_kernelIdHasBeenSet)
+  {
+    ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
 
   if(m_keyNameHasBeenSet)
@@ -87,15 +107,29 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
 
-  if(m_securityGroupsHasBeenSet)
+  if(m_maxCountHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
-    {
-      ss << "SecurityGroup." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
-    }
+    ss << "MaxCount=" << m_maxCount << "&";
+  }
+
+  if(m_minCountHasBeenSet)
+  {
+    ss << "MinCount=" << m_minCount << "&";
+  }
+
+  if(m_monitoringHasBeenSet)
+  {
+    m_monitoring.OutputToStream(ss, "Monitoring");
+  }
+
+  if(m_placementHasBeenSet)
+  {
+    m_placement.OutputToStream(ss, "Placement");
+  }
+
+  if(m_ramdiskIdHasBeenSet)
+  {
+    ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
 
   if(m_securityGroupIdsHasBeenSet)
@@ -109,44 +143,15 @@ Aws::String RunInstancesRequest::SerializePayload() const
     }
   }
 
-  if(m_userDataHasBeenSet)
+  if(m_securityGroupsHasBeenSet)
   {
-    ss << "UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
-  }
-
-  if(m_instanceTypeHasBeenSet)
-  {
-    ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
-  }
-
-  if(m_placementHasBeenSet)
-  {
-    m_placement.OutputToStream(ss, "Placement");
-  }
-
-  if(m_kernelIdHasBeenSet)
-  {
-    ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
-  }
-
-  if(m_ramdiskIdHasBeenSet)
-  {
-    ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
-  }
-
-  if(m_blockDeviceMappingsHasBeenSet)
-  {
-    unsigned blockDeviceMappingsCount = 1;
-    for(auto& item : m_blockDeviceMappings)
+    unsigned securityGroupsCount = 1;
+    for(auto& item : m_securityGroups)
     {
-      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
-      blockDeviceMappingsCount++;
+      ss << "SecurityGroup." << securityGroupsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupsCount++;
     }
-  }
-
-  if(m_monitoringHasBeenSet)
-  {
-    m_monitoring.OutputToStream(ss, "Monitoring");
   }
 
   if(m_subnetIdHasBeenSet)
@@ -154,34 +159,14 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_disableApiTerminationHasBeenSet)
+  if(m_userDataHasBeenSet)
   {
-    ss << "DisableApiTermination=" << std::boolalpha << m_disableApiTermination << "&";
+    ss << "UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
 
-  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
+  if(m_additionalInfoHasBeenSet)
   {
-    ss << "InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
-  }
-
-  if(m_privateIpAddressHasBeenSet)
-  {
-    ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
-
-  if(m_ipv6AddressesHasBeenSet)
-  {
-    unsigned ipv6AddressesCount = 1;
-    for(auto& item : m_ipv6Addresses)
-    {
-      item.OutputToStream(ss, "Ipv6Address.", ipv6AddressesCount, "");
-      ipv6AddressesCount++;
-    }
-  }
-
-  if(m_ipv6AddressCountHasBeenSet)
-  {
-    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
 
   if(m_clientTokenHasBeenSet)
@@ -189,9 +174,29 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_additionalInfoHasBeenSet)
+  if(m_disableApiTerminationHasBeenSet)
   {
-    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+    ss << "DisableApiTermination=" << std::boolalpha << m_disableApiTermination << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_ebsOptimizedHasBeenSet)
+  {
+    ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
+  }
+
+  if(m_iamInstanceProfileHasBeenSet)
+  {
+    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
+  }
+
+  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
+  {
+    ss << "InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
 
   if(m_networkInterfacesHasBeenSet)
@@ -204,14 +209,9 @@ Aws::String RunInstancesRequest::SerializePayload() const
     }
   }
 
-  if(m_iamInstanceProfileHasBeenSet)
+  if(m_privateIpAddressHasBeenSet)
   {
-    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
-  }
-
-  if(m_ebsOptimizedHasBeenSet)
-  {
-    ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
+    ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

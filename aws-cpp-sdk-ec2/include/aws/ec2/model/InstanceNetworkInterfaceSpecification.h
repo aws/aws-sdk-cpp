@@ -18,8 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
+#include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -52,102 +52,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
+     * in a VPC. The public IP address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
+     * in a VPC. The public IP address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
+     * in a VPC. The public IP address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+    inline InstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>If set to <code>true</code>, the interface is deleted when the instance is
+     * terminated. You can specify <code>true</code> only if creating a new network
+     * interface when launching an instance.</p>
      */
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>If set to <code>true</code>, the interface is deleted when the instance is
+     * terminated. You can specify <code>true</code> only if creating a new network
+     * interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>If set to <code>true</code>, the interface is deleted when the instance is
+     * terminated. You can specify <code>true</code> only if creating a new network
+     * interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
-     */
-    inline int GetDeviceIndex() const{ return m_deviceIndex; }
-
-    /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
-     */
-    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
-
-    /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
-     * creating a network interface when launching an instance.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
     /**
      * <p>The description of the network interface. Applies only if creating a network
@@ -192,53 +142,25 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * <p>The index of the device on the instance for the network interface attachment.
+     * If you are specifying a network interface in a <a>RunInstances</a> request, you
+     * must provide the device index.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * <p>The index of the device on the instance for the network interface attachment.
+     * If you are specifying a network interface in a <a>RunInstances</a> request, you
+     * must provide the device index.</p>
      */
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * <p>The index of the device on the instance for the network interface attachment.
+     * If you are specifying a network interface in a <a>RunInstances</a> request, you
+     * must provide the device index.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-
-    /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
-     */
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-
-    /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The private IPv4 address of the network interface. Applies only if creating a
-     * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -289,25 +211,171 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>If set to <code>true</code>, the interface is deleted when the instance is
-     * terminated. You can specify <code>true</code> only if creating a new network
-     * interface when launching an instance.</p>
+     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
+     * option and the option to assign specific IPv6 addresses in the same request. You
+     * can specify this option if you've specified a minimum number of instances to
+     * launch.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
     /**
-     * <p>If set to <code>true</code>, the interface is deleted when the instance is
-     * terminated. You can specify <code>true</code> only if creating a new network
-     * interface when launching an instance.</p>
+     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
+     * option and the option to assign specific IPv6 addresses in the same request. You
+     * can specify this option if you've specified a minimum number of instances to
+     * launch.</p>
      */
-    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
-     * <p>If set to <code>true</code>, the interface is deleted when the instance is
-     * terminated. You can specify <code>true</code> only if creating a new network
-     * interface when launching an instance.</p>
+     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
+     * option and the option to assign specific IPv6 addresses in the same request. You
+     * can specify this option if you've specified a minimum number of instances to
+     * launch.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
@@ -390,140 +458,72 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
-     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
-     * in a VPC. The public IP address can only be assigned to a network interface for
-     * eth0, and can only be assigned to a new network interface, not an existing one.
-     * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
-     * in a VPC. The public IP address can only be assigned to a network interface for
-     * eth0, and can only be assigned to a new network interface, not an existing one.
-     * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
-     * in a VPC. The public IP address can only be assigned to a network interface for
-     * eth0, and can only be assigned to a new network interface, not an existing one.
-     * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline InstanceNetworkInterfaceSpecification& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+    inline InstanceNetworkInterfaceSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
-
-    /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-
-    /**
-     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
-     * specify this option and the option to assign a number of IPv6 addresses in the
-     * same request. You cannot specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
-     * option and the option to assign specific IPv6 addresses in the same request. You
-     * can specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
-
-    /**
-     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
-     * option and the option to assign specific IPv6 addresses in the same request. You
-     * can specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
-
-    /**
-     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
-     * option and the option to assign specific IPv6 addresses in the same request. You
-     * can specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline InstanceNetworkInterfaceSpecification& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    int m_deviceIndex;
-    bool m_deviceIndexHasBeenSet;
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
-    Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddressHasBeenSet;
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+    int m_deviceIndex;
+    bool m_deviceIndexHasBeenSet;
+    Aws::Vector<Aws::String> m_groups;
+    bool m_groupsHasBeenSet;
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet;
+    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
-    bool m_associatePublicIpAddress;
-    bool m_associatePublicIpAddressHasBeenSet;
-    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
-    int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
   };
 
 } // namespace Model

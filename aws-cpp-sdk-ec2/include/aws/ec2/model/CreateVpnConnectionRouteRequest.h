@@ -43,41 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
-
-    /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
@@ -112,11 +77,46 @@ namespace Model
      */
     inline CreateVpnConnectionRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
+
   private:
-    Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+    Aws::String m_vpnConnectionId;
+    bool m_vpnConnectionIdHasBeenSet;
   };
 
 } // namespace Model

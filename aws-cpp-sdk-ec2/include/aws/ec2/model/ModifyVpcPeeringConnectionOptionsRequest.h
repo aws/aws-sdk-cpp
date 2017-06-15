@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PeeringConnectionOptionsRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,31 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
+    inline const PeeringConnectionOptionsRequest& GetAccepterPeeringConnectionOptions() const{ return m_accepterPeeringConnectionOptions; }
+
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
+    inline void SetAccepterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = value; }
+
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
+    inline void SetAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = std::move(value); }
+
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsRequest& WithAccepterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { SetAccepterPeeringConnectionOptions(value); return *this;}
+
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsRequest& WithAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
+
     /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
@@ -62,6 +87,31 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ModifyVpcPeeringConnectionOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline const PeeringConnectionOptionsRequest& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline void SetRequesterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { m_requesterPeeringConnectionOptionsHasBeenSet = true; m_requesterPeeringConnectionOptions = value; }
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { m_requesterPeeringConnectionOptionsHasBeenSet = true; m_requesterPeeringConnectionOptions = std::move(value); }
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsRequest& WithRequesterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsRequest& WithRequesterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -98,65 +148,15 @@ namespace Model
      */
     inline ModifyVpcPeeringConnectionOptionsRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
-    /**
-     * <p>The VPC peering connection options for the requester VPC.</p>
-     */
-    inline const PeeringConnectionOptionsRequest& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
-
-    /**
-     * <p>The VPC peering connection options for the requester VPC.</p>
-     */
-    inline void SetRequesterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { m_requesterPeeringConnectionOptionsHasBeenSet = true; m_requesterPeeringConnectionOptions = value; }
-
-    /**
-     * <p>The VPC peering connection options for the requester VPC.</p>
-     */
-    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { m_requesterPeeringConnectionOptionsHasBeenSet = true; m_requesterPeeringConnectionOptions = std::move(value); }
-
-    /**
-     * <p>The VPC peering connection options for the requester VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsRequest& WithRequesterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
-
-    /**
-     * <p>The VPC peering connection options for the requester VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsRequest& WithRequesterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The VPC peering connection options for the accepter VPC.</p>
-     */
-    inline const PeeringConnectionOptionsRequest& GetAccepterPeeringConnectionOptions() const{ return m_accepterPeeringConnectionOptions; }
-
-    /**
-     * <p>The VPC peering connection options for the accepter VPC.</p>
-     */
-    inline void SetAccepterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = value; }
-
-    /**
-     * <p>The VPC peering connection options for the accepter VPC.</p>
-     */
-    inline void SetAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = std::move(value); }
-
-    /**
-     * <p>The VPC peering connection options for the accepter VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsRequest& WithAccepterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { SetAccepterPeeringConnectionOptions(value); return *this;}
-
-    /**
-     * <p>The VPC peering connection options for the accepter VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsRequest& WithAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
-    PeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
-    bool m_requesterPeeringConnectionOptionsHasBeenSet;
     PeeringConnectionOptionsRequest m_accepterPeeringConnectionOptions;
     bool m_accepterPeeringConnectionOptionsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    PeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
+    bool m_requesterPeeringConnectionOptionsHasBeenSet;
+    Aws::String m_vpcPeeringConnectionId;
+    bool m_vpcPeeringConnectionIdHasBeenSet;
   };
 
 } // namespace Model

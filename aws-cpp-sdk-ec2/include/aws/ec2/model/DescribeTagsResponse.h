@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/TagDescription.h>
 #include <utility>
@@ -48,41 +48,6 @@ namespace Model
     DescribeTagsResponse();
     DescribeTagsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeTagsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline void SetTags(const Aws::Vector<TagDescription>& value) { m_tags = value; }
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline void SetTags(Aws::Vector<TagDescription>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline DescribeTagsResponse& WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline DescribeTagsResponse& WithTags(Aws::Vector<TagDescription>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline DescribeTagsResponse& AddTags(const TagDescription& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags.</p>
-     */
-    inline DescribeTagsResponse& AddTags(TagDescription&& value) { m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +91,41 @@ namespace Model
      */
     inline DescribeTagsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<TagDescription>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline void SetTags(Aws::Vector<TagDescription>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline DescribeTagsResponse& WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline DescribeTagsResponse& WithTags(Aws::Vector<TagDescription>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline DescribeTagsResponse& AddTags(const TagDescription& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline DescribeTagsResponse& AddTags(TagDescription&& value) { m_tags.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +142,8 @@ namespace Model
     inline DescribeTagsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<TagDescription> m_tags;
     Aws::String m_nextToken;
+    Aws::Vector<TagDescription> m_tags;
     ResponseMetadata m_responseMetadata;
   };
 

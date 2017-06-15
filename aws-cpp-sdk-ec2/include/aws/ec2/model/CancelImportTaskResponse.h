@@ -85,41 +85,6 @@ namespace Model
     /**
      * <p>The current state of the task being canceled.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline void SetState(const Aws::String& value) { m_state = value; }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline void SetState(Aws::String&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline void SetState(const char* value) { m_state.assign(value); }
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline CancelImportTaskResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
-    inline CancelImportTaskResponse& WithState(const char* value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the task being canceled.</p>
-     */
     inline const Aws::String& GetPreviousState() const{ return m_previousState; }
 
     /**
@@ -152,6 +117,41 @@ namespace Model
      */
     inline CancelImportTaskResponse& WithPreviousState(const char* value) { SetPreviousState(value); return *this;}
 
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline void SetState(const Aws::String& value) { m_state = value; }
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline void SetState(Aws::String&& value) { m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline void SetState(const char* value) { m_state.assign(value); }
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline CancelImportTaskResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
+    inline CancelImportTaskResponse& WithState(const char* value) { SetState(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -169,8 +169,8 @@ namespace Model
 
   private:
     Aws::String m_importTaskId;
-    Aws::String m_state;
     Aws::String m_previousState;
+    Aws::String m_state;
     ResponseMetadata m_responseMetadata;
   };
 

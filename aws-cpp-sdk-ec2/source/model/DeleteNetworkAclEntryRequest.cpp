@@ -23,11 +23,11 @@ using namespace Aws::Utils;
 DeleteNetworkAclEntryRequest::DeleteNetworkAclEntryRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_egress(false),
+    m_egressHasBeenSet(false),
     m_networkAclIdHasBeenSet(false),
     m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false)
+    m_ruleNumberHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,11 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if(m_egressHasBeenSet)
+  {
+    ss << "Egress=" << std::boolalpha << m_egress << "&";
+  }
+
   if(m_networkAclIdHasBeenSet)
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
@@ -48,11 +53,6 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
   if(m_ruleNumberHasBeenSet)
   {
     ss << "RuleNumber=" << m_ruleNumber << "&";
-  }
-
-  if(m_egressHasBeenSet)
-  {
-    ss << "Egress=" << std::boolalpha << m_egress << "&";
   }
 
   ss << "Version=2016-11-15";

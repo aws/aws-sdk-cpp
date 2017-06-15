@@ -16,11 +16,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeStatusInfo.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/VolumeStatusEvent.h>
 #include <aws/ec2/model/VolumeStatusAction.h>
+#include <aws/ec2/model/VolumeStatusEvent.h>
 #include <utility>
 
 namespace Aws
@@ -53,39 +53,39 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::Vector<VolumeStatusAction>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetActions(const Aws::Vector<VolumeStatusAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
+    inline void SetActions(Aws::Vector<VolumeStatusAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
+    inline VolumeStatusItem& WithActions(const Aws::Vector<VolumeStatusAction>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline VolumeStatusItem& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline VolumeStatusItem& WithActions(Aws::Vector<VolumeStatusAction>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline VolumeStatusItem& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+    inline VolumeStatusItem& AddActions(const VolumeStatusAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The volume ID.</p>
+     * <p>The details of the operation.</p>
      */
-    inline VolumeStatusItem& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    inline VolumeStatusItem& AddActions(VolumeStatusAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Availability Zone of the volume.</p>
@@ -123,31 +123,6 @@ namespace Model
     inline VolumeStatusItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The volume status.</p>
-     */
-    inline const VolumeStatusInfo& GetVolumeStatus() const{ return m_volumeStatus; }
-
-    /**
-     * <p>The volume status.</p>
-     */
-    inline void SetVolumeStatus(const VolumeStatusInfo& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = value; }
-
-    /**
-     * <p>The volume status.</p>
-     */
-    inline void SetVolumeStatus(VolumeStatusInfo&& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = std::move(value); }
-
-    /**
-     * <p>The volume status.</p>
-     */
-    inline VolumeStatusItem& WithVolumeStatus(const VolumeStatusInfo& value) { SetVolumeStatus(value); return *this;}
-
-    /**
-     * <p>The volume status.</p>
-     */
-    inline VolumeStatusItem& WithVolumeStatus(VolumeStatusInfo&& value) { SetVolumeStatus(std::move(value)); return *this;}
-
-    /**
      * <p>A list of events associated with the volume.</p>
      */
     inline const Aws::Vector<VolumeStatusEvent>& GetEvents() const{ return m_events; }
@@ -183,51 +158,76 @@ namespace Model
     inline VolumeStatusItem& AddEvents(VolumeStatusEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline const Aws::Vector<VolumeStatusAction>& GetActions() const{ return m_actions; }
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline void SetActions(const Aws::Vector<VolumeStatusAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline void SetActions(Aws::Vector<VolumeStatusAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline VolumeStatusItem& WithActions(const Aws::Vector<VolumeStatusAction>& value) { SetActions(value); return *this;}
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline VolumeStatusItem& WithActions(Aws::Vector<VolumeStatusAction>&& value) { SetActions(std::move(value)); return *this;}
+    inline VolumeStatusItem& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline VolumeStatusItem& AddActions(const VolumeStatusAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline VolumeStatusItem& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the operation.</p>
+     * <p>The volume ID.</p>
      */
-    inline VolumeStatusItem& AddActions(VolumeStatusAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    inline VolumeStatusItem& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline const VolumeStatusInfo& GetVolumeStatus() const{ return m_volumeStatus; }
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline void SetVolumeStatus(const VolumeStatusInfo& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = value; }
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline void SetVolumeStatus(VolumeStatusInfo&& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = std::move(value); }
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline VolumeStatusItem& WithVolumeStatus(const VolumeStatusInfo& value) { SetVolumeStatus(value); return *this;}
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline VolumeStatusItem& WithVolumeStatus(VolumeStatusInfo&& value) { SetVolumeStatus(std::move(value)); return *this;}
 
   private:
-    Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
-    VolumeStatusInfo m_volumeStatus;
-    bool m_volumeStatusHasBeenSet;
-    Aws::Vector<VolumeStatusEvent> m_events;
-    bool m_eventsHasBeenSet;
     Aws::Vector<VolumeStatusAction> m_actions;
     bool m_actionsHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+    Aws::Vector<VolumeStatusEvent> m_events;
+    bool m_eventsHasBeenSet;
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
+    VolumeStatusInfo m_volumeStatus;
+    bool m_volumeStatusHasBeenSet;
   };
 
 } // namespace Model

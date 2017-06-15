@@ -26,7 +26,8 @@ namespace Model
   enum class ProductType
   {
     NOT_SET,
-    CLOUD_FORMATION_TEMPLATE
+    CLOUD_FORMATION_TEMPLATE,
+    MARKETPLACE
   };
 
 namespace ProductTypeMapper

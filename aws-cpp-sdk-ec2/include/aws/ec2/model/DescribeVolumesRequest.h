@@ -44,70 +44,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeVolumesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more volume IDs.</p>
-     */
-    inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
@@ -388,6 +324,112 @@ namespace Model
     inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more volume IDs.</p>
+     */
+    inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeVolumesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
+     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
+     * only returns <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>DescribeVolumes</code> request with
+     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
+     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
+     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
+     * returns all results. You cannot specify this parameter and the volume IDs
+     * parameter in the same request.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
+     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
+     * only returns <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>DescribeVolumes</code> request with
+     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
+     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
+     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
+     * returns all results. You cannot specify this parameter and the volume IDs
+     * parameter in the same request.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
+     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
+     * only returns <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>DescribeVolumes</code> request with
+     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
+     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
+     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
+     * returns all results. You cannot specify this parameter and the volume IDs
+     * parameter in the same request.</p>
+     */
+    inline DescribeVolumesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
      * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
@@ -450,59 +492,17 @@ namespace Model
      */
     inline DescribeVolumesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
-     */
-    inline DescribeVolumesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_volumeIds;
-    bool m_volumeIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_volumeIds;
+    bool m_volumeIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

@@ -31,14 +31,14 @@ namespace Model
 {
 
 KeyPairInfo::KeyPairInfo() : 
-    m_keyNameHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false)
+    m_keyFingerprintHasBeenSet(false),
+    m_keyNameHasBeenSet(false)
 {
 }
 
 KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode) : 
-    m_keyNameHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false)
+    m_keyFingerprintHasBeenSet(false),
+    m_keyNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -49,17 +49,17 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyNameNode = resultNode.FirstChild("keyName");
-    if(!keyNameNode.IsNull())
-    {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
-      m_keyNameHasBeenSet = true;
-    }
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
       m_keyFingerprint = StringUtils::Trim(keyFingerprintNode.GetText().c_str());
       m_keyFingerprintHasBeenSet = true;
+    }
+    XmlNode keyNameNode = resultNode.FirstChild("keyName");
+    if(!keyNameNode.IsNull())
+    {
+      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyNameHasBeenSet = true;
     }
   }
 
@@ -68,27 +68,27 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
 
 void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_keyNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
-  }
-
   if(m_keyFingerprintHasBeenSet)
   {
       oStream << location << index << locationValue << ".KeyFingerprint=" << StringUtils::URLEncode(m_keyFingerprint.c_str()) << "&";
+  }
+
+  if(m_keyNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
 
 }
 
 void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_keyNameHasBeenSet)
-  {
-      oStream << location << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
-  }
   if(m_keyFingerprintHasBeenSet)
   {
       oStream << location << ".KeyFingerprint=" << StringUtils::URLEncode(m_keyFingerprint.c_str()) << "&";
+  }
+  if(m_keyNameHasBeenSet)
+  {
+      oStream << location << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
 }
 

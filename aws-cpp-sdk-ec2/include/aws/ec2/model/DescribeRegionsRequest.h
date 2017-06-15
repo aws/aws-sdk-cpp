@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,70 +43,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeRegionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRegionNames() const{ return m_regionNames; }
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline DescribeRegionsRequest& WithRegionNames(const Aws::Vector<Aws::String>& value) { SetRegionNames(value); return *this;}
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline DescribeRegionsRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of one or more regions.</p>
-     */
-    inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
      * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
@@ -163,13 +99,77 @@ namespace Model
      */
     inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegionNames() const{ return m_regionNames; }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline DescribeRegionsRequest& WithRegionNames(const Aws::Vector<Aws::String>& value) { SetRegionNames(value); return *this;}
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline DescribeRegionsRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
+    inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeRegionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_regionNames;
-    bool m_regionNamesHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_regionNames;
+    bool m_regionNamesHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

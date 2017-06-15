@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,36 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
+    inline const ReservationValue& GetReservationValue() const{ return m_reservationValue; }
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
+    inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
+    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
+    inline ReservedInstanceReservationValue& WithReservationValue(const ReservationValue& value) { SetReservationValue(value); return *this;}
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
+    inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
@@ -85,41 +115,11 @@ namespace Model
      */
     inline ReservedInstanceReservationValue& WithReservedInstanceId(const char* value) { SetReservedInstanceId(value); return *this;}
 
-    /**
-     * <p>The total value of the Convertible Reserved Instance that you are
-     * exchanging.</p>
-     */
-    inline const ReservationValue& GetReservationValue() const{ return m_reservationValue; }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instance that you are
-     * exchanging.</p>
-     */
-    inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instance that you are
-     * exchanging.</p>
-     */
-    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
-
-    /**
-     * <p>The total value of the Convertible Reserved Instance that you are
-     * exchanging.</p>
-     */
-    inline ReservedInstanceReservationValue& WithReservationValue(const ReservationValue& value) { SetReservationValue(value); return *this;}
-
-    /**
-     * <p>The total value of the Convertible Reserved Instance that you are
-     * exchanging.</p>
-     */
-    inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
-
   private:
-    Aws::String m_reservedInstanceId;
-    bool m_reservedInstanceIdHasBeenSet;
     ReservationValue m_reservationValue;
     bool m_reservationValueHasBeenSet;
+    Aws::String m_reservedInstanceId;
+    bool m_reservedInstanceIdHasBeenSet;
   };
 
 } // namespace Model

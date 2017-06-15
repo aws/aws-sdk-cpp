@@ -17,10 +17,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/AttributeValue.h>
+#include <aws/ec2/model/LaunchPermissionModifications.h>
 #include <aws/ec2/model/OperationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/LaunchPermissionModifications.h>
-#include <aws/ec2/model/AttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -47,28 +47,64 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The name of the attribute to modify.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The name of the attribute to modify.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The name of the attribute to modify.</p>
      */
-    inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The name of the attribute to modify.</p>
+     */
+    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
+
+    /**
+     * <p>The name of the attribute to modify.</p>
+     */
+    inline ModifyImageAttributeRequest& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The name of the attribute to modify.</p>
+     */
+    inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the attribute to modify.</p>
+     */
+    inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline const AttributeValue& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline void SetDescription(const AttributeValue& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline ModifyImageAttributeRequest& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline ModifyImageAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -106,39 +142,29 @@ namespace Model
     inline ModifyImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The name of the attribute to modify.</p>
+     * <p>A launch permission modification.</p>
      */
-    inline const Aws::String& GetAttribute() const{ return m_attribute; }
+    inline const LaunchPermissionModifications& GetLaunchPermission() const{ return m_launchPermission; }
 
     /**
-     * <p>The name of the attribute to modify.</p>
+     * <p>A launch permission modification.</p>
      */
-    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetLaunchPermission(const LaunchPermissionModifications& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
 
     /**
-     * <p>The name of the attribute to modify.</p>
+     * <p>A launch permission modification.</p>
      */
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+    inline void SetLaunchPermission(LaunchPermissionModifications&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = std::move(value); }
 
     /**
-     * <p>The name of the attribute to modify.</p>
+     * <p>A launch permission modification.</p>
      */
-    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
+    inline ModifyImageAttributeRequest& WithLaunchPermission(const LaunchPermissionModifications& value) { SetLaunchPermission(value); return *this;}
 
     /**
-     * <p>The name of the attribute to modify.</p>
+     * <p>A launch permission modification.</p>
      */
-    inline ModifyImageAttributeRequest& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The name of the attribute to modify.</p>
-     */
-    inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the attribute to modify.</p>
-     */
-    inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    inline ModifyImageAttributeRequest& WithLaunchPermission(LaunchPermissionModifications&& value) { SetLaunchPermission(std::move(value)); return *this;}
 
     /**
      * <p>The operation type.</p>
@@ -164,102 +190,6 @@ namespace Model
      * <p>The operation type.</p>
      */
     inline ModifyImageAttributeRequest& WithOperationType(OperationType&& value) { SetOperationType(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more AWS account IDs. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more user groups. This is only valid when modifying the
-     * <code>launchPermission</code> attribute.</p>
-     */
-    inline ModifyImageAttributeRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 
     /**
      * <p>One or more product codes. After you add a product code to an AMI, it can't
@@ -318,6 +248,102 @@ namespace Model
     inline ModifyImageAttributeRequest& AddProductCodes(const char* value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more user groups. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more AWS account IDs. This is only valid when modifying the
+     * <code>launchPermission</code> attribute.</p>
+     */
+    inline ModifyImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
+
+    /**
      * <p>The value of the attribute being modified. This is only valid when modifying
      * the <code>description</code> attribute.</p>
      */
@@ -360,76 +386,50 @@ namespace Model
     inline ModifyImageAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
     /**
-     * <p>A launch permission modification.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const LaunchPermissionModifications& GetLaunchPermission() const{ return m_launchPermission; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>A launch permission modification.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetLaunchPermission(const LaunchPermissionModifications& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>A launch permission modification.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetLaunchPermission(LaunchPermissionModifications&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = std::move(value); }
-
-    /**
-     * <p>A launch permission modification.</p>
-     */
-    inline ModifyImageAttributeRequest& WithLaunchPermission(const LaunchPermissionModifications& value) { SetLaunchPermission(value); return *this;}
-
-    /**
-     * <p>A launch permission modification.</p>
-     */
-    inline ModifyImageAttributeRequest& WithLaunchPermission(LaunchPermissionModifications&& value) { SetLaunchPermission(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline const AttributeValue& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline void SetDescription(const AttributeValue& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline ModifyImageAttributeRequest& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline ModifyImageAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+    inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
     Aws::String m_attribute;
     bool m_attributeHasBeenSet;
-    OperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
-    Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
-    Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet;
-    Aws::Vector<Aws::String> m_productCodes;
-    bool m_productCodesHasBeenSet;
-    Aws::String m_value;
-    bool m_valueHasBeenSet;
-    LaunchPermissionModifications m_launchPermission;
-    bool m_launchPermissionHasBeenSet;
     AttributeValue m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
+    LaunchPermissionModifications m_launchPermission;
+    bool m_launchPermissionHasBeenSet;
+    OperationType m_operationType;
+    bool m_operationTypeHasBeenSet;
+    Aws::Vector<Aws::String> m_productCodes;
+    bool m_productCodesHasBeenSet;
+    Aws::Vector<Aws::String> m_userGroups;
+    bool m_userGroupsHasBeenSet;
+    Aws::Vector<Aws::String> m_userIds;
+    bool m_userIdsHasBeenSet;
+    Aws::String m_value;
+    bool m_valueHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

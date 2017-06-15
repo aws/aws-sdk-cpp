@@ -21,14 +21,14 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateFlowLogsRequest::CreateFlowLogsRequest() : 
+    m_clientTokenHasBeenSet(false),
+    m_deliverLogsPermissionArnHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
     m_resourceType(FlowLogsResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_deliverLogsPermissionArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_trafficTypeHasBeenSet(false)
 {
 }
 
@@ -36,6 +36,21 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateFlowLogs&";
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_deliverLogsPermissionArnHasBeenSet)
+  {
+    ss << "DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
+  }
+
+  if(m_logGroupNameHasBeenSet)
+  {
+    ss << "LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
+  }
+
   if(m_resourceIdsHasBeenSet)
   {
     unsigned resourceIdsCount = 1;
@@ -55,21 +70,6 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_trafficTypeHasBeenSet)
   {
     ss << "TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
-  }
-
-  if(m_logGroupNameHasBeenSet)
-  {
-    ss << "LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
-  }
-
-  if(m_deliverLogsPermissionArnHasBeenSet)
-  {
-    ss << "DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

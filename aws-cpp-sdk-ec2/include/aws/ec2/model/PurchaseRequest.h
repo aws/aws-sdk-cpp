@@ -50,6 +50,21 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The number of instances.</p>
+     */
+    inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>The number of instances.</p>
+     */
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+
+    /**
+     * <p>The number of instances.</p>
+     */
+    inline PurchaseRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
+    /**
      * <p>The purchase token.</p>
      */
     inline const Aws::String& GetPurchaseToken() const{ return m_purchaseToken; }
@@ -84,26 +99,11 @@ namespace Model
      */
     inline PurchaseRequest& WithPurchaseToken(const char* value) { SetPurchaseToken(value); return *this;}
 
-    /**
-     * <p>The number of instances.</p>
-     */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of instances.</p>
-     */
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of instances.</p>
-     */
-    inline PurchaseRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-
   private:
-    Aws::String m_purchaseToken;
-    bool m_purchaseTokenHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+    Aws::String m_purchaseToken;
+    bool m_purchaseTokenHasBeenSet;
   };
 
 } // namespace Model

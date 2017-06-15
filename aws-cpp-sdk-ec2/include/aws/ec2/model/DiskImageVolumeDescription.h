@@ -49,21 +49,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The size of the volume, in GiB.</p>
-     */
-    inline long long GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the volume, in GiB.</p>
-     */
-    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the volume, in GiB.</p>
-     */
-    inline DiskImageVolumeDescription& WithSize(long long value) { SetSize(value); return *this;}
-
-    /**
      * <p>The volume identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -98,11 +83,26 @@ namespace Model
      */
     inline DiskImageVolumeDescription& WithId(const char* value) { SetId(value); return *this;}
 
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
+    inline long long GetSize() const{ return m_size; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
+    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
+    inline DiskImageVolumeDescription& WithSize(long long value) { SetSize(value); return *this;}
+
   private:
-    long long m_size;
-    bool m_sizeHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
+    long long m_size;
+    bool m_sizeHasBeenSet;
   };
 
 } // namespace Model

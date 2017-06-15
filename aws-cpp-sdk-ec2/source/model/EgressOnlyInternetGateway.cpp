@@ -31,14 +31,14 @@ namespace Model
 {
 
 EgressOnlyInternetGateway::EgressOnlyInternetGateway() : 
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_egressOnlyInternetGatewayIdHasBeenSet(false)
 {
 }
 
 EgressOnlyInternetGateway::EgressOnlyInternetGateway(const XmlNode& xmlNode) : 
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_egressOnlyInternetGatewayIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -49,12 +49,6 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
-    if(!egressOnlyInternetGatewayIdNode.IsNull())
-    {
-      m_egressOnlyInternetGatewayId = StringUtils::Trim(egressOnlyInternetGatewayIdNode.GetText().c_str());
-      m_egressOnlyInternetGatewayIdHasBeenSet = true;
-    }
     XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
     if(!attachmentsNode.IsNull())
     {
@@ -67,6 +61,12 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
 
       m_attachmentsHasBeenSet = true;
     }
+    XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
+    if(!egressOnlyInternetGatewayIdNode.IsNull())
+    {
+      m_egressOnlyInternetGatewayId = StringUtils::Trim(egressOnlyInternetGatewayIdNode.GetText().c_str());
+      m_egressOnlyInternetGatewayIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -74,11 +74,6 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
 
 void EgressOnlyInternetGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_egressOnlyInternetGatewayIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
-  }
-
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -90,14 +85,15 @@ void EgressOnlyInternetGateway::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
+  }
+
 }
 
 void EgressOnlyInternetGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_egressOnlyInternetGatewayIdHasBeenSet)
-  {
-      oStream << location << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
-  }
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -107,6 +103,10 @@ void EgressOnlyInternetGateway::OutputToStream(Aws::OStream& oStream, const char
         attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
+  }
+  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  {
+      oStream << location << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
   }
 }
 

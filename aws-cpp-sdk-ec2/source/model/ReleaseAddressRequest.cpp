@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ReleaseAddressRequest::ReleaseAddressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_allocationIdHasBeenSet(false),
     m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String ReleaseAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ReleaseAddress&";
-  if(m_dryRunHasBeenSet)
+  if(m_allocationIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
   if(m_publicIpHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String ReleaseAddressRequest::SerializePayload() const
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  if(m_allocationIdHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

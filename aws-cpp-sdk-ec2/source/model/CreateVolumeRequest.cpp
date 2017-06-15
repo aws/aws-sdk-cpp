@@ -21,19 +21,19 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVolumeRequest::CreateVolumeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -42,9 +42,24 @@ Aws::String CreateVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVolume&";
-  if(m_dryRunHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+    ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   if(m_sizeHasBeenSet)
@@ -57,29 +72,14 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
   if(m_volumeTypeHasBeenSet)
   {
     ss << "VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
-  if(m_iopsHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Iops=" << m_iops << "&";
-  }
-
-  if(m_encryptedHasBeenSet)
-  {
-    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-
-  if(m_kmsKeyIdHasBeenSet)
-  {
-    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

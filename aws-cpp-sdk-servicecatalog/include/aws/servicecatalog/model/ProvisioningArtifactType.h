@@ -26,7 +26,9 @@ namespace Model
   enum class ProvisioningArtifactType
   {
     NOT_SET,
-    CLOUD_FORMATION_TEMPLATE
+    CLOUD_FORMATION_TEMPLATE,
+    MARKETPLACE_AMI,
+    MARKETPLACE_CAR
   };
 
 namespace ProvisioningArtifactTypeMapper

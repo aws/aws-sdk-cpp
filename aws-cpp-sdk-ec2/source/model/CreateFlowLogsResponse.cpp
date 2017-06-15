@@ -48,6 +48,11 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
+    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
+    if(!clientTokenNode.IsNull())
+    {
+      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+    }
     XmlNode flowLogIdsNode = resultNode.FirstChild("flowLogIdSet");
     if(!flowLogIdsNode.IsNull())
     {
@@ -58,11 +63,6 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const AmazonWebServic
         flowLogIdsMember = flowLogIdsMember.NextNode("item");
       }
 
-    }
-    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
-    if(!clientTokenNode.IsNull())
-    {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
     }
     XmlNode unsuccessfulNode = resultNode.FirstChild("unsuccessful");
     if(!unsuccessfulNode.IsNull())

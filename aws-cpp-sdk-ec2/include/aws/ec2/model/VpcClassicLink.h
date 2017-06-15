@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -50,41 +50,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline VpcClassicLink& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline VpcClassicLink& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline VpcClassicLink& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
      * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
@@ -136,13 +101,48 @@ namespace Model
      */
     inline VpcClassicLink& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline VpcClassicLink& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline VpcClassicLink& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline VpcClassicLink& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     bool m_classicLinkEnabled;
     bool m_classicLinkEnabledHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AttachVolumeRequest::AttachVolumeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
+    m_deviceHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+    m_volumeIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,14 +33,9 @@ Aws::String AttachVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AttachVolume&";
-  if(m_dryRunHasBeenSet)
+  if(m_deviceHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_volumeIdHasBeenSet)
-  {
-    ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+    ss << "Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -48,9 +43,14 @@ Aws::String AttachVolumeRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_deviceHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-    ss << "Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
+    ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

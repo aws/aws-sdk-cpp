@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteSnapshotRequest::DeleteSnapshotRequest() : 
+    m_snapshotIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteSnapshot&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

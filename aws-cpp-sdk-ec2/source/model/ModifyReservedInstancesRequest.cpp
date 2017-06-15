@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyReservedInstancesRequest::ModifyReservedInstancesRequest() : 
-    m_clientTokenHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_targetConfigurationsHasBeenSet(false)
 {
 }
@@ -31,11 +31,6 @@ Aws::String ModifyReservedInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyReservedInstances&";
-  if(m_clientTokenHasBeenSet)
-  {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
-  }
-
   if(m_reservedInstancesIdsHasBeenSet)
   {
     unsigned reservedInstancesIdsCount = 1;
@@ -45,6 +40,11 @@ Aws::String ModifyReservedInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       reservedInstancesIdsCount++;
     }
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_targetConfigurationsHasBeenSet)

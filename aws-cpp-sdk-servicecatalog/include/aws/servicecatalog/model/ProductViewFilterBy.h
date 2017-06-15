@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     FullTextSearch,
     Owner,
-    ProductType
+    ProductType,
+    SourceProductId
   };
 
 namespace ProductViewFilterByMapper

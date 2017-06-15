@@ -31,16 +31,16 @@ namespace Model
 {
 
 ImportSnapshotTask::ImportSnapshotTask() : 
+    m_descriptionHasBeenSet(false),
     m_importTaskIdHasBeenSet(false),
-    m_snapshotTaskDetailHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_snapshotTaskDetailHasBeenSet(false)
 {
 }
 
 ImportSnapshotTask::ImportSnapshotTask(const XmlNode& xmlNode) : 
+    m_descriptionHasBeenSet(false),
     m_importTaskIdHasBeenSet(false),
-    m_snapshotTaskDetailHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_snapshotTaskDetailHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +51,12 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
@@ -63,12 +69,6 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
       m_snapshotTaskDetail = snapshotTaskDetailNode;
       m_snapshotTaskDetailHasBeenSet = true;
     }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
-      m_descriptionHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -76,6 +76,11 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
 
 void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_importTaskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
@@ -88,15 +93,14 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
       m_snapshotTaskDetail.OutputToStream(oStream, snapshotTaskDetailLocationAndMemberSs.str().c_str());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
 }
 
 void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   if(m_importTaskIdHasBeenSet)
   {
       oStream << location << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
@@ -106,10 +110,6 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String snapshotTaskDetailLocationAndMember(location);
       snapshotTaskDetailLocationAndMember += ".SnapshotTaskDetail";
       m_snapshotTaskDetail.OutputToStream(oStream, snapshotTaskDetailLocationAndMember.c_str());
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
 

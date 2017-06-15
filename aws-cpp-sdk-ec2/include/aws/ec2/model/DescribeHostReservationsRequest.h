@@ -41,46 +41,6 @@ namespace Model
 
   public:
     /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const{ return m_hostReservationIdSet; }
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline void SetHostReservationIdSet(const Aws::Vector<Aws::String>& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = value; }
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::move(value); }
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline DescribeHostReservationsRequest& WithHostReservationIdSet(const Aws::Vector<Aws::String>& value) { SetHostReservationIdSet(value); return *this;}
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const Aws::String& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more host reservation IDs.</p>
-     */
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const char* value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
      * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
@@ -158,6 +118,46 @@ namespace Model
     inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const{ return m_hostReservationIdSet; }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline void SetHostReservationIdSet(const Aws::Vector<Aws::String>& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = value; }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::move(value); }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline DescribeHostReservationsRequest& WithHostReservationIdSet(const Aws::Vector<Aws::String>& value) { SetHostReservationIdSet(value); return *this;}
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const Aws::String& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const char* value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
+
+    /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
      * <code>nextToken</code> value. This value can be between 5 and 500; if
@@ -220,10 +220,10 @@ namespace Model
     inline DescribeHostReservationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    Aws::Vector<Aws::String> m_hostReservationIdSet;
-    bool m_hostReservationIdSetHasBeenSet;
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
+    Aws::Vector<Aws::String> m_hostReservationIdSet;
+    bool m_hostReservationIdSetHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;

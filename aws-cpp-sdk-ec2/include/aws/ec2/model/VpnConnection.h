@@ -19,11 +19,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpnState.h>
 #include <aws/ec2/model/GatewayType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnConnectionOptions.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpnStaticRoute.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/VgwTelemetry.h>
-#include <aws/ec2/model/VpnStaticRoute.h>
 #include <utility>
 
 namespace Aws
@@ -54,66 +54,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline VpnConnection& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline VpnConnection& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPN connection.</p>
-     */
-    inline VpnConnection& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
-
-    /**
-     * <p>The current state of the VPN connection.</p>
-     */
-    inline const VpnState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the VPN connection.</p>
-     */
-    inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current state of the VPN connection.</p>
-     */
-    inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the VPN connection.</p>
-     */
-    inline VpnConnection& WithState(const VpnState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the VPN connection.</p>
-     */
-    inline VpnConnection& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The configuration information for the VPN connection's customer gateway (in
@@ -179,31 +119,6 @@ namespace Model
     inline VpnConnection& WithCustomerGatewayConfiguration(const char* value) { SetCustomerGatewayConfiguration(value); return *this;}
 
     /**
-     * <p>The type of VPN connection.</p>
-     */
-    inline const GatewayType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of VPN connection.</p>
-     */
-    inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of VPN connection.</p>
-     */
-    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of VPN connection.</p>
-     */
-    inline VpnConnection& WithType(const GatewayType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of VPN connection.</p>
-     */
-    inline VpnConnection& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
-
-    /**
      * <p>The ID of the customer gateway at your end of the VPN connection.</p>
      */
     inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
@@ -237,6 +152,91 @@ namespace Model
      * <p>The ID of the customer gateway at your end of the VPN connection.</p>
      */
     inline VpnConnection& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
+    inline const VpnState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
+    inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
+    inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
+    inline VpnConnection& WithState(const VpnState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
+    inline VpnConnection& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
+    inline const GatewayType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
+    inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
+    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
+    inline VpnConnection& WithType(const GatewayType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
+    inline VpnConnection& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline VpnConnection& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline VpnConnection& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline VpnConnection& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
 
     /**
      * <p>The ID of the virtual private gateway at the AWS side of the VPN
@@ -279,6 +279,66 @@ namespace Model
      * connection.</p>
      */
     inline VpnConnection& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
+    inline const VpnConnectionOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
+    inline void SetOptions(const VpnConnectionOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
+    inline void SetOptions(VpnConnectionOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
+    inline VpnConnection& WithOptions(const VpnConnectionOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
+    inline VpnConnection& WithOptions(VpnConnectionOptions&& value) { SetOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline const Aws::Vector<VpnStaticRoute>& GetRoutes() const{ return m_routes; }
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline void SetRoutes(const Aws::Vector<VpnStaticRoute>& value) { m_routesHasBeenSet = true; m_routes = value; }
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline void SetRoutes(Aws::Vector<VpnStaticRoute>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline VpnConnection& WithRoutes(const Aws::Vector<VpnStaticRoute>& value) { SetRoutes(value); return *this;}
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline VpnConnection& WithRoutes(Aws::Vector<VpnStaticRoute>&& value) { SetRoutes(std::move(value)); return *this;}
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline VpnConnection& AddRoutes(const VpnStaticRoute& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline VpnConnection& AddRoutes(VpnStaticRoute&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any tags assigned to the VPN connection.</p>
@@ -350,87 +410,27 @@ namespace Model
      */
     inline VpnConnection& AddVgwTelemetry(VgwTelemetry&& value) { m_vgwTelemetryHasBeenSet = true; m_vgwTelemetry.push_back(std::move(value)); return *this; }
 
-    /**
-     * <p>The VPN connection options.</p>
-     */
-    inline const VpnConnectionOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The VPN connection options.</p>
-     */
-    inline void SetOptions(const VpnConnectionOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The VPN connection options.</p>
-     */
-    inline void SetOptions(VpnConnectionOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The VPN connection options.</p>
-     */
-    inline VpnConnection& WithOptions(const VpnConnectionOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The VPN connection options.</p>
-     */
-    inline VpnConnection& WithOptions(VpnConnectionOptions&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline const Aws::Vector<VpnStaticRoute>& GetRoutes() const{ return m_routes; }
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline void SetRoutes(const Aws::Vector<VpnStaticRoute>& value) { m_routesHasBeenSet = true; m_routes = value; }
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline void SetRoutes(Aws::Vector<VpnStaticRoute>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline VpnConnection& WithRoutes(const Aws::Vector<VpnStaticRoute>& value) { SetRoutes(value); return *this;}
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline VpnConnection& WithRoutes(Aws::Vector<VpnStaticRoute>&& value) { SetRoutes(std::move(value)); return *this;}
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline VpnConnection& AddRoutes(const VpnStaticRoute& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-
-    /**
-     * <p>The static routes associated with the VPN connection.</p>
-     */
-    inline VpnConnection& AddRoutes(VpnStaticRoute&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
-
   private:
-    Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
-    VpnState m_state;
-    bool m_stateHasBeenSet;
     Aws::String m_customerGatewayConfiguration;
     bool m_customerGatewayConfigurationHasBeenSet;
-    GatewayType m_type;
-    bool m_typeHasBeenSet;
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+    VpnState m_state;
+    bool m_stateHasBeenSet;
+    GatewayType m_type;
+    bool m_typeHasBeenSet;
+    Aws::String m_vpnConnectionId;
+    bool m_vpnConnectionIdHasBeenSet;
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
-    Aws::Vector<VgwTelemetry> m_vgwTelemetry;
-    bool m_vgwTelemetryHasBeenSet;
     VpnConnectionOptions m_options;
     bool m_optionsHasBeenSet;
     Aws::Vector<VpnStaticRoute> m_routes;
     bool m_routesHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+    Aws::Vector<VgwTelemetry> m_vgwTelemetry;
+    bool m_vgwTelemetryHasBeenSet;
   };
 
 } // namespace Model

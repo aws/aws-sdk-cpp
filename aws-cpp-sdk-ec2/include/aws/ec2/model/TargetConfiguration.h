@@ -50,6 +50,24 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The number of instances the Convertible Reserved Instance offering can be
+     * applied to. This parameter is reserved and cannot be specified in a request</p>
+     */
+    inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>The number of instances the Convertible Reserved Instance offering can be
+     * applied to. This parameter is reserved and cannot be specified in a request</p>
+     */
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+
+    /**
+     * <p>The number of instances the Convertible Reserved Instance offering can be
+     * applied to. This parameter is reserved and cannot be specified in a request</p>
+     */
+    inline TargetConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
+    /**
      * <p>The ID of the Convertible Reserved Instance offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
@@ -84,29 +102,11 @@ namespace Model
      */
     inline TargetConfiguration& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
-    /**
-     * <p>The number of instances the Convertible Reserved Instance offering can be
-     * applied to. This parameter is reserved and cannot be specified in a request</p>
-     */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of instances the Convertible Reserved Instance offering can be
-     * applied to. This parameter is reserved and cannot be specified in a request</p>
-     */
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of instances the Convertible Reserved Instance offering can be
-     * applied to. This parameter is reserved and cannot be specified in a request</p>
-     */
-    inline TargetConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-
   private:
-    Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+    Aws::String m_offeringId;
+    bool m_offeringIdHasBeenSet;
   };
 
 } // namespace Model

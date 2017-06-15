@@ -16,13 +16,13 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
-#include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/RunInstancesMonitoringEnabled.h>
-#include <aws/ec2/model/ShutdownBehavior.h>
+#include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
+#include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -52,28 +52,74 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
-    inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
+
+    /**
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
+     */
+    inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /**
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
+     */
+    inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
+     */
+    inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+
+    /**
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
+     */
+    inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
@@ -111,73 +157,197 @@ namespace Model
     inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The minimum number of instances to launch. If you specify a minimum that is
-     * more instances than Amazon EC2 can launch in the target Availability Zone,
-     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
-     * number you're allowed for the specified instance type. For more information
-     * about the default limits, and how to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * <p>The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
      */
-    inline int GetMinCount() const{ return m_minCount; }
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The minimum number of instances to launch. If you specify a minimum that is
-     * more instances than Amazon EC2 can launch in the target Availability Zone,
-     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
-     * number you're allowed for the specified instance type. For more information
-     * about the default limits, and how to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * <p>The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
      */
-    inline void SetMinCount(int value) { m_minCountHasBeenSet = true; m_minCount = value; }
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The minimum number of instances to launch. If you specify a minimum that is
-     * more instances than Amazon EC2 can launch in the target Availability Zone,
-     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
-     * number you're allowed for the specified instance type. For more information
-     * about the default limits, and how to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * <p>The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
      */
-    inline RunInstancesRequest& WithMinCount(int value) { SetMinCount(value); return *this;}
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The maximum number of instances to launch. If you specify more instances than
-     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
-     * largest possible number of instances above <code>MinCount</code>.</p>
-     * <p>Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits, and how
-     * to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+     * <p>The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The maximum number of instances to launch. If you specify more instances than
-     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
-     * largest possible number of instances above <code>MinCount</code>.</p>
-     * <p>Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits, and how
-     * to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+     * <p>The instance type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
      */
-    inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
+    inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of instances to launch. If you specify more instances than
-     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
-     * largest possible number of instances above <code>MinCount</code>.</p>
-     * <p>Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits, and how
-     * to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
      */
-    inline RunInstancesRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
     /**
      * <p>The name of the key pair. You can create a key pair using
@@ -236,60 +406,186 @@ namespace Model
     inline RunInstancesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The maximum number of instances to launch. If you specify more instances than
+     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
+     * largest possible number of instances above <code>MinCount</code>.</p>
+     * <p>Constraints: Between 1 and the maximum number you're allowed for the
+     * specified instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline int GetMaxCount() const{ return m_maxCount; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The maximum number of instances to launch. If you specify more instances than
+     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
+     * largest possible number of instances above <code>MinCount</code>.</p>
+     * <p>Constraints: Between 1 and the maximum number you're allowed for the
+     * specified instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The maximum number of instances to launch. If you specify more instances than
+     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
+     * largest possible number of instances above <code>MinCount</code>.</p>
+     * <p>Constraints: Between 1 and the maximum number you're allowed for the
+     * specified instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
+    inline RunInstancesRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The minimum number of instances to launch. If you specify a minimum that is
+     * more instances than Amazon EC2 can launch in the target Availability Zone,
+     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
+     * number you're allowed for the specified instance type. For more information
+     * about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+    inline int GetMinCount() const{ return m_minCount; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The minimum number of instances to launch. If you specify a minimum that is
+     * more instances than Amazon EC2 can launch in the target Availability Zone,
+     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
+     * number you're allowed for the specified instance type. For more information
+     * about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
+    inline void SetMinCount(int value) { m_minCountHasBeenSet = true; m_minCount = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The minimum number of instances to launch. If you specify a minimum that is
+     * more instances than Amazon EC2 can launch in the target Availability Zone,
+     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
+     * number you're allowed for the specified instance type. For more information
+     * about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline RunInstancesRequest& WithMinCount(int value) { SetMinCount(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The monitoring for the instance.</p>
      */
-    inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+    inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * <p>The monitoring for the instance.</p>
      */
-    inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline void SetMonitoring(const RunInstancesMonitoringEnabled& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMonitoring(const RunInstancesMonitoringEnabled& value) { SetMonitoring(value); return *this;}
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
+    inline RunInstancesRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
+    inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using
@@ -346,6 +642,97 @@ namespace Model
      * group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
+     * the default security group.</p>
+     */
+    inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     */
+    inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
@@ -425,325 +812,95 @@ namespace Model
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * <p>Reserved.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * <p>Reserved.</p>
      */
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * <p>Reserved.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * <p>Reserved.</p>
      */
-    inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * <p>Reserved.</p>
      */
-    inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline RunInstancesRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <p>The placement for the instance.</p>
+     * <p>Reserved.</p>
      */
-    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
-     * <p>The placement for the instance.</p>
+     * <p>Reserved.</p>
      */
-    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <p>The placement for the instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The placement for the instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline RunInstancesRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The placement for the instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+    inline RunInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
+    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-
-    /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-
-    /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
-     * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
-     */
-    inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-
-    /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
-     */
-    inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline void SetMonitoring(const RunInstancesMonitoringEnabled& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline RunInstancesRequest& WithMonitoring(const RunInstancesMonitoringEnabled& value) { SetMonitoring(value); return *this;}
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
-     */
-    inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
@@ -779,6 +936,82 @@ namespace Model
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal EBS I/O performance. This optimization isn't available with
+     * all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal EBS I/O performance. This optimization isn't available with
+     * all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal EBS I/O performance. This optimization isn't available with
+     * all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
+    inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
+    /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      * <p>Default: <code>stop</code> </p>
@@ -812,6 +1045,41 @@ namespace Model
      * <p>Default: <code>stop</code> </p>
      */
     inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>One or more network interfaces.</p>
+     */
+    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -884,274 +1152,6 @@ namespace Model
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-
-    /**
-     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
-     * associate with the primary network interface. You cannot specify this option and
-     * the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
-     */
-    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
-
-    /**
-     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
-
-    /**
-     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
-     */
-    inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline RunInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RunInstancesRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-
-    /**
-     * <p>One or more network interfaces.</p>
-     */
-    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IAM instance profile.</p>
-     */
-    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
-
-    /**
-     * <p>The IAM instance profile.</p>
-     */
-    inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-
-    /**
-     * <p>The IAM instance profile.</p>
-     */
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-
-    /**
-     * <p>The IAM instance profile.</p>
-     */
-    inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
-
-    /**
-     * <p>The IAM instance profile.</p>
-     */
-    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
-     */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
-     */
-    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
-     */
-    inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
-
-    /**
      * <p>The tags to apply to the resources during launch. You can tag instances and
      * volumes. The specified tags are applied to all instances or volumes that are
      * created during launch.</p>
@@ -1201,56 +1201,56 @@ namespace Model
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
-    int m_minCount;
-    bool m_minCountHasBeenSet;
-    int m_maxCount;
-    bool m_maxCountHasBeenSet;
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
-    Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
-    Aws::String m_userData;
-    bool m_userDataHasBeenSet;
-    InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
-    Placement m_placement;
-    bool m_placementHasBeenSet;
-    Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
-    Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
-    RunInstancesMonitoringEnabled m_monitoring;
-    bool m_monitoringHasBeenSet;
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
-    bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
-    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
-    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
+    InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_kernelId;
+    bool m_kernelIdHasBeenSet;
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet;
+    int m_maxCount;
+    bool m_maxCountHasBeenSet;
+    int m_minCount;
+    bool m_minCountHasBeenSet;
+    RunInstancesMonitoringEnabled m_monitoring;
+    bool m_monitoringHasBeenSet;
+    Placement m_placement;
+    bool m_placementHasBeenSet;
+    Aws::String m_ramdiskId;
+    bool m_ramdiskIdHasBeenSet;
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_securityGroups;
+    bool m_securityGroupsHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
+    Aws::String m_userData;
+    bool m_userDataHasBeenSet;
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
-    Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
-    IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
+    bool m_disableApiTermination;
+    bool m_disableApiTerminationHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+    IamInstanceProfileSpecification m_iamInstanceProfile;
+    bool m_iamInstanceProfileHasBeenSet;
+    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

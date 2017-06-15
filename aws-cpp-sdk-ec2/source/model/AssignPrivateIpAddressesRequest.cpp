@@ -21,12 +21,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() : 
+    m_allowReassignment(false),
+    m_allowReassignmentHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_allowReassignment(false),
-    m_allowReassignmentHasBeenSet(false)
+    m_secondaryPrivateIpAddressCountHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,11 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssignPrivateIpAddresses&";
+  if(m_allowReassignmentHasBeenSet)
+  {
+    ss << "AllowReassignment=" << std::boolalpha << m_allowReassignment << "&";
+  }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
@@ -53,11 +58,6 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
   if(m_secondaryPrivateIpAddressCountHasBeenSet)
   {
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
-  }
-
-  if(m_allowReassignmentHasBeenSet)
-  {
-    ss << "AllowReassignment=" << std::boolalpha << m_allowReassignment << "&";
   }
 
   ss << "Version=2016-11-15";

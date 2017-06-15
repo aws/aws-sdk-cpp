@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() : 
-    m_subnetIdHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -31,11 +31,6 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateNatGateway&";
-  if(m_subnetIdHasBeenSet)
-  {
-    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
   if(m_allocationIdHasBeenSet)
   {
     ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
@@ -44,6 +39,11 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

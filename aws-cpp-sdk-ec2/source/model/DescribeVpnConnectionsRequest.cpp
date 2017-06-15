@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeVpnConnectionsRequest::DescribeVpnConnectionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_vpnConnectionIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,14 @@ Aws::String DescribeVpnConnectionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeVpnConnections&";
-  if(m_dryRunHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_vpnConnectionIdsHasBeenSet)
@@ -48,14 +53,9 @@ Aws::String DescribeVpnConnectionsRequest::SerializePayload() const
     }
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

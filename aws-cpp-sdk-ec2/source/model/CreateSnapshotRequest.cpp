@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateSnapshotRequest::CreateSnapshotRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSnapshot&";
-  if(m_dryRunHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

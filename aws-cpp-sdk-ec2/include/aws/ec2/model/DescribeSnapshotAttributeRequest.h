@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,29 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The snapshot attribute you would like to view.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const SnapshotAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The snapshot attribute you would like to view.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The snapshot attribute you would like to view.</p>
      */
-    inline DescribeSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The snapshot attribute you would like to view.</p>
+     */
+    inline DescribeSnapshotAttributeRequest& WithAttribute(const SnapshotAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The snapshot attribute you would like to view.</p>
+     */
+    inline DescribeSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the EBS snapshot.</p>
@@ -103,37 +104,36 @@ namespace Model
     inline DescribeSnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot attribute you would like to view.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const SnapshotAttributeName& GetAttribute() const{ return m_attribute; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The snapshot attribute you would like to view.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The snapshot attribute you would like to view.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The snapshot attribute you would like to view.</p>
-     */
-    inline DescribeSnapshotAttributeRequest& WithAttribute(const SnapshotAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The snapshot attribute you would like to view.</p>
-     */
-    inline DescribeSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline DescribeSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
     SnapshotAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+    Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

@@ -48,15 +48,15 @@ CreateEgressOnlyInternetGatewayResponse& CreateEgressOnlyInternetGatewayResponse
 
   if(!resultNode.IsNull())
   {
-    XmlNode egressOnlyInternetGatewayNode = resultNode.FirstChild("egressOnlyInternetGateway");
-    if(!egressOnlyInternetGatewayNode.IsNull())
-    {
-      m_egressOnlyInternetGateway = egressOnlyInternetGatewayNode;
-    }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+    }
+    XmlNode egressOnlyInternetGatewayNode = resultNode.FirstChild("egressOnlyInternetGateway");
+    if(!egressOnlyInternetGatewayNode.IsNull())
+    {
+      m_egressOnlyInternetGateway = egressOnlyInternetGatewayNode;
     }
   }
 

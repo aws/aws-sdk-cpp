@@ -74,27 +74,37 @@ namespace Model
     inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
 
     /**
-     * <p>Current status of the product.</p>
+     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
+     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
+     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the product.</p>
+     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
+     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
+     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the product.</p>
+     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
+     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
+     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Current status of the product.</p>
+     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
+     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
+     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
      */
     inline ProductViewDetail& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the product.</p>
+     * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
+     * available for use.</p> <p> <code>CREATING</code> - Creation of product started,
+     * not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>
      */
     inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 

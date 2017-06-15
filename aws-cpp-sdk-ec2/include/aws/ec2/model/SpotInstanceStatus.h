@@ -100,36 +100,6 @@ namespace Model
     inline SpotInstanceStatus& WithCode(const char* value) { SetCode(value); return *this;}
 
     /**
-     * <p>The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-
-    /**
-     * <p>The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-
-    /**
-     * <p>The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-
-    /**
-     * <p>The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline SpotInstanceStatus& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the most recent status update, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-
-    /**
      * <p>The description for the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
@@ -164,13 +134,43 @@ namespace Model
      */
     inline SpotInstanceStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceStatus& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+
   private:
     Aws::String m_code;
     bool m_codeHasBeenSet;
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet;
   };
 
 } // namespace Model

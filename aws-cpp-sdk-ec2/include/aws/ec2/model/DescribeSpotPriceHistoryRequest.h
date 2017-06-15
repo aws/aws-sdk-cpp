@@ -16,11 +16,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/InstanceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/ec2/model/InstanceType.h>
 #include <utility>
 
 namespace Aws
@@ -46,182 +46,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The date and time, up to the past 90 days, from which to start retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The date and time, up to the current date, from which to stop retrieving the
-     * price history data, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Filters the results by the specified instance types. Note that T2 and HS1
-     * instance types are not supported.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetProductDescriptions() const{ return m_productDescriptions; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline void SetProductDescriptions(const Aws::Vector<Aws::String>& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = value; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline void SetProductDescriptions(Aws::Vector<Aws::String>&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = std::move(value); }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(const Aws::Vector<Aws::String>& value) { SetProductDescriptions(value); return *this;}
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(Aws::Vector<Aws::String>&& value) { SetProductDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const Aws::String& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(Aws::String&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the results by the specified basic product descriptions.</p>
-     */
-    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const char* value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
@@ -384,6 +208,107 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
@@ -439,25 +364,100 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetProductDescriptions() const{ return m_productDescriptions; }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline void SetProductDescriptions(const Aws::Vector<Aws::String>& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = value; }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline void SetProductDescriptions(Aws::Vector<Aws::String>&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = std::move(value); }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(const Aws::Vector<Aws::String>& value) { SetProductDescriptions(value); return *this;}
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(Aws::Vector<Aws::String>&& value) { SetProductDescriptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const Aws::String& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(Aws::String&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const char* value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
-    Aws::Vector<InstanceType> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
-    Aws::Vector<Aws::String> m_productDescriptions;
-    bool m_productDescriptionsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet;
+    Aws::Vector<InstanceType> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_productDescriptions;
+    bool m_productDescriptionsHasBeenSet;
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
   };
 
 } // namespace Model

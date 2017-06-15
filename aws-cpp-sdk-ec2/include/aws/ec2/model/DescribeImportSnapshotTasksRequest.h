@@ -69,6 +69,41 @@ namespace Model
     inline DescribeImportSnapshotTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
+     * <p>One or more filters.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline DescribeImportSnapshotTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline DescribeImportSnapshotTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline DescribeImportSnapshotTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>One or more filters.</p>
+     */
+    inline DescribeImportSnapshotTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>A list of import snapshot task IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImportTaskIds() const{ return m_importTaskIds; }
@@ -109,6 +144,27 @@ namespace Model
     inline DescribeImportSnapshotTasksRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
     /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline DescribeImportSnapshotTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
      * <p>A token that indicates the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -143,73 +199,17 @@ namespace Model
      */
     inline DescribeImportSnapshotTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline DescribeImportSnapshotTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline DescribeImportSnapshotTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline DescribeImportSnapshotTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline DescribeImportSnapshotTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>One or more filters.</p>
-     */
-    inline DescribeImportSnapshotTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_importTaskIds;
-    bool m_importTaskIdsHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_importTaskIds;
+    bool m_importTaskIdsHasBeenSet;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

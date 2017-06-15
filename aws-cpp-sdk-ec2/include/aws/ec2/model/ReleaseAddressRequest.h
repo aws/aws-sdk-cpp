@@ -42,28 +42,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
-    inline ReleaseAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     */
+    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     */
+    inline ReleaseAddressRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     */
+    inline ReleaseAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     */
+    inline ReleaseAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -101,47 +112,36 @@ namespace Model
     inline ReleaseAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-
-    /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
-     */
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-
-    /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
-     */
-    inline ReleaseAddressRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
-     */
-    inline ReleaseAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
-     */
-    inline ReleaseAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    inline ReleaseAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

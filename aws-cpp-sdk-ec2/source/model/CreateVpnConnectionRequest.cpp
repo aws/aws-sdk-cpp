@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpnConnectionRequest::CreateVpnConnectionRequest() : 
+    m_customerGatewayIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_vpnGatewayIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {
 }
@@ -34,9 +34,9 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpnConnection&";
-  if(m_dryRunHasBeenSet)
+  if(m_customerGatewayIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
 
   if(m_typeHasBeenSet)
@@ -44,14 +44,14 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
     ss << "Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 
-  if(m_customerGatewayIdHasBeenSet)
-  {
-    ss << "CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
-  }
-
   if(m_vpnGatewayIdHasBeenSet)
   {
     ss << "VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_optionsHasBeenSet)

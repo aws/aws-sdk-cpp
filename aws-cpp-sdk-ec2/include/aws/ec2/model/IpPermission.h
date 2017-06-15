@@ -18,10 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/UserIdGroupPair.h>
 #include <aws/ec2/model/IpRange.h>
 #include <aws/ec2/model/Ipv6Range.h>
 #include <aws/ec2/model/PrefixListId.h>
+#include <aws/ec2/model/UserIdGroupPair.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +52,24 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     */
+    inline int GetFromPort() const{ return m_fromPort; }
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     */
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     */
+    inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -157,80 +175,6 @@ namespace Model
      * traffic for all types and codes is allowed when authorizing rules. </p>
      */
     inline IpPermission& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
-     */
-    inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
-     */
-    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
-     */
-    inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
-     */
-    inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
-     */
-    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
-     */
-    inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline const Aws::Vector<UserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline void SetUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline IpPermission& WithUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { SetUserIdGroupPairs(value); return *this;}
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline IpPermission& AddUserIdGroupPairs(const UserIdGroupPair& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
-
-    /**
-     * <p>One or more security group and AWS account ID pairs.</p>
-     */
-    inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more IPv4 ranges.</p>
@@ -372,21 +316,77 @@ namespace Model
      */
     inline IpPermission& AddPrefixListIds(PrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
+     * ICMP type.</p>
+     */
+    inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
+     * ICMP type.</p>
+     */
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
+     * ICMP type.</p>
+     */
+    inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline const Aws::Vector<UserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline void SetUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline IpPermission& WithUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { SetUserIdGroupPairs(value); return *this;}
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline IpPermission& AddUserIdGroupPairs(const UserIdGroupPair& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more security group and AWS account ID pairs.</p>
+     */
+    inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
+
   private:
-    Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
     int m_fromPort;
     bool m_fromPortHasBeenSet;
-    int m_toPort;
-    bool m_toPortHasBeenSet;
-    Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
-    bool m_userIdGroupPairsHasBeenSet;
+    Aws::String m_ipProtocol;
+    bool m_ipProtocolHasBeenSet;
     Aws::Vector<IpRange> m_ipRanges;
     bool m_ipRangesHasBeenSet;
     Aws::Vector<Ipv6Range> m_ipv6Ranges;
     bool m_ipv6RangesHasBeenSet;
     Aws::Vector<PrefixListId> m_prefixListIds;
     bool m_prefixListIdsHasBeenSet;
+    int m_toPort;
+    bool m_toPortHasBeenSet;
+    Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
+    bool m_userIdGroupPairsHasBeenSet;
   };
 
 } // namespace Model

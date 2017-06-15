@@ -48,15 +48,15 @@ AssociateVpcCidrBlockResponse& AssociateVpcCidrBlockResponse::operator =(const A
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-    }
     XmlNode ipv6CidrBlockAssociationNode = resultNode.FirstChild("ipv6CidrBlockAssociation");
     if(!ipv6CidrBlockAssociationNode.IsNull())
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
     }
   }
 

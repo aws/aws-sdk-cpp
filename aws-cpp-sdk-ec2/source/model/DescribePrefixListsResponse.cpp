@@ -48,6 +48,11 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode prefixListsNode = resultNode.FirstChild("prefixListSet");
     if(!prefixListsNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Amazo
         prefixListsMember = prefixListsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

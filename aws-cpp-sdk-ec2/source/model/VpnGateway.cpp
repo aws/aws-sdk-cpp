@@ -31,25 +31,25 @@ namespace Model
 {
 
 VpnGateway::VpnGateway() : 
-    m_vpnGatewayIdHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
     m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),
+    m_vpnGatewayIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 VpnGateway::VpnGateway(const XmlNode& xmlNode) : 
-    m_vpnGatewayIdHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
     m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),
+    m_vpnGatewayIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -61,11 +61,11 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
-    if(!vpnGatewayIdNode.IsNull())
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
     {
-      m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
-      m_vpnGatewayIdHasBeenSet = true;
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -79,12 +79,6 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
       m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
       m_typeHasBeenSet = true;
     }
-    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
-      m_availabilityZoneHasBeenSet = true;
-    }
     XmlNode vpcAttachmentsNode = resultNode.FirstChild("attachments");
     if(!vpcAttachmentsNode.IsNull())
     {
@@ -96,6 +90,12 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
       }
 
       m_vpcAttachmentsHasBeenSet = true;
+    }
+    XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
+    if(!vpnGatewayIdNode.IsNull())
+    {
+      m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
+      m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -116,9 +116,9 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
 
 void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_vpnGatewayIdHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
   if(m_stateHasBeenSet)
@@ -131,11 +131,6 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
   if(m_vpcAttachmentsHasBeenSet)
   {
       unsigned vpcAttachmentsIdx = 1;
@@ -145,6 +140,11 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
         vpcAttachmentsSs << location << index << locationValue << ".Attachments." << vpcAttachmentsIdx++;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
+  }
+
+  if(m_vpnGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -162,9 +162,9 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
 void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_vpnGatewayIdHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-      oStream << location << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {
@@ -173,10 +173,6 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
-  }
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
   if(m_vpcAttachmentsHasBeenSet)
   {
@@ -187,6 +183,10 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
         vpcAttachmentsSs << location <<  ".Attachments." << vpcAttachmentsIdx++;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
+  }
+  if(m_vpnGatewayIdHasBeenSet)
+  {
+      oStream << location << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

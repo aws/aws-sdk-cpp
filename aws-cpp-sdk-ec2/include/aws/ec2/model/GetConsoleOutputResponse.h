@@ -84,31 +84,6 @@ namespace Model
     inline GetConsoleOutputResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The time the output was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time the output was last updated.</p>
-     */
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-
-    /**
-     * <p>The time the output was last updated.</p>
-     */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-
-    /**
-     * <p>The time the output was last updated.</p>
-     */
-    inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The time the output was last updated.</p>
-     */
-    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
-    /**
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
      * decodes the output for you.</p>
      */
@@ -150,6 +125,31 @@ namespace Model
      */
     inline GetConsoleOutputResponse& WithOutput(const char* value) { SetOutput(value); return *this;}
 
+    /**
+     * <p>The time the output was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time the output was last updated.</p>
+     */
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
+
+    /**
+     * <p>The time the output was last updated.</p>
+     */
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
+
+    /**
+     * <p>The time the output was last updated.</p>
+     */
+    inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time the output was last updated.</p>
+     */
+    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -167,8 +167,8 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
-    Aws::Utils::DateTime m_timestamp;
     Aws::String m_output;
+    Aws::Utils::DateTime m_timestamp;
     ResponseMetadata m_responseMetadata;
   };
 

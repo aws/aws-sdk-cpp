@@ -31,16 +31,16 @@ namespace Model
 {
 
 PrefixList::PrefixList() : 
+    m_cidrsHasBeenSet(false),
     m_prefixListIdHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_cidrsHasBeenSet(false)
+    m_prefixListNameHasBeenSet(false)
 {
 }
 
 PrefixList::PrefixList(const XmlNode& xmlNode) : 
+    m_cidrsHasBeenSet(false),
     m_prefixListIdHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_cidrsHasBeenSet(false)
+    m_prefixListNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,18 +51,6 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
-    if(!prefixListIdNode.IsNull())
-    {
-      m_prefixListId = StringUtils::Trim(prefixListIdNode.GetText().c_str());
-      m_prefixListIdHasBeenSet = true;
-    }
-    XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
-    if(!prefixListNameNode.IsNull())
-    {
-      m_prefixListName = StringUtils::Trim(prefixListNameNode.GetText().c_str());
-      m_prefixListNameHasBeenSet = true;
-    }
     XmlNode cidrsNode = resultNode.FirstChild("cidrSet");
     if(!cidrsNode.IsNull())
     {
@@ -75,6 +63,18 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
 
       m_cidrsHasBeenSet = true;
     }
+    XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
+    if(!prefixListIdNode.IsNull())
+    {
+      m_prefixListId = StringUtils::Trim(prefixListIdNode.GetText().c_str());
+      m_prefixListIdHasBeenSet = true;
+    }
+    XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
+    if(!prefixListNameNode.IsNull())
+    {
+      m_prefixListName = StringUtils::Trim(prefixListNameNode.GetText().c_str());
+      m_prefixListNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -82,6 +82,15 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
 
 void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_cidrsHasBeenSet)
+  {
+      unsigned cidrsIdx = 1;
+      for(auto& item : m_cidrs)
+      {
+        oStream << location << index << locationValue << ".CidrSet." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_prefixListIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
@@ -92,27 +101,10 @@ void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PrefixListName=" << StringUtils::URLEncode(m_prefixListName.c_str()) << "&";
   }
 
-  if(m_cidrsHasBeenSet)
-  {
-      unsigned cidrsIdx = 1;
-      for(auto& item : m_cidrs)
-      {
-        oStream << location << index << locationValue << ".CidrSet." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
 }
 
 void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_prefixListIdHasBeenSet)
-  {
-      oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
-  }
-  if(m_prefixListNameHasBeenSet)
-  {
-      oStream << location << ".PrefixListName=" << StringUtils::URLEncode(m_prefixListName.c_str()) << "&";
-  }
   if(m_cidrsHasBeenSet)
   {
       unsigned cidrsIdx = 1;
@@ -120,6 +112,14 @@ void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location) con
       {
         oStream << location << ".CidrSet." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_prefixListIdHasBeenSet)
+  {
+      oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
+  }
+  if(m_prefixListNameHasBeenSet)
+  {
+      oStream << location << ".PrefixListName=" << StringUtils::URLEncode(m_prefixListName.c_str()) << "&";
   }
 }
 

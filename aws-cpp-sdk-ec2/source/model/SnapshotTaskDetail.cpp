@@ -31,30 +31,30 @@ namespace Model
 {
 
 SnapshotTaskDetail::SnapshotTaskDetail() : 
+    m_descriptionHasBeenSet(false),
     m_diskImageSize(0.0),
     m_diskImageSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
     m_progressHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_userBucketHasBeenSet(false)
 {
 }
 
 SnapshotTaskDetail::SnapshotTaskDetail(const XmlNode& xmlNode) : 
+    m_descriptionHasBeenSet(false),
     m_diskImageSize(0.0),
     m_diskImageSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
     m_progressHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_userBucketHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,23 +65,47 @@ SnapshotTaskDetail& SnapshotTaskDetail::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode diskImageSizeNode = resultNode.FirstChild("diskImageSize");
-    if(!diskImageSizeNode.IsNull())
-    {
-      m_diskImageSize = StringUtils::ConvertToDouble(StringUtils::Trim(diskImageSizeNode.GetText().c_str()).c_str());
-      m_diskImageSizeHasBeenSet = true;
-    }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode diskImageSizeNode = resultNode.FirstChild("diskImageSize");
+    if(!diskImageSizeNode.IsNull())
+    {
+      m_diskImageSize = StringUtils::ConvertToDouble(StringUtils::Trim(diskImageSizeNode.GetText().c_str()).c_str());
+      m_diskImageSizeHasBeenSet = true;
+    }
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
       m_format = StringUtils::Trim(formatNode.GetText().c_str());
       m_formatHasBeenSet = true;
+    }
+    XmlNode progressNode = resultNode.FirstChild("progress");
+    if(!progressNode.IsNull())
+    {
+      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progressHasBeenSet = true;
+    }
+    XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
+    if(!snapshotIdNode.IsNull())
+    {
+      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotIdHasBeenSet = true;
+    }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
+    XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
+    if(!statusMessageNode.IsNull())
+    {
+      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessageHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("url");
     if(!urlNode.IsNull())
@@ -95,30 +119,6 @@ SnapshotTaskDetail& SnapshotTaskDetail::operator =(const XmlNode& xmlNode)
       m_userBucket = userBucketNode;
       m_userBucketHasBeenSet = true;
     }
-    XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
-    if(!snapshotIdNode.IsNull())
-    {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
-      m_snapshotIdHasBeenSet = true;
-    }
-    XmlNode progressNode = resultNode.FirstChild("progress");
-    if(!progressNode.IsNull())
-    {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
-      m_progressHasBeenSet = true;
-    }
-    XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
-    if(!statusMessageNode.IsNull())
-    {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
-      m_statusMessageHasBeenSet = true;
-    }
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
-      m_statusHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -126,19 +126,39 @@ SnapshotTaskDetail& SnapshotTaskDetail::operator =(const XmlNode& xmlNode)
 
 void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_diskImageSizeHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
-  }
-
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_diskImageSizeHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
+  }
+
   if(m_formatHasBeenSet)
   {
       oStream << location << index << locationValue << ".Format=" << StringUtils::URLEncode(m_format.c_str()) << "&";
+  }
+
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
+  }
+
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
   if(m_urlHasBeenSet)
@@ -153,41 +173,37 @@ void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* locat
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMemberSs.str().c_str());
   }
 
-  if(m_snapshotIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
-  }
-
-  if(m_progressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
-  }
-
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
-  }
-
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-
 }
 
 void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_diskImageSizeHasBeenSet)
-  {
-        oStream << location << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
-  }
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+  if(m_diskImageSizeHasBeenSet)
+  {
+        oStream << location << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
+  }
   if(m_formatHasBeenSet)
   {
       oStream << location << ".Format=" << StringUtils::URLEncode(m_format.c_str()) << "&";
+  }
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
+  }
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_statusMessageHasBeenSet)
+  {
+      oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
   if(m_urlHasBeenSet)
   {
@@ -198,22 +214,6 @@ void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String userBucketLocationAndMember(location);
       userBucketLocationAndMember += ".UserBucket";
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMember.c_str());
-  }
-  if(m_snapshotIdHasBeenSet)
-  {
-      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
-  }
-  if(m_progressHasBeenSet)
-  {
-      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
-  }
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
 

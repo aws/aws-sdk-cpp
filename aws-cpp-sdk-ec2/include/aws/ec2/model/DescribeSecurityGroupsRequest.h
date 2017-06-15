@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,142 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeSecurityGroupsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
-     * specify either the security group name or the security group ID. For security
-     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
-     */
-    inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
@@ -404,15 +268,151 @@ namespace Model
      */
     inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * specify either the security group name or the security group ID. For security
+     * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
+     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     */
+    inline DescribeSecurityGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeSecurityGroupsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
-    Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_groupIds;
+    bool m_groupIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_groupNames;
+    bool m_groupNamesHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

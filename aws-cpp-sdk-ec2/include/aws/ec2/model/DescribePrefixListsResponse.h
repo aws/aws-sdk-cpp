@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/PrefixList.h>
 #include <utility>
@@ -48,41 +48,6 @@ namespace Model
     DescribePrefixListsResponse();
     DescribePrefixListsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribePrefixListsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline const Aws::Vector<PrefixList>& GetPrefixLists() const{ return m_prefixLists; }
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline void SetPrefixLists(const Aws::Vector<PrefixList>& value) { m_prefixLists = value; }
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline void SetPrefixLists(Aws::Vector<PrefixList>&& value) { m_prefixLists = std::move(value); }
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline DescribePrefixListsResponse& WithPrefixLists(const Aws::Vector<PrefixList>& value) { SetPrefixLists(value); return *this;}
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline DescribePrefixListsResponse& WithPrefixLists(Aws::Vector<PrefixList>&& value) { SetPrefixLists(std::move(value)); return *this;}
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline DescribePrefixListsResponse& AddPrefixLists(const PrefixList& value) { m_prefixLists.push_back(value); return *this; }
-
-    /**
-     * <p>All available prefix lists.</p>
-     */
-    inline DescribePrefixListsResponse& AddPrefixLists(PrefixList&& value) { m_prefixLists.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -126,6 +91,41 @@ namespace Model
      */
     inline DescribePrefixListsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline const Aws::Vector<PrefixList>& GetPrefixLists() const{ return m_prefixLists; }
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline void SetPrefixLists(const Aws::Vector<PrefixList>& value) { m_prefixLists = value; }
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline void SetPrefixLists(Aws::Vector<PrefixList>&& value) { m_prefixLists = std::move(value); }
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline DescribePrefixListsResponse& WithPrefixLists(const Aws::Vector<PrefixList>& value) { SetPrefixLists(value); return *this;}
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline DescribePrefixListsResponse& WithPrefixLists(Aws::Vector<PrefixList>&& value) { SetPrefixLists(std::move(value)); return *this;}
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline DescribePrefixListsResponse& AddPrefixLists(const PrefixList& value) { m_prefixLists.push_back(value); return *this; }
+
+    /**
+     * <p>All available prefix lists.</p>
+     */
+    inline DescribePrefixListsResponse& AddPrefixLists(PrefixList&& value) { m_prefixLists.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +142,8 @@ namespace Model
     inline DescribePrefixListsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<PrefixList> m_prefixLists;
     Aws::String m_nextToken;
+    Aws::Vector<PrefixList> m_prefixLists;
     ResponseMetadata m_responseMetadata;
   };
 

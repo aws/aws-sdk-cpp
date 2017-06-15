@@ -43,28 +43,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline ConfirmProductInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline ConfirmProductInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline ConfirmProductInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline ConfirmProductInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The product code. This must be a product code that you own.</p>
@@ -102,47 +113,36 @@ namespace Model
     inline ConfirmProductInstanceRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline ConfirmProductInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline ConfirmProductInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline ConfirmProductInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline ConfirmProductInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+    Aws::String m_productCode;
+    bool m_productCodeHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

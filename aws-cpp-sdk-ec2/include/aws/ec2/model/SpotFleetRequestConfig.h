@@ -16,11 +16,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/ActivityStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/SpotFleetRequestConfigData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BatchState.h>
-#include <aws/ec2/model/SpotFleetRequestConfigData.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/ActivityStatus.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +51,106 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline const ActivityStatus& GetActivityStatus() const{ return m_activityStatus; }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline void SetActivityStatus(const ActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline void SetActivityStatus(ActivityStatus&& value) { m_activityStatusHasBeenSet = true; m_activityStatus = std::move(value); }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline SpotFleetRequestConfig& WithActivityStatus(const ActivityStatus& value) { SetActivityStatus(value); return *this;}
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus&& value) { SetActivityStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline SpotFleetRequestConfig& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
+    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
+
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
+
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
+
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
+    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
+
+    /**
+     * <p>Information about the configuration of the Spot fleet request.</p>
+     */
+    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -112,117 +212,17 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithSpotFleetRequestState(BatchState&& value) { SetSpotFleetRequestState(std::move(value)); return *this;}
 
-    /**
-     * <p>Information about the configuration of the Spot fleet request.</p>
-     */
-    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
-
-    /**
-     * <p>Information about the configuration of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
-
-    /**
-     * <p>Information about the configuration of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
-
-    /**
-     * <p>Information about the configuration of the Spot fleet request.</p>
-     */
-    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
-
-    /**
-     * <p>Information about the configuration of the Spot fleet request.</p>
-     */
-    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>The creation date and time of the request.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The creation date and time of the request.</p>
-     */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-
-    /**
-     * <p>The creation date and time of the request.</p>
-     */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-
-    /**
-     * <p>The creation date and time of the request.</p>
-     */
-    inline SpotFleetRequestConfig& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The creation date and time of the request.</p>
-     */
-    inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The progress of the Spot fleet request. If there is an error, the status is
-     * <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the fleet is decreased, the status is <code>pending_termination</code>
-     * while Spot instances are terminating.</p>
-     */
-    inline const ActivityStatus& GetActivityStatus() const{ return m_activityStatus; }
-
-    /**
-     * <p>The progress of the Spot fleet request. If there is an error, the status is
-     * <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the fleet is decreased, the status is <code>pending_termination</code>
-     * while Spot instances are terminating.</p>
-     */
-    inline void SetActivityStatus(const ActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
-
-    /**
-     * <p>The progress of the Spot fleet request. If there is an error, the status is
-     * <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the fleet is decreased, the status is <code>pending_termination</code>
-     * while Spot instances are terminating.</p>
-     */
-    inline void SetActivityStatus(ActivityStatus&& value) { m_activityStatusHasBeenSet = true; m_activityStatus = std::move(value); }
-
-    /**
-     * <p>The progress of the Spot fleet request. If there is an error, the status is
-     * <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the fleet is decreased, the status is <code>pending_termination</code>
-     * while Spot instances are terminating.</p>
-     */
-    inline SpotFleetRequestConfig& WithActivityStatus(const ActivityStatus& value) { SetActivityStatus(value); return *this;}
-
-    /**
-     * <p>The progress of the Spot fleet request. If there is an error, the status is
-     * <code>error</code>. After all bids are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the fleet is decreased, the status is <code>pending_termination</code>
-     * while Spot instances are terminating.</p>
-     */
-    inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus&& value) { SetActivityStatus(std::move(value)); return *this;}
-
   private:
+    ActivityStatus m_activityStatus;
+    bool m_activityStatusHasBeenSet;
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet;
+    SpotFleetRequestConfigData m_spotFleetRequestConfig;
+    bool m_spotFleetRequestConfigHasBeenSet;
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
     BatchState m_spotFleetRequestState;
     bool m_spotFleetRequestStateHasBeenSet;
-    SpotFleetRequestConfigData m_spotFleetRequestConfig;
-    bool m_spotFleetRequestConfigHasBeenSet;
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
-    ActivityStatus m_activityStatus;
-    bool m_activityStatusHasBeenSet;
   };
 
 } // namespace Model

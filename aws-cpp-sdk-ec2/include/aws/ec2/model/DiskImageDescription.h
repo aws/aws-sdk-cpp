@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/DiskImageFormat.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,41 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline DiskImageDescription& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline DiskImageDescription& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
+
+    /**
+     * <p>The checksum computed for the disk image.</p>
+     */
+    inline DiskImageDescription& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+
+    /**
      * <p>The disk image format.</p>
      */
     inline const DiskImageFormat& GetFormat() const{ return m_format; }
@@ -73,21 +108,6 @@ namespace Model
      * <p>The disk image format.</p>
      */
     inline DiskImageDescription& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>The size of the disk image, in GiB.</p>
-     */
-    inline long long GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the disk image, in GiB.</p>
-     */
-    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the disk image, in GiB.</p>
-     */
-    inline DiskImageDescription& WithSize(long long value) { SetSize(value); return *this;}
 
     /**
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
@@ -181,49 +201,29 @@ namespace Model
     inline DiskImageDescription& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}
 
     /**
-     * <p>The checksum computed for the disk image.</p>
+     * <p>The size of the disk image, in GiB.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p>The checksum computed for the disk image.</p>
+     * <p>The size of the disk image, in GiB.</p>
      */
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
+    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The checksum computed for the disk image.</p>
+     * <p>The size of the disk image, in GiB.</p>
      */
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-
-    /**
-     * <p>The checksum computed for the disk image.</p>
-     */
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-
-    /**
-     * <p>The checksum computed for the disk image.</p>
-     */
-    inline DiskImageDescription& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-
-    /**
-     * <p>The checksum computed for the disk image.</p>
-     */
-    inline DiskImageDescription& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-
-    /**
-     * <p>The checksum computed for the disk image.</p>
-     */
-    inline DiskImageDescription& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline DiskImageDescription& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
-    DiskImageFormat m_format;
-    bool m_formatHasBeenSet;
-    long long m_size;
-    bool m_sizeHasBeenSet;
-    Aws::String m_importManifestUrl;
-    bool m_importManifestUrlHasBeenSet;
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+    DiskImageFormat m_format;
+    bool m_formatHasBeenSet;
+    Aws::String m_importManifestUrl;
+    bool m_importManifestUrlHasBeenSet;
+    long long m_size;
+    bool m_sizeHasBeenSet;
   };
 
 } // namespace Model

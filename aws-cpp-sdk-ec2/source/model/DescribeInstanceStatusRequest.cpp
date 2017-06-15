@@ -21,13 +21,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeInstanceStatusRequest::DescribeInstanceStatusRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_includeAllInstances(false),
     m_includeAllInstancesHasBeenSet(false)
 {
@@ -37,9 +37,14 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeInstanceStatus&";
-  if(m_dryRunHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_instanceIdsHasBeenSet)
@@ -53,14 +58,9 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
     }
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   if(m_nextTokenHasBeenSet)
@@ -68,9 +68,9 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "MaxResults=" << m_maxResults << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_includeAllInstancesHasBeenSet)

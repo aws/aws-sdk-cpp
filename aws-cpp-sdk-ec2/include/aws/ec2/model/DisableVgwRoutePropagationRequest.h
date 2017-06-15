@@ -43,41 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>The ID of the route table.</p>
-     */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DisableVgwRoutePropagationRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DisableVgwRoutePropagationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DisableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
-
-    /**
      * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
@@ -112,11 +77,46 @@ namespace Model
      */
     inline DisableVgwRoutePropagationRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DisableVgwRoutePropagationRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DisableVgwRoutePropagationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DisableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
   private:
-    Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+    Aws::String m_routeTableId;
+    bool m_routeTableIdHasBeenSet;
   };
 
 } // namespace Model

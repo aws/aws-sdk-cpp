@@ -17,10 +17,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/ReservedInstancesId.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ReservedInstancesModificationResponse.h>
+#include <aws/ec2/model/ReservedInstancesId.h>
 #include <utility>
 
 namespace Aws
@@ -53,74 +53,110 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetReservedInstancesModificationId() const{ return m_reservedInstancesModificationId; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesModificationId(const Aws::String& value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesModificationId(Aws::String&& value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesModificationId(const char* value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesModification& WithReservedInstancesModificationId(const Aws::String& value) { SetReservedInstancesModificationId(value); return *this;}
+    inline ReservedInstancesModification& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesModification& WithReservedInstancesModificationId(Aws::String&& value) { SetReservedInstancesModificationId(std::move(value)); return *this;}
+    inline ReservedInstancesModification& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique ID for the Reserved Instance modification.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesModification& WithReservedInstancesModificationId(const char* value) { SetReservedInstancesModificationId(value); return *this;}
+    inline ReservedInstancesModification& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time when the modification request was created.</p>
      */
-    inline const Aws::Vector<ReservedInstancesId>& GetReservedInstancesIds() const{ return m_reservedInstancesIds; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time when the modification request was created.</p>
      */
-    inline void SetReservedInstancesIds(const Aws::Vector<ReservedInstancesId>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time when the modification request was created.</p>
      */
-    inline void SetReservedInstancesIds(Aws::Vector<ReservedInstancesId>&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::move(value); }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time when the modification request was created.</p>
      */
-    inline ReservedInstancesModification& WithReservedInstancesIds(const Aws::Vector<ReservedInstancesId>& value) { SetReservedInstancesIds(value); return *this;}
+    inline ReservedInstancesModification& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time when the modification request was created.</p>
      */
-    inline ReservedInstancesModification& WithReservedInstancesIds(Aws::Vector<ReservedInstancesId>&& value) { SetReservedInstancesIds(std::move(value)); return *this;}
+    inline ReservedInstancesModification& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time for the modification to become effective.</p>
      */
-    inline ReservedInstancesModification& AddReservedInstancesIds(const ReservedInstancesId& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
+    inline const Aws::Utils::DateTime& GetEffectiveDate() const{ return m_effectiveDate; }
 
     /**
-     * <p>The IDs of one or more Reserved Instances.</p>
+     * <p>The time for the modification to become effective.</p>
      */
-    inline ReservedInstancesModification& AddReservedInstancesIds(ReservedInstancesId&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
+    inline void SetEffectiveDate(const Aws::Utils::DateTime& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline void SetEffectiveDate(Aws::Utils::DateTime&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline ReservedInstancesModification& WithEffectiveDate(const Aws::Utils::DateTime& value) { SetEffectiveDate(value); return *this;}
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline ReservedInstancesModification& WithEffectiveDate(Aws::Utils::DateTime&& value) { SetEffectiveDate(std::move(value)); return *this;}
 
     /**
      * <p>Contains target configurations along with their corresponding new Reserved
@@ -165,79 +201,74 @@ namespace Model
     inline ReservedInstancesModification& AddModificationResults(ReservedInstancesModificationResponse&& value) { m_modificationResultsHasBeenSet = true; m_modificationResults.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The time when the modification request was created.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Vector<ReservedInstancesId>& GetReservedInstancesIds() const{ return m_reservedInstancesIds; }
 
     /**
-     * <p>The time when the modification request was created.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetReservedInstancesIds(const Aws::Vector<ReservedInstancesId>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
 
     /**
-     * <p>The time when the modification request was created.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
+    inline void SetReservedInstancesIds(Aws::Vector<ReservedInstancesId>&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::move(value); }
 
     /**
-     * <p>The time when the modification request was created.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline ReservedInstancesModification& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+    inline ReservedInstancesModification& WithReservedInstancesIds(const Aws::Vector<ReservedInstancesId>& value) { SetReservedInstancesIds(value); return *this;}
 
     /**
-     * <p>The time when the modification request was created.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline ReservedInstancesModification& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    inline ReservedInstancesModification& WithReservedInstancesIds(Aws::Vector<ReservedInstancesId>&& value) { SetReservedInstancesIds(std::move(value)); return *this;}
 
     /**
-     * <p>The time when the modification request was last updated.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+    inline ReservedInstancesModification& AddReservedInstancesIds(const ReservedInstancesId& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
 
     /**
-     * <p>The time when the modification request was last updated.</p>
+     * <p>The IDs of one or more Reserved Instances.</p>
      */
-    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline ReservedInstancesModification& AddReservedInstancesIds(ReservedInstancesId&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The time when the modification request was last updated.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
+    inline const Aws::String& GetReservedInstancesModificationId() const{ return m_reservedInstancesModificationId; }
 
     /**
-     * <p>The time when the modification request was last updated.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline ReservedInstancesModification& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+    inline void SetReservedInstancesModificationId(const Aws::String& value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId = value; }
 
     /**
-     * <p>The time when the modification request was last updated.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline ReservedInstancesModification& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
+    inline void SetReservedInstancesModificationId(Aws::String&& value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId = std::move(value); }
 
     /**
-     * <p>The time for the modification to become effective.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline const Aws::Utils::DateTime& GetEffectiveDate() const{ return m_effectiveDate; }
+    inline void SetReservedInstancesModificationId(const char* value) { m_reservedInstancesModificationIdHasBeenSet = true; m_reservedInstancesModificationId.assign(value); }
 
     /**
-     * <p>The time for the modification to become effective.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline void SetEffectiveDate(const Aws::Utils::DateTime& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
+    inline ReservedInstancesModification& WithReservedInstancesModificationId(const Aws::String& value) { SetReservedInstancesModificationId(value); return *this;}
 
     /**
-     * <p>The time for the modification to become effective.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline void SetEffectiveDate(Aws::Utils::DateTime&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
+    inline ReservedInstancesModification& WithReservedInstancesModificationId(Aws::String&& value) { SetReservedInstancesModificationId(std::move(value)); return *this;}
 
     /**
-     * <p>The time for the modification to become effective.</p>
+     * <p>A unique ID for the Reserved Instance modification.</p>
      */
-    inline ReservedInstancesModification& WithEffectiveDate(const Aws::Utils::DateTime& value) { SetEffectiveDate(value); return *this;}
-
-    /**
-     * <p>The time for the modification to become effective.</p>
-     */
-    inline ReservedInstancesModification& WithEffectiveDate(Aws::Utils::DateTime&& value) { SetEffectiveDate(std::move(value)); return *this;}
+    inline ReservedInstancesModification& WithReservedInstancesModificationId(const char* value) { SetReservedInstancesModificationId(value); return *this;}
 
     /**
      * <p>The status of the Reserved Instances modification request.</p>
@@ -310,80 +341,49 @@ namespace Model
     inline ReservedInstancesModification& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The time when the modification request was last updated.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The time when the modification request was last updated.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The time when the modification request was last updated.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The time when the modification request was last updated.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline ReservedInstancesModification& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The time when the modification request was last updated.</p>
      */
-    inline ReservedInstancesModification& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
-    inline ReservedInstancesModification& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
-    inline ReservedInstancesModification& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline ReservedInstancesModification& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
-    Aws::String m_reservedInstancesModificationId;
-    bool m_reservedInstancesModificationIdHasBeenSet;
-    Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
-    Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
-    bool m_modificationResultsHasBeenSet;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
     Aws::Utils::DateTime m_effectiveDate;
     bool m_effectiveDateHasBeenSet;
+    Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
+    bool m_modificationResultsHasBeenSet;
+    Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
+    bool m_reservedInstancesIdsHasBeenSet;
+    Aws::String m_reservedInstancesModificationId;
+    bool m_reservedInstancesModificationIdHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    Aws::Utils::DateTime m_updateDate;
+    bool m_updateDateHasBeenSet;
   };
 
 } // namespace Model

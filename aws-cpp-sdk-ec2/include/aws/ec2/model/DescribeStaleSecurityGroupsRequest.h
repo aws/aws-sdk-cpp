@@ -63,41 +63,6 @@ namespace Model
     inline DescribeStaleSecurityGroupsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline DescribeStaleSecurityGroupsRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline DescribeStaleSecurityGroupsRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline DescribeStaleSecurityGroupsRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
      * <p>The maximum number of items to return for this request. The request returns a
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
@@ -160,15 +125,50 @@ namespace Model
      */
     inline DescribeStaleSecurityGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline DescribeStaleSecurityGroupsRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline DescribeStaleSecurityGroupsRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline DescribeStaleSecurityGroupsRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

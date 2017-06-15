@@ -15,10 +15,10 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/ReservationValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/ReservationValue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ReservedInstanceReservationValue.h>
 #include <aws/ec2/model/TargetReservationValue.h>
@@ -52,6 +52,144 @@ namespace Model
     GetReservedInstancesExchangeQuoteResponse();
     GetReservedInstancesExchangeQuoteResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetReservedInstancesExchangeQuoteResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The currency of the transaction.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+
+    /**
+     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
+     * exchange cannot be completed.</p>
+     */
+    inline bool GetIsValidExchange() const{ return m_isValidExchange; }
+
+    /**
+     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
+     * exchange cannot be completed.</p>
+     */
+    inline void SetIsValidExchange(bool value) { m_isValidExchange = value; }
+
+    /**
+     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
+     * exchange cannot be completed.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithIsValidExchange(bool value) { SetIsValidExchange(value); return *this;}
+
+    /**
+     * <p>The new end date of the reservation term.</p>
+     */
+    inline const Aws::Utils::DateTime& GetOutputReservedInstancesWillExpireAt() const{ return m_outputReservedInstancesWillExpireAt; }
+
+    /**
+     * <p>The new end date of the reservation term.</p>
+     */
+    inline void SetOutputReservedInstancesWillExpireAt(const Aws::Utils::DateTime& value) { m_outputReservedInstancesWillExpireAt = value; }
+
+    /**
+     * <p>The new end date of the reservation term.</p>
+     */
+    inline void SetOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { m_outputReservedInstancesWillExpireAt = std::move(value); }
+
+    /**
+     * <p>The new end date of the reservation term.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(const Aws::Utils::DateTime& value) { SetOutputReservedInstancesWillExpireAt(value); return *this;}
+
+    /**
+     * <p>The new end date of the reservation term.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { SetOutputReservedInstancesWillExpireAt(std::move(value)); return *this;}
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline const Aws::String& GetPaymentDue() const{ return m_paymentDue; }
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline void SetPaymentDue(const Aws::String& value) { m_paymentDue = value; }
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline void SetPaymentDue(Aws::String&& value) { m_paymentDue = std::move(value); }
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline void SetPaymentDue(const char* value) { m_paymentDue.assign(value); }
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(const Aws::String& value) { SetPaymentDue(value); return *this;}
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(Aws::String&& value) { SetPaymentDue(std::move(value)); return *this;}
+
+    /**
+     * <p>The total true upfront charge for the exchange.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(const char* value) { SetPaymentDue(value); return *this;}
+
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
+    inline const ReservationValue& GetReservedInstanceValueRollup() const{ return m_reservedInstanceValueRollup; }
+
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
+    inline void SetReservedInstanceValueRollup(const ReservationValue& value) { m_reservedInstanceValueRollup = value; }
+
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
+    inline void SetReservedInstanceValueRollup(ReservationValue&& value) { m_reservedInstanceValueRollup = std::move(value); }
+
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(const ReservationValue& value) { SetReservedInstanceValueRollup(value); return *this;}
+
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
+    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(ReservationValue&& value) { SetReservedInstanceValueRollup(std::move(value)); return *this;}
 
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
@@ -91,27 +229,27 @@ namespace Model
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline const ReservationValue& GetReservedInstanceValueRollup() const{ return m_reservedInstanceValueRollup; }
+    inline const ReservationValue& GetTargetConfigurationValueRollup() const{ return m_targetConfigurationValueRollup; }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline void SetReservedInstanceValueRollup(const ReservationValue& value) { m_reservedInstanceValueRollup = value; }
+    inline void SetTargetConfigurationValueRollup(const ReservationValue& value) { m_targetConfigurationValueRollup = value; }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline void SetReservedInstanceValueRollup(ReservationValue&& value) { m_reservedInstanceValueRollup = std::move(value); }
+    inline void SetTargetConfigurationValueRollup(ReservationValue&& value) { m_targetConfigurationValueRollup = std::move(value); }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(const ReservationValue& value) { SetReservedInstanceValueRollup(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(const ReservationValue& value) { SetTargetConfigurationValueRollup(value); return *this;}
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(ReservationValue&& value) { SetReservedInstanceValueRollup(std::move(value)); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(ReservationValue&& value) { SetTargetConfigurationValueRollup(std::move(value)); return *this;}
 
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
@@ -147,144 +285,6 @@ namespace Model
      * <p>The values of the target Convertible Reserved Instances.</p>
      */
     inline GetReservedInstancesExchangeQuoteResponse& AddTargetConfigurationValueSet(TargetReservationValue&& value) { m_targetConfigurationValueSet.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The cost associated with the Reserved Instance.</p>
-     */
-    inline const ReservationValue& GetTargetConfigurationValueRollup() const{ return m_targetConfigurationValueRollup; }
-
-    /**
-     * <p>The cost associated with the Reserved Instance.</p>
-     */
-    inline void SetTargetConfigurationValueRollup(const ReservationValue& value) { m_targetConfigurationValueRollup = value; }
-
-    /**
-     * <p>The cost associated with the Reserved Instance.</p>
-     */
-    inline void SetTargetConfigurationValueRollup(ReservationValue&& value) { m_targetConfigurationValueRollup = std::move(value); }
-
-    /**
-     * <p>The cost associated with the Reserved Instance.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(const ReservationValue& value) { SetTargetConfigurationValueRollup(value); return *this;}
-
-    /**
-     * <p>The cost associated with the Reserved Instance.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(ReservationValue&& value) { SetTargetConfigurationValueRollup(std::move(value)); return *this;}
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline const Aws::String& GetPaymentDue() const{ return m_paymentDue; }
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline void SetPaymentDue(const Aws::String& value) { m_paymentDue = value; }
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline void SetPaymentDue(Aws::String&& value) { m_paymentDue = std::move(value); }
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline void SetPaymentDue(const char* value) { m_paymentDue.assign(value); }
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(const Aws::String& value) { SetPaymentDue(value); return *this;}
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(Aws::String&& value) { SetPaymentDue(std::move(value)); return *this;}
-
-    /**
-     * <p>The total true upfront charge for the exchange.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(const char* value) { SetPaymentDue(value); return *this;}
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The currency of the transaction.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
-
-    /**
-     * <p>The new end date of the reservation term.</p>
-     */
-    inline const Aws::Utils::DateTime& GetOutputReservedInstancesWillExpireAt() const{ return m_outputReservedInstancesWillExpireAt; }
-
-    /**
-     * <p>The new end date of the reservation term.</p>
-     */
-    inline void SetOutputReservedInstancesWillExpireAt(const Aws::Utils::DateTime& value) { m_outputReservedInstancesWillExpireAt = value; }
-
-    /**
-     * <p>The new end date of the reservation term.</p>
-     */
-    inline void SetOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { m_outputReservedInstancesWillExpireAt = std::move(value); }
-
-    /**
-     * <p>The new end date of the reservation term.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(const Aws::Utils::DateTime& value) { SetOutputReservedInstancesWillExpireAt(value); return *this;}
-
-    /**
-     * <p>The new end date of the reservation term.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { SetOutputReservedInstancesWillExpireAt(std::move(value)); return *this;}
-
-    /**
-     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be completed.</p>
-     */
-    inline bool GetIsValidExchange() const{ return m_isValidExchange; }
-
-    /**
-     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be completed.</p>
-     */
-    inline void SetIsValidExchange(bool value) { m_isValidExchange = value; }
-
-    /**
-     * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be completed.</p>
-     */
-    inline GetReservedInstancesExchangeQuoteResponse& WithIsValidExchange(bool value) { SetIsValidExchange(value); return *this;}
 
     /**
      * <p>Describes the reason why the exchange cannot be completed.</p>
@@ -337,14 +337,14 @@ namespace Model
     inline GetReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<ReservedInstanceReservationValue> m_reservedInstanceValueSet;
-    ReservationValue m_reservedInstanceValueRollup;
-    Aws::Vector<TargetReservationValue> m_targetConfigurationValueSet;
-    ReservationValue m_targetConfigurationValueRollup;
-    Aws::String m_paymentDue;
     Aws::String m_currencyCode;
-    Aws::Utils::DateTime m_outputReservedInstancesWillExpireAt;
     bool m_isValidExchange;
+    Aws::Utils::DateTime m_outputReservedInstancesWillExpireAt;
+    Aws::String m_paymentDue;
+    ReservationValue m_reservedInstanceValueRollup;
+    Aws::Vector<ReservedInstanceReservationValue> m_reservedInstanceValueSet;
+    ReservationValue m_targetConfigurationValueRollup;
+    Aws::Vector<TargetReservationValue> m_targetConfigurationValueSet;
     Aws::String m_validationFailureReason;
     ResponseMetadata m_responseMetadata;
   };

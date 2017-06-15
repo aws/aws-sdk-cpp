@@ -53,15 +53,15 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Ama
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
     }
-    XmlNode enableDnsSupportNode = resultNode.FirstChild("enableDnsSupport");
-    if(!enableDnsSupportNode.IsNull())
-    {
-      m_enableDnsSupport = enableDnsSupportNode;
-    }
     XmlNode enableDnsHostnamesNode = resultNode.FirstChild("enableDnsHostnames");
     if(!enableDnsHostnamesNode.IsNull())
     {
       m_enableDnsHostnames = enableDnsHostnamesNode;
+    }
+    XmlNode enableDnsSupportNode = resultNode.FirstChild("enableDnsSupport");
+    if(!enableDnsSupportNode.IsNull())
+    {
+      m_enableDnsSupport = enableDnsSupportNode;
     }
   }
 

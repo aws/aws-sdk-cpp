@@ -31,30 +31,30 @@ namespace Model
 {
 
 HostOffering::HostOffering() : 
-    m_offeringIdHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
     m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
     m_duration(0),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_hourlyPriceHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
+    m_offeringIdHasBeenSet(false),
+    m_paymentOption(PaymentOption::NOT_SET),
+    m_paymentOptionHasBeenSet(false),
+    m_upfrontPriceHasBeenSet(false)
 {
 }
 
 HostOffering::HostOffering(const XmlNode& xmlNode) : 
-    m_offeringIdHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
     m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
     m_duration(0),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_hourlyPriceHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
+    m_offeringIdHasBeenSet(false),
+    m_paymentOption(PaymentOption::NOT_SET),
+    m_paymentOptionHasBeenSet(false),
+    m_upfrontPriceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,17 +65,35 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode offeringIdNode = resultNode.FirstChild("offeringId");
-    if(!offeringIdNode.IsNull())
+    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
+    if(!currencyCodeNode.IsNull())
     {
-      m_offeringId = StringUtils::Trim(offeringIdNode.GetText().c_str());
-      m_offeringIdHasBeenSet = true;
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCodeHasBeenSet = true;
+    }
+    XmlNode durationNode = resultNode.FirstChild("duration");
+    if(!durationNode.IsNull())
+    {
+      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
+      m_durationHasBeenSet = true;
+    }
+    XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
+    if(!hourlyPriceNode.IsNull())
+    {
+      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
+      m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if(!instanceFamilyNode.IsNull())
     {
       m_instanceFamily = StringUtils::Trim(instanceFamilyNode.GetText().c_str());
       m_instanceFamilyHasBeenSet = true;
+    }
+    XmlNode offeringIdNode = resultNode.FirstChild("offeringId");
+    if(!offeringIdNode.IsNull())
+    {
+      m_offeringId = StringUtils::Trim(offeringIdNode.GetText().c_str());
+      m_offeringIdHasBeenSet = true;
     }
     XmlNode paymentOptionNode = resultNode.FirstChild("paymentOption");
     if(!paymentOptionNode.IsNull())
@@ -89,24 +107,6 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
       m_upfrontPrice = StringUtils::Trim(upfrontPriceNode.GetText().c_str());
       m_upfrontPriceHasBeenSet = true;
     }
-    XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
-    if(!hourlyPriceNode.IsNull())
-    {
-      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
-      m_hourlyPriceHasBeenSet = true;
-    }
-    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
-    if(!currencyCodeNode.IsNull())
-    {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
-      m_currencyCodeHasBeenSet = true;
-    }
-    XmlNode durationNode = resultNode.FirstChild("duration");
-    if(!durationNode.IsNull())
-    {
-      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
-      m_durationHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -114,14 +114,29 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
 
 void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_offeringIdHasBeenSet)
+  if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+  }
+
+  if(m_durationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
+  }
+
+  if(m_hourlyPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
 
   if(m_instanceFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
+  }
+
+  if(m_offeringIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
   }
 
   if(m_paymentOptionHasBeenSet)
@@ -134,32 +149,29 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".UpfrontPrice=" << StringUtils::URLEncode(m_upfrontPrice.c_str()) << "&";
   }
 
-  if(m_hourlyPriceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
-  }
-
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
-  }
-
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
-  }
-
 }
 
 void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_offeringIdHasBeenSet)
+  if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
+      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+  }
+  if(m_durationHasBeenSet)
+  {
+      oStream << location << ".Duration=" << m_duration << "&";
+  }
+  if(m_hourlyPriceHasBeenSet)
+  {
+      oStream << location << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
   if(m_instanceFamilyHasBeenSet)
   {
       oStream << location << ".InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
+  }
+  if(m_offeringIdHasBeenSet)
+  {
+      oStream << location << ".OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
   }
   if(m_paymentOptionHasBeenSet)
   {
@@ -168,18 +180,6 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_upfrontPriceHasBeenSet)
   {
       oStream << location << ".UpfrontPrice=" << StringUtils::URLEncode(m_upfrontPrice.c_str()) << "&";
-  }
-  if(m_hourlyPriceHasBeenSet)
-  {
-      oStream << location << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
-  }
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
-  }
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << ".Duration=" << m_duration << "&";
   }
 }
 

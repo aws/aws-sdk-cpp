@@ -47,21 +47,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The price per instance.</p>
-     */
-    inline double GetPrice() const{ return m_price; }
-
-    /**
-     * <p>The price per instance.</p>
-     */
-    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
-
-    /**
-     * <p>The price per instance.</p>
-     */
-    inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
-
-    /**
      * <p>The number of reservations available for the price.</p>
      */
     inline int GetCount() const{ return m_count; }
@@ -76,11 +61,26 @@ namespace Model
      */
     inline PricingDetail& WithCount(int value) { SetCount(value); return *this;}
 
+    /**
+     * <p>The price per instance.</p>
+     */
+    inline double GetPrice() const{ return m_price; }
+
+    /**
+     * <p>The price per instance.</p>
+     */
+    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
+
+    /**
+     * <p>The price per instance.</p>
+     */
+    inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
+
   private:
-    double m_price;
-    bool m_priceHasBeenSet;
     int m_count;
     bool m_countHasBeenSet;
+    double m_price;
+    bool m_priceHasBeenSet;
   };
 
 } // namespace Model

@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,46 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>. To change an instance attribute, use
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     */
+    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
+
+    /**
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>. To change an instance attribute, use
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     */
+    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+
+    /**
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>. To change an instance attribute, use
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     */
+    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>. To change an instance attribute, use
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     */
+    inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>. To change an instance attribute, use
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     */
+    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -102,53 +142,13 @@ namespace Model
      */
     inline ResetInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
-     */
-    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
-     */
-    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
-     */
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
-     */
-    inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
-     */
-    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
-
   private:
+    InstanceAttributeName m_attribute;
+    bool m_attributeHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
   };
 
 } // namespace Model

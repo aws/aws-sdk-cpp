@@ -42,41 +42,6 @@ namespace Model
 
   public:
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline CreateNatGatewayRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The subnet in which to create the NAT gateway.</p>
-     */
-    inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
-
-    /**
      * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
      * If the Elastic IP address is associated with another resource, you must first
      * disassociate it.</p>
@@ -181,13 +146,48 @@ namespace Model
      */
     inline CreateNatGatewayRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline CreateNatGatewayRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The subnet in which to create the NAT gateway.</p>
+     */
+    inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
   private:
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
   };
 
 } // namespace Model

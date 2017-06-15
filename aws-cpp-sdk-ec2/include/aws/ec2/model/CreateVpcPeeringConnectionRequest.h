@@ -67,76 +67,6 @@ namespace Model
     inline CreateVpcPeeringConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the requester VPC.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
-     */
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
-
-    /**
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
@@ -178,15 +108,85 @@ namespace Model
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
 
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the requester VPC.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
     Aws::String m_peerOwnerId;
     bool m_peerOwnerIdHasBeenSet;
+    Aws::String m_peerVpcId;
+    bool m_peerVpcIdHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

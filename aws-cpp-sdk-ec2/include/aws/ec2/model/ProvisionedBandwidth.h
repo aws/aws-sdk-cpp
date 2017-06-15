@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +52,46 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetProvisionTime() const{ return m_provisionTime; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetProvisionTime(const Aws::Utils::DateTime& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = value; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetProvisionTime(Aws::Utils::DateTime&& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = std::move(value); }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline ProvisionedBandwidth& WithProvisionTime(const Aws::Utils::DateTime& value) { SetProvisionTime(value); return *this;}
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline ProvisionedBandwidth& WithProvisionTime(Aws::Utils::DateTime&& value) { SetProvisionTime(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -115,6 +155,46 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
+    inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline ProvisionedBandwidth& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline ProvisionedBandwidth& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
     inline const Aws::String& GetRequested() const{ return m_requested; }
 
     /**
@@ -164,86 +244,6 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline ProvisionedBandwidth& WithRequested(const char* value) { SetRequested(value); return *this;}
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline ProvisionedBandwidth& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline ProvisionedBandwidth& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetProvisionTime() const{ return m_provisionTime; }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline void SetProvisionTime(const Aws::Utils::DateTime& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = value; }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline void SetProvisionTime(Aws::Utils::DateTime&& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = std::move(value); }
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline ProvisionedBandwidth& WithProvisionTime(const Aws::Utils::DateTime& value) { SetProvisionTime(value); return *this;}
-
-    /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-     */
-    inline ProvisionedBandwidth& WithProvisionTime(Aws::Utils::DateTime&& value) { SetProvisionTime(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -302,14 +302,14 @@ namespace Model
     inline ProvisionedBandwidth& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
-    Aws::String m_provisioned;
-    bool m_provisionedHasBeenSet;
-    Aws::String m_requested;
-    bool m_requestedHasBeenSet;
-    Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
     Aws::Utils::DateTime m_provisionTime;
     bool m_provisionTimeHasBeenSet;
+    Aws::String m_provisioned;
+    bool m_provisionedHasBeenSet;
+    Aws::Utils::DateTime m_requestTime;
+    bool m_requestTimeHasBeenSet;
+    Aws::String m_requested;
+    bool m_requestedHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

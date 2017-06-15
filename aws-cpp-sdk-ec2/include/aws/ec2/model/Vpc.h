@@ -18,10 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcState.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tenancy.h>
-#include <aws/ec2/model/Tag.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -52,66 +52,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline Vpc& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline Vpc& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline Vpc& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline const VpcState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline void SetState(const VpcState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline void SetState(VpcState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline Vpc& WithState(const VpcState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline Vpc& WithState(VpcState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR block for the VPC.</p>
@@ -191,39 +131,64 @@ namespace Model
     inline Vpc& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The current state of the VPC.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const VpcState& GetState() const{ return m_state; }
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The current state of the VPC.</p>
      */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetState(const VpcState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The current state of the VPC.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline void SetState(VpcState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The current state of the VPC.</p>
      */
-    inline Vpc& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline Vpc& WithState(const VpcState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The current state of the VPC.</p>
      */
-    inline Vpc& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline Vpc& WithState(VpcState&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline Vpc& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Any tags assigned to the VPC.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline Vpc& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline Vpc& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline Vpc& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline Vpc& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
      * <p>The allowed tenancy of instances launched into the VPC.</p>
@@ -249,21 +214,6 @@ namespace Model
      * <p>The allowed tenancy of instances launched into the VPC.</p>
      */
     inline Vpc& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether the VPC is the default VPC.</p>
-     */
-    inline bool GetIsDefault() const{ return m_isDefault; }
-
-    /**
-     * <p>Indicates whether the VPC is the default VPC.</p>
-     */
-    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
-
-    /**
-     * <p>Indicates whether the VPC is the default VPC.</p>
-     */
-    inline Vpc& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
@@ -300,23 +250,73 @@ namespace Model
      */
     inline Vpc& AddIpv6CidrBlockAssociationSet(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Indicates whether the VPC is the default VPC.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Indicates whether the VPC is the default VPC.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Indicates whether the VPC is the default VPC.</p>
+     */
+    inline Vpc& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline Vpc& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline Vpc& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline Vpc& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline Vpc& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    VpcState m_state;
-    bool m_stateHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
     Aws::String m_dhcpOptionsId;
     bool m_dhcpOptionsIdHasBeenSet;
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    VpcState m_state;
+    bool m_stateHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;
-    bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
     Aws::Vector<VpcIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
     bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -50,6 +50,125 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The ID of the security group.</p>
+     */
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline UserIdGroupPair& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline UserIdGroupPair& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline UserIdGroupPair& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline UserIdGroupPair& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID.</p>
+     */
+    inline UserIdGroupPair& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline const Aws::String& GetPeeringStatus() const{ return m_peeringStatus; }
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline void SetPeeringStatus(Aws::String&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::move(value); }
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline void SetPeeringStatus(const char* value) { m_peeringStatusHasBeenSet = true; m_peeringStatus.assign(value); }
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline UserIdGroupPair& WithPeeringStatus(const Aws::String& value) { SetPeeringStatus(value); return *this;}
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline UserIdGroupPair& WithPeeringStatus(Aws::String&& value) { SetPeeringStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
+
+    /**
      * <p>The ID of an AWS account. For a referenced security group in another VPC, the
      * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
      * Required when adding or removing rules that reference a security group in
@@ -104,90 +223,6 @@ namespace Model
      * another AWS account.</p>
      */
     inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline UserIdGroupPair& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline UserIdGroupPair& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
-     * nondefault VPC, use the security group ID.</p>
-     */
-    inline UserIdGroupPair& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline UserIdGroupPair& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline UserIdGroupPair& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
-    inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
     /**
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
@@ -259,54 +294,19 @@ namespace Model
      */
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline const Aws::String& GetPeeringStatus() const{ return m_peeringStatus; }
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline void SetPeeringStatus(Aws::String&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::move(value); }
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline void SetPeeringStatus(const char* value) { m_peeringStatusHasBeenSet = true; m_peeringStatus.assign(value); }
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline UserIdGroupPair& WithPeeringStatus(const Aws::String& value) { SetPeeringStatus(value); return *this;}
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline UserIdGroupPair& WithPeeringStatus(Aws::String&& value) { SetPeeringStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
-     */
-    inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
-
   private:
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet;
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+    Aws::String m_peeringStatus;
+    bool m_peeringStatusHasBeenSet;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
-    Aws::String m_peeringStatus;
-    bool m_peeringStatusHasBeenSet;
   };
 
 } // namespace Model

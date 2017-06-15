@@ -42,63 +42,53 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+    inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
      */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline CreateSubnetRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline CreateSubnetRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline CreateSubnetRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
@@ -185,65 +175,75 @@ namespace Model
     inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateSubnetRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline CreateSubnetRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    inline CreateSubnetRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

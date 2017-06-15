@@ -21,12 +21,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeImagesRequest::DescribeImagesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_executableUsersHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_imageIdsHasBeenSet(false),
     m_ownersHasBeenSet(false),
-    m_executableUsersHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -34,9 +34,25 @@ Aws::String DescribeImagesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeImages&";
-  if(m_dryRunHasBeenSet)
+  if(m_executableUsersHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    unsigned executableUsersCount = 1;
+    for(auto& item : m_executableUsers)
+    {
+      ss << "ExecutableBy." << executableUsersCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      executableUsersCount++;
+    }
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_imageIdsHasBeenSet)
@@ -61,25 +77,9 @@ Aws::String DescribeImagesRequest::SerializePayload() const
     }
   }
 
-  if(m_executableUsersHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    unsigned executableUsersCount = 1;
-    for(auto& item : m_executableUsers)
-    {
-      ss << "ExecutableBy." << executableUsersCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      executableUsersCount++;
-    }
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

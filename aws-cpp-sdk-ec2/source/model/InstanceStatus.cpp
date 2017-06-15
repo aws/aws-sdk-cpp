@@ -31,22 +31,22 @@ namespace Model
 {
 
 InstanceStatus::InstanceStatus() : 
-    m_instanceIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_eventsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
-    m_systemStatusHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_systemStatusHasBeenSet(false)
 {
 }
 
 InstanceStatus::InstanceStatus(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_eventsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
-    m_systemStatusHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_systemStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,12 +57,6 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-      m_instanceIdHasBeenSet = true;
-    }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
@@ -81,23 +75,29 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
 
       m_eventsHasBeenSet = true;
     }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
+    }
     XmlNode instanceStateNode = resultNode.FirstChild("instanceState");
     if(!instanceStateNode.IsNull())
     {
       m_instanceState = instanceStateNode;
       m_instanceStateHasBeenSet = true;
     }
-    XmlNode systemStatusNode = resultNode.FirstChild("systemStatus");
-    if(!systemStatusNode.IsNull())
-    {
-      m_systemStatus = systemStatusNode;
-      m_systemStatusHasBeenSet = true;
-    }
     XmlNode instanceStatusNode = resultNode.FirstChild("instanceStatus");
     if(!instanceStatusNode.IsNull())
     {
       m_instanceStatus = instanceStatusNode;
       m_instanceStatusHasBeenSet = true;
+    }
+    XmlNode systemStatusNode = resultNode.FirstChild("systemStatus");
+    if(!systemStatusNode.IsNull())
+    {
+      m_systemStatus = systemStatusNode;
+      m_systemStatusHasBeenSet = true;
     }
   }
 
@@ -106,11 +106,6 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
 
 void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
@@ -127,18 +122,16 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
   if(m_instanceStateHasBeenSet)
   {
       Aws::StringStream instanceStateLocationAndMemberSs;
       instanceStateLocationAndMemberSs << location << index << locationValue << ".InstanceState";
       m_instanceState.OutputToStream(oStream, instanceStateLocationAndMemberSs.str().c_str());
-  }
-
-  if(m_systemStatusHasBeenSet)
-  {
-      Aws::StringStream systemStatusLocationAndMemberSs;
-      systemStatusLocationAndMemberSs << location << index << locationValue << ".SystemStatus";
-      m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMemberSs.str().c_str());
   }
 
   if(m_instanceStatusHasBeenSet)
@@ -148,14 +141,17 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
       m_instanceStatus.OutputToStream(oStream, instanceStatusLocationAndMemberSs.str().c_str());
   }
 
+  if(m_systemStatusHasBeenSet)
+  {
+      Aws::StringStream systemStatusLocationAndMemberSs;
+      systemStatusLocationAndMemberSs << location << index << locationValue << ".SystemStatus";
+      m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
@@ -170,23 +166,27 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
   if(m_instanceStateHasBeenSet)
   {
       Aws::String instanceStateLocationAndMember(location);
       instanceStateLocationAndMember += ".InstanceState";
       m_instanceState.OutputToStream(oStream, instanceStateLocationAndMember.c_str());
   }
-  if(m_systemStatusHasBeenSet)
-  {
-      Aws::String systemStatusLocationAndMember(location);
-      systemStatusLocationAndMember += ".SystemStatus";
-      m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMember.c_str());
-  }
   if(m_instanceStatusHasBeenSet)
   {
       Aws::String instanceStatusLocationAndMember(location);
       instanceStatusLocationAndMember += ".InstanceStatus";
       m_instanceStatus.OutputToStream(oStream, instanceStatusLocationAndMember.c_str());
+  }
+  if(m_systemStatusHasBeenSet)
+  {
+      Aws::String systemStatusLocationAndMember(location);
+      systemStatusLocationAndMember += ".SystemStatus";
+      m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMember.c_str());
   }
 }
 

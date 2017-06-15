@@ -50,41 +50,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The instance type.</p>
-     */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline ActiveInstance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline ActiveInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline ActiveInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
-
-    /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -118,6 +83,41 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline ActiveInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline ActiveInstance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline ActiveInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline ActiveInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -195,10 +195,10 @@ namespace Model
     inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(std::move(value)); return *this;}
 
   private:
-    Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
     InstanceHealthStatus m_instanceHealth;

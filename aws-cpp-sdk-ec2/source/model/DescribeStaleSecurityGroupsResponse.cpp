@@ -48,6 +48,11 @@ DescribeStaleSecurityGroupsResponse& DescribeStaleSecurityGroupsResponse::operat
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode staleSecurityGroupSetNode = resultNode.FirstChild("staleSecurityGroupSet");
     if(!staleSecurityGroupSetNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeStaleSecurityGroupsResponse& DescribeStaleSecurityGroupsResponse::operat
         staleSecurityGroupSetMember = staleSecurityGroupSetMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

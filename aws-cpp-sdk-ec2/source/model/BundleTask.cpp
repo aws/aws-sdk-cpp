@@ -31,28 +31,28 @@ namespace Model
 {
 
 BundleTask::BundleTask() : 
-    m_instanceIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_bundleTaskErrorHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_progressHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_state(BundleTaskState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
     m_storageHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_bundleTaskErrorHasBeenSet(false)
+    m_updateTimeHasBeenSet(false)
 {
 }
 
 BundleTask::BundleTask(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_bundleTaskErrorHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_progressHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_state(BundleTaskState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
     m_storageHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_bundleTaskErrorHasBeenSet(false)
+    m_updateTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,41 +63,23 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-      m_instanceIdHasBeenSet = true;
-    }
     XmlNode bundleIdNode = resultNode.FirstChild("bundleId");
     if(!bundleIdNode.IsNull())
     {
       m_bundleId = StringUtils::Trim(bundleIdNode.GetText().c_str());
       m_bundleIdHasBeenSet = true;
     }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
+    XmlNode bundleTaskErrorNode = resultNode.FirstChild("error");
+    if(!bundleTaskErrorNode.IsNull())
     {
-      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
+      m_bundleTaskError = bundleTaskErrorNode;
+      m_bundleTaskErrorHasBeenSet = true;
     }
-    XmlNode startTimeNode = resultNode.FirstChild("startTime");
-    if(!startTimeNode.IsNull())
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_startTimeHasBeenSet = true;
-    }
-    XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
-    if(!updateTimeNode.IsNull())
-    {
-      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_updateTimeHasBeenSet = true;
-    }
-    XmlNode storageNode = resultNode.FirstChild("storage");
-    if(!storageNode.IsNull())
-    {
-      m_storage = storageNode;
-      m_storageHasBeenSet = true;
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
@@ -105,11 +87,29 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
       m_progress = StringUtils::Trim(progressNode.GetText().c_str());
       m_progressHasBeenSet = true;
     }
-    XmlNode bundleTaskErrorNode = resultNode.FirstChild("error");
-    if(!bundleTaskErrorNode.IsNull())
+    XmlNode startTimeNode = resultNode.FirstChild("startTime");
+    if(!startTimeNode.IsNull())
     {
-      m_bundleTaskError = bundleTaskErrorNode;
-      m_bundleTaskErrorHasBeenSet = true;
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTimeHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode storageNode = resultNode.FirstChild("storage");
+    if(!storageNode.IsNull())
+    {
+      m_storage = storageNode;
+      m_storageHasBeenSet = true;
+    }
+    XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
+    if(!updateTimeNode.IsNull())
+    {
+      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateTimeHasBeenSet = true;
     }
   }
 
@@ -118,41 +118,9 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
 
 void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
   if(m_bundleIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
-  }
-
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_updateTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_storageHasBeenSet)
-  {
-      Aws::StringStream storageLocationAndMemberSs;
-      storageLocationAndMemberSs << location << index << locationValue << ".Storage";
-      m_storage.OutputToStream(oStream, storageLocationAndMemberSs.str().c_str());
-  }
-
-  if(m_progressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
   }
 
   if(m_bundleTaskErrorHasBeenSet)
@@ -162,29 +130,67 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_bundleTaskError.OutputToStream(oStream, bundleTaskErrorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
+  }
+
+  if(m_storageHasBeenSet)
+  {
+      Aws::StringStream storageLocationAndMemberSs;
+      storageLocationAndMemberSs << location << index << locationValue << ".Storage";
+      m_storage.OutputToStream(oStream, storageLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_updateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
   if(m_bundleIdHasBeenSet)
   {
       oStream << location << ".BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
   }
-  if(m_stateHasBeenSet)
+  if(m_bundleTaskErrorHasBeenSet)
   {
-      oStream << location << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
+      Aws::String bundleTaskErrorLocationAndMember(location);
+      bundleTaskErrorLocationAndMember += ".BundleTaskError";
+      m_bundleTaskError.OutputToStream(oStream, bundleTaskErrorLocationAndMember.c_str());
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
       oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
-  if(m_updateTimeHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
   }
   if(m_storageHasBeenSet)
   {
@@ -192,15 +198,9 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) con
       storageLocationAndMember += ".Storage";
       m_storage.OutputToStream(oStream, storageLocationAndMember.c_str());
   }
-  if(m_progressHasBeenSet)
+  if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
-  }
-  if(m_bundleTaskErrorHasBeenSet)
-  {
-      Aws::String bundleTaskErrorLocationAndMember(location);
-      bundleTaskErrorLocationAndMember += ".BundleTaskError";
-      m_bundleTaskError.OutputToStream(oStream, bundleTaskErrorLocationAndMember.c_str());
+      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

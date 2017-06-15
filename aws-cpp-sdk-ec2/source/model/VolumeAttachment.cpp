@@ -31,12 +31,12 @@ namespace Model
 {
 
 VolumeAttachment::VolumeAttachment() : 
-    m_volumeIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
+    m_attachTimeHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_state(VolumeAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_attachTimeHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -44,12 +44,12 @@ VolumeAttachment::VolumeAttachment() :
 }
 
 VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) : 
-    m_volumeIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
+    m_attachTimeHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_state(VolumeAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_attachTimeHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -63,17 +63,11 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
+    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
+    if(!attachTimeNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-      m_volumeIdHasBeenSet = true;
-    }
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-      m_instanceIdHasBeenSet = true;
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_attachTimeHasBeenSet = true;
     }
     XmlNode deviceNode = resultNode.FirstChild("device");
     if(!deviceNode.IsNull())
@@ -81,17 +75,23 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
       m_device = StringUtils::Trim(deviceNode.GetText().c_str());
       m_deviceHasBeenSet = true;
     }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
       m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
     }
-    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
-    if(!attachTimeNode.IsNull())
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
     {
-      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_attachTimeHasBeenSet = true;
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
@@ -106,14 +106,9 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_volumeIdHasBeenSet)
+  if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_deviceHasBeenSet)
@@ -121,14 +116,19 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
   }
 
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
   }
 
-  if(m_attachTimeHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
   if(m_deleteOnTerminationHasBeenSet)
@@ -147,25 +147,25 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_volumeIdHasBeenSet)
+  if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deviceHasBeenSet)
   {
       oStream << location << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
   }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
   }
-  if(m_attachTimeHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {

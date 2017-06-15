@@ -31,21 +31,21 @@ namespace Model
 {
 
 CustomerGateway::CustomerGateway() : 
+    m_bgpAsnHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
+    m_ipAddressHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 CustomerGateway::CustomerGateway(const XmlNode& xmlNode) : 
+    m_bgpAsnHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
+    m_ipAddressHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -57,11 +57,23 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
+    if(!bgpAsnNode.IsNull())
+    {
+      m_bgpAsn = StringUtils::Trim(bgpAsnNode.GetText().c_str());
+      m_bgpAsnHasBeenSet = true;
+    }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
       m_customerGatewayId = StringUtils::Trim(customerGatewayIdNode.GetText().c_str());
       m_customerGatewayIdHasBeenSet = true;
+    }
+    XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
+    if(!ipAddressNode.IsNull())
+    {
+      m_ipAddress = StringUtils::Trim(ipAddressNode.GetText().c_str());
+      m_ipAddressHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -74,18 +86,6 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     {
       m_type = StringUtils::Trim(typeNode.GetText().c_str());
       m_typeHasBeenSet = true;
-    }
-    XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
-    if(!ipAddressNode.IsNull())
-    {
-      m_ipAddress = StringUtils::Trim(ipAddressNode.GetText().c_str());
-      m_ipAddressHasBeenSet = true;
-    }
-    XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
-    if(!bgpAsnNode.IsNull())
-    {
-      m_bgpAsn = StringUtils::Trim(bgpAsnNode.GetText().c_str());
-      m_bgpAsnHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -106,9 +106,19 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_bgpAsnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
+  }
+
   if(m_customerGatewayIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
+  }
+
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
 
   if(m_stateHasBeenSet)
@@ -119,16 +129,6 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_typeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
-  }
-
-  if(m_ipAddressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
-  }
-
-  if(m_bgpAsnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -146,9 +146,17 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_bgpAsnHasBeenSet)
+  {
+      oStream << location << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
+  }
   if(m_customerGatewayIdHasBeenSet)
   {
       oStream << location << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
+  }
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {
@@ -157,14 +165,6 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
-  }
-  if(m_ipAddressHasBeenSet)
-  {
-      oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
-  }
-  if(m_bgpAsnHasBeenSet)
-  {
-      oStream << location << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

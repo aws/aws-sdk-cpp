@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteDhcpOptionsRequest::DeleteDhcpOptionsRequest() : 
+    m_dhcpOptionsIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String DeleteDhcpOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteDhcpOptions&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_dhcpOptionsIdHasBeenSet)
   {
     ss << "DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

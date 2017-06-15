@@ -23,13 +23,13 @@ using namespace Aws::Utils;
 DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
     m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_spotFleetRequestIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -42,19 +42,14 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_spotFleetRequestIdHasBeenSet)
-  {
-    ss << "SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
-  }
-
   if(m_eventTypeHasBeenSet)
   {
     ss << "EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   if(m_nextTokenHasBeenSet)
@@ -62,9 +57,14 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_spotFleetRequestIdHasBeenSet)
   {
-    ss << "MaxResults=" << m_maxResults << "&";
+    ss << "SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

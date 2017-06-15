@@ -43,30 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CreateSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
@@ -100,6 +76,30 @@ namespace Model
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>A prefix for the data feed file names.</p>
@@ -137,10 +137,10 @@ namespace Model
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

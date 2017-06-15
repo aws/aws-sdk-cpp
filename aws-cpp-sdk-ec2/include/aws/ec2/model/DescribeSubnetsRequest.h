@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,70 +43,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeSubnetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline DescribeSubnetsRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline DescribeSubnetsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline DescribeSubnetsRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline DescribeSubnetsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline DescribeSubnetsRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
@@ -373,13 +309,77 @@ namespace Model
      */
     inline DescribeSubnetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline DescribeSubnetsRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline DescribeSubnetsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline DescribeSubnetsRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline DescribeSubnetsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
+    inline DescribeSubnetsRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeSubnetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

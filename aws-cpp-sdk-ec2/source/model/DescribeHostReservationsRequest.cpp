@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeHostReservationsRequest::DescribeHostReservationsRequest() : 
-    m_hostReservationIdSetHasBeenSet(false),
     m_filterHasBeenSet(false),
+    m_hostReservationIdSetHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -33,6 +33,16 @@ Aws::String DescribeHostReservationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeHostReservations&";
+  if(m_filterHasBeenSet)
+  {
+    unsigned filterCount = 1;
+    for(auto& item : m_filter)
+    {
+      item.OutputToStream(ss, "Filter.", filterCount, "");
+      filterCount++;
+    }
+  }
+
   if(m_hostReservationIdSetHasBeenSet)
   {
     unsigned hostReservationIdSetCount = 1;
@@ -41,16 +51,6 @@ Aws::String DescribeHostReservationsRequest::SerializePayload() const
       ss << "HostReservationIdSet." << hostReservationIdSetCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostReservationIdSetCount++;
-    }
-  }
-
-  if(m_filterHasBeenSet)
-  {
-    unsigned filterCount = 1;
-    for(auto& item : m_filter)
-    {
-      item.OutputToStream(ss, "Filter.", filterCount, "");
-      filterCount++;
     }
   }
 

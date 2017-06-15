@@ -15,13 +15,13 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchPermission.h>
 #include <aws/ec2/model/ProductCode.h>
-#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +51,41 @@ namespace Model
     DescribeImageAttributeResponse();
     DescribeImageAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeImageAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -158,6 +193,31 @@ namespace Model
     inline DescribeImageAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>A description for the AMI.</p>
+     */
+    inline const AttributeValue& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline void SetDescription(const AttributeValue& value) { m_description = value; }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline void SetDescription(AttributeValue&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline DescribeImageAttributeResponse& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the AMI.</p>
+     */
+    inline DescribeImageAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
      * <p>The kernel ID.</p>
      */
     inline const AttributeValue& GetKernelId() const{ return m_kernelId; }
@@ -208,31 +268,6 @@ namespace Model
     inline DescribeImageAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the AMI.</p>
-     */
-    inline const AttributeValue& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline void SetDescription(const AttributeValue& value) { m_description = value; }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline void SetDescription(AttributeValue&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline DescribeImageAttributeResponse& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the AMI.</p>
-     */
-    inline DescribeImageAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
      * interface is enabled.</p>
      */
@@ -262,41 +297,6 @@ namespace Model
      */
     inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
-
-    /**
-     * <p>One or more block device mapping entries.</p>
-     */
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -313,14 +313,14 @@ namespace Model
     inline DescribeImageAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     Aws::String m_imageId;
     Aws::Vector<LaunchPermission> m_launchPermissions;
     Aws::Vector<ProductCode> m_productCodes;
+    AttributeValue m_description;
     AttributeValue m_kernelId;
     AttributeValue m_ramdiskId;
-    AttributeValue m_description;
     AttributeValue m_sriovNetSupport;
-    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     ResponseMetadata m_responseMetadata;
   };
 

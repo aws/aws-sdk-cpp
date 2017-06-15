@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateDhcpOptionsRequest::CreateDhcpOptionsRequest() : 
+    m_dhcpConfigurationsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_dhcpConfigurationsHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,11 +31,6 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateDhcpOptions&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_dhcpConfigurationsHasBeenSet)
   {
     unsigned dhcpConfigurationsCount = 1;
@@ -44,6 +39,11 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
       item.OutputToStream(ss, "DhcpConfiguration.", dhcpConfigurationsCount, "");
       dhcpConfigurationsCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

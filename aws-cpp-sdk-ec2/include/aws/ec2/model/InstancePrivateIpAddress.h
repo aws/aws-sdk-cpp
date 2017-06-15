@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceAssociation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -50,39 +50,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>The association information for an Elastic IP address for the network
+     * interface.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline const InstanceNetworkInterfaceAssociation& GetAssociation() const{ return m_association; }
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>The association information for an Elastic IP address for the network
+     * interface.</p>
      */
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetAssociation(const InstanceNetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>The association information for an Elastic IP address for the network
+     * interface.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+    inline void SetAssociation(InstanceNetworkInterfaceAssociation&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>The association information for an Elastic IP address for the network
+     * interface.</p>
      */
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+    inline InstancePrivateIpAddress& WithAssociation(const InstanceNetworkInterfaceAssociation& value) { SetAssociation(value); return *this;}
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>The association information for an Elastic IP address for the network
+     * interface.</p>
      */
-    inline InstancePrivateIpAddress& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+    inline InstancePrivateIpAddress& WithAssociation(InstanceNetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>Indicates whether this IPv4 address is the primary private IP address of the
+     * network interface.</p>
      */
-    inline InstancePrivateIpAddress& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+    inline bool GetPrimary() const{ return m_primary; }
 
     /**
-     * <p>The private IPv4 address of the network interface.</p>
+     * <p>Indicates whether this IPv4 address is the primary private IP address of the
+     * network interface.</p>
      */
-    inline InstancePrivateIpAddress& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
+
+    /**
+     * <p>Indicates whether this IPv4 address is the primary private IP address of the
+     * network interface.</p>
+     */
+    inline InstancePrivateIpAddress& WithPrimary(bool value) { SetPrimary(value); return *this;}
 
     /**
      * <p>The private IPv4 DNS name.</p>
@@ -120,62 +133,49 @@ namespace Model
     inline InstancePrivateIpAddress& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>Indicates whether this IPv4 address is the primary private IP address of the
-     * network interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline bool GetPrimary() const{ return m_primary; }
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>Indicates whether this IPv4 address is the primary private IP address of the
-     * network interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>Indicates whether this IPv4 address is the primary private IP address of the
-     * network interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline InstancePrivateIpAddress& WithPrimary(bool value) { SetPrimary(value); return *this;}
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
-     * <p>The association information for an Elastic IP address for the network
-     * interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline const InstanceNetworkInterfaceAssociation& GetAssociation() const{ return m_association; }
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The association information for an Elastic IP address for the network
-     * interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline void SetAssociation(const InstanceNetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
+    inline InstancePrivateIpAddress& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The association information for an Elastic IP address for the network
-     * interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline void SetAssociation(InstanceNetworkInterfaceAssociation&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
+    inline InstancePrivateIpAddress& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The association information for an Elastic IP address for the network
-     * interface.</p>
+     * <p>The private IPv4 address of the network interface.</p>
      */
-    inline InstancePrivateIpAddress& WithAssociation(const InstanceNetworkInterfaceAssociation& value) { SetAssociation(value); return *this;}
-
-    /**
-     * <p>The association information for an Elastic IP address for the network
-     * interface.</p>
-     */
-    inline InstancePrivateIpAddress& WithAssociation(InstanceNetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    inline InstancePrivateIpAddress& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
-    Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
-    bool m_primary;
-    bool m_primaryHasBeenSet;
     InstanceNetworkInterfaceAssociation m_association;
     bool m_associationHasBeenSet;
+    bool m_primary;
+    bool m_primaryHasBeenSet;
+    Aws::String m_privateDnsName;
+    bool m_privateDnsNameHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
   };
 
 } // namespace Model

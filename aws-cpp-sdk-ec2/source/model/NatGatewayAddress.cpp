@@ -31,18 +31,18 @@ namespace Model
 {
 
 NatGatewayAddress::NatGatewayAddress() : 
-    m_publicIpHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_publicIpHasBeenSet(false)
 {
 }
 
 NatGatewayAddress::NatGatewayAddress(const XmlNode& xmlNode) : 
-    m_publicIpHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_publicIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,17 +53,17 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
-    if(!publicIpNode.IsNull())
-    {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
-      m_publicIpHasBeenSet = true;
-    }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
       m_allocationIdHasBeenSet = true;
+    }
+    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
+    if(!networkInterfaceIdNode.IsNull())
+    {
+      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpNode = resultNode.FirstChild("privateIp");
     if(!privateIpNode.IsNull())
@@ -71,11 +71,11 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
       m_privateIp = StringUtils::Trim(privateIpNode.GetText().c_str());
       m_privateIpHasBeenSet = true;
     }
-    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
-    if(!networkInterfaceIdNode.IsNull())
+    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
+    if(!publicIpNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
-      m_networkInterfaceIdHasBeenSet = true;
+      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIpHasBeenSet = true;
     }
   }
 
@@ -84,19 +84,9 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
 
 void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
-
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
-  }
-
-  if(m_privateIpHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PrivateIp=" << StringUtils::URLEncode(m_privateIp.c_str()) << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -104,25 +94,35 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
+  if(m_privateIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateIp=" << StringUtils::URLEncode(m_privateIp.c_str()) << "&";
+  }
+
+  if(m_publicIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+
 }
 
 void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+  }
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+      oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
   if(m_privateIpHasBeenSet)
   {
       oStream << location << ".PrivateIp=" << StringUtils::URLEncode(m_privateIp.c_str()) << "&";
   }
-  if(m_networkInterfaceIdHasBeenSet)
+  if(m_publicIpHasBeenSet)
   {
-      oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 }
 

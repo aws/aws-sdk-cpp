@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DisassociateAddressRequest::DisassociateAddressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
     m_publicIpHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String DisassociateAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DisassociateAddress&";
-  if(m_dryRunHasBeenSet)
+  if(m_associationIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
   if(m_publicIpHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String DisassociateAddressRequest::SerializePayload() const
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  if(m_associationIdHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

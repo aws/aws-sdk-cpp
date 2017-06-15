@@ -31,18 +31,18 @@ namespace Model
 {
 
 IcmpTypeCode::IcmpTypeCode() : 
-    m_type(0),
-    m_typeHasBeenSet(false),
     m_code(0),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_type(0),
+    m_typeHasBeenSet(false)
 {
 }
 
 IcmpTypeCode::IcmpTypeCode(const XmlNode& xmlNode) : 
-    m_type(0),
-    m_typeHasBeenSet(false),
     m_code(0),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_type(0),
+    m_typeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,17 +53,17 @@ IcmpTypeCode& IcmpTypeCode::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode typeNode = resultNode.FirstChild("type");
-    if(!typeNode.IsNull())
-    {
-      m_type = StringUtils::ConvertToInt32(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
-      m_typeHasBeenSet = true;
-    }
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
       m_code = StringUtils::ConvertToInt32(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
       m_codeHasBeenSet = true;
+    }
+    XmlNode typeNode = resultNode.FirstChild("type");
+    if(!typeNode.IsNull())
+    {
+      m_type = StringUtils::ConvertToInt32(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_typeHasBeenSet = true;
     }
   }
 
@@ -72,27 +72,27 @@ IcmpTypeCode& IcmpTypeCode::operator =(const XmlNode& xmlNode)
 
 void IcmpTypeCode::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Type=" << m_type << "&";
-  }
-
   if(m_codeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Code=" << m_code << "&";
+  }
+
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << m_type << "&";
   }
 
 }
 
 void IcmpTypeCode::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << ".Type=" << m_type << "&";
-  }
   if(m_codeHasBeenSet)
   {
       oStream << location << ".Code=" << m_code << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << m_type << "&";
   }
 }
 

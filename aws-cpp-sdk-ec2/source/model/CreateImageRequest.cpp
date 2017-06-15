@@ -21,14 +21,14 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateImageRequest::CreateImageRequest() : 
+    m_blockDeviceMappingsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_noReboot(false),
-    m_noRebootHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false)
+    m_noRebootHasBeenSet(false)
 {
 }
 
@@ -36,6 +36,21 @@ Aws::String CreateImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateImage&";
+  if(m_blockDeviceMappingsHasBeenSet)
+  {
+    unsigned blockDeviceMappingsCount = 1;
+    for(auto& item : m_blockDeviceMappings)
+    {
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
+      blockDeviceMappingsCount++;
+    }
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -51,24 +66,9 @@ Aws::String CreateImageRequest::SerializePayload() const
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
   if(m_noRebootHasBeenSet)
   {
     ss << "NoReboot=" << std::boolalpha << m_noReboot << "&";
-  }
-
-  if(m_blockDeviceMappingsHasBeenSet)
-  {
-    unsigned blockDeviceMappingsCount = 1;
-    for(auto& item : m_blockDeviceMappings)
-    {
-      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
-      blockDeviceMappingsCount++;
-    }
   }
 
   ss << "Version=2016-11-15";

@@ -31,76 +31,76 @@ namespace Model
 {
 
 Image::Image() : 
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
     m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_imageLocationHasBeenSet(false),
     m_imageType(ImageTypeValues::NOT_SET),
     m_imageTypeHasBeenSet(false),
+    m_public(false),
+    m_publicHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
+    m_productCodesHasBeenSet(false),
+    m_ramdiskIdHasBeenSet(false),
+    m_state(ImageState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_blockDeviceMappingsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_enaSupport(false),
     m_enaSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
+    m_hypervisorHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
+    m_sriovNetSupportHasBeenSet(false),
+    m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false)
+    m_virtualizationType(VirtualizationType::NOT_SET),
+    m_virtualizationTypeHasBeenSet(false)
 {
 }
 
 Image::Image(const XmlNode& xmlNode) : 
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
     m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_imageLocationHasBeenSet(false),
     m_imageType(ImageTypeValues::NOT_SET),
     m_imageTypeHasBeenSet(false),
+    m_public(false),
+    m_publicHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
+    m_productCodesHasBeenSet(false),
+    m_ramdiskIdHasBeenSet(false),
+    m_state(ImageState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_blockDeviceMappingsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_enaSupport(false),
     m_enaSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
+    m_hypervisorHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
+    m_sriovNetSupportHasBeenSet(false),
+    m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false)
+    m_virtualizationType(VirtualizationType::NOT_SET),
+    m_virtualizationTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -111,6 +111,18 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode architectureNode = resultNode.FirstChild("architecture");
+    if(!architectureNode.IsNull())
+    {
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(architectureNode.GetText().c_str()).c_str());
+      m_architectureHasBeenSet = true;
+    }
+    XmlNode creationDateNode = resultNode.FirstChild("creationDate");
+    if(!creationDateNode.IsNull())
+    {
+      m_creationDate = StringUtils::Trim(creationDateNode.GetText().c_str());
+      m_creationDateHasBeenSet = true;
+    }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
@@ -123,11 +135,23 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_imageLocation = StringUtils::Trim(imageLocationNode.GetText().c_str());
       m_imageLocationHasBeenSet = true;
     }
-    XmlNode stateNode = resultNode.FirstChild("imageState");
-    if(!stateNode.IsNull())
+    XmlNode imageTypeNode = resultNode.FirstChild("imageType");
+    if(!imageTypeNode.IsNull())
     {
-      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
+      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(imageTypeNode.GetText().c_str()).c_str());
+      m_imageTypeHasBeenSet = true;
+    }
+    XmlNode publicNode = resultNode.FirstChild("isPublic");
+    if(!publicNode.IsNull())
+    {
+      m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
+      m_publicHasBeenSet = true;
+    }
+    XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
+    if(!kernelIdNode.IsNull())
+    {
+      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
     if(!ownerIdNode.IsNull())
@@ -135,17 +159,11 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
       m_ownerIdHasBeenSet = true;
     }
-    XmlNode creationDateNode = resultNode.FirstChild("creationDate");
-    if(!creationDateNode.IsNull())
+    XmlNode platformNode = resultNode.FirstChild("platform");
+    if(!platformNode.IsNull())
     {
-      m_creationDate = StringUtils::Trim(creationDateNode.GetText().c_str());
-      m_creationDateHasBeenSet = true;
-    }
-    XmlNode publicNode = resultNode.FirstChild("isPublic");
-    if(!publicNode.IsNull())
-    {
-      m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
-      m_publicHasBeenSet = true;
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(platformNode.GetText().c_str()).c_str());
+      m_platformHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
@@ -159,83 +177,17 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
       m_productCodesHasBeenSet = true;
     }
-    XmlNode architectureNode = resultNode.FirstChild("architecture");
-    if(!architectureNode.IsNull())
-    {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(architectureNode.GetText().c_str()).c_str());
-      m_architectureHasBeenSet = true;
-    }
-    XmlNode imageTypeNode = resultNode.FirstChild("imageType");
-    if(!imageTypeNode.IsNull())
-    {
-      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(imageTypeNode.GetText().c_str()).c_str());
-      m_imageTypeHasBeenSet = true;
-    }
-    XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
-    if(!kernelIdNode.IsNull())
-    {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
-      m_kernelIdHasBeenSet = true;
-    }
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
       m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
       m_ramdiskIdHasBeenSet = true;
     }
-    XmlNode platformNode = resultNode.FirstChild("platform");
-    if(!platformNode.IsNull())
+    XmlNode stateNode = resultNode.FirstChild("imageState");
+    if(!stateNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(platformNode.GetText().c_str()).c_str());
-      m_platformHasBeenSet = true;
-    }
-    XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
-    if(!sriovNetSupportNode.IsNull())
-    {
-      m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
-      m_sriovNetSupportHasBeenSet = true;
-    }
-    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
-    if(!enaSupportNode.IsNull())
-    {
-      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
-      m_enaSupportHasBeenSet = true;
-    }
-    XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
-    if(!stateReasonNode.IsNull())
-    {
-      m_stateReason = stateReasonNode;
-      m_stateReasonHasBeenSet = true;
-    }
-    XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");
-    if(!imageOwnerAliasNode.IsNull())
-    {
-      m_imageOwnerAlias = StringUtils::Trim(imageOwnerAliasNode.GetText().c_str());
-      m_imageOwnerAliasHasBeenSet = true;
-    }
-    XmlNode nameNode = resultNode.FirstChild("name");
-    if(!nameNode.IsNull())
-    {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
-      m_nameHasBeenSet = true;
-    }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
-      m_descriptionHasBeenSet = true;
-    }
-    XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
-    if(!rootDeviceTypeNode.IsNull())
-    {
-      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(rootDeviceTypeNode.GetText().c_str()).c_str());
-      m_rootDeviceTypeHasBeenSet = true;
-    }
-    XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
-    if(!rootDeviceNameNode.IsNull())
-    {
-      m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
-      m_rootDeviceNameHasBeenSet = true;
+      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
@@ -249,11 +201,59 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
       m_blockDeviceMappingsHasBeenSet = true;
     }
-    XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
-    if(!virtualizationTypeNode.IsNull())
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
     {
-      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypeNode.GetText().c_str()).c_str());
-      m_virtualizationTypeHasBeenSet = true;
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
+    }
+    XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
+    if(!hypervisorNode.IsNull())
+    {
+      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(hypervisorNode.GetText().c_str()).c_str());
+      m_hypervisorHasBeenSet = true;
+    }
+    XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");
+    if(!imageOwnerAliasNode.IsNull())
+    {
+      m_imageOwnerAlias = StringUtils::Trim(imageOwnerAliasNode.GetText().c_str());
+      m_imageOwnerAliasHasBeenSet = true;
+    }
+    XmlNode nameNode = resultNode.FirstChild("name");
+    if(!nameNode.IsNull())
+    {
+      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_nameHasBeenSet = true;
+    }
+    XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
+    if(!rootDeviceNameNode.IsNull())
+    {
+      m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
+      m_rootDeviceNameHasBeenSet = true;
+    }
+    XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
+    if(!rootDeviceTypeNode.IsNull())
+    {
+      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(rootDeviceTypeNode.GetText().c_str()).c_str());
+      m_rootDeviceTypeHasBeenSet = true;
+    }
+    XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
+    if(!sriovNetSupportNode.IsNull())
+    {
+      m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
+      m_sriovNetSupportHasBeenSet = true;
+    }
+    XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
+    if(!stateReasonNode.IsNull())
+    {
+      m_stateReason = stateReasonNode;
+      m_stateReasonHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -267,11 +267,11 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
-    if(!hypervisorNode.IsNull())
+    XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
+    if(!virtualizationTypeNode.IsNull())
     {
-      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(hypervisorNode.GetText().c_str()).c_str());
-      m_hypervisorHasBeenSet = true;
+      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypeNode.GetText().c_str()).c_str());
+      m_virtualizationTypeHasBeenSet = true;
     }
   }
 
@@ -280,6 +280,16 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_architectureHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
+  }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
@@ -290,9 +300,19 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
   }
 
-  if(m_stateHasBeenSet)
+  if(m_imageTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+      oStream << location << index << locationValue << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
+  }
+
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
+  }
+
+  if(m_kernelIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -300,14 +320,9 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
-  if(m_creationDateHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
-  }
-
-  if(m_publicHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
+      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
 
   if(m_productCodesHasBeenSet)
@@ -321,71 +336,14 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       }
   }
 
-  if(m_architectureHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-
-  if(m_imageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
-  }
-
-  if(m_kernelIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
-  }
-
   if(m_ramdiskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
 
-  if(m_platformHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
-  }
-
-  if(m_sriovNetSupportHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
-  }
-
-  if(m_enaSupportHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
-  }
-
-  if(m_stateReasonHasBeenSet)
-  {
-      Aws::StringStream stateReasonLocationAndMemberSs;
-      stateReasonLocationAndMemberSs << location << index << locationValue << ".StateReason";
-      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMemberSs.str().c_str());
-  }
-
-  if(m_imageOwnerAliasHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImageOwnerAlias=" << StringUtils::URLEncode(m_imageOwnerAlias.c_str()) << "&";
-  }
-
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
-  if(m_rootDeviceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
-  }
-
-  if(m_rootDeviceNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
+      oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
   }
 
   if(m_blockDeviceMappingsHasBeenSet)
@@ -399,9 +357,51 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       }
   }
 
-  if(m_virtualizationTypeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
+  }
+
+  if(m_hypervisorHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+  }
+
+  if(m_imageOwnerAliasHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageOwnerAlias=" << StringUtils::URLEncode(m_imageOwnerAlias.c_str()) << "&";
+  }
+
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+
+  if(m_rootDeviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
+  }
+
+  if(m_rootDeviceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
+  }
+
+  if(m_sriovNetSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+
+  if(m_stateReasonHasBeenSet)
+  {
+      Aws::StringStream stateReasonLocationAndMemberSs;
+      stateReasonLocationAndMemberSs << location << index << locationValue << ".StateReason";
+      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMemberSs.str().c_str());
   }
 
   if(m_tagsHasBeenSet)
@@ -415,15 +415,23 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       }
   }
 
-  if(m_hypervisorHasBeenSet)
+  if(m_virtualizationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+      oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
 
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_architectureHasBeenSet)
+  {
+      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+  }
+  if(m_creationDateHasBeenSet)
+  {
+      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
+  }
   if(m_imageIdHasBeenSet)
   {
       oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
@@ -432,21 +440,25 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
   }
-  if(m_stateHasBeenSet)
+  if(m_imageTypeHasBeenSet)
   {
-      oStream << location << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+      oStream << location << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
+  }
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
+  }
+  if(m_kernelIdHasBeenSet)
+  {
+      oStream << location << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
-  if(m_creationDateHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
-  }
-  if(m_publicHasBeenSet)
-  {
-      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
+      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
   if(m_productCodesHasBeenSet)
   {
@@ -458,59 +470,13 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
-  if(m_architectureHasBeenSet)
-  {
-      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-  if(m_imageTypeHasBeenSet)
-  {
-      oStream << location << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
-  }
-  if(m_kernelIdHasBeenSet)
-  {
-      oStream << location << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
-  }
   if(m_ramdiskIdHasBeenSet)
   {
       oStream << location << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
-  if(m_platformHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
-  }
-  if(m_sriovNetSupportHasBeenSet)
-  {
-      oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
-  }
-  if(m_enaSupportHasBeenSet)
-  {
-      oStream << location << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
-  }
-  if(m_stateReasonHasBeenSet)
-  {
-      Aws::String stateReasonLocationAndMember(location);
-      stateReasonLocationAndMember += ".StateReason";
-      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMember.c_str());
-  }
-  if(m_imageOwnerAliasHasBeenSet)
-  {
-      oStream << location << ".ImageOwnerAlias=" << StringUtils::URLEncode(m_imageOwnerAlias.c_str()) << "&";
-  }
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-  if(m_rootDeviceTypeHasBeenSet)
-  {
-      oStream << location << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
-  }
-  if(m_rootDeviceNameHasBeenSet)
-  {
-      oStream << location << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
+      oStream << location << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
@@ -522,9 +488,43 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
-  if(m_virtualizationTypeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-      oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
+  }
+  if(m_hypervisorHasBeenSet)
+  {
+      oStream << location << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+  }
+  if(m_imageOwnerAliasHasBeenSet)
+  {
+      oStream << location << ".ImageOwnerAlias=" << StringUtils::URLEncode(m_imageOwnerAlias.c_str()) << "&";
+  }
+  if(m_nameHasBeenSet)
+  {
+      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_rootDeviceNameHasBeenSet)
+  {
+      oStream << location << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
+  }
+  if(m_rootDeviceTypeHasBeenSet)
+  {
+      oStream << location << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
+  }
+  if(m_sriovNetSupportHasBeenSet)
+  {
+      oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_stateReasonHasBeenSet)
+  {
+      Aws::String stateReasonLocationAndMember(location);
+      stateReasonLocationAndMember += ".StateReason";
+      m_stateReason.OutputToStream(oStream, stateReasonLocationAndMember.c_str());
   }
   if(m_tagsHasBeenSet)
   {
@@ -536,9 +536,9 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
-  if(m_hypervisorHasBeenSet)
+  if(m_virtualizationTypeHasBeenSet)
   {
-      oStream << location << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+      oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
 }
 

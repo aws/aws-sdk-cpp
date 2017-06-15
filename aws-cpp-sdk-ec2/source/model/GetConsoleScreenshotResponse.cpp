@@ -48,15 +48,15 @@ GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-    }
     XmlNode imageDataNode = resultNode.FirstChild("imageData");
     if(!imageDataNode.IsNull())
     {
       m_imageData = StringUtils::Trim(imageDataNode.GetText().c_str());
+    }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
     }
   }
 

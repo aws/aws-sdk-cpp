@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ActiveInstance.h>
 #include <utility>
@@ -49,41 +49,6 @@ namespace Model
     DescribeSpotFleetInstancesResponse();
     DescribeSpotFleetInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSpotFleetInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
     /**
      * <p>The running instances. Note that this list is refreshed periodically and
@@ -169,6 +134,41 @@ namespace Model
      */
     inline DescribeSpotFleetInstancesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -185,9 +185,9 @@ namespace Model
     inline DescribeSpotFleetInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_spotFleetRequestId;
     Aws::Vector<ActiveInstance> m_activeInstances;
     Aws::String m_nextToken;
+    Aws::String m_spotFleetRequestId;
     ResponseMetadata m_responseMetadata;
   };
 

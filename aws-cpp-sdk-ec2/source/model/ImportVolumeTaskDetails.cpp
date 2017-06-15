@@ -31,9 +31,9 @@ namespace Model
 {
 
 ImportVolumeTaskDetails::ImportVolumeTaskDetails() : 
+    m_availabilityZoneHasBeenSet(false),
     m_bytesConverted(0),
     m_bytesConvertedHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_volumeHasBeenSet(false)
@@ -41,9 +41,9 @@ ImportVolumeTaskDetails::ImportVolumeTaskDetails() :
 }
 
 ImportVolumeTaskDetails::ImportVolumeTaskDetails(const XmlNode& xmlNode) : 
+    m_availabilityZoneHasBeenSet(false),
     m_bytesConverted(0),
     m_bytesConvertedHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_volumeHasBeenSet(false)
@@ -57,17 +57,17 @@ ImportVolumeTaskDetails& ImportVolumeTaskDetails::operator =(const XmlNode& xmlN
 
   if(!resultNode.IsNull())
   {
-    XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
-    if(!bytesConvertedNode.IsNull())
-    {
-      m_bytesConverted = StringUtils::ConvertToInt64(StringUtils::Trim(bytesConvertedNode.GetText().c_str()).c_str());
-      m_bytesConvertedHasBeenSet = true;
-    }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
+    if(!bytesConvertedNode.IsNull())
+    {
+      m_bytesConverted = StringUtils::ConvertToInt64(StringUtils::Trim(bytesConvertedNode.GetText().c_str()).c_str());
+      m_bytesConvertedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
@@ -94,14 +94,14 @@ ImportVolumeTaskDetails& ImportVolumeTaskDetails::operator =(const XmlNode& xmlN
 
 void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_bytesConvertedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".BytesConverted=" << m_bytesConverted << "&";
-  }
-
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_bytesConvertedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BytesConverted=" << m_bytesConverted << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -127,13 +127,13 @@ void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* 
 
 void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_bytesConvertedHasBeenSet)
-  {
-      oStream << location << ".BytesConverted=" << m_bytesConverted << "&";
-  }
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_bytesConvertedHasBeenSet)
+  {
+      oStream << location << ".BytesConverted=" << m_bytesConverted << "&";
   }
   if(m_descriptionHasBeenSet)
   {

@@ -32,11 +32,11 @@ namespace Model
 
 ReservedInstancesConfiguration::ReservedInstancesConfiguration() : 
     m_availabilityZoneHasBeenSet(false),
-    m_platformHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
+    m_platformHasBeenSet(false),
     m_scope(Scope::NOT_SET),
     m_scopeHasBeenSet(false)
 {
@@ -44,11 +44,11 @@ ReservedInstancesConfiguration::ReservedInstancesConfiguration() :
 
 ReservedInstancesConfiguration::ReservedInstancesConfiguration(const XmlNode& xmlNode) : 
     m_availabilityZoneHasBeenSet(false),
-    m_platformHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
+    m_platformHasBeenSet(false),
     m_scope(Scope::NOT_SET),
     m_scopeHasBeenSet(false)
 {
@@ -67,12 +67,6 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
-    XmlNode platformNode = resultNode.FirstChild("platform");
-    if(!platformNode.IsNull())
-    {
-      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
-      m_platformHasBeenSet = true;
-    }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
@@ -84,6 +78,12 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
     {
       m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(instanceTypeNode.GetText().c_str()).c_str());
       m_instanceTypeHasBeenSet = true;
+    }
+    XmlNode platformNode = resultNode.FirstChild("platform");
+    if(!platformNode.IsNull())
+    {
+      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
+      m_platformHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("scope");
     if(!scopeNode.IsNull())
@@ -103,11 +103,6 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  }
-
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
@@ -116,6 +111,11 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
 
   if(m_scopeHasBeenSet)
@@ -131,10 +131,6 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  }
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << ".InstanceCount=" << m_instanceCount << "&";
@@ -142,6 +138,10 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
   if(m_scopeHasBeenSet)
   {

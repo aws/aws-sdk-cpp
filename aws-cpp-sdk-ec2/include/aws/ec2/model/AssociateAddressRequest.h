@@ -42,28 +42,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
-    inline AssociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     */
+    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     */
+    inline AssociateAddressRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     */
+    inline AssociateAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     */
+    inline AssociateAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
     /**
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
@@ -157,39 +168,61 @@ namespace Model
     inline AssociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline bool GetAllowReassociation() const{ return m_allowReassociation; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
+    inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline AssociateAddressRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline AssociateAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
-     */
-    inline AssociateAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    inline AssociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
@@ -282,54 +315,21 @@ namespace Model
      */
     inline AssociateAddressRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
-    /**
-     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
-     * Elastic IP address that is already associated with an instance or network
-     * interface to be reassociated with the specified instance or network interface.
-     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
-     * reassociation is automatic, therefore you can specify false to ensure the
-     * operation fails if the Elastic IP address is already associated with another
-     * resource.</p>
-     */
-    inline bool GetAllowReassociation() const{ return m_allowReassociation; }
-
-    /**
-     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
-     * Elastic IP address that is already associated with an instance or network
-     * interface to be reassociated with the specified instance or network interface.
-     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
-     * reassociation is automatic, therefore you can specify false to ensure the
-     * operation fails if the Elastic IP address is already associated with another
-     * resource.</p>
-     */
-    inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
-
-    /**
-     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
-     * Elastic IP address that is already associated with an instance or network
-     * interface to be reassociated with the specified instance or network interface.
-     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
-     * reassociation is automatic, therefore you can specify false to ensure the
-     * operation fails if the Elastic IP address is already associated with another
-     * resource.</p>
-     */
-    inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    Aws::String m_allocationId;
+    bool m_allocationIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
-    Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allowReassociation;
+    bool m_allowReassociationHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
-    bool m_allowReassociation;
-    bool m_allowReassociationHasBeenSet;
   };
 
 } // namespace Model

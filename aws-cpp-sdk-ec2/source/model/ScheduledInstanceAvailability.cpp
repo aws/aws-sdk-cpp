@@ -31,46 +31,46 @@ namespace Model
 {
 
 ScheduledInstanceAvailability::ScheduledInstanceAvailability() : 
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_networkPlatformHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_purchaseTokenHasBeenSet(false),
-    m_slotDurationInHours(0),
-    m_slotDurationInHoursHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_firstSlotStartTimeHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_totalScheduledInstanceHours(0),
-    m_totalScheduledInstanceHoursHasBeenSet(false),
     m_availableInstanceCount(0),
     m_availableInstanceCountHasBeenSet(false),
+    m_firstSlotStartTimeHasBeenSet(false),
+    m_hourlyPriceHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_maxTermDurationInDays(0),
+    m_maxTermDurationInDaysHasBeenSet(false),
     m_minTermDurationInDays(0),
     m_minTermDurationInDaysHasBeenSet(false),
-    m_maxTermDurationInDays(0),
-    m_maxTermDurationInDaysHasBeenSet(false)
+    m_networkPlatformHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_purchaseTokenHasBeenSet(false),
+    m_recurrenceHasBeenSet(false),
+    m_slotDurationInHours(0),
+    m_slotDurationInHoursHasBeenSet(false),
+    m_totalScheduledInstanceHours(0),
+    m_totalScheduledInstanceHoursHasBeenSet(false)
 {
 }
 
 ScheduledInstanceAvailability::ScheduledInstanceAvailability(const XmlNode& xmlNode) : 
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_networkPlatformHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_purchaseTokenHasBeenSet(false),
-    m_slotDurationInHours(0),
-    m_slotDurationInHoursHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_firstSlotStartTimeHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_totalScheduledInstanceHours(0),
-    m_totalScheduledInstanceHoursHasBeenSet(false),
     m_availableInstanceCount(0),
     m_availableInstanceCountHasBeenSet(false),
+    m_firstSlotStartTimeHasBeenSet(false),
+    m_hourlyPriceHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_maxTermDurationInDays(0),
+    m_maxTermDurationInDaysHasBeenSet(false),
     m_minTermDurationInDays(0),
     m_minTermDurationInDaysHasBeenSet(false),
-    m_maxTermDurationInDays(0),
-    m_maxTermDurationInDaysHasBeenSet(false)
+    m_networkPlatformHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_purchaseTokenHasBeenSet(false),
+    m_recurrenceHasBeenSet(false),
+    m_slotDurationInHours(0),
+    m_slotDurationInHoursHasBeenSet(false),
+    m_totalScheduledInstanceHours(0),
+    m_totalScheduledInstanceHoursHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,47 +81,17 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
-    if(!instanceTypeNode.IsNull())
-    {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
-      m_instanceTypeHasBeenSet = true;
-    }
-    XmlNode platformNode = resultNode.FirstChild("platform");
-    if(!platformNode.IsNull())
-    {
-      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
-      m_platformHasBeenSet = true;
-    }
-    XmlNode networkPlatformNode = resultNode.FirstChild("networkPlatform");
-    if(!networkPlatformNode.IsNull())
-    {
-      m_networkPlatform = StringUtils::Trim(networkPlatformNode.GetText().c_str());
-      m_networkPlatformHasBeenSet = true;
-    }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
-    XmlNode purchaseTokenNode = resultNode.FirstChild("purchaseToken");
-    if(!purchaseTokenNode.IsNull())
+    XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
+    if(!availableInstanceCountNode.IsNull())
     {
-      m_purchaseToken = StringUtils::Trim(purchaseTokenNode.GetText().c_str());
-      m_purchaseTokenHasBeenSet = true;
-    }
-    XmlNode slotDurationInHoursNode = resultNode.FirstChild("slotDurationInHours");
-    if(!slotDurationInHoursNode.IsNull())
-    {
-      m_slotDurationInHours = StringUtils::ConvertToInt32(StringUtils::Trim(slotDurationInHoursNode.GetText().c_str()).c_str());
-      m_slotDurationInHoursHasBeenSet = true;
-    }
-    XmlNode recurrenceNode = resultNode.FirstChild("recurrence");
-    if(!recurrenceNode.IsNull())
-    {
-      m_recurrence = recurrenceNode;
-      m_recurrenceHasBeenSet = true;
+      m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(availableInstanceCountNode.GetText().c_str()).c_str());
+      m_availableInstanceCountHasBeenSet = true;
     }
     XmlNode firstSlotStartTimeNode = resultNode.FirstChild("firstSlotStartTime");
     if(!firstSlotStartTimeNode.IsNull())
@@ -135,17 +105,17 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
       m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
       m_hourlyPriceHasBeenSet = true;
     }
-    XmlNode totalScheduledInstanceHoursNode = resultNode.FirstChild("totalScheduledInstanceHours");
-    if(!totalScheduledInstanceHoursNode.IsNull())
+    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
+    if(!instanceTypeNode.IsNull())
     {
-      m_totalScheduledInstanceHours = StringUtils::ConvertToInt32(StringUtils::Trim(totalScheduledInstanceHoursNode.GetText().c_str()).c_str());
-      m_totalScheduledInstanceHoursHasBeenSet = true;
+      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceTypeHasBeenSet = true;
     }
-    XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
-    if(!availableInstanceCountNode.IsNull())
+    XmlNode maxTermDurationInDaysNode = resultNode.FirstChild("maxTermDurationInDays");
+    if(!maxTermDurationInDaysNode.IsNull())
     {
-      m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(availableInstanceCountNode.GetText().c_str()).c_str());
-      m_availableInstanceCountHasBeenSet = true;
+      m_maxTermDurationInDays = StringUtils::ConvertToInt32(StringUtils::Trim(maxTermDurationInDaysNode.GetText().c_str()).c_str());
+      m_maxTermDurationInDaysHasBeenSet = true;
     }
     XmlNode minTermDurationInDaysNode = resultNode.FirstChild("minTermDurationInDays");
     if(!minTermDurationInDaysNode.IsNull())
@@ -153,11 +123,41 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
       m_minTermDurationInDays = StringUtils::ConvertToInt32(StringUtils::Trim(minTermDurationInDaysNode.GetText().c_str()).c_str());
       m_minTermDurationInDaysHasBeenSet = true;
     }
-    XmlNode maxTermDurationInDaysNode = resultNode.FirstChild("maxTermDurationInDays");
-    if(!maxTermDurationInDaysNode.IsNull())
+    XmlNode networkPlatformNode = resultNode.FirstChild("networkPlatform");
+    if(!networkPlatformNode.IsNull())
     {
-      m_maxTermDurationInDays = StringUtils::ConvertToInt32(StringUtils::Trim(maxTermDurationInDaysNode.GetText().c_str()).c_str());
-      m_maxTermDurationInDaysHasBeenSet = true;
+      m_networkPlatform = StringUtils::Trim(networkPlatformNode.GetText().c_str());
+      m_networkPlatformHasBeenSet = true;
+    }
+    XmlNode platformNode = resultNode.FirstChild("platform");
+    if(!platformNode.IsNull())
+    {
+      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
+      m_platformHasBeenSet = true;
+    }
+    XmlNode purchaseTokenNode = resultNode.FirstChild("purchaseToken");
+    if(!purchaseTokenNode.IsNull())
+    {
+      m_purchaseToken = StringUtils::Trim(purchaseTokenNode.GetText().c_str());
+      m_purchaseTokenHasBeenSet = true;
+    }
+    XmlNode recurrenceNode = resultNode.FirstChild("recurrence");
+    if(!recurrenceNode.IsNull())
+    {
+      m_recurrence = recurrenceNode;
+      m_recurrenceHasBeenSet = true;
+    }
+    XmlNode slotDurationInHoursNode = resultNode.FirstChild("slotDurationInHours");
+    if(!slotDurationInHoursNode.IsNull())
+    {
+      m_slotDurationInHours = StringUtils::ConvertToInt32(StringUtils::Trim(slotDurationInHoursNode.GetText().c_str()).c_str());
+      m_slotDurationInHoursHasBeenSet = true;
+    }
+    XmlNode totalScheduledInstanceHoursNode = resultNode.FirstChild("totalScheduledInstanceHours");
+    if(!totalScheduledInstanceHoursNode.IsNull())
+    {
+      m_totalScheduledInstanceHours = StringUtils::ConvertToInt32(StringUtils::Trim(totalScheduledInstanceHoursNode.GetText().c_str()).c_str());
+      m_totalScheduledInstanceHoursHasBeenSet = true;
     }
   }
 
@@ -166,41 +166,14 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
 
 void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
-  }
-
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  }
-
-  if(m_networkPlatformHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
-  }
-
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_purchaseTokenHasBeenSet)
+  if(m_availableInstanceCountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
-  }
-
-  if(m_slotDurationInHoursHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
-  }
-
-  if(m_recurrenceHasBeenSet)
-  {
-      Aws::StringStream recurrenceLocationAndMemberSs;
-      recurrenceLocationAndMemberSs << location << index << locationValue << ".Recurrence";
-      m_recurrence.OutputToStream(oStream, recurrenceLocationAndMemberSs.str().c_str());
+      oStream << location << index << locationValue << ".AvailableInstanceCount=" << m_availableInstanceCount << "&";
   }
 
   if(m_firstSlotStartTimeHasBeenSet)
@@ -213,19 +186,9 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
 
-  if(m_totalScheduledInstanceHoursHasBeenSet)
+  if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
-  }
-
-  if(m_availableInstanceCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailableInstanceCount=" << m_availableInstanceCount << "&";
-  }
-
-  if(m_minTermDurationInDaysHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MinTermDurationInDays=" << m_minTermDurationInDays << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 
   if(m_maxTermDurationInDaysHasBeenSet)
@@ -233,39 +196,54 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".MaxTermDurationInDays=" << m_maxTermDurationInDays << "&";
   }
 
+  if(m_minTermDurationInDaysHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinTermDurationInDays=" << m_minTermDurationInDays << "&";
+  }
+
+  if(m_networkPlatformHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
+  }
+
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
+  }
+
+  if(m_purchaseTokenHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
+  }
+
+  if(m_recurrenceHasBeenSet)
+  {
+      Aws::StringStream recurrenceLocationAndMemberSs;
+      recurrenceLocationAndMemberSs << location << index << locationValue << ".Recurrence";
+      m_recurrence.OutputToStream(oStream, recurrenceLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_slotDurationInHoursHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
+  }
+
+  if(m_totalScheduledInstanceHoursHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
+  }
+
 }
 
 void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
-  }
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  }
-  if(m_networkPlatformHasBeenSet)
-  {
-      oStream << location << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
-  }
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
-  if(m_purchaseTokenHasBeenSet)
+  if(m_availableInstanceCountHasBeenSet)
   {
-      oStream << location << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
-  }
-  if(m_slotDurationInHoursHasBeenSet)
-  {
-      oStream << location << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
-  }
-  if(m_recurrenceHasBeenSet)
-  {
-      Aws::String recurrenceLocationAndMember(location);
-      recurrenceLocationAndMember += ".Recurrence";
-      m_recurrence.OutputToStream(oStream, recurrenceLocationAndMember.c_str());
+      oStream << location << ".AvailableInstanceCount=" << m_availableInstanceCount << "&";
   }
   if(m_firstSlotStartTimeHasBeenSet)
   {
@@ -275,21 +253,43 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
-  if(m_totalScheduledInstanceHoursHasBeenSet)
+  if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
-  if(m_availableInstanceCountHasBeenSet)
+  if(m_maxTermDurationInDaysHasBeenSet)
   {
-      oStream << location << ".AvailableInstanceCount=" << m_availableInstanceCount << "&";
+      oStream << location << ".MaxTermDurationInDays=" << m_maxTermDurationInDays << "&";
   }
   if(m_minTermDurationInDaysHasBeenSet)
   {
       oStream << location << ".MinTermDurationInDays=" << m_minTermDurationInDays << "&";
   }
-  if(m_maxTermDurationInDaysHasBeenSet)
+  if(m_networkPlatformHasBeenSet)
   {
-      oStream << location << ".MaxTermDurationInDays=" << m_maxTermDurationInDays << "&";
+      oStream << location << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
+  }
+  if(m_purchaseTokenHasBeenSet)
+  {
+      oStream << location << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
+  }
+  if(m_recurrenceHasBeenSet)
+  {
+      Aws::String recurrenceLocationAndMember(location);
+      recurrenceLocationAndMember += ".Recurrence";
+      m_recurrence.OutputToStream(oStream, recurrenceLocationAndMember.c_str());
+  }
+  if(m_slotDurationInHoursHasBeenSet)
+  {
+      oStream << location << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
+  }
+  if(m_totalScheduledInstanceHoursHasBeenSet)
+  {
+      oStream << location << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
   }
 }
 

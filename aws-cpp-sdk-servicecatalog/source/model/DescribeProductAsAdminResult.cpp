@@ -44,6 +44,15 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Ama
 
   }
 
+  if(jsonValue.ValueExists("ProvisioningArtifactSummaries"))
+  {
+    Array<JsonValue> provisioningArtifactSummariesJsonList = jsonValue.GetArray("ProvisioningArtifactSummaries");
+    for(unsigned provisioningArtifactSummariesIndex = 0; provisioningArtifactSummariesIndex < provisioningArtifactSummariesJsonList.GetLength(); ++provisioningArtifactSummariesIndex)
+    {
+      m_provisioningArtifactSummaries.push_back(provisioningArtifactSummariesJsonList[provisioningArtifactSummariesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");

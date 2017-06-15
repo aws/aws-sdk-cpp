@@ -31,16 +31,16 @@ namespace Model
 {
 
 InstanceStatusSummary::InstanceStatusSummary() : 
+    m_detailsHasBeenSet(false),
     m_status(SummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
 InstanceStatusSummary::InstanceStatusSummary(const XmlNode& xmlNode) : 
+    m_detailsHasBeenSet(false),
     m_status(SummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,12 +51,6 @@ InstanceStatusSummary& InstanceStatusSummary::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
-      m_statusHasBeenSet = true;
-    }
     XmlNode detailsNode = resultNode.FirstChild("details");
     if(!detailsNode.IsNull())
     {
@@ -69,6 +63,12 @@ InstanceStatusSummary& InstanceStatusSummary::operator =(const XmlNode& xmlNode)
 
       m_detailsHasBeenSet = true;
     }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -76,11 +76,6 @@ InstanceStatusSummary& InstanceStatusSummary::operator =(const XmlNode& xmlNode)
 
 void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
-  }
-
   if(m_detailsHasBeenSet)
   {
       unsigned detailsIdx = 1;
@@ -92,14 +87,15 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
+  }
+
 }
 
 void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
-  }
   if(m_detailsHasBeenSet)
   {
       unsigned detailsIdx = 1;
@@ -109,6 +105,10 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
         detailsSs << location <<  ".Details." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
   }
 }
 

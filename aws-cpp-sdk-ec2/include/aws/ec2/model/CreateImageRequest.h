@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -43,6 +43,76 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+
+    /**
+     * <p>Information about one or more block device mappings.</p>
+     */
+    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline CreateImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the new image.</p>
+     */
+    inline CreateImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -152,41 +222,6 @@ namespace Model
     inline CreateImageRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>A description for the new image.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline CreateImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline CreateImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-    /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
      * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
      * down the instance before creating the image. When this option is used, file
@@ -210,54 +245,19 @@ namespace Model
      */
     inline CreateImageRequest& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
 
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-
-    /**
-     * <p>Information about one or more block device mappings.</p>
-     */
-    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-
   private:
+    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
     bool m_noReboot;
     bool m_noRebootHasBeenSet;
-    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
   };
 
 } // namespace Model

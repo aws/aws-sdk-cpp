@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpnGatewayRequest::CreateVpnGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpnGateway&";
-  if(m_dryRunHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
   if(m_typeHasBeenSet)
@@ -43,9 +43,9 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
     ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

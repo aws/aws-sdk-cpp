@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeregisterImageRequest::DeregisterImageRequest() : 
+    m_imageIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String DeregisterImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeregisterImage&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

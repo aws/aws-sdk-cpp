@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/ec2/model/ClientData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotDiskContainer.h>
-#include <aws/ec2/model/ClientData.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,64 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The client-specific data.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const ClientData& GetClientData() const{ return m_clientData; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The client-specific data.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetClientData(const ClientData& value) { m_clientDataHasBeenSet = true; m_clientData = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The client-specific data.</p>
      */
-    inline ImportSnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = std::move(value); }
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline ImportSnapshotRequest& WithClientData(const ClientData& value) { SetClientData(value); return *this;}
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline ImportSnapshotRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportSnapshotRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportSnapshotRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportSnapshotRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
      * <p>The description string for the import snapshot task.</p>
@@ -128,64 +164,28 @@ namespace Model
     inline ImportSnapshotRequest& WithDiskContainer(SnapshotDiskContainer&& value) { SetDiskContainer(std::move(value)); return *this;}
 
     /**
-     * <p>The client-specific data.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const ClientData& GetClientData() const{ return m_clientData; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The client-specific data.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetClientData(const ClientData& value) { m_clientDataHasBeenSet = true; m_clientData = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The client-specific data.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = std::move(value); }
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline ImportSnapshotRequest& WithClientData(const ClientData& value) { SetClientData(value); return *this;}
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline ImportSnapshotRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportSnapshotRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportSnapshotRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportSnapshotRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline ImportSnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
@@ -223,16 +223,16 @@ namespace Model
     inline ImportSnapshotRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-    SnapshotDiskContainer m_diskContainer;
-    bool m_diskContainerHasBeenSet;
     ClientData m_clientData;
     bool m_clientDataHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+    SnapshotDiskContainer m_diskContainer;
+    bool m_diskContainerHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

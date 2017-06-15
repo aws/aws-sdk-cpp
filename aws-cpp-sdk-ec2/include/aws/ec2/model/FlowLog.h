@@ -76,213 +76,6 @@ namespace Model
     inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
-     * <p>The flow log ID.</p>
-     */
-    inline const Aws::String& GetFlowLogId() const{ return m_flowLogId; }
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::move(value); }
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline void SetFlowLogId(const char* value) { m_flowLogIdHasBeenSet = true; m_flowLogId.assign(value); }
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline FlowLog& WithFlowLogId(const Aws::String& value) { SetFlowLogId(value); return *this;}
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The flow log ID.</p>
-     */
-    inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline const Aws::String& GetFlowLogStatus() const{ return m_flowLogStatus; }
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline void SetFlowLogStatus(const Aws::String& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = std::move(value); }
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline void SetFlowLogStatus(const char* value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus.assign(value); }
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline FlowLog& WithFlowLogStatus(const Aws::String& value) { SetFlowLogStatus(value); return *this;}
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
-     */
-    inline FlowLog& WithFlowLogStatus(const char* value) { SetFlowLogStatus(value); return *this;}
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline FlowLog& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource on which the flow log was created.</p>
-     */
-    inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The type of traffic captured for the flow log.</p>
-     */
-    inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
-
-    /**
-     * <p>The type of traffic captured for the flow log.</p>
-     */
-    inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
-
-    /**
-     * <p>The type of traffic captured for the flow log.</p>
-     */
-    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
-
-    /**
-     * <p>The type of traffic captured for the flow log.</p>
-     */
-    inline FlowLog& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
-
-    /**
-     * <p>The type of traffic captured for the flow log.</p>
-     */
-    inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline FlowLog& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the flow log group.</p>
-     */
-    inline FlowLog& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline const Aws::String& GetDeliverLogsStatus() const{ return m_deliverLogsStatus; }
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline void SetDeliverLogsStatus(const Aws::String& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = std::move(value); }
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline void SetDeliverLogsStatus(const char* value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus.assign(value); }
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline FlowLog& WithDeliverLogsStatus(const Aws::String& value) { SetDeliverLogsStatus(value); return *this;}
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the logs delivery (<code>SUCCESS</code> |
-     * <code>FAILED</code>).</p>
-     */
-    inline FlowLog& WithDeliverLogsStatus(const char* value) { SetDeliverLogsStatus(value); return *this;}
-
-    /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
      * network interfaces, or that you've reached the limit on the number of CloudWatch
@@ -394,25 +187,232 @@ namespace Model
      */
     inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline const Aws::String& GetDeliverLogsStatus() const{ return m_deliverLogsStatus; }
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline void SetDeliverLogsStatus(const Aws::String& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = std::move(value); }
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline void SetDeliverLogsStatus(const char* value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus.assign(value); }
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline FlowLog& WithDeliverLogsStatus(const Aws::String& value) { SetDeliverLogsStatus(value); return *this;}
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline FlowLog& WithDeliverLogsStatus(const char* value) { SetDeliverLogsStatus(value); return *this;}
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline const Aws::String& GetFlowLogId() const{ return m_flowLogId; }
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::move(value); }
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline void SetFlowLogId(const char* value) { m_flowLogIdHasBeenSet = true; m_flowLogId.assign(value); }
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline FlowLog& WithFlowLogId(const Aws::String& value) { SetFlowLogId(value); return *this;}
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The flow log ID.</p>
+     */
+    inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline const Aws::String& GetFlowLogStatus() const{ return m_flowLogStatus; }
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline void SetFlowLogStatus(const Aws::String& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = std::move(value); }
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline void SetFlowLogStatus(const char* value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus.assign(value); }
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline FlowLog& WithFlowLogStatus(const Aws::String& value) { SetFlowLogStatus(value); return *this;}
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline FlowLog& WithFlowLogStatus(const char* value) { SetFlowLogStatus(value); return *this;}
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline FlowLog& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
+    inline FlowLog& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline FlowLog& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
+    inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
+    inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
+    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
+    inline FlowLog& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
+    inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
+
   private:
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    Aws::String m_flowLogId;
-    bool m_flowLogIdHasBeenSet;
-    Aws::String m_flowLogStatus;
-    bool m_flowLogStatusHasBeenSet;
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
-    TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
-    Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
-    Aws::String m_deliverLogsStatus;
-    bool m_deliverLogsStatusHasBeenSet;
     Aws::String m_deliverLogsErrorMessage;
     bool m_deliverLogsErrorMessageHasBeenSet;
     Aws::String m_deliverLogsPermissionArn;
     bool m_deliverLogsPermissionArnHasBeenSet;
+    Aws::String m_deliverLogsStatus;
+    bool m_deliverLogsStatusHasBeenSet;
+    Aws::String m_flowLogId;
+    bool m_flowLogIdHasBeenSet;
+    Aws::String m_flowLogStatus;
+    bool m_flowLogStatusHasBeenSet;
+    Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet;
+    TrafficType m_trafficType;
+    bool m_trafficTypeHasBeenSet;
   };
 
 } // namespace Model

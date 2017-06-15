@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribePlacementGroupsRequest::DescribePlacementGroupsRequest() : 
+    m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_groupNamesHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribePlacementGroups&";
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -45,16 +55,6 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
       ss << "GroupName." << groupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
-    }
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
     }
   }
 

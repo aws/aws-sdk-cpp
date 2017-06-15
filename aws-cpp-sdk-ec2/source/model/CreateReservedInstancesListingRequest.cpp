@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateReservedInstancesListingRequest::CreateReservedInstancesListingRequest() : 
-    m_reservedInstancesIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_priceSchedulesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_reservedInstancesIdHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateReservedInstancesListing&";
-  if(m_reservedInstancesIdHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-    ss << "ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_instanceCountHasBeenSet)
@@ -53,9 +53,9 @@ Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
     }
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_reservedInstancesIdHasBeenSet)
   {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+    ss << "ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

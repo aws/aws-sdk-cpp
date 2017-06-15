@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeSecurityGroupsRequest::DescribeSecurityGroupsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_groupNamesHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,19 +33,13 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeSecurityGroups&";
-  if(m_dryRunHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_groupNamesHasBeenSet)
-  {
-    unsigned groupNamesCount = 1;
-    for(auto& item : m_groupNames)
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
     {
-      ss << "GroupName." << groupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      groupNamesCount++;
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
     }
   }
 
@@ -60,14 +54,20 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
     }
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_groupNamesHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
+    unsigned groupNamesCount = 1;
+    for(auto& item : m_groupNames)
     {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
+      ss << "GroupName." << groupNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      groupNamesCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

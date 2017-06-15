@@ -50,41 +50,6 @@ namespace Model
     ImportImageResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline void SetImportTaskId(const Aws::String& value) { m_importTaskId = value; }
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = std::move(value); }
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline void SetImportTaskId(const char* value) { m_importTaskId.assign(value); }
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline ImportImageResponse& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline ImportImageResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task ID of the import image task.</p>
-     */
-    inline ImportImageResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
-
-    /**
      * <p>The architecture of the virtual machine.</p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
@@ -118,6 +83,146 @@ namespace Model
      * <p>The architecture of the virtual machine.</p>
      */
     inline ImportImageResponse& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline ImportImageResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline ImportImageResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the import task.</p>
+     */
+    inline ImportImageResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline void SetHypervisor(const Aws::String& value) { m_hypervisor = value; }
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline void SetHypervisor(Aws::String&& value) { m_hypervisor = std::move(value); }
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline void SetHypervisor(const char* value) { m_hypervisor.assign(value); }
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline ImportImageResponse& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline ImportImageResponse& WithHypervisor(Aws::String&& value) { SetHypervisor(std::move(value)); return *this;}
+
+    /**
+     * <p>The target hypervisor of the import task.</p>
+     */
+    inline ImportImageResponse& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline ImportImageResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline ImportImageResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     */
+    inline ImportImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline void SetImportTaskId(const Aws::String& value) { m_importTaskId = value; }
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = std::move(value); }
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline void SetImportTaskId(const char* value) { m_importTaskId.assign(value); }
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline ImportImageResponse& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline ImportImageResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
+
+    /**
+     * <p>The task ID of the import image task.</p>
+     */
+    inline ImportImageResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
     /**
      * <p>The license type of the virtual machine.</p>
@@ -190,74 +295,39 @@ namespace Model
     inline ImportImageResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
+    inline const Aws::String& GetProgress() const{ return m_progress; }
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline void SetHypervisor(const Aws::String& value) { m_hypervisor = value; }
+    inline void SetProgress(const Aws::String& value) { m_progress = value; }
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline void SetHypervisor(Aws::String&& value) { m_hypervisor = std::move(value); }
+    inline void SetProgress(Aws::String&& value) { m_progress = std::move(value); }
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline void SetHypervisor(const char* value) { m_hypervisor.assign(value); }
+    inline void SetProgress(const char* value) { m_progress.assign(value); }
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline ImportImageResponse& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
+    inline ImportImageResponse& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline ImportImageResponse& WithHypervisor(Aws::String&& value) { SetHypervisor(std::move(value)); return *this;}
+    inline ImportImageResponse& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
 
     /**
-     * <p>The target hypervisor of the import task.</p>
+     * <p>The progress of the task.</p>
      */
-    inline ImportImageResponse& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline ImportImageResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline ImportImageResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the import task.</p>
-     */
-    inline ImportImageResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ImportImageResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
 
     /**
      * <p>Information about the snapshots.</p>
@@ -295,74 +365,39 @@ namespace Model
     inline ImportImageResponse& AddSnapshotDetails(SnapshotDetail&& value) { m_snapshotDetails.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
+    inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
+    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline void SetImageId(const char* value) { m_imageId.assign(value); }
+    inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline ImportImageResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+    inline ImportImageResponse& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline ImportImageResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+    inline ImportImageResponse& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+     * <p>A brief status of the task.</p>
      */
-    inline ImportImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline void SetProgress(const Aws::String& value) { m_progress = value; }
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline void SetProgress(Aws::String&& value) { m_progress = std::move(value); }
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline void SetProgress(const char* value) { m_progress.assign(value); }
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline ImportImageResponse& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline ImportImageResponse& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-
-    /**
-     * <p>The progress of the task.</p>
-     */
-    inline ImportImageResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+    inline ImportImageResponse& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
      * <p>A detailed status message of the import task.</p>
@@ -399,41 +434,6 @@ namespace Model
      */
     inline ImportImageResponse& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline ImportImageResponse& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline ImportImageResponse& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>A brief status of the task.</p>
-     */
-    inline ImportImageResponse& WithStatus(const char* value) { SetStatus(value); return *this;}
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -450,17 +450,17 @@ namespace Model
     inline ImportImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_importTaskId;
     Aws::String m_architecture;
+    Aws::String m_description;
+    Aws::String m_hypervisor;
+    Aws::String m_imageId;
+    Aws::String m_importTaskId;
     Aws::String m_licenseType;
     Aws::String m_platform;
-    Aws::String m_hypervisor;
-    Aws::String m_description;
-    Aws::Vector<SnapshotDetail> m_snapshotDetails;
-    Aws::String m_imageId;
     Aws::String m_progress;
-    Aws::String m_statusMessage;
+    Aws::Vector<SnapshotDetail> m_snapshotDetails;
     Aws::String m_status;
+    Aws::String m_statusMessage;
     ResponseMetadata m_responseMetadata;
   };
 

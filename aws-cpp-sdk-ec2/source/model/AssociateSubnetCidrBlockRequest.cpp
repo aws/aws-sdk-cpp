@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssociateSubnetCidrBlockRequest::AssociateSubnetCidrBlockRequest() : 
-    m_subnetIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false)
+    m_ipv6CidrBlockHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -30,14 +30,14 @@ Aws::String AssociateSubnetCidrBlockRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssociateSubnetCidrBlock&";
-  if(m_subnetIdHasBeenSet)
-  {
-    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
   if(m_ipv6CidrBlockHasBeenSet)
   {
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

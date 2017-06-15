@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AvailabilityZoneState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AvailabilityZoneMessage.h>
 #include <utility>
 
@@ -52,41 +52,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline const Aws::String& GetZoneName() const{ return m_zoneName; }
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Availability Zone.</p>
-     */
-    inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
-
-    /**
      * <p>The state of the Availability Zone.</p>
      */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
@@ -110,6 +75,41 @@ namespace Model
      * <p>The state of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline const Aws::Vector<AvailabilityZoneMessage>& GetMessages() const{ return m_messages; }
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline void SetMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { m_messagesHasBeenSet = true; m_messages = value; }
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline void SetMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { SetMessages(value); return *this;}
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { SetMessages(std::move(value)); return *this;}
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline AvailabilityZone& AddMessages(const AvailabilityZoneMessage& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
+
+    /**
+     * <p>Any messages about the Availability Zone.</p>
+     */
+    inline AvailabilityZone& AddMessages(AvailabilityZoneMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the region.</p>
@@ -147,49 +147,49 @@ namespace Model
     inline AvailabilityZone& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline const Aws::Vector<AvailabilityZoneMessage>& GetMessages() const{ return m_messages; }
+    inline const Aws::String& GetZoneName() const{ return m_zoneName; }
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline void SetMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { m_messagesHasBeenSet = true; m_messages = value; }
+    inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline void SetMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
+    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& WithMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { SetMessages(value); return *this;}
+    inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& WithMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { SetMessages(std::move(value)); return *this;}
+    inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& AddMessages(const AvailabilityZoneMessage& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
+    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>Any messages about the Availability Zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& AddMessages(AvailabilityZoneMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
   private:
-    Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
     AvailabilityZoneState m_state;
     bool m_stateHasBeenSet;
-    Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
     Aws::Vector<AvailabilityZoneMessage> m_messages;
     bool m_messagesHasBeenSet;
+    Aws::String m_regionName;
+    bool m_regionNameHasBeenSet;
+    Aws::String m_zoneName;
+    bool m_zoneNameHasBeenSet;
   };
 
 } // namespace Model

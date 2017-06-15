@@ -51,21 +51,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline long long GetBytesConverted() const{ return m_bytesConverted; }
-
-    /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
-
-    /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline ImportVolumeTaskDetails& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
-
-    /**
      * <p>The Availability Zone where the resulting volume will reside.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -99,6 +84,21 @@ namespace Model
      * <p>The Availability Zone where the resulting volume will reside.</p>
      */
     inline ImportVolumeTaskDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline long long GetBytesConverted() const{ return m_bytesConverted; }
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline ImportVolumeTaskDetails& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
 
     /**
      * <p>The description you provided when starting the import volume task.</p>
@@ -186,10 +186,10 @@ namespace Model
     inline ImportVolumeTaskDetails& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
-    long long m_bytesConverted;
-    bool m_bytesConvertedHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+    long long m_bytesConverted;
+    bool m_bytesConvertedHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     DiskImageDescription m_image;

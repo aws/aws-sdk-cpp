@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeNetworkInterfaceAttributeRequest::DescribeNetworkInterfaceAttributeRequest() : 
+    m_attribute(NetworkInterfaceAttribute::NOT_SET),
+    m_attributeHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_attribute(NetworkInterfaceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,11 @@ Aws::String DescribeNetworkInterfaceAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeNetworkInterfaceAttribute&";
+  if(m_attributeHasBeenSet)
+  {
+    ss << "Attribute=" << NetworkInterfaceAttributeMapper::GetNameForNetworkInterfaceAttribute(m_attribute) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -41,11 +46,6 @@ Aws::String DescribeNetworkInterfaceAttributeRequest::SerializePayload() const
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
-  }
-
-  if(m_attributeHasBeenSet)
-  {
-    ss << "Attribute=" << NetworkInterfaceAttributeMapper::GetNameForNetworkInterfaceAttribute(m_attribute) << "&";
   }
 
   ss << "Version=2016-11-15";

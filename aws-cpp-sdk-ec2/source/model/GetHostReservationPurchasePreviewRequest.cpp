@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 GetHostReservationPurchasePreviewRequest::GetHostReservationPurchasePreviewRequest() : 
-    m_offeringIdHasBeenSet(false),
-    m_hostIdSetHasBeenSet(false)
+    m_hostIdSetHasBeenSet(false),
+    m_offeringIdHasBeenSet(false)
 {
 }
 
@@ -30,11 +30,6 @@ Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=GetHostReservationPurchasePreview&";
-  if(m_offeringIdHasBeenSet)
-  {
-    ss << "OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
-  }
-
   if(m_hostIdSetHasBeenSet)
   {
     unsigned hostIdSetCount = 1;
@@ -44,6 +39,11 @@ Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdSetCount++;
     }
+  }
+
+  if(m_offeringIdHasBeenSet)
+  {
+    ss << "OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

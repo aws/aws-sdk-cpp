@@ -45,39 +45,60 @@ namespace Model
 
   public:
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
+    inline CreateReservedInstancesListingRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the active Standard Reserved Instance.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
      * <p>The number of instances that are a part of a Reserved Instance account to be
@@ -146,70 +167,49 @@ namespace Model
     inline CreateReservedInstancesListingRequest& AddPriceSchedules(PriceScheduleSpecification&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
-     * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
   private:
-    Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<PriceScheduleSpecification> m_priceSchedules;
     bool m_priceSchedulesHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    Aws::String m_reservedInstancesId;
+    bool m_reservedInstancesIdHasBeenSet;
   };
 
 } // namespace Model

@@ -50,6 +50,21 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
+    inline bool GetMain() const{ return m_main; }
+
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
+    inline void SetMain(bool value) { m_mainHasBeenSet = true; m_main = value; }
+
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
+    inline RouteTableAssociation& WithMain(bool value) { SetMain(value); return *this;}
+
+    /**
      * <p>The ID of the association between a route table and a subnet.</p>
      */
     inline const Aws::String& GetRouteTableAssociationId() const{ return m_routeTableAssociationId; }
@@ -161,30 +176,15 @@ namespace Model
      */
     inline RouteTableAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
-    /**
-     * <p>Indicates whether this is the main route table.</p>
-     */
-    inline bool GetMain() const{ return m_main; }
-
-    /**
-     * <p>Indicates whether this is the main route table.</p>
-     */
-    inline void SetMain(bool value) { m_mainHasBeenSet = true; m_main = value; }
-
-    /**
-     * <p>Indicates whether this is the main route table.</p>
-     */
-    inline RouteTableAssociation& WithMain(bool value) { SetMain(value); return *this;}
-
   private:
+    bool m_main;
+    bool m_mainHasBeenSet;
     Aws::String m_routeTableAssociationId;
     bool m_routeTableAssociationIdHasBeenSet;
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
-    bool m_main;
-    bool m_mainHasBeenSet;
   };
 
 } // namespace Model

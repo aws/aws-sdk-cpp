@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/SpotPrice.h>
 #include <utility>
@@ -49,41 +49,6 @@ namespace Model
     DescribeSpotPriceHistoryResponse();
     DescribeSpotPriceHistoryResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSpotPriceHistoryResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline const Aws::Vector<SpotPrice>& GetSpotPriceHistory() const{ return m_spotPriceHistory; }
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline void SetSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { m_spotPriceHistory = value; }
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline void SetSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { m_spotPriceHistory = std::move(value); }
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { SetSpotPriceHistory(value); return *this;}
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { SetSpotPriceHistory(std::move(value)); return *this;}
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(const SpotPrice& value) { m_spotPriceHistory.push_back(value); return *this; }
-
-    /**
-     * <p>The historical Spot prices.</p>
-     */
-    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -127,6 +92,41 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline const Aws::Vector<SpotPrice>& GetSpotPriceHistory() const{ return m_spotPriceHistory; }
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline void SetSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { m_spotPriceHistory = value; }
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline void SetSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { m_spotPriceHistory = std::move(value); }
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { SetSpotPriceHistory(value); return *this;}
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { SetSpotPriceHistory(std::move(value)); return *this;}
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(const SpotPrice& value) { m_spotPriceHistory.push_back(value); return *this; }
+
+    /**
+     * <p>The historical Spot prices.</p>
+     */
+    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +143,8 @@ namespace Model
     inline DescribeSpotPriceHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<SpotPrice> m_spotPriceHistory;
     Aws::String m_nextToken;
+    Aws::Vector<SpotPrice> m_spotPriceHistory;
     ResponseMetadata m_responseMetadata;
   };
 

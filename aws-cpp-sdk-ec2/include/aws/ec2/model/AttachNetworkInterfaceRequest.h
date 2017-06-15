@@ -43,6 +43,21 @@ namespace Model
 
   public:
     /**
+     * <p>The index of the device for the network interface attachment.</p>
+     */
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
+
+    /**
+     * <p>The index of the device for the network interface attachment.</p>
+     */
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+
+    /**
+     * <p>The index of the device for the network interface attachment.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -65,41 +80,6 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AttachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -137,29 +117,49 @@ namespace Model
     inline AttachNetworkInterfaceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The index of the device for the network interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline int GetDeviceIndex() const{ return m_deviceIndex; }
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>The index of the device for the network interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
-     * <p>The index of the device for the network interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline AttachNetworkInterfaceRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
   };
 
 } // namespace Model

@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ResetSnapshotAttributeRequest::ResetSnapshotAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
     m_attribute(SnapshotAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String ResetSnapshotAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ResetSnapshotAttribute&";
-  if(m_dryRunHasBeenSet)
+  if(m_attributeHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
   }
 
   if(m_snapshotIdHasBeenSet)
@@ -43,9 +43,9 @@ Aws::String ResetSnapshotAttributeRequest::SerializePayload() const
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  if(m_attributeHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

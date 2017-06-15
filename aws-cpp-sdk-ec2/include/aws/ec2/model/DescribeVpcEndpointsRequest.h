@@ -69,46 +69,6 @@ namespace Model
     inline DescribeVpcEndpointsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more endpoint IDs.</p>
-     */
-    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the AWS service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in
      * which the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The
@@ -244,17 +204,57 @@ namespace Model
      */
     inline DescribeVpcEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_vpcEndpointIds;
-    bool m_vpcEndpointIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcEndpointIds;
+    bool m_vpcEndpointIdsHasBeenSet;
   };
 
 } // namespace Model

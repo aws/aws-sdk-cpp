@@ -31,16 +31,16 @@ namespace Model
 {
 
 SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation() : 
+    m_associationIdHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+    m_ipv6CidrBlockStateHasBeenSet(false)
 {
 }
 
 SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode) : 
+    m_associationIdHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+    m_ipv6CidrBlockStateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +51,12 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
 
   if(!resultNode.IsNull())
   {
+    XmlNode associationIdNode = resultNode.FirstChild("associationId");
+    if(!associationIdNode.IsNull())
+    {
+      m_associationId = StringUtils::Trim(associationIdNode.GetText().c_str());
+      m_associationIdHasBeenSet = true;
+    }
     XmlNode ipv6CidrBlockNode = resultNode.FirstChild("ipv6CidrBlock");
     if(!ipv6CidrBlockNode.IsNull())
     {
@@ -63,12 +69,6 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
       m_ipv6CidrBlockState = ipv6CidrBlockStateNode;
       m_ipv6CidrBlockStateHasBeenSet = true;
     }
-    XmlNode associationIdNode = resultNode.FirstChild("associationId");
-    if(!associationIdNode.IsNull())
-    {
-      m_associationId = StringUtils::Trim(associationIdNode.GetText().c_str());
-      m_associationIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -76,6 +76,11 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
 
 void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_associationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
+  }
+
   if(m_ipv6CidrBlockHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
@@ -88,15 +93,14 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
       m_ipv6CidrBlockState.OutputToStream(oStream, ipv6CidrBlockStateLocationAndMemberSs.str().c_str());
   }
 
-  if(m_associationIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
-  }
-
 }
 
 void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_associationIdHasBeenSet)
+  {
+      oStream << location << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
+  }
   if(m_ipv6CidrBlockHasBeenSet)
   {
       oStream << location << ".Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
@@ -106,10 +110,6 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
       Aws::String ipv6CidrBlockStateLocationAndMember(location);
       ipv6CidrBlockStateLocationAndMember += ".Ipv6CidrBlockState";
       m_ipv6CidrBlockState.OutputToStream(oStream, ipv6CidrBlockStateLocationAndMember.c_str());
-  }
-  if(m_associationIdHasBeenSet)
-  {
-      oStream << location << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 }
 

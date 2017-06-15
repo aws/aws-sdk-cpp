@@ -122,27 +122,62 @@ namespace Model
     inline RecordDetail& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
     /**
-     * <p>The status of the ProvisionedProduct object.</p>
+     * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
+     * Request created but the operation has not yet started.</p> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
+     * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
+     * the requested operation failed and some remediation is occurring. For example, a
+     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
+     * has completed but has failed. Investigate using the error messages returned.</p>
      */
     inline const RecordStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the ProvisionedProduct object.</p>
+     * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
+     * Request created but the operation has not yet started.</p> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
+     * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
+     * the requested operation failed and some remediation is occurring. For example, a
+     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
+     * has completed but has failed. Investigate using the error messages returned.</p>
      */
     inline void SetStatus(const RecordStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the ProvisionedProduct object.</p>
+     * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
+     * Request created but the operation has not yet started.</p> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
+     * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
+     * the requested operation failed and some remediation is occurring. For example, a
+     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
+     * has completed but has failed. Investigate using the error messages returned.</p>
      */
     inline void SetStatus(RecordStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the ProvisionedProduct object.</p>
+     * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
+     * Request created but the operation has not yet started.</p> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
+     * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
+     * the requested operation failed and some remediation is occurring. For example, a
+     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
+     * has completed but has failed. Investigate using the error messages returned.</p>
      */
     inline RecordDetail& WithStatus(const RecordStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the ProvisionedProduct object.</p>
+     * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
+     * Request created but the operation has not yet started.</p> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
+     * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
+     * the requested operation failed and some remediation is occurring. For example, a
+     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
+     * has completed but has failed. Investigate using the error messages returned.</p>
      */
     inline RecordDetail& WithStatus(RecordStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -342,37 +377,44 @@ namespace Model
     inline RecordDetail& WithProductId(const char* value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline RecordDetail& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline RecordDetail& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline RecordDetail& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 

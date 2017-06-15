@@ -45,6 +45,7 @@
 #include <aws/servicecatalog/model/DescribeProductRequest.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
 #include <aws/servicecatalog/model/DescribeProductViewRequest.h>
+#include <aws/servicecatalog/model/DescribeProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisioningParametersRequest.h>
 #include <aws/servicecatalog/model/DescribeRecordRequest.h>
@@ -763,6 +764,41 @@ void ServiceCatalogClient::DescribeProductViewAsync(const DescribeProductViewReq
 void ServiceCatalogClient::DescribeProductViewAsyncHelper(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeProductView(request), context);
+}
+
+DescribeProvisionedProductOutcome ServiceCatalogClient::DescribeProvisionedProduct(const DescribeProvisionedProductRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeProvisionedProductOutcome(DescribeProvisionedProductResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeProvisionedProductOutcome(outcome.GetError());
+  }
+}
+
+DescribeProvisionedProductOutcomeCallable ServiceCatalogClient::DescribeProvisionedProductCallable(const DescribeProvisionedProductRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProvisionedProductOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProvisionedProduct(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribeProvisionedProductAsync(const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisionedProductAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribeProvisionedProductAsyncHelper(const DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProvisionedProduct(request), context);
 }
 
 DescribeProvisioningArtifactOutcome ServiceCatalogClient::DescribeProvisioningArtifact(const DescribeProvisioningArtifactRequest& request) const

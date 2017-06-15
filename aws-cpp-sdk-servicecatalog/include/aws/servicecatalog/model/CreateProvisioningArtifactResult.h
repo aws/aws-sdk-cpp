@@ -70,62 +70,74 @@ namespace Model
     inline CreateProvisioningArtifactResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_info = value; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_info = std::move(value); }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const Aws::String& key, const Aws::String& value) { m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, const Aws::String& value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const Aws::String& key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, Aws::String&& value) { m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const char* key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, const char* value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact create request.</p>
+     * <p>Additional information about the creation request for the provisioning
+     * artifact.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const char* key, const char* value) { m_info.emplace(key, value); return *this; }
 

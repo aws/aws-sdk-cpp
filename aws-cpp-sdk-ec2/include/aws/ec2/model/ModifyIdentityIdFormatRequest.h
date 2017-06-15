@@ -43,6 +43,55 @@ namespace Model
 
   public:
     /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+
+    /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
      */
@@ -99,62 +148,13 @@ namespace Model
      */
     inline ModifyIdentityIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
 
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
-
   private:
+    Aws::String m_principalArn;
+    bool m_principalArnHasBeenSet;
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet;
-    Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
   };
 
 } // namespace Model

@@ -48,11 +48,6 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
-    if(!spotFleetRequestIdNode.IsNull())
-    {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
-    }
     XmlNode activeInstancesNode = resultNode.FirstChild("activeInstanceSet");
     if(!activeInstancesNode.IsNull())
     {
@@ -68,6 +63,11 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
+    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
+    if(!spotFleetRequestIdNode.IsNull())
+    {
+      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
     }
   }
 

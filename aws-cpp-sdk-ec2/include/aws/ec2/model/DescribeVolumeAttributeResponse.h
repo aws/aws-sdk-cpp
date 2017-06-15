@@ -15,9 +15,9 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <utility>
@@ -49,41 +49,6 @@ namespace Model
     DescribeVolumeAttributeResponse();
     DescribeVolumeAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVolumeAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DescribeVolumeAttributeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DescribeVolumeAttributeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DescribeVolumeAttributeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
@@ -145,6 +110,41 @@ namespace Model
      */
     inline DescribeVolumeAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DescribeVolumeAttributeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DescribeVolumeAttributeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DescribeVolumeAttributeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -161,9 +161,9 @@ namespace Model
     inline DescribeVolumeAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_volumeId;
     AttributeBooleanValue m_autoEnableIO;
     Aws::Vector<ProductCode> m_productCodes;
+    Aws::String m_volumeId;
     ResponseMetadata m_responseMetadata;
   };
 

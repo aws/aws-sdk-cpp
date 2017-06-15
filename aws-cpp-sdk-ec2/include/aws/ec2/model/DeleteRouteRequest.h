@@ -42,65 +42,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DeleteRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DeleteRouteRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DeleteRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline DeleteRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
-
-    /**
      * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
      * for the route exactly.</p>
      */
@@ -184,15 +125,74 @@ namespace Model
      */
     inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DeleteRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DeleteRouteRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DeleteRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline DeleteRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::String m_routeTableId;
+    bool m_routeTableIdHasBeenSet;
   };
 
 } // namespace Model

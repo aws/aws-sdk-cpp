@@ -50,15 +50,15 @@ RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
-    }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
       m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+    }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
     }
   }
 

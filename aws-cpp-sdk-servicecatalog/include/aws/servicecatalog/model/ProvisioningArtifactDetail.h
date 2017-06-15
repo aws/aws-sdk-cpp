@@ -48,37 +48,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline ProvisioningArtifactDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline ProvisioningArtifactDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline ProvisioningArtifactDetail& WithId(const char* value) { SetId(value); return *this;}
 
@@ -153,27 +160,42 @@ namespace Model
     inline ProvisioningArtifactDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The type of the provisioning artifact.</p>
+     * <p>The type of the provisioning artifact. The following provisioning artifact
+     * types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code>
+     * - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS
+     * Resources) products.</p>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the provisioning artifact.</p>
+     * <p>The type of the provisioning artifact. The following provisioning artifact
+     * types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code>
+     * - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS
+     * Resources) products.</p>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the provisioning artifact.</p>
+     * <p>The type of the provisioning artifact. The following provisioning artifact
+     * types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code>
+     * - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS
+     * Resources) products.</p>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the provisioning artifact.</p>
+     * <p>The type of the provisioning artifact. The following provisioning artifact
+     * types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code>
+     * - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS
+     * Resources) products.</p>
      */
     inline ProvisioningArtifactDetail& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the provisioning artifact.</p>
+     * <p>The type of the provisioning artifact. The following provisioning artifact
+     * types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code>
+     * - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS
+     * Resources) products.</p>
      */
     inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 

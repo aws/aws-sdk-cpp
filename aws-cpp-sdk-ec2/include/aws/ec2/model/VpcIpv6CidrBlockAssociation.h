@@ -51,6 +51,41 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The association ID for the IPv6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
+    /**
      * <p>The IPv6 CIDR block.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
@@ -110,48 +145,13 @@ namespace Model
      */
     inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlockState(VpcCidrBlockState&& value) { SetIpv6CidrBlockState(std::move(value)); return *this;}
 
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline VpcIpv6CidrBlockAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline VpcIpv6CidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The association ID for the IPv6 CIDR block.</p>
-     */
-    inline VpcIpv6CidrBlockAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
-
   private:
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet;
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
     VpcCidrBlockState m_ipv6CidrBlockState;
     bool m_ipv6CidrBlockStateHasBeenSet;
-    Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
   };
 
 } // namespace Model

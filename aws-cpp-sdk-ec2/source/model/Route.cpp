@@ -32,37 +32,37 @@ namespace Model
 
 Route::Route() : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false),
     m_destinationPrefixListIdHasBeenSet(false),
+    m_egressOnlyInternetGatewayIdHasBeenSet(false),
     m_gatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false)
+    m_state(RouteState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_vpcPeeringConnectionIdHasBeenSet(false)
 {
 }
 
 Route::Route(const XmlNode& xmlNode) : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false),
     m_destinationPrefixListIdHasBeenSet(false),
+    m_egressOnlyInternetGatewayIdHasBeenSet(false),
     m_gatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
     m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false)
+    m_state(RouteState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_vpcPeeringConnectionIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,11 +79,23 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_destinationCidrBlock = StringUtils::Trim(destinationCidrBlockNode.GetText().c_str());
       m_destinationCidrBlockHasBeenSet = true;
     }
+    XmlNode destinationIpv6CidrBlockNode = resultNode.FirstChild("destinationIpv6CidrBlock");
+    if(!destinationIpv6CidrBlockNode.IsNull())
+    {
+      m_destinationIpv6CidrBlock = StringUtils::Trim(destinationIpv6CidrBlockNode.GetText().c_str());
+      m_destinationIpv6CidrBlockHasBeenSet = true;
+    }
     XmlNode destinationPrefixListIdNode = resultNode.FirstChild("destinationPrefixListId");
     if(!destinationPrefixListIdNode.IsNull())
     {
       m_destinationPrefixListId = StringUtils::Trim(destinationPrefixListIdNode.GetText().c_str());
       m_destinationPrefixListIdHasBeenSet = true;
+    }
+    XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
+    if(!egressOnlyInternetGatewayIdNode.IsNull())
+    {
+      m_egressOnlyInternetGatewayId = StringUtils::Trim(egressOnlyInternetGatewayIdNode.GetText().c_str());
+      m_egressOnlyInternetGatewayIdHasBeenSet = true;
     }
     XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
     if(!gatewayIdNode.IsNull())
@@ -103,29 +115,17 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_instanceOwnerId = StringUtils::Trim(instanceOwnerIdNode.GetText().c_str());
       m_instanceOwnerIdHasBeenSet = true;
     }
-    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
-    if(!networkInterfaceIdNode.IsNull())
-    {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
-      m_networkInterfaceIdHasBeenSet = true;
-    }
-    XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
-    if(!vpcPeeringConnectionIdNode.IsNull())
-    {
-      m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
-      m_vpcPeeringConnectionIdHasBeenSet = true;
-    }
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
       m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
       m_natGatewayIdHasBeenSet = true;
     }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
+    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
+    if(!networkInterfaceIdNode.IsNull())
     {
-      m_state = RouteStateMapper::GetRouteStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
+      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode originNode = resultNode.FirstChild("origin");
     if(!originNode.IsNull())
@@ -133,17 +133,17 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_origin = RouteOriginMapper::GetRouteOriginForName(StringUtils::Trim(originNode.GetText().c_str()).c_str());
       m_originHasBeenSet = true;
     }
-    XmlNode destinationIpv6CidrBlockNode = resultNode.FirstChild("destinationIpv6CidrBlock");
-    if(!destinationIpv6CidrBlockNode.IsNull())
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
     {
-      m_destinationIpv6CidrBlock = StringUtils::Trim(destinationIpv6CidrBlockNode.GetText().c_str());
-      m_destinationIpv6CidrBlockHasBeenSet = true;
+      m_state = RouteStateMapper::GetRouteStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
     }
-    XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
-    if(!egressOnlyInternetGatewayIdNode.IsNull())
+    XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
+    if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_egressOnlyInternetGatewayId = StringUtils::Trim(egressOnlyInternetGatewayIdNode.GetText().c_str());
-      m_egressOnlyInternetGatewayIdHasBeenSet = true;
+      m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
+      m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }
 
@@ -157,9 +157,19 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
+  if(m_destinationIpv6CidrBlockHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+  }
+
   if(m_destinationPrefixListIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DestinationPrefixListId=" << StringUtils::URLEncode(m_destinationPrefixListId.c_str()) << "&";
+  }
+
+  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
   }
 
   if(m_gatewayIdHasBeenSet)
@@ -177,24 +187,14 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".InstanceOwnerId=" << StringUtils::URLEncode(m_instanceOwnerId.c_str()) << "&";
   }
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
-  }
-
-  if(m_vpcPeeringConnectionIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
-  }
-
   if(m_natGatewayIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
-  if(m_stateHasBeenSet)
+  if(m_networkInterfaceIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
+      oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   if(m_originHasBeenSet)
@@ -202,14 +202,14 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".Origin=" << RouteOriginMapper::GetNameForRouteOrigin(m_origin) << "&";
   }
 
-  if(m_destinationIpv6CidrBlockHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+      oStream << location << index << locationValue << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
   }
 
-  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  if(m_vpcPeeringConnectionIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
+      oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
 }
@@ -220,9 +220,17 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
+  if(m_destinationIpv6CidrBlockHasBeenSet)
+  {
+      oStream << location << ".DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+  }
   if(m_destinationPrefixListIdHasBeenSet)
   {
       oStream << location << ".DestinationPrefixListId=" << StringUtils::URLEncode(m_destinationPrefixListId.c_str()) << "&";
+  }
+  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  {
+      oStream << location << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
   }
   if(m_gatewayIdHasBeenSet)
   {
@@ -236,33 +244,25 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".InstanceOwnerId=" << StringUtils::URLEncode(m_instanceOwnerId.c_str()) << "&";
   }
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-      oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
-  }
-  if(m_vpcPeeringConnectionIdHasBeenSet)
-  {
-      oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
-  }
   if(m_natGatewayIdHasBeenSet)
   {
       oStream << location << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
-  if(m_stateHasBeenSet)
+  if(m_networkInterfaceIdHasBeenSet)
   {
-      oStream << location << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
+      oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
   if(m_originHasBeenSet)
   {
       oStream << location << ".Origin=" << RouteOriginMapper::GetNameForRouteOrigin(m_origin) << "&";
   }
-  if(m_destinationIpv6CidrBlockHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      oStream << location << ".DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+      oStream << location << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
   }
-  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  if(m_vpcPeeringConnectionIdHasBeenSet)
   {
-      oStream << location << ".EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
+      oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 }
 

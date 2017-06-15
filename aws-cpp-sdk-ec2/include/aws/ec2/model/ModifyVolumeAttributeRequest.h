@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,29 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const AttributeBooleanValue& GetAutoEnableIO() const{ return m_autoEnableIO; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAutoEnableIO(const AttributeBooleanValue& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
-    inline ModifyVolumeAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = std::move(value); }
+
+    /**
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     */
+    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(const AttributeBooleanValue& value) { SetAutoEnableIO(value); return *this;}
+
+    /**
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     */
+    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -103,37 +104,36 @@ namespace Model
     inline ModifyVolumeAttributeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const AttributeBooleanValue& GetAutoEnableIO() const{ return m_autoEnableIO; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAutoEnableIO(const AttributeBooleanValue& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = std::move(value); }
-
-    /**
-     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-     */
-    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(const AttributeBooleanValue& value) { SetAutoEnableIO(value); return *this;}
-
-    /**
-     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-     */
-    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(std::move(value)); return *this;}
+    inline ModifyVolumeAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
     AttributeBooleanValue m_autoEnableIO;
     bool m_autoEnableIOHasBeenSet;
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

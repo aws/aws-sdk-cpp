@@ -43,28 +43,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
-    inline DisassociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     */
+    inline DisassociateAddressRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     */
+    inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     */
+    inline DisassociateAddressRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -102,47 +113,36 @@ namespace Model
     inline DisassociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
-     */
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
-     */
-    inline DisassociateAddressRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
-     */
-    inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
-     */
-    inline DisassociateAddressRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    inline DisassociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

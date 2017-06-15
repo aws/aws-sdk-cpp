@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CancelBundleTaskRequest::CancelBundleTaskRequest() : 
+    m_bundleIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_bundleIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String CancelBundleTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CancelBundleTask&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_bundleIdHasBeenSet)
   {
     ss << "BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

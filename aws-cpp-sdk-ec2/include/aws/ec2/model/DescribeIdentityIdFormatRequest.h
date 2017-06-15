@@ -43,48 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline DescribeIdentityIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline DescribeIdentityIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
-     */
-    inline DescribeIdentityIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
-
-    /**
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
      * user.</p>
      */
@@ -126,11 +84,53 @@ namespace Model
      */
     inline DescribeIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline DescribeIdentityIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline DescribeIdentityIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
+     */
+    inline DescribeIdentityIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
+
   private:
-    Aws::String m_resource;
-    bool m_resourceHasBeenSet;
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet;
+    Aws::String m_resource;
+    bool m_resourceHasBeenSet;
   };
 
 } // namespace Model

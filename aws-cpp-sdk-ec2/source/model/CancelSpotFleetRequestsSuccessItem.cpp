@@ -31,20 +31,20 @@ namespace Model
 {
 
 CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem() : 
-    m_spotFleetRequestIdHasBeenSet(false),
     m_currentSpotFleetRequestState(BatchState::NOT_SET),
     m_currentSpotFleetRequestStateHasBeenSet(false),
     m_previousSpotFleetRequestState(BatchState::NOT_SET),
-    m_previousSpotFleetRequestStateHasBeenSet(false)
+    m_previousSpotFleetRequestStateHasBeenSet(false),
+    m_spotFleetRequestIdHasBeenSet(false)
 {
 }
 
 CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem(const XmlNode& xmlNode) : 
-    m_spotFleetRequestIdHasBeenSet(false),
     m_currentSpotFleetRequestState(BatchState::NOT_SET),
     m_currentSpotFleetRequestStateHasBeenSet(false),
     m_previousSpotFleetRequestState(BatchState::NOT_SET),
-    m_previousSpotFleetRequestStateHasBeenSet(false)
+    m_previousSpotFleetRequestStateHasBeenSet(false),
+    m_spotFleetRequestIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,12 +55,6 @@ CancelSpotFleetRequestsSuccessItem& CancelSpotFleetRequestsSuccessItem::operator
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
-    if(!spotFleetRequestIdNode.IsNull())
-    {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
-      m_spotFleetRequestIdHasBeenSet = true;
-    }
     XmlNode currentSpotFleetRequestStateNode = resultNode.FirstChild("currentSpotFleetRequestState");
     if(!currentSpotFleetRequestStateNode.IsNull())
     {
@@ -73,6 +67,12 @@ CancelSpotFleetRequestsSuccessItem& CancelSpotFleetRequestsSuccessItem::operator
       m_previousSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(previousSpotFleetRequestStateNode.GetText().c_str()).c_str());
       m_previousSpotFleetRequestStateHasBeenSet = true;
     }
+    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
+    if(!spotFleetRequestIdNode.IsNull())
+    {
+      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,11 +80,6 @@ CancelSpotFleetRequestsSuccessItem& CancelSpotFleetRequestsSuccessItem::operator
 
 void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_spotFleetRequestIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
-  }
-
   if(m_currentSpotFleetRequestStateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState) << "&";
@@ -95,14 +90,15 @@ void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".PreviousSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState) << "&";
   }
 
+  if(m_spotFleetRequestIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
+  }
+
 }
 
 void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_spotFleetRequestIdHasBeenSet)
-  {
-      oStream << location << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
-  }
   if(m_currentSpotFleetRequestStateHasBeenSet)
   {
       oStream << location << ".CurrentSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState) << "&";
@@ -110,6 +106,10 @@ void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, c
   if(m_previousSpotFleetRequestStateHasBeenSet)
   {
       oStream << location << ".PreviousSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState) << "&";
+  }
+  if(m_spotFleetRequestIdHasBeenSet)
+  {
+      oStream << location << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
 }
 

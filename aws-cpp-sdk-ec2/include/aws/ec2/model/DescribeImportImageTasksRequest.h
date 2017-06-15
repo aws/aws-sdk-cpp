@@ -69,102 +69,6 @@ namespace Model
     inline DescribeImportImageTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetImportTaskIds() const{ return m_importTaskIds; }
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline void SetImportTaskIds(const Aws::Vector<Aws::String>& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline void SetImportTaskIds(Aws::Vector<Aws::String>&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = std::move(value); }
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithImportTaskIds(const Aws::Vector<Aws::String>& value) { SetImportTaskIds(value); return *this;}
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithImportTaskIds(Aws::Vector<Aws::String>&& value) { SetImportTaskIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline DescribeImportImageTasksRequest& AddImportTaskIds(const Aws::String& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline DescribeImportImageTasksRequest& AddImportTaskIds(Aws::String&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of import image task IDs.</p>
-     */
-    inline DescribeImportImageTasksRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that indicates the next page of results.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
-     */
-    inline DescribeImportImageTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-    /**
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
      * following values: active, completed, deleting, deleted.</p>
      */
@@ -206,17 +110,113 @@ namespace Model
      */
     inline DescribeImportImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetImportTaskIds() const{ return m_importTaskIds; }
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline void SetImportTaskIds(const Aws::Vector<Aws::String>& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline void SetImportTaskIds(Aws::Vector<Aws::String>&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = std::move(value); }
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithImportTaskIds(const Aws::Vector<Aws::String>& value) { SetImportTaskIds(value); return *this;}
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithImportTaskIds(Aws::Vector<Aws::String>&& value) { SetImportTaskIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline DescribeImportImageTasksRequest& AddImportTaskIds(const Aws::String& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline DescribeImportImageTasksRequest& AddImportTaskIds(Aws::String&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of import image task IDs.</p>
+     */
+    inline DescribeImportImageTasksRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that indicates the next page of results.</p>
+     */
+    inline DescribeImportImageTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_importTaskIds;
-    bool m_importTaskIdsHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_importTaskIds;
+    bool m_importTaskIdsHasBeenSet;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

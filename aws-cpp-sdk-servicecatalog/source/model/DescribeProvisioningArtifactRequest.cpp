@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 DescribeProvisioningArtifactRequest::DescribeProvisioningArtifactRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_verbose(false),
+    m_verboseHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,12 @@ Aws::String DescribeProvisioningArtifactRequest::SerializePayload() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_verboseHasBeenSet)
+  {
+   payload.WithBool("Verbose", m_verbose);
 
   }
 

@@ -31,16 +31,16 @@ namespace Model
 {
 
 LaunchPermission::LaunchPermission() : 
-    m_userIdHasBeenSet(false),
     m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode) : 
-    m_userIdHasBeenSet(false),
     m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,17 +51,17 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode userIdNode = resultNode.FirstChild("userId");
-    if(!userIdNode.IsNull())
-    {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
-      m_userIdHasBeenSet = true;
-    }
     XmlNode groupNode = resultNode.FirstChild("group");
     if(!groupNode.IsNull())
     {
       m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(groupNode.GetText().c_str()).c_str());
       m_groupHasBeenSet = true;
+    }
+    XmlNode userIdNode = resultNode.FirstChild("userId");
+    if(!userIdNode.IsNull())
+    {
+      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userIdHasBeenSet = true;
     }
   }
 
@@ -70,27 +70,27 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
 
 void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_userIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
-  }
-
   if(m_groupHasBeenSet)
   {
       oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 
 }
 
 void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_userIdHasBeenSet)
-  {
-      oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
-  }
   if(m_groupHasBeenSet)
   {
       oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+  }
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 }
 

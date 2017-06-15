@@ -44,28 +44,19 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The number of Reserved Instances to purchase.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The number of Reserved Instances to purchase.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The number of Reserved Instances to purchase.</p>
      */
-    inline PurchaseReservedInstancesOfferingRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline PurchaseReservedInstancesOfferingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -103,19 +94,28 @@ namespace Model
     inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
 
     /**
-     * <p>The number of Reserved Instances to purchase.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The number of Reserved Instances to purchase.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The number of Reserved Instances to purchase.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline PurchaseReservedInstancesOfferingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+    inline PurchaseReservedInstancesOfferingRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>Specified for Reserved Instance Marketplace offerings to limit the total
@@ -153,12 +153,12 @@ namespace Model
     inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+    Aws::String m_reservedInstancesOfferingId;
+    bool m_reservedInstancesOfferingIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     ReservedInstanceLimitPrice m_limitPrice;
     bool m_limitPriceHasBeenSet;
   };

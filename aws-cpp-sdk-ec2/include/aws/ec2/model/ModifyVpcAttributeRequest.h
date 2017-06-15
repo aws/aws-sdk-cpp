@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,39 +43,49 @@ namespace Model
 
   public:
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
+     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const AttributeBooleanValue& GetEnableDnsHostnames() const{ return m_enableDnsHostnames; }
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
+     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetEnableDnsHostnames(const AttributeBooleanValue& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = value; }
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
+     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+    inline void SetEnableDnsHostnames(AttributeBooleanValue&& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = std::move(value); }
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
+     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+    inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(const AttributeBooleanValue& value) { SetEnableDnsHostnames(value); return *this;}
 
     /**
-     * <p>The ID of the VPC.</p>
+     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
+     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
-    inline ModifyVpcAttributeRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline ModifyVpcAttributeRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline ModifyVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(AttributeBooleanValue&& value) { SetEnableDnsHostnames(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
@@ -133,57 +143,47 @@ namespace Model
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
-     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
-     * request. Use separate requests for each attribute. You can only enable DNS
-     * hostnames if you've enabled DNS support.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline const AttributeBooleanValue& GetEnableDnsHostnames() const{ return m_enableDnsHostnames; }
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
-     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
-     * request. Use separate requests for each attribute. You can only enable DNS
-     * hostnames if you've enabled DNS support.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetEnableDnsHostnames(const AttributeBooleanValue& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = value; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
-     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
-     * request. Use separate requests for each attribute. You can only enable DNS
-     * hostnames if you've enabled DNS support.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetEnableDnsHostnames(AttributeBooleanValue&& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = std::move(value); }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
-     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
-     * request. Use separate requests for each attribute. You can only enable DNS
-     * hostnames if you've enabled DNS support.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(const AttributeBooleanValue& value) { SetEnableDnsHostnames(value); return *this;}
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
-     * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
-     * request. Use separate requests for each attribute. You can only enable DNS
-     * hostnames if you've enabled DNS support.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(AttributeBooleanValue&& value) { SetEnableDnsHostnames(std::move(value)); return *this;}
+    inline ModifyVpcAttributeRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline ModifyVpcAttributeRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline ModifyVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    AttributeBooleanValue m_enableDnsSupport;
-    bool m_enableDnsSupportHasBeenSet;
     AttributeBooleanValue m_enableDnsHostnames;
     bool m_enableDnsHostnamesHasBeenSet;
+    AttributeBooleanValue m_enableDnsSupport;
+    bool m_enableDnsSupportHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

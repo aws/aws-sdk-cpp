@@ -31,32 +31,32 @@ namespace Model
 {
 
 NatGateway::NatGateway() : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_deleteTimeHasBeenSet(false),
-    m_natGatewayAddressesHasBeenSet(false),
-    m_state(NatGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_failureCodeHasBeenSet(false),
     m_failureMessageHasBeenSet(false),
-    m_provisionedBandwidthHasBeenSet(false)
+    m_natGatewayAddressesHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false),
+    m_provisionedBandwidthHasBeenSet(false),
+    m_state(NatGatewayState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
 NatGateway::NatGateway(const XmlNode& xmlNode) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_deleteTimeHasBeenSet(false),
-    m_natGatewayAddressesHasBeenSet(false),
-    m_state(NatGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_failureCodeHasBeenSet(false),
     m_failureMessageHasBeenSet(false),
-    m_provisionedBandwidthHasBeenSet(false)
+    m_natGatewayAddressesHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false),
+    m_provisionedBandwidthHasBeenSet(false),
+    m_state(NatGatewayState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,24 +67,6 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
-    }
-    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
-    if(!subnetIdNode.IsNull())
-    {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
-      m_subnetIdHasBeenSet = true;
-    }
-    XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
-    if(!natGatewayIdNode.IsNull())
-    {
-      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
-      m_natGatewayIdHasBeenSet = true;
-    }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
@@ -96,24 +78,6 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     {
       m_deleteTime = DateTime(StringUtils::Trim(deleteTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_deleteTimeHasBeenSet = true;
-    }
-    XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
-    if(!natGatewayAddressesNode.IsNull())
-    {
-      XmlNode natGatewayAddressesMember = natGatewayAddressesNode.FirstChild("item");
-      while(!natGatewayAddressesMember.IsNull())
-      {
-        m_natGatewayAddresses.push_back(natGatewayAddressesMember);
-        natGatewayAddressesMember = natGatewayAddressesMember.NextNode("item");
-      }
-
-      m_natGatewayAddressesHasBeenSet = true;
-    }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("failureCode");
     if(!failureCodeNode.IsNull())
@@ -127,11 +91,47 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
       m_failureMessage = StringUtils::Trim(failureMessageNode.GetText().c_str());
       m_failureMessageHasBeenSet = true;
     }
+    XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
+    if(!natGatewayAddressesNode.IsNull())
+    {
+      XmlNode natGatewayAddressesMember = natGatewayAddressesNode.FirstChild("item");
+      while(!natGatewayAddressesMember.IsNull())
+      {
+        m_natGatewayAddresses.push_back(natGatewayAddressesMember);
+        natGatewayAddressesMember = natGatewayAddressesMember.NextNode("item");
+      }
+
+      m_natGatewayAddressesHasBeenSet = true;
+    }
+    XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
+    if(!natGatewayIdNode.IsNull())
+    {
+      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
+      m_natGatewayIdHasBeenSet = true;
+    }
     XmlNode provisionedBandwidthNode = resultNode.FirstChild("provisionedBandwidth");
     if(!provisionedBandwidthNode.IsNull())
     {
       m_provisionedBandwidth = provisionedBandwidthNode;
       m_provisionedBandwidthHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetIdHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
     }
   }
 
@@ -140,21 +140,6 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
-  if(m_subnetIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
-  if(m_natGatewayIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
-  }
-
   if(m_createTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -163,6 +148,16 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_deleteTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FailureCode=" << StringUtils::URLEncode(m_failureCode.c_str()) << "&";
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
   }
 
   if(m_natGatewayAddressesHasBeenSet)
@@ -176,19 +171,9 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
-  if(m_stateHasBeenSet)
+  if(m_natGatewayIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
-  }
-
-  if(m_failureCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FailureCode=" << StringUtils::URLEncode(m_failureCode.c_str()) << "&";
-  }
-
-  if(m_failureMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
+      oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
   if(m_provisionedBandwidthHasBeenSet)
@@ -198,22 +183,25 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_provisionedBandwidth.OutputToStream(oStream, provisionedBandwidthLocationAndMemberSs.str().c_str());
   }
 
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
 }
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-  if(m_subnetIdHasBeenSet)
-  {
-      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-  if(m_natGatewayIdHasBeenSet)
-  {
-      oStream << location << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
-  }
   if(m_createTimeHasBeenSet)
   {
       oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -221,6 +209,14 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_deleteTimeHasBeenSet)
   {
       oStream << location << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_failureCodeHasBeenSet)
+  {
+      oStream << location << ".FailureCode=" << StringUtils::URLEncode(m_failureCode.c_str()) << "&";
+  }
+  if(m_failureMessageHasBeenSet)
+  {
+      oStream << location << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
   }
   if(m_natGatewayAddressesHasBeenSet)
   {
@@ -232,23 +228,27 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, natGatewayAddressesSs.str().c_str());
       }
   }
-  if(m_stateHasBeenSet)
+  if(m_natGatewayIdHasBeenSet)
   {
-      oStream << location << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
-  }
-  if(m_failureCodeHasBeenSet)
-  {
-      oStream << location << ".FailureCode=" << StringUtils::URLEncode(m_failureCode.c_str()) << "&";
-  }
-  if(m_failureMessageHasBeenSet)
-  {
-      oStream << location << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
+      oStream << location << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
   if(m_provisionedBandwidthHasBeenSet)
   {
       Aws::String provisionedBandwidthLocationAndMember(location);
       provisionedBandwidthLocationAndMember += ".ProvisionedBandwidth";
       m_provisionedBandwidth.OutputToStream(oStream, provisionedBandwidthLocationAndMember.c_str());
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
+  }
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

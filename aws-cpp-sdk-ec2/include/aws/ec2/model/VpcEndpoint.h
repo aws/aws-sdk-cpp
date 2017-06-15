@@ -16,10 +16,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/State.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/State.h>
 #include <utility>
 
 namespace Aws
@@ -52,134 +52,29 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
+    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
+    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
+    inline VpcEndpoint& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline VpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint.</p>
-     */
-    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC endpoint.</p>
-     */
-    inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the AWS service to which the endpoint is associated.</p>
-     */
-    inline VpcEndpoint& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The state of the VPC endpoint.</p>
-     */
-    inline const State& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the VPC endpoint.</p>
-     */
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the VPC endpoint.</p>
-     */
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the VPC endpoint.</p>
-     */
-    inline VpcEndpoint& WithState(const State& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the VPC endpoint.</p>
-     */
-    inline VpcEndpoint& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The policy document associated with the endpoint.</p>
@@ -257,45 +152,150 @@ namespace Model
     inline VpcEndpoint& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline VpcEndpoint& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline VpcEndpoint& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+
+    /**
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
+     */
+    inline VpcEndpoint& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the AWS service to which the endpoint is associated.</p>
+     */
+    inline VpcEndpoint& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
+    inline const State& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
+    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
+    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithState(const State& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithState(State&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline VpcEndpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline VpcEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
-    Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
-    State m_state;
-    bool m_stateHasBeenSet;
+    Aws::Utils::DateTime m_creationTimestamp;
+    bool m_creationTimestampHasBeenSet;
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
-    Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet;
+    State m_state;
+    bool m_stateHasBeenSet;
+    Aws::String m_vpcEndpointId;
+    bool m_vpcEndpointIdHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

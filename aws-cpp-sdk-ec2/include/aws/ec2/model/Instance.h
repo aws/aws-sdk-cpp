@@ -17,25 +17,25 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/InstanceState.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/Monitoring.h>
 #include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/PlatformValues.h>
-#include <aws/ec2/model/Monitoring.h>
-#include <aws/ec2/model/StateReason.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/ArchitectureValues.h>
-#include <aws/ec2/model/DeviceType.h>
-#include <aws/ec2/model/VirtualizationType.h>
-#include <aws/ec2/model/InstanceLifecycleType.h>
 #include <aws/ec2/model/HypervisorType.h>
 #include <aws/ec2/model/IamInstanceProfile.h>
+#include <aws/ec2/model/InstanceLifecycleType.h>
+#include <aws/ec2/model/DeviceType.h>
+#include <aws/ec2/model/StateReason.h>
+#include <aws/ec2/model/VirtualizationType.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
-#include <aws/ec2/model/Tag.h>
-#include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/InstanceNetworkInterface.h>
+#include <aws/ec2/model/GroupIdentifier.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -68,39 +68,22 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The AMI launch index, which can be used to find this instance in the launch
+     * group.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline int GetAmiLaunchIndex() const{ return m_amiLaunchIndex; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The AMI launch index, which can be used to find this instance in the launch
+     * group.</p>
      */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetAmiLaunchIndex(int value) { m_amiLaunchIndexHasBeenSet = true; m_amiLaunchIndex = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The AMI launch index, which can be used to find this instance in the launch
+     * group.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline Instance& WithAmiLaunchIndex(int value) { SetAmiLaunchIndex(value); return *this;}
 
     /**
      * <p>The ID of the AMI used to launch the instance.</p>
@@ -138,29 +121,241 @@ namespace Model
     inline Instance& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The current state of the instance.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline const InstanceState& GetState() const{ return m_state; }
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The current state of the instance.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The current state of the instance.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The current state of the instance.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline Instance& WithState(const InstanceState& value) { SetState(value); return *this;}
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The current state of the instance.</p>
+     * <p>The ID of the instance.</p>
      */
-    inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
+    inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline Instance& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline Instance& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline Instance& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline Instance& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline Instance& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline Instance& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline Instance& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline void SetMonitoring(const Monitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline Instance& WithMonitoring(const Monitoring& value) { SetMonitoring(value); return *this;}
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline Instance& WithMonitoring(Monitoring&& value) { SetMonitoring(std::move(value)); return *this;}
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline Instance& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline Instance& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline const PlatformValues& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline Instance& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline Instance& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
@@ -240,6 +435,76 @@ namespace Model
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
     /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline Instance& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
+    inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline Instance& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline Instance& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline Instance& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline Instance& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
      * available until the instance enters the <code>running</code> state. For EC2-VPC,
      * this name is only available if you've enabled DNS hostnames for your VPC.</p>
@@ -289,6 +554,101 @@ namespace Model
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
 
     /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
+    inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline Instance& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline const InstanceState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline Instance& WithState(const InstanceState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
+
+    /**
      * <p>The reason for the most recent state transition. This might be an empty
      * string.</p>
      */
@@ -329,296 +689,6 @@ namespace Model
      * string.</p>
      */
     inline Instance& WithStateTransitionReason(const char* value) { SetStateTransitionReason(value); return *this;}
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline Instance& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline Instance& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the key pair, if this instance was launched with an associated
-     * key pair.</p>
-     */
-    inline Instance& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The AMI launch index, which can be used to find this instance in the launch
-     * group.</p>
-     */
-    inline int GetAmiLaunchIndex() const{ return m_amiLaunchIndex; }
-
-    /**
-     * <p>The AMI launch index, which can be used to find this instance in the launch
-     * group.</p>
-     */
-    inline void SetAmiLaunchIndex(int value) { m_amiLaunchIndexHasBeenSet = true; m_amiLaunchIndex = value; }
-
-    /**
-     * <p>The AMI launch index, which can be used to find this instance in the launch
-     * group.</p>
-     */
-    inline Instance& WithAmiLaunchIndex(int value) { SetAmiLaunchIndex(value); return *this;}
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline Instance& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline Instance& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline Instance& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
-
-    /**
-     * <p>The product codes attached to this instance, if applicable.</p>
-     */
-    inline Instance& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline Instance& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type.</p>
-     */
-    inline Instance& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The time the instance was launched.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
-
-    /**
-     * <p>The time the instance was launched.</p>
-     */
-    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
-
-    /**
-     * <p>The time the instance was launched.</p>
-     */
-    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
-
-    /**
-     * <p>The time the instance was launched.</p>
-     */
-    inline Instance& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
-
-    /**
-     * <p>The time the instance was launched.</p>
-     */
-    inline Instance& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The location where the instance launched, if applicable.</p>
-     */
-    inline const Placement& GetPlacement() const{ return m_placement; }
-
-    /**
-     * <p>The location where the instance launched, if applicable.</p>
-     */
-    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
-
-    /**
-     * <p>The location where the instance launched, if applicable.</p>
-     */
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-
-    /**
-     * <p>The location where the instance launched, if applicable.</p>
-     */
-    inline Instance& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
-
-    /**
-     * <p>The location where the instance launched, if applicable.</p>
-     */
-    inline Instance& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The kernel associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithKernelId(const char* value) { SetKernelId(value); return *this;}
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The RAM disk associated with this instance, if applicable.</p>
-     */
-    inline Instance& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
-
-    /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-     */
-    inline const PlatformValues& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-     */
-    inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-     */
-    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-     */
-    inline Instance& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-     */
-    inline Instance& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline void SetMonitoring(const Monitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline Instance& WithMonitoring(const Monitoring& value) { SetMonitoring(value); return *this;}
-
-    /**
-     * <p>The monitoring for the instance.</p>
-     */
-    inline Instance& WithMonitoring(Monitoring&& value) { SetMonitoring(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
@@ -691,101 +761,6 @@ namespace Model
     inline Instance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline Instance& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The private IPv4 address assigned to the instance.</p>
-     */
-    inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
-     */
-    inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
-
-    /**
-     * <p>The reason for the most recent state transition.</p>
-     */
-    inline const StateReason& GetStateReason() const{ return m_stateReason; }
-
-    /**
-     * <p>The reason for the most recent state transition.</p>
-     */
-    inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-
-    /**
-     * <p>The reason for the most recent state transition.</p>
-     */
-    inline void SetStateReason(StateReason&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-
-    /**
-     * <p>The reason for the most recent state transition.</p>
-     */
-    inline Instance& WithStateReason(const StateReason& value) { SetStateReason(value); return *this;}
-
-    /**
-     * <p>The reason for the most recent state transition.</p>
-     */
-    inline Instance& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
-
-    /**
      * <p>The architecture of the image.</p>
      */
     inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
@@ -809,78 +784,6 @@ namespace Model
      * <p>The architecture of the image.</p>
      */
     inline Instance& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
-
-    /**
-     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
-     */
-    inline const DeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
-
-    /**
-     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
-     */
-    inline void SetRootDeviceType(const DeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
-
-    /**
-     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
-     */
-    inline void SetRootDeviceType(DeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = std::move(value); }
-
-    /**
-     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
-     */
-    inline Instance& WithRootDeviceType(const DeviceType& value) { SetRootDeviceType(value); return *this;}
-
-    /**
-     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
-     */
-    inline Instance& WithRootDeviceType(DeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline const Aws::String& GetRootDeviceName() const{ return m_rootDeviceName; }
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline void SetRootDeviceName(const Aws::String& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = value; }
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::move(value); }
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline void SetRootDeviceName(const char* value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName.assign(value); }
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline Instance& WithRootDeviceName(const Aws::String& value) { SetRootDeviceName(value); return *this;}
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline Instance& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The root device name (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline Instance& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
 
     /**
      * <p>Any block device mapping entries for the instance.</p>
@@ -916,91 +819,6 @@ namespace Model
      * <p>Any block device mapping entries for the instance.</p>
      */
     inline Instance& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The virtualization type of the instance.</p>
-     */
-    inline const VirtualizationType& GetVirtualizationType() const{ return m_virtualizationType; }
-
-    /**
-     * <p>The virtualization type of the instance.</p>
-     */
-    inline void SetVirtualizationType(const VirtualizationType& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
-
-    /**
-     * <p>The virtualization type of the instance.</p>
-     */
-    inline void SetVirtualizationType(VirtualizationType&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
-
-    /**
-     * <p>The virtualization type of the instance.</p>
-     */
-    inline Instance& WithVirtualizationType(const VirtualizationType& value) { SetVirtualizationType(value); return *this;}
-
-    /**
-     * <p>The virtualization type of the instance.</p>
-     */
-    inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
-     */
-    inline const InstanceLifecycleType& GetInstanceLifecycle() const{ return m_instanceLifecycle; }
-
-    /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
-     */
-    inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
-
-    /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
-     */
-    inline void SetInstanceLifecycle(InstanceLifecycleType&& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = std::move(value); }
-
-    /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
-     */
-    inline Instance& WithInstanceLifecycle(const InstanceLifecycleType& value) { SetInstanceLifecycle(value); return *this;}
-
-    /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
-     */
-    inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(std::move(value)); return *this;}
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline Instance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline Instance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
-     */
-    inline Instance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
      * <p>The idempotency token you provided when you launched the instance, if
@@ -1045,39 +863,228 @@ namespace Model
     inline Instance& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal I/O performance. This optimization isn't available with all
+     * instance types. Additional usage charges apply when using an EBS Optimized
+     * instance.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal I/O performance. This optimization isn't available with all
+     * instance types. Additional usage charges apply when using an EBS Optimized
+     * instance.</p>
      */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal I/O performance. This optimization isn't available with all
+     * instance types. Additional usage charges apply when using an EBS Optimized
+     * instance.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
-    inline Instance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline bool GetEnaSupport() const{ return m_enaSupport; }
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
-    inline Instance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
-    inline Instance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Instance& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the instance.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
-    inline Instance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    inline const HypervisorType& GetHypervisor() const{ return m_hypervisor; }
+
+    /**
+     * <p>The hypervisor type of the instance.</p>
+     */
+    inline void SetHypervisor(const HypervisorType& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
+
+    /**
+     * <p>The hypervisor type of the instance.</p>
+     */
+    inline void SetHypervisor(HypervisorType&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
+
+    /**
+     * <p>The hypervisor type of the instance.</p>
+     */
+    inline Instance& WithHypervisor(const HypervisorType& value) { SetHypervisor(value); return *this;}
+
+    /**
+     * <p>The hypervisor type of the instance.</p>
+     */
+    inline Instance& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
+    inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
+    inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
+    inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
+    inline Instance& WithIamInstanceProfile(const IamInstanceProfile& value) { SetIamInstanceProfile(value); return *this;}
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
+    inline Instance& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     */
+    inline const InstanceLifecycleType& GetInstanceLifecycle() const{ return m_instanceLifecycle; }
+
+    /**
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     */
+    inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
+
+    /**
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     */
+    inline void SetInstanceLifecycle(InstanceLifecycleType&& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = std::move(value); }
+
+    /**
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     */
+    inline Instance& WithInstanceLifecycle(const InstanceLifecycleType& value) { SetInstanceLifecycle(value); return *this;}
+
+    /**
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     */
+    inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline Instance& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline Instance& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline Instance& AddNetworkInterfaces(const InstanceNetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline const Aws::String& GetRootDeviceName() const{ return m_rootDeviceName; }
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline void SetRootDeviceName(const Aws::String& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = value; }
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::move(value); }
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline void SetRootDeviceName(const char* value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName.assign(value); }
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline Instance& WithRootDeviceName(const Aws::String& value) { SetRootDeviceName(value); return *this;}
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline Instance& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
+     */
+    inline Instance& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
+    inline const DeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
+    inline void SetRootDeviceType(const DeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
+    inline void SetRootDeviceType(DeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = std::move(value); }
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
+    inline Instance& WithRootDeviceType(const DeviceType& value) { SetRootDeviceType(value); return *this;}
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
+    inline Instance& WithRootDeviceType(DeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
 
     /**
      * <p>One or more security groups for the instance.</p>
@@ -1148,116 +1155,39 @@ namespace Model
     inline Instance& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 
     /**
-     * <p>The hypervisor type of the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline const HypervisorType& GetHypervisor() const{ return m_hypervisor; }
+    inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>The hypervisor type of the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline void SetHypervisor(const HypervisorType& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
+    inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The hypervisor type of the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline void SetHypervisor(HypervisorType&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
+    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
 
     /**
-     * <p>The hypervisor type of the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline Instance& WithHypervisor(const HypervisorType& value) { SetHypervisor(value); return *this;}
+    inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>The hypervisor type of the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline Instance& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
+    inline Instance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline Instance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
-    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-
-    /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
-     */
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-
-    /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
-     */
-    inline Instance& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-
-    /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
-     */
-    inline Instance& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-
-    /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
-     */
-    inline Instance& AddNetworkInterfaces(const InstanceNetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-
-    /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
-     */
-    inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IAM instance profile associated with the instance, if applicable.</p>
-     */
-    inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
-
-    /**
-     * <p>The IAM instance profile associated with the instance, if applicable.</p>
-     */
-    inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-
-    /**
-     * <p>The IAM instance profile associated with the instance, if applicable.</p>
-     */
-    inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-
-    /**
-     * <p>The IAM instance profile associated with the instance, if applicable.</p>
-     */
-    inline Instance& WithIamInstanceProfile(const IamInstanceProfile& value) { SetIamInstanceProfile(value); return *this;}
-
-    /**
-     * <p>The IAM instance profile associated with the instance, if applicable.</p>
-     */
-    inline Instance& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
-     */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
-     */
-    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-
-    /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
-     */
-    inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+    inline Instance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
      * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
@@ -1302,97 +1232,167 @@ namespace Model
     inline Instance& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     * <p>The reason for the most recent state transition.</p>
      */
-    inline bool GetEnaSupport() const{ return m_enaSupport; }
+    inline const StateReason& GetStateReason() const{ return m_stateReason; }
 
     /**
-     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     * <p>The reason for the most recent state transition.</p>
      */
-    inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+    inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
-     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     * <p>The reason for the most recent state transition.</p>
      */
-    inline Instance& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
+    inline void SetStateReason(StateReason&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
+
+    /**
+     * <p>The reason for the most recent state transition.</p>
+     */
+    inline Instance& WithStateReason(const StateReason& value) { SetStateReason(value); return *this;}
+
+    /**
+     * <p>The reason for the most recent state transition.</p>
+     */
+    inline Instance& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline Instance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline Instance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline Instance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline Instance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
+    inline const VirtualizationType& GetVirtualizationType() const{ return m_virtualizationType; }
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
+    inline void SetVirtualizationType(const VirtualizationType& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
+    inline void SetVirtualizationType(VirtualizationType&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
+    inline Instance& WithVirtualizationType(const VirtualizationType& value) { SetVirtualizationType(value); return *this;}
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
+    inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
   private:
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
-    InstanceState m_state;
-    bool m_stateHasBeenSet;
-    Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
-    Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
-    Aws::String m_stateTransitionReason;
-    bool m_stateTransitionReasonHasBeenSet;
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
     int m_amiLaunchIndex;
     bool m_amiLaunchIndexHasBeenSet;
-    Aws::Vector<ProductCode> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    Aws::Utils::DateTime m_launchTime;
-    bool m_launchTimeHasBeenSet;
-    Placement m_placement;
-    bool m_placementHasBeenSet;
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
-    Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
-    PlatformValues m_platform;
-    bool m_platformHasBeenSet;
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet;
+    Aws::Utils::DateTime m_launchTime;
+    bool m_launchTimeHasBeenSet;
     Monitoring m_monitoring;
     bool m_monitoringHasBeenSet;
+    Placement m_placement;
+    bool m_placementHasBeenSet;
+    PlatformValues m_platform;
+    bool m_platformHasBeenSet;
+    Aws::String m_privateDnsName;
+    bool m_privateDnsNameHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
+    Aws::Vector<ProductCode> m_productCodes;
+    bool m_productCodesHasBeenSet;
+    Aws::String m_publicDnsName;
+    bool m_publicDnsNameHasBeenSet;
+    Aws::String m_publicIpAddress;
+    bool m_publicIpAddressHasBeenSet;
+    Aws::String m_ramdiskId;
+    bool m_ramdiskIdHasBeenSet;
+    InstanceState m_state;
+    bool m_stateHasBeenSet;
+    Aws::String m_stateTransitionReason;
+    bool m_stateTransitionReasonHasBeenSet;
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
-    Aws::String m_publicIpAddress;
-    bool m_publicIpAddressHasBeenSet;
-    StateReason m_stateReason;
-    bool m_stateReasonHasBeenSet;
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet;
-    DeviceType m_rootDeviceType;
-    bool m_rootDeviceTypeHasBeenSet;
-    Aws::String m_rootDeviceName;
-    bool m_rootDeviceNameHasBeenSet;
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
-    VirtualizationType m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
-    InstanceLifecycleType m_instanceLifecycle;
-    bool m_instanceLifecycleHasBeenSet;
-    Aws::String m_spotInstanceRequestId;
-    bool m_spotInstanceRequestIdHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_ebsOptimized;
+    bool m_ebsOptimizedHasBeenSet;
+    bool m_enaSupport;
+    bool m_enaSupportHasBeenSet;
+    HypervisorType m_hypervisor;
+    bool m_hypervisorHasBeenSet;
+    IamInstanceProfile m_iamInstanceProfile;
+    bool m_iamInstanceProfileHasBeenSet;
+    InstanceLifecycleType m_instanceLifecycle;
+    bool m_instanceLifecycleHasBeenSet;
+    Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
+    Aws::String m_rootDeviceName;
+    bool m_rootDeviceNameHasBeenSet;
+    DeviceType m_rootDeviceType;
+    bool m_rootDeviceTypeHasBeenSet;
     Aws::Vector<GroupIdentifier> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
     bool m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
-    HypervisorType m_hypervisor;
-    bool m_hypervisorHasBeenSet;
-    Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
-    IamInstanceProfile m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
-    bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    Aws::String m_spotInstanceRequestId;
+    bool m_spotInstanceRequestIdHasBeenSet;
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
-    bool m_enaSupport;
-    bool m_enaSupportHasBeenSet;
+    StateReason m_stateReason;
+    bool m_stateReasonHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+    VirtualizationType m_virtualizationType;
+    bool m_virtualizationTypeHasBeenSet;
   };
 
 } // namespace Model

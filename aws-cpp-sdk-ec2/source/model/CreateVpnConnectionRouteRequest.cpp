@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpnConnectionRouteRequest::CreateVpnConnectionRouteRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false)
+    m_destinationCidrBlockHasBeenSet(false),
+    m_vpnConnectionIdHasBeenSet(false)
 {
 }
 
@@ -30,14 +30,14 @@ Aws::String CreateVpnConnectionRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpnConnectionRoute&";
-  if(m_vpnConnectionIdHasBeenSet)
-  {
-    ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
-  }
-
   if(m_destinationCidrBlockHasBeenSet)
   {
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
+  }
+
+  if(m_vpnConnectionIdHasBeenSet)
+  {
+    ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

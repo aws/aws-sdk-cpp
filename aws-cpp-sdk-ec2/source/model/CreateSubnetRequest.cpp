@@ -21,12 +21,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateSubnetRequest::CreateSubnetRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -34,14 +34,9 @@ Aws::String CreateSubnetRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSubnet&";
-  if(m_dryRunHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
   if(m_cidrBlockHasBeenSet)
@@ -54,9 +49,14 @@ Aws::String CreateSubnetRequest::SerializePayload() const
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

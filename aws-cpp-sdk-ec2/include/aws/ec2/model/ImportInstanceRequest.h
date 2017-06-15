@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/ImportInstanceLaunchSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ImportInstanceLaunchSpecification.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/DiskImage.h>
 #include <utility>
@@ -45,30 +45,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline ImportInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
     /**
      * <p>A description for the instance being imported.</p>
      */
@@ -103,31 +79,6 @@ namespace Model
      * <p>A description for the instance being imported.</p>
      */
     inline ImportInstanceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline const ImportInstanceLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
-
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline void SetLaunchSpecification(const ImportInstanceLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
-
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
-
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline ImportInstanceRequest& WithLaunchSpecification(const ImportInstanceLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
-
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
 
     /**
      * <p>The disk image.</p>
@@ -165,6 +116,55 @@ namespace Model
     inline ImportInstanceRequest& AddDiskImages(DiskImage&& value) { m_diskImagesHasBeenSet = true; m_diskImages.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline ImportInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline const ImportInstanceLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
+
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline void SetLaunchSpecification(const ImportInstanceLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
+
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
+
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline ImportInstanceRequest& WithLaunchSpecification(const ImportInstanceLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
+
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
+
+    /**
      * <p>The instance operating system.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
@@ -190,14 +190,14 @@ namespace Model
     inline ImportInstanceRequest& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    ImportInstanceLaunchSpecification m_launchSpecification;
-    bool m_launchSpecificationHasBeenSet;
     Aws::Vector<DiskImage> m_diskImages;
     bool m_diskImagesHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    ImportInstanceLaunchSpecification m_launchSpecification;
+    bool m_launchSpecificationHasBeenSet;
     PlatformValues m_platform;
     bool m_platformHasBeenSet;
   };

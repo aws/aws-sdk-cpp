@@ -31,20 +31,20 @@ namespace Model
 {
 
 VolumeStatusItem::VolumeStatusItem() : 
-    m_volumeIdHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_volumeIdHasBeenSet(false),
+    m_volumeStatusHasBeenSet(false)
 {
 }
 
 VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode) : 
-    m_volumeIdHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_volumeIdHasBeenSet(false),
+    m_volumeStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,23 +55,23 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
+    XmlNode actionsNode = resultNode.FirstChild("actionsSet");
+    if(!actionsNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-      m_volumeIdHasBeenSet = true;
+      XmlNode actionsMember = actionsNode.FirstChild("item");
+      while(!actionsMember.IsNull())
+      {
+        m_actions.push_back(actionsMember);
+        actionsMember = actionsMember.NextNode("item");
+      }
+
+      m_actionsHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
-    }
-    XmlNode volumeStatusNode = resultNode.FirstChild("volumeStatus");
-    if(!volumeStatusNode.IsNull())
-    {
-      m_volumeStatus = volumeStatusNode;
-      m_volumeStatusHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
@@ -85,17 +85,17 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
       m_eventsHasBeenSet = true;
     }
-    XmlNode actionsNode = resultNode.FirstChild("actionsSet");
-    if(!actionsNode.IsNull())
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
     {
-      XmlNode actionsMember = actionsNode.FirstChild("item");
-      while(!actionsMember.IsNull())
-      {
-        m_actions.push_back(actionsMember);
-        actionsMember = actionsMember.NextNode("item");
-      }
-
-      m_actionsHasBeenSet = true;
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
+    }
+    XmlNode volumeStatusNode = resultNode.FirstChild("volumeStatus");
+    if(!volumeStatusNode.IsNull())
+    {
+      m_volumeStatus = volumeStatusNode;
+      m_volumeStatusHasBeenSet = true;
     }
   }
 
@@ -104,21 +104,20 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_volumeIdHasBeenSet)
+  if(m_actionsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+      unsigned actionsIdx = 1;
+      for(auto& item : m_actions)
+      {
+        Aws::StringStream actionsSs;
+        actionsSs << location << index << locationValue << ".ActionsSet." << actionsIdx++;
+        item.OutputToStream(oStream, actionsSs.str().c_str());
+      }
   }
 
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
-  if(m_volumeStatusHasBeenSet)
-  {
-      Aws::StringStream volumeStatusLocationAndMemberSs;
-      volumeStatusLocationAndMemberSs << location << index << locationValue << ".VolumeStatus";
-      m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMemberSs.str().c_str());
   }
 
   if(m_eventsHasBeenSet)
@@ -132,34 +131,35 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
-  if(m_actionsHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      unsigned actionsIdx = 1;
-      for(auto& item : m_actions)
-      {
-        Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".ActionsSet." << actionsIdx++;
-        item.OutputToStream(oStream, actionsSs.str().c_str());
-      }
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_volumeStatusHasBeenSet)
+  {
+      Aws::StringStream volumeStatusLocationAndMemberSs;
+      volumeStatusLocationAndMemberSs << location << index << locationValue << ".VolumeStatus";
+      m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMemberSs.str().c_str());
   }
 
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_volumeIdHasBeenSet)
+  if(m_actionsHasBeenSet)
   {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+      unsigned actionsIdx = 1;
+      for(auto& item : m_actions)
+      {
+        Aws::StringStream actionsSs;
+        actionsSs << location <<  ".ActionsSet." << actionsIdx++;
+        item.OutputToStream(oStream, actionsSs.str().c_str());
+      }
   }
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-  if(m_volumeStatusHasBeenSet)
-  {
-      Aws::String volumeStatusLocationAndMember(location);
-      volumeStatusLocationAndMember += ".VolumeStatus";
-      m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMember.c_str());
   }
   if(m_eventsHasBeenSet)
   {
@@ -171,15 +171,15 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
-  if(m_actionsHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      unsigned actionsIdx = 1;
-      for(auto& item : m_actions)
-      {
-        Aws::StringStream actionsSs;
-        actionsSs << location <<  ".ActionsSet." << actionsIdx++;
-        item.OutputToStream(oStream, actionsSs.str().c_str());
-      }
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_volumeStatusHasBeenSet)
+  {
+      Aws::String volumeStatusLocationAndMember(location);
+      volumeStatusLocationAndMember += ".VolumeStatus";
+      m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMember.c_str());
   }
 }
 

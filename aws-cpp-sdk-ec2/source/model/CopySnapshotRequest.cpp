@@ -21,16 +21,16 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CopySnapshotRequest::CopySnapshotRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceSnapshotIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_destinationRegionHasBeenSet(false),
-    m_presignedUrlHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_presignedUrlHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false),
+    m_sourceSnapshotIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -38,9 +38,29 @@ Aws::String CopySnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopySnapshot&";
-  if(m_dryRunHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_destinationRegionHasBeenSet)
+  {
+    ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_presignedUrlHasBeenSet)
+  {
+    ss << "PresignedUrl=" << StringUtils::URLEncode(m_presignedUrl.c_str()) << "&";
   }
 
   if(m_sourceRegionHasBeenSet)
@@ -53,29 +73,9 @@ Aws::String CopySnapshotRequest::SerializePayload() const
     ss << "SourceSnapshotId=" << StringUtils::URLEncode(m_sourceSnapshotId.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
-  if(m_destinationRegionHasBeenSet)
-  {
-    ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
-  }
-
-  if(m_presignedUrlHasBeenSet)
-  {
-    ss << "PresignedUrl=" << StringUtils::URLEncode(m_presignedUrl.c_str()) << "&";
-  }
-
-  if(m_encryptedHasBeenSet)
-  {
-    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-
-  if(m_kmsKeyIdHasBeenSet)
-  {
-    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

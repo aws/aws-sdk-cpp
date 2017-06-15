@@ -53,15 +53,15 @@ GetPasswordDataResponse& GetPasswordDataResponse::operator =(const AmazonWebServ
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
     }
-    XmlNode timestampNode = resultNode.FirstChild("timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-    }
     XmlNode passwordDataNode = resultNode.FirstChild("passwordData");
     if(!passwordDataNode.IsNull())
     {
       m_passwordData = StringUtils::Trim(passwordDataNode.GetText().c_str());
+    }
+    XmlNode timestampNode = resultNode.FirstChild("timestamp");
+    if(!timestampNode.IsNull())
+    {
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

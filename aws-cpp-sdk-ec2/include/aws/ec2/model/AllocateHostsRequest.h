@@ -78,6 +78,41 @@ namespace Model
     inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
     /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline AllocateHostsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+    /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
@@ -207,52 +242,17 @@ namespace Model
      */
     inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline AllocateHostsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone for the Dedicated Hosts.</p>
-     */
-    inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-
   private:
     AutoPlacement m_autoPlacement;
     bool m_autoPlacementHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
     int m_quantity;
     bool m_quantityHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
   };
 
 } // namespace Model

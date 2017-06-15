@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/RIProductDescription.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -51,6 +51,41 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline SpotPrice& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline SpotPrice& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline SpotPrice& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
@@ -167,42 +202,9 @@ namespace Model
      */
     inline SpotPrice& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline SpotPrice& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline SpotPrice& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone.</p>
-     */
-    inline SpotPrice& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-
   private:
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
     RIProductDescription m_productDescription;
@@ -211,8 +213,6 @@ namespace Model
     bool m_spotPriceHasBeenSet;
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
   };
 
 } // namespace Model

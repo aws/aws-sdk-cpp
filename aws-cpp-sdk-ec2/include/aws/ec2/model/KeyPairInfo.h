@@ -49,41 +49,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the key pair.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline KeyPairInfo& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
-    /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
      * provide AWS the public key, this is the MD5 public key fingerprint as specified
@@ -139,11 +104,46 @@ namespace Model
      */
     inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
   private:
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
     Aws::String m_keyFingerprint;
     bool m_keyFingerprintHasBeenSet;
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet;
   };
 
 } // namespace Model

@@ -32,17 +32,17 @@ namespace Model
 
 ScheduledInstancesBlockDeviceMapping::ScheduledInstancesBlockDeviceMapping() : 
     m_deviceNameHasBeenSet(false),
+    m_ebsHasBeenSet(false),
     m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
+    m_virtualNameHasBeenSet(false)
 {
 }
 
 ScheduledInstancesBlockDeviceMapping::ScheduledInstancesBlockDeviceMapping(const XmlNode& xmlNode) : 
     m_deviceNameHasBeenSet(false),
+    m_ebsHasBeenSet(false),
     m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
+    m_virtualNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +59,12 @@ ScheduledInstancesBlockDeviceMapping& ScheduledInstancesBlockDeviceMapping::oper
       m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
       m_deviceNameHasBeenSet = true;
     }
+    XmlNode ebsNode = resultNode.FirstChild("Ebs");
+    if(!ebsNode.IsNull())
+    {
+      m_ebs = ebsNode;
+      m_ebsHasBeenSet = true;
+    }
     XmlNode noDeviceNode = resultNode.FirstChild("NoDevice");
     if(!noDeviceNode.IsNull())
     {
@@ -70,12 +76,6 @@ ScheduledInstancesBlockDeviceMapping& ScheduledInstancesBlockDeviceMapping::oper
     {
       m_virtualName = StringUtils::Trim(virtualNameNode.GetText().c_str());
       m_virtualNameHasBeenSet = true;
-    }
-    XmlNode ebsNode = resultNode.FirstChild("Ebs");
-    if(!ebsNode.IsNull())
-    {
-      m_ebs = ebsNode;
-      m_ebsHasBeenSet = true;
     }
   }
 
@@ -89,6 +89,13 @@ void ScheduledInstancesBlockDeviceMapping::OutputToStream(Aws::OStream& oStream,
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
 
+  if(m_ebsHasBeenSet)
+  {
+      Aws::StringStream ebsLocationAndMemberSs;
+      ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
+      m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << index << locationValue << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
@@ -99,13 +106,6 @@ void ScheduledInstancesBlockDeviceMapping::OutputToStream(Aws::OStream& oStream,
       oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
 
-  if(m_ebsHasBeenSet)
-  {
-      Aws::StringStream ebsLocationAndMemberSs;
-      ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
-      m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
-  }
-
 }
 
 void ScheduledInstancesBlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -114,6 +114,12 @@ void ScheduledInstancesBlockDeviceMapping::OutputToStream(Aws::OStream& oStream,
   {
       oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+  if(m_ebsHasBeenSet)
+  {
+      Aws::String ebsLocationAndMember(location);
+      ebsLocationAndMember += ".Ebs";
+      m_ebs.OutputToStream(oStream, ebsLocationAndMember.c_str());
+  }
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
@@ -121,12 +127,6 @@ void ScheduledInstancesBlockDeviceMapping::OutputToStream(Aws::OStream& oStream,
   if(m_virtualNameHasBeenSet)
   {
       oStream << location << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
-  }
-  if(m_ebsHasBeenSet)
-  {
-      Aws::String ebsLocationAndMember(location);
-      ebsLocationAndMember += ".Ebs";
-      m_ebs.OutputToStream(oStream, ebsLocationAndMember.c_str());
   }
 }
 

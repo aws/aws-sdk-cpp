@@ -31,20 +31,20 @@ namespace Model
 {
 
 InstanceStatusDetails::InstanceStatusDetails() : 
+    m_impairedSinceHasBeenSet(false),
     m_name(StatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_impairedSinceHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
 InstanceStatusDetails::InstanceStatusDetails(const XmlNode& xmlNode) : 
+    m_impairedSinceHasBeenSet(false),
     m_name(StatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_impairedSinceHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +55,12 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode impairedSinceNode = resultNode.FirstChild("impairedSince");
+    if(!impairedSinceNode.IsNull())
+    {
+      m_impairedSince = DateTime(StringUtils::Trim(impairedSinceNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_impairedSinceHasBeenSet = true;
+    }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
@@ -67,12 +73,6 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
       m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode impairedSinceNode = resultNode.FirstChild("impairedSince");
-    if(!impairedSinceNode.IsNull())
-    {
-      m_impairedSince = DateTime(StringUtils::Trim(impairedSinceNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_impairedSinceHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -80,6 +80,11 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
 
 void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_impairedSinceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << StatusNameMapper::GetNameForStatusName(m_name) << "&";
@@ -90,15 +95,14 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
 
-  if(m_impairedSinceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
 }
 
 void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_impairedSinceHasBeenSet)
+  {
+      oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_nameHasBeenSet)
   {
       oStream << location << ".Name=" << StatusNameMapper::GetNameForStatusName(m_name) << "&";
@@ -106,10 +110,6 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
-  }
-  if(m_impairedSinceHasBeenSet)
-  {
-      oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

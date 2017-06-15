@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeBundleTasksRequest::DescribeBundleTasksRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_bundleIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,11 +32,6 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeBundleTasks&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_bundleIdsHasBeenSet)
   {
     unsigned bundleIdsCount = 1;
@@ -56,6 +51,11 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

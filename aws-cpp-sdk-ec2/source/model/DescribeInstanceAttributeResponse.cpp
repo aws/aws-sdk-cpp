@@ -48,45 +48,16 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
+    if(!groupsNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-    }
-    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
-    if(!instanceTypeNode.IsNull())
-    {
-      m_instanceType = instanceTypeNode;
-    }
-    XmlNode kernelIdNode = resultNode.FirstChild("kernel");
-    if(!kernelIdNode.IsNull())
-    {
-      m_kernelId = kernelIdNode;
-    }
-    XmlNode ramdiskIdNode = resultNode.FirstChild("ramdisk");
-    if(!ramdiskIdNode.IsNull())
-    {
-      m_ramdiskId = ramdiskIdNode;
-    }
-    XmlNode userDataNode = resultNode.FirstChild("userData");
-    if(!userDataNode.IsNull())
-    {
-      m_userData = userDataNode;
-    }
-    XmlNode disableApiTerminationNode = resultNode.FirstChild("disableApiTermination");
-    if(!disableApiTerminationNode.IsNull())
-    {
-      m_disableApiTermination = disableApiTerminationNode;
-    }
-    XmlNode instanceInitiatedShutdownBehaviorNode = resultNode.FirstChild("instanceInitiatedShutdownBehavior");
-    if(!instanceInitiatedShutdownBehaviorNode.IsNull())
-    {
-      m_instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehaviorNode;
-    }
-    XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
-    if(!rootDeviceNameNode.IsNull())
-    {
-      m_rootDeviceName = rootDeviceNameNode;
+      XmlNode groupsMember = groupsNode.FirstChild("item");
+      while(!groupsMember.IsNull())
+      {
+        m_groups.push_back(groupsMember);
+        groupsMember = groupsMember.NextNode("item");
+      }
+
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
@@ -99,6 +70,41 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
       }
 
     }
+    XmlNode disableApiTerminationNode = resultNode.FirstChild("disableApiTermination");
+    if(!disableApiTerminationNode.IsNull())
+    {
+      m_disableApiTermination = disableApiTerminationNode;
+    }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = enaSupportNode;
+    }
+    XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
+    if(!ebsOptimizedNode.IsNull())
+    {
+      m_ebsOptimized = ebsOptimizedNode;
+    }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+    }
+    XmlNode instanceInitiatedShutdownBehaviorNode = resultNode.FirstChild("instanceInitiatedShutdownBehavior");
+    if(!instanceInitiatedShutdownBehaviorNode.IsNull())
+    {
+      m_instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehaviorNode;
+    }
+    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
+    if(!instanceTypeNode.IsNull())
+    {
+      m_instanceType = instanceTypeNode;
+    }
+    XmlNode kernelIdNode = resultNode.FirstChild("kernel");
+    if(!kernelIdNode.IsNull())
+    {
+      m_kernelId = kernelIdNode;
+    }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
@@ -110,36 +116,30 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
       }
 
     }
-    XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
-    if(!ebsOptimizedNode.IsNull())
+    XmlNode ramdiskIdNode = resultNode.FirstChild("ramdisk");
+    if(!ramdiskIdNode.IsNull())
     {
-      m_ebsOptimized = ebsOptimizedNode;
+      m_ramdiskId = ramdiskIdNode;
     }
-    XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
-    if(!sriovNetSupportNode.IsNull())
+    XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
+    if(!rootDeviceNameNode.IsNull())
     {
-      m_sriovNetSupport = sriovNetSupportNode;
-    }
-    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
-    if(!enaSupportNode.IsNull())
-    {
-      m_enaSupport = enaSupportNode;
+      m_rootDeviceName = rootDeviceNameNode;
     }
     XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
     if(!sourceDestCheckNode.IsNull())
     {
       m_sourceDestCheck = sourceDestCheckNode;
     }
-    XmlNode groupsNode = resultNode.FirstChild("groupSet");
-    if(!groupsNode.IsNull())
+    XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
+    if(!sriovNetSupportNode.IsNull())
     {
-      XmlNode groupsMember = groupsNode.FirstChild("item");
-      while(!groupsMember.IsNull())
-      {
-        m_groups.push_back(groupsMember);
-        groupsMember = groupsMember.NextNode("item");
-      }
-
+      m_sriovNetSupport = sriovNetSupportNode;
+    }
+    XmlNode userDataNode = resultNode.FirstChild("userData");
+    if(!userDataNode.IsNull())
+    {
+      m_userData = userDataNode;
     }
   }
 

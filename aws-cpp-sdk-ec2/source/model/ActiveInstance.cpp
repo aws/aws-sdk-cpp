@@ -31,8 +31,8 @@ namespace Model
 {
 
 ActiveInstance::ActiveInstance() : 
-    m_instanceTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_spotInstanceRequestIdHasBeenSet(false),
     m_instanceHealth(InstanceHealthStatus::NOT_SET),
     m_instanceHealthHasBeenSet(false)
@@ -40,8 +40,8 @@ ActiveInstance::ActiveInstance() :
 }
 
 ActiveInstance::ActiveInstance(const XmlNode& xmlNode) : 
-    m_instanceTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_spotInstanceRequestIdHasBeenSet(false),
     m_instanceHealth(InstanceHealthStatus::NOT_SET),
     m_instanceHealthHasBeenSet(false)
@@ -55,17 +55,17 @@ ActiveInstance& ActiveInstance::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
-    if(!instanceTypeNode.IsNull())
-    {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
-      m_instanceTypeHasBeenSet = true;
-    }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
       m_instanceIdHasBeenSet = true;
+    }
+    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
+    if(!instanceTypeNode.IsNull())
+    {
+      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceTypeHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
@@ -86,14 +86,14 @@ ActiveInstance& ActiveInstance::operator =(const XmlNode& xmlNode)
 
 void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
-  }
-
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 
   if(m_spotInstanceRequestIdHasBeenSet)
@@ -110,13 +110,13 @@ void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location,
 
 void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
-  }
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
   if(m_spotInstanceRequestIdHasBeenSet)
   {

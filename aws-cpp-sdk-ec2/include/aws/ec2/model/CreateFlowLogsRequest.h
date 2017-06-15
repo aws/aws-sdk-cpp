@@ -16,10 +16,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/TrafficType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,139 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateFlowLogsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
+     * log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch log group.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
      * Maximum of 1000 resources</p>
@@ -142,152 +275,19 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
-     * log group.</p>
-     */
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline CreateFlowLogsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
-     */
-    inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
   private:
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
+    Aws::String m_deliverLogsPermissionArn;
+    bool m_deliverLogsPermissionArnHasBeenSet;
+    Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
     FlowLogsResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
     TrafficType m_trafficType;
     bool m_trafficTypeHasBeenSet;
-    Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
-    Aws::String m_deliverLogsPermissionArn;
-    bool m_deliverLogsPermissionArnHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

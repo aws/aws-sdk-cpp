@@ -21,14 +21,14 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyVpcEndpointRequest::ModifyVpcEndpointRequest() : 
+    m_addRouteTableIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
+    m_policyDocumentHasBeenSet(false),
+    m_removeRouteTableIdsHasBeenSet(false),
     m_resetPolicy(false),
     m_resetPolicyHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false)
+    m_vpcEndpointIdHasBeenSet(false)
 {
 }
 
@@ -36,26 +36,6 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcEndpoint&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-    ss << "VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
-  }
-
-  if(m_resetPolicyHasBeenSet)
-  {
-    ss << "ResetPolicy=" << std::boolalpha << m_resetPolicy << "&";
-  }
-
-  if(m_policyDocumentHasBeenSet)
-  {
-    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
-  }
-
   if(m_addRouteTableIdsHasBeenSet)
   {
     unsigned addRouteTableIdsCount = 1;
@@ -67,6 +47,16 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
     }
   }
 
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_policyDocumentHasBeenSet)
+  {
+    ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
+  }
+
   if(m_removeRouteTableIdsHasBeenSet)
   {
     unsigned removeRouteTableIdsCount = 1;
@@ -76,6 +66,16 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeRouteTableIdsCount++;
     }
+  }
+
+  if(m_resetPolicyHasBeenSet)
+  {
+    ss << "ResetPolicy=" << std::boolalpha << m_resetPolicy << "&";
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+    ss << "VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

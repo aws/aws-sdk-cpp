@@ -49,6 +49,24 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
+    inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
+    inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
+    /**
      * <p>The states of the listed Reserved Instances.</p>
      */
     inline const ListingState& GetState() const{ return m_state; }
@@ -73,29 +91,11 @@ namespace Model
      */
     inline InstanceCount& WithState(ListingState&& value) { SetState(std::move(value)); return *this;}
 
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
-    inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-
   private:
-    ListingState m_state;
-    bool m_stateHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+    ListingState m_state;
+    bool m_stateHasBeenSet;
   };
 
 } // namespace Model

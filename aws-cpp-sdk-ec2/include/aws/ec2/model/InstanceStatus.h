@@ -53,41 +53,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline InstanceStatus& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline InstanceStatus& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline InstanceStatus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
-    /**
      * <p>The Availability Zone of the instance.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -158,6 +123,41 @@ namespace Model
     inline InstanceStatus& AddEvents(InstanceStatusEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>The ID of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline InstanceStatus& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline InstanceStatus& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline InstanceStatus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
      * <p>The intended state of the instance. <a>DescribeInstanceStatus</a> requires
      * that an instance be in the <code>running</code> state.</p>
      */
@@ -186,6 +186,36 @@ namespace Model
      * that an instance be in the <code>running</code> state.</p>
      */
     inline InstanceStatus& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline const InstanceStatusSummary& GetInstanceStatus() const{ return m_instanceStatus; }
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline void SetInstanceStatus(const InstanceStatusSummary& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline void SetInstanceStatus(InstanceStatusSummary&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline InstanceStatus& WithInstanceStatus(const InstanceStatusSummary& value) { SetInstanceStatus(value); return *this;}
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline InstanceStatus& WithInstanceStatus(InstanceStatusSummary&& value) { SetInstanceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Reports impaired functionality that stems from issues related to the systems
@@ -222,49 +252,19 @@ namespace Model
      */
     inline InstanceStatus& WithSystemStatus(InstanceStatusSummary&& value) { SetSystemStatus(std::move(value)); return *this;}
 
-    /**
-     * <p>Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.</p>
-     */
-    inline const InstanceStatusSummary& GetInstanceStatus() const{ return m_instanceStatus; }
-
-    /**
-     * <p>Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.</p>
-     */
-    inline void SetInstanceStatus(const InstanceStatusSummary& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
-
-    /**
-     * <p>Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.</p>
-     */
-    inline void SetInstanceStatus(InstanceStatusSummary&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
-
-    /**
-     * <p>Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.</p>
-     */
-    inline InstanceStatus& WithInstanceStatus(const InstanceStatusSummary& value) { SetInstanceStatus(value); return *this;}
-
-    /**
-     * <p>Reports impaired functionality that stems from issues internal to the
-     * instance, such as impaired reachability.</p>
-     */
-    inline InstanceStatus& WithInstanceStatus(InstanceStatusSummary&& value) { SetInstanceStatus(std::move(value)); return *this;}
-
   private:
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
     Aws::Vector<InstanceStatusEvent> m_events;
     bool m_eventsHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
     InstanceState m_instanceState;
     bool m_instanceStateHasBeenSet;
-    InstanceStatusSummary m_systemStatus;
-    bool m_systemStatusHasBeenSet;
     InstanceStatusSummary m_instanceStatus;
     bool m_instanceStatusHasBeenSet;
+    InstanceStatusSummary m_systemStatus;
+    bool m_systemStatusHasBeenSet;
   };
 
 } // namespace Model

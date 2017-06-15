@@ -21,8 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DisableVgwRoutePropagationRequest::DisableVgwRoutePropagationRequest() : 
-    m_routeTableIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false)
+    m_gatewayIdHasBeenSet(false),
+    m_routeTableIdHasBeenSet(false)
 {
 }
 
@@ -30,14 +30,14 @@ Aws::String DisableVgwRoutePropagationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DisableVgwRoutePropagation&";
-  if(m_routeTableIdHasBeenSet)
-  {
-    ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
-  }
-
   if(m_gatewayIdHasBeenSet)
   {
     ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
+  }
+
+  if(m_routeTableIdHasBeenSet)
+  {
+    ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

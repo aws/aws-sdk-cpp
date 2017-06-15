@@ -31,20 +31,20 @@ namespace Model
 {
 
 AvailabilityZone::AvailabilityZone() : 
-    m_zoneNameHasBeenSet(false),
     m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_messagesHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_messagesHasBeenSet(false)
+    m_zoneNameHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_zoneNameHasBeenSet(false),
     m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_messagesHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_messagesHasBeenSet(false)
+    m_zoneNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,23 +55,11 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode zoneNameNode = resultNode.FirstChild("zoneName");
-    if(!zoneNameNode.IsNull())
-    {
-      m_zoneName = StringUtils::Trim(zoneNameNode.GetText().c_str());
-      m_zoneNameHasBeenSet = true;
-    }
     XmlNode stateNode = resultNode.FirstChild("zoneState");
     if(!stateNode.IsNull())
     {
       m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
-    }
-    XmlNode regionNameNode = resultNode.FirstChild("regionName");
-    if(!regionNameNode.IsNull())
-    {
-      m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
-      m_regionNameHasBeenSet = true;
     }
     XmlNode messagesNode = resultNode.FirstChild("messageSet");
     if(!messagesNode.IsNull())
@@ -85,6 +73,18 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
       m_messagesHasBeenSet = true;
     }
+    XmlNode regionNameNode = resultNode.FirstChild("regionName");
+    if(!regionNameNode.IsNull())
+    {
+      m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
+      m_regionNameHasBeenSet = true;
+    }
+    XmlNode zoneNameNode = resultNode.FirstChild("zoneName");
+    if(!zoneNameNode.IsNull())
+    {
+      m_zoneName = StringUtils::Trim(zoneNameNode.GetText().c_str());
+      m_zoneNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -92,19 +92,9 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_zoneNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
-  }
-
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
-  }
-
-  if(m_regionNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
 
   if(m_messagesHasBeenSet)
@@ -118,21 +108,23 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_regionNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
+  }
+
+  if(m_zoneNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_zoneNameHasBeenSet)
-  {
-      oStream << location << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
-  }
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
-  }
-  if(m_regionNameHasBeenSet)
-  {
-      oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
   if(m_messagesHasBeenSet)
   {
@@ -143,6 +135,14 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
         messagesSs << location <<  ".MessageSet." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
+  }
+  if(m_regionNameHasBeenSet)
+  {
+      oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
+  }
+  if(m_zoneNameHasBeenSet)
+  {
+      oStream << location << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
   }
 }
 

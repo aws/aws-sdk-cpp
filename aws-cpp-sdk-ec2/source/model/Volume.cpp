@@ -31,45 +31,45 @@ namespace Model
 {
 
 Volume::Volume() : 
-    m_volumeIdHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_state(VolumeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_size(0),
+    m_sizeHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_state(VolumeState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
+    m_volumeTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
 
 Volume::Volume(const XmlNode& xmlNode) : 
-    m_volumeIdHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_state(VolumeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_size(0),
+    m_sizeHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_state(VolumeState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
+    m_volumeTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -81,11 +81,41 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
+    XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
+    if(!attachmentsNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-      m_volumeIdHasBeenSet = true;
+      XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      while(!attachmentsMember.IsNull())
+      {
+        m_attachments.push_back(attachmentsMember);
+        attachmentsMember = attachmentsMember.NextNode("item");
+      }
+
+      m_attachmentsHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode createTimeNode = resultNode.FirstChild("createTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
+    }
+    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+      m_encryptedHasBeenSet = true;
+    }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");
     if(!sizeNode.IsNull())
@@ -99,35 +129,23 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
       m_snapshotIdHasBeenSet = true;
     }
-    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
-      m_availabilityZoneHasBeenSet = true;
-    }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
       m_state = VolumeStateMapper::GetVolumeStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
     }
-    XmlNode createTimeNode = resultNode.FirstChild("createTime");
-    if(!createTimeNode.IsNull())
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_createTimeHasBeenSet = true;
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
     }
-    XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
-    if(!attachmentsNode.IsNull())
+    XmlNode iopsNode = resultNode.FirstChild("iops");
+    if(!iopsNode.IsNull())
     {
-      XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
-      while(!attachmentsMember.IsNull())
-      {
-        m_attachments.push_back(attachmentsMember);
-        attachmentsMember = attachmentsMember.NextNode("item");
-      }
-
-      m_attachmentsHasBeenSet = true;
+      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
+      m_iopsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -147,24 +165,6 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(volumeTypeNode.GetText().c_str()).c_str());
       m_volumeTypeHasBeenSet = true;
     }
-    XmlNode iopsNode = resultNode.FirstChild("iops");
-    if(!iopsNode.IsNull())
-    {
-      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
-      m_iopsHasBeenSet = true;
-    }
-    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
-    if(!encryptedNode.IsNull())
-    {
-      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
-      m_encryptedHasBeenSet = true;
-    }
-    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
-    if(!kmsKeyIdNode.IsNull())
-    {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
-      m_kmsKeyIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -172,9 +172,35 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
 
 void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_volumeIdHasBeenSet)
+  if(m_attachmentsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+      unsigned attachmentsIdx = 1;
+      for(auto& item : m_attachments)
+      {
+        Aws::StringStream attachmentsSs;
+        attachmentsSs << location << index << locationValue << ".AttachmentSet." << attachmentsIdx++;
+        item.OutputToStream(oStream, attachmentsSs.str().c_str());
+      }
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   if(m_sizeHasBeenSet)
@@ -187,30 +213,19 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
   }
 
-  if(m_createTimeHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
-  if(m_attachmentsHasBeenSet)
+  if(m_iopsHasBeenSet)
   {
-      unsigned attachmentsIdx = 1;
-      for(auto& item : m_attachments)
-      {
-        Aws::StringStream attachmentsSs;
-        attachmentsSs << location << index << locationValue << ".AttachmentSet." << attachmentsIdx++;
-        item.OutputToStream(oStream, attachmentsSs.str().c_str());
-      }
+      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -229,21 +244,6 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
-  if(m_iopsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
-  }
-
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -255,30 +255,6 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
 void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_volumeIdHasBeenSet)
-  {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-  if(m_sizeHasBeenSet)
-  {
-      oStream << location << ".Size=" << m_size << "&";
-  }
-  if(m_snapshotIdHasBeenSet)
-  {
-      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
-  }
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
-  }
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -288,6 +264,42 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
         attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_sizeHasBeenSet)
+  {
+      oStream << location << ".Size=" << m_size << "&";
+  }
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
+  }
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << ".Iops=" << m_iops << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -302,18 +314,6 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
-  }
-  if(m_iopsHasBeenSet)
-  {
-      oStream << location << ".Iops=" << m_iops << "&";
-  }
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

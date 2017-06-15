@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PermissionGroup.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +48,31 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline const PermissionGroup& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline LaunchPermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline LaunchPermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID.</p>
@@ -84,36 +109,11 @@ namespace Model
      */
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline const PermissionGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline LaunchPermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline LaunchPermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
-
   private:
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet;
     PermissionGroup m_group;
     bool m_groupHasBeenSet;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet;
   };
 
 } // namespace Model

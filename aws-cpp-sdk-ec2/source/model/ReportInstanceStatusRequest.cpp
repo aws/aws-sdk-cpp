@@ -21,15 +21,15 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ReportInstanceStatusRequest::ReportInstanceStatusRequest() : 
+    m_descriptionHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_status(ReportStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_instancesHasBeenSet(false),
     m_reasonCodesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_status(ReportStatusType::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -37,9 +37,19 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ReportInstanceStatus&";
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_instancesHasBeenSet)
@@ -53,21 +63,6 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     }
   }
 
-  if(m_statusHasBeenSet)
-  {
-    ss << "Status=" << ReportStatusTypeMapper::GetNameForReportStatusType(m_status) << "&";
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_endTimeHasBeenSet)
-  {
-    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
   if(m_reasonCodesHasBeenSet)
   {
     unsigned reasonCodesCount = 1;
@@ -79,9 +74,14 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     }
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_statusHasBeenSet)
+  {
+    ss << "Status=" << ReportStatusTypeMapper::GetNameForReportStatusType(m_status) << "&";
   }
 
   ss << "Version=2016-11-15";

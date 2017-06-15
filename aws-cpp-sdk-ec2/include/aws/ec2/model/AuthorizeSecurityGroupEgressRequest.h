@@ -104,6 +104,174 @@ namespace Model
     inline AuthorizeSecurityGroupEgressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
     /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
+
+    /**
+     * <p>A set of IP permissions. You can't specify a destination security group and a
+     * CIDR IP address range.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline int GetFromPort() const{ return m_fromPort; }
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
+     */
+    inline AuthorizeSecurityGroupEgressRequest& WithToPort(int value) { SetToPort(value); return *this;}
+
+    /**
      * <p>The name of a destination security group. To authorize outbound access to a
      * destination security group, we recommend that you use a set of IP permissions
      * instead.</p>
@@ -201,193 +369,25 @@ namespace Model
      */
     inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP protocol name or number. We recommend that you specify the protocol in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
-     * We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
-     * We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
-     * We recommend that you specify the port range in a set of IP permissions
-     * instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithToPort(int value) { SetToPort(value); return *this;}
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
-     * a set of IP permissions instead.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
-
-    /**
-     * <p>A set of IP permissions. You can't specify a destination security group and a
-     * CIDR IP address range.</p>
-     */
-    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
-
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+    Aws::Vector<IpPermission> m_ipPermissions;
+    bool m_ipPermissionsHasBeenSet;
+    Aws::String m_cidrIp;
+    bool m_cidrIpHasBeenSet;
+    int m_fromPort;
+    bool m_fromPortHasBeenSet;
+    Aws::String m_ipProtocol;
+    bool m_ipProtocolHasBeenSet;
+    int m_toPort;
+    bool m_toPortHasBeenSet;
     Aws::String m_sourceSecurityGroupName;
     bool m_sourceSecurityGroupNameHasBeenSet;
     Aws::String m_sourceSecurityGroupOwnerId;
     bool m_sourceSecurityGroupOwnerIdHasBeenSet;
-    Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
-    int m_fromPort;
-    bool m_fromPortHasBeenSet;
-    int m_toPort;
-    bool m_toPortHasBeenSet;
-    Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
-    Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
   };
 
 } // namespace Model

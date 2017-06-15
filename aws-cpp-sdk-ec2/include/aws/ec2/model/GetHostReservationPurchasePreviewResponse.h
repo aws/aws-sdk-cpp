@@ -15,9 +15,9 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Purchase.h>
 #include <utility>
@@ -44,6 +44,41 @@ namespace Model
     GetHostReservationPurchasePreviewResponse();
     GetHostReservationPurchasePreviewResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetHostReservationPurchasePreviewResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code> and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code> and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCode = value; }
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code> and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCode = std::move(value); }
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code> and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline GetHostReservationPurchasePreviewResponse& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code> and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline GetHostReservationPurchasePreviewResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
@@ -88,41 +123,6 @@ namespace Model
     inline GetHostReservationPurchasePreviewResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline const Aws::String& GetTotalUpfrontPrice() const{ return m_totalUpfrontPrice; }
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline void SetTotalUpfrontPrice(const Aws::String& value) { m_totalUpfrontPrice = value; }
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline void SetTotalUpfrontPrice(Aws::String&& value) { m_totalUpfrontPrice = std::move(value); }
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline void SetTotalUpfrontPrice(const char* value) { m_totalUpfrontPrice.assign(value); }
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(const Aws::String& value) { SetTotalUpfrontPrice(value); return *this;}
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(Aws::String&& value) { SetTotalUpfrontPrice(std::move(value)); return *this;}
-
-    /**
-     * <p>The potential total upfront price. This is billed immediately.</p>
-     */
-    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(const char* value) { SetTotalUpfrontPrice(value); return *this;}
-
-    /**
      * <p>The potential total hourly price of the reservation per hour.</p>
      */
     inline const Aws::String& GetTotalHourlyPrice() const{ return m_totalHourlyPrice; }
@@ -158,39 +158,39 @@ namespace Model
     inline GetHostReservationPurchasePreviewResponse& WithTotalHourlyPrice(const char* value) { SetTotalHourlyPrice(value); return *this;}
 
     /**
-     * <p>The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.</p>
+     * <p>The potential total upfront price. This is billed immediately.</p>
      */
-    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetTotalUpfrontPrice() const{ return m_totalUpfrontPrice; }
 
     /**
-     * <p>The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.</p>
+     * <p>The potential total upfront price. This is billed immediately.</p>
      */
-    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCode = value; }
+    inline void SetTotalUpfrontPrice(const Aws::String& value) { m_totalUpfrontPrice = value; }
 
     /**
-     * <p>The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.</p>
+     * <p>The potential total upfront price. This is billed immediately.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCode = std::move(value); }
+    inline void SetTotalUpfrontPrice(Aws::String&& value) { m_totalUpfrontPrice = std::move(value); }
 
     /**
-     * <p>The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.</p>
+     * <p>The potential total upfront price. This is billed immediately.</p>
      */
-    inline GetHostReservationPurchasePreviewResponse& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
+    inline void SetTotalUpfrontPrice(const char* value) { m_totalUpfrontPrice.assign(value); }
 
     /**
-     * <p>The currency in which the <code>totalUpfrontPrice</code> and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-     * supported currency is <code>USD</code>.</p>
+     * <p>The potential total upfront price. This is billed immediately.</p>
      */
-    inline GetHostReservationPurchasePreviewResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(const Aws::String& value) { SetTotalUpfrontPrice(value); return *this;}
+
+    /**
+     * <p>The potential total upfront price. This is billed immediately.</p>
+     */
+    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(Aws::String&& value) { SetTotalUpfrontPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The potential total upfront price. This is billed immediately.</p>
+     */
+    inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(const char* value) { SetTotalUpfrontPrice(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -208,10 +208,10 @@ namespace Model
     inline GetHostReservationPurchasePreviewResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<Purchase> m_purchase;
-    Aws::String m_totalUpfrontPrice;
-    Aws::String m_totalHourlyPrice;
     CurrencyCodeValues m_currencyCode;
+    Aws::Vector<Purchase> m_purchase;
+    Aws::String m_totalHourlyPrice;
+    Aws::String m_totalUpfrontPrice;
     ResponseMetadata m_responseMetadata;
   };
 

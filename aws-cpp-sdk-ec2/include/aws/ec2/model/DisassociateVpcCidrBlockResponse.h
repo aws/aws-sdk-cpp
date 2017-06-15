@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -42,6 +42,31 @@ namespace Model
     DisassociateVpcCidrBlockResponse();
     DisassociateVpcCidrBlockResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DisassociateVpcCidrBlockResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline const VpcIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline void SetIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline void SetIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline DisassociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline DisassociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -78,31 +103,6 @@ namespace Model
      */
     inline DisassociateVpcCidrBlockResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline const VpcIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline void SetIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline void SetIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline DisassociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline DisassociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -119,8 +119,8 @@ namespace Model
     inline DisassociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_vpcId;
     VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+    Aws::String m_vpcId;
     ResponseMetadata m_responseMetadata;
   };
 

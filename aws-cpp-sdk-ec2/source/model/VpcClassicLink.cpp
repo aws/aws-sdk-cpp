@@ -31,18 +31,18 @@ namespace Model
 {
 
 VpcClassicLink::VpcClassicLink() : 
-    m_vpcIdHasBeenSet(false),
     m_classicLinkEnabled(false),
     m_classicLinkEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
 VpcClassicLink::VpcClassicLink(const XmlNode& xmlNode) : 
-    m_vpcIdHasBeenSet(false),
     m_classicLinkEnabled(false),
     m_classicLinkEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,12 +53,6 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
-    }
     XmlNode classicLinkEnabledNode = resultNode.FirstChild("classicLinkEnabled");
     if(!classicLinkEnabledNode.IsNull())
     {
@@ -77,6 +71,12 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -84,11 +84,6 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
 
 void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_classicLinkEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClassicLinkEnabled=" << std::boolalpha << m_classicLinkEnabled << "&";
@@ -105,14 +100,15 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
 }
 
 void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
   if(m_classicLinkEnabledHasBeenSet)
   {
       oStream << location << ".ClassicLinkEnabled=" << std::boolalpha << m_classicLinkEnabled << "&";
@@ -126,6 +122,10 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location)
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

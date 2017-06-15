@@ -84,41 +84,6 @@ namespace Model
     inline DescribeVpcAttributeResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
-     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
-     * instances to their corresponding IP addresses; otherwise, it does not.</p>
-     */
-    inline const AttributeBooleanValue& GetEnableDnsSupport() const{ return m_enableDnsSupport; }
-
-    /**
-     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
-     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
-     * instances to their corresponding IP addresses; otherwise, it does not.</p>
-     */
-    inline void SetEnableDnsSupport(const AttributeBooleanValue& value) { m_enableDnsSupport = value; }
-
-    /**
-     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
-     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
-     * instances to their corresponding IP addresses; otherwise, it does not.</p>
-     */
-    inline void SetEnableDnsSupport(AttributeBooleanValue&& value) { m_enableDnsSupport = std::move(value); }
-
-    /**
-     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
-     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
-     * instances to their corresponding IP addresses; otherwise, it does not.</p>
-     */
-    inline DescribeVpcAttributeResponse& WithEnableDnsSupport(const AttributeBooleanValue& value) { SetEnableDnsSupport(value); return *this;}
-
-    /**
-     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
-     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
-     * instances to their corresponding IP addresses; otherwise, it does not.</p>
-     */
-    inline DescribeVpcAttributeResponse& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
-
-    /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
      * otherwise, they do not.</p>
@@ -153,6 +118,41 @@ namespace Model
      */
     inline DescribeVpcAttributeResponse& WithEnableDnsHostnames(AttributeBooleanValue&& value) { SetEnableDnsHostnames(std::move(value)); return *this;}
 
+    /**
+     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
+     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
+     * instances to their corresponding IP addresses; otherwise, it does not.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableDnsSupport() const{ return m_enableDnsSupport; }
+
+    /**
+     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
+     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
+     * instances to their corresponding IP addresses; otherwise, it does not.</p>
+     */
+    inline void SetEnableDnsSupport(const AttributeBooleanValue& value) { m_enableDnsSupport = value; }
+
+    /**
+     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
+     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
+     * instances to their corresponding IP addresses; otherwise, it does not.</p>
+     */
+    inline void SetEnableDnsSupport(AttributeBooleanValue&& value) { m_enableDnsSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
+     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
+     * instances to their corresponding IP addresses; otherwise, it does not.</p>
+     */
+    inline DescribeVpcAttributeResponse& WithEnableDnsSupport(const AttributeBooleanValue& value) { SetEnableDnsSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is
+     * <code>true</code>, the Amazon DNS server resolves DNS hostnames for your
+     * instances to their corresponding IP addresses; otherwise, it does not.</p>
+     */
+    inline DescribeVpcAttributeResponse& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -170,8 +170,8 @@ namespace Model
 
   private:
     Aws::String m_vpcId;
-    AttributeBooleanValue m_enableDnsSupport;
     AttributeBooleanValue m_enableDnsHostnames;
+    AttributeBooleanValue m_enableDnsSupport;
     ResponseMetadata m_responseMetadata;
   };
 

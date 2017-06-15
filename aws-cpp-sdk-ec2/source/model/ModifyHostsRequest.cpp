@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyHostsRequest::ModifyHostsRequest() : 
-    m_hostIdsHasBeenSet(false),
     m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false)
+    m_autoPlacementHasBeenSet(false),
+    m_hostIdsHasBeenSet(false)
 {
 }
 
@@ -31,6 +31,11 @@ Aws::String ModifyHostsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyHosts&";
+  if(m_autoPlacementHasBeenSet)
+  {
+    ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
+  }
+
   if(m_hostIdsHasBeenSet)
   {
     unsigned hostIdsCount = 1;
@@ -40,11 +45,6 @@ Aws::String ModifyHostsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdsCount++;
     }
-  }
-
-  if(m_autoPlacementHasBeenSet)
-  {
-    ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
 
   ss << "Version=2016-11-15";

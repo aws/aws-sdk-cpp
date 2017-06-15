@@ -48,6 +48,11 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode reservedInstancesModificationsNode = resultNode.FirstChild("reservedInstancesModificationsSet");
     if(!reservedInstancesModificationsNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
         reservedInstancesModificationsMember = reservedInstancesModificationsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

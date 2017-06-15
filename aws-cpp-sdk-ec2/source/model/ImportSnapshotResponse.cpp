@@ -48,6 +48,11 @@ ImportSnapshotResponse& ImportSnapshotResponse::operator =(const AmazonWebServic
 
   if(!resultNode.IsNull())
   {
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
@@ -57,11 +62,6 @@ ImportSnapshotResponse& ImportSnapshotResponse::operator =(const AmazonWebServic
     if(!snapshotTaskDetailNode.IsNull())
     {
       m_snapshotTaskDetail = snapshotTaskDetailNode;
-    }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
     }
   }
 

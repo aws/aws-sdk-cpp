@@ -32,21 +32,21 @@ namespace Model
 
 ImageDiskContainer::ImageDiskContainer() : 
     m_descriptionHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_userBucketHasBeenSet(false)
 {
 }
 
 ImageDiskContainer::ImageDiskContainer(const XmlNode& xmlNode) : 
     m_descriptionHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_userBucketHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,11 +63,23 @@ ImageDiskContainer& ImageDiskContainer::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
+    if(!deviceNameNode.IsNull())
+    {
+      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+      m_deviceNameHasBeenSet = true;
+    }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
       m_format = StringUtils::Trim(formatNode.GetText().c_str());
       m_formatHasBeenSet = true;
+    }
+    XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
+    if(!snapshotIdNode.IsNull())
+    {
+      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotIdHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
@@ -81,18 +93,6 @@ ImageDiskContainer& ImageDiskContainer::operator =(const XmlNode& xmlNode)
       m_userBucket = userBucketNode;
       m_userBucketHasBeenSet = true;
     }
-    XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
-    if(!deviceNameNode.IsNull())
-    {
-      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
-      m_deviceNameHasBeenSet = true;
-    }
-    XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
-    if(!snapshotIdNode.IsNull())
-    {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
-      m_snapshotIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -105,9 +105,19 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
+
   if(m_formatHasBeenSet)
   {
       oStream << location << index << locationValue << ".Format=" << StringUtils::URLEncode(m_format.c_str()) << "&";
+  }
+
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
   if(m_urlHasBeenSet)
@@ -122,16 +132,6 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMemberSs.str().c_str());
   }
 
-  if(m_deviceNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
-  }
-
-  if(m_snapshotIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
-  }
-
 }
 
 void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -140,9 +140,17 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
   if(m_formatHasBeenSet)
   {
       oStream << location << ".Format=" << StringUtils::URLEncode(m_format.c_str()) << "&";
+  }
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
   if(m_urlHasBeenSet)
   {
@@ -153,14 +161,6 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String userBucketLocationAndMember(location);
       userBucketLocationAndMember += ".UserBucket";
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMember.c_str());
-  }
-  if(m_deviceNameHasBeenSet)
-  {
-      oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
-  }
-  if(m_snapshotIdHasBeenSet)
-  {
-      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 }
 

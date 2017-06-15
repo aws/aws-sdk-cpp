@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeNetworkAclsRequest::DescribeNetworkAclsRequest() : 
+    m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_networkAclIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_networkAclIdsHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ Aws::String DescribeNetworkAclsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeNetworkAcls&";
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -45,16 +55,6 @@ Aws::String DescribeNetworkAclsRequest::SerializePayload() const
       ss << "NetworkAclId." << networkAclIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       networkAclIdsCount++;
-    }
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
     }
   }
 

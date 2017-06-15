@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteSecurityGroupRequest::DeleteSecurityGroupRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String DeleteSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteSecurityGroup&";
-  if(m_dryRunHasBeenSet)
+  if(m_groupIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String DeleteSecurityGroupRequest::SerializePayload() const
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_groupIdHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

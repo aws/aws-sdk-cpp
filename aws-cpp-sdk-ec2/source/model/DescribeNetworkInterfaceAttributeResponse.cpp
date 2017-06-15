@@ -48,20 +48,15 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
 
   if(!resultNode.IsNull())
   {
-    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
-    if(!networkInterfaceIdNode.IsNull())
+    XmlNode attachmentNode = resultNode.FirstChild("attachment");
+    if(!attachmentNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_attachment = attachmentNode;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = descriptionNode;
-    }
-    XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
-    if(!sourceDestCheckNode.IsNull())
-    {
-      m_sourceDestCheck = sourceDestCheckNode;
     }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
@@ -74,10 +69,15 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
       }
 
     }
-    XmlNode attachmentNode = resultNode.FirstChild("attachment");
-    if(!attachmentNode.IsNull())
+    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
+    if(!networkInterfaceIdNode.IsNull())
     {
-      m_attachment = attachmentNode;
+      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+    }
+    XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
+    if(!sourceDestCheckNode.IsNull())
+    {
+      m_sourceDestCheck = sourceDestCheckNode;
     }
   }
 

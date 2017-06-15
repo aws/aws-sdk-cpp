@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InternetGatewayAttachment.h>
 #include <utility>
 
@@ -49,41 +49,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the egress-only Internet gateway.</p>
-     */
-    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
@@ -120,11 +85,46 @@ namespace Model
      */
     inline EgressOnlyInternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
   private:
-    Aws::String m_egressOnlyInternetGatewayId;
-    bool m_egressOnlyInternetGatewayIdHasBeenSet;
     Aws::Vector<InternetGatewayAttachment> m_attachments;
     bool m_attachmentsHasBeenSet;
+    Aws::String m_egressOnlyInternetGatewayId;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet;
   };
 
 } // namespace Model

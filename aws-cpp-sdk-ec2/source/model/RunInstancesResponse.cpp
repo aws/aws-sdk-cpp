@@ -48,21 +48,6 @@ RunInstancesResponse& RunInstancesResponse::operator =(const AmazonWebServiceRes
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservationIdNode = resultNode.FirstChild("reservationId");
-    if(!reservationIdNode.IsNull())
-    {
-      m_reservationId = StringUtils::Trim(reservationIdNode.GetText().c_str());
-    }
-    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
-    }
-    XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
-    if(!requesterIdNode.IsNull())
-    {
-      m_requesterId = StringUtils::Trim(requesterIdNode.GetText().c_str());
-    }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
@@ -84,6 +69,21 @@ RunInstancesResponse& RunInstancesResponse::operator =(const AmazonWebServiceRes
         instancesMember = instancesMember.NextNode("item");
       }
 
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+    }
+    XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
+    if(!requesterIdNode.IsNull())
+    {
+      m_requesterId = StringUtils::Trim(requesterIdNode.GetText().c_str());
+    }
+    XmlNode reservationIdNode = resultNode.FirstChild("reservationId");
+    if(!reservationIdNode.IsNull())
+    {
+      m_reservationId = StringUtils::Trim(reservationIdNode.GetText().c_str());
     }
   }
 

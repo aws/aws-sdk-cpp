@@ -48,6 +48,11 @@ DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportRespon
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode vpcsNode = resultNode.FirstChild("vpcs");
     if(!vpcsNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportRespon
         vpcsMember = vpcsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

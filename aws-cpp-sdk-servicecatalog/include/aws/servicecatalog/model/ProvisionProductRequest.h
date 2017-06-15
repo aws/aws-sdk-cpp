@@ -125,37 +125,44 @@ namespace Model
     inline ProvisionProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier for this product.</p>
+     * <p>The provisioning artifact identifier for this product. This is sometimes
+     * referred to as the product version.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 

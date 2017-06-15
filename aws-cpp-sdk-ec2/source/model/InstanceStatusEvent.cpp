@@ -34,8 +34,8 @@ InstanceStatusEvent::InstanceStatusEvent() :
     m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false)
+    m_notAfterHasBeenSet(false),
+    m_notBeforeHasBeenSet(false)
 {
 }
 
@@ -43,8 +43,8 @@ InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode) :
     m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false)
+    m_notAfterHasBeenSet(false),
+    m_notBeforeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,17 +67,17 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode notBeforeNode = resultNode.FirstChild("notBefore");
-    if(!notBeforeNode.IsNull())
-    {
-      m_notBefore = DateTime(StringUtils::Trim(notBeforeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_notBeforeHasBeenSet = true;
-    }
     XmlNode notAfterNode = resultNode.FirstChild("notAfter");
     if(!notAfterNode.IsNull())
     {
       m_notAfter = DateTime(StringUtils::Trim(notAfterNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_notAfterHasBeenSet = true;
+    }
+    XmlNode notBeforeNode = resultNode.FirstChild("notBefore");
+    if(!notBeforeNode.IsNull())
+    {
+      m_notBefore = DateTime(StringUtils::Trim(notBeforeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBeforeHasBeenSet = true;
     }
   }
 
@@ -96,14 +96,14 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_notBeforeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
   if(m_notAfterHasBeenSet)
   {
       oStream << location << index << locationValue << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_notBeforeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -118,13 +118,13 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  if(m_notBeforeHasBeenSet)
-  {
-      oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
   if(m_notAfterHasBeenSet)
   {
       oStream << location << ".NotAfter=" << StringUtils::URLEncode(m_notAfter.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_notBeforeHasBeenSet)
+  {
+      oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

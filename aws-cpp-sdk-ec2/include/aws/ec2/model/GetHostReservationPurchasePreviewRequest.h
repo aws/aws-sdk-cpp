@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,41 +39,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
-    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
-
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
@@ -122,11 +87,46 @@ namespace Model
      */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+
   private:
-    Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
     Aws::Vector<Aws::String> m_hostIdSet;
     bool m_hostIdSetHasBeenSet;
+    Aws::String m_offeringId;
+    bool m_offeringIdHasBeenSet;
   };
 
 } // namespace Model

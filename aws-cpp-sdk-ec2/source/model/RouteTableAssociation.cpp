@@ -31,20 +31,20 @@ namespace Model
 {
 
 RouteTableAssociation::RouteTableAssociation() : 
+    m_main(false),
+    m_mainHasBeenSet(false),
     m_routeTableAssociationIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_main(false),
-    m_mainHasBeenSet(false)
+    m_subnetIdHasBeenSet(false)
 {
 }
 
 RouteTableAssociation::RouteTableAssociation(const XmlNode& xmlNode) : 
+    m_main(false),
+    m_mainHasBeenSet(false),
     m_routeTableAssociationIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_main(false),
-    m_mainHasBeenSet(false)
+    m_subnetIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +55,12 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode mainNode = resultNode.FirstChild("main");
+    if(!mainNode.IsNull())
+    {
+      m_main = StringUtils::ConvertToBool(StringUtils::Trim(mainNode.GetText().c_str()).c_str());
+      m_mainHasBeenSet = true;
+    }
     XmlNode routeTableAssociationIdNode = resultNode.FirstChild("routeTableAssociationId");
     if(!routeTableAssociationIdNode.IsNull())
     {
@@ -73,12 +79,6 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
       m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
       m_subnetIdHasBeenSet = true;
     }
-    XmlNode mainNode = resultNode.FirstChild("main");
-    if(!mainNode.IsNull())
-    {
-      m_main = StringUtils::ConvertToBool(StringUtils::Trim(mainNode.GetText().c_str()).c_str());
-      m_mainHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -86,6 +86,11 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
 
 void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_mainHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Main=" << std::boolalpha << m_main << "&";
+  }
+
   if(m_routeTableAssociationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RouteTableAssociationId=" << StringUtils::URLEncode(m_routeTableAssociationId.c_str()) << "&";
@@ -101,15 +106,14 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_mainHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Main=" << std::boolalpha << m_main << "&";
-  }
-
 }
 
 void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_mainHasBeenSet)
+  {
+      oStream << location << ".Main=" << std::boolalpha << m_main << "&";
+  }
   if(m_routeTableAssociationIdHasBeenSet)
   {
       oStream << location << ".RouteTableAssociationId=" << StringUtils::URLEncode(m_routeTableAssociationId.c_str()) << "&";
@@ -121,10 +125,6 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-  if(m_mainHasBeenSet)
-  {
-      oStream << location << ".Main=" << std::boolalpha << m_main << "&";
   }
 }
 

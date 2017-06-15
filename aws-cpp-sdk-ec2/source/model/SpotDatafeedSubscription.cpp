@@ -31,22 +31,22 @@ namespace Model
 {
 
 SpotDatafeedSubscription::SpotDatafeedSubscription() : 
-    m_ownerIdHasBeenSet(false),
     m_bucketHasBeenSet(false),
+    m_faultHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_state(DatafeedSubscriptionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_faultHasBeenSet(false)
+    m_stateHasBeenSet(false)
 {
 }
 
 SpotDatafeedSubscription::SpotDatafeedSubscription(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
     m_bucketHasBeenSet(false),
+    m_faultHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_state(DatafeedSubscriptionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_faultHasBeenSet(false)
+    m_stateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,17 +57,23 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
-      m_ownerIdHasBeenSet = true;
-    }
     XmlNode bucketNode = resultNode.FirstChild("bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
       m_bucketHasBeenSet = true;
+    }
+    XmlNode faultNode = resultNode.FirstChild("fault");
+    if(!faultNode.IsNull())
+    {
+      m_fault = faultNode;
+      m_faultHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("prefix");
     if(!prefixNode.IsNull())
@@ -81,12 +87,6 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
       m_state = DatafeedSubscriptionStateMapper::GetDatafeedSubscriptionStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
     }
-    XmlNode faultNode = resultNode.FirstChild("fault");
-    if(!faultNode.IsNull())
-    {
-      m_fault = faultNode;
-      m_faultHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -94,14 +94,21 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
 
 void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-
   if(m_bucketHasBeenSet)
   {
       oStream << location << index << locationValue << ".Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
+  }
+
+  if(m_faultHasBeenSet)
+  {
+      Aws::StringStream faultLocationAndMemberSs;
+      faultLocationAndMemberSs << location << index << locationValue << ".Fault";
+      m_fault.OutputToStream(oStream, faultLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
   if(m_prefixHasBeenSet)
@@ -114,24 +121,23 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".State=" << DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state) << "&";
   }
 
-  if(m_faultHasBeenSet)
-  {
-      Aws::StringStream faultLocationAndMemberSs;
-      faultLocationAndMemberSs << location << index << locationValue << ".Fault";
-      m_fault.OutputToStream(oStream, faultLocationAndMemberSs.str().c_str());
-  }
-
 }
 
 void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
   if(m_bucketHasBeenSet)
   {
       oStream << location << ".Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
+  }
+  if(m_faultHasBeenSet)
+  {
+      Aws::String faultLocationAndMember(location);
+      faultLocationAndMember += ".Fault";
+      m_fault.OutputToStream(oStream, faultLocationAndMember.c_str());
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_prefixHasBeenSet)
   {
@@ -140,12 +146,6 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state) << "&";
-  }
-  if(m_faultHasBeenSet)
-  {
-      Aws::String faultLocationAndMember(location);
-      faultLocationAndMember += ".Fault";
-      m_fault.OutputToStream(oStream, faultLocationAndMember.c_str());
   }
 }
 

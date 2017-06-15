@@ -42,100 +42,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DetachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DetachVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DetachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline DetachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline DetachVolumeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline DetachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline DetachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
-    /**
      * <p>The device name.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
@@ -203,17 +109,111 @@ namespace Model
      */
     inline DetachVolumeRequest& WithForce(bool value) { SetForce(value); return *this;}
 
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline DetachVolumeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline DetachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline DetachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DetachVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DetachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline DetachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DetachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
     Aws::String m_device;
     bool m_deviceHasBeenSet;
     bool m_force;
     bool m_forceHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

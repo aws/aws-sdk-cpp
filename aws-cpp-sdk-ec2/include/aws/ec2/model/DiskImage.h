@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/DiskImageDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/DiskImageDetail.h>
 #include <aws/ec2/model/VolumeDetail.h>
 #include <utility>
 
@@ -49,31 +49,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>Information about the disk image.</p>
-     */
-    inline const DiskImageDetail& GetImage() const{ return m_image; }
-
-    /**
-     * <p>Information about the disk image.</p>
-     */
-    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>Information about the disk image.</p>
-     */
-    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>Information about the disk image.</p>
-     */
-    inline DiskImage& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>Information about the disk image.</p>
-     */
-    inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>A description of the disk image.</p>
@@ -111,6 +86,31 @@ namespace Model
     inline DiskImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>Information about the disk image.</p>
+     */
+    inline const DiskImageDetail& GetImage() const{ return m_image; }
+
+    /**
+     * <p>Information about the disk image.</p>
+     */
+    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
+
+    /**
+     * <p>Information about the disk image.</p>
+     */
+    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
+
+    /**
+     * <p>Information about the disk image.</p>
+     */
+    inline DiskImage& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
+
+    /**
+     * <p>Information about the disk image.</p>
+     */
+    inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
+
+    /**
      * <p>Information about the volume.</p>
      */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
@@ -136,10 +136,10 @@ namespace Model
     inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
-    DiskImageDetail m_image;
-    bool m_imageHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    DiskImageDetail m_image;
+    bool m_imageHasBeenSet;
     VolumeDetail m_volume;
     bool m_volumeHasBeenSet;
   };

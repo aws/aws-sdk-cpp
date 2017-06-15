@@ -48,41 +48,6 @@ namespace Model
     GetConsoleScreenshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The ID of the instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline GetConsoleScreenshotResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline GetConsoleScreenshotResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline GetConsoleScreenshotResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
-    /**
      * <p>The data that comprises the image.</p>
      */
     inline const Aws::String& GetImageData() const{ return m_imageData; }
@@ -117,6 +82,41 @@ namespace Model
      */
     inline GetConsoleScreenshotResponse& WithImageData(const char* value) { SetImageData(value); return *this;}
 
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline GetConsoleScreenshotResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline GetConsoleScreenshotResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline GetConsoleScreenshotResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -133,8 +133,8 @@ namespace Model
     inline GetConsoleScreenshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_instanceId;
     Aws::String m_imageData;
+    Aws::String m_instanceId;
     ResponseMetadata m_responseMetadata;
   };
 

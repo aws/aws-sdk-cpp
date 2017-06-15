@@ -50,111 +50,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The address of the Elastic IP address bound to the network interface.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
-
-    /**
-     * <p>The public DNS name.</p>
-     */
-    inline NetworkInterfaceAssociation& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline const Aws::String& GetIpOwnerId() const{ return m_ipOwnerId; }
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline void SetIpOwnerId(const Aws::String& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline void SetIpOwnerId(Aws::String&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline void SetIpOwnerId(const char* value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId.assign(value); }
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline NetworkInterfaceAssociation& WithIpOwnerId(const Aws::String& value) { SetIpOwnerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline NetworkInterfaceAssociation& WithIpOwnerId(Aws::String&& value) { SetIpOwnerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Elastic IP address owner.</p>
-     */
-    inline NetworkInterfaceAssociation& WithIpOwnerId(const char* value) { SetIpOwnerId(value); return *this;}
-
-    /**
      * <p>The allocation ID.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
@@ -224,17 +119,122 @@ namespace Model
      */
     inline NetworkInterfaceAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline const Aws::String& GetIpOwnerId() const{ return m_ipOwnerId; }
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline void SetIpOwnerId(const Aws::String& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline void SetIpOwnerId(Aws::String&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = std::move(value); }
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline void SetIpOwnerId(const char* value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId.assign(value); }
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline NetworkInterfaceAssociation& WithIpOwnerId(const Aws::String& value) { SetIpOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline NetworkInterfaceAssociation& WithIpOwnerId(Aws::String&& value) { SetIpOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
+    inline NetworkInterfaceAssociation& WithIpOwnerId(const char* value) { SetIpOwnerId(value); return *this;}
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+
   private:
-    Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
-    Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
-    Aws::String m_ipOwnerId;
-    bool m_ipOwnerIdHasBeenSet;
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+    Aws::String m_ipOwnerId;
+    bool m_ipOwnerIdHasBeenSet;
+    Aws::String m_publicDnsName;
+    bool m_publicDnsNameHasBeenSet;
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet;
   };
 
 } // namespace Model

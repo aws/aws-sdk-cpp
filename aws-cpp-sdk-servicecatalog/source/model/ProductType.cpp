@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int CLOUD_FORMATION_TEMPLATE_HASH = HashingUtils::HashString("CLOUD_FORMATION_TEMPLATE");
+        static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
 
 
         ProductType GetProductTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == CLOUD_FORMATION_TEMPLATE_HASH)
           {
             return ProductType::CLOUD_FORMATION_TEMPLATE;
+          }
+          else if (hashCode == MARKETPLACE_HASH)
+          {
+            return ProductType::MARKETPLACE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ProductType::CLOUD_FORMATION_TEMPLATE:
             return "CLOUD_FORMATION_TEMPLATE";
+          case ProductType::MARKETPLACE:
+            return "MARKETPLACE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

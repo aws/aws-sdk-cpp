@@ -48,41 +48,6 @@ namespace Model
     ImportKeyPairResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline ImportKeyPairResponse& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline ImportKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The key pair name you provided.</p>
-     */
-    inline ImportKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
-    /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
      */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
@@ -117,6 +82,41 @@ namespace Model
      */
     inline ImportKeyPairResponse& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The key pair name you provided.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -133,8 +133,8 @@ namespace Model
     inline ImportKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_keyName;
     Aws::String m_keyFingerprint;
+    Aws::String m_keyName;
     ResponseMetadata m_responseMetadata;
   };
 

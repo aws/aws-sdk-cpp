@@ -16,11 +16,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/AttributeValue.h>
-#include <aws/ec2/model/AttributeBooleanValue.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceAttachmentChanges.h>
+#include <aws/ec2/model/AttributeValue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/AttributeBooleanValue.h>
 #include <utility>
 
 namespace Aws
@@ -47,63 +47,34 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const NetworkInterfaceAttachmentChanges& GetAttachment() const{ return m_attachment; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
-    inline ModifyNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttachment(NetworkInterfaceAttachmentChanges&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(const NetworkInterfaceAttachmentChanges& value) { SetAttachment(value); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
 
     /**
      * <p>A description for the network interface.</p>
@@ -131,54 +102,28 @@ namespace Model
     inline ModifyNetworkInterfaceAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-     */
-    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-     */
-    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>Changes the security groups for the network interface. The new set of groups
@@ -245,48 +190,103 @@ namespace Model
     inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline const NetworkInterfaceAttachmentChanges& GetAttachment() const{ return m_attachment; }
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline void SetAttachment(NetworkInterfaceAttachmentChanges&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(const NetworkInterfaceAttachmentChanges& value) { SetAttachment(value); return *this;}
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    AttributeValue m_description;
-    bool m_descriptionHasBeenSet;
-    AttributeBooleanValue m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
-    Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
     NetworkInterfaceAttachmentChanges m_attachment;
     bool m_attachmentHasBeenSet;
+    AttributeValue m_description;
+    bool m_descriptionHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::Vector<Aws::String> m_groups;
+    bool m_groupsHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
+    AttributeBooleanValue m_sourceDestCheck;
+    bool m_sourceDestCheckHasBeenSet;
   };
 
 } // namespace Model

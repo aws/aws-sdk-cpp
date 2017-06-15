@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -42,6 +42,31 @@ namespace Model
     AssociateSubnetCidrBlockResponse();
     AssociateSubnetCidrBlockResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AssociateSubnetCidrBlockResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline const SubnetIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline void SetIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR block association.</p>
+     */
+    inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>
@@ -78,31 +103,6 @@ namespace Model
      */
     inline AssociateSubnetCidrBlockResponse& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline const SubnetIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline void SetIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
-
-    /**
-     * <p>Information about the IPv6 CIDR block association.</p>
-     */
-    inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -119,8 +119,8 @@ namespace Model
     inline AssociateSubnetCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::String m_subnetId;
     SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+    Aws::String m_subnetId;
     ResponseMetadata m_responseMetadata;
   };
 

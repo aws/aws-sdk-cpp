@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,78 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeNetworkAclsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetNetworkAclIds() const{ return m_networkAclIds; }
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline void SetNetworkAclIds(const Aws::Vector<Aws::String>& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = value; }
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline void SetNetworkAclIds(Aws::Vector<Aws::String>&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = std::move(value); }
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline DescribeNetworkAclsRequest& WithNetworkAclIds(const Aws::Vector<Aws::String>& value) { SetNetworkAclIds(value); return *this;}
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline DescribeNetworkAclsRequest& WithNetworkAclIds(Aws::Vector<Aws::String>&& value) { SetNetworkAclIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline DescribeNetworkAclsRequest& AddNetworkAclIds(const Aws::String& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline DescribeNetworkAclsRequest& AddNetworkAclIds(Aws::String&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
-     */
-    inline DescribeNetworkAclsRequest& AddNetworkAclIds(const char* value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>association.association-id</code> - The ID of an association ID for the
@@ -410,13 +338,85 @@ namespace Model
      */
     inline DescribeNetworkAclsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNetworkAclIds() const{ return m_networkAclIds; }
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline void SetNetworkAclIds(const Aws::Vector<Aws::String>& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = value; }
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline void SetNetworkAclIds(Aws::Vector<Aws::String>&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = std::move(value); }
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithNetworkAclIds(const Aws::Vector<Aws::String>& value) { SetNetworkAclIds(value); return *this;}
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithNetworkAclIds(Aws::Vector<Aws::String>&& value) { SetNetworkAclIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline DescribeNetworkAclsRequest& AddNetworkAclIds(const Aws::String& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline DescribeNetworkAclsRequest& AddNetworkAclIds(Aws::String&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * ACLs.</p>
+     */
+    inline DescribeNetworkAclsRequest& AddNetworkAclIds(const char* value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::Vector<Aws::String> m_networkAclIds;
     bool m_networkAclIdsHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

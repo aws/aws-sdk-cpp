@@ -31,32 +31,32 @@ namespace Model
 {
 
 ReservedInstancesListing::ReservedInstancesListing() : 
-    m_reservedInstancesListingIdHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
+    m_instanceCountsHasBeenSet(false),
+    m_priceSchedulesHasBeenSet(false),
+    m_reservedInstancesIdHasBeenSet(false),
+    m_reservedInstancesListingIdHasBeenSet(false),
     m_status(ListingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_priceSchedulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_updateDateHasBeenSet(false)
 {
 }
 
 ReservedInstancesListing::ReservedInstancesListing(const XmlNode& xmlNode) : 
-    m_reservedInstancesListingIdHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
+    m_instanceCountsHasBeenSet(false),
+    m_priceSchedulesHasBeenSet(false),
+    m_reservedInstancesIdHasBeenSet(false),
+    m_reservedInstancesListingIdHasBeenSet(false),
     m_status(ListingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_priceSchedulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_updateDateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,41 +67,17 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
   if(!resultNode.IsNull())
   {
-    XmlNode reservedInstancesListingIdNode = resultNode.FirstChild("reservedInstancesListingId");
-    if(!reservedInstancesListingIdNode.IsNull())
+    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
+    if(!clientTokenNode.IsNull())
     {
-      m_reservedInstancesListingId = StringUtils::Trim(reservedInstancesListingIdNode.GetText().c_str());
-      m_reservedInstancesListingIdHasBeenSet = true;
-    }
-    XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
-    if(!reservedInstancesIdNode.IsNull())
-    {
-      m_reservedInstancesId = StringUtils::Trim(reservedInstancesIdNode.GetText().c_str());
-      m_reservedInstancesIdHasBeenSet = true;
+      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientTokenHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
-    }
-    XmlNode updateDateNode = resultNode.FirstChild("updateDate");
-    if(!updateDateNode.IsNull())
-    {
-      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_updateDateHasBeenSet = true;
-    }
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = ListingStatusMapper::GetListingStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
-      m_statusHasBeenSet = true;
-    }
-    XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
-    if(!statusMessageNode.IsNull())
-    {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
-      m_statusMessageHasBeenSet = true;
     }
     XmlNode instanceCountsNode = resultNode.FirstChild("instanceCounts");
     if(!instanceCountsNode.IsNull())
@@ -127,6 +103,30 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
       m_priceSchedulesHasBeenSet = true;
     }
+    XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
+    if(!reservedInstancesIdNode.IsNull())
+    {
+      m_reservedInstancesId = StringUtils::Trim(reservedInstancesIdNode.GetText().c_str());
+      m_reservedInstancesIdHasBeenSet = true;
+    }
+    XmlNode reservedInstancesListingIdNode = resultNode.FirstChild("reservedInstancesListingId");
+    if(!reservedInstancesListingIdNode.IsNull())
+    {
+      m_reservedInstancesListingId = StringUtils::Trim(reservedInstancesListingIdNode.GetText().c_str());
+      m_reservedInstancesListingIdHasBeenSet = true;
+    }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = ListingStatusMapper::GetListingStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
+    XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
+    if(!statusMessageNode.IsNull())
+    {
+      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessageHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -139,11 +139,11 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
-    if(!clientTokenNode.IsNull())
+    XmlNode updateDateNode = resultNode.FirstChild("updateDate");
+    if(!updateDateNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
-      m_clientTokenHasBeenSet = true;
+      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDateHasBeenSet = true;
     }
   }
 
@@ -152,34 +152,14 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
 
 void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_reservedInstancesListingIdHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
-  }
-
-  if(m_reservedInstancesIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
+      oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_updateDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
-  }
-
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
   if(m_instanceCountsHasBeenSet)
@@ -204,6 +184,26 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       }
   }
 
+  if(m_reservedInstancesIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
+  }
+
+  if(m_reservedInstancesListingIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
+  }
+
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -215,38 +215,22 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       }
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
 
 void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_reservedInstancesListingIdHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-      oStream << location << ".ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
-  }
-  if(m_reservedInstancesIdHasBeenSet)
-  {
-      oStream << location << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
+      oStream << location << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
   if(m_createDateHasBeenSet)
   {
       oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_updateDateHasBeenSet)
-  {
-      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
-  }
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
   if(m_instanceCountsHasBeenSet)
   {
@@ -268,6 +252,22 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
         item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
+  if(m_reservedInstancesIdHasBeenSet)
+  {
+      oStream << location << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
+  }
+  if(m_reservedInstancesListingIdHasBeenSet)
+  {
+      oStream << location << ".ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
+  }
+  if(m_statusMessageHasBeenSet)
+  {
+      oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -278,9 +278,9 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
-  if(m_clientTokenHasBeenSet)
+  if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

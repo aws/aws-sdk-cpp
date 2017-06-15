@@ -31,40 +31,40 @@ namespace Model
 {
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() : 
+    m_additionalInfoHasBeenSet(false),
     m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_monitoring(false),
-    m_monitoringHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
+    m_groupNamesHasBeenSet(false),
     m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_monitoring(false),
+    m_monitoringHasBeenSet(false),
+    m_placementHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode) : 
+    m_additionalInfoHasBeenSet(false),
     m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_monitoring(false),
-    m_monitoringHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
+    m_groupNamesHasBeenSet(false),
     m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_monitoring(false),
+    m_monitoringHasBeenSet(false),
+    m_placementHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,23 +75,17 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
 
   if(!resultNode.IsNull())
   {
+    XmlNode additionalInfoNode = resultNode.FirstChild("additionalInfo");
+    if(!additionalInfoNode.IsNull())
+    {
+      m_additionalInfo = StringUtils::Trim(additionalInfoNode.GetText().c_str());
+      m_additionalInfoHasBeenSet = true;
+    }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
       m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(architectureNode.GetText().c_str()).c_str());
       m_architectureHasBeenSet = true;
-    }
-    XmlNode groupNamesNode = resultNode.FirstChild("GroupName");
-    if(!groupNamesNode.IsNull())
-    {
-      XmlNode groupNamesMember = groupNamesNode.FirstChild("SecurityGroup");
-      while(!groupNamesMember.IsNull())
-      {
-        m_groupNames.push_back(StringUtils::Trim(groupNamesMember.GetText().c_str()));
-        groupNamesMember = groupNamesMember.NextNode("SecurityGroup");
-      }
-
-      m_groupNamesHasBeenSet = true;
     }
     XmlNode groupIdsNode = resultNode.FirstChild("GroupId");
     if(!groupIdsNode.IsNull())
@@ -105,41 +99,17 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
 
       m_groupIdsHasBeenSet = true;
     }
-    XmlNode additionalInfoNode = resultNode.FirstChild("additionalInfo");
-    if(!additionalInfoNode.IsNull())
+    XmlNode groupNamesNode = resultNode.FirstChild("GroupName");
+    if(!groupNamesNode.IsNull())
     {
-      m_additionalInfo = StringUtils::Trim(additionalInfoNode.GetText().c_str());
-      m_additionalInfoHasBeenSet = true;
-    }
-    XmlNode userDataNode = resultNode.FirstChild("userData");
-    if(!userDataNode.IsNull())
-    {
-      m_userData = userDataNode;
-      m_userDataHasBeenSet = true;
-    }
-    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
-    if(!instanceTypeNode.IsNull())
-    {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(instanceTypeNode.GetText().c_str()).c_str());
-      m_instanceTypeHasBeenSet = true;
-    }
-    XmlNode placementNode = resultNode.FirstChild("placement");
-    if(!placementNode.IsNull())
-    {
-      m_placement = placementNode;
-      m_placementHasBeenSet = true;
-    }
-    XmlNode monitoringNode = resultNode.FirstChild("monitoring");
-    if(!monitoringNode.IsNull())
-    {
-      m_monitoring = StringUtils::ConvertToBool(StringUtils::Trim(monitoringNode.GetText().c_str()).c_str());
-      m_monitoringHasBeenSet = true;
-    }
-    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
-    if(!subnetIdNode.IsNull())
-    {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
-      m_subnetIdHasBeenSet = true;
+      XmlNode groupNamesMember = groupNamesNode.FirstChild("SecurityGroup");
+      while(!groupNamesMember.IsNull())
+      {
+        m_groupNames.push_back(StringUtils::Trim(groupNamesMember.GetText().c_str()));
+        groupNamesMember = groupNamesMember.NextNode("SecurityGroup");
+      }
+
+      m_groupNamesHasBeenSet = true;
     }
     XmlNode instanceInitiatedShutdownBehaviorNode = resultNode.FirstChild("instanceInitiatedShutdownBehavior");
     if(!instanceInitiatedShutdownBehaviorNode.IsNull())
@@ -147,11 +117,41 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
       m_instanceInitiatedShutdownBehavior = ShutdownBehaviorMapper::GetShutdownBehaviorForName(StringUtils::Trim(instanceInitiatedShutdownBehaviorNode.GetText().c_str()).c_str());
       m_instanceInitiatedShutdownBehaviorHasBeenSet = true;
     }
+    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
+    if(!instanceTypeNode.IsNull())
+    {
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(instanceTypeNode.GetText().c_str()).c_str());
+      m_instanceTypeHasBeenSet = true;
+    }
+    XmlNode monitoringNode = resultNode.FirstChild("monitoring");
+    if(!monitoringNode.IsNull())
+    {
+      m_monitoring = StringUtils::ConvertToBool(StringUtils::Trim(monitoringNode.GetText().c_str()).c_str());
+      m_monitoringHasBeenSet = true;
+    }
+    XmlNode placementNode = resultNode.FirstChild("placement");
+    if(!placementNode.IsNull())
+    {
+      m_placement = placementNode;
+      m_placementHasBeenSet = true;
+    }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
       m_privateIpAddressHasBeenSet = true;
+    }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetIdHasBeenSet = true;
+    }
+    XmlNode userDataNode = resultNode.FirstChild("userData");
+    if(!userDataNode.IsNull())
+    {
+      m_userData = userDataNode;
+      m_userDataHasBeenSet = true;
     }
   }
 
@@ -160,18 +160,14 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
 
 void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_additionalInfoHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+  }
+
   if(m_architectureHasBeenSet)
   {
       oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-
-  if(m_groupNamesHasBeenSet)
-  {
-      unsigned groupNamesIdx = 1;
-      for(auto& item : m_groupNames)
-      {
-        oStream << location << index << locationValue << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
   }
 
   if(m_groupIdsHasBeenSet)
@@ -183,21 +179,28 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       }
   }
 
-  if(m_additionalInfoHasBeenSet)
+  if(m_groupNamesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+      unsigned groupNamesIdx = 1;
+      for(auto& item : m_groupNames)
+      {
+        oStream << location << index << locationValue << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 
-  if(m_userDataHasBeenSet)
+  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      Aws::StringStream userDataLocationAndMemberSs;
-      userDataLocationAndMemberSs << location << index << locationValue << ".UserData";
-      m_userData.OutputToStream(oStream, userDataLocationAndMemberSs.str().c_str());
+      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
 
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+
+  if(m_monitoringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
   }
 
   if(m_placementHasBeenSet)
@@ -207,9 +210,9 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
 
-  if(m_monitoringHasBeenSet)
+  if(m_privateIpAddressHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
+      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 
   if(m_subnetIdHasBeenSet)
@@ -217,31 +220,24 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
+  if(m_userDataHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
-  }
-
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+      Aws::StringStream userDataLocationAndMemberSs;
+      userDataLocationAndMemberSs << location << index << locationValue << ".UserData";
+      m_userData.OutputToStream(oStream, userDataLocationAndMemberSs.str().c_str());
   }
 
 }
 
 void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_additionalInfoHasBeenSet)
+  {
+      oStream << location << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+  }
   if(m_architectureHasBeenSet)
   {
       oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-  if(m_groupNamesHasBeenSet)
-  {
-      unsigned groupNamesIdx = 1;
-      for(auto& item : m_groupNames)
-      {
-        oStream << location << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
   }
   if(m_groupIdsHasBeenSet)
   {
@@ -251,19 +247,25 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
         oStream << location << ".GroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  if(m_additionalInfoHasBeenSet)
+  if(m_groupNamesHasBeenSet)
   {
-      oStream << location << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+      unsigned groupNamesIdx = 1;
+      for(auto& item : m_groupNames)
+      {
+        oStream << location << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
-  if(m_userDataHasBeenSet)
+  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      Aws::String userDataLocationAndMember(location);
-      userDataLocationAndMember += ".UserData";
-      m_userData.OutputToStream(oStream, userDataLocationAndMember.c_str());
+      oStream << location << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+  if(m_monitoringHasBeenSet)
+  {
+      oStream << location << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
   }
   if(m_placementHasBeenSet)
   {
@@ -271,21 +273,19 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       placementLocationAndMember += ".Placement";
       m_placement.OutputToStream(oStream, placementLocationAndMember.c_str());
   }
-  if(m_monitoringHasBeenSet)
+  if(m_privateIpAddressHasBeenSet)
   {
-      oStream << location << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
+      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
-  if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
+  if(m_userDataHasBeenSet)
   {
-      oStream << location << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
-  }
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+      Aws::String userDataLocationAndMember(location);
+      userDataLocationAndMember += ".UserData";
+      m_userData.OutputToStream(oStream, userDataLocationAndMember.c_str());
   }
 }
 

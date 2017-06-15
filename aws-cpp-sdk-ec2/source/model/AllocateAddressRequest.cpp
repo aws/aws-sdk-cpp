@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AllocateAddressRequest::AllocateAddressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_domain(DomainType::NOT_SET),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,14 +32,14 @@ Aws::String AllocateAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AllocateAddress&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_domainHasBeenSet)
   {
     ss << "Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

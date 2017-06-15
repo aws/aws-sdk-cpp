@@ -50,6 +50,41 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline ImportSnapshotTask& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline ImportSnapshotTask& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
+    inline ImportSnapshotTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The ID of the import snapshot task.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
@@ -109,48 +144,13 @@ namespace Model
      */
     inline ImportSnapshotTask& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(std::move(value)); return *this;}
 
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline ImportSnapshotTask& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline ImportSnapshotTask& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the import snapshot task.</p>
-     */
-    inline ImportSnapshotTask& WithDescription(const char* value) { SetDescription(value); return *this;}
-
   private:
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet;
     SnapshotTaskDetail m_snapshotTaskDetail;
     bool m_snapshotTaskDetailHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

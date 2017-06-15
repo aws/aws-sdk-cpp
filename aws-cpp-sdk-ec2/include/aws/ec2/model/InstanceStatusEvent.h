@@ -125,31 +125,6 @@ namespace Model
     inline InstanceStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The earliest scheduled start time for the event.</p>
-     */
-    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
-
-    /**
-     * <p>The earliest scheduled start time for the event.</p>
-     */
-    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-
-    /**
-     * <p>The earliest scheduled start time for the event.</p>
-     */
-    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-
-    /**
-     * <p>The earliest scheduled start time for the event.</p>
-     */
-    inline InstanceStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
-
-    /**
-     * <p>The earliest scheduled start time for the event.</p>
-     */
-    inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
-
-    /**
      * <p>The latest scheduled end time for the event.</p>
      */
     inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
@@ -174,15 +149,40 @@ namespace Model
      */
     inline InstanceStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
 
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
+
   private:
     EventCode m_code;
     bool m_codeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
     Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
+    Aws::Utils::DateTime m_notBefore;
+    bool m_notBeforeHasBeenSet;
   };
 
 } // namespace Model

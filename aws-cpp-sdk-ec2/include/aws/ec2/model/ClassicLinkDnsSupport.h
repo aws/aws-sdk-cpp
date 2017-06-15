@@ -50,6 +50,21 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
+     */
+    inline bool GetClassicLinkDnsSupported() const{ return m_classicLinkDnsSupported; }
+
+    /**
+     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
+     */
+    inline void SetClassicLinkDnsSupported(bool value) { m_classicLinkDnsSupportedHasBeenSet = true; m_classicLinkDnsSupported = value; }
+
+    /**
+     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
+     */
+    inline ClassicLinkDnsSupport& WithClassicLinkDnsSupported(bool value) { SetClassicLinkDnsSupported(value); return *this;}
+
+    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -84,26 +99,11 @@ namespace Model
      */
     inline ClassicLinkDnsSupport& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
-    inline bool GetClassicLinkDnsSupported() const{ return m_classicLinkDnsSupported; }
-
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
-    inline void SetClassicLinkDnsSupported(bool value) { m_classicLinkDnsSupportedHasBeenSet = true; m_classicLinkDnsSupported = value; }
-
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
-    inline ClassicLinkDnsSupport& WithClassicLinkDnsSupported(bool value) { SetClassicLinkDnsSupported(value); return *this;}
-
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     bool m_classicLinkDnsSupported;
     bool m_classicLinkDnsSupportedHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

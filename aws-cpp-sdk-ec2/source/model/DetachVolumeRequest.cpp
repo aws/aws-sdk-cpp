@@ -21,13 +21,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DetachVolumeRequest::DetachVolumeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
     m_deviceHasBeenSet(false),
     m_force(false),
-    m_forceHasBeenSet(false)
+    m_forceHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -35,21 +35,6 @@ Aws::String DetachVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DetachVolume&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_volumeIdHasBeenSet)
-  {
-    ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
   if(m_deviceHasBeenSet)
   {
     ss << "Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
@@ -58,6 +43,21 @@ Aws::String DetachVolumeRequest::SerializePayload() const
   if(m_forceHasBeenSet)
   {
     ss << "Force=" << std::boolalpha << m_force << "&";
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_volumeIdHasBeenSet)
+  {
+    ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

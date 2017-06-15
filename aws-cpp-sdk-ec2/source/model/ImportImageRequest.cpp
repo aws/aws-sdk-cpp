@@ -21,16 +21,16 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ImportImageRequest::ImportImageRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_diskContainersHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
-    m_hypervisorHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_platformHasBeenSet(false),
     m_clientDataHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_diskContainersHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
+    m_hypervisorHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false),
+    m_platformHasBeenSet(false),
     m_roleNameHasBeenSet(false)
 {
 }
@@ -39,9 +39,19 @@ Aws::String ImportImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ImportImage&";
-  if(m_dryRunHasBeenSet)
+  if(m_architectureHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Architecture=" << StringUtils::URLEncode(m_architecture.c_str()) << "&";
+  }
+
+  if(m_clientDataHasBeenSet)
+  {
+    m_clientData.OutputToStream(ss, "ClientData");
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -59,9 +69,9 @@ Aws::String ImportImageRequest::SerializePayload() const
     }
   }
 
-  if(m_licenseTypeHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "LicenseType=" << StringUtils::URLEncode(m_licenseType.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_hypervisorHasBeenSet)
@@ -69,24 +79,14 @@ Aws::String ImportImageRequest::SerializePayload() const
     ss << "Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
   }
 
-  if(m_architectureHasBeenSet)
+  if(m_licenseTypeHasBeenSet)
   {
-    ss << "Architecture=" << StringUtils::URLEncode(m_architecture.c_str()) << "&";
+    ss << "LicenseType=" << StringUtils::URLEncode(m_licenseType.c_str()) << "&";
   }
 
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
-  }
-
-  if(m_clientDataHasBeenSet)
-  {
-    m_clientData.OutputToStream(ss, "ClientData");
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_roleNameHasBeenSet)

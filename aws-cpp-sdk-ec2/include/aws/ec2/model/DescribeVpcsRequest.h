@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,70 +43,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeVpcsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline DescribeVpcsRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline DescribeVpcsRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline DescribeVpcsRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline DescribeVpcsRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
-     */
-    inline DescribeVpcsRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
      * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
@@ -331,13 +267,77 @@ namespace Model
      */
     inline DescribeVpcsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline DescribeVpcsRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline DescribeVpcsRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline DescribeVpcsRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline DescribeVpcsRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     */
+    inline DescribeVpcsRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeVpcsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_vpcIds;
-    bool m_vpcIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcIds;
+    bool m_vpcIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

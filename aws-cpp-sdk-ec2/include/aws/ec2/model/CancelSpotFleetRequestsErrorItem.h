@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsError.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,31 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The error.</p>
+     */
+    inline const CancelSpotFleetRequestsError& GetError() const{ return m_error; }
+
+    /**
+     * <p>The error.</p>
+     */
+    inline void SetError(const CancelSpotFleetRequestsError& value) { m_errorHasBeenSet = true; m_error = value; }
+
+    /**
+     * <p>The error.</p>
+     */
+    inline void SetError(CancelSpotFleetRequestsError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+
+    /**
+     * <p>The error.</p>
+     */
+    inline CancelSpotFleetRequestsErrorItem& WithError(const CancelSpotFleetRequestsError& value) { SetError(value); return *this;}
+
+    /**
+     * <p>The error.</p>
+     */
+    inline CancelSpotFleetRequestsErrorItem& WithError(CancelSpotFleetRequestsError&& value) { SetError(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -85,36 +110,11 @@ namespace Model
      */
     inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
-    /**
-     * <p>The error.</p>
-     */
-    inline const CancelSpotFleetRequestsError& GetError() const{ return m_error; }
-
-    /**
-     * <p>The error.</p>
-     */
-    inline void SetError(const CancelSpotFleetRequestsError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>The error.</p>
-     */
-    inline void SetError(CancelSpotFleetRequestsError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>The error.</p>
-     */
-    inline CancelSpotFleetRequestsErrorItem& WithError(const CancelSpotFleetRequestsError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>The error.</p>
-     */
-    inline CancelSpotFleetRequestsErrorItem& WithError(CancelSpotFleetRequestsError&& value) { SetError(std::move(value)); return *this;}
-
   private:
-    Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
     CancelSpotFleetRequestsError m_error;
     bool m_errorHasBeenSet;
+    Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet;
   };
 
 } // namespace Model

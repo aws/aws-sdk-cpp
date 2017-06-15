@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/ec2/model/SpotInstanceStateFault.h>
+#include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <utility>
 
 namespace Aws
@@ -49,41 +49,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline SpotDatafeedSubscription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline SpotDatafeedSubscription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS account ID of the account.</p>
-     */
-    inline SpotDatafeedSubscription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
@@ -119,6 +84,66 @@ namespace Model
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(const char* value) { SetBucket(value); return *this;}
+
+    /**
+     * <p>The fault codes for the Spot instance request, if any.</p>
+     */
+    inline const SpotInstanceStateFault& GetFault() const{ return m_fault; }
+
+    /**
+     * <p>The fault codes for the Spot instance request, if any.</p>
+     */
+    inline void SetFault(const SpotInstanceStateFault& value) { m_faultHasBeenSet = true; m_fault = value; }
+
+    /**
+     * <p>The fault codes for the Spot instance request, if any.</p>
+     */
+    inline void SetFault(SpotInstanceStateFault&& value) { m_faultHasBeenSet = true; m_fault = std::move(value); }
+
+    /**
+     * <p>The fault codes for the Spot instance request, if any.</p>
+     */
+    inline SpotDatafeedSubscription& WithFault(const SpotInstanceStateFault& value) { SetFault(value); return *this;}
+
+    /**
+     * <p>The fault codes for the Spot instance request, if any.</p>
+     */
+    inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline SpotDatafeedSubscription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline SpotDatafeedSubscription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline SpotDatafeedSubscription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
     /**
      * <p>The prefix that is prepended to data feed files.</p>
@@ -180,42 +205,17 @@ namespace Model
      */
     inline SpotDatafeedSubscription& WithState(DatafeedSubscriptionState&& value) { SetState(std::move(value)); return *this;}
 
-    /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
-     */
-    inline const SpotInstanceStateFault& GetFault() const{ return m_fault; }
-
-    /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
-     */
-    inline void SetFault(const SpotInstanceStateFault& value) { m_faultHasBeenSet = true; m_fault = value; }
-
-    /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
-     */
-    inline void SetFault(SpotInstanceStateFault&& value) { m_faultHasBeenSet = true; m_fault = std::move(value); }
-
-    /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
-     */
-    inline SpotDatafeedSubscription& WithFault(const SpotInstanceStateFault& value) { SetFault(value); return *this;}
-
-    /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
-     */
-    inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
-
   private:
-    Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+    SpotInstanceStateFault m_fault;
+    bool m_faultHasBeenSet;
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
     DatafeedSubscriptionState m_state;
     bool m_stateHasBeenSet;
-    SpotInstanceStateFault m_fault;
-    bool m_faultHasBeenSet;
   };
 
 } // namespace Model

@@ -51,6 +51,48 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline const Aws::String& GetBgpAsn() const{ return m_bgpAsn; }
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline void SetBgpAsn(const Aws::String& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline void SetBgpAsn(Aws::String&& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = std::move(value); }
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline void SetBgpAsn(const char* value) { m_bgpAsnHasBeenSet = true; m_bgpAsn.assign(value); }
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline CustomerGateway& WithBgpAsn(const Aws::String& value) { SetBgpAsn(value); return *this;}
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline CustomerGateway& WithBgpAsn(Aws::String&& value) { SetBgpAsn(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
+    inline CustomerGateway& WithBgpAsn(const char* value) { SetBgpAsn(value); return *this;}
+
+    /**
      * <p>The ID of the customer gateway.</p>
      */
     inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
@@ -84,6 +126,48 @@ namespace Model
      * <p>The ID of the customer gateway.</p>
      */
     inline CustomerGateway& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline CustomerGateway& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline CustomerGateway& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
      * <p>The current state of the customer gateway (<code>pending | available |
@@ -170,90 +254,6 @@ namespace Model
     inline CustomerGateway& WithType(const char* value) { SetType(value); return *this;}
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline CustomerGateway& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline CustomerGateway& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
-     */
-    inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline const Aws::String& GetBgpAsn() const{ return m_bgpAsn; }
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline void SetBgpAsn(const Aws::String& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline void SetBgpAsn(Aws::String&& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = std::move(value); }
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline void SetBgpAsn(const char* value) { m_bgpAsnHasBeenSet = true; m_bgpAsn.assign(value); }
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline CustomerGateway& WithBgpAsn(const Aws::String& value) { SetBgpAsn(value); return *this;}
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline CustomerGateway& WithBgpAsn(Aws::String&& value) { SetBgpAsn(std::move(value)); return *this;}
-
-    /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
-     */
-    inline CustomerGateway& WithBgpAsn(const char* value) { SetBgpAsn(value); return *this;}
-
-    /**
      * <p>Any tags assigned to the customer gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -289,16 +289,16 @@ namespace Model
     inline CustomerGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+    Aws::String m_bgpAsn;
+    bool m_bgpAsnHasBeenSet;
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet;
     Aws::String m_state;
     bool m_stateHasBeenSet;
     Aws::String m_type;
     bool m_typeHasBeenSet;
-    Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
-    Aws::String m_bgpAsn;
-    bool m_bgpAsnHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

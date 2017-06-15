@@ -31,15 +31,15 @@ namespace Model
 {
 
 InternetGateway::InternetGateway() : 
-    m_internetGatewayIdHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
+    m_internetGatewayIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 InternetGateway::InternetGateway(const XmlNode& xmlNode) : 
-    m_internetGatewayIdHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
+    m_internetGatewayIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -51,12 +51,6 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode internetGatewayIdNode = resultNode.FirstChild("internetGatewayId");
-    if(!internetGatewayIdNode.IsNull())
-    {
-      m_internetGatewayId = StringUtils::Trim(internetGatewayIdNode.GetText().c_str());
-      m_internetGatewayIdHasBeenSet = true;
-    }
     XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
     if(!attachmentsNode.IsNull())
     {
@@ -68,6 +62,12 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
       }
 
       m_attachmentsHasBeenSet = true;
+    }
+    XmlNode internetGatewayIdNode = resultNode.FirstChild("internetGatewayId");
+    if(!internetGatewayIdNode.IsNull())
+    {
+      m_internetGatewayId = StringUtils::Trim(internetGatewayIdNode.GetText().c_str());
+      m_internetGatewayIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -88,11 +88,6 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
 
 void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_internetGatewayIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
-  }
-
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -102,6 +97,11 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
         attachmentsSs << location << index << locationValue << ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
+  }
+
+  if(m_internetGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -119,10 +119,6 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
 
 void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_internetGatewayIdHasBeenSet)
-  {
-      oStream << location << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
-  }
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -132,6 +128,10 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
         attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
+  }
+  if(m_internetGatewayIdHasBeenSet)
+  {
+      oStream << location << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,78 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeRouteTablesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline DescribeRouteTablesRequest& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline DescribeRouteTablesRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline DescribeRouteTablesRequest& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline DescribeRouteTablesRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
-     * tables.</p>
-     */
-    inline DescribeRouteTablesRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
@@ -487,13 +415,85 @@ namespace Model
      */
     inline DescribeRouteTablesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeRouteTablesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline DescribeRouteTablesRequest& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline DescribeRouteTablesRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline DescribeRouteTablesRequest& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline DescribeRouteTablesRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * tables.</p>
+     */
+    inline DescribeRouteTablesRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

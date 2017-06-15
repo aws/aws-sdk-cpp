@@ -48,15 +48,15 @@ ModifyVpcPeeringConnectionOptionsResponse& ModifyVpcPeeringConnectionOptionsResp
 
   if(!resultNode.IsNull())
   {
-    XmlNode requesterPeeringConnectionOptionsNode = resultNode.FirstChild("requesterPeeringConnectionOptions");
-    if(!requesterPeeringConnectionOptionsNode.IsNull())
-    {
-      m_requesterPeeringConnectionOptions = requesterPeeringConnectionOptionsNode;
-    }
     XmlNode accepterPeeringConnectionOptionsNode = resultNode.FirstChild("accepterPeeringConnectionOptions");
     if(!accepterPeeringConnectionOptionsNode.IsNull())
     {
       m_accepterPeeringConnectionOptions = accepterPeeringConnectionOptionsNode;
+    }
+    XmlNode requesterPeeringConnectionOptionsNode = resultNode.FirstChild("requesterPeeringConnectionOptions");
+    if(!requesterPeeringConnectionOptionsNode.IsNull())
+    {
+      m_requesterPeeringConnectionOptions = requesterPeeringConnectionOptionsNode;
     }
   }
 

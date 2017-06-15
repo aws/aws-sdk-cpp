@@ -49,41 +49,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the region.</p>
-     */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the region.</p>
-     */
-    inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
-
-    /**
      * <p>The region service endpoint.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
@@ -118,11 +83,46 @@ namespace Model
      */
     inline Region& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+
   private:
-    Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+    Aws::String m_regionName;
+    bool m_regionNameHasBeenSet;
   };
 
 } // namespace Model

@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() : 
-    m_vpcIdHasBeenSet(false),
     m_amazonProvidedIpv6CidrBlock(false),
-    m_amazonProvidedIpv6CidrBlockHasBeenSet(false)
+    m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -31,14 +31,14 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssociateVpcCidrBlock&";
-  if(m_vpcIdHasBeenSet)
-  {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
   {
     ss << "AmazonProvidedIpv6CidrBlock=" << std::boolalpha << m_amazonProvidedIpv6CidrBlock << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

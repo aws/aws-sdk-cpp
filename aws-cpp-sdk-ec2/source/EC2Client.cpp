@@ -123,6 +123,7 @@
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
 #include <aws/ec2/model/DescribeExportTasksRequest.h>
 #include <aws/ec2/model/DescribeFlowLogsRequest.h>
+#include <aws/ec2/model/DescribeFpgaImagesRequest.h>
 #include <aws/ec2/model/DescribeHostReservationOfferingsRequest.h>
 #include <aws/ec2/model/DescribeHostReservationsRequest.h>
 #include <aws/ec2/model/DescribeHostsRequest.h>
@@ -3679,6 +3680,41 @@ void EC2Client::DescribeFlowLogsAsync(const DescribeFlowLogsRequest& request, co
 void EC2Client::DescribeFlowLogsAsyncHelper(const DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFlowLogs(request), context);
+}
+
+DescribeFpgaImagesOutcome EC2Client::DescribeFpgaImages(const DescribeFpgaImagesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeFpgaImagesOutcome(DescribeFpgaImagesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeFpgaImagesOutcome(outcome.GetError());
+  }
+}
+
+DescribeFpgaImagesOutcomeCallable EC2Client::DescribeFpgaImagesCallable(const DescribeFpgaImagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFpgaImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFpgaImages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeFpgaImagesAsync(const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFpgaImagesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeFpgaImagesAsyncHelper(const DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFpgaImages(request), context);
 }
 
 DescribeHostReservationOfferingsOutcome EC2Client::DescribeHostReservationOfferings(const DescribeHostReservationOfferingsRequest& request) const

@@ -16,16 +16,16 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/NetworkInterfaceStatus.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/NetworkInterfaceAttachment.h>
 #include <aws/ec2/model/NetworkInterfaceAssociation.h>
+#include <aws/ec2/model/NetworkInterfaceAttachment.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceType.h>
+#include <aws/ec2/model/NetworkInterfaceStatus.h>
 #include <aws/ec2/model/GroupIdentifier.h>
-#include <aws/ec2/model/Tag.h>
-#include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
 #include <aws/ec2/model/NetworkInterfaceIpv6Address.h>
+#include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -58,109 +58,59 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const NetworkInterfaceAssociation& GetAssociation() const{ return m_association; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetAssociation(const NetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+    inline void SetAssociation(NetworkInterfaceAssociation&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+    inline NetworkInterface& WithAssociation(const NetworkInterfaceAssociation& value) { SetAssociation(value); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
-    inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+    inline NetworkInterface& WithAssociation(NetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The network interface attachment.</p>
      */
-    inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+    inline const NetworkInterfaceAttachment& GetAttachment() const{ return m_attachment; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The network interface attachment.</p>
      */
-    inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    inline void SetAttachment(const NetworkInterfaceAttachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The network interface attachment.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The network interface attachment.</p>
      */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline NetworkInterface& WithAttachment(const NetworkInterfaceAttachment& value) { SetAttachment(value); return *this;}
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The network interface attachment.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline NetworkInterface& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline NetworkInterface& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline NetworkInterface& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline NetworkInterface& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline NetworkInterface& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline NetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline NetworkInterface& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p>
@@ -233,6 +183,171 @@ namespace Model
     inline NetworkInterface& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline NetworkInterface& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline NetworkInterface& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline NetworkInterface& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline NetworkInterface& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline const Aws::Vector<NetworkInterfaceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Addresses(const NetworkInterfaceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Addresses(NetworkInterfaceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::move(value); }
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline NetworkInterface& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline NetworkInterface& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC address.</p>
+     */
+    inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
      * <p>The AWS account ID of the owner of the network interface.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
@@ -266,6 +381,111 @@ namespace Model
      * <p>The AWS account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline NetworkInterface& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline NetworkInterface& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline NetworkInterface& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline NetworkInterface& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline NetworkInterface& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
+    inline NetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline const Aws::Vector<NetworkInterfacePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline void SetPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline void SetPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { SetPrivateIpAddresses(value); return *this;}
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddPrivateIpAddresses(const NetworkInterfacePrivateIpAddress& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddPrivateIpAddresses(NetworkInterfacePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the entity that launched the instance on your behalf (for example,
@@ -325,6 +545,21 @@ namespace Model
     inline NetworkInterface& WithRequesterManaged(bool value) { SetRequesterManaged(value); return *this;}
 
     /**
+     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     */
+    inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
+
+    /**
+     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     */
+    inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+
+    /**
+     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     */
+    inline NetworkInterface& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
+
+    /**
      * <p>The status of the network interface.</p>
      */
     inline const NetworkInterfaceStatus& GetStatus() const{ return m_status; }
@@ -350,214 +585,39 @@ namespace Model
     inline NetworkInterface& WithStatus(NetworkInterfaceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::move(value); }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline NetworkInterface& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
+    inline NetworkInterface& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline NetworkInterface& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
+    inline NetworkInterface& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The MAC address.</p>
+     * <p>The ID of the subnet.</p>
      */
-    inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline NetworkInterface& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline NetworkInterface& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 address of the network interface within the subnet.</p>
-     */
-    inline NetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline NetworkInterface& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline NetworkInterface& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
-
-    /**
-     * <p>The private DNS name.</p>
-     */
-    inline NetworkInterface& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
-
-    /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
-     */
-    inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
-
-    /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
-     */
-    inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
-
-    /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
-     */
-    inline NetworkInterface& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline NetworkInterface& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline NetworkInterface& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline NetworkInterface& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>Any security groups for the network interface.</p>
-     */
-    inline NetworkInterface& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The network interface attachment.</p>
-     */
-    inline const NetworkInterfaceAttachment& GetAttachment() const{ return m_attachment; }
-
-    /**
-     * <p>The network interface attachment.</p>
-     */
-    inline void SetAttachment(const NetworkInterfaceAttachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-
-    /**
-     * <p>The network interface attachment.</p>
-     */
-    inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-
-    /**
-     * <p>The network interface attachment.</p>
-     */
-    inline NetworkInterface& WithAttachment(const NetworkInterfaceAttachment& value) { SetAttachment(value); return *this;}
-
-    /**
-     * <p>The network interface attachment.</p>
-     */
-    inline NetworkInterface& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
-
-    /**
-     * <p>The association information for an Elastic IP address (IPv4) associated with
-     * the network interface.</p>
-     */
-    inline const NetworkInterfaceAssociation& GetAssociation() const{ return m_association; }
-
-    /**
-     * <p>The association information for an Elastic IP address (IPv4) associated with
-     * the network interface.</p>
-     */
-    inline void SetAssociation(const NetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
-
-    /**
-     * <p>The association information for an Elastic IP address (IPv4) associated with
-     * the network interface.</p>
-     */
-    inline void SetAssociation(NetworkInterfaceAssociation&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
-
-    /**
-     * <p>The association information for an Elastic IP address (IPv4) associated with
-     * the network interface.</p>
-     */
-    inline NetworkInterface& WithAssociation(const NetworkInterfaceAssociation& value) { SetAssociation(value); return *this;}
-
-    /**
-     * <p>The association information for an Elastic IP address (IPv4) associated with
-     * the network interface.</p>
-     */
-    inline NetworkInterface& WithAssociation(NetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    inline NetworkInterface& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
      * <p>Any tags assigned to the network interface.</p>
@@ -595,141 +655,81 @@ namespace Model
     inline NetworkInterface& AddTagSet(Tag&& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline const Aws::Vector<NetworkInterfacePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline NetworkInterface& WithPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { SetPrivateIpAddresses(value); return *this;}
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline NetworkInterface& WithPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
+    inline NetworkInterface& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline NetworkInterface& AddPrivateIpAddresses(const NetworkInterfacePrivateIpAddress& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+    inline NetworkInterface& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The private IPv4 addresses associated with the network interface.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline NetworkInterface& AddPrivateIpAddresses(NetworkInterfacePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline const Aws::Vector<NetworkInterfaceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline void SetIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline void SetIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline NetworkInterface& WithIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline NetworkInterface& WithIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline NetworkInterface& AddIpv6Addresses(const NetworkInterfaceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-
-    /**
-     * <p>The IPv6 addresses associated with the network interface.</p>
-     */
-    inline NetworkInterface& AddIpv6Addresses(NetworkInterfaceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The type of interface.</p>
-     */
-    inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
-
-    /**
-     * <p>The type of interface.</p>
-     */
-    inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
-
-    /**
-     * <p>The type of interface.</p>
-     */
-    inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
-
-    /**
-     * <p>The type of interface.</p>
-     */
-    inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
-
-    /**
-     * <p>The type of interface.</p>
-     */
-    inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(std::move(value)); return *this;}
+    inline NetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    NetworkInterfaceAssociation m_association;
+    bool m_associationHasBeenSet;
+    NetworkInterfaceAttachment m_attachment;
+    bool m_attachmentHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::Vector<GroupIdentifier> m_groups;
+    bool m_groupsHasBeenSet;
+    NetworkInterfaceType m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
+    Aws::Vector<NetworkInterfaceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_macAddress;
+    bool m_macAddressHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+    Aws::String m_privateDnsName;
+    bool m_privateDnsNameHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
+    Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
+    bool m_privateIpAddressesHasBeenSet;
     Aws::String m_requesterId;
     bool m_requesterIdHasBeenSet;
     bool m_requesterManaged;
     bool m_requesterManagedHasBeenSet;
-    NetworkInterfaceStatus m_status;
-    bool m_statusHasBeenSet;
-    Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
-    Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
     bool m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
-    Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
-    NetworkInterfaceAttachment m_attachment;
-    bool m_attachmentHasBeenSet;
-    NetworkInterfaceAssociation m_association;
-    bool m_associationHasBeenSet;
+    NetworkInterfaceStatus m_status;
+    bool m_statusHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
     Aws::Vector<Tag> m_tagSet;
     bool m_tagSetHasBeenSet;
-    Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
-    Aws::Vector<NetworkInterfaceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
-    NetworkInterfaceType m_interfaceType;
-    bool m_interfaceTypeHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

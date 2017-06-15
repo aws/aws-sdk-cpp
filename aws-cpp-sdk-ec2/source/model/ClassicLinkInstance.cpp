@@ -31,18 +31,18 @@ namespace Model
 {
 
 ClassicLinkInstance::ClassicLinkInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
 ClassicLinkInstance::ClassicLinkInstance(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,18 +53,6 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-      m_instanceIdHasBeenSet = true;
-    }
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
-    }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
@@ -76,6 +64,12 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
       }
 
       m_groupsHasBeenSet = true;
+    }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -89,6 +83,12 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -96,16 +96,6 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
 
 void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_groupsHasBeenSet)
   {
       unsigned groupsIdx = 1;
@@ -115,6 +105,11 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
         groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -128,18 +123,15 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
 }
 
 void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
   if(m_groupsHasBeenSet)
   {
       unsigned groupsIdx = 1;
@@ -150,6 +142,10 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -159,6 +155,10 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

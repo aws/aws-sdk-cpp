@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +48,46 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline PrefixList& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline PrefixList& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
+    inline PrefixList& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 
     /**
      * <p>The ID of the prefix.</p>
@@ -119,53 +159,13 @@ namespace Model
      */
     inline PrefixList& WithPrefixListName(const char* value) { SetPrefixListName(value); return *this;}
 
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline PrefixList& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline PrefixList& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IP address range of the AWS service.</p>
-     */
-    inline PrefixList& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-
   private:
+    Aws::Vector<Aws::String> m_cidrs;
+    bool m_cidrsHasBeenSet;
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet;
     Aws::String m_prefixListName;
     bool m_prefixListNameHasBeenSet;
-    Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
   };
 
 } // namespace Model

@@ -31,26 +31,26 @@ namespace Model
 {
 
 InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment() : 
+    m_attachTimeHasBeenSet(false),
     m_attachmentIdHasBeenSet(false),
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
 InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const XmlNode& xmlNode) : 
+    m_attachTimeHasBeenSet(false),
     m_attachmentIdHasBeenSet(false),
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,11 +61,23 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
 
   if(!resultNode.IsNull())
   {
+    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
+    if(!attachTimeNode.IsNull())
+    {
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_attachTimeHasBeenSet = true;
+    }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
       m_attachmentId = StringUtils::Trim(attachmentIdNode.GetText().c_str());
       m_attachmentIdHasBeenSet = true;
+    }
+    XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
+    if(!deleteOnTerminationNode.IsNull())
+    {
+      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
+      m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("deviceIndex");
     if(!deviceIndexNode.IsNull())
@@ -79,18 +91,6 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
       m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
-    if(!attachTimeNode.IsNull())
-    {
-      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_attachTimeHasBeenSet = true;
-    }
-    XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
-    if(!deleteOnTerminationNode.IsNull())
-    {
-      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
-      m_deleteOnTerminationHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -98,9 +98,19 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
 
 void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_attachmentIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
+  }
+
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
   if(m_deviceIndexHasBeenSet)
@@ -113,23 +123,21 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
   }
 
-  if(m_attachTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
-  }
-
 }
 
 void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_attachmentIdHasBeenSet)
   {
       oStream << location << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
+  }
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
   if(m_deviceIndexHasBeenSet)
   {
@@ -138,14 +146,6 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
-  }
-  if(m_attachTimeHasBeenSet)
-  {
-      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 }
 

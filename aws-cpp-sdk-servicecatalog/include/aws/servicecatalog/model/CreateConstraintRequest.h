@@ -157,72 +157,114 @@ namespace Model
     inline CreateConstraintRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline CreateConstraintRequest& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline CreateConstraintRequest& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The constraint parameters.</p>
+     * <p>The constraint parameters. Expected values vary depending on which
+     * <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For
+     * Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p>
+     * <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code>
+     * property is required.</p> <p>For Type <code>TEMPLATE</code>, the
+     * <code>Rules</code> property is required.</p>
      */
     inline CreateConstraintRequest& WithParameters(const char* value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline CreateConstraintRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline CreateConstraintRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the constraint.</p>
+     * <p>The type of the constraint. Case-sensitive valid values are:
+     * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
      */
     inline CreateConstraintRequest& WithType(const char* value) { SetType(value); return *this;}
 

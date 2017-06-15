@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/StatusName.h>
 #include <aws/ec2/model/StatusType.h>
-#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,36 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline const Aws::Utils::DateTime& GetImpairedSince() const{ return m_impairedSince; }
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline void SetImpairedSince(const Aws::Utils::DateTime& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline void SetImpairedSince(Aws::Utils::DateTime&& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = std::move(value); }
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline InstanceStatusDetails& WithImpairedSince(const Aws::Utils::DateTime& value) { SetImpairedSince(value); return *this;}
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline InstanceStatusDetails& WithImpairedSince(Aws::Utils::DateTime&& value) { SetImpairedSince(std::move(value)); return *this;}
 
     /**
      * <p>The type of instance status.</p>
@@ -100,43 +130,13 @@ namespace Model
      */
     inline InstanceStatusDetails& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
-    /**
-     * <p>The time when a status check failed. For an instance that was launched and
-     * impaired, this is the time when the instance was launched.</p>
-     */
-    inline const Aws::Utils::DateTime& GetImpairedSince() const{ return m_impairedSince; }
-
-    /**
-     * <p>The time when a status check failed. For an instance that was launched and
-     * impaired, this is the time when the instance was launched.</p>
-     */
-    inline void SetImpairedSince(const Aws::Utils::DateTime& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
-
-    /**
-     * <p>The time when a status check failed. For an instance that was launched and
-     * impaired, this is the time when the instance was launched.</p>
-     */
-    inline void SetImpairedSince(Aws::Utils::DateTime&& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = std::move(value); }
-
-    /**
-     * <p>The time when a status check failed. For an instance that was launched and
-     * impaired, this is the time when the instance was launched.</p>
-     */
-    inline InstanceStatusDetails& WithImpairedSince(const Aws::Utils::DateTime& value) { SetImpairedSince(value); return *this;}
-
-    /**
-     * <p>The time when a status check failed. For an instance that was launched and
-     * impaired, this is the time when the instance was launched.</p>
-     */
-    inline InstanceStatusDetails& WithImpairedSince(Aws::Utils::DateTime&& value) { SetImpairedSince(std::move(value)); return *this;}
-
   private:
+    Aws::Utils::DateTime m_impairedSince;
+    bool m_impairedSinceHasBeenSet;
     StatusName m_name;
     bool m_nameHasBeenSet;
     StatusType m_status;
     bool m_statusHasBeenSet;
-    Aws::Utils::DateTime m_impairedSince;
-    bool m_impairedSinceHasBeenSet;
   };
 
 } // namespace Model

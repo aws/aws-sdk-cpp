@@ -50,6 +50,31 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
 
   if(!resultNode.IsNull())
   {
+    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
+    if(!currencyCodeNode.IsNull())
+    {
+      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
+    }
+    XmlNode isValidExchangeNode = resultNode.FirstChild("isValidExchange");
+    if(!isValidExchangeNode.IsNull())
+    {
+      m_isValidExchange = StringUtils::ConvertToBool(StringUtils::Trim(isValidExchangeNode.GetText().c_str()).c_str());
+    }
+    XmlNode outputReservedInstancesWillExpireAtNode = resultNode.FirstChild("outputReservedInstancesWillExpireAt");
+    if(!outputReservedInstancesWillExpireAtNode.IsNull())
+    {
+      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(outputReservedInstancesWillExpireAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+    }
+    XmlNode paymentDueNode = resultNode.FirstChild("paymentDue");
+    if(!paymentDueNode.IsNull())
+    {
+      m_paymentDue = StringUtils::Trim(paymentDueNode.GetText().c_str());
+    }
+    XmlNode reservedInstanceValueRollupNode = resultNode.FirstChild("reservedInstanceValueRollup");
+    if(!reservedInstanceValueRollupNode.IsNull())
+    {
+      m_reservedInstanceValueRollup = reservedInstanceValueRollupNode;
+    }
     XmlNode reservedInstanceValueSetNode = resultNode.FirstChild("reservedInstanceValueSet");
     if(!reservedInstanceValueSetNode.IsNull())
     {
@@ -61,10 +86,10 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
       }
 
     }
-    XmlNode reservedInstanceValueRollupNode = resultNode.FirstChild("reservedInstanceValueRollup");
-    if(!reservedInstanceValueRollupNode.IsNull())
+    XmlNode targetConfigurationValueRollupNode = resultNode.FirstChild("targetConfigurationValueRollup");
+    if(!targetConfigurationValueRollupNode.IsNull())
     {
-      m_reservedInstanceValueRollup = reservedInstanceValueRollupNode;
+      m_targetConfigurationValueRollup = targetConfigurationValueRollupNode;
     }
     XmlNode targetConfigurationValueSetNode = resultNode.FirstChild("targetConfigurationValueSet");
     if(!targetConfigurationValueSetNode.IsNull())
@@ -76,31 +101,6 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
         targetConfigurationValueSetMember = targetConfigurationValueSetMember.NextNode("item");
       }
 
-    }
-    XmlNode targetConfigurationValueRollupNode = resultNode.FirstChild("targetConfigurationValueRollup");
-    if(!targetConfigurationValueRollupNode.IsNull())
-    {
-      m_targetConfigurationValueRollup = targetConfigurationValueRollupNode;
-    }
-    XmlNode paymentDueNode = resultNode.FirstChild("paymentDue");
-    if(!paymentDueNode.IsNull())
-    {
-      m_paymentDue = StringUtils::Trim(paymentDueNode.GetText().c_str());
-    }
-    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
-    if(!currencyCodeNode.IsNull())
-    {
-      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
-    }
-    XmlNode outputReservedInstancesWillExpireAtNode = resultNode.FirstChild("outputReservedInstancesWillExpireAt");
-    if(!outputReservedInstancesWillExpireAtNode.IsNull())
-    {
-      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(outputReservedInstancesWillExpireAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-    }
-    XmlNode isValidExchangeNode = resultNode.FirstChild("isValidExchange");
-    if(!isValidExchangeNode.IsNull())
-    {
-      m_isValidExchange = StringUtils::ConvertToBool(StringUtils::Trim(isValidExchangeNode.GetText().c_str()).c_str());
     }
     XmlNode validationFailureReasonNode = resultNode.FirstChild("validationFailureReason");
     if(!validationFailureReasonNode.IsNull())

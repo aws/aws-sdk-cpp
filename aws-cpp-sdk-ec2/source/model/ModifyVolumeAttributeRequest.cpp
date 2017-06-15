@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyVolumeAttributeRequest::ModifyVolumeAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_autoEnableIOHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
-    m_autoEnableIOHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyVolumeAttribute&";
-  if(m_dryRunHasBeenSet)
+  if(m_autoEnableIOHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    m_autoEnableIO.OutputToStream(ss, "AutoEnableIO");
   }
 
   if(m_volumeIdHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
-  if(m_autoEnableIOHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    m_autoEnableIO.OutputToStream(ss, "AutoEnableIO");
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

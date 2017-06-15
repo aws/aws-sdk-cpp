@@ -16,7 +16,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/servicecatalog/model/RecordStatus.h>
+#include <aws/servicecatalog/model/ProvisionedProductStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -189,29 +189,84 @@ namespace Model
     inline ProvisionedProductDetail& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p>
+     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
+     * - Stable state, ready to perform any operation. The most recent action request
+     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
+     * operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.</p> <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
+     * has completed the requested operation but is not exactly what was requested. For
+     * example, a request to update to a new version failed and the stack rolled back
+     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
+     * happened such that the provisioned product exists but the stack is not running.
+     * For example, CloudFormation received an invalid parameter value and could not
+     * launch the stack.</p>
      */
-    inline const RecordStatus& GetStatus() const{ return m_status; }
+    inline const ProvisionedProductStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p>
+     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
+     * - Stable state, ready to perform any operation. The most recent action request
+     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
+     * operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.</p> <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
+     * has completed the requested operation but is not exactly what was requested. For
+     * example, a request to update to a new version failed and the stack rolled back
+     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
+     * happened such that the provisioned product exists but the stack is not running.
+     * For example, CloudFormation received an invalid parameter value and could not
+     * launch the stack.</p>
      */
-    inline void SetStatus(const RecordStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(const ProvisionedProductStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p>
+     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
+     * - Stable state, ready to perform any operation. The most recent action request
+     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
+     * operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.</p> <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
+     * has completed the requested operation but is not exactly what was requested. For
+     * example, a request to update to a new version failed and the stack rolled back
+     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
+     * happened such that the provisioned product exists but the stack is not running.
+     * For example, CloudFormation received an invalid parameter value and could not
+     * launch the stack.</p>
      */
-    inline void SetStatus(RecordStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetStatus(ProvisionedProductStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p>
+     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
+     * - Stable state, ready to perform any operation. The most recent action request
+     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
+     * operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.</p> <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
+     * has completed the requested operation but is not exactly what was requested. For
+     * example, a request to update to a new version failed and the stack rolled back
+     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
+     * happened such that the provisioned product exists but the stack is not running.
+     * For example, CloudFormation received an invalid parameter value and could not
+     * launch the stack.</p>
      */
-    inline ProvisionedProductDetail& WithStatus(const RecordStatus& value) { SetStatus(value); return *this;}
+    inline ProvisionedProductDetail& WithStatus(const ProvisionedProductStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the ProvisionedProduct.</p>
+     * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
+     * - Stable state, ready to perform any operation. The most recent action request
+     * succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state,
+     * operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.</p> <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack
+     * has completed the requested operation but is not exactly what was requested. For
+     * example, a request to update to a new version failed and the stack rolled back
+     * to the current version. </p> <p> <code>ERROR</code> - Something unexpected
+     * happened such that the provisioned product exists but the stack is not running.
+     * For example, CloudFormation received an invalid parameter value and could not
+     * launch the stack.</p>
      */
-    inline ProvisionedProductDetail& WithStatus(RecordStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ProvisionedProductDetail& WithStatus(ProvisionedProductStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current status message of the ProvisionedProduct.</p>
@@ -373,7 +428,7 @@ namespace Model
     bool m_typeHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
-    RecordStatus m_status;
+    ProvisionedProductStatus m_status;
     bool m_statusHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;

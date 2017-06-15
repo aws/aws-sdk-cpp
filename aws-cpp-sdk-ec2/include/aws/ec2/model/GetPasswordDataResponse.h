@@ -84,31 +84,6 @@ namespace Model
     inline GetPasswordDataResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-
-    /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-
-    /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
-    /**
      * <p>The password of the instance.</p>
      */
     inline const Aws::String& GetPasswordData() const{ return m_passwordData; }
@@ -143,6 +118,31 @@ namespace Model
      */
     inline GetPasswordDataResponse& WithPasswordData(const char* value) { SetPasswordData(value); return *this;}
 
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -160,8 +160,8 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
-    Aws::Utils::DateTime m_timestamp;
     Aws::String m_passwordData;
+    Aws::Utils::DateTime m_timestamp;
     ResponseMetadata m_responseMetadata;
   };
 

@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/MoveStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,36 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
+    inline const MoveStatus& GetMoveStatus() const{ return m_moveStatus; }
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
+    inline void SetMoveStatus(const MoveStatus& value) { m_moveStatusHasBeenSet = true; m_moveStatus = value; }
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
+    inline void SetMoveStatus(MoveStatus&& value) { m_moveStatusHasBeenSet = true; m_moveStatus = std::move(value); }
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
+    inline MovingAddressStatus& WithMoveStatus(const MoveStatus& value) { SetMoveStatus(value); return *this;}
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
+    inline MovingAddressStatus& WithMoveStatus(MoveStatus&& value) { SetMoveStatus(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -85,41 +115,11 @@ namespace Model
      */
     inline MovingAddressStatus& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
-    /**
-     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
-     * platform, or restored to the EC2-Classic platform.</p>
-     */
-    inline const MoveStatus& GetMoveStatus() const{ return m_moveStatus; }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
-     * platform, or restored to the EC2-Classic platform.</p>
-     */
-    inline void SetMoveStatus(const MoveStatus& value) { m_moveStatusHasBeenSet = true; m_moveStatus = value; }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
-     * platform, or restored to the EC2-Classic platform.</p>
-     */
-    inline void SetMoveStatus(MoveStatus&& value) { m_moveStatusHasBeenSet = true; m_moveStatus = std::move(value); }
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
-     * platform, or restored to the EC2-Classic platform.</p>
-     */
-    inline MovingAddressStatus& WithMoveStatus(const MoveStatus& value) { SetMoveStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
-     * platform, or restored to the EC2-Classic platform.</p>
-     */
-    inline MovingAddressStatus& WithMoveStatus(MoveStatus&& value) { SetMoveStatus(std::move(value)); return *this;}
-
   private:
-    Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
     MoveStatus m_moveStatus;
     bool m_moveStatusHasBeenSet;
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet;
   };
 
 } // namespace Model

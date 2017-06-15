@@ -42,65 +42,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline ReplaceRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline ReplaceRouteRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline ReplaceRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline ReplaceRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
-
-    /**
      * <p>The IPv4 CIDR address block used for the destination match. The value you
      * provide must match the CIDR of an existing route in the table.</p>
      */
@@ -141,41 +82,6 @@ namespace Model
      * provide must match the CIDR of an existing route in the table.</p>
      */
     inline ReplaceRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of an Internet gateway or virtual private gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
     /**
      * <p>The IPv6 CIDR address block used for the destination match. The value you
@@ -220,6 +126,30 @@ namespace Model
     inline ReplaceRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline ReplaceRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
@@ -253,6 +183,41 @@ namespace Model
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
      */
     inline ReplaceRouteRequest& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an Internet gateway or virtual private gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -290,6 +255,41 @@ namespace Model
     inline ReplaceRouteRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+
+    /**
      * <p>The ID of a network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -323,6 +323,41 @@ namespace Model
      * <p>The ID of a network interface.</p>
      */
     inline ReplaceRouteRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline ReplaceRouteRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline ReplaceRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline ReplaceRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
     /**
      * <p>The ID of a VPC peering connection.</p>
@@ -359,62 +394,27 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-     */
-    inline ReplaceRouteRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
-    Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::String m_egressOnlyInternetGatewayId;
     bool m_egressOnlyInternetGatewayIdHasBeenSet;
+    Aws::String m_gatewayId;
+    bool m_gatewayIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
+    Aws::String m_routeTableId;
+    bool m_routeTableIdHasBeenSet;
+    Aws::String m_vpcPeeringConnectionId;
+    bool m_vpcPeeringConnectionIdHasBeenSet;
   };
 
 } // namespace Model

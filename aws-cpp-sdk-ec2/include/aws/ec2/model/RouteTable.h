@@ -16,12 +16,12 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Route.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/RouteTableAssociation.h>
-#include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/PropagatingVgw.h>
+#include <aws/ec2/model/Route.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -52,111 +52,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline RouteTable& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline RouteTable& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline RouteTable& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline RouteTable& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline RouteTable& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline RouteTable& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline const Aws::Vector<Route>& GetRoutes() const{ return m_routes; }
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline void SetRoutes(const Aws::Vector<Route>& value) { m_routesHasBeenSet = true; m_routes = value; }
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline void SetRoutes(Aws::Vector<Route>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline RouteTable& WithRoutes(const Aws::Vector<Route>& value) { SetRoutes(value); return *this;}
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline RouteTable& WithRoutes(Aws::Vector<Route>&& value) { SetRoutes(std::move(value)); return *this;}
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline RouteTable& AddRoutes(const Route& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-
-    /**
-     * <p>The routes in the route table.</p>
-     */
-    inline RouteTable& AddRoutes(Route&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The associations between the route table and one or more subnets.</p>
@@ -194,6 +89,111 @@ namespace Model
     inline RouteTable& AddAssociations(RouteTableAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline const Aws::Vector<PropagatingVgw>& GetPropagatingVgws() const{ return m_propagatingVgws; }
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline void SetPropagatingVgws(const Aws::Vector<PropagatingVgw>& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws = value; }
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline void SetPropagatingVgws(Aws::Vector<PropagatingVgw>&& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws = std::move(value); }
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline RouteTable& WithPropagatingVgws(const Aws::Vector<PropagatingVgw>& value) { SetPropagatingVgws(value); return *this;}
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline RouteTable& WithPropagatingVgws(Aws::Vector<PropagatingVgw>&& value) { SetPropagatingVgws(std::move(value)); return *this;}
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline RouteTable& AddPropagatingVgws(const PropagatingVgw& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws.push_back(value); return *this; }
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline RouteTable& AddPropagatingVgws(PropagatingVgw&& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline RouteTable& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline RouteTable& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline RouteTable& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline const Aws::Vector<Route>& GetRoutes() const{ return m_routes; }
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline void SetRoutes(const Aws::Vector<Route>& value) { m_routesHasBeenSet = true; m_routes = value; }
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline void SetRoutes(Aws::Vector<Route>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline RouteTable& WithRoutes(const Aws::Vector<Route>& value) { SetRoutes(value); return *this;}
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline RouteTable& WithRoutes(Aws::Vector<Route>&& value) { SetRoutes(std::move(value)); return *this;}
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline RouteTable& AddRoutes(const Route& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline RouteTable& AddRoutes(Route&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>Any tags assigned to the route table.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -229,53 +229,53 @@ namespace Model
     inline RouteTable& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline const Aws::Vector<PropagatingVgw>& GetPropagatingVgws() const{ return m_propagatingVgws; }
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetPropagatingVgws(const Aws::Vector<PropagatingVgw>& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws = value; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline void SetPropagatingVgws(Aws::Vector<PropagatingVgw>&& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws = std::move(value); }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline RouteTable& WithPropagatingVgws(const Aws::Vector<PropagatingVgw>& value) { SetPropagatingVgws(value); return *this;}
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline RouteTable& WithPropagatingVgws(Aws::Vector<PropagatingVgw>&& value) { SetPropagatingVgws(std::move(value)); return *this;}
+    inline RouteTable& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline RouteTable& AddPropagatingVgws(const PropagatingVgw& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws.push_back(value); return *this; }
+    inline RouteTable& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     * <p>The ID of the VPC.</p>
      */
-    inline RouteTable& AddPropagatingVgws(PropagatingVgw&& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws.push_back(std::move(value)); return *this; }
+    inline RouteTable& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
-    Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    Aws::Vector<Route> m_routes;
-    bool m_routesHasBeenSet;
     Aws::Vector<RouteTableAssociation> m_associations;
     bool m_associationsHasBeenSet;
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
     Aws::Vector<PropagatingVgw> m_propagatingVgws;
     bool m_propagatingVgwsHasBeenSet;
+    Aws::String m_routeTableId;
+    bool m_routeTableIdHasBeenSet;
+    Aws::Vector<Route> m_routes;
+    bool m_routesHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

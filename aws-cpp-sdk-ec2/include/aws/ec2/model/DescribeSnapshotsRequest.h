@@ -44,166 +44,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeSnapshotsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
-     */
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetOwnerIds() const{ return m_ownerIds; }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline void SetOwnerIds(Aws::Vector<Aws::String>&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::move(value); }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline DescribeSnapshotsRequest& WithOwnerIds(const Aws::Vector<Aws::String>& value) { SetOwnerIds(value); return *this;}
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline DescribeSnapshotsRequest& WithOwnerIds(Aws::Vector<Aws::String>&& value) { SetOwnerIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline DescribeSnapshotsRequest& AddOwnerIds(const Aws::String& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline DescribeSnapshotsRequest& AddOwnerIds(Aws::String&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
-     */
-    inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRestorableByUserIds() const{ return m_restorableByUserIds; }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline void SetRestorableByUserIds(const Aws::Vector<Aws::String>& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = value; }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline void SetRestorableByUserIds(Aws::Vector<Aws::String>&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = std::move(value); }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline DescribeSnapshotsRequest& WithRestorableByUserIds(const Aws::Vector<Aws::String>& value) { SetRestorableByUserIds(value); return *this;}
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline DescribeSnapshotsRequest& WithRestorableByUserIds(Aws::Vector<Aws::String>&& value) { SetRestorableByUserIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const Aws::String& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(Aws::String&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
-     */
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const char* value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>description</code> - A
      * description of the snapshot.</p> </li> <li> <p> <code>owner-alias</code> - Value
      * from an Amazon-maintained list (<code>amazon</code> |
@@ -428,6 +268,48 @@ namespace Model
     inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>The maximum number of snapshot results returned by
+     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
+     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
+     * single page along with a <code>NextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
+     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
+     * a value larger than 1000, only 1000 results are returned. If this parameter is
+     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
+     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of snapshot results returned by
+     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
+     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
+     * single page along with a <code>NextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
+     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
+     * a value larger than 1000, only 1000 results are returned. If this parameter is
+     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
+     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of snapshot results returned by
+     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
+     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
+     * single page along with a <code>NextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
+     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
+     * a value larger than 1000, only 1000 results are returned. If this parameter is
+     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
+     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     */
+    inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
      * <code>DescribeSnapshots</code> request where <code>MaxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
@@ -491,62 +373,180 @@ namespace Model
     inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of snapshot results returned by
-     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
-     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
-     * single page along with a <code>NextToken</code> response element. The remaining
-     * results of the initial request can be seen by sending another
-     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::Vector<Aws::String>& GetOwnerIds() const{ return m_ownerIds; }
 
     /**
-     * <p>The maximum number of snapshot results returned by
-     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
-     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
-     * single page along with a <code>NextToken</code> response element. The remaining
-     * results of the initial request can be seen by sending another
-     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
 
     /**
-     * <p>The maximum number of snapshot results returned by
-     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
-     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
-     * single page along with a <code>NextToken</code> response element. The remaining
-     * results of the initial request can be seen by sending another
-     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
      */
-    inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetOwnerIds(Aws::Vector<Aws::String>&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::move(value); }
+
+    /**
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
+     */
+    inline DescribeSnapshotsRequest& WithOwnerIds(const Aws::Vector<Aws::String>& value) { SetOwnerIds(value); return *this;}
+
+    /**
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
+     */
+    inline DescribeSnapshotsRequest& WithOwnerIds(Aws::Vector<Aws::String>&& value) { SetOwnerIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
+     */
+    inline DescribeSnapshotsRequest& AddOwnerIds(const Aws::String& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
+     */
+    inline DescribeSnapshotsRequest& AddOwnerIds(Aws::String&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
+     * specified.</p>
+     */
+    inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRestorableByUserIds() const{ return m_restorableByUserIds; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline void SetRestorableByUserIds(const Aws::Vector<Aws::String>& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = value; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline void SetRestorableByUserIds(Aws::Vector<Aws::String>&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = std::move(value); }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline DescribeSnapshotsRequest& WithRestorableByUserIds(const Aws::Vector<Aws::String>& value) { SetRestorableByUserIds(value); return *this;}
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline DescribeSnapshotsRequest& WithRestorableByUserIds(Aws::Vector<Aws::String>&& value) { SetRestorableByUserIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const Aws::String& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline DescribeSnapshotsRequest& AddRestorableByUserIds(Aws::String&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const char* value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
+     * have launch permissions.</p>
+     */
+    inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeSnapshotsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_snapshotIds;
-    bool m_snapshotIdsHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
     Aws::Vector<Aws::String> m_ownerIds;
     bool m_ownerIdsHasBeenSet;
     Aws::Vector<Aws::String> m_restorableByUserIds;
     bool m_restorableByUserIdsHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    Aws::Vector<Aws::String> m_snapshotIds;
+    bool m_snapshotIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

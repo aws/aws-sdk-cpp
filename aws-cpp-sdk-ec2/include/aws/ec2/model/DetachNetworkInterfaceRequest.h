@@ -43,30 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DetachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
      * <p>The ID of the attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
@@ -102,6 +78,30 @@ namespace Model
     inline DetachNetworkInterfaceRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DetachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
      * <p>Specifies whether to force a detachment.</p>
      */
     inline bool GetForce() const{ return m_force; }
@@ -117,10 +117,10 @@ namespace Model
     inline DetachNetworkInterfaceRequest& WithForce(bool value) { SetForce(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     bool m_force;
     bool m_forceHasBeenSet;
   };

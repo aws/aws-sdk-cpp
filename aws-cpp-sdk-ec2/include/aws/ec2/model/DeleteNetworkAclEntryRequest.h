@@ -67,6 +67,21 @@ namespace Model
     inline DeleteNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
+     * <p>Indicates whether the rule is an egress rule.</p>
+     */
+    inline bool GetEgress() const{ return m_egress; }
+
+    /**
+     * <p>Indicates whether the rule is an egress rule.</p>
+     */
+    inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
+
+    /**
+     * <p>Indicates whether the rule is an egress rule.</p>
+     */
+    inline DeleteNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
+
+    /**
      * <p>The ID of the network ACL.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
@@ -116,30 +131,15 @@ namespace Model
      */
     inline DeleteNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
-    /**
-     * <p>Indicates whether the rule is an egress rule.</p>
-     */
-    inline bool GetEgress() const{ return m_egress; }
-
-    /**
-     * <p>Indicates whether the rule is an egress rule.</p>
-     */
-    inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
-
-    /**
-     * <p>Indicates whether the rule is an egress rule.</p>
-     */
-    inline DeleteNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
-
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+    bool m_egress;
+    bool m_egressHasBeenSet;
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
     int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
-    bool m_egress;
-    bool m_egressHasBeenSet;
   };
 
 } // namespace Model

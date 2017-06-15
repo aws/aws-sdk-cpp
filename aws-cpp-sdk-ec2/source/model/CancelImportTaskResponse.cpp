@@ -53,15 +53,15 @@ CancelImportTaskResponse& CancelImportTaskResponse::operator =(const AmazonWebSe
     {
       m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
     }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
-    }
     XmlNode previousStateNode = resultNode.FirstChild("previousState");
     if(!previousStateNode.IsNull())
     {
       m_previousState = StringUtils::Trim(previousStateNode.GetText().c_str());
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = StringUtils::Trim(stateNode.GetText().c_str());
     }
   }
 

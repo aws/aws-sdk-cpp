@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/ec2/model/PlacementGroupState.h>
+#include <aws/ec2/model/PlacementStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -86,31 +86,6 @@ namespace Model
     inline PlacementGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The placement strategy.</p>
-     */
-    inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
-
-    /**
-     * <p>The placement strategy.</p>
-     */
-    inline void SetStrategy(const PlacementStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-
-    /**
-     * <p>The placement strategy.</p>
-     */
-    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-
-    /**
-     * <p>The placement strategy.</p>
-     */
-    inline PlacementGroup& WithStrategy(const PlacementStrategy& value) { SetStrategy(value); return *this;}
-
-    /**
-     * <p>The placement strategy.</p>
-     */
-    inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
-
-    /**
      * <p>The state of the placement group.</p>
      */
     inline const PlacementGroupState& GetState() const{ return m_state; }
@@ -135,13 +110,38 @@ namespace Model
      */
     inline PlacementGroup& WithState(PlacementGroupState&& value) { SetState(std::move(value)); return *this;}
 
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline void SetStrategy(const PlacementStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline PlacementGroup& WithStrategy(const PlacementStrategy& value) { SetStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
+
   private:
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
-    PlacementStrategy m_strategy;
-    bool m_strategyHasBeenSet;
     PlacementGroupState m_state;
     bool m_stateHasBeenSet;
+    PlacementStrategy m_strategy;
+    bool m_strategyHasBeenSet;
   };
 
 } // namespace Model

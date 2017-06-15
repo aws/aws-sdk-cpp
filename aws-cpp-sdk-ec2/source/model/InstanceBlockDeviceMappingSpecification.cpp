@@ -33,16 +33,16 @@ namespace Model
 InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification() : 
     m_deviceNameHasBeenSet(false),
     m_ebsHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
+    m_noDeviceHasBeenSet(false),
+    m_virtualNameHasBeenSet(false)
 {
 }
 
 InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification(const XmlNode& xmlNode) : 
     m_deviceNameHasBeenSet(false),
     m_ebsHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
+    m_noDeviceHasBeenSet(false),
+    m_virtualNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,17 +65,17 @@ InstanceBlockDeviceMappingSpecification& InstanceBlockDeviceMappingSpecification
       m_ebs = ebsNode;
       m_ebsHasBeenSet = true;
     }
-    XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
-    if(!virtualNameNode.IsNull())
-    {
-      m_virtualName = StringUtils::Trim(virtualNameNode.GetText().c_str());
-      m_virtualNameHasBeenSet = true;
-    }
     XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
     if(!noDeviceNode.IsNull())
     {
       m_noDevice = StringUtils::Trim(noDeviceNode.GetText().c_str());
       m_noDeviceHasBeenSet = true;
+    }
+    XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
+    if(!virtualNameNode.IsNull())
+    {
+      m_virtualName = StringUtils::Trim(virtualNameNode.GetText().c_str());
+      m_virtualNameHasBeenSet = true;
     }
   }
 
@@ -96,14 +96,14 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
 
-  if(m_virtualNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
-  }
-
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << index << locationValue << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
+  }
+
+  if(m_virtualNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
 
 }
@@ -120,13 +120,13 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
       ebsLocationAndMember += ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMember.c_str());
   }
-  if(m_virtualNameHasBeenSet)
-  {
-      oStream << location << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
-  }
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
+  }
+  if(m_virtualNameHasBeenSet)
+  {
+      oStream << location << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
 }
 

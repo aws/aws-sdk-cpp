@@ -44,30 +44,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline ImportVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
      * <p>The Availability Zone for the resulting EBS volume.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -101,31 +77,6 @@ namespace Model
      * <p>The Availability Zone for the resulting EBS volume.</p>
      */
     inline ImportVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The disk image.</p>
-     */
-    inline const DiskImageDetail& GetImage() const{ return m_image; }
-
-    /**
-     * <p>The disk image.</p>
-     */
-    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>The disk image.</p>
-     */
-    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>The disk image.</p>
-     */
-    inline ImportVolumeRequest& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>The disk image.</p>
-     */
-    inline ImportVolumeRequest& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>A description of the volume.</p>
@@ -163,6 +114,55 @@ namespace Model
     inline ImportVolumeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline ImportVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline const DiskImageDetail& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline ImportVolumeRequest& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline ImportVolumeRequest& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
+
+    /**
      * <p>The volume size.</p>
      */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
@@ -188,14 +188,14 @@ namespace Model
     inline ImportVolumeRequest& WithVolume(VolumeDetail&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    DiskImageDetail m_image;
-    bool m_imageHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    DiskImageDetail m_image;
+    bool m_imageHasBeenSet;
     VolumeDetail m_volume;
     bool m_volumeHasBeenSet;
   };

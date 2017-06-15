@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeFlowLogsRequest::DescribeFlowLogsRequest() : 
-    m_flowLogIdsHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
+    m_flowLogIdsHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,16 @@ Aws::String DescribeFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeFlowLogs&";
+  if(m_filterHasBeenSet)
+  {
+    unsigned filterCount = 1;
+    for(auto& item : m_filter)
+    {
+      item.OutputToStream(ss, "Filter.", filterCount, "");
+      filterCount++;
+    }
+  }
+
   if(m_flowLogIdsHasBeenSet)
   {
     unsigned flowLogIdsCount = 1;
@@ -44,24 +54,14 @@ Aws::String DescribeFlowLogsRequest::SerializePayload() const
     }
   }
 
-  if(m_filterHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-    unsigned filterCount = 1;
-    for(auto& item : m_filter)
-    {
-      item.OutputToStream(ss, "Filter.", filterCount, "");
-      filterCount++;
-    }
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   ss << "Version=2016-11-15";

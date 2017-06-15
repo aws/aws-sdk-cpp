@@ -21,13 +21,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_bgpAsn(0),
+    m_bgpAsnHasBeenSet(false),
+    m_publicIpHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_bgpAsn(0),
-    m_bgpAsnHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -35,14 +35,9 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateCustomerGateway&";
-  if(m_dryRunHasBeenSet)
+  if(m_bgpAsnHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_typeHasBeenSet)
-  {
-    ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+    ss << "BgpAsn=" << m_bgpAsn << "&";
   }
 
   if(m_publicIpHasBeenSet)
@@ -50,9 +45,14 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
     ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  if(m_bgpAsnHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-    ss << "BgpAsn=" << m_bgpAsn << "&";
+    ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

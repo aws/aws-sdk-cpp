@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeVolumeAttributeRequest::DescribeVolumeAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
     m_attribute(VolumeAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String DescribeVolumeAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeVolumeAttribute&";
-  if(m_dryRunHasBeenSet)
+  if(m_attributeHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Attribute=" << VolumeAttributeNameMapper::GetNameForVolumeAttributeName(m_attribute) << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -43,9 +43,9 @@ Aws::String DescribeVolumeAttributeRequest::SerializePayload() const
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
-  if(m_attributeHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Attribute=" << VolumeAttributeNameMapper::GetNameForVolumeAttributeName(m_attribute) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

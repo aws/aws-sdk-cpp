@@ -31,14 +31,26 @@ namespace Model
 ContainerOverride::ContainerOverride() : 
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_cpu(0),
+    m_cpuHasBeenSet(false),
+    m_memory(0),
+    m_memoryHasBeenSet(false),
+    m_memoryReservation(0),
+    m_memoryReservationHasBeenSet(false)
 {
 }
 
 ContainerOverride::ContainerOverride(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_cpu(0),
+    m_cpuHasBeenSet(false),
+    m_memory(0),
+    m_memoryHasBeenSet(false),
+    m_memoryReservation(0),
+    m_memoryReservationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +82,27 @@ ContainerOverride& ContainerOverride::operator =(const JsonValue& jsonValue)
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
     }
     m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cpu"))
+  {
+    m_cpu = jsonValue.GetInteger("cpu");
+
+    m_cpuHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetInteger("memory");
+
+    m_memoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memoryReservation"))
+  {
+    m_memoryReservation = jsonValue.GetInteger("memoryReservation");
+
+    m_memoryReservationHasBeenSet = true;
   }
 
   return *this;
@@ -104,6 +137,24 @@ JsonValue ContainerOverride::Jsonize() const
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
    }
    payload.WithArray("environment", std::move(environmentJsonList));
+
+  }
+
+  if(m_cpuHasBeenSet)
+  {
+   payload.WithInteger("cpu", m_cpu);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithInteger("memory", m_memory);
+
+  }
+
+  if(m_memoryReservationHasBeenSet)
+  {
+   payload.WithInteger("memoryReservation", m_memoryReservation);
 
   }
 

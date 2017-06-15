@@ -44,46 +44,6 @@ namespace Model
 
   public:
     /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFlowLogIds() const{ return m_flowLogIds; }
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::move(value); }
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline DescribeFlowLogsRequest& WithFlowLogIds(const Aws::Vector<Aws::String>& value) { SetFlowLogIds(value); return *this;}
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline DescribeFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline DescribeFlowLogsRequest& AddFlowLogIds(const Aws::String& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline DescribeFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more flow log IDs.</p>
-     */
-    inline DescribeFlowLogsRequest& AddFlowLogIds(const char* value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
      * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
@@ -161,6 +121,76 @@ namespace Model
     inline DescribeFlowLogsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFlowLogIds() const{ return m_flowLogIds; }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::move(value); }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline DescribeFlowLogsRequest& WithFlowLogIds(const Aws::Vector<Aws::String>& value) { SetFlowLogIds(value); return *this;}
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline DescribeFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline DescribeFlowLogsRequest& AddFlowLogIds(const Aws::String& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline DescribeFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
+    inline DescribeFlowLogsRequest& AddFlowLogIds(const char* value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * returned. You cannot specify this parameter and the flow log IDs parameter in
+     * the same request.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * returned. You cannot specify this parameter and the flow log IDs parameter in
+     * the same request.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * returned. You cannot specify this parameter and the flow log IDs parameter in
+     * the same request.</p>
+     */
+    inline DescribeFlowLogsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -195,45 +225,15 @@ namespace Model
      */
     inline DescribeFlowLogsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. You cannot specify this parameter and the flow log IDs parameter in
-     * the same request.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. You cannot specify this parameter and the flow log IDs parameter in
-     * the same request.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. You cannot specify this parameter and the flow log IDs parameter in
-     * the same request.</p>
-     */
-    inline DescribeFlowLogsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
-    Aws::Vector<Aws::String> m_flowLogIds;
-    bool m_flowLogIdsHasBeenSet;
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_flowLogIds;
+    bool m_flowLogIdsHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

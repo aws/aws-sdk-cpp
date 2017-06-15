@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -43,46 +43,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more VPC IDs.</p>
-     */
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
     /**
      * <p>The maximum number of items to return for this request. The request returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -146,13 +106,53 @@ namespace Model
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more VPC IDs.</p>
+     */
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+
   private:
-    Aws::Vector<Aws::String> m_vpcIds;
-    bool m_vpcIdsHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcIds;
+    bool m_vpcIdsHasBeenSet;
   };
 
 } // namespace Model

@@ -49,6 +49,21 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The amount of the recurring charge.</p>
+     */
+    inline double GetAmount() const{ return m_amount; }
+
+    /**
+     * <p>The amount of the recurring charge.</p>
+     */
+    inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
+
+    /**
+     * <p>The amount of the recurring charge.</p>
+     */
+    inline RecurringCharge& WithAmount(double value) { SetAmount(value); return *this;}
+
+    /**
      * <p>The frequency of the recurring charge.</p>
      */
     inline const RecurringChargeFrequency& GetFrequency() const{ return m_frequency; }
@@ -73,26 +88,11 @@ namespace Model
      */
     inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
-    inline double GetAmount() const{ return m_amount; }
-
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
-    inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
-
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
-    inline RecurringCharge& WithAmount(double value) { SetAmount(value); return *this;}
-
   private:
-    RecurringChargeFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
     double m_amount;
     bool m_amountHasBeenSet;
+    RecurringChargeFrequency m_frequency;
+    bool m_frequencyHasBeenSet;
   };
 
 } // namespace Model

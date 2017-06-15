@@ -31,20 +31,20 @@ namespace Model
 {
 
 NetworkInterfacePrivateIpAddress::NetworkInterfacePrivateIpAddress() : 
-    m_privateIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
+    m_associationHasBeenSet(false),
     m_primary(false),
     m_primaryHasBeenSet(false),
-    m_associationHasBeenSet(false)
+    m_privateDnsNameHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
 NetworkInterfacePrivateIpAddress::NetworkInterfacePrivateIpAddress(const XmlNode& xmlNode) : 
-    m_privateIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
+    m_associationHasBeenSet(false),
     m_primary(false),
     m_primaryHasBeenSet(false),
-    m_associationHasBeenSet(false)
+    m_privateDnsNameHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,17 +55,11 @@ NetworkInterfacePrivateIpAddress& NetworkInterfacePrivateIpAddress::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
-    if(!privateIpAddressNode.IsNull())
+    XmlNode associationNode = resultNode.FirstChild("association");
+    if(!associationNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
-      m_privateIpAddressHasBeenSet = true;
-    }
-    XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
-    if(!privateDnsNameNode.IsNull())
-    {
-      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
-      m_privateDnsNameHasBeenSet = true;
+      m_association = associationNode;
+      m_associationHasBeenSet = true;
     }
     XmlNode primaryNode = resultNode.FirstChild("primary");
     if(!primaryNode.IsNull())
@@ -73,11 +67,17 @@ NetworkInterfacePrivateIpAddress& NetworkInterfacePrivateIpAddress::operator =(c
       m_primary = StringUtils::ConvertToBool(StringUtils::Trim(primaryNode.GetText().c_str()).c_str());
       m_primaryHasBeenSet = true;
     }
-    XmlNode associationNode = resultNode.FirstChild("association");
-    if(!associationNode.IsNull())
+    XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
+    if(!privateDnsNameNode.IsNull())
     {
-      m_association = associationNode;
-      m_associationHasBeenSet = true;
+      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
+      m_privateDnsNameHasBeenSet = true;
+    }
+    XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
+    if(!privateIpAddressNode.IsNull())
+    {
+      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddressHasBeenSet = true;
     }
   }
 
@@ -86,21 +86,6 @@ NetworkInterfacePrivateIpAddress& NetworkInterfacePrivateIpAddress::operator =(c
 
 void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
-
-  if(m_privateDnsNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
-  }
-
-  if(m_primaryHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Primary=" << std::boolalpha << m_primary << "&";
-  }
-
   if(m_associationHasBeenSet)
   {
       Aws::StringStream associationLocationAndMemberSs;
@@ -108,27 +93,42 @@ void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, con
       m_association.OutputToStream(oStream, associationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_primaryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Primary=" << std::boolalpha << m_primary << "&";
+  }
+
+  if(m_privateDnsNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+
+  if(m_privateIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+  }
+
 }
 
 void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
-  if(m_privateDnsNameHasBeenSet)
-  {
-      oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
-  }
-  if(m_primaryHasBeenSet)
-  {
-      oStream << location << ".Primary=" << std::boolalpha << m_primary << "&";
-  }
   if(m_associationHasBeenSet)
   {
       Aws::String associationLocationAndMember(location);
       associationLocationAndMember += ".Association";
       m_association.OutputToStream(oStream, associationLocationAndMember.c_str());
+  }
+  if(m_primaryHasBeenSet)
+  {
+      oStream << location << ".Primary=" << std::boolalpha << m_primary << "&";
+  }
+  if(m_privateDnsNameHasBeenSet)
+  {
+      oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+  if(m_privateIpAddressHasBeenSet)
+  {
+      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 }
 

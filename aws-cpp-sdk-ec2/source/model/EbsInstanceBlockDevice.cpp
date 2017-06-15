@@ -31,22 +31,22 @@ namespace Model
 {
 
 EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
-    m_volumeIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_volumeIdHasBeenSet(false)
 {
 }
 
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode) : 
-    m_volumeIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_volumeIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,18 +57,6 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
-    {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-      m_volumeIdHasBeenSet = true;
-    }
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
-      m_statusHasBeenSet = true;
-    }
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
@@ -81,6 +69,18 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
+    {
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -88,16 +88,6 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
 
 void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_volumeIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
-  }
-
   if(m_attachTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -108,18 +98,20 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
 }
 
 void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_volumeIdHasBeenSet)
-  {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
-  }
   if(m_attachTimeHasBeenSet)
   {
       oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -127,6 +119,14 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 }
 

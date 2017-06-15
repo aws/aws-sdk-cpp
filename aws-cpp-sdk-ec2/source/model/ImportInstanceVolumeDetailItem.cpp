@@ -31,26 +31,26 @@ namespace Model
 {
 
 ImportInstanceVolumeDetailItem::ImportInstanceVolumeDetailItem() : 
+    m_availabilityZoneHasBeenSet(false),
     m_bytesConverted(0),
     m_bytesConvertedHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_volumeHasBeenSet(false)
 {
 }
 
 ImportInstanceVolumeDetailItem::ImportInstanceVolumeDetailItem(const XmlNode& xmlNode) : 
+    m_availabilityZoneHasBeenSet(false),
     m_bytesConverted(0),
     m_bytesConvertedHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_volumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,29 +61,29 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
-    if(!bytesConvertedNode.IsNull())
-    {
-      m_bytesConverted = StringUtils::ConvertToInt64(StringUtils::Trim(bytesConvertedNode.GetText().c_str()).c_str());
-      m_bytesConvertedHasBeenSet = true;
-    }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
+    if(!bytesConvertedNode.IsNull())
+    {
+      m_bytesConverted = StringUtils::ConvertToInt64(StringUtils::Trim(bytesConvertedNode.GetText().c_str()).c_str());
+      m_bytesConvertedHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
     XmlNode imageNode = resultNode.FirstChild("image");
     if(!imageNode.IsNull())
     {
       m_image = imageNode;
       m_imageHasBeenSet = true;
-    }
-    XmlNode volumeNode = resultNode.FirstChild("volume");
-    if(!volumeNode.IsNull())
-    {
-      m_volume = volumeNode;
-      m_volumeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
@@ -97,11 +97,11 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
       m_statusMessageHasBeenSet = true;
     }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
+    XmlNode volumeNode = resultNode.FirstChild("volume");
+    if(!volumeNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
-      m_descriptionHasBeenSet = true;
+      m_volume = volumeNode;
+      m_volumeHasBeenSet = true;
     }
   }
 
@@ -110,14 +110,19 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
 
 void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
   if(m_bytesConvertedHasBeenSet)
   {
       oStream << location << index << locationValue << ".BytesConverted=" << m_bytesConverted << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_imageHasBeenSet)
@@ -125,13 +130,6 @@ void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const
       Aws::StringStream imageLocationAndMemberSs;
       imageLocationAndMemberSs << location << index << locationValue << ".Image";
       m_image.OutputToStream(oStream, imageLocationAndMemberSs.str().c_str());
-  }
-
-  if(m_volumeHasBeenSet)
-  {
-      Aws::StringStream volumeLocationAndMemberSs;
-      volumeLocationAndMemberSs << location << index << locationValue << ".Volume";
-      m_volume.OutputToStream(oStream, volumeLocationAndMemberSs.str().c_str());
   }
 
   if(m_statusHasBeenSet)
@@ -144,34 +142,34 @@ void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_volumeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+      Aws::StringStream volumeLocationAndMemberSs;
+      volumeLocationAndMemberSs << location << index << locationValue << ".Volume";
+      m_volume.OutputToStream(oStream, volumeLocationAndMemberSs.str().c_str());
   }
 
 }
 
 void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
   if(m_bytesConvertedHasBeenSet)
   {
       oStream << location << ".BytesConverted=" << m_bytesConverted << "&";
   }
-  if(m_availabilityZoneHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
   if(m_imageHasBeenSet)
   {
       Aws::String imageLocationAndMember(location);
       imageLocationAndMember += ".Image";
       m_image.OutputToStream(oStream, imageLocationAndMember.c_str());
-  }
-  if(m_volumeHasBeenSet)
-  {
-      Aws::String volumeLocationAndMember(location);
-      volumeLocationAndMember += ".Volume";
-      m_volume.OutputToStream(oStream, volumeLocationAndMember.c_str());
   }
   if(m_statusHasBeenSet)
   {
@@ -181,9 +179,11 @@ void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
-  if(m_descriptionHasBeenSet)
+  if(m_volumeHasBeenSet)
   {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+      Aws::String volumeLocationAndMember(location);
+      volumeLocationAndMember += ".Volume";
+      m_volume.OutputToStream(oStream, volumeLocationAndMember.c_str());
   }
 }
 

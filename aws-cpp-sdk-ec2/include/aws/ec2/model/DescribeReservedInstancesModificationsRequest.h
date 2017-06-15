@@ -45,81 +45,6 @@ namespace Model
 
   public:
     /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetReservedInstancesModificationIds() const{ return m_reservedInstancesModificationIds; }
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline void SetReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = value; }
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline void SetReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = std::move(value); }
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesModificationIds(value); return *this;}
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesModificationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const Aws::String& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(Aws::String&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>IDs for the submitted modification request.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const char* value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to retrieve the next page of results.</p>
-     */
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
      * idempotency token for the modification request.</p> </li> <li> <p>
      * <code>create-date</code> - The time when the modification request was
@@ -315,13 +240,88 @@ namespace Model
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReservedInstancesModificationIds() const{ return m_reservedInstancesModificationIds; }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline void SetReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = value; }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline void SetReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = std::move(value); }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesModificationIds(value); return *this;}
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesModificationIds(std::move(value)); return *this;}
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const Aws::String& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(Aws::String&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const char* value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     Aws::Vector<Aws::String> m_reservedInstancesModificationIds;
     bool m_reservedInstancesModificationIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

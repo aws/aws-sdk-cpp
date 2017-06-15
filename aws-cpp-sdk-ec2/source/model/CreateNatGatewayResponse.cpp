@@ -48,15 +48,15 @@ CreateNatGatewayResponse& CreateNatGatewayResponse::operator =(const AmazonWebSe
 
   if(!resultNode.IsNull())
   {
-    XmlNode natGatewayNode = resultNode.FirstChild("natGateway");
-    if(!natGatewayNode.IsNull())
-    {
-      m_natGateway = natGatewayNode;
-    }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+    }
+    XmlNode natGatewayNode = resultNode.FirstChild("natGateway");
+    if(!natGatewayNode.IsNull())
+    {
+      m_natGateway = natGatewayNode;
     }
   }
 

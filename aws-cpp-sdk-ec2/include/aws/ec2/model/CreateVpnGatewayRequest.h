@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/GatewayType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/GatewayType.h>
 #include <utility>
 
 namespace Aws
@@ -42,55 +42,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CreateVpnGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The type of VPN connection this virtual private gateway supports.</p>
-     */
-    inline const GatewayType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of VPN connection this virtual private gateway supports.</p>
-     */
-    inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of VPN connection this virtual private gateway supports.</p>
-     */
-    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of VPN connection this virtual private gateway supports.</p>
-     */
-    inline CreateVpnGatewayRequest& WithType(const GatewayType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of VPN connection this virtual private gateway supports.</p>
-     */
-    inline CreateVpnGatewayRequest& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
-
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
      */
@@ -126,13 +77,62 @@ namespace Model
      */
     inline CreateVpnGatewayRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
+    inline const GatewayType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
+    inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
+    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
+    inline CreateVpnGatewayRequest& WithType(const GatewayType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
+    inline CreateVpnGatewayRequest& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateVpnGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    GatewayType m_type;
-    bool m_typeHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+    GatewayType m_type;
+    bool m_typeHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

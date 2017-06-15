@@ -31,45 +31,45 @@ namespace Model
 {
 
 Snapshot::Snapshot() : 
+    m_dataEncryptionKeyIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_progressHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_state(SnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dataEncryptionKeyIdHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
 
 Snapshot::Snapshot(const XmlNode& xmlNode) : 
+    m_dataEncryptionKeyIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_progressHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_state(SnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dataEncryptionKeyIdHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -81,17 +81,53 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode dataEncryptionKeyIdNode = resultNode.FirstChild("dataEncryptionKeyId");
+    if(!dataEncryptionKeyIdNode.IsNull())
+    {
+      m_dataEncryptionKeyId = StringUtils::Trim(dataEncryptionKeyIdNode.GetText().c_str());
+      m_dataEncryptionKeyIdHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
+    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+      m_encryptedHasBeenSet = true;
+    }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
+    }
+    XmlNode progressNode = resultNode.FirstChild("progress");
+    if(!progressNode.IsNull())
+    {
+      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progressHasBeenSet = true;
+    }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
       m_snapshotIdHasBeenSet = true;
     }
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
+    XmlNode startTimeNode = resultNode.FirstChild("startTime");
+    if(!startTimeNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
-      m_volumeIdHasBeenSet = true;
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTimeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
@@ -105,29 +141,11 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_stateMessage = StringUtils::Trim(stateMessageNode.GetText().c_str());
       m_stateMessageHasBeenSet = true;
     }
-    XmlNode startTimeNode = resultNode.FirstChild("startTime");
-    if(!startTimeNode.IsNull())
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_startTimeHasBeenSet = true;
-    }
-    XmlNode progressNode = resultNode.FirstChild("progress");
-    if(!progressNode.IsNull())
-    {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
-      m_progressHasBeenSet = true;
-    }
-    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
-      m_ownerIdHasBeenSet = true;
-    }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
-      m_descriptionHasBeenSet = true;
+      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("volumeSize");
     if(!volumeSizeNode.IsNull())
@@ -153,24 +171,6 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
-    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
-    if(!encryptedNode.IsNull())
-    {
-      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
-      m_encryptedHasBeenSet = true;
-    }
-    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
-    if(!kmsKeyIdNode.IsNull())
-    {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
-      m_kmsKeyIdHasBeenSet = true;
-    }
-    XmlNode dataEncryptionKeyIdNode = resultNode.FirstChild("dataEncryptionKeyId");
-    if(!dataEncryptionKeyIdNode.IsNull())
-    {
-      m_dataEncryptionKeyId = StringUtils::Trim(dataEncryptionKeyIdNode.GetText().c_str());
-      m_dataEncryptionKeyIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -178,14 +178,44 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_dataEncryptionKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataEncryptionKeyId=" << StringUtils::URLEncode(m_dataEncryptionKeyId.c_str()) << "&";
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
+  }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  if(m_volumeIdHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_stateHasBeenSet)
@@ -198,24 +228,9 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_progressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
-  }
-
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
   if(m_volumeSizeHasBeenSet)
@@ -239,21 +254,6 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-
-  if(m_dataEncryptionKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DataEncryptionKeyId=" << StringUtils::URLEncode(m_dataEncryptionKeyId.c_str()) << "&";
-  }
-
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -265,13 +265,37 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_dataEncryptionKeyIdHasBeenSet)
+  {
+      oStream << location << ".DataEncryptionKeyId=" << StringUtils::URLEncode(m_dataEncryptionKeyId.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_progressHasBeenSet)
+  {
+      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
+  }
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
-  if(m_volumeIdHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {
@@ -281,21 +305,9 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
   }
-  if(m_startTimeHasBeenSet)
+  if(m_volumeIdHasBeenSet)
   {
-      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_progressHasBeenSet)
-  {
-      oStream << location << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
-  }
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
   if(m_volumeSizeHasBeenSet)
   {
@@ -314,18 +326,6 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
-  }
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-  if(m_dataEncryptionKeyIdHasBeenSet)
-  {
-      oStream << location << ".DataEncryptionKeyId=" << StringUtils::URLEncode(m_dataEncryptionKeyId.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

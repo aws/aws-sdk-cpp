@@ -17,10 +17,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/BundleTaskState.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/Storage.h>
 #include <aws/ec2/model/BundleTaskError.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/BundleTaskState.h>
+#include <aws/ec2/model/Storage.h>
 #include <utility>
 
 namespace Aws
@@ -51,41 +51,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline BundleTask& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline BundleTask& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance associated with this bundle task.</p>
-     */
-    inline BundleTask& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The ID of the bundle task.</p>
@@ -123,104 +88,64 @@ namespace Model
     inline BundleTask& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The state of the task.</p>
+     * <p>If the task fails, a description of the error.</p>
      */
-    inline const BundleTaskState& GetState() const{ return m_state; }
+    inline const BundleTaskError& GetBundleTaskError() const{ return m_bundleTaskError; }
 
     /**
-     * <p>The state of the task.</p>
+     * <p>If the task fails, a description of the error.</p>
      */
-    inline void SetState(const BundleTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetBundleTaskError(const BundleTaskError& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = value; }
 
     /**
-     * <p>The state of the task.</p>
+     * <p>If the task fails, a description of the error.</p>
      */
-    inline void SetState(BundleTaskState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline void SetBundleTaskError(BundleTaskError&& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = std::move(value); }
 
     /**
-     * <p>The state of the task.</p>
+     * <p>If the task fails, a description of the error.</p>
      */
-    inline BundleTask& WithState(const BundleTaskState& value) { SetState(value); return *this;}
+    inline BundleTask& WithBundleTaskError(const BundleTaskError& value) { SetBundleTaskError(value); return *this;}
 
     /**
-     * <p>The state of the task.</p>
+     * <p>If the task fails, a description of the error.</p>
      */
-    inline BundleTask& WithState(BundleTaskState&& value) { SetState(std::move(value)); return *this;}
+    inline BundleTask& WithBundleTaskError(BundleTaskError&& value) { SetBundleTaskError(std::move(value)); return *this;}
 
     /**
-     * <p>The time this task started.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The time this task started.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The time this task started.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The time this task started.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline BundleTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The time this task started.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline BundleTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline BundleTask& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The time of the most recent update for the task.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline BundleTask& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The time of the most recent update for the task.</p>
+     * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-
-    /**
-     * <p>The time of the most recent update for the task.</p>
-     */
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-
-    /**
-     * <p>The time of the most recent update for the task.</p>
-     */
-    inline BundleTask& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-
-    /**
-     * <p>The time of the most recent update for the task.</p>
-     */
-    inline BundleTask& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 storage locations.</p>
-     */
-    inline const Storage& GetStorage() const{ return m_storage; }
-
-    /**
-     * <p>The Amazon S3 storage locations.</p>
-     */
-    inline void SetStorage(const Storage& value) { m_storageHasBeenSet = true; m_storage = value; }
-
-    /**
-     * <p>The Amazon S3 storage locations.</p>
-     */
-    inline void SetStorage(Storage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 storage locations.</p>
-     */
-    inline BundleTask& WithStorage(const Storage& value) { SetStorage(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 storage locations.</p>
-     */
-    inline BundleTask& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
+    inline BundleTask& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The level of task completion, as a percent (for example, 20%).</p>
@@ -258,47 +183,122 @@ namespace Model
     inline BundleTask& WithProgress(const char* value) { SetProgress(value); return *this;}
 
     /**
-     * <p>If the task fails, a description of the error.</p>
+     * <p>The time this task started.</p>
      */
-    inline const BundleTaskError& GetBundleTaskError() const{ return m_bundleTaskError; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>If the task fails, a description of the error.</p>
+     * <p>The time this task started.</p>
      */
-    inline void SetBundleTaskError(const BundleTaskError& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>If the task fails, a description of the error.</p>
+     * <p>The time this task started.</p>
      */
-    inline void SetBundleTaskError(BundleTaskError&& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = std::move(value); }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>If the task fails, a description of the error.</p>
+     * <p>The time this task started.</p>
      */
-    inline BundleTask& WithBundleTaskError(const BundleTaskError& value) { SetBundleTaskError(value); return *this;}
+    inline BundleTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>If the task fails, a description of the error.</p>
+     * <p>The time this task started.</p>
      */
-    inline BundleTask& WithBundleTaskError(BundleTaskError&& value) { SetBundleTaskError(std::move(value)); return *this;}
+    inline BundleTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline const BundleTaskState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline void SetState(const BundleTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline void SetState(BundleTaskState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline BundleTask& WithState(const BundleTaskState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline BundleTask& WithState(BundleTaskState&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
+    inline const Storage& GetStorage() const{ return m_storage; }
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
+    inline void SetStorage(const Storage& value) { m_storageHasBeenSet = true; m_storage = value; }
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
+    inline void SetStorage(Storage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
+    inline BundleTask& WithStorage(const Storage& value) { SetStorage(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
+    inline BundleTask& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline BundleTask& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline BundleTask& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
   private:
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
-    BundleTaskState m_state;
-    bool m_stateHasBeenSet;
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
-    Storage m_storage;
-    bool m_storageHasBeenSet;
-    Aws::String m_progress;
-    bool m_progressHasBeenSet;
     BundleTaskError m_bundleTaskError;
     bool m_bundleTaskErrorHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
+    Aws::String m_progress;
+    bool m_progressHasBeenSet;
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
+    BundleTaskState m_state;
+    bool m_stateHasBeenSet;
+    Storage m_storage;
+    bool m_storageHasBeenSet;
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet;
   };
 
 } // namespace Model

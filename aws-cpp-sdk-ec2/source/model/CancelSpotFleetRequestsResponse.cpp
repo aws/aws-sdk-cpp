@@ -48,17 +48,6 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
 
   if(!resultNode.IsNull())
   {
-    XmlNode unsuccessfulFleetRequestsNode = resultNode.FirstChild("unsuccessfulFleetRequestSet");
-    if(!unsuccessfulFleetRequestsNode.IsNull())
-    {
-      XmlNode unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsNode.FirstChild("item");
-      while(!unsuccessfulFleetRequestsMember.IsNull())
-      {
-        m_unsuccessfulFleetRequests.push_back(unsuccessfulFleetRequestsMember);
-        unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsMember.NextNode("item");
-      }
-
-    }
     XmlNode successfulFleetRequestsNode = resultNode.FirstChild("successfulFleetRequestSet");
     if(!successfulFleetRequestsNode.IsNull())
     {
@@ -67,6 +56,17 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
       {
         m_successfulFleetRequests.push_back(successfulFleetRequestsMember);
         successfulFleetRequestsMember = successfulFleetRequestsMember.NextNode("item");
+      }
+
+    }
+    XmlNode unsuccessfulFleetRequestsNode = resultNode.FirstChild("unsuccessfulFleetRequestSet");
+    if(!unsuccessfulFleetRequestsNode.IsNull())
+    {
+      XmlNode unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsNode.FirstChild("item");
+      while(!unsuccessfulFleetRequestsMember.IsNull())
+      {
+        m_unsuccessfulFleetRequests.push_back(unsuccessfulFleetRequestsMember);
+        unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsMember.NextNode("item");
       }
 
     }

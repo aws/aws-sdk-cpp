@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +68,62 @@ namespace Model
     inline DescribeSpotFleetRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
+     */
+    inline DescribeSpotFleetRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline DescribeSpotFleetRequestsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline DescribeSpotFleetRequestsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline DescribeSpotFleetRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+    /**
      * <p>The IDs of the Spot fleet requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotFleetRequestIds() const{ return m_spotFleetRequestIds; }
@@ -107,71 +163,15 @@ namespace Model
      */
     inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const char* value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
 
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
-     */
-    inline DescribeSpotFleetRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_spotFleetRequestIds;
-    bool m_spotFleetRequestIdsHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_spotFleetRequestIds;
+    bool m_spotFleetRequestIdsHasBeenSet;
   };
 
 } // namespace Model

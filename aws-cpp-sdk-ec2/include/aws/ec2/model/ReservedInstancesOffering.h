@@ -19,14 +19,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/RIProductDescription.h>
-#include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <aws/ec2/model/Tenancy.h>
+#include <aws/ec2/model/OfferingClassType.h>
 #include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/OfferingClassType.h>
 #include <aws/ec2/model/Scope.h>
-#include <aws/ec2/model/RecurringCharge.h>
 #include <aws/ec2/model/PricingDetail.h>
+#include <aws/ec2/model/RecurringCharge.h>
 #include <utility>
 
 namespace Aws
@@ -57,80 +57,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
-
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline ReservedInstancesOffering& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -183,21 +109,6 @@ namespace Model
     inline ReservedInstancesOffering& WithDuration(long long value) { SetDuration(value); return *this;}
 
     /**
-     * <p>The usage price of the Reserved Instance, per hour.</p>
-     */
-    inline double GetUsagePrice() const{ return m_usagePrice; }
-
-    /**
-     * <p>The usage price of the Reserved Instance, per hour.</p>
-     */
-    inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
-
-    /**
-     * <p>The usage price of the Reserved Instance, per hour.</p>
-     */
-    inline ReservedInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
-
-    /**
      * <p>The purchase price of the Reserved Instance.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
@@ -211,6 +122,31 @@ namespace Model
      * <p>The purchase price of the Reserved Instance.</p>
      */
     inline ReservedInstancesOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline ReservedInstancesOffering& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Reserved Instance product platform description.</p>
@@ -238,29 +174,68 @@ namespace Model
     inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The tenancy of the instance.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
-    inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
+    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
 
     /**
-     * <p>The tenancy of the instance.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
-    inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
 
     /**
-     * <p>The tenancy of the instance.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
+    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
 
     /**
-     * <p>The tenancy of the instance.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
-    inline ReservedInstancesOffering& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
+    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
 
     /**
-     * <p>The tenancy of the instance.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
-    inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
+     */
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
+     */
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
+
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
+    inline double GetUsagePrice() const{ return m_usagePrice; }
+
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
+    inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
+
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
+    inline ReservedInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
 
     /**
      * <p>The currency of the Reserved Instance offering you are purchasing. It's
@@ -298,64 +273,29 @@ namespace Model
     inline ReservedInstancesOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p>The Reserved Instance offering type.</p>
+     * <p>The tenancy of the instance.</p>
      */
-    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+    inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
     /**
-     * <p>The Reserved Instance offering type.</p>
+     * <p>The tenancy of the instance.</p>
      */
-    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The Reserved Instance offering type.</p>
+     * <p>The tenancy of the instance.</p>
      */
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
+    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
 
     /**
-     * <p>The Reserved Instance offering type.</p>
+     * <p>The tenancy of the instance.</p>
      */
-    inline ReservedInstancesOffering& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
+    inline ReservedInstancesOffering& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
     /**
-     * <p>The Reserved Instance offering type.</p>
+     * <p>The tenancy of the instance.</p>
      */
-    inline ReservedInstancesOffering& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline ReservedInstancesOffering& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline ReservedInstancesOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline ReservedInstancesOffering& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
-
-    /**
-     * <p>The recurring charge tag assigned to the resource.</p>
-     */
-    inline ReservedInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
+    inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
@@ -377,41 +317,6 @@ namespace Model
      * this is <code>true</code>.</p>
      */
     inline ReservedInstancesOffering& WithMarketplace(bool value) { SetMarketplace(value); return *this;}
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline const Aws::Vector<PricingDetail>& GetPricingDetails() const{ return m_pricingDetails; }
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline void SetPricingDetails(const Aws::Vector<PricingDetail>& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = value; }
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline void SetPricingDetails(Aws::Vector<PricingDetail>&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = std::move(value); }
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline ReservedInstancesOffering& WithPricingDetails(const Aws::Vector<PricingDetail>& value) { SetPricingDetails(value); return *this;}
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline ReservedInstancesOffering& WithPricingDetails(Aws::Vector<PricingDetail>&& value) { SetPricingDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline ReservedInstancesOffering& AddPricingDetails(const PricingDetail& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(value); return *this; }
-
-    /**
-     * <p>The pricing details of the Reserved Instance offering.</p>
-     */
-    inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
@@ -449,6 +354,101 @@ namespace Model
     inline ReservedInstancesOffering& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
     /**
+     * <p>The Reserved Instance offering type.</p>
+     */
+    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
+    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
+    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
+    inline ReservedInstancesOffering& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
+    inline ReservedInstancesOffering& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline const Aws::Vector<PricingDetail>& GetPricingDetails() const{ return m_pricingDetails; }
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline void SetPricingDetails(const Aws::Vector<PricingDetail>& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = value; }
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline void SetPricingDetails(Aws::Vector<PricingDetail>&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = std::move(value); }
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline ReservedInstancesOffering& WithPricingDetails(const Aws::Vector<PricingDetail>& value) { SetPricingDetails(value); return *this;}
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline ReservedInstancesOffering& WithPricingDetails(Aws::Vector<PricingDetail>&& value) { SetPricingDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline ReservedInstancesOffering& AddPricingDetails(const PricingDetail& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(value); return *this; }
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline ReservedInstancesOffering& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline ReservedInstancesOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline ReservedInstancesOffering& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline ReservedInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>Whether the Reserved Instance is applied to instances in a region or an
      * Availability Zone.</p>
      */
@@ -479,34 +479,34 @@ namespace Model
     inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
   private:
-    Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet;
-    InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
     long long m_duration;
     bool m_durationHasBeenSet;
-    double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+    InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
-    Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    Aws::String m_reservedInstancesOfferingId;
+    bool m_reservedInstancesOfferingIdHasBeenSet;
+    double m_usagePrice;
+    bool m_usagePriceHasBeenSet;
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
-    OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
-    Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    Tenancy m_instanceTenancy;
+    bool m_instanceTenancyHasBeenSet;
     bool m_marketplace;
     bool m_marketplaceHasBeenSet;
-    Aws::Vector<PricingDetail> m_pricingDetails;
-    bool m_pricingDetailsHasBeenSet;
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+    OfferingTypeValues m_offeringType;
+    bool m_offeringTypeHasBeenSet;
+    Aws::Vector<PricingDetail> m_pricingDetails;
+    bool m_pricingDetailsHasBeenSet;
+    Aws::Vector<RecurringCharge> m_recurringCharges;
+    bool m_recurringChargesHasBeenSet;
     Scope m_scope;
     bool m_scopeHasBeenSet;
   };

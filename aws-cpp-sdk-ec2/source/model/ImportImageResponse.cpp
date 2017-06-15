@@ -48,15 +48,30 @@ ImportImageResponse& ImportImageResponse::operator =(const AmazonWebServiceResul
 
   if(!resultNode.IsNull())
   {
-    XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
-    if(!importTaskIdNode.IsNull())
-    {
-      m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
-    }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
       m_architecture = StringUtils::Trim(architectureNode.GetText().c_str());
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+    }
+    XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
+    if(!hypervisorNode.IsNull())
+    {
+      m_hypervisor = StringUtils::Trim(hypervisorNode.GetText().c_str());
+    }
+    XmlNode imageIdNode = resultNode.FirstChild("imageId");
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+    }
+    XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
+    if(!importTaskIdNode.IsNull())
+    {
+      m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
     }
     XmlNode licenseTypeNode = resultNode.FirstChild("licenseType");
     if(!licenseTypeNode.IsNull())
@@ -68,15 +83,10 @@ ImportImageResponse& ImportImageResponse::operator =(const AmazonWebServiceResul
     {
       m_platform = StringUtils::Trim(platformNode.GetText().c_str());
     }
-    XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
-    if(!hypervisorNode.IsNull())
+    XmlNode progressNode = resultNode.FirstChild("progress");
+    if(!progressNode.IsNull())
     {
-      m_hypervisor = StringUtils::Trim(hypervisorNode.GetText().c_str());
-    }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
     }
     XmlNode snapshotDetailsNode = resultNode.FirstChild("snapshotDetailSet");
     if(!snapshotDetailsNode.IsNull())
@@ -89,25 +99,15 @@ ImportImageResponse& ImportImageResponse::operator =(const AmazonWebServiceResul
       }
 
     }
-    XmlNode imageIdNode = resultNode.FirstChild("imageId");
-    if(!imageIdNode.IsNull())
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
-    }
-    XmlNode progressNode = resultNode.FirstChild("progress");
-    if(!progressNode.IsNull())
-    {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
-    }
-    XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
     }
   }
 

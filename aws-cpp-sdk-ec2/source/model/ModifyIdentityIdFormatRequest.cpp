@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyIdentityIdFormatRequest::ModifyIdentityIdFormatRequest() : 
+    m_principalArnHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
+    m_useLongIdsHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,11 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyIdentityIdFormat&";
+  if(m_principalArnHasBeenSet)
+  {
+    ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
+  }
+
   if(m_resourceHasBeenSet)
   {
     ss << "Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
@@ -40,11 +45,6 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
   if(m_useLongIdsHasBeenSet)
   {
     ss << "UseLongIds=" << std::boolalpha << m_useLongIds << "&";
-  }
-
-  if(m_principalArnHasBeenSet)
-  {
-    ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

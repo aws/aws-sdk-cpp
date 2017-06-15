@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Status.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -47,31 +47,6 @@ namespace Model
     RestoreAddressToClassicResponse();
     RestoreAddressToClassicResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     RestoreAddressToClassicResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>The move status for the IP address.</p>
-     */
-    inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The move status for the IP address.</p>
-     */
-    inline void SetStatus(const Status& value) { m_status = value; }
-
-    /**
-     * <p>The move status for the IP address.</p>
-     */
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The move status for the IP address.</p>
-     */
-    inline RestoreAddressToClassicResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The move status for the IP address.</p>
-     */
-    inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -108,6 +83,31 @@ namespace Model
      */
     inline RestoreAddressToClassicResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+    /**
+     * <p>The move status for the IP address.</p>
+     */
+    inline const Status& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The move status for the IP address.</p>
+     */
+    inline void SetStatus(const Status& value) { m_status = value; }
+
+    /**
+     * <p>The move status for the IP address.</p>
+     */
+    inline void SetStatus(Status&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The move status for the IP address.</p>
+     */
+    inline RestoreAddressToClassicResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The move status for the IP address.</p>
+     */
+    inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -124,8 +124,8 @@ namespace Model
     inline RestoreAddressToClassicResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Status m_status;
     Aws::String m_publicIp;
+    Status m_status;
     ResponseMetadata m_responseMetadata;
   };
 

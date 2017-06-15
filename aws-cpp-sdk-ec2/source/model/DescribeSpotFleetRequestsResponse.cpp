@@ -48,6 +48,11 @@ DescribeSpotFleetRequestsResponse& DescribeSpotFleetRequestsResponse::operator =
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode spotFleetRequestConfigsNode = resultNode.FirstChild("spotFleetRequestConfigSet");
     if(!spotFleetRequestConfigsNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeSpotFleetRequestsResponse& DescribeSpotFleetRequestsResponse::operator =
         spotFleetRequestConfigsMember = spotFleetRequestConfigsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

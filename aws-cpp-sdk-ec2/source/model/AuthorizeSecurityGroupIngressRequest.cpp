@@ -21,19 +21,19 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AuthorizeSecurityGroupIngressRequest::AuthorizeSecurityGroupIngressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_sourceSecurityGroupNameHasBeenSet(false),
-    m_sourceSecurityGroupOwnerIdHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
+    m_cidrIpHasBeenSet(false),
     m_fromPort(0),
     m_fromPortHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_ipPermissionsHasBeenSet(false),
+    m_ipProtocolHasBeenSet(false),
+    m_sourceSecurityGroupNameHasBeenSet(false),
+    m_sourceSecurityGroupOwnerIdHasBeenSet(false),
     m_toPort(0),
     m_toPortHasBeenSet(false),
-    m_cidrIpHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -41,9 +41,19 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AuthorizeSecurityGroupIngress&";
-  if(m_dryRunHasBeenSet)
+  if(m_cidrIpHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
+  }
+
+  if(m_fromPortHasBeenSet)
+  {
+    ss << "FromPort=" << m_fromPort << "&";
+  }
+
+  if(m_groupIdHasBeenSet)
+  {
+    ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -51,9 +61,19 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_groupIdHasBeenSet)
+  if(m_ipPermissionsHasBeenSet)
   {
-    ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+    unsigned ipPermissionsCount = 1;
+    for(auto& item : m_ipPermissions)
+    {
+      item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
+      ipPermissionsCount++;
+    }
+  }
+
+  if(m_ipProtocolHasBeenSet)
+  {
+    ss << "IpProtocol=" << StringUtils::URLEncode(m_ipProtocol.c_str()) << "&";
   }
 
   if(m_sourceSecurityGroupNameHasBeenSet)
@@ -66,34 +86,14 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
     ss << "SourceSecurityGroupOwnerId=" << StringUtils::URLEncode(m_sourceSecurityGroupOwnerId.c_str()) << "&";
   }
 
-  if(m_ipProtocolHasBeenSet)
-  {
-    ss << "IpProtocol=" << StringUtils::URLEncode(m_ipProtocol.c_str()) << "&";
-  }
-
-  if(m_fromPortHasBeenSet)
-  {
-    ss << "FromPort=" << m_fromPort << "&";
-  }
-
   if(m_toPortHasBeenSet)
   {
     ss << "ToPort=" << m_toPort << "&";
   }
 
-  if(m_cidrIpHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
-  }
-
-  if(m_ipPermissionsHasBeenSet)
-  {
-    unsigned ipPermissionsCount = 1;
-    for(auto& item : m_ipPermissions)
-    {
-      item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
-      ipPermissionsCount++;
-    }
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

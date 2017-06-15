@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/StaleSecurityGroup.h>
 #include <utility>
@@ -43,41 +43,6 @@ namespace Model
     DescribeStaleSecurityGroupsResponse();
     DescribeStaleSecurityGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeStaleSecurityGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline const Aws::Vector<StaleSecurityGroup>& GetStaleSecurityGroupSet() const{ return m_staleSecurityGroupSet; }
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline void SetStaleSecurityGroupSet(const Aws::Vector<StaleSecurityGroup>& value) { m_staleSecurityGroupSet = value; }
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline void SetStaleSecurityGroupSet(Aws::Vector<StaleSecurityGroup>&& value) { m_staleSecurityGroupSet = std::move(value); }
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline DescribeStaleSecurityGroupsResponse& WithStaleSecurityGroupSet(const Aws::Vector<StaleSecurityGroup>& value) { SetStaleSecurityGroupSet(value); return *this;}
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline DescribeStaleSecurityGroupsResponse& WithStaleSecurityGroupSet(Aws::Vector<StaleSecurityGroup>&& value) { SetStaleSecurityGroupSet(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline DescribeStaleSecurityGroupsResponse& AddStaleSecurityGroupSet(const StaleSecurityGroup& value) { m_staleSecurityGroupSet.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the stale security groups.</p>
-     */
-    inline DescribeStaleSecurityGroupsResponse& AddStaleSecurityGroupSet(StaleSecurityGroup&& value) { m_staleSecurityGroupSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,6 +86,41 @@ namespace Model
      */
     inline DescribeStaleSecurityGroupsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline const Aws::Vector<StaleSecurityGroup>& GetStaleSecurityGroupSet() const{ return m_staleSecurityGroupSet; }
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline void SetStaleSecurityGroupSet(const Aws::Vector<StaleSecurityGroup>& value) { m_staleSecurityGroupSet = value; }
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline void SetStaleSecurityGroupSet(Aws::Vector<StaleSecurityGroup>&& value) { m_staleSecurityGroupSet = std::move(value); }
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline DescribeStaleSecurityGroupsResponse& WithStaleSecurityGroupSet(const Aws::Vector<StaleSecurityGroup>& value) { SetStaleSecurityGroupSet(value); return *this;}
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline DescribeStaleSecurityGroupsResponse& WithStaleSecurityGroupSet(Aws::Vector<StaleSecurityGroup>&& value) { SetStaleSecurityGroupSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline DescribeStaleSecurityGroupsResponse& AddStaleSecurityGroupSet(const StaleSecurityGroup& value) { m_staleSecurityGroupSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the stale security groups.</p>
+     */
+    inline DescribeStaleSecurityGroupsResponse& AddStaleSecurityGroupSet(StaleSecurityGroup&& value) { m_staleSecurityGroupSet.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +137,8 @@ namespace Model
     inline DescribeStaleSecurityGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    Aws::Vector<StaleSecurityGroup> m_staleSecurityGroupSet;
     Aws::String m_nextToken;
+    Aws::Vector<StaleSecurityGroup> m_staleSecurityGroupSet;
     ResponseMetadata m_responseMetadata;
   };
 

@@ -50,6 +50,24 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>Indicates whether the private IPv4 address is the primary private IPv4
+     * address. Only one IPv4 address can be designated as primary.</p>
+     */
+    inline bool GetPrimary() const{ return m_primary; }
+
+    /**
+     * <p>Indicates whether the private IPv4 address is the primary private IPv4
+     * address. Only one IPv4 address can be designated as primary.</p>
+     */
+    inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
+
+    /**
+     * <p>Indicates whether the private IPv4 address is the primary private IPv4
+     * address. Only one IPv4 address can be designated as primary.</p>
+     */
+    inline PrivateIpAddressSpecification& WithPrimary(bool value) { SetPrimary(value); return *this;}
+
+    /**
      * <p>The private IPv4 addresses.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
@@ -84,29 +102,11 @@ namespace Model
      */
     inline PrivateIpAddressSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
-    /**
-     * <p>Indicates whether the private IPv4 address is the primary private IPv4
-     * address. Only one IPv4 address can be designated as primary.</p>
-     */
-    inline bool GetPrimary() const{ return m_primary; }
-
-    /**
-     * <p>Indicates whether the private IPv4 address is the primary private IPv4
-     * address. Only one IPv4 address can be designated as primary.</p>
-     */
-    inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
-
-    /**
-     * <p>Indicates whether the private IPv4 address is the primary private IPv4
-     * address. Only one IPv4 address can be designated as primary.</p>
-     */
-    inline PrivateIpAddressSpecification& WithPrimary(bool value) { SetPrimary(value); return *this;}
-
   private:
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
     bool m_primary;
     bool m_primaryHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
   };
 
 } // namespace Model

@@ -44,28 +44,39 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the customer gateway.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the customer gateway.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The ID of the customer gateway.</p>
      */
-    inline CreateVpnConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
+    inline void SetCustomerGatewayId(const char* value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithCustomerGatewayId(const Aws::String& value) { SetCustomerGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
 
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
@@ -103,41 +114,6 @@ namespace Model
     inline CreateVpnConnectionRequest& WithType(const char* value) { SetType(value); return *this;}
 
     /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline void SetCustomerGatewayId(const char* value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline CreateVpnConnectionRequest& WithCustomerGatewayId(const Aws::String& value) { SetCustomerGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline CreateVpnConnectionRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the customer gateway.</p>
-     */
-    inline CreateVpnConnectionRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
-
-    /**
      * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
@@ -171,6 +147,30 @@ namespace Model
      * <p>The ID of the virtual private gateway.</p>
      */
     inline CreateVpnConnectionRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateVpnConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
@@ -208,14 +208,14 @@ namespace Model
     inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(std::move(value)); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_type;
-    bool m_typeHasBeenSet;
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+    Aws::String m_type;
+    bool m_typeHasBeenSet;
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     VpnConnectionOptionsSpecification m_options;
     bool m_optionsHasBeenSet;
   };

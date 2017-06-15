@@ -48,6 +48,11 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode offeringSetNode = resultNode.FirstChild("offeringSet");
     if(!offeringSetNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
         offeringSetMember = offeringSetMember.NextNode("member");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

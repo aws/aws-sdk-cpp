@@ -23,11 +23,11 @@ using namespace Aws::Utils;
 DescribePrefixListsRequest::DescribePrefixListsRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_prefixListIdsHasBeenSet(false)
 {
 }
 
@@ -38,17 +38,6 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_prefixListIdsHasBeenSet)
-  {
-    unsigned prefixListIdsCount = 1;
-    for(auto& item : m_prefixListIds)
-    {
-      ss << "PrefixListId." << prefixListIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      prefixListIdsCount++;
-    }
   }
 
   if(m_filtersHasBeenSet)
@@ -69,6 +58,17 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_prefixListIdsHasBeenSet)
+  {
+    unsigned prefixListIdsCount = 1;
+    for(auto& item : m_prefixListIds)
+    {
+      ss << "PrefixListId." << prefixListIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      prefixListIdsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

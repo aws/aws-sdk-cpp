@@ -48,37 +48,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline ProvisioningArtifact& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline ProvisioningArtifact& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the artifact.</p>
+     * <p>The identifier for the artifact. This is sometimes referred to as the product
+     * version.</p>
      */
     inline ProvisioningArtifact& WithId(const char* value) { SetId(value); return *this;}
 

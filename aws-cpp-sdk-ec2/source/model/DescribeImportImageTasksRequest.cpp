@@ -23,11 +23,11 @@ using namespace Aws::Utils;
 DescribeImportImageTasksRequest::DescribeImportImageTasksRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_importTaskIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,16 @@ Aws::String DescribeImportImageTasksRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_importTaskIdsHasBeenSet)
@@ -51,24 +61,14 @@ Aws::String DescribeImportImageTasksRequest::SerializePayload() const
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
-  }
-
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filters.", filtersCount, "");
-      filtersCount++;
-    }
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

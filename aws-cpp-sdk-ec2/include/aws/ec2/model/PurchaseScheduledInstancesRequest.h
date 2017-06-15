@@ -46,30 +46,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline PurchaseScheduledInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
      * <p>Unique, case-sensitive identifier that ensures the idempotency of the
      * request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -126,6 +102,30 @@ namespace Model
     inline PurchaseScheduledInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline PurchaseScheduledInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
      * <p>One or more purchase requests.</p>
      */
     inline const Aws::Vector<PurchaseRequest>& GetPurchaseRequests() const{ return m_purchaseRequests; }
@@ -161,10 +161,10 @@ namespace Model
     inline PurchaseScheduledInstancesRequest& AddPurchaseRequests(PurchaseRequest&& value) { m_purchaseRequestsHasBeenSet = true; m_purchaseRequests.push_back(std::move(value)); return *this; }
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::Vector<PurchaseRequest> m_purchaseRequests;
     bool m_purchaseRequestsHasBeenSet;
   };

@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ConfirmProductInstanceRequest::ConfirmProductInstanceRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ConfirmProductInstance&";
-  if(m_dryRunHasBeenSet)
+  if(m_instanceIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
   if(m_productCodeHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
     ss << "ProductCode=" << StringUtils::URLEncode(m_productCode.c_str()) << "&";
   }
 
-  if(m_instanceIdHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

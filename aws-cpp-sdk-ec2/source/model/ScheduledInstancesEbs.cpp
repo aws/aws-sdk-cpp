@@ -31,30 +31,30 @@ namespace Model
 {
 
 ScheduledInstancesEbs::ScheduledInstancesEbs() : 
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false)
 {
 }
 
 ScheduledInstancesEbs::ScheduledInstancesEbs(const XmlNode& xmlNode) : 
+    m_deleteOnTermination(false),
+    m_deleteOnTerminationHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +65,24 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode deleteOnTerminationNode = resultNode.FirstChild("DeleteOnTermination");
+    if(!deleteOnTerminationNode.IsNull())
+    {
+      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
+      m_deleteOnTerminationHasBeenSet = true;
+    }
+    XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+      m_encryptedHasBeenSet = true;
+    }
+    XmlNode iopsNode = resultNode.FirstChild("Iops");
+    if(!iopsNode.IsNull())
+    {
+      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
+      m_iopsHasBeenSet = true;
+    }
     XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
     if(!snapshotIdNode.IsNull())
     {
@@ -77,29 +95,11 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
       m_volumeSize = StringUtils::ConvertToInt32(StringUtils::Trim(volumeSizeNode.GetText().c_str()).c_str());
       m_volumeSizeHasBeenSet = true;
     }
-    XmlNode deleteOnTerminationNode = resultNode.FirstChild("DeleteOnTermination");
-    if(!deleteOnTerminationNode.IsNull())
-    {
-      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
-      m_deleteOnTerminationHasBeenSet = true;
-    }
     XmlNode volumeTypeNode = resultNode.FirstChild("VolumeType");
     if(!volumeTypeNode.IsNull())
     {
       m_volumeType = StringUtils::Trim(volumeTypeNode.GetText().c_str());
       m_volumeTypeHasBeenSet = true;
-    }
-    XmlNode iopsNode = resultNode.FirstChild("Iops");
-    if(!iopsNode.IsNull())
-    {
-      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
-      m_iopsHasBeenSet = true;
-    }
-    XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
-    if(!encryptedNode.IsNull())
-    {
-      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
-      m_encryptedHasBeenSet = true;
     }
   }
 
@@ -108,6 +108,21 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
 
 void ScheduledInstancesEbs::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
+  }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
@@ -118,30 +133,27 @@ void ScheduledInstancesEbs::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".VolumeSize=" << m_volumeSize << "&";
   }
 
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
-  }
-
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeType=" << StringUtils::URLEncode(m_volumeType.c_str()) << "&";
-  }
-
-  if(m_iopsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
-  }
-
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
 }
 
 void ScheduledInstancesEbs::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
+  }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << ".Iops=" << m_iops << "&";
+  }
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
@@ -150,21 +162,9 @@ void ScheduledInstancesEbs::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << ".VolumeSize=" << m_volumeSize << "&";
   }
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
-  }
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << ".VolumeType=" << StringUtils::URLEncode(m_volumeType.c_str()) << "&";
-  }
-  if(m_iopsHasBeenSet)
-  {
-      oStream << location << ".Iops=" << m_iops << "&";
-  }
-  if(m_encryptedHasBeenSet)
-  {
-      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 }
 

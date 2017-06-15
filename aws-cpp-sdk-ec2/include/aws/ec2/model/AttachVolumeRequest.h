@@ -42,28 +42,81 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetDevice() const{ return m_device; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
      */
-    inline AttachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
+
+    /**
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
+
+    /**
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline AttachVolumeRequest& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
+
+    /**
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
+
+    /**
+     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline AttachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline AttachVolumeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline AttachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline AttachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The ID of the EBS volume. The volume and instance must be within the same
@@ -108,91 +161,38 @@ namespace Model
     inline AttachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline AttachVolumeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline AttachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline AttachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline const Aws::String& GetDevice() const{ return m_device; }
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline AttachVolumeRequest& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-
-    /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline AttachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
+    inline AttachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet;
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

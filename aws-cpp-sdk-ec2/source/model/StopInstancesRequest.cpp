@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 StopInstancesRequest::StopInstancesRequest() : 
+    m_instanceIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false)
 {
@@ -33,11 +33,6 @@ Aws::String StopInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=StopInstances&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_instanceIdsHasBeenSet)
   {
     unsigned instanceIdsCount = 1;
@@ -47,6 +42,11 @@ Aws::String StopInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_forceHasBeenSet)

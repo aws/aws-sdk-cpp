@@ -31,14 +31,14 @@ namespace Model
 {
 
 CancelSpotFleetRequestsErrorItem::CancelSpotFleetRequestsErrorItem() : 
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_spotFleetRequestIdHasBeenSet(false)
 {
 }
 
 CancelSpotFleetRequestsErrorItem::CancelSpotFleetRequestsErrorItem(const XmlNode& xmlNode) : 
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_spotFleetRequestIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -49,17 +49,17 @@ CancelSpotFleetRequestsErrorItem& CancelSpotFleetRequestsErrorItem::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
-    if(!spotFleetRequestIdNode.IsNull())
-    {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
-      m_spotFleetRequestIdHasBeenSet = true;
-    }
     XmlNode errorNode = resultNode.FirstChild("error");
     if(!errorNode.IsNull())
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+    }
+    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
+    if(!spotFleetRequestIdNode.IsNull())
+    {
+      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestIdHasBeenSet = true;
     }
   }
 
@@ -68,11 +68,6 @@ CancelSpotFleetRequestsErrorItem& CancelSpotFleetRequestsErrorItem::operator =(c
 
 void CancelSpotFleetRequestsErrorItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_spotFleetRequestIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
-  }
-
   if(m_errorHasBeenSet)
   {
       Aws::StringStream errorLocationAndMemberSs;
@@ -80,19 +75,24 @@ void CancelSpotFleetRequestsErrorItem::OutputToStream(Aws::OStream& oStream, con
       m_error.OutputToStream(oStream, errorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_spotFleetRequestIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
+  }
+
 }
 
 void CancelSpotFleetRequestsErrorItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_spotFleetRequestIdHasBeenSet)
-  {
-      oStream << location << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
-  }
   if(m_errorHasBeenSet)
   {
       Aws::String errorLocationAndMember(location);
       errorLocationAndMember += ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMember.c_str());
+  }
+  if(m_spotFleetRequestIdHasBeenSet)
+  {
+      oStream << location << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
 }
 

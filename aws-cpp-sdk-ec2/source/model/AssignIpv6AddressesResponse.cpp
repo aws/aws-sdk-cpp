@@ -48,11 +48,6 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Amazo
 
   if(!resultNode.IsNull())
   {
-    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
-    if(!networkInterfaceIdNode.IsNull())
-    {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
-    }
     XmlNode assignedIpv6AddressesNode = resultNode.FirstChild("assignedIpv6Addresses");
     if(!assignedIpv6AddressesNode.IsNull())
     {
@@ -63,6 +58,11 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Amazo
         assignedIpv6AddressesMember = assignedIpv6AddressesMember.NextNode("item");
       }
 
+    }
+    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
+    if(!networkInterfaceIdNode.IsNull())
+    {
+      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
     }
   }
 

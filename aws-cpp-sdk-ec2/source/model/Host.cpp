@@ -31,32 +31,32 @@ namespace Model
 {
 
 Host::Host() : 
-    m_hostIdHasBeenSet(false),
     m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_availableCapacityHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_hostPropertiesHasBeenSet(false),
+    m_hostReservationIdHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_availableCapacityHasBeenSet(false)
+    m_state(AllocationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
 Host::Host(const XmlNode& xmlNode) : 
-    m_hostIdHasBeenSet(false),
     m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_availableCapacityHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_hostPropertiesHasBeenSet(false),
+    m_hostReservationIdHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_availableCapacityHasBeenSet(false)
+    m_state(AllocationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,23 +67,23 @@ Host& Host::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode hostIdNode = resultNode.FirstChild("hostId");
-    if(!hostIdNode.IsNull())
-    {
-      m_hostId = StringUtils::Trim(hostIdNode.GetText().c_str());
-      m_hostIdHasBeenSet = true;
-    }
     XmlNode autoPlacementNode = resultNode.FirstChild("autoPlacement");
     if(!autoPlacementNode.IsNull())
     {
       m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(autoPlacementNode.GetText().c_str()).c_str());
       m_autoPlacementHasBeenSet = true;
     }
-    XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
-    if(!hostReservationIdNode.IsNull())
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
     {
-      m_hostReservationId = StringUtils::Trim(hostReservationIdNode.GetText().c_str());
-      m_hostReservationIdHasBeenSet = true;
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
+    if(!availableCapacityNode.IsNull())
+    {
+      m_availableCapacity = availableCapacityNode;
+      m_availableCapacityHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
@@ -91,23 +91,23 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
       m_clientTokenHasBeenSet = true;
     }
+    XmlNode hostIdNode = resultNode.FirstChild("hostId");
+    if(!hostIdNode.IsNull())
+    {
+      m_hostId = StringUtils::Trim(hostIdNode.GetText().c_str());
+      m_hostIdHasBeenSet = true;
+    }
     XmlNode hostPropertiesNode = resultNode.FirstChild("hostProperties");
     if(!hostPropertiesNode.IsNull())
     {
       m_hostProperties = hostPropertiesNode;
       m_hostPropertiesHasBeenSet = true;
     }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
+    XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
+    if(!hostReservationIdNode.IsNull())
     {
-      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
-    }
-    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
-      m_availabilityZoneHasBeenSet = true;
+      m_hostReservationId = StringUtils::Trim(hostReservationIdNode.GetText().c_str());
+      m_hostReservationIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("instances");
     if(!instancesNode.IsNull())
@@ -121,11 +121,11 @@ Host& Host::operator =(const XmlNode& xmlNode)
 
       m_instancesHasBeenSet = true;
     }
-    XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
-    if(!availableCapacityNode.IsNull())
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
     {
-      m_availableCapacity = availableCapacityNode;
-      m_availableCapacityHasBeenSet = true;
+      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
     }
   }
 
@@ -134,24 +134,31 @@ Host& Host::operator =(const XmlNode& xmlNode)
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_hostIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
-  }
-
   if(m_autoPlacementHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
 
-  if(m_hostReservationIdHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HostReservationId=" << StringUtils::URLEncode(m_hostReservationId.c_str()) << "&";
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_availableCapacityHasBeenSet)
+  {
+      Aws::StringStream availableCapacityLocationAndMemberSs;
+      availableCapacityLocationAndMemberSs << location << index << locationValue << ".AvailableCapacity";
+      m_availableCapacity.OutputToStream(oStream, availableCapacityLocationAndMemberSs.str().c_str());
   }
 
   if(m_clientTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_hostIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
 
   if(m_hostPropertiesHasBeenSet)
@@ -161,14 +168,9 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       m_hostProperties.OutputToStream(oStream, hostPropertiesLocationAndMemberSs.str().c_str());
   }
 
-  if(m_stateHasBeenSet)
+  if(m_hostReservationIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
-  }
-
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+      oStream << location << index << locationValue << ".HostReservationId=" << StringUtils::URLEncode(m_hostReservationId.c_str()) << "&";
   }
 
   if(m_instancesHasBeenSet)
@@ -182,32 +184,36 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       }
   }
 
-  if(m_availableCapacityHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      Aws::StringStream availableCapacityLocationAndMemberSs;
-      availableCapacityLocationAndMemberSs << location << index << locationValue << ".AvailableCapacity";
-      m_availableCapacity.OutputToStream(oStream, availableCapacityLocationAndMemberSs.str().c_str());
+      oStream << location << index << locationValue << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
   }
 
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_hostIdHasBeenSet)
-  {
-      oStream << location << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
-  }
   if(m_autoPlacementHasBeenSet)
   {
       oStream << location << ".AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
-  if(m_hostReservationIdHasBeenSet)
+  if(m_availabilityZoneHasBeenSet)
   {
-      oStream << location << ".HostReservationId=" << StringUtils::URLEncode(m_hostReservationId.c_str()) << "&";
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_availableCapacityHasBeenSet)
+  {
+      Aws::String availableCapacityLocationAndMember(location);
+      availableCapacityLocationAndMember += ".AvailableCapacity";
+      m_availableCapacity.OutputToStream(oStream, availableCapacityLocationAndMember.c_str());
   }
   if(m_clientTokenHasBeenSet)
   {
       oStream << location << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+  if(m_hostIdHasBeenSet)
+  {
+      oStream << location << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
   if(m_hostPropertiesHasBeenSet)
   {
@@ -215,13 +221,9 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
       hostPropertiesLocationAndMember += ".HostProperties";
       m_hostProperties.OutputToStream(oStream, hostPropertiesLocationAndMember.c_str());
   }
-  if(m_stateHasBeenSet)
+  if(m_hostReservationIdHasBeenSet)
   {
-      oStream << location << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
-  }
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+      oStream << location << ".HostReservationId=" << StringUtils::URLEncode(m_hostReservationId.c_str()) << "&";
   }
   if(m_instancesHasBeenSet)
   {
@@ -233,11 +235,9 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
-  if(m_availableCapacityHasBeenSet)
+  if(m_stateHasBeenSet)
   {
-      Aws::String availableCapacityLocationAndMember(location);
-      availableCapacityLocationAndMember += ".AvailableCapacity";
-      m_availableCapacity.OutputToStream(oStream, availableCapacityLocationAndMember.c_str());
+      oStream << location << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
   }
 }
 

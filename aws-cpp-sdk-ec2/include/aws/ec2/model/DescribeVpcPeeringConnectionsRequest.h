@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,78 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpcPeeringConnectionIds() const{ return m_vpcPeeringConnectionIds; }
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline void SetVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = value; }
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline void SetVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = std::move(value); }
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { SetVpcPeeringConnectionIds(value); return *this;}
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpcPeeringConnectionIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const Aws::String& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(Aws::String&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
-     * VPC peering connections.</p>
-     */
-    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const char* value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer
@@ -368,13 +296,85 @@ namespace Model
      */
     inline DescribeVpcPeeringConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcPeeringConnectionIds() const{ return m_vpcPeeringConnectionIds; }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline void SetVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = value; }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline void SetVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = std::move(value); }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { SetVpcPeeringConnectionIds(value); return *this;}
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpcPeeringConnectionIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const Aws::String& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(Aws::String&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const char* value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::Vector<Aws::String> m_vpcPeeringConnectionIds;
     bool m_vpcPeeringConnectionIdsHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

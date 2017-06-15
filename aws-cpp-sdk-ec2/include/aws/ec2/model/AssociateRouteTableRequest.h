@@ -67,41 +67,6 @@ namespace Model
     inline AssociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline AssociateRouteTableRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline AssociateRouteTableRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
-    inline AssociateRouteTableRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
-
-    /**
      * <p>The ID of the route table.</p>
      */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
@@ -136,13 +101,48 @@ namespace Model
      */
     inline AssociateRouteTableRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline AssociateRouteTableRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline AssociateRouteTableRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline AssociateRouteTableRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
   };
 
 } // namespace Model

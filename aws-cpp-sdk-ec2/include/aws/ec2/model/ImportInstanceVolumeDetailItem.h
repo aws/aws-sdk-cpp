@@ -51,21 +51,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline long long GetBytesConverted() const{ return m_bytesConverted; }
-
-    /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
-
-    /**
-     * <p>The number of bytes converted so far.</p>
-     */
-    inline ImportInstanceVolumeDetailItem& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
-
-    /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -101,6 +86,56 @@ namespace Model
     inline ImportInstanceVolumeDetailItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline long long GetBytesConverted() const{ return m_bytesConverted; }
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
+    inline ImportInstanceVolumeDetailItem& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline ImportInstanceVolumeDetailItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline ImportInstanceVolumeDetailItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline ImportInstanceVolumeDetailItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The image.</p>
      */
     inline const DiskImageDescription& GetImage() const{ return m_image; }
@@ -124,31 +159,6 @@ namespace Model
      * <p>The image.</p>
      */
     inline ImportInstanceVolumeDetailItem& WithImage(DiskImageDescription&& value) { SetImage(std::move(value)); return *this;}
-
-    /**
-     * <p>The volume.</p>
-     */
-    inline const DiskImageVolumeDescription& GetVolume() const{ return m_volume; }
-
-    /**
-     * <p>The volume.</p>
-     */
-    inline void SetVolume(const DiskImageVolumeDescription& value) { m_volumeHasBeenSet = true; m_volume = value; }
-
-    /**
-     * <p>The volume.</p>
-     */
-    inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
-
-    /**
-     * <p>The volume.</p>
-     */
-    inline ImportInstanceVolumeDetailItem& WithVolume(const DiskImageVolumeDescription& value) { SetVolume(value); return *this;}
-
-    /**
-     * <p>The volume.</p>
-     */
-    inline ImportInstanceVolumeDetailItem& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
     /**
      * <p>The status of the import of this particular disk image.</p>
@@ -221,55 +231,45 @@ namespace Model
     inline ImportInstanceVolumeDetailItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>A description of the task.</p>
+     * <p>The volume.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const DiskImageVolumeDescription& GetVolume() const{ return m_volume; }
 
     /**
-     * <p>A description of the task.</p>
+     * <p>The volume.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetVolume(const DiskImageVolumeDescription& value) { m_volumeHasBeenSet = true; m_volume = value; }
 
     /**
-     * <p>A description of the task.</p>
+     * <p>The volume.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
 
     /**
-     * <p>A description of the task.</p>
+     * <p>The volume.</p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline ImportInstanceVolumeDetailItem& WithVolume(const DiskImageVolumeDescription& value) { SetVolume(value); return *this;}
 
     /**
-     * <p>A description of the task.</p>
+     * <p>The volume.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the task.</p>
-     */
-    inline ImportInstanceVolumeDetailItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the task.</p>
-     */
-    inline ImportInstanceVolumeDetailItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
-    long long m_bytesConverted;
-    bool m_bytesConvertedHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+    long long m_bytesConverted;
+    bool m_bytesConvertedHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     DiskImageDescription m_image;
     bool m_imageHasBeenSet;
-    DiskImageVolumeDescription m_volume;
-    bool m_volumeHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    DiskImageVolumeDescription m_volume;
+    bool m_volumeHasBeenSet;
   };
 
 } // namespace Model

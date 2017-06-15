@@ -31,16 +31,16 @@ namespace Model
 {
 
 DiskImageVolumeDescription::DiskImageVolumeDescription() : 
+    m_idHasBeenSet(false),
     m_size(0),
-    m_sizeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_sizeHasBeenSet(false)
 {
 }
 
 DiskImageVolumeDescription::DiskImageVolumeDescription(const XmlNode& xmlNode) : 
+    m_idHasBeenSet(false),
     m_size(0),
-    m_sizeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_sizeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,17 +51,17 @@ DiskImageVolumeDescription& DiskImageVolumeDescription::operator =(const XmlNode
 
   if(!resultNode.IsNull())
   {
-    XmlNode sizeNode = resultNode.FirstChild("size");
-    if(!sizeNode.IsNull())
-    {
-      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
-      m_sizeHasBeenSet = true;
-    }
     XmlNode idNode = resultNode.FirstChild("id");
     if(!idNode.IsNull())
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
+    }
+    XmlNode sizeNode = resultNode.FirstChild("size");
+    if(!sizeNode.IsNull())
+    {
+      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
+      m_sizeHasBeenSet = true;
     }
   }
 
@@ -70,27 +70,27 @@ DiskImageVolumeDescription& DiskImageVolumeDescription::operator =(const XmlNode
 
 void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_sizeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Size=" << m_size << "&";
-  }
-
   if(m_idHasBeenSet)
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+
+  if(m_sizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
 
 }
 
 void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_sizeHasBeenSet)
-  {
-      oStream << location << ".Size=" << m_size << "&";
-  }
   if(m_idHasBeenSet)
   {
       oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_sizeHasBeenSet)
+  {
+      oStream << location << ".Size=" << m_size << "&";
   }
 }
 

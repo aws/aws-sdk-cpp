@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The parameter key/value pair used to update a ProvisionedProduct object. If
+   * <p>The parameter key-value pair used to update a ProvisionedProduct object. If
    * <code>UsePreviousValue</code> is set to true, <code>Value</code> is ignored and
    * the value for <code>Key</code> is kept as previously set (current
    * value).</p><p><h3>See Also:</h3>   <a

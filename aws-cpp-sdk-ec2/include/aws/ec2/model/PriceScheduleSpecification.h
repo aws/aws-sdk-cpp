@@ -49,39 +49,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The number of months remaining in the reservation. For example, 2 is the
-     * second to the last month before the capacity reservation expires.</p>
-     */
-    inline long long GetTerm() const{ return m_term; }
-
-    /**
-     * <p>The number of months remaining in the reservation. For example, 2 is the
-     * second to the last month before the capacity reservation expires.</p>
-     */
-    inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
-
-    /**
-     * <p>The number of months remaining in the reservation. For example, 2 is the
-     * second to the last month before the capacity reservation expires.</p>
-     */
-    inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
-
-    /**
-     * <p>The fixed price for the term.</p>
-     */
-    inline double GetPrice() const{ return m_price; }
-
-    /**
-     * <p>The fixed price for the term.</p>
-     */
-    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
-
-    /**
-     * <p>The fixed price for the term.</p>
-     */
-    inline PriceScheduleSpecification& WithPrice(double value) { SetPrice(value); return *this;}
-
-    /**
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
@@ -111,13 +78,46 @@ namespace Model
      */
     inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+    /**
+     * <p>The fixed price for the term.</p>
+     */
+    inline double GetPrice() const{ return m_price; }
+
+    /**
+     * <p>The fixed price for the term.</p>
+     */
+    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
+
+    /**
+     * <p>The fixed price for the term.</p>
+     */
+    inline PriceScheduleSpecification& WithPrice(double value) { SetPrice(value); return *this;}
+
+    /**
+     * <p>The number of months remaining in the reservation. For example, 2 is the
+     * second to the last month before the capacity reservation expires.</p>
+     */
+    inline long long GetTerm() const{ return m_term; }
+
+    /**
+     * <p>The number of months remaining in the reservation. For example, 2 is the
+     * second to the last month before the capacity reservation expires.</p>
+     */
+    inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
+
+    /**
+     * <p>The number of months remaining in the reservation. For example, 2 is the
+     * second to the last month before the capacity reservation expires.</p>
+     */
+    inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
+
   private:
-    long long m_term;
-    bool m_termHasBeenSet;
-    double m_price;
-    bool m_priceHasBeenSet;
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+    double m_price;
+    bool m_priceHasBeenSet;
+    long long m_term;
+    bool m_termHasBeenSet;
   };
 
 } // namespace Model

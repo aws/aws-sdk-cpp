@@ -48,6 +48,17 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
+    if(!blockDeviceMappingsNode.IsNull())
+    {
+      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      while(!blockDeviceMappingsMember.IsNull())
+      {
+        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
+        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
+      }
+
+    }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
@@ -75,6 +86,11 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
       }
 
     }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = descriptionNode;
+    }
     XmlNode kernelIdNode = resultNode.FirstChild("kernel");
     if(!kernelIdNode.IsNull())
     {
@@ -85,26 +101,10 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_ramdiskId = ramdiskIdNode;
     }
-    XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = descriptionNode;
-    }
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
     if(!sriovNetSupportNode.IsNull())
     {
       m_sriovNetSupport = sriovNetSupportNode;
-    }
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
-    if(!blockDeviceMappingsNode.IsNull())
-    {
-      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
-      while(!blockDeviceMappingsMember.IsNull())
-      {
-        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
-        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
-      }
-
     }
   }
 

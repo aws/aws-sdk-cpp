@@ -54,42 +54,32 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Information about the accepter VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline const VpcPeeringConnectionVpcInfo& GetAccepterVpcInfo() const{ return m_accepterVpcInfo; }
 
     /**
-     * <p>Information about the accepter VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline void SetAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
 
     /**
-     * <p>Information about the accepter VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline void SetAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = std::move(value); }
 
     /**
-     * <p>Information about the accepter VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline VpcPeeringConnection& WithAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetAccepterVpcInfo(value); return *this;}
 
     /**
-     * <p>Information about the accepter VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline VpcPeeringConnection& WithAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetAccepterVpcInfo(std::move(value)); return *this;}
 
@@ -119,27 +109,32 @@ namespace Model
     inline VpcPeeringConnection& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the requester VPC.</p>
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline const VpcPeeringConnectionVpcInfo& GetRequesterVpcInfo() const{ return m_requesterVpcInfo; }
 
     /**
-     * <p>Information about the requester VPC.</p>
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline void SetRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = value; }
 
     /**
-     * <p>Information about the requester VPC.</p>
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline void SetRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = std::move(value); }
 
     /**
-     * <p>Information about the requester VPC.</p>
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline VpcPeeringConnection& WithRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetRequesterVpcInfo(value); return *this;}
 
     /**
-     * <p>Information about the requester VPC.</p>
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
      */
     inline VpcPeeringConnection& WithRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetRequesterVpcInfo(std::move(value)); return *this;}
 

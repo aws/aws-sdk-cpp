@@ -53,15 +53,15 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const AmazonWebSe
     {
       m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
     }
-    XmlNode timestampNode = resultNode.FirstChild("timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-    }
     XmlNode outputNode = resultNode.FirstChild("output");
     if(!outputNode.IsNull())
     {
       m_output = StringUtils::Trim(outputNode.GetText().c_str());
+    }
+    XmlNode timestampNode = resultNode.FirstChild("timestamp");
+    if(!timestampNode.IsNull())
+    {
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

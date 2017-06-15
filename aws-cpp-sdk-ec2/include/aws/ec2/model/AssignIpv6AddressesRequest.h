@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,39 +40,25 @@ namespace Model
 
   public:
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses.</p>
      */
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    inline AssignIpv6AddressesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
     /**
      * <p>One or more specific IPv6 addresses to be assigned to the network interface.
@@ -123,33 +109,47 @@ namespace Model
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses.</p>
+     * <p>The ID of the network interface.</p>
      */
-    inline AssignIpv6AddressesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
-    Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
   };
 
 } // namespace Model

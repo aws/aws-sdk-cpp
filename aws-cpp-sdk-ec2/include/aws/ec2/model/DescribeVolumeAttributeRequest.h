@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,29 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const VolumeAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttribute(const VolumeAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
-    inline DescribeVolumeAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttribute(VolumeAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The attribute of the volume. This parameter is required.</p>
+     */
+    inline DescribeVolumeAttributeRequest& WithAttribute(const VolumeAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The attribute of the volume. This parameter is required.</p>
+     */
+    inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -103,37 +104,36 @@ namespace Model
     inline DescribeVolumeAttributeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The attribute of the volume. This parameter is required.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const VolumeAttributeName& GetAttribute() const{ return m_attribute; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The attribute of the volume. This parameter is required.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(const VolumeAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The attribute of the volume. This parameter is required.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(VolumeAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute of the volume. This parameter is required.</p>
-     */
-    inline DescribeVolumeAttributeRequest& WithAttribute(const VolumeAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute of the volume. This parameter is required.</p>
-     */
-    inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline DescribeVolumeAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
     VolumeAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,78 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeVpnGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpnGatewayIds() const{ return m_vpnGatewayIds; }
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline void SetVpnGatewayIds(const Aws::Vector<Aws::String>& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = value; }
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline void SetVpnGatewayIds(Aws::Vector<Aws::String>&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = std::move(value); }
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(const Aws::Vector<Aws::String>& value) { SetVpnGatewayIds(value); return *this;}
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(Aws::Vector<Aws::String>&& value) { SetVpnGatewayIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(const Aws::String& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(Aws::String&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
-     * virtual private gateways.</p>
-     */
-    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(const char* value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
@@ -326,13 +254,85 @@ namespace Model
      */
     inline DescribeVpnGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpnGatewayIds() const{ return m_vpnGatewayIds; }
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline void SetVpnGatewayIds(const Aws::Vector<Aws::String>& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = value; }
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline void SetVpnGatewayIds(Aws::Vector<Aws::String>&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = std::move(value); }
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(const Aws::Vector<Aws::String>& value) { SetVpnGatewayIds(value); return *this;}
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(Aws::Vector<Aws::String>&& value) { SetVpnGatewayIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(const Aws::String& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(Aws::String&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
+     * virtual private gateways.</p>
+     */
+    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(const char* value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeVpnGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_vpnGatewayIds;
-    bool m_vpnGatewayIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<Aws::String> m_vpnGatewayIds;
+    bool m_vpnGatewayIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

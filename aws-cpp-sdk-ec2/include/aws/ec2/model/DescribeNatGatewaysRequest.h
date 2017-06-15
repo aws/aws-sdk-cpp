@@ -45,46 +45,6 @@ namespace Model
 
   public:
     /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetNatGatewayIds() const{ return m_natGatewayIds; }
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline void SetNatGatewayIds(const Aws::Vector<Aws::String>& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = value; }
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline void SetNatGatewayIds(Aws::Vector<Aws::String>&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = std::move(value); }
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline DescribeNatGatewaysRequest& WithNatGatewayIds(const Aws::Vector<Aws::String>& value) { SetNatGatewayIds(value); return *this;}
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline DescribeNatGatewaysRequest& WithNatGatewayIds(Aws::Vector<Aws::String>&& value) { SetNatGatewayIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline DescribeNatGatewaysRequest& AddNatGatewayIds(const Aws::String& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline DescribeNatGatewaysRequest& AddNatGatewayIds(Aws::String&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more NAT gateway IDs.</p>
-     */
-    inline DescribeNatGatewaysRequest& AddNatGatewayIds(const char* value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
      * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
@@ -186,6 +146,46 @@ namespace Model
     inline DescribeNatGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNatGatewayIds() const{ return m_natGatewayIds; }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline void SetNatGatewayIds(const Aws::Vector<Aws::String>& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = value; }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline void SetNatGatewayIds(Aws::Vector<Aws::String>&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = std::move(value); }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline DescribeNatGatewaysRequest& WithNatGatewayIds(const Aws::Vector<Aws::String>& value) { SetNatGatewayIds(value); return *this;}
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline DescribeNatGatewaysRequest& WithNatGatewayIds(Aws::Vector<Aws::String>&& value) { SetNatGatewayIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline DescribeNatGatewaysRequest& AddNatGatewayIds(const Aws::String& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline DescribeNatGatewaysRequest& AddNatGatewayIds(Aws::String&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline DescribeNatGatewaysRequest& AddNatGatewayIds(const char* value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
+
+    /**
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -221,12 +221,12 @@ namespace Model
     inline DescribeNatGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    Aws::Vector<Aws::String> m_natGatewayIds;
-    bool m_natGatewayIdsHasBeenSet;
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::Vector<Aws::String> m_natGatewayIds;
+    bool m_natGatewayIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

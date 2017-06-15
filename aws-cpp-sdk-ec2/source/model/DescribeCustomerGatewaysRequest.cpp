@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeCustomerGatewaysRequest::DescribeCustomerGatewaysRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_customerGatewayIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,11 +32,6 @@ Aws::String DescribeCustomerGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeCustomerGateways&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_customerGatewayIdsHasBeenSet)
   {
     unsigned customerGatewayIdsCount = 1;
@@ -56,6 +51,11 @@ Aws::String DescribeCustomerGatewaysRequest::SerializePayload() const
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

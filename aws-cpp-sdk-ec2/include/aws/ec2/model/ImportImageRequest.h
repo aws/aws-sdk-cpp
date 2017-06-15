@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ClientData.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ImageDiskContainer.h>
 #include <utility>
 
@@ -45,28 +45,106 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
-    inline ImportImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
+     */
+    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
+
+    /**
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
+     */
+    inline ImportImageRequest& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
+     */
+    inline ImportImageRequest& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
+
+    /**
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
+     */
+    inline ImportImageRequest& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline const ClientData& GetClientData() const{ return m_clientData; }
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline void SetClientData(const ClientData& value) { m_clientDataHasBeenSet = true; m_clientData = value; }
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = std::move(value); }
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline ImportImageRequest& WithClientData(const ClientData& value) { SetClientData(value); return *this;}
+
+    /**
+     * <p>The client-specific data.</p>
+     */
+    inline ImportImageRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to enable idempotency for VM import requests.</p>
+     */
+    inline ImportImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A description string for the import image task.</p>
@@ -137,6 +215,65 @@ namespace Model
      * <p>Information about the disk containers.</p>
      */
     inline ImportImageRequest& AddDiskContainers(ImageDiskContainer&& value) { m_diskContainersHasBeenSet = true; m_diskContainers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline ImportImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline void SetHypervisor(const Aws::String& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline void SetHypervisor(const char* value) { m_hypervisorHasBeenSet = true; m_hypervisor.assign(value); }
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline ImportImageRequest& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline ImportImageRequest& WithHypervisor(Aws::String&& value) { SetHypervisor(std::move(value)); return *this;}
+
+    /**
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
+     */
+    inline ImportImageRequest& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
@@ -216,83 +353,6 @@ namespace Model
     inline ImportImageRequest& WithLicenseType(const char* value) { SetLicenseType(value); return *this;}
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline void SetHypervisor(const Aws::String& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline void SetHypervisor(const char* value) { m_hypervisorHasBeenSet = true; m_hypervisor.assign(value); }
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline ImportImageRequest& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline ImportImageRequest& WithHypervisor(Aws::String&& value) { SetHypervisor(std::move(value)); return *this;}
-
-    /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
-     */
-    inline ImportImageRequest& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline ImportImageRequest& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline ImportImageRequest& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-
-    /**
-     * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
-     */
-    inline ImportImageRequest& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
-
-    /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
@@ -335,66 +395,6 @@ namespace Model
     inline ImportImageRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The client-specific data.</p>
-     */
-    inline const ClientData& GetClientData() const{ return m_clientData; }
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline void SetClientData(const ClientData& value) { m_clientDataHasBeenSet = true; m_clientData = value; }
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = std::move(value); }
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline ImportImageRequest& WithClientData(const ClientData& value) { SetClientData(value); return *this;}
-
-    /**
-     * <p>The client-specific data.</p>
-     */
-    inline ImportImageRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to enable idempotency for VM import requests.</p>
-     */
-    inline ImportImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-    /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
@@ -430,24 +430,24 @@ namespace Model
     inline ImportImageRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-    Aws::Vector<ImageDiskContainer> m_diskContainers;
-    bool m_diskContainersHasBeenSet;
-    Aws::String m_licenseType;
-    bool m_licenseTypeHasBeenSet;
-    Aws::String m_hypervisor;
-    bool m_hypervisorHasBeenSet;
     Aws::String m_architecture;
     bool m_architectureHasBeenSet;
-    Aws::String m_platform;
-    bool m_platformHasBeenSet;
     ClientData m_clientData;
     bool m_clientDataHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+    Aws::Vector<ImageDiskContainer> m_diskContainers;
+    bool m_diskContainersHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Aws::String m_hypervisor;
+    bool m_hypervisorHasBeenSet;
+    Aws::String m_licenseType;
+    bool m_licenseTypeHasBeenSet;
+    Aws::String m_platform;
+    bool m_platformHasBeenSet;
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

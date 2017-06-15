@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Provisioning artifact properties.</p><p><h3>See Also:</h3>   <a
+   * <p>Provisioning artifact properties. For example request JSON, see
+   * <a>CreateProvisioningArtifact</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties">AWS
    * API Reference</a></p>
    */
@@ -118,87 +119,126 @@ namespace Model
     inline ProvisioningArtifactProperties& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_infoHasBeenSet = true; m_info = value; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_infoHasBeenSet = true; m_info = std::move(value); }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the provisioning artifact properties.</p>
+     * <p>Additional information about the provisioning artifact properties. When using
+     * this element in a request, you must specify <code>LoadTemplateFromURL</code>.
+     * For more information, see <a>CreateProvisioningArtifact</a>.</p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>The type of the provisioning artifact properties.</p>
+     * <p>The type of the provisioning artifact properties. The following provisioning
+     * artifact property types are used by AWS Marketplace products:</p> <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the provisioning artifact properties.</p>
+     * <p>The type of the provisioning artifact properties. The following provisioning
+     * artifact property types are used by AWS Marketplace products:</p> <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the provisioning artifact properties.</p>
+     * <p>The type of the provisioning artifact properties. The following provisioning
+     * artifact property types are used by AWS Marketplace products:</p> <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the provisioning artifact properties.</p>
+     * <p>The type of the provisioning artifact properties. The following provisioning
+     * artifact property types are used by AWS Marketplace products:</p> <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
      */
     inline ProvisioningArtifactProperties& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the provisioning artifact properties.</p>
+     * <p>The type of the provisioning artifact properties. The following provisioning
+     * artifact property types are used by AWS Marketplace products:</p> <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.</p> <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>
      */
     inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 

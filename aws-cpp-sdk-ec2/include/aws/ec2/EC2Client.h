@@ -86,6 +86,7 @@
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
 #include <aws/ec2/model/DescribeFlowLogsResponse.h>
+#include <aws/ec2/model/DescribeFpgaImagesResponse.h>
 #include <aws/ec2/model/DescribeHostReservationOfferingsResponse.h>
 #include <aws/ec2/model/DescribeHostReservationsResponse.h>
 #include <aws/ec2/model/DescribeHostsResponse.h>
@@ -331,6 +332,7 @@ namespace Model
         class DescribeEgressOnlyInternetGatewaysRequest;
         class DescribeExportTasksRequest;
         class DescribeFlowLogsRequest;
+        class DescribeFpgaImagesRequest;
         class DescribeHostReservationOfferingsRequest;
         class DescribeHostReservationsRequest;
         class DescribeHostsRequest;
@@ -560,6 +562,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEgressOnlyInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeEgressOnlyInternetGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFlowLogsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFpgaImagesResponse, Aws::Client::AWSError<EC2Errors>> DescribeFpgaImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeHostReservationOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostReservationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostsOutcome;
@@ -789,6 +792,7 @@ namespace Model
         typedef std::future<DescribeEgressOnlyInternetGatewaysOutcome> DescribeEgressOnlyInternetGatewaysOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeFlowLogsOutcome> DescribeFlowLogsOutcomeCallable;
+        typedef std::future<DescribeFpgaImagesOutcome> DescribeFpgaImagesOutcomeCallable;
         typedef std::future<DescribeHostReservationOfferingsOutcome> DescribeHostReservationOfferingsOutcomeCallable;
         typedef std::future<DescribeHostReservationsOutcome> DescribeHostReservationsOutcomeCallable;
         typedef std::future<DescribeHostsOutcome> DescribeHostsOutcomeCallable;
@@ -1021,6 +1025,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeEgressOnlyInternetGatewaysRequest&, const Model::DescribeEgressOnlyInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEgressOnlyInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFlowLogsRequest&, const Model::DescribeFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowLogsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFpgaImagesRequest&, const Model::DescribeFpgaImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFpgaImagesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationOfferingsRequest&, const Model::DescribeHostReservationOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationsRequest&, const Model::DescribeHostReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostsRequest&, const Model::DescribeHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostsResponseReceivedHandler;
@@ -2438,9 +2443,10 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information, see <a
+         * request.</p> <p>For more information about the prerequisites and limits when
+         * copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-         * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
          * Reference</a></p>
@@ -2450,9 +2456,10 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information, see <a
+         * request.</p> <p>For more information about the prerequisites and limits when
+         * copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-         * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
          * Reference</a></p>
@@ -2464,9 +2471,10 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information, see <a
+         * request.</p> <p>For more information about the prerequisites and limits when
+         * copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-         * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
          * Reference</a></p>
@@ -5562,6 +5570,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFlowLogsAsync(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more available Amazon FPGA Images (AFIs). These include
+         * public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for
+         * which you have load permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFpgaImagesOutcome DescribeFpgaImages(const Model::DescribeFpgaImagesRequest& request) const;
+
+        /**
+         * <p>Describes one or more available Amazon FPGA Images (AFIs). These include
+         * public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for
+         * which you have load permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFpgaImagesOutcomeCallable DescribeFpgaImagesCallable(const Model::DescribeFpgaImagesRequest& request) const;
+
+        /**
+         * <p>Describes one or more available Amazon FPGA Images (AFIs). These include
+         * public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for
+         * which you have load permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFpgaImagesAsync(const Model::DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Dedicated Host Reservations that are available to purchase.</p>
@@ -11631,6 +11670,7 @@ namespace Model
         void DescribeEgressOnlyInternetGatewaysAsyncHelper(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowLogsAsyncHelper(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFpgaImagesAsyncHelper(const Model::DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostReservationOfferingsAsyncHelper(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostReservationsAsyncHelper(const Model::DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostsAsyncHelper(const Model::DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

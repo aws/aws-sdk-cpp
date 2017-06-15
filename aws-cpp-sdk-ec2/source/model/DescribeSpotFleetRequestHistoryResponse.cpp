@@ -48,21 +48,6 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
 
   if(!resultNode.IsNull())
   {
-    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
-    if(!spotFleetRequestIdNode.IsNull())
-    {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
-    }
-    XmlNode startTimeNode = resultNode.FirstChild("startTime");
-    if(!startTimeNode.IsNull())
-    {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-    }
-    XmlNode lastEvaluatedTimeNode = resultNode.FirstChild("lastEvaluatedTime");
-    if(!lastEvaluatedTimeNode.IsNull())
-    {
-      m_lastEvaluatedTime = DateTime(StringUtils::Trim(lastEvaluatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-    }
     XmlNode historyRecordsNode = resultNode.FirstChild("historyRecordSet");
     if(!historyRecordsNode.IsNull())
     {
@@ -74,10 +59,25 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
       }
 
     }
+    XmlNode lastEvaluatedTimeNode = resultNode.FirstChild("lastEvaluatedTime");
+    if(!lastEvaluatedTimeNode.IsNull())
+    {
+      m_lastEvaluatedTime = DateTime(StringUtils::Trim(lastEvaluatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+    }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
+    XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
+    if(!spotFleetRequestIdNode.IsNull())
+    {
+      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+    }
+    XmlNode startTimeNode = resultNode.FirstChild("startTime");
+    if(!startTimeNode.IsNull())
+    {
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

@@ -45,95 +45,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
-     */
-    inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
-     */
-    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
-     */
-    inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline CreateVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The snapshot from which to create the volume.</p>
-     */
-    inline CreateVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
-
-    /**
      * <p>The Availability Zone in which to create the volume. Use
      * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
      * currently available to you.</p>
@@ -183,70 +94,6 @@ namespace Model
     inline CreateVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
-     */
-    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
-
-    /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
-     */
-    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-
-    /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
-     */
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-
-    /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
-     */
-    inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-
-    /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
-     */
-    inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
-
-    /**
-     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 50
-     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
-     * volumes </p>
-     */
-    inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 50
-     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
-     * volumes </p>
-     */
-    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 50
-     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
-     * volumes </p>
-     */
-    inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
-
-    /**
      * <p>Specifies whether the volume should be encrypted. Encrypted Amazon EBS
      * volumes may only be attached to instances that support Amazon EBS encryption.
      * Volumes that are created from encrypted snapshots are automatically encrypted.
@@ -281,6 +128,30 @@ namespace Model
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateVolumeRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
+    /**
+     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
+     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
+     * volumes </p>
+     */
+    inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
+     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
+     * volumes </p>
+     */
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
+     * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
+     * volumes </p>
+     */
+    inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -374,6 +245,135 @@ namespace Model
     inline CreateVolumeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
     /**
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
+     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
+     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
+     * specify a snapshot, the volume size must be equal to or larger than the snapshot
+     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
+     * specify a volume size, the default is the snapshot size.</p>
+     */
+    inline int GetSize() const{ return m_size; }
+
+    /**
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
+     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
+     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
+     * specify a snapshot, the volume size must be equal to or larger than the snapshot
+     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
+     * specify a volume size, the default is the snapshot size.</p>
+     */
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
+
+    /**
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
+     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
+     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
+     * specify a snapshot, the volume size must be equal to or larger than the snapshot
+     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
+     * specify a volume size, the default is the snapshot size.</p>
+     */
+    inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline CreateVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
+
+    /**
+     * <p>The snapshot from which to create the volume.</p>
+     */
+    inline CreateVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
+     */
+    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
+     */
+    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
+     */
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
+     */
+    inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
+     */
+    inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
      * <p>The tags to apply to the volume during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -409,22 +409,22 @@ namespace Model
     inline CreateVolumeRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
+    int m_iops;
+    bool m_iopsHasBeenSet;
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
     int m_size;
     bool m_sizeHasBeenSet;
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    int m_iops;
-    bool m_iopsHasBeenSet;
-    bool m_encrypted;
-    bool m_encryptedHasBeenSet;
-    Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

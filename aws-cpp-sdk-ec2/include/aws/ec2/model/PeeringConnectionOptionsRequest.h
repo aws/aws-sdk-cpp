@@ -47,6 +47,24 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline bool GetAllowDnsResolutionFromRemoteVpc() const{ return m_allowDnsResolutionFromRemoteVpc; }
+
+    /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
+
+    /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline PeeringConnectionOptionsRequest& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
+
+    /**
      * <p>If true, enables outbound communication from an EC2-Classic instance that's
      * linked to a local VPC via ClassicLink to instances in a peer VPC.</p>
      */
@@ -82,31 +100,13 @@ namespace Model
      */
     inline PeeringConnectionOptionsRequest& WithAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { SetAllowEgressFromLocalVpcToRemoteClassicLink(value); return *this;}
 
-    /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
-     */
-    inline bool GetAllowDnsResolutionFromRemoteVpc() const{ return m_allowDnsResolutionFromRemoteVpc; }
-
-    /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
-     */
-    inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
-
-    /**
-     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
-     * addresses when queried from instances in the peer VPC.</p>
-     */
-    inline PeeringConnectionOptionsRequest& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
-
   private:
+    bool m_allowDnsResolutionFromRemoteVpc;
+    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
     bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
     bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
-    bool m_allowDnsResolutionFromRemoteVpc;
-    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
   };
 
 } // namespace Model

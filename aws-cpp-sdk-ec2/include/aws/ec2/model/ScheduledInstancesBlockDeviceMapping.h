@@ -93,6 +93,36 @@ namespace Model
     inline ScheduledInstancesBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
     /**
+     * <p>Parameters used to set up EBS volumes automatically when the instance is
+     * launched.</p>
+     */
+    inline const ScheduledInstancesEbs& GetEbs() const{ return m_ebs; }
+
+    /**
+     * <p>Parameters used to set up EBS volumes automatically when the instance is
+     * launched.</p>
+     */
+    inline void SetEbs(const ScheduledInstancesEbs& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+
+    /**
+     * <p>Parameters used to set up EBS volumes automatically when the instance is
+     * launched.</p>
+     */
+    inline void SetEbs(ScheduledInstancesEbs&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
+
+    /**
+     * <p>Parameters used to set up EBS volumes automatically when the instance is
+     * launched.</p>
+     */
+    inline ScheduledInstancesBlockDeviceMapping& WithEbs(const ScheduledInstancesEbs& value) { SetEbs(value); return *this;}
+
+    /**
+     * <p>Parameters used to set up EBS volumes automatically when the instance is
+     * launched.</p>
+     */
+    inline ScheduledInstancesBlockDeviceMapping& WithEbs(ScheduledInstancesEbs&& value) { SetEbs(std::move(value)); return *this;}
+
+    /**
      * <p>Suppresses the specified device included in the block device mapping of the
      * AMI.</p>
      */
@@ -225,45 +255,15 @@ namespace Model
      */
     inline ScheduledInstancesBlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
-    /**
-     * <p>Parameters used to set up EBS volumes automatically when the instance is
-     * launched.</p>
-     */
-    inline const ScheduledInstancesEbs& GetEbs() const{ return m_ebs; }
-
-    /**
-     * <p>Parameters used to set up EBS volumes automatically when the instance is
-     * launched.</p>
-     */
-    inline void SetEbs(const ScheduledInstancesEbs& value) { m_ebsHasBeenSet = true; m_ebs = value; }
-
-    /**
-     * <p>Parameters used to set up EBS volumes automatically when the instance is
-     * launched.</p>
-     */
-    inline void SetEbs(ScheduledInstancesEbs&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
-
-    /**
-     * <p>Parameters used to set up EBS volumes automatically when the instance is
-     * launched.</p>
-     */
-    inline ScheduledInstancesBlockDeviceMapping& WithEbs(const ScheduledInstancesEbs& value) { SetEbs(value); return *this;}
-
-    /**
-     * <p>Parameters used to set up EBS volumes automatically when the instance is
-     * launched.</p>
-     */
-    inline ScheduledInstancesBlockDeviceMapping& WithEbs(ScheduledInstancesEbs&& value) { SetEbs(std::move(value)); return *this;}
-
   private:
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+    ScheduledInstancesEbs m_ebs;
+    bool m_ebsHasBeenSet;
     Aws::String m_noDevice;
     bool m_noDeviceHasBeenSet;
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet;
-    ScheduledInstancesEbs m_ebs;
-    bool m_ebsHasBeenSet;
   };
 
 } // namespace Model

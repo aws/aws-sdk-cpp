@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 RebootInstancesRequest::RebootInstancesRequest() : 
+    m_instanceIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,11 +31,6 @@ Aws::String RebootInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=RebootInstances&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_instanceIdsHasBeenSet)
   {
     unsigned instanceIdsCount = 1;
@@ -45,6 +40,11 @@ Aws::String RebootInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

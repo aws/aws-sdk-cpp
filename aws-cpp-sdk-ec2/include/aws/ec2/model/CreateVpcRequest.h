@@ -43,30 +43,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CreateVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
@@ -107,6 +83,51 @@ namespace Model
      * <code>10.0.0.0/16</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline CreateVpcRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
      * <p>The tenancy options for instances launched into the VPC. For
@@ -173,36 +194,15 @@ namespace Model
      */
     inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
-
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
-
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline CreateVpcRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
-    Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    Tenancy m_instanceTenancy;
+    bool m_instanceTenancyHasBeenSet;
   };
 
 } // namespace Model

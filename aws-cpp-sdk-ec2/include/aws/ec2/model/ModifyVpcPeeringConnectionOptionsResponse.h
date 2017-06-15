@@ -43,36 +43,6 @@ namespace Model
     ModifyVpcPeeringConnectionOptionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the VPC peering connection options for the requester
-     * VPC.</p>
-     */
-    inline const PeeringConnectionOptions& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
-
-    /**
-     * <p>Information about the VPC peering connection options for the requester
-     * VPC.</p>
-     */
-    inline void SetRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { m_requesterPeeringConnectionOptions = value; }
-
-    /**
-     * <p>Information about the VPC peering connection options for the requester
-     * VPC.</p>
-     */
-    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_requesterPeeringConnectionOptions = std::move(value); }
-
-    /**
-     * <p>Information about the VPC peering connection options for the requester
-     * VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
-
-    /**
-     * <p>Information about the VPC peering connection options for the requester
-     * VPC.</p>
-     */
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
-
-    /**
      * <p>Information about the VPC peering connection options for the accepter
      * VPC.</p>
      */
@@ -102,6 +72,36 @@ namespace Model
      */
     inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
 
+    /**
+     * <p>Information about the VPC peering connection options for the requester
+     * VPC.</p>
+     */
+    inline const PeeringConnectionOptions& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the requester
+     * VPC.</p>
+     */
+    inline void SetRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { m_requesterPeeringConnectionOptions = value; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the requester
+     * VPC.</p>
+     */
+    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_requesterPeeringConnectionOptions = std::move(value); }
+
+    /**
+     * <p>Information about the VPC peering connection options for the requester
+     * VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
+
+    /**
+     * <p>Information about the VPC peering connection options for the requester
+     * VPC.</p>
+     */
+    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -118,8 +118,8 @@ namespace Model
     inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
-    PeeringConnectionOptions m_requesterPeeringConnectionOptions;
     PeeringConnectionOptions m_accepterPeeringConnectionOptions;
+    PeeringConnectionOptions m_requesterPeeringConnectionOptions;
     ResponseMetadata m_responseMetadata;
   };
 

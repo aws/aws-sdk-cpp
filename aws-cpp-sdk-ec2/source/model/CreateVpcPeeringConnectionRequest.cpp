@@ -23,9 +23,9 @@ using namespace Aws::Utils;
 CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
+    m_peerOwnerIdHasBeenSet(false),
     m_peerVpcIdHasBeenSet(false),
-    m_peerOwnerIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -38,9 +38,9 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_peerOwnerIdHasBeenSet)
   {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+    ss << "PeerOwnerId=" << StringUtils::URLEncode(m_peerOwnerId.c_str()) << "&";
   }
 
   if(m_peerVpcIdHasBeenSet)
@@ -48,9 +48,9 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
     ss << "PeerVpcId=" << StringUtils::URLEncode(m_peerVpcId.c_str()) << "&";
   }
 
-  if(m_peerOwnerIdHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-    ss << "PeerOwnerId=" << StringUtils::URLEncode(m_peerOwnerId.c_str()) << "&";
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

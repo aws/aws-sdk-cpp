@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/EventType.h>
 #include <aws/ec2/model/EventInformation.h>
+#include <aws/ec2/model/EventType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -52,34 +52,29 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     * <p>Information about the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const EventInformation& GetEventInformation() const{ return m_eventInformation; }
 
     /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     * <p>Information about the event.</p>
      */
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
 
     /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     * <p>Information about the event.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
+    inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::move(value); }
 
     /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     * <p>Information about the event.</p>
      */
-    inline HistoryRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+    inline HistoryRecord& WithEventInformation(const EventInformation& value) { SetEventInformation(value); return *this;}
 
     /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     * <p>Information about the event.</p>
      */
-    inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
@@ -127,37 +122,42 @@ namespace Model
     inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the event.</p>
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline const EventInformation& GetEventInformation() const{ return m_eventInformation; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>Information about the event.</p>
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>Information about the event.</p>
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::move(value); }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>Information about the event.</p>
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline HistoryRecord& WithEventInformation(const EventInformation& value) { SetEventInformation(value); return *this;}
+    inline HistoryRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>Information about the event.</p>
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
+    inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
-    Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
-    EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
     EventInformation m_eventInformation;
     bool m_eventInformationHasBeenSet;
+    EventType m_eventType;
+    bool m_eventTypeHasBeenSet;
+    Aws::Utils::DateTime m_timestamp;
+    bool m_timestampHasBeenSet;
   };
 
 } // namespace Model

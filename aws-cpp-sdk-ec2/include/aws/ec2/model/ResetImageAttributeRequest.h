@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResetImageAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,34 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const ResetImageAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttribute(const ResetImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
      */
-    inline ResetImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttribute(ResetImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
+     */
+    inline ResetImageAttributeRequest& WithAttribute(const ResetImageAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
+     */
+    inline ResetImageAttributeRequest& WithAttribute(ResetImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -103,42 +109,36 @@ namespace Model
     inline ResetImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The attribute to reset (currently you can only reset the launch permission
-     * attribute).</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const ResetImageAttributeName& GetAttribute() const{ return m_attribute; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The attribute to reset (currently you can only reset the launch permission
-     * attribute).</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(const ResetImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The attribute to reset (currently you can only reset the launch permission
-     * attribute).</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(ResetImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute to reset (currently you can only reset the launch permission
-     * attribute).</p>
-     */
-    inline ResetImageAttributeRequest& WithAttribute(const ResetImageAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute to reset (currently you can only reset the launch permission
-     * attribute).</p>
-     */
-    inline ResetImageAttributeRequest& WithAttribute(ResetImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline ResetImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
     ResetImageAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

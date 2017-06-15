@@ -86,37 +86,44 @@ namespace Model
     inline DescribeProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. This is sometimes referred to as
+     * the product version.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
@@ -155,6 +162,24 @@ namespace Model
      */
     inline DescribeProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
+    /**
+     * <p>Selects verbose results. If set to true, the CloudFormation template is
+     * returned.</p>
+     */
+    inline bool GetVerbose() const{ return m_verbose; }
+
+    /**
+     * <p>Selects verbose results. If set to true, the CloudFormation template is
+     * returned.</p>
+     */
+    inline void SetVerbose(bool value) { m_verboseHasBeenSet = true; m_verbose = value; }
+
+    /**
+     * <p>Selects verbose results. If set to true, the CloudFormation template is
+     * returned.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
+
   private:
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
@@ -162,6 +187,8 @@ namespace Model
     bool m_provisioningArtifactIdHasBeenSet;
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+    bool m_verbose;
+    bool m_verboseHasBeenSet;
   };
 
 } // namespace Model

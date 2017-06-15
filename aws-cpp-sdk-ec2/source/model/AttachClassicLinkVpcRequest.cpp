@@ -23,9 +23,9 @@ using namespace Aws::Utils;
 AttachClassicLinkVpcRequest::AttachClassicLinkVpcRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_groupsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -38,16 +38,6 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_groupsHasBeenSet)
   {
     unsigned groupsCount = 1;
@@ -57,6 +47,16 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupsCount++;
     }
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

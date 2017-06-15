@@ -90,37 +90,37 @@ namespace Model
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The esired value for this key.</p>
+     * <p>The desired value for this key.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

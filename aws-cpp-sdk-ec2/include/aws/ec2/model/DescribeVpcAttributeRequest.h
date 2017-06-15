@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,28 +44,29 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The VPC attribute.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline const VpcAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The VPC attribute.</p>
      */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline void SetAttribute(const VpcAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     * <p>The VPC attribute.</p>
      */
-    inline DescribeVpcAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline void SetAttribute(VpcAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The VPC attribute.</p>
+     */
+    inline DescribeVpcAttributeRequest& WithAttribute(const VpcAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The VPC attribute.</p>
+     */
+    inline DescribeVpcAttributeRequest& WithAttribute(VpcAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -103,37 +104,36 @@ namespace Model
     inline DescribeVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The VPC attribute.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline const VpcAttributeName& GetAttribute() const{ return m_attribute; }
+    inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
-     * <p>The VPC attribute.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(const VpcAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
-     * <p>The VPC attribute.</p>
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline void SetAttribute(VpcAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The VPC attribute.</p>
-     */
-    inline DescribeVpcAttributeRequest& WithAttribute(const VpcAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The VPC attribute.</p>
-     */
-    inline DescribeVpcAttributeRequest& WithAttribute(VpcAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline DescribeVpcAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     VpcAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

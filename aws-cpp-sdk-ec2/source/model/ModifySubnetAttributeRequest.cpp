@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifySubnetAttributeRequest::ModifySubnetAttributeRequest() : 
-    m_subnetIdHasBeenSet(false),
+    m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false)
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -31,9 +31,9 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifySubnetAttribute&";
-  if(m_subnetIdHasBeenSet)
+  if(m_assignIpv6AddressOnCreationHasBeenSet)
   {
-    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+    m_assignIpv6AddressOnCreation.OutputToStream(ss, "AssignIpv6AddressOnCreation");
   }
 
   if(m_mapPublicIpOnLaunchHasBeenSet)
@@ -41,9 +41,9 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
     m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch");
   }
 
-  if(m_assignIpv6AddressOnCreationHasBeenSet)
+  if(m_subnetIdHasBeenSet)
   {
-    m_assignIpv6AddressOnCreation.OutputToStream(ss, "AssignIpv6AddressOnCreation");
+    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

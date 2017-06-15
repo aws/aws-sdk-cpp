@@ -31,16 +31,16 @@ namespace Model
 {
 
 InternetGatewayAttachment::InternetGatewayAttachment() : 
-    m_vpcIdHasBeenSet(false),
     m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
 InternetGatewayAttachment::InternetGatewayAttachment(const XmlNode& xmlNode) : 
-    m_vpcIdHasBeenSet(false),
     m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,17 +51,17 @@ InternetGatewayAttachment& InternetGatewayAttachment::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
-    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
     }
   }
 
@@ -70,27 +70,27 @@ InternetGatewayAttachment& InternetGatewayAttachment::operator =(const XmlNode& 
 
 void InternetGatewayAttachment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_state) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
 }
 
 void InternetGatewayAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_state) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

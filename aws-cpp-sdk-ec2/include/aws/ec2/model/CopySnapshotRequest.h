@@ -42,100 +42,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CopySnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline CopySnapshotRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline CopySnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the region that contains the snapshot to be copied.</p>
-     */
-    inline CopySnapshotRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline const Aws::String& GetSourceSnapshotId() const{ return m_sourceSnapshotId; }
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline void SetSourceSnapshotId(const Aws::String& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline void SetSourceSnapshotId(const char* value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId.assign(value); }
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline CopySnapshotRequest& WithSourceSnapshotId(const Aws::String& value) { SetSourceSnapshotId(value); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline CopySnapshotRequest& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to copy.</p>
-     */
-    inline CopySnapshotRequest& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
-
-    /**
      * <p>A description for the EBS snapshot.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -253,132 +159,6 @@ namespace Model
      * configuration file).</p> </note>
      */
     inline CopySnapshotRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline void SetPresignedUrl(const Aws::String& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline void SetPresignedUrl(const char* value) { m_presignedUrlHasBeenSet = true; m_presignedUrl.assign(value); }
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline CopySnapshotRequest& WithPresignedUrl(const Aws::String& value) { SetPresignedUrl(value); return *this;}
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
-     * parameter is only required when copying an encrypted snapshot with the Amazon
-     * EC2 Query API; it is available as an optional parameter in all other cases. The
-     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
-     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
-     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
-     * parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
-     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
-     * signed <code>PresignedUrl</code> will cause the copy operation to fail
-     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
-     */
-    inline CopySnapshotRequest& WithPresignedUrl(const char* value) { SetPresignedUrl(value); return *this;}
 
     /**
      * <p>Specifies whether the destination snapshot should be encrypted. You can
@@ -511,23 +291,243 @@ namespace Model
      */
     inline CopySnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline void SetPresignedUrl(const Aws::String& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline void SetPresignedUrl(const char* value) { m_presignedUrlHasBeenSet = true; m_presignedUrl.assign(value); }
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline CopySnapshotRequest& WithPresignedUrl(const Aws::String& value) { SetPresignedUrl(value); return *this;}
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
+     * parameter is only required when copying an encrypted snapshot with the Amazon
+     * EC2 Query API; it is available as an optional parameter in all other cases. The
+     * <code>PresignedUrl</code> should use the snapshot source endpoint, the
+     * <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters.
+     * The <code>PresignedUrl</code> must be signed using AWS Signature Version 4.
+     * Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     * parameter uses the same logic that is described in <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in the
+     * <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
+     */
+    inline CopySnapshotRequest& WithPresignedUrl(const char* value) { SetPresignedUrl(value); return *this;}
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline CopySnapshotRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline CopySnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the region that contains the snapshot to be copied.</p>
+     */
+    inline CopySnapshotRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline const Aws::String& GetSourceSnapshotId() const{ return m_sourceSnapshotId; }
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline void SetSourceSnapshotId(const Aws::String& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline void SetSourceSnapshotId(const char* value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId.assign(value); }
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline CopySnapshotRequest& WithSourceSnapshotId(const Aws::String& value) { SetSourceSnapshotId(value); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline CopySnapshotRequest& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to copy.</p>
+     */
+    inline CopySnapshotRequest& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CopySnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
-    Aws::String m_sourceSnapshotId;
-    bool m_sourceSnapshotIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;
-    Aws::String m_presignedUrl;
-    bool m_presignedUrlHasBeenSet;
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_presignedUrl;
+    bool m_presignedUrlHasBeenSet;
+    Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet;
+    Aws::String m_sourceSnapshotId;
+    bool m_sourceSnapshotIdHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

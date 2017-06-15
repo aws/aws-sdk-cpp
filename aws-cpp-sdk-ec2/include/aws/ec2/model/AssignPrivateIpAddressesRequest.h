@@ -44,6 +44,27 @@ namespace Model
 
   public:
     /**
+     * <p>Indicates whether to allow an IP address that is already assigned to another
+     * network interface or instance to be reassigned to the specified network
+     * interface.</p>
+     */
+    inline bool GetAllowReassignment() const{ return m_allowReassignment; }
+
+    /**
+     * <p>Indicates whether to allow an IP address that is already assigned to another
+     * network interface or instance to be reassigned to the specified network
+     * interface.</p>
+     */
+    inline void SetAllowReassignment(bool value) { m_allowReassignmentHasBeenSet = true; m_allowReassignment = value; }
+
+    /**
+     * <p>Indicates whether to allow an IP address that is already assigned to another
+     * network interface or instance to be reassigned to the specified network
+     * interface.</p>
+     */
+    inline AssignPrivateIpAddressesRequest& WithAllowReassignment(bool value) { SetAllowReassignment(value); return *this;}
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -160,36 +181,15 @@ namespace Model
      */
     inline AssignPrivateIpAddressesRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
-    /**
-     * <p>Indicates whether to allow an IP address that is already assigned to another
-     * network interface or instance to be reassigned to the specified network
-     * interface.</p>
-     */
-    inline bool GetAllowReassignment() const{ return m_allowReassignment; }
-
-    /**
-     * <p>Indicates whether to allow an IP address that is already assigned to another
-     * network interface or instance to be reassigned to the specified network
-     * interface.</p>
-     */
-    inline void SetAllowReassignment(bool value) { m_allowReassignmentHasBeenSet = true; m_allowReassignment = value; }
-
-    /**
-     * <p>Indicates whether to allow an IP address that is already assigned to another
-     * network interface or instance to be reassigned to the specified network
-     * interface.</p>
-     */
-    inline AssignPrivateIpAddressesRequest& WithAllowReassignment(bool value) { SetAllowReassignment(value); return *this;}
-
   private:
+    bool m_allowReassignment;
+    bool m_allowReassignmentHasBeenSet;
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
     Aws::Vector<Aws::String> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
-    bool m_allowReassignment;
-    bool m_allowReassignmentHasBeenSet;
   };
 
 } // namespace Model

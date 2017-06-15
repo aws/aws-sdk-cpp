@@ -15,14 +15,14 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
-#include <aws/ec2/model/AttributeBooleanValue.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ProductCode.h>
-#include <aws/ec2/model/GroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +52,156 @@ namespace Model
     DescribeInstanceAttributeResponse();
     DescribeInstanceAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeInstanceAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
+
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
+
+    /**
+     * <p>The block device mapping of the instance.</p>
+     */
+    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance through
+     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     */
+    inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance through
+     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     */
+    inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTermination = value; }
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance through
+     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     */
+    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTermination = std::move(value); }
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance through
+     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance through
+     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupport = value; }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     */
+    inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     */
+    inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimized = value; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     */
+    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimized = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -87,6 +237,36 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline DescribeInstanceAttributeResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
+    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
+    inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehavior = value; }
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
+    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehavior = std::move(value); }
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(const AttributeValue& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
     /**
      * <p>The instance type.</p>
@@ -139,181 +319,6 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithKernelId(AttributeValue&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
-     * <p>The RAM disk ID.</p>
-     */
-    inline const AttributeValue& GetRamdiskId() const{ return m_ramdiskId; }
-
-    /**
-     * <p>The RAM disk ID.</p>
-     */
-    inline void SetRamdiskId(const AttributeValue& value) { m_ramdiskId = value; }
-
-    /**
-     * <p>The RAM disk ID.</p>
-     */
-    inline void SetRamdiskId(AttributeValue&& value) { m_ramdiskId = std::move(value); }
-
-    /**
-     * <p>The RAM disk ID.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithRamdiskId(const AttributeValue& value) { SetRamdiskId(value); return *this;}
-
-    /**
-     * <p>The RAM disk ID.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user data.</p>
-     */
-    inline const AttributeValue& GetUserData() const{ return m_userData; }
-
-    /**
-     * <p>The user data.</p>
-     */
-    inline void SetUserData(const AttributeValue& value) { m_userData = value; }
-
-    /**
-     * <p>The user data.</p>
-     */
-    inline void SetUserData(AttributeValue&& value) { m_userData = std::move(value); }
-
-    /**
-     * <p>The user data.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithUserData(const AttributeValue& value) { SetUserData(value); return *this;}
-
-    /**
-     * <p>The user data.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
-
-    /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-     */
-    inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
-
-    /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-     */
-    inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTermination = value; }
-
-    /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-     */
-    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTermination = std::move(value); }
-
-    /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
-
-    /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
-
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehavior = value; }
-
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehavior = std::move(value); }
-
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(const AttributeValue& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline const AttributeValue& GetRootDeviceName() const{ return m_rootDeviceName; }
-
-    /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline void SetRootDeviceName(const AttributeValue& value) { m_rootDeviceName = value; }
-
-    /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline void SetRootDeviceName(AttributeValue&& value) { m_rootDeviceName = std::move(value); }
-
-    /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithRootDeviceName(const AttributeValue& value) { SetRootDeviceName(value); return *this;}
-
-    /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
-
-    /**
-     * <p>The block device mapping of the instance.</p>
-     */
-    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-
-    /**
      * <p>A list of product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
@@ -349,84 +354,59 @@ namespace Model
     inline DescribeInstanceAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>The RAM disk ID.</p>
      */
-    inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline const AttributeValue& GetRamdiskId() const{ return m_ramdiskId; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>The RAM disk ID.</p>
      */
-    inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimized = value; }
+    inline void SetRamdiskId(const AttributeValue& value) { m_ramdiskId = value; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>The RAM disk ID.</p>
      */
-    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimized = std::move(value); }
+    inline void SetRamdiskId(AttributeValue&& value) { m_ramdiskId = std::move(value); }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>The RAM disk ID.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRamdiskId(const AttributeValue& value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>The RAM disk ID.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
-     * interface is enabled.</p>
+     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
      */
-    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+    inline const AttributeValue& GetRootDeviceName() const{ return m_rootDeviceName; }
 
     /**
-     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
-     * interface is enabled.</p>
+     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
      */
-    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
+    inline void SetRootDeviceName(const AttributeValue& value) { m_rootDeviceName = value; }
 
     /**
-     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
-     * interface is enabled.</p>
+     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
      */
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = std::move(value); }
+    inline void SetRootDeviceName(AttributeValue&& value) { m_rootDeviceName = std::move(value); }
 
     /**
-     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
-     * interface is enabled.</p>
+     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
      */
-    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRootDeviceName(const AttributeValue& value) { SetRootDeviceName(value); return *this;}
 
     /**
-     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
-     * interface is enabled.</p>
+     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).</p>
      */
-    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
-     */
-    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
-
-    /**
-     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
-     */
-    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupport = value; }
-
-    /**
-     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
-     */
-    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupport = std::move(value); }
-
-    /**
-     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
-
-    /**
-     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
-     */
-    inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -469,39 +449,59 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
-    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
-    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
+    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
+    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = std::move(value); }
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
+    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>The user data.</p>
      */
-    inline DescribeInstanceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
+    inline const AttributeValue& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The security groups associated with the instance.</p>
+     * <p>The user data.</p>
      */
-    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
+    inline void SetUserData(const AttributeValue& value) { m_userData = value; }
+
+    /**
+     * <p>The user data.</p>
+     */
+    inline void SetUserData(AttributeValue&& value) { m_userData = std::move(value); }
+
+    /**
+     * <p>The user data.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithUserData(const AttributeValue& value) { SetUserData(value); return *this;}
+
+    /**
+     * <p>The user data.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -519,21 +519,21 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+    Aws::Vector<GroupIdentifier> m_groups;
+    Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
+    AttributeBooleanValue m_disableApiTermination;
+    AttributeBooleanValue m_enaSupport;
+    AttributeBooleanValue m_ebsOptimized;
     Aws::String m_instanceId;
+    AttributeValue m_instanceInitiatedShutdownBehavior;
     AttributeValue m_instanceType;
     AttributeValue m_kernelId;
-    AttributeValue m_ramdiskId;
-    AttributeValue m_userData;
-    AttributeBooleanValue m_disableApiTermination;
-    AttributeValue m_instanceInitiatedShutdownBehavior;
-    AttributeValue m_rootDeviceName;
-    Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
     Aws::Vector<ProductCode> m_productCodes;
-    AttributeBooleanValue m_ebsOptimized;
-    AttributeValue m_sriovNetSupport;
-    AttributeBooleanValue m_enaSupport;
+    AttributeValue m_ramdiskId;
+    AttributeValue m_rootDeviceName;
     AttributeBooleanValue m_sourceDestCheck;
-    Aws::Vector<GroupIdentifier> m_groups;
+    AttributeValue m_sriovNetSupport;
+    AttributeValue m_userData;
     ResponseMetadata m_responseMetadata;
   };
 

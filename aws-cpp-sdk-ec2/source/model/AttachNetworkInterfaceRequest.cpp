@@ -21,12 +21,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() : 
+    m_deviceIndex(0),
+    m_deviceIndexHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -34,14 +34,14 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AttachNetworkInterface&";
+  if(m_deviceIndexHasBeenSet)
+  {
+    ss << "DeviceIndex=" << m_deviceIndex << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -49,9 +49,9 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_deviceIndexHasBeenSet)
+  if(m_networkInterfaceIdHasBeenSet)
   {
-    ss << "DeviceIndex=" << m_deviceIndex << "&";
+    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

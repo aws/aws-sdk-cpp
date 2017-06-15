@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeInternetGatewaysRequest::DescribeInternetGatewaysRequest() : 
+    m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_internetGatewayIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_internetGatewayIdsHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeInternetGateways&";
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -45,16 +55,6 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
       ss << "InternetGatewayId." << internetGatewayIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       internetGatewayIdsCount++;
-    }
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
     }
   }
 

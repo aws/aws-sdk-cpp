@@ -26,9 +26,11 @@ namespace Model
   enum class RecordStatus
   {
     NOT_SET,
+    CREATED,
     IN_PROGRESS,
+    IN_PROGRESS_IN_ERROR,
     SUCCEEDED,
-    ERROR_
+    FAILED
   };
 
 namespace RecordStatusMapper

@@ -48,15 +48,15 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
 
   if(!resultNode.IsNull())
   {
-    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
-    if(!subnetIdNode.IsNull())
-    {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
-    }
     XmlNode ipv6CidrBlockAssociationNode = resultNode.FirstChild("ipv6CidrBlockAssociation");
     if(!ipv6CidrBlockAssociationNode.IsNull())
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
+    }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
     }
   }
 

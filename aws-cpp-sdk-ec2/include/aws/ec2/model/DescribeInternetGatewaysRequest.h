@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,78 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeInternetGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetInternetGatewayIds() const{ return m_internetGatewayIds; }
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline void SetInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = value; }
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = std::move(value); }
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetInternetGatewayIds(value); return *this;}
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const Aws::String& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
-     * gateways.</p>
-     */
-    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const char* value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
@@ -277,13 +205,85 @@ namespace Model
      */
     inline DescribeInternetGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeInternetGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInternetGatewayIds() const{ return m_internetGatewayIds; }
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline void SetInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = value; }
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = std::move(value); }
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetInternetGatewayIds(value); return *this;}
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const Aws::String& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
+     * gateways.</p>
+     */
+    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const char* value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::Vector<Aws::String> m_internetGatewayIds;
     bool m_internetGatewayIdsHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

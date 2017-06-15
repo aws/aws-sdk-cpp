@@ -54,39 +54,46 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline void SetVpnGatewayId(const Aws::String& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline void SetVpnGatewayId(const char* value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId.assign(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline VpnGateway& WithVpnGatewayId(const Aws::String& value) { SetVpnGatewayId(value); return *this;}
+    inline VpnGateway& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline VpnGateway& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
+    inline VpnGateway& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
      */
-    inline VpnGateway& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
+    inline VpnGateway& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The current state of the virtual private gateway.</p>
@@ -139,48 +146,6 @@ namespace Model
     inline VpnGateway& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline VpnGateway& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline VpnGateway& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone where the virtual private gateway was created, if
-     * applicable. This field may be empty or not returned.</p>
-     */
-    inline VpnGateway& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-
-    /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
     inline const Aws::Vector<VpcAttachment>& GetVpcAttachments() const{ return m_vpcAttachments; }
@@ -214,6 +179,41 @@ namespace Model
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
     inline VpnGateway& AddVpcAttachments(VpcAttachment&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline void SetVpnGatewayId(const Aws::String& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline void SetVpnGatewayId(const char* value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline VpnGateway& WithVpnGatewayId(const Aws::String& value) { SetVpnGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline VpnGateway& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline VpnGateway& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
@@ -251,16 +251,16 @@ namespace Model
     inline VpnGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
-    Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
     VpnState m_state;
     bool m_stateHasBeenSet;
     GatewayType m_type;
     bool m_typeHasBeenSet;
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
     Aws::Vector<VpcAttachment> m_vpcAttachments;
     bool m_vpcAttachmentsHasBeenSet;
+    Aws::String m_vpnGatewayId;
+    bool m_vpnGatewayIdHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

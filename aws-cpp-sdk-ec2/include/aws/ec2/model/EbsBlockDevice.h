@@ -50,6 +50,90 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
+     * may only be attached to instances that support Amazon EBS encryption.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
+     * may only be attached to instances that support Amazon EBS encryption.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
+     * may only be attached to instances that support Amazon EBS encryption.</p>
+     */
+    inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
+    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
+    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
+    inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
+     * <code>io1</code>, this represents the number of IOPS that are provisioned for
+     * the volume. For <code>gp2</code>, this represents the baseline performance of
+     * the volume and the rate at which the volume accumulates I/O credits for
+     * bursting. For more information about General Purpose SSD baseline performance,
+     * I/O credits, and bursting, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
+     * required for requests to create <code>io1</code> volumes; it is not used in
+     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
+     */
+    inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
+     * <code>io1</code>, this represents the number of IOPS that are provisioned for
+     * the volume. For <code>gp2</code>, this represents the baseline performance of
+     * the volume and the rate at which the volume accumulates I/O credits for
+     * bursting. For more information about General Purpose SSD baseline performance,
+     * I/O credits, and bursting, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
+     * required for requests to create <code>io1</code> volumes; it is not used in
+     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
+     */
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
+     * <code>io1</code>, this represents the number of IOPS that are provisioned for
+     * the volume. For <code>gp2</code>, this represents the baseline performance of
+     * the volume and the rate at which the volume accumulates I/O credits for
+     * bursting. For more information about General Purpose SSD baseline performance,
+     * I/O credits, and bursting, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
+     * required for requests to create <code>io1</code> volumes; it is not used in
+     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
+     */
+    inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
+
+    /**
      * <p>The ID of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
@@ -121,21 +205,6 @@ namespace Model
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-     */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-     */
-    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-     */
-    inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
-
-    /**
      * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
      * <code>standard</code> </p>
@@ -170,88 +239,19 @@ namespace Model
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
-    /**
-     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
-     */
-    inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
-     */
-    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
-     */
-    inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
-
-    /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
-     */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-
-    /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
-     */
-    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
-
-    /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
-     */
-    inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
-
   private:
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
+    bool m_deleteOnTermination;
+    bool m_deleteOnTerminationHasBeenSet;
+    int m_iops;
+    bool m_iopsHasBeenSet;
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
-    bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    int m_iops;
-    bool m_iopsHasBeenSet;
-    bool m_encrypted;
-    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

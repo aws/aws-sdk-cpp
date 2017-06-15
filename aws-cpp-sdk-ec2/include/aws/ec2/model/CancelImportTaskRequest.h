@@ -42,6 +42,41 @@ namespace Model
 
   public:
     /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline const Aws::String& GetCancelReason() const{ return m_cancelReason; }
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline void SetCancelReason(const Aws::String& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::move(value); }
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline void SetCancelReason(const char* value) { m_cancelReasonHasBeenSet = true; m_cancelReason.assign(value); }
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline CancelImportTaskRequest& WithCancelReason(const Aws::String& value) { SetCancelReason(value); return *this;}
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
+    inline CancelImportTaskRequest& WithCancelReason(const char* value) { SetCancelReason(value); return *this;}
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -100,48 +135,13 @@ namespace Model
      */
     inline CancelImportTaskRequest& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline const Aws::String& GetCancelReason() const{ return m_cancelReason; }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline void SetCancelReason(const Aws::String& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::move(value); }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline void SetCancelReason(const char* value) { m_cancelReasonHasBeenSet = true; m_cancelReason.assign(value); }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline CancelImportTaskRequest& WithCancelReason(const Aws::String& value) { SetCancelReason(value); return *this;}
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
-    inline CancelImportTaskRequest& WithCancelReason(const char* value) { SetCancelReason(value); return *this;}
-
   private:
+    Aws::String m_cancelReason;
+    bool m_cancelReasonHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet;
-    Aws::String m_cancelReason;
-    bool m_cancelReasonHasBeenSet;
   };
 
 } // namespace Model

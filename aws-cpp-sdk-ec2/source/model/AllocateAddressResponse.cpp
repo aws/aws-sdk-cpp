@@ -55,15 +55,15 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const AmazonWebServ
     {
       m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
     }
-    XmlNode domainNode = resultNode.FirstChild("domain");
-    if(!domainNode.IsNull())
-    {
-      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(domainNode.GetText().c_str()).c_str());
-    }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+    }
+    XmlNode domainNode = resultNode.FirstChild("domain");
+    if(!domainNode.IsNull())
+    {
+      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(domainNode.GetText().c_str()).c_str());
     }
   }
 

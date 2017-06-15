@@ -31,18 +31,18 @@ namespace Model
 {
 
 PricingDetail::PricingDetail() : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_price(0.0),
+    m_priceHasBeenSet(false)
 {
 }
 
 PricingDetail::PricingDetail(const XmlNode& xmlNode) : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_price(0.0),
+    m_priceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,17 +53,17 @@ PricingDetail& PricingDetail::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode priceNode = resultNode.FirstChild("price");
-    if(!priceNode.IsNull())
-    {
-      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
-      m_priceHasBeenSet = true;
-    }
     XmlNode countNode = resultNode.FirstChild("count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(countNode.GetText().c_str()).c_str());
       m_countHasBeenSet = true;
+    }
+    XmlNode priceNode = resultNode.FirstChild("price");
+    if(!priceNode.IsNull())
+    {
+      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
+      m_priceHasBeenSet = true;
     }
   }
 
@@ -72,27 +72,27 @@ PricingDetail& PricingDetail::operator =(const XmlNode& xmlNode)
 
 void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_priceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
-  }
-
   if(m_countHasBeenSet)
   {
       oStream << location << index << locationValue << ".Count=" << m_count << "&";
+  }
+
+  if(m_priceHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
 
 }
 
 void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_priceHasBeenSet)
-  {
-        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
-  }
   if(m_countHasBeenSet)
   {
       oStream << location << ".Count=" << m_count << "&";
+  }
+  if(m_priceHasBeenSet)
+  {
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
 }
 

@@ -31,26 +31,26 @@ namespace Model
 {
 
 PriceSchedule::PriceSchedule() : 
-    m_term(0),
-    m_termHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false),
     m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
+    m_price(0.0),
+    m_priceHasBeenSet(false),
+    m_term(0),
+    m_termHasBeenSet(false)
 {
 }
 
 PriceSchedule::PriceSchedule(const XmlNode& xmlNode) : 
-    m_term(0),
-    m_termHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false),
     m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
+    m_price(0.0),
+    m_priceHasBeenSet(false),
+    m_term(0),
+    m_termHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,17 +61,11 @@ PriceSchedule& PriceSchedule::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode termNode = resultNode.FirstChild("term");
-    if(!termNode.IsNull())
+    XmlNode activeNode = resultNode.FirstChild("active");
+    if(!activeNode.IsNull())
     {
-      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
-      m_termHasBeenSet = true;
-    }
-    XmlNode priceNode = resultNode.FirstChild("price");
-    if(!priceNode.IsNull())
-    {
-      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
-      m_priceHasBeenSet = true;
+      m_active = StringUtils::ConvertToBool(StringUtils::Trim(activeNode.GetText().c_str()).c_str());
+      m_activeHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
@@ -79,11 +73,17 @@ PriceSchedule& PriceSchedule::operator =(const XmlNode& xmlNode)
       m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
       m_currencyCodeHasBeenSet = true;
     }
-    XmlNode activeNode = resultNode.FirstChild("active");
-    if(!activeNode.IsNull())
+    XmlNode priceNode = resultNode.FirstChild("price");
+    if(!priceNode.IsNull())
     {
-      m_active = StringUtils::ConvertToBool(StringUtils::Trim(activeNode.GetText().c_str()).c_str());
-      m_activeHasBeenSet = true;
+      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
+      m_priceHasBeenSet = true;
+    }
+    XmlNode termNode = resultNode.FirstChild("term");
+    if(!termNode.IsNull())
+    {
+      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
+      m_termHasBeenSet = true;
     }
   }
 
@@ -92,14 +92,9 @@ PriceSchedule& PriceSchedule::operator =(const XmlNode& xmlNode)
 
 void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_termHasBeenSet)
+  if(m_activeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Term=" << m_term << "&";
-  }
-
-  if(m_priceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+      oStream << location << index << locationValue << ".Active=" << std::boolalpha << m_active << "&";
   }
 
   if(m_currencyCodeHasBeenSet)
@@ -107,30 +102,35 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
 
-  if(m_activeHasBeenSet)
+  if(m_priceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Active=" << std::boolalpha << m_active << "&";
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+  }
+
+  if(m_termHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Term=" << m_term << "&";
   }
 
 }
 
 void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_termHasBeenSet)
+  if(m_activeHasBeenSet)
   {
-      oStream << location << ".Term=" << m_term << "&";
-  }
-  if(m_priceHasBeenSet)
-  {
-        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+      oStream << location << ".Active=" << std::boolalpha << m_active << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
-  if(m_activeHasBeenSet)
+  if(m_priceHasBeenSet)
   {
-      oStream << location << ".Active=" << std::boolalpha << m_active << "&";
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+  }
+  if(m_termHasBeenSet)
+  {
+      oStream << location << ".Term=" << m_term << "&";
   }
 }
 

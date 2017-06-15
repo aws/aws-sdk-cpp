@@ -18,8 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/ListingStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ListingStatus.h>
 #include <aws/ec2/model/InstanceCount.h>
 #include <aws/ec2/model/PriceSchedule.h>
 #include <aws/ec2/model/Tag.h>
@@ -55,74 +55,60 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesListing& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
+    inline ReservedInstancesListing& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesListing& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
+    inline ReservedInstancesListing& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Reserved Instance listing.</p>
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
-    inline ReservedInstancesListing& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline ReservedInstancesListing& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline ReservedInstancesListing& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance.</p>
-     */
-    inline ReservedInstancesListing& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    inline ReservedInstancesListing& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
      * <p>The time the listing was created.</p>
@@ -148,98 +134,6 @@ namespace Model
      * <p>The time the listing was created.</p>
      */
     inline ReservedInstancesListing& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The last modified timestamp of the listing.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
-
-    /**
-     * <p>The last modified timestamp of the listing.</p>
-     */
-    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
-
-    /**
-     * <p>The last modified timestamp of the listing.</p>
-     */
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
-
-    /**
-     * <p>The last modified timestamp of the listing.</p>
-     */
-    inline ReservedInstancesListing& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
-
-    /**
-     * <p>The last modified timestamp of the listing.</p>
-     */
-    inline ReservedInstancesListing& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the Reserved Instance listing.</p>
-     */
-    inline const ListingStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the Reserved Instance listing.</p>
-     */
-    inline void SetStatus(const ListingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the Reserved Instance listing.</p>
-     */
-    inline void SetStatus(ListingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the Reserved Instance listing.</p>
-     */
-    inline ReservedInstancesListing& WithStatus(const ListingStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Reserved Instance listing.</p>
-     */
-    inline ReservedInstancesListing& WithStatus(ListingStatus&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline ReservedInstancesListing& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline ReservedInstancesListing& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the current status of the Reserved Instance listing. The
-     * response can be blank.</p>
-     */
-    inline ReservedInstancesListing& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
     /**
      * <p>The number of instances in this state.</p>
@@ -312,6 +206,143 @@ namespace Model
     inline ReservedInstancesListing& AddPriceSchedules(PriceSchedule&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
+    inline ReservedInstancesListing& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
+    inline const ListingStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
+    inline void SetStatus(const ListingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
+    inline void SetStatus(ListingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
+    inline ReservedInstancesListing& WithStatus(const ListingStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
+    inline ReservedInstancesListing& WithStatus(ListingStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline ReservedInstancesListing& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline ReservedInstancesListing& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline ReservedInstancesListing& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+    /**
      * <p>Any tags assigned to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -347,82 +378,51 @@ namespace Model
     inline ReservedInstancesListing& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The last modified timestamp of the listing.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The last modified timestamp of the listing.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The last modified timestamp of the listing.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The last modified timestamp of the listing.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline ReservedInstancesListing& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * <p>The last modified timestamp of the listing.</p>
      */
-    inline ReservedInstancesListing& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
-    inline ReservedInstancesListing& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive key supplied by the client to ensure that the
-     * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
-    inline ReservedInstancesListing& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline ReservedInstancesListing& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
-    Aws::String m_reservedInstancesListingId;
-    bool m_reservedInstancesListingIdHasBeenSet;
-    Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
-    ListingStatus m_status;
-    bool m_statusHasBeenSet;
-    Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
     Aws::Vector<InstanceCount> m_instanceCounts;
     bool m_instanceCountsHasBeenSet;
     Aws::Vector<PriceSchedule> m_priceSchedules;
     bool m_priceSchedulesHasBeenSet;
+    Aws::String m_reservedInstancesId;
+    bool m_reservedInstancesIdHasBeenSet;
+    Aws::String m_reservedInstancesListingId;
+    bool m_reservedInstancesListingIdHasBeenSet;
+    ListingStatus m_status;
+    bool m_statusHasBeenSet;
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    Aws::Utils::DateTime m_updateDate;
+    bool m_updateDateHasBeenSet;
   };
 
 } // namespace Model

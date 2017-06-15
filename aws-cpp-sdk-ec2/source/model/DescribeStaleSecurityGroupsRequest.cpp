@@ -23,10 +23,10 @@ using namespace Aws::Utils;
 DescribeStaleSecurityGroupsRequest::DescribeStaleSecurityGroupsRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -39,11 +39,6 @@ Aws::String DescribeStaleSecurityGroupsRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
@@ -52,6 +47,11 @@ Aws::String DescribeStaleSecurityGroupsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

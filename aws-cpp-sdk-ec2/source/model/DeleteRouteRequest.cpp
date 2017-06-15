@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteRouteRequest::DeleteRouteRequest() : 
+    m_destinationCidrBlockHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false)
+    m_routeTableIdHasBeenSet(false)
 {
 }
 
@@ -33,16 +33,6 @@ Aws::String DeleteRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteRoute&";
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_routeTableIdHasBeenSet)
-  {
-    ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
-  }
-
   if(m_destinationCidrBlockHasBeenSet)
   {
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
@@ -51,6 +41,16 @@ Aws::String DeleteRouteRequest::SerializePayload() const
   if(m_destinationIpv6CidrBlockHasBeenSet)
   {
     ss << "DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_routeTableIdHasBeenSet)
+  {
+    ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

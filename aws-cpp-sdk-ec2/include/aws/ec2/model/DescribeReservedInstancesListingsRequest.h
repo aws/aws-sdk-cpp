@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
 #include <utility>
 
@@ -44,76 +44,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance listing IDs.</p>
-     */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
      * The ID of the Reserved Instances.</p> </li> <li> <p>
@@ -191,13 +121,83 @@ namespace Model
      */
     inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
+
   private:
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
     Aws::String m_reservedInstancesListingId;
     bool m_reservedInstancesListingIdHasBeenSet;
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

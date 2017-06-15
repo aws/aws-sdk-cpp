@@ -50,6 +50,48 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
+     * or <code>xvdh</code>).</p>
+     */
+    inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+    /**
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with 2 available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
@@ -141,48 +183,6 @@ namespace Model
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
-     */
-    inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
-
-    /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
@@ -255,10 +255,10 @@ namespace Model
     inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
 
   private:
-    Aws::String m_virtualName;
-    bool m_virtualNameHasBeenSet;
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+    Aws::String m_virtualName;
+    bool m_virtualNameHasBeenSet;
     EbsBlockDevice m_ebs;
     bool m_ebsHasBeenSet;
     Aws::String m_noDevice;

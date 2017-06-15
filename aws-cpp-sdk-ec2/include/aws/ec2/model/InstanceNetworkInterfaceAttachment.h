@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
-#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,31 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -84,6 +109,24 @@ namespace Model
      * <p>The ID of the network interface attachment.</p>
      */
     inline InstanceNetworkInterfaceAttachment& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
+    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
+    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
+    inline InstanceNetworkInterfaceAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
     /**
      * <p>The index of the device on the instance for the network interface
@@ -128,60 +171,17 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
-
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
-
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
-
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline InstanceNetworkInterfaceAttachment& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
-
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline InstanceNetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
-    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
-    inline InstanceNetworkInterfaceAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
-
   private:
+    Aws::Utils::DateTime m_attachTime;
+    bool m_attachTimeHasBeenSet;
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+    bool m_deleteOnTermination;
+    bool m_deleteOnTerminationHasBeenSet;
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
-    Aws::Utils::DateTime m_attachTime;
-    bool m_attachTimeHasBeenSet;
-    bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
   };
 
 } // namespace Model

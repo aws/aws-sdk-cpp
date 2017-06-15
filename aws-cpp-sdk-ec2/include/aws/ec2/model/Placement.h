@@ -85,6 +85,48 @@ namespace Model
     inline Placement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline const Aws::String& GetAffinity() const{ return m_affinity; }
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline void SetAffinity(const Aws::String& value) { m_affinityHasBeenSet = true; m_affinity = value; }
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline void SetAffinity(const char* value) { m_affinityHasBeenSet = true; m_affinity.assign(value); }
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline Placement& WithAffinity(const Aws::String& value) { SetAffinity(value); return *this;}
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(std::move(value)); return *this;}
+
+    /**
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
+     * is not supported for the <a>ImportInstance</a> command.</p>
+     */
+    inline Placement& WithAffinity(const char* value) { SetAffinity(value); return *this;}
+
+    /**
      * <p>The name of the placement group the instance is in (for cluster compute
      * instances).</p>
      */
@@ -125,46 +167,6 @@ namespace Model
      * instances).</p>
      */
     inline Placement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
-     */
-    inline const Tenancy& GetTenancy() const{ return m_tenancy; }
-
-    /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
-     */
-    inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-
-    /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
-     */
-    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-
-    /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
-     */
-    inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
-
-    /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
-     */
-    inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
@@ -209,58 +211,93 @@ namespace Model
     inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
-    inline const Aws::String& GetAffinity() const{ return m_affinity; }
+    inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
-    inline void SetAffinity(const Aws::String& value) { m_affinityHasBeenSet = true; m_affinity = value; }
+    inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
-    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
+    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
-    inline void SetAffinity(const char* value) { m_affinityHasBeenSet = true; m_affinity.assign(value); }
+    inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
-    inline Placement& WithAffinity(const Aws::String& value) { SetAffinity(value); return *this;}
+    inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>Reserved for future use.</p>
      */
-    inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(std::move(value)); return *this;}
+    inline const Aws::String& GetSpreadDomain() const{ return m_spreadDomain; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
-     * is not supported for the <a>ImportInstance</a> command.</p>
+     * <p>Reserved for future use.</p>
      */
-    inline Placement& WithAffinity(const char* value) { SetAffinity(value); return *this;}
+    inline void SetSpreadDomain(const Aws::String& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSpreadDomain(Aws::String&& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSpreadDomain(const char* value) { m_spreadDomainHasBeenSet = true; m_spreadDomain.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline Placement& WithSpreadDomain(const Aws::String& value) { SetSpreadDomain(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline Placement& WithSpreadDomain(Aws::String&& value) { SetSpreadDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline Placement& WithSpreadDomain(const char* value) { SetSpreadDomain(value); return *this;}
 
   private:
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
-    Tenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
-    Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
     Aws::String m_affinity;
     bool m_affinityHasBeenSet;
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+    Aws::String m_hostId;
+    bool m_hostIdHasBeenSet;
+    Tenancy m_tenancy;
+    bool m_tenancyHasBeenSet;
+    Aws::String m_spreadDomain;
+    bool m_spreadDomainHasBeenSet;
   };
 
 } // namespace Model

@@ -31,22 +31,22 @@ namespace Model
 {
 
 PriceScheduleSpecification::PriceScheduleSpecification() : 
-    m_term(0),
-    m_termHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
+    m_currencyCodeHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
+    m_term(0),
+    m_termHasBeenSet(false)
 {
 }
 
 PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode) : 
-    m_term(0),
-    m_termHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
+    m_currencyCodeHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
+    m_term(0),
+    m_termHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,11 +57,11 @@ PriceScheduleSpecification& PriceScheduleSpecification::operator =(const XmlNode
 
   if(!resultNode.IsNull())
   {
-    XmlNode termNode = resultNode.FirstChild("term");
-    if(!termNode.IsNull())
+    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
+    if(!currencyCodeNode.IsNull())
     {
-      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
-      m_termHasBeenSet = true;
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCodeHasBeenSet = true;
     }
     XmlNode priceNode = resultNode.FirstChild("price");
     if(!priceNode.IsNull())
@@ -69,11 +69,11 @@ PriceScheduleSpecification& PriceScheduleSpecification::operator =(const XmlNode
       m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
       m_priceHasBeenSet = true;
     }
-    XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
-    if(!currencyCodeNode.IsNull())
+    XmlNode termNode = resultNode.FirstChild("term");
+    if(!termNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
-      m_currencyCodeHasBeenSet = true;
+      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
+      m_termHasBeenSet = true;
     }
   }
 
@@ -82,9 +82,9 @@ PriceScheduleSpecification& PriceScheduleSpecification::operator =(const XmlNode
 
 void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_termHasBeenSet)
+  if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Term=" << m_term << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
 
   if(m_priceHasBeenSet)
@@ -92,26 +92,26 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
         oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
 
-  if(m_currencyCodeHasBeenSet)
+  if(m_termHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".Term=" << m_term << "&";
   }
 
 }
 
 void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_termHasBeenSet)
+  if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".Term=" << m_term << "&";
+      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
   if(m_priceHasBeenSet)
   {
         oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
-  if(m_currencyCodeHasBeenSet)
+  if(m_termHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".Term=" << m_term << "&";
   }
 }
 

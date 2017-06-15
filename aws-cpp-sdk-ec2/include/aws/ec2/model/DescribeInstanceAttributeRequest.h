@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,36 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
+    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
+
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
+    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
+    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
+    inline DescribeInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
+
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
+    inline DescribeInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -102,43 +132,13 @@ namespace Model
      */
     inline DescribeInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
-     */
-    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
-     */
-    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
-     */
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
-     */
-    inline DescribeInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
-     */
-    inline DescribeInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
-
   private:
+    InstanceAttributeName m_attribute;
+    bool m_attributeHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
   };
 
 } // namespace Model

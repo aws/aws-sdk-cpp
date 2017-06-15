@@ -48,11 +48,6 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const AmazonWebServiceR
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyNameNode = resultNode.FirstChild("keyName");
-    if(!keyNameNode.IsNull())
-    {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
-    }
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
@@ -62,6 +57,11 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const AmazonWebServiceR
     if(!keyMaterialNode.IsNull())
     {
       m_keyMaterial = StringUtils::Trim(keyMaterialNode.GetText().c_str());
+    }
+    XmlNode keyNameNode = resultNode.FirstChild("keyName");
+    if(!keyNameNode.IsNull())
+    {
+      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
     }
   }
 

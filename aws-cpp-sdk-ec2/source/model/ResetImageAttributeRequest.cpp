@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ResetImageAttributeRequest::ResetImageAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_attribute(ResetImageAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String ResetImageAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ResetImageAttribute&";
-  if(m_dryRunHasBeenSet)
+  if(m_attributeHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Attribute=" << ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute) << "&";
   }
 
   if(m_imageIdHasBeenSet)
@@ -43,9 +43,9 @@ Aws::String ResetImageAttributeRequest::SerializePayload() const
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_attributeHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Attribute=" << ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

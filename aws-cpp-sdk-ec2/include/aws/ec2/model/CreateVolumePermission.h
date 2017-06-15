@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PermissionGroup.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,36 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The specific group that is to be added or removed from a volume's list of
+     * create volume permissions.</p>
+     */
+    inline const PermissionGroup& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The specific group that is to be added or removed from a volume's list of
+     * create volume permissions.</p>
+     */
+    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The specific group that is to be added or removed from a volume's list of
+     * create volume permissions.</p>
+     */
+    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+
+    /**
+     * <p>The specific group that is to be added or removed from a volume's list of
+     * create volume permissions.</p>
+     */
+    inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The specific group that is to be added or removed from a volume's list of
+     * create volume permissions.</p>
+     */
+    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
      * <p>The specific AWS account ID that is to be added or removed from a volume's
@@ -92,41 +122,11 @@ namespace Model
      */
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
-    /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
-     */
-    inline const PermissionGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
-     */
-    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
-     */
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
-     */
-    inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
-     */
-    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
-
   private:
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet;
     PermissionGroup m_group;
     bool m_groupHasBeenSet;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet;
   };
 
 } // namespace Model

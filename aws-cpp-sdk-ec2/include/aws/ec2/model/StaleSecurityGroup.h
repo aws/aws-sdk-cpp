@@ -52,6 +52,41 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The description of the security group.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline StaleSecurityGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline StaleSecurityGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the security group.</p>
+     */
+    inline StaleSecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
@@ -120,76 +155,6 @@ namespace Model
      * <p>The name of the security group.</p>
      */
     inline StaleSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline StaleSecurityGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline StaleSecurityGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the security group.</p>
-     */
-    inline StaleSecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline StaleSecurityGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline StaleSecurityGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC for the security group.</p>
-     */
-    inline StaleSecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
      * <p>Information about the stale inbound rules in the security group.</p>
@@ -261,19 +226,54 @@ namespace Model
      */
     inline StaleSecurityGroup& AddStaleIpPermissionsEgress(StaleIpPermission&& value) { m_staleIpPermissionsEgressHasBeenSet = true; m_staleIpPermissionsEgress.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline StaleSecurityGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline StaleSecurityGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline StaleSecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     Aws::Vector<StaleIpPermission> m_staleIpPermissions;
     bool m_staleIpPermissionsHasBeenSet;
     Aws::Vector<StaleIpPermission> m_staleIpPermissionsEgress;
     bool m_staleIpPermissionsEgressHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

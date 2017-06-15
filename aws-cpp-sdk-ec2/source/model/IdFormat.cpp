@@ -31,18 +31,18 @@ namespace Model
 {
 
 IdFormat::IdFormat() : 
+    m_deadlineHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_useLongIdsHasBeenSet(false)
 {
 }
 
 IdFormat::IdFormat(const XmlNode& xmlNode) : 
+    m_deadlineHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_useLongIdsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +53,12 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode deadlineNode = resultNode.FirstChild("deadline");
+    if(!deadlineNode.IsNull())
+    {
+      m_deadline = DateTime(StringUtils::Trim(deadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deadlineHasBeenSet = true;
+    }
     XmlNode resourceNode = resultNode.FirstChild("resource");
     if(!resourceNode.IsNull())
     {
@@ -65,12 +71,6 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
       m_useLongIds = StringUtils::ConvertToBool(StringUtils::Trim(useLongIdsNode.GetText().c_str()).c_str());
       m_useLongIdsHasBeenSet = true;
     }
-    XmlNode deadlineNode = resultNode.FirstChild("deadline");
-    if(!deadlineNode.IsNull())
-    {
-      m_deadline = DateTime(StringUtils::Trim(deadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_deadlineHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -78,6 +78,11 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
 
 void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_deadlineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_resourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
@@ -88,15 +93,14 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
-  if(m_deadlineHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
 }
 
 void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_deadlineHasBeenSet)
+  {
+      oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_resourceHasBeenSet)
   {
       oStream << location << ".Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
@@ -104,10 +108,6 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_useLongIdsHasBeenSet)
   {
       oStream << location << ".UseLongIds=" << std::boolalpha << m_useLongIds << "&";
-  }
-  if(m_deadlineHasBeenSet)
-  {
-      oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

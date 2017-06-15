@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_reservedInstancesOfferingIdHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_reservedInstancesOfferingIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_limitPriceHasBeenSet(false)
 {
 }
@@ -34,9 +34,9 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedInstancesOffering&";
-  if(m_dryRunHasBeenSet)
+  if(m_instanceCountHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "InstanceCount=" << m_instanceCount << "&";
   }
 
   if(m_reservedInstancesOfferingIdHasBeenSet)
@@ -44,9 +44,9 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
     ss << "ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
   }
 
-  if(m_instanceCountHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "InstanceCount=" << m_instanceCount << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_limitPriceHasBeenSet)

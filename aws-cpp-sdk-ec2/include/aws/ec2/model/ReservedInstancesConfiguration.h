@@ -87,6 +87,46 @@ namespace Model
     inline ReservedInstancesConfiguration& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
+    inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+
+    /**
+     * <p>The number of modified Reserved Instances.</p>
+     */
+    inline ReservedInstancesConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline ReservedInstancesConfiguration& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
      * <p>The network platform of the modified Reserved Instances, which is either
      * EC2-Classic or EC2-VPC.</p>
      */
@@ -129,46 +169,6 @@ namespace Model
     inline ReservedInstancesConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The number of modified Reserved Instances.</p>
-     */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of modified Reserved Instances.</p>
-     */
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of modified Reserved Instances.</p>
-     */
-    inline ReservedInstancesConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-
-    /**
-     * <p>The instance type for the modified Reserved Instances.</p>
-     */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type for the modified Reserved Instances.</p>
-     */
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type for the modified Reserved Instances.</p>
-     */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type for the modified Reserved Instances.</p>
-     */
-    inline ReservedInstancesConfiguration& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type for the modified Reserved Instances.</p>
-     */
-    inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
-
-    /**
      * <p>Whether the Reserved Instance is applied to instances in a region or
      * instances in a specific Availability Zone.</p>
      */
@@ -201,12 +201,12 @@ namespace Model
   private:
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    Aws::String m_platform;
-    bool m_platformHasBeenSet;
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+    Aws::String m_platform;
+    bool m_platformHasBeenSet;
     Scope m_scope;
     bool m_scopeHasBeenSet;
   };

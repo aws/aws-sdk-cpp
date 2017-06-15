@@ -21,9 +21,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() : 
-    m_vpcIdHasBeenSet(false),
+    m_enableDnsHostnamesHasBeenSet(false),
     m_enableDnsSupportHasBeenSet(false),
-    m_enableDnsHostnamesHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -31,9 +31,9 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcAttribute&";
-  if(m_vpcIdHasBeenSet)
+  if(m_enableDnsHostnamesHasBeenSet)
   {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+    m_enableDnsHostnames.OutputToStream(ss, "EnableDnsHostnames");
   }
 
   if(m_enableDnsSupportHasBeenSet)
@@ -41,9 +41,9 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
     m_enableDnsSupport.OutputToStream(ss, "EnableDnsSupport");
   }
 
-  if(m_enableDnsHostnamesHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-    m_enableDnsHostnames.OutputToStream(ss, "EnableDnsHostnames");
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

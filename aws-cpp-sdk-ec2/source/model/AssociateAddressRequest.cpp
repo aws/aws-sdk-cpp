@@ -21,15 +21,15 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssociateAddressRequest::AssociateAddressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_allocationIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
     m_allowReassociation(false),
-    m_allowReassociationHasBeenSet(false)
+    m_allowReassociationHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
@@ -37,9 +37,9 @@ Aws::String AssociateAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssociateAddress&";
-  if(m_dryRunHasBeenSet)
+  if(m_allocationIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -52,9 +52,14 @@ Aws::String AssociateAddressRequest::SerializePayload() const
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  if(m_allocationIdHasBeenSet)
+  if(m_allowReassociationHasBeenSet)
   {
-    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+    ss << "AllowReassociation=" << std::boolalpha << m_allowReassociation << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -65,11 +70,6 @@ Aws::String AssociateAddressRequest::SerializePayload() const
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
-
-  if(m_allowReassociationHasBeenSet)
-  {
-    ss << "AllowReassociation=" << std::boolalpha << m_allowReassociation << "&";
   }
 
   ss << "Version=2016-11-15";

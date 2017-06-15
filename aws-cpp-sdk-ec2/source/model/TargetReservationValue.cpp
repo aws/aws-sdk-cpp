@@ -31,14 +31,14 @@ namespace Model
 {
 
 TargetReservationValue::TargetReservationValue() : 
-    m_targetConfigurationHasBeenSet(false),
-    m_reservationValueHasBeenSet(false)
+    m_reservationValueHasBeenSet(false),
+    m_targetConfigurationHasBeenSet(false)
 {
 }
 
 TargetReservationValue::TargetReservationValue(const XmlNode& xmlNode) : 
-    m_targetConfigurationHasBeenSet(false),
-    m_reservationValueHasBeenSet(false)
+    m_reservationValueHasBeenSet(false),
+    m_targetConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -49,17 +49,17 @@ TargetReservationValue& TargetReservationValue::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
-    XmlNode targetConfigurationNode = resultNode.FirstChild("targetConfiguration");
-    if(!targetConfigurationNode.IsNull())
-    {
-      m_targetConfiguration = targetConfigurationNode;
-      m_targetConfigurationHasBeenSet = true;
-    }
     XmlNode reservationValueNode = resultNode.FirstChild("reservationValue");
     if(!reservationValueNode.IsNull())
     {
       m_reservationValue = reservationValueNode;
       m_reservationValueHasBeenSet = true;
+    }
+    XmlNode targetConfigurationNode = resultNode.FirstChild("targetConfiguration");
+    if(!targetConfigurationNode.IsNull())
+    {
+      m_targetConfiguration = targetConfigurationNode;
+      m_targetConfigurationHasBeenSet = true;
     }
   }
 
@@ -68,13 +68,6 @@ TargetReservationValue& TargetReservationValue::operator =(const XmlNode& xmlNod
 
 void TargetReservationValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_targetConfigurationHasBeenSet)
-  {
-      Aws::StringStream targetConfigurationLocationAndMemberSs;
-      targetConfigurationLocationAndMemberSs << location << index << locationValue << ".TargetConfiguration";
-      m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMemberSs.str().c_str());
-  }
-
   if(m_reservationValueHasBeenSet)
   {
       Aws::StringStream reservationValueLocationAndMemberSs;
@@ -82,21 +75,28 @@ void TargetReservationValue::OutputToStream(Aws::OStream& oStream, const char* l
       m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMemberSs.str().c_str());
   }
 
+  if(m_targetConfigurationHasBeenSet)
+  {
+      Aws::StringStream targetConfigurationLocationAndMemberSs;
+      targetConfigurationLocationAndMemberSs << location << index << locationValue << ".TargetConfiguration";
+      m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void TargetReservationValue::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_targetConfigurationHasBeenSet)
-  {
-      Aws::String targetConfigurationLocationAndMember(location);
-      targetConfigurationLocationAndMember += ".TargetConfiguration";
-      m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMember.c_str());
-  }
   if(m_reservationValueHasBeenSet)
   {
       Aws::String reservationValueLocationAndMember(location);
       reservationValueLocationAndMember += ".ReservationValue";
       m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMember.c_str());
+  }
+  if(m_targetConfigurationHasBeenSet)
+  {
+      Aws::String targetConfigurationLocationAndMember(location);
+      targetConfigurationLocationAndMember += ".TargetConfiguration";
+      m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMember.c_str());
   }
 }
 

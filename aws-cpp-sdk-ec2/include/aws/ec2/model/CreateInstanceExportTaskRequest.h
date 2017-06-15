@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/ExportEnvironment.h>
 #include <aws/ec2/model/ExportToS3TaskSpecification.h>
+#include <aws/ec2/model/ExportEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +87,31 @@ namespace Model
     inline CreateInstanceExportTaskRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>The format and location for an instance export task.</p>
+     */
+    inline const ExportToS3TaskSpecification& GetExportToS3Task() const{ return m_exportToS3Task; }
+
+    /**
+     * <p>The format and location for an instance export task.</p>
+     */
+    inline void SetExportToS3Task(const ExportToS3TaskSpecification& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
+
+    /**
+     * <p>The format and location for an instance export task.</p>
+     */
+    inline void SetExportToS3Task(ExportToS3TaskSpecification&& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = std::move(value); }
+
+    /**
+     * <p>The format and location for an instance export task.</p>
+     */
+    inline CreateInstanceExportTaskRequest& WithExportToS3Task(const ExportToS3TaskSpecification& value) { SetExportToS3Task(value); return *this;}
+
+    /**
+     * <p>The format and location for an instance export task.</p>
+     */
+    inline CreateInstanceExportTaskRequest& WithExportToS3Task(ExportToS3TaskSpecification&& value) { SetExportToS3Task(std::move(value)); return *this;}
+
+    /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -146,40 +171,15 @@ namespace Model
      */
     inline CreateInstanceExportTaskRequest& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(std::move(value)); return *this;}
 
-    /**
-     * <p>The format and location for an instance export task.</p>
-     */
-    inline const ExportToS3TaskSpecification& GetExportToS3Task() const{ return m_exportToS3Task; }
-
-    /**
-     * <p>The format and location for an instance export task.</p>
-     */
-    inline void SetExportToS3Task(const ExportToS3TaskSpecification& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
-
-    /**
-     * <p>The format and location for an instance export task.</p>
-     */
-    inline void SetExportToS3Task(ExportToS3TaskSpecification&& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = std::move(value); }
-
-    /**
-     * <p>The format and location for an instance export task.</p>
-     */
-    inline CreateInstanceExportTaskRequest& WithExportToS3Task(const ExportToS3TaskSpecification& value) { SetExportToS3Task(value); return *this;}
-
-    /**
-     * <p>The format and location for an instance export task.</p>
-     */
-    inline CreateInstanceExportTaskRequest& WithExportToS3Task(ExportToS3TaskSpecification&& value) { SetExportToS3Task(std::move(value)); return *this;}
-
   private:
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    ExportToS3TaskSpecification m_exportToS3Task;
+    bool m_exportToS3TaskHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     ExportEnvironment m_targetEnvironment;
     bool m_targetEnvironmentHasBeenSet;
-    ExportToS3TaskSpecification m_exportToS3Task;
-    bool m_exportToS3TaskHasBeenSet;
   };
 
 } // namespace Model

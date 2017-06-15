@@ -44,70 +44,6 @@ namespace Model
 
   public:
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline DescribeInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline DescribeInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
-     */
-    inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
@@ -1319,6 +1255,94 @@ namespace Model
     inline DescribeInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline DescribeInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline DescribeInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter or tag filters in the same call.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter or tag filters in the same call.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter or tag filters in the same call.</p>
+     */
+    inline DescribeInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -1353,41 +1377,17 @@ namespace Model
      */
     inline DescribeInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter or tag filters in the same call.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter or tag filters in the same call.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter or tag filters in the same call.</p>
-     */
-    inline DescribeInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_instanceIds;
+    bool m_instanceIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

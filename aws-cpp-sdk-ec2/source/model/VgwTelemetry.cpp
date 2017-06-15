@@ -31,24 +31,24 @@ namespace Model
 {
 
 VgwTelemetry::VgwTelemetry() : 
+    m_acceptedRouteCount(0),
+    m_acceptedRouteCountHasBeenSet(false),
+    m_lastStatusChangeHasBeenSet(false),
     m_outsideIpAddressHasBeenSet(false),
     m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false)
+    m_statusMessageHasBeenSet(false)
 {
 }
 
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) : 
+    m_acceptedRouteCount(0),
+    m_acceptedRouteCountHasBeenSet(false),
+    m_lastStatusChangeHasBeenSet(false),
     m_outsideIpAddressHasBeenSet(false),
     m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false)
+    m_statusMessageHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +59,18 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode acceptedRouteCountNode = resultNode.FirstChild("acceptedRouteCount");
+    if(!acceptedRouteCountNode.IsNull())
+    {
+      m_acceptedRouteCount = StringUtils::ConvertToInt32(StringUtils::Trim(acceptedRouteCountNode.GetText().c_str()).c_str());
+      m_acceptedRouteCountHasBeenSet = true;
+    }
+    XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
+    if(!lastStatusChangeNode.IsNull())
+    {
+      m_lastStatusChange = DateTime(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastStatusChangeHasBeenSet = true;
+    }
     XmlNode outsideIpAddressNode = resultNode.FirstChild("outsideIpAddress");
     if(!outsideIpAddressNode.IsNull())
     {
@@ -71,23 +83,11 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
       m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
-    if(!lastStatusChangeNode.IsNull())
-    {
-      m_lastStatusChange = DateTime(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_lastStatusChangeHasBeenSet = true;
-    }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
       m_statusMessageHasBeenSet = true;
-    }
-    XmlNode acceptedRouteCountNode = resultNode.FirstChild("acceptedRouteCount");
-    if(!acceptedRouteCountNode.IsNull())
-    {
-      m_acceptedRouteCount = StringUtils::ConvertToInt32(StringUtils::Trim(acceptedRouteCountNode.GetText().c_str()).c_str());
-      m_acceptedRouteCountHasBeenSet = true;
     }
   }
 
@@ -96,6 +96,16 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
 
 void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_acceptedRouteCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
+  }
+
+  if(m_lastStatusChangeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_outsideIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".OutsideIpAddress=" << StringUtils::URLEncode(m_outsideIpAddress.c_str()) << "&";
@@ -106,25 +116,23 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
   }
 
-  if(m_lastStatusChangeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
-
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
-  }
-
-  if(m_acceptedRouteCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
 
 }
 
 void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_acceptedRouteCountHasBeenSet)
+  {
+      oStream << location << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
+  }
+  if(m_lastStatusChangeHasBeenSet)
+  {
+      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_outsideIpAddressHasBeenSet)
   {
       oStream << location << ".OutsideIpAddress=" << StringUtils::URLEncode(m_outsideIpAddress.c_str()) << "&";
@@ -133,17 +141,9 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   {
       oStream << location << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
   }
-  if(m_lastStatusChangeHasBeenSet)
-  {
-      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-  }
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
-  }
-  if(m_acceptedRouteCountHasBeenSet)
-  {
-      oStream << location << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
 }
 

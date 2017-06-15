@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DetachVpnGatewayRequest::DetachVpnGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String DetachVpnGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DetachVpnGateway&";
-  if(m_dryRunHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   if(m_vpnGatewayIdHasBeenSet)
@@ -42,9 +42,9 @@ Aws::String DetachVpnGatewayRequest::SerializePayload() const
     ss << "VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

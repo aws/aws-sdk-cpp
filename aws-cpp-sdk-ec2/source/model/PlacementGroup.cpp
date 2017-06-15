@@ -32,19 +32,19 @@ namespace Model
 
 PlacementGroup::PlacementGroup() : 
     m_groupNameHasBeenSet(false),
-    m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false),
     m_state(PlacementGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_strategy(PlacementStrategy::NOT_SET),
+    m_strategyHasBeenSet(false)
 {
 }
 
 PlacementGroup::PlacementGroup(const XmlNode& xmlNode) : 
     m_groupNameHasBeenSet(false),
-    m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false),
     m_state(PlacementGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_strategy(PlacementStrategy::NOT_SET),
+    m_strategyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,17 +61,17 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
     }
-    XmlNode strategyNode = resultNode.FirstChild("strategy");
-    if(!strategyNode.IsNull())
-    {
-      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(strategyNode.GetText().c_str()).c_str());
-      m_strategyHasBeenSet = true;
-    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = PlacementGroupStateMapper::GetPlacementGroupStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
+    }
+    XmlNode strategyNode = resultNode.FirstChild("strategy");
+    if(!strategyNode.IsNull())
+    {
+      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(strategyNode.GetText().c_str()).c_str());
+      m_strategyHasBeenSet = true;
     }
   }
 
@@ -85,14 +85,14 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_strategyHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
-  }
-
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state) << "&";
+  }
+
+  if(m_strategyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
 
 }
@@ -103,13 +103,13 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   {
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
-  if(m_strategyHasBeenSet)
-  {
-      oStream << location << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
-  }
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state) << "&";
+  }
+  if(m_strategyHasBeenSet)
+  {
+      oStream << location << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
 }
 

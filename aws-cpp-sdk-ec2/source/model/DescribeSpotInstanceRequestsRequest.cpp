@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeSpotInstanceRequestsRequest::DescribeSpotInstanceRequestsRequest() : 
+    m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_spotInstanceRequestIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_spotInstanceRequestIdsHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeSpotInstanceRequests&";
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
@@ -45,16 +55,6 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
       ss << "SpotInstanceRequestId." << spotInstanceRequestIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       spotInstanceRequestIdsCount++;
-    }
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
     }
   }
 

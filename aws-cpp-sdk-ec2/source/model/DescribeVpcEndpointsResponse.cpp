@@ -48,6 +48,11 @@ DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode vpcEndpointsNode = resultNode.FirstChild("vpcEndpointSet");
     if(!vpcEndpointsNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Ama
         vpcEndpointsMember = vpcEndpointsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

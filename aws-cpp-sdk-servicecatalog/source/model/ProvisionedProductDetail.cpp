@@ -33,7 +33,7 @@ ProvisionedProductDetail::ProvisionedProductDetail() :
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_status(RecordStatus::NOT_SET),
+    m_status(ProvisionedProductStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -47,7 +47,7 @@ ProvisionedProductDetail::ProvisionedProductDetail(const JsonValue& jsonValue) :
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_status(RecordStatus::NOT_SET),
+    m_status(ProvisionedProductStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -89,7 +89,7 @@ ProvisionedProductDetail& ProvisionedProductDetail::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("Status"))
   {
-    m_status = RecordStatusMapper::GetRecordStatusForName(jsonValue.GetString("Status"));
+    m_status = ProvisionedProductStatusMapper::GetProvisionedProductStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
   }
@@ -155,7 +155,7 @@ JsonValue ProvisionedProductDetail::Jsonize() const
 
   if(m_statusHasBeenSet)
   {
-   payload.WithString("Status", RecordStatusMapper::GetNameForRecordStatus(m_status));
+   payload.WithString("Status", ProvisionedProductStatusMapper::GetNameForProvisionedProductStatus(m_status));
   }
 
   if(m_statusMessageHasBeenSet)

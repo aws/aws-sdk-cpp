@@ -31,18 +31,18 @@ namespace Model
 {
 
 InstanceCount::InstanceCount() : 
-    m_state(ListingState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_state(ListingState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
 InstanceCount::InstanceCount(const XmlNode& xmlNode) : 
-    m_state(ListingState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_state(ListingState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,17 +53,17 @@ InstanceCount& InstanceCount::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = ListingStateMapper::GetListingStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
-    }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(instanceCountNode.GetText().c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = ListingStateMapper::GetListingStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
     }
   }
 
@@ -72,27 +72,27 @@ InstanceCount& InstanceCount::operator =(const XmlNode& xmlNode)
 
 void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
-  }
-
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
   }
 
 }
 
 void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
-  }
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << ".InstanceCount=" << m_instanceCount << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
   }
 }
 

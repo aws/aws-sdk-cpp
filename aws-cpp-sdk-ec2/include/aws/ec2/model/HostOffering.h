@@ -16,9 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PaymentOption.h>
-#include <aws/ec2/model/CurrencyCodeValues.h>
 #include <utility>
 
 namespace Aws
@@ -52,39 +52,79 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The currency of the offering.</p>
      */
-    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The currency of the offering.</p>
      */
-    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The currency of the offering.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The currency of the offering.</p>
      */
-    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
+    inline HostOffering& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The currency of the offering.</p>
      */
-    inline HostOffering& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
+    inline HostOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The duration of the offering (in seconds).</p>
      */
-    inline HostOffering& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
+    inline int GetDuration() const{ return m_duration; }
 
     /**
-     * <p>The ID of the offering.</p>
+     * <p>The duration of the offering (in seconds).</p>
      */
-    inline HostOffering& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
+
+    /**
+     * <p>The duration of the offering (in seconds).</p>
+     */
+    inline HostOffering& WithDuration(int value) { SetDuration(value); return *this;}
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline void SetHourlyPrice(const Aws::String& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline void SetHourlyPrice(const char* value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice.assign(value); }
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline HostOffering& WithHourlyPrice(const Aws::String& value) { SetHourlyPrice(value); return *this;}
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline HostOffering& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline HostOffering& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
 
     /**
      * <p>The instance family of the offering.</p>
@@ -120,6 +160,41 @@ namespace Model
      * <p>The instance family of the offering.</p>
      */
     inline HostOffering& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline HostOffering& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline HostOffering& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline HostOffering& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
     /**
      * <p>The available payment option.</p>
@@ -188,96 +263,21 @@ namespace Model
      */
     inline HostOffering& WithUpfrontPrice(const char* value) { SetUpfrontPrice(value); return *this;}
 
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline void SetHourlyPrice(const Aws::String& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline void SetHourlyPrice(const char* value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice.assign(value); }
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline HostOffering& WithHourlyPrice(const Aws::String& value) { SetHourlyPrice(value); return *this;}
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline HostOffering& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
-
-    /**
-     * <p>The hourly price of the offering.</p>
-     */
-    inline HostOffering& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
-
-    /**
-     * <p>The currency of the offering.</p>
-     */
-    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
-
-    /**
-     * <p>The currency of the offering.</p>
-     */
-    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-
-    /**
-     * <p>The currency of the offering.</p>
-     */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-
-    /**
-     * <p>The currency of the offering.</p>
-     */
-    inline HostOffering& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
-
-    /**
-     * <p>The currency of the offering.</p>
-     */
-    inline HostOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The duration of the offering (in seconds).</p>
-     */
-    inline int GetDuration() const{ return m_duration; }
-
-    /**
-     * <p>The duration of the offering (in seconds).</p>
-     */
-    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-
-    /**
-     * <p>The duration of the offering (in seconds).</p>
-     */
-    inline HostOffering& WithDuration(int value) { SetDuration(value); return *this;}
-
   private:
-    Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
-    Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
-    PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
-    Aws::String m_upfrontPrice;
-    bool m_upfrontPriceHasBeenSet;
-    Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
     int m_duration;
     bool m_durationHasBeenSet;
+    Aws::String m_hourlyPrice;
+    bool m_hourlyPriceHasBeenSet;
+    Aws::String m_instanceFamily;
+    bool m_instanceFamilyHasBeenSet;
+    Aws::String m_offeringId;
+    bool m_offeringIdHasBeenSet;
+    PaymentOption m_paymentOption;
+    bool m_paymentOptionHasBeenSet;
+    Aws::String m_upfrontPrice;
+    bool m_upfrontPriceHasBeenSet;
   };
 
 } // namespace Model

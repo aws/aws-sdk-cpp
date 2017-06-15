@@ -39,6 +39,7 @@
 #include <aws/servicecatalog/model/DescribeProductResult.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminResult.h>
 #include <aws/servicecatalog/model/DescribeProductViewResult.h>
+#include <aws/servicecatalog/model/DescribeProvisionedProductResult.h>
 #include <aws/servicecatalog/model/DescribeProvisioningArtifactResult.h>
 #include <aws/servicecatalog/model/DescribeProvisioningParametersResult.h>
 #include <aws/servicecatalog/model/DescribeRecordResult.h>
@@ -127,6 +128,7 @@ namespace Model
         class DescribeProductRequest;
         class DescribeProductAsAdminRequest;
         class DescribeProductViewRequest;
+        class DescribeProvisionedProductRequest;
         class DescribeProvisioningArtifactRequest;
         class DescribeProvisioningParametersRequest;
         class DescribeRecordRequest;
@@ -171,6 +173,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductOutcome;
         typedef Aws::Utils::Outcome<DescribeProductAsAdminResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductAsAdminOutcome;
         typedef Aws::Utils::Outcome<DescribeProductViewResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductViewOutcome;
+        typedef Aws::Utils::Outcome<DescribeProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisionedProductOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisioningArtifactOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningParametersResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisioningParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeRecordResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeRecordOutcome;
@@ -215,6 +218,7 @@ namespace Model
         typedef std::future<DescribeProductOutcome> DescribeProductOutcomeCallable;
         typedef std::future<DescribeProductAsAdminOutcome> DescribeProductAsAdminOutcomeCallable;
         typedef std::future<DescribeProductViewOutcome> DescribeProductViewOutcomeCallable;
+        typedef std::future<DescribeProvisionedProductOutcome> DescribeProvisionedProductOutcomeCallable;
         typedef std::future<DescribeProvisioningArtifactOutcome> DescribeProvisioningArtifactOutcomeCallable;
         typedef std::future<DescribeProvisioningParametersOutcome> DescribeProvisioningParametersOutcomeCallable;
         typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
@@ -262,6 +266,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductRequest&, const Model::DescribeProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductAsAdminRequest&, const Model::DescribeProductAsAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductAsAdminResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductViewRequest&, const Model::DescribeProductViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductViewResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProvisionedProductRequest&, const Model::DescribeProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProvisioningArtifactRequest&, const Model::DescribeProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningArtifactResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProvisioningParametersRequest&, const Model::DescribeProvisioningParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningParametersResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeRecordRequest&, const Model::DescribeRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecordResponseReceivedHandler;
@@ -293,9 +298,9 @@ namespace Model
    * href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows
    * organizations to create and manage catalogs of IT services that are approved for
    * use on AWS. This documentation provides reference material for the AWS Service
-   * Catalog end user API. To get the most out of this documentation, you need to be
-   * familiar with the terminology discussed in <a
-   * href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS
+   * Catalog end user API. To get the most out of this documentation, be familiar
+   * with the terminology discussed in <a
+   * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
    * Service Catalog Concepts</a>.</p> <p> <i>Additional Resources</i> </p> <ul> <li>
    * <p> <a
    * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">AWS
@@ -408,14 +413,18 @@ namespace Model
         virtual void AssociateProductWithPortfolioAsync(const Model::AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new constraint. For more information, see <a
+         * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+         * Constraints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConstraintOutcome CreateConstraint(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new constraint. For more information, see <a
+         * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+         * Constraints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          *
@@ -424,7 +433,9 @@ namespace Model
         virtual Model::CreateConstraintOutcomeCallable CreateConstraintCallable(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new constraint. For more information, see <a
+         * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
+         * Constraints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          *
@@ -509,8 +520,8 @@ namespace Model
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p><p><h3>See
-         * Also:</h3>   <a
+         * does not work with a product that has been shared with you.</p> <p>See the
+         * bottom of this topic for an example JSON request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
          * API Reference</a></p>
          */
@@ -518,8 +529,8 @@ namespace Model
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p><p><h3>See
-         * Also:</h3>   <a
+         * does not work with a product that has been shared with you.</p> <p>See the
+         * bottom of this topic for an example JSON request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
          * API Reference</a></p>
          *
@@ -529,8 +540,8 @@ namespace Model
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p><p><h3>See
-         * Also:</h3>   <a
+         * does not work with a product that has been shared with you.</p> <p>See the
+         * bottom of this topic for an example JSON request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
          * API Reference</a></p>
          *
@@ -564,7 +575,7 @@ namespace Model
         virtual void DeleteConstraintAsync(const Model::DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified portfolio. This operation will not work with a
+         * <p>Deletes the specified portfolio. This operation does not work with a
          * portfolio that has been shared with you or if it has products, users,
          * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
          * <a
@@ -574,7 +585,7 @@ namespace Model
         virtual Model::DeletePortfolioOutcome DeletePortfolio(const Model::DeletePortfolioRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio. This operation will not work with a
+         * <p>Deletes the specified portfolio. This operation does not work with a
          * portfolio that has been shared with you or if it has products, users,
          * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
          * <a
@@ -586,7 +597,7 @@ namespace Model
         virtual Model::DeletePortfolioOutcomeCallable DeletePortfolioCallable(const Model::DeletePortfolioRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio. This operation will not work with a
+         * <p>Deletes the specified portfolio. This operation does not work with a
          * portfolio that has been shared with you or if it has products, users,
          * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
          * <a
@@ -623,7 +634,7 @@ namespace Model
         virtual void DeletePortfolioShareAsync(const Model::DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified product. This operation will not work with a product
+         * <p>Deletes the specified product. This operation does not work with a product
          * that has been shared with you or is associated with a portfolio. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
@@ -632,7 +643,7 @@ namespace Model
         virtual Model::DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest& request) const;
 
         /**
-         * <p>Deletes the specified product. This operation will not work with a product
+         * <p>Deletes the specified product. This operation does not work with a product
          * that has been shared with you or is associated with a portfolio. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
@@ -643,7 +654,7 @@ namespace Model
         virtual Model::DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request) const;
 
         /**
-         * <p>Deletes the specified product. This operation will not work with a product
+         * <p>Deletes the specified product. This operation does not work with a product
          * that has been shared with you or is associated with a portfolio. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
@@ -654,7 +665,7 @@ namespace Model
         virtual void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified provisioning artifact. This operation will not work on
+         * <p>Deletes the specified provisioning artifact. This operation does not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
          * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
@@ -664,7 +675,7 @@ namespace Model
         virtual Model::DeleteProvisioningArtifactOutcome DeleteProvisioningArtifact(const Model::DeleteProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Deletes the specified provisioning artifact. This operation will not work on
+         * <p>Deletes the specified provisioning artifact. This operation does not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
          * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
@@ -676,7 +687,7 @@ namespace Model
         virtual Model::DeleteProvisioningArtifactOutcomeCallable DeleteProvisioningArtifactCallable(const Model::DeleteProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Deletes the specified provisioning artifact. This operation will not work on
+         * <p>Deletes the specified provisioning artifact. This operation does not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
          * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
@@ -838,6 +849,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductViewAsync(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve detailed information about the provisioned product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProvisionedProductOutcome DescribeProvisionedProduct(const Model::DescribeProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Retrieve detailed information about the provisioned product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProvisionedProductOutcomeCallable DescribeProvisionedProductCallable(const Model::DescribeProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Retrieve detailed information about the provisioned product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProvisionedProductAsync(const Model::DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves detailed information about the specified provisioning
@@ -1253,11 +1292,11 @@ namespace Model
         virtual void ListRecordHistoryAsync(const Model::ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a <i>Provision</i> of a specified product. A
-         * <i>ProvisionedProduct</i> is a resourced instance for a product. For example,
-         * provisioning a CloudFormation-template-backed product results in launching a
-         * CloudFormation stack and all the underlying resources that come with it. </p>
-         * <p>You can check the status of this request using the <a>DescribeRecord</a>
+         * <p>Requests a <i>provision</i> of a specified product. A <i>provisioned
+         * product</i> is a resourced instance for a product. For example, provisioning a
+         * CloudFormation-template-backed product results in launching a CloudFormation
+         * stack and all the underlying resources that come with it. </p> <p>You can check
+         * the status of this request using the <a>DescribeRecord</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
          * API Reference</a></p>
@@ -1265,11 +1304,11 @@ namespace Model
         virtual Model::ProvisionProductOutcome ProvisionProduct(const Model::ProvisionProductRequest& request) const;
 
         /**
-         * <p>Requests a <i>Provision</i> of a specified product. A
-         * <i>ProvisionedProduct</i> is a resourced instance for a product. For example,
-         * provisioning a CloudFormation-template-backed product results in launching a
-         * CloudFormation stack and all the underlying resources that come with it. </p>
-         * <p>You can check the status of this request using the <a>DescribeRecord</a>
+         * <p>Requests a <i>provision</i> of a specified product. A <i>provisioned
+         * product</i> is a resourced instance for a product. For example, provisioning a
+         * CloudFormation-template-backed product results in launching a CloudFormation
+         * stack and all the underlying resources that come with it. </p> <p>You can check
+         * the status of this request using the <a>DescribeRecord</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
          * API Reference</a></p>
@@ -1279,11 +1318,11 @@ namespace Model
         virtual Model::ProvisionProductOutcomeCallable ProvisionProductCallable(const Model::ProvisionProductRequest& request) const;
 
         /**
-         * <p>Requests a <i>Provision</i> of a specified product. A
-         * <i>ProvisionedProduct</i> is a resourced instance for a product. For example,
-         * provisioning a CloudFormation-template-backed product results in launching a
-         * CloudFormation stack and all the underlying resources that come with it. </p>
-         * <p>You can check the status of this request using the <a>DescribeRecord</a>
+         * <p>Requests a <i>provision</i> of a specified product. A <i>provisioned
+         * product</i> is a resourced instance for a product. For example, provisioning a
+         * CloudFormation-template-backed product results in launching a CloudFormation
+         * stack and all the underlying resources that come with it. </p> <p>You can check
+         * the status of this request using the <a>DescribeRecord</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
          * API Reference</a></p>
@@ -1479,7 +1518,7 @@ namespace Model
         virtual void UpdateConstraintAsync(const Model::UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified portfolio's details. This operation will not work with
+         * <p>Updates the specified portfolio's details. This operation does not work with
          * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
          * API Reference</a></p>
@@ -1487,7 +1526,7 @@ namespace Model
         virtual Model::UpdatePortfolioOutcome UpdatePortfolio(const Model::UpdatePortfolioRequest& request) const;
 
         /**
-         * <p>Updates the specified portfolio's details. This operation will not work with
+         * <p>Updates the specified portfolio's details. This operation does not work with
          * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
          * API Reference</a></p>
@@ -1497,7 +1536,7 @@ namespace Model
         virtual Model::UpdatePortfolioOutcomeCallable UpdatePortfolioCallable(const Model::UpdatePortfolioRequest& request) const;
 
         /**
-         * <p>Updates the specified portfolio's details. This operation will not work with
+         * <p>Updates the specified portfolio's details. This operation does not work with
          * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
          * API Reference</a></p>
@@ -1572,7 +1611,7 @@ namespace Model
         virtual void UpdateProvisionedProductAsync(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing provisioning artifact's information. This operation will
+         * <p>Updates an existing provisioning artifact's information. This operation does
          * not work on a provisioning artifact associated with a product that has been
          * shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
@@ -1581,7 +1620,7 @@ namespace Model
         virtual Model::UpdateProvisioningArtifactOutcome UpdateProvisioningArtifact(const Model::UpdateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Updates an existing provisioning artifact's information. This operation will
+         * <p>Updates an existing provisioning artifact's information. This operation does
          * not work on a provisioning artifact associated with a product that has been
          * shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
@@ -1592,7 +1631,7 @@ namespace Model
         virtual Model::UpdateProvisioningArtifactOutcomeCallable UpdateProvisioningArtifactCallable(const Model::UpdateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Updates an existing provisioning artifact's information. This operation will
+         * <p>Updates an existing provisioning artifact's information. This operation does
          * not work on a provisioning artifact associated with a product that has been
          * shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
@@ -1625,6 +1664,7 @@ namespace Model
         void DescribeProductAsyncHelper(const Model::DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductAsAdminAsyncHelper(const Model::DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductViewAsyncHelper(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProvisionedProductAsyncHelper(const Model::DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningArtifactAsyncHelper(const Model::DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningParametersAsyncHelper(const Model::DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecordAsyncHelper(const Model::DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

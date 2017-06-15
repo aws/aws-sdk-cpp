@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +49,31 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline const AttachmentStatus& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline VpcAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline VpcAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -85,36 +110,11 @@ namespace Model
      */
     inline VpcAttachment& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline const AttachmentStatus& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline VpcAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline VpcAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
-
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     AttachmentStatus m_state;
     bool m_stateHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

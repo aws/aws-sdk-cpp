@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyVpcPeeringConnectionOptionsRequest::ModifyVpcPeeringConnectionOptionsRequest() : 
+    m_accepterPeeringConnectionOptionsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
     m_requesterPeeringConnectionOptionsHasBeenSet(false),
-    m_accepterPeeringConnectionOptionsHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false)
 {
 }
 
@@ -33,14 +33,14 @@ Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcPeeringConnectionOptions&";
+  if(m_accepterPeeringConnectionOptionsHasBeenSet)
+  {
+    m_accepterPeeringConnectionOptions.OutputToStream(ss, "AccepterPeeringConnectionOptions");
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_vpcPeeringConnectionIdHasBeenSet)
-  {
-    ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
   if(m_requesterPeeringConnectionOptionsHasBeenSet)
@@ -48,9 +48,9 @@ Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
     m_requesterPeeringConnectionOptions.OutputToStream(ss, "RequesterPeeringConnectionOptions");
   }
 
-  if(m_accepterPeeringConnectionOptionsHasBeenSet)
+  if(m_vpcPeeringConnectionIdHasBeenSet)
   {
-    m_accepterPeeringConnectionOptions.OutputToStream(ss, "AccepterPeeringConnectionOptions");
+    ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

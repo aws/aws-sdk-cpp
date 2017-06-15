@@ -48,6 +48,11 @@ DescribeVolumeStatusResponse& DescribeVolumeStatusResponse::operator =(const Ama
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
     XmlNode volumeStatusesNode = resultNode.FirstChild("volumeStatusSet");
     if(!volumeStatusesNode.IsNull())
     {
@@ -58,11 +63,6 @@ DescribeVolumeStatusResponse& DescribeVolumeStatusResponse::operator =(const Ama
         volumeStatusesMember = volumeStatusesMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

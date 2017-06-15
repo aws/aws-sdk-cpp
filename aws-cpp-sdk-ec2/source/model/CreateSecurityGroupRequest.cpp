@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateSecurityGroupRequest::CreateSecurityGroupRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSecurityGroup&";
-  if(m_dryRunHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "GroupDescription=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -43,14 +43,14 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-    ss << "GroupDescription=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

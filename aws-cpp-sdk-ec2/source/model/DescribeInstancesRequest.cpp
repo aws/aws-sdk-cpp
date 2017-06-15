@@ -21,13 +21,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeInstancesRequest::DescribeInstancesRequest() : 
+    m_filtersHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -35,9 +35,14 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeInstances&";
-  if(m_dryRunHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_instanceIdsHasBeenSet)
@@ -51,24 +56,19 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
     }
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -21,11 +21,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeVpcAttributeRequest::DescribeVpcAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
     m_attribute(VpcAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String DescribeVpcAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeVpcAttribute&";
-  if(m_dryRunHasBeenSet)
+  if(m_attributeHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+    ss << "Attribute=" << VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -43,9 +43,9 @@ Aws::String DescribeVpcAttributeRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_attributeHasBeenSet)
+  if(m_dryRunHasBeenSet)
   {
-    ss << "Attribute=" << VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute) << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

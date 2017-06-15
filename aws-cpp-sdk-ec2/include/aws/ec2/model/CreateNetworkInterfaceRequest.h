@@ -18,8 +18,8 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
+#include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -45,41 +45,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet to associate with the network interface.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
-
     /**
      * <p>A description for the network interface.</p>
      */
@@ -114,6 +79,146 @@ namespace Model
      * <p>A description for the network interface.</p>
      */
     inline CreateNetworkInterfaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline CreateNetworkInterfaceRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline CreateNetworkInterfaceRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline CreateNetworkInterfaceRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses. If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
+     * can specify <code>0</code> to override this setting.</p>
+     */
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses. If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
+     * can specify <code>0</code> to override this setting.</p>
+     */
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses. If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
+     * can specify <code>0</code> to override this setting.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The primary private IPv4 address of the network interface. If you don't
@@ -177,46 +282,6 @@ namespace Model
      * be designated as primary).</p>
      */
     inline CreateNetworkInterfaceRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline CreateNetworkInterfaceRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline CreateNetworkInterfaceRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of one or more security groups.</p>
-     */
-    inline CreateNetworkInterfaceRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
      * <p>One or more private IPv4 addresses.</p>
@@ -296,124 +361,59 @@ namespace Model
     inline CreateNetworkInterfaceRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+    inline CreateNetworkInterfaceRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline CreateNetworkInterfaceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. You can't use this option if you're specifying a number of IPv6
-     * addresses.</p>
+     * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
-     */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
-
-    /**
-     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
-     */
-    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
-
-    /**
-     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses. If your subnet has the
-     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
-     * can specify <code>0</code> to override this setting.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline CreateNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet;
+    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet;
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
-    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
-    int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
   };
 
 } // namespace Model

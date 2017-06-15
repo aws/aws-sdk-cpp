@@ -21,10 +21,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssignIpv6AddressesRequest::AssignIpv6AddressesRequest() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
     m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false)
+    m_ipv6AddressCountHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -32,9 +32,9 @@ Aws::String AssignIpv6AddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssignIpv6Addresses&";
-  if(m_networkInterfaceIdHasBeenSet)
+  if(m_ipv6AddressCountHasBeenSet)
   {
-    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
   }
 
   if(m_ipv6AddressesHasBeenSet)
@@ -48,9 +48,9 @@ Aws::String AssignIpv6AddressesRequest::SerializePayload() const
     }
   }
 
-  if(m_ipv6AddressCountHasBeenSet)
+  if(m_networkInterfaceIdHasBeenSet)
   {
-    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

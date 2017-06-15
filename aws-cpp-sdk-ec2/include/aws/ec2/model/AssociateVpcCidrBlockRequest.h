@@ -39,6 +39,27 @@ namespace Model
 
   public:
     /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+
+    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -73,32 +94,11 @@ namespace Model
      */
     inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
-
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
-
-    /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
-     * block.</p>
-     */
-    inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
-
   private:
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

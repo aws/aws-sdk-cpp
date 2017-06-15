@@ -69,46 +69,6 @@ namespace Model
     inline DescribePrefixListsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetPrefixListIds() const{ return m_prefixListIds; }
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline void SetPrefixListIds(const Aws::Vector<Aws::String>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline DescribePrefixListsRequest& WithPrefixListIds(const Aws::Vector<Aws::String>& value) { SetPrefixListIds(value); return *this;}
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline DescribePrefixListsRequest& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline DescribePrefixListsRequest& AddPrefixListIds(const Aws::String& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline DescribePrefixListsRequest& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more prefix list IDs.</p>
-     */
-    inline DescribePrefixListsRequest& AddPrefixListIds(const char* value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
-
-    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
      * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
@@ -223,17 +183,57 @@ namespace Model
      */
     inline DescribePrefixListsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPrefixListIds() const{ return m_prefixListIds; }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline void SetPrefixListIds(const Aws::Vector<Aws::String>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline DescribePrefixListsRequest& WithPrefixListIds(const Aws::Vector<Aws::String>& value) { SetPrefixListIds(value); return *this;}
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline DescribePrefixListsRequest& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline DescribePrefixListsRequest& AddPrefixListIds(const Aws::String& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline DescribePrefixListsRequest& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline DescribePrefixListsRequest& AddPrefixListIds(const char* value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_prefixListIds;
-    bool m_prefixListIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+    Aws::Vector<Aws::String> m_prefixListIds;
+    bool m_prefixListIdsHasBeenSet;
   };
 
 } // namespace Model

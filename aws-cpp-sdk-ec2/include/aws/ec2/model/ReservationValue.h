@@ -49,6 +49,41 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline void SetHourlyPrice(const Aws::String& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline void SetHourlyPrice(const char* value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice.assign(value); }
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline ReservationValue& WithHourlyPrice(const Aws::String& value) { SetHourlyPrice(value); return *this;}
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline ReservationValue& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
+    inline ReservationValue& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
+
+    /**
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
      * hourlyPrice * number of hours remaining).</p>
      */
@@ -125,48 +160,13 @@ namespace Model
      */
     inline ReservationValue& WithRemainingUpfrontValue(const char* value) { SetRemainingUpfrontValue(value); return *this;}
 
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline void SetHourlyPrice(const Aws::String& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline void SetHourlyPrice(const char* value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice.assign(value); }
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline ReservationValue& WithHourlyPrice(const Aws::String& value) { SetHourlyPrice(value); return *this;}
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline ReservationValue& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
-
-    /**
-     * <p>The hourly rate of the reservation.</p>
-     */
-    inline ReservationValue& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
-
   private:
+    Aws::String m_hourlyPrice;
+    bool m_hourlyPriceHasBeenSet;
     Aws::String m_remainingTotalValue;
     bool m_remainingTotalValueHasBeenSet;
     Aws::String m_remainingUpfrontValue;
     bool m_remainingUpfrontValueHasBeenSet;
-    Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
   };
 
 } // namespace Model

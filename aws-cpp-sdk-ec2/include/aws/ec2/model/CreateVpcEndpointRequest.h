@@ -43,6 +43,62 @@ namespace Model
 
   public:
     /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline CreateVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -65,90 +121,6 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateVpcEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline CreateVpcEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
-     */
-    inline CreateVpcEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
-     */
-    inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
@@ -240,74 +212,102 @@ namespace Model
     inline CreateVpcEndpointRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline CreateVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * <p>The AWS service name, in the form
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline CreateVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline CreateVpcEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     */
+    inline CreateVpcEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
-    Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet;
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

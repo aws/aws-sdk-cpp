@@ -21,13 +21,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpcEndpointRequest::CreateVpcEndpointRequest() : 
+    m_clientTokenHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_routeTableIdsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -35,19 +35,14 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpcEndpoint&";
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
-  }
-
-  if(m_serviceNameHasBeenSet)
-  {
-    ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 
   if(m_policyDocumentHasBeenSet)
@@ -66,9 +61,14 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
     }
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_serviceNameHasBeenSet)
   {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+    ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -30,25 +30,35 @@ namespace Aws
       namespace RecordStatusMapper
       {
 
+        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int IN_PROGRESS_IN_ERROR_HASH = HashingUtils::HashString("IN_PROGRESS_IN_ERROR");
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         RecordStatus GetRecordStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IN_PROGRESS_HASH)
+          if (hashCode == CREATED_HASH)
+          {
+            return RecordStatus::CREATED;
+          }
+          else if (hashCode == IN_PROGRESS_HASH)
           {
             return RecordStatus::IN_PROGRESS;
+          }
+          else if (hashCode == IN_PROGRESS_IN_ERROR_HASH)
+          {
+            return RecordStatus::IN_PROGRESS_IN_ERROR;
           }
           else if (hashCode == SUCCEEDED_HASH)
           {
             return RecordStatus::SUCCEEDED;
           }
-          else if (hashCode == ERROR__HASH)
+          else if (hashCode == FAILED_HASH)
           {
-            return RecordStatus::ERROR_;
+            return RecordStatus::FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,12 +74,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordStatus::CREATED:
+            return "CREATED";
           case RecordStatus::IN_PROGRESS:
             return "IN_PROGRESS";
+          case RecordStatus::IN_PROGRESS_IN_ERROR:
+            return "IN_PROGRESS_IN_ERROR";
           case RecordStatus::SUCCEEDED:
             return "SUCCEEDED";
-          case RecordStatus::ERROR_:
-            return "ERROR";
+          case RecordStatus::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

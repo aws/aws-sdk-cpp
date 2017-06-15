@@ -21,16 +21,16 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CopyImageRequest::CopyImageRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_sourceImageIdHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -38,34 +38,14 @@ Aws::String CopyImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CopyImage&";
-  if(m_dryRunHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_sourceRegionHasBeenSet)
-  {
-    ss << "SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
-  }
-
-  if(m_sourceImageIdHasBeenSet)
-  {
-    ss << "SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
-  }
-
-  if(m_nameHasBeenSet)
-  {
-    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_encryptedHasBeenSet)
@@ -76,6 +56,26 @@ Aws::String CopyImageRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_nameHasBeenSet)
+  {
+    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+
+  if(m_sourceImageIdHasBeenSet)
+  {
+    ss << "SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
+  }
+
+  if(m_sourceRegionHasBeenSet)
+  {
+    ss << "SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

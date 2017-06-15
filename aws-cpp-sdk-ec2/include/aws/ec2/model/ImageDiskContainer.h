@@ -86,6 +86,41 @@ namespace Model
     inline ImageDiskContainer& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline ImageDiskContainer& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline ImageDiskContainer& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline ImageDiskContainer& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+    /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
      * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
@@ -126,6 +161,41 @@ namespace Model
      * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline ImageDiskContainer& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline ImageDiskContainer& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
+    inline ImageDiskContainer& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
     /**
      * <p>The URL to the Amazon S3-based disk image being imported. The URL can either
@@ -194,89 +264,19 @@ namespace Model
      */
     inline ImageDiskContainer& WithUserBucket(UserBucket&& value) { SetUserBucket(std::move(value)); return *this;}
 
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline ImageDiskContainer& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline ImageDiskContainer& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The block device mapping for the disk.</p>
-     */
-    inline ImageDiskContainer& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline ImageDiskContainer& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline ImageDiskContainer& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-     */
-    inline ImageDiskContainer& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
-
   private:
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
     Aws::String m_format;
     bool m_formatHasBeenSet;
+    Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet;
     Aws::String m_url;
     bool m_urlHasBeenSet;
     UserBucket m_userBucket;
     bool m_userBucketHasBeenSet;
-    Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
-    Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
   };
 
 } // namespace Model

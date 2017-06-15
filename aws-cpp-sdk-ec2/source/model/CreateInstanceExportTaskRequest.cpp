@@ -22,10 +22,10 @@ using namespace Aws::Utils;
 
 CreateInstanceExportTaskRequest::CreateInstanceExportTaskRequest() : 
     m_descriptionHasBeenSet(false),
+    m_exportToS3TaskHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_targetEnvironment(ExportEnvironment::NOT_SET),
-    m_targetEnvironmentHasBeenSet(false),
-    m_exportToS3TaskHasBeenSet(false)
+    m_targetEnvironmentHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,11 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_exportToS3TaskHasBeenSet)
+  {
+    m_exportToS3Task.OutputToStream(ss, "ExportToS3");
+  }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -46,11 +51,6 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
   if(m_targetEnvironmentHasBeenSet)
   {
     ss << "TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
-  }
-
-  if(m_exportToS3TaskHasBeenSet)
-  {
-    m_exportToS3Task.OutputToStream(ss, "ExportToS3");
   }
 
   ss << "Version=2016-11-15";

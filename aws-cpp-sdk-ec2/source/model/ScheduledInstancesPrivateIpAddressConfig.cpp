@@ -31,16 +31,16 @@ namespace Model
 {
 
 ScheduledInstancesPrivateIpAddressConfig::ScheduledInstancesPrivateIpAddressConfig() : 
-    m_privateIpAddressHasBeenSet(false),
     m_primary(false),
-    m_primaryHasBeenSet(false)
+    m_primaryHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
 ScheduledInstancesPrivateIpAddressConfig::ScheduledInstancesPrivateIpAddressConfig(const XmlNode& xmlNode) : 
-    m_privateIpAddressHasBeenSet(false),
     m_primary(false),
-    m_primaryHasBeenSet(false)
+    m_primaryHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,17 +51,17 @@ ScheduledInstancesPrivateIpAddressConfig& ScheduledInstancesPrivateIpAddressConf
 
   if(!resultNode.IsNull())
   {
-    XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
-    if(!privateIpAddressNode.IsNull())
-    {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
-      m_privateIpAddressHasBeenSet = true;
-    }
     XmlNode primaryNode = resultNode.FirstChild("Primary");
     if(!primaryNode.IsNull())
     {
       m_primary = StringUtils::ConvertToBool(StringUtils::Trim(primaryNode.GetText().c_str()).c_str());
       m_primaryHasBeenSet = true;
+    }
+    XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
+    if(!privateIpAddressNode.IsNull())
+    {
+      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddressHasBeenSet = true;
     }
   }
 
@@ -70,27 +70,27 @@ ScheduledInstancesPrivateIpAddressConfig& ScheduledInstancesPrivateIpAddressConf
 
 void ScheduledInstancesPrivateIpAddressConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
-
   if(m_primaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".Primary=" << std::boolalpha << m_primary << "&";
+  }
+
+  if(m_privateIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 
 }
 
 void ScheduledInstancesPrivateIpAddressConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_privateIpAddressHasBeenSet)
-  {
-      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
-  }
   if(m_primaryHasBeenSet)
   {
       oStream << location << ".Primary=" << std::boolalpha << m_primary << "&";
+  }
+  if(m_privateIpAddressHasBeenSet)
+  {
+      oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 }
 

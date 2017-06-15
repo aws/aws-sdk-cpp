@@ -67,39 +67,25 @@ namespace Model
     inline DescribeSpotFleetInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Spot fleet request.</p>
-     */
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    inline DescribeSpotFleetInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>
@@ -137,35 +123,49 @@ namespace Model
     inline DescribeSpotFleetInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
+     * <p>The ID of the Spot fleet request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
     /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
+     * <p>The ID of the Spot fleet request.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
 
     /**
-     * <p>The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code> value.</p>
+     * <p>The ID of the Spot fleet request.</p>
      */
-    inline DescribeSpotFleetInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Spot fleet request.</p>
+     */
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+    Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet;
   };
 
 } // namespace Model

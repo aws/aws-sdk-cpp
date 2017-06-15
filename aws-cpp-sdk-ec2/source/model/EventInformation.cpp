@@ -31,16 +31,16 @@ namespace Model
 {
 
 EventInformation::EventInformation() : 
-    m_instanceIdHasBeenSet(false),
+    m_eventDescriptionHasBeenSet(false),
     m_eventSubTypeHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false)
+    m_instanceIdHasBeenSet(false)
 {
 }
 
 EventInformation::EventInformation(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
+    m_eventDescriptionHasBeenSet(false),
     m_eventSubTypeHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false)
+    m_instanceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,11 +51,11 @@ EventInformation& EventInformation::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
+    XmlNode eventDescriptionNode = resultNode.FirstChild("eventDescription");
+    if(!eventDescriptionNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
-      m_instanceIdHasBeenSet = true;
+      m_eventDescription = StringUtils::Trim(eventDescriptionNode.GetText().c_str());
+      m_eventDescriptionHasBeenSet = true;
     }
     XmlNode eventSubTypeNode = resultNode.FirstChild("eventSubType");
     if(!eventSubTypeNode.IsNull())
@@ -63,11 +63,11 @@ EventInformation& EventInformation::operator =(const XmlNode& xmlNode)
       m_eventSubType = StringUtils::Trim(eventSubTypeNode.GetText().c_str());
       m_eventSubTypeHasBeenSet = true;
     }
-    XmlNode eventDescriptionNode = resultNode.FirstChild("eventDescription");
-    if(!eventDescriptionNode.IsNull())
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
     {
-      m_eventDescription = StringUtils::Trim(eventDescriptionNode.GetText().c_str());
-      m_eventDescriptionHasBeenSet = true;
+      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceIdHasBeenSet = true;
     }
   }
 
@@ -76,9 +76,9 @@ EventInformation& EventInformation::operator =(const XmlNode& xmlNode)
 
 void EventInformation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceIdHasBeenSet)
+  if(m_eventDescriptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+      oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
 
   if(m_eventSubTypeHasBeenSet)
@@ -86,26 +86,26 @@ void EventInformation::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".EventSubType=" << StringUtils::URLEncode(m_eventSubType.c_str()) << "&";
   }
 
-  if(m_eventDescriptionHasBeenSet)
+  if(m_instanceIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
 }
 
 void EventInformation::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceIdHasBeenSet)
+  if(m_eventDescriptionHasBeenSet)
   {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+      oStream << location << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
   if(m_eventSubTypeHasBeenSet)
   {
       oStream << location << ".EventSubType=" << StringUtils::URLEncode(m_eventSubType.c_str()) << "&";
   }
-  if(m_eventDescriptionHasBeenSet)
+  if(m_instanceIdHasBeenSet)
   {
-      oStream << location << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 }
 

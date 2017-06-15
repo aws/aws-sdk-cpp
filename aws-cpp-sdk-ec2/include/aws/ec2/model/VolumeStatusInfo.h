@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/VolumeStatusInfoStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VolumeStatusInfoStatus.h>
 #include <aws/ec2/model/VolumeStatusDetails.h>
 #include <utility>
 
@@ -49,31 +49,6 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-    /**
-     * <p>The status of the volume.</p>
-     */
-    inline const VolumeStatusInfoStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
-    inline void SetStatus(const VolumeStatusInfoStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
-    inline void SetStatus(VolumeStatusInfoStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
-    inline VolumeStatusInfo& WithStatus(const VolumeStatusInfoStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the volume.</p>
-     */
-    inline VolumeStatusInfo& WithStatus(VolumeStatusInfoStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The details of the volume status.</p>
@@ -110,11 +85,36 @@ namespace Model
      */
     inline VolumeStatusInfo& AddDetails(VolumeStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline const VolumeStatusInfoStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline void SetStatus(const VolumeStatusInfoStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline void SetStatus(VolumeStatusInfoStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline VolumeStatusInfo& WithStatus(const VolumeStatusInfoStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline VolumeStatusInfo& WithStatus(VolumeStatusInfoStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
-    VolumeStatusInfoStatus m_status;
-    bool m_statusHasBeenSet;
     Aws::Vector<VolumeStatusDetails> m_details;
     bool m_detailsHasBeenSet;
+    VolumeStatusInfoStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

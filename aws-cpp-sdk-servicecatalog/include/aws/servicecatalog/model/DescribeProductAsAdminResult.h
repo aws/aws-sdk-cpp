@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProductViewDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 
@@ -69,6 +70,41 @@ namespace Model
     inline DescribeProductAsAdminResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
     /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline const Aws::Vector<ProvisioningArtifactSummary>& GetProvisioningArtifactSummaries() const{ return m_provisioningArtifactSummaries; }
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline void SetProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { m_provisioningArtifactSummaries = value; }
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline void SetProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { m_provisioningArtifactSummaries = std::move(value); }
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { SetProvisioningArtifactSummaries(value); return *this;}
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { SetProvisioningArtifactSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(const ProvisioningArtifactSummary& value) { m_provisioningArtifactSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>A list of provisioning artifact summaries for the product.</p>
+     */
+    inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(ProvisioningArtifactSummary&& value) { m_provisioningArtifactSummaries.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>Tags associated with the product.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -105,6 +141,7 @@ namespace Model
 
   private:
     ProductViewDetail m_productViewDetail;
+    Aws::Vector<ProvisioningArtifactSummary> m_provisioningArtifactSummaries;
     Aws::Vector<Tag> m_tags;
   };
 

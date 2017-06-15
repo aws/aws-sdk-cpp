@@ -17,10 +17,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/ec2/model/OfferingClassType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -46,78 +46,6 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline DescribeReservedInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetReservedInstancesIds() const{ return m_reservedInstancesIds; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline void SetReservedInstancesIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline void SetReservedInstancesIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::move(value); }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesIds(value); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const Aws::String& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(Aws::String&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
-     * Reserved Instances, or only those otherwise specified.</p>
-     */
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const char* value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
-
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
@@ -441,6 +369,103 @@ namespace Model
     inline DescribeReservedInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+     */
+    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+     */
+    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+
+    /**
+     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+     */
+    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
+
+    /**
+     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+     */
+    inline DescribeReservedInstancesRequest& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
+
+    /**
+     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
+     */
+    inline DescribeReservedInstancesRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReservedInstancesIds() const{ return m_reservedInstancesIds; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline void SetReservedInstancesIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline void SetReservedInstancesIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::move(value); }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesIds(value); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesIds(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const Aws::String& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(Aws::String&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
+     * Reserved Instances, or only those otherwise specified.</p>
+     */
+    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const char* value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeReservedInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+    /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the
      * 2011-11-01 API version, you only have access to the <code>Medium
      * Utilization</code> Reserved Instance offering type.</p>
@@ -475,42 +500,17 @@ namespace Model
      */
     inline DescribeReservedInstancesRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
 
-    /**
-     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-     */
-    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
-
-    /**
-     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-     */
-    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-
-    /**
-     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-     */
-    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-
-    /**
-     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-     */
-    inline DescribeReservedInstancesRequest& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
-
-    /**
-     * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-     */
-    inline DescribeReservedInstancesRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
-
   private:
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet;
-    Aws::Vector<Aws::String> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+    Aws::Vector<Aws::String> m_reservedInstancesIds;
+    bool m_reservedInstancesIdsHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+    OfferingTypeValues m_offeringType;
+    bool m_offeringTypeHasBeenSet;
   };
 
 } // namespace Model
