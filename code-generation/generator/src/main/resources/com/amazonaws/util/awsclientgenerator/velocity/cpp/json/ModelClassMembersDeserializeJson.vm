@@ -1,11 +1,15 @@
 #foreach($entry in $shape.members.entrySet())
 #set($spaces = '')
+#if($entry.value.locationName)
+#set($memberName = $entry.value.locationName)
+#else
 #set($memberName = $entry.key)
+#end
 #set($member = $entry.value)
 #if($member.usedForPayload)
-#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
-#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
-#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($entry.key))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
 #if(!$member.required)
   if(jsonValue.ValueExists("${memberName}"))
   {
