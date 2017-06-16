@@ -12,13 +12,10 @@ namespace Client
 {
 
 #set($className = "${metadata.classNamePrefix}ErrorMarshaller")
-class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Client::AWSErrorMarshaller
+class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Client::XmlErrorMarshaller
 {
 public:
-  $className() {}
-  virtual ~$className() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ${metadata.namespace}

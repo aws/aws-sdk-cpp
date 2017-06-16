@@ -32,6 +32,20 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
         super();
     }
 
+
+    @Override
+    protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
+                serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());

@@ -18,6 +18,10 @@
 
 namespace Aws
 {
+    namespace Http 
+    {
+        enum class HttpResponseCode;
+    }
     namespace Client
     {
         template<typename ERROR_TYPE>
@@ -62,6 +66,10 @@ namespace Aws
              * Finds a CoreErrors member if possible. Otherwise, returns UNKNOWN
              */
             AWS_CORE_API AWSError<CoreErrors> GetErrorForName(const char* errorName);
+            /**
+             * Finds a CoreErrors member if possible by HTTP response code
+             */
+            AWS_CORE_API AWSError<CoreErrors> GetErrorForHttpResponseCode(Aws::Http::HttpResponseCode code);
         } // namespace CoreErrorsMapper
     } // namespace Client
 } // namespace Aws

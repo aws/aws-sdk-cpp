@@ -538,10 +538,6 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
 }
 
-const char* MESSAGE_LOWER_CASE = "message";
-const char* MESSAGE_CAMEL_CASE = "Message";
-const char* ERROR_TYPE_HEADER = "x-amzn-ErrorType";
-const char* TYPE = "__type";
 
 static bool isRetryableHttpResponseCode(HttpResponseCode responseCode)
 {
@@ -575,26 +571,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     else
     {
         assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        JsonValue exceptionPayload(httpResponse->GetResponseBody());
-        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
-
-        Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
-            exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
-
-        if (httpResponse->HasHeader(ERROR_TYPE_HEADER))
-        {
-            error = GetErrorMarshaller()->Marshall(httpResponse->GetHeader(ERROR_TYPE_HEADER), message);            
-        }
-        else if (exceptionPayload.ValueExists(TYPE))
-        {
-            error = GetErrorMarshaller()->Marshall(exceptionPayload.GetString(TYPE), message);            
-        }
-        else
-        {
-            error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", message, false);
-        }
+        error = GetErrorMarshaller()->Marshall(*httpResponse);
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
@@ -690,47 +667,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
             httpResponse->GetResponseBody().seekg(0);
         }
 
-        XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
-        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << doc.ConvertToString());
-        bool errorParsed = false;
-        if (doc.WasParseSuccessful())
-        {
-            XmlNode errorNode = doc.GetRootElement();
-            if (errorNode.GetName() != "Error")
-            {
-                errorNode = doc.GetRootElement().FirstChild("Error");
-            }
-            if (errorNode.IsNull())
-            {
-                errorNode = doc.GetRootElement().FirstChild("Errors");
-                if(!errorNode.IsNull())
-                {
-                    errorNode = errorNode.FirstChild("Error");
-                }
-            }
-
-            if (!errorNode.IsNull())
-            {
-                XmlNode codeNode = errorNode.FirstChild("Code");
-                XmlNode messageNode = errorNode.FirstChild("Message");
-
-                if (!codeNode.IsNull())
-                {
-                    error = GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
-                        StringUtils::Trim(messageNode.GetText().c_str()));
-                    errorParsed = true;
-                }
-            }
-        }
-
-        if(!errorParsed)
-        {
-            // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
-            // going to dump the XML parsing error and the http response code as a string
-            Aws::StringStream ss;
-            ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
-            error = GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
-        }
+        error = GetErrorMarshaller()->Marshall(*httpResponse);
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());

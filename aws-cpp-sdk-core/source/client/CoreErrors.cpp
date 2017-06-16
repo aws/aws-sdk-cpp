@@ -19,6 +19,7 @@
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 //we can't use a static map here due to memory allocation ordering. 
 //instead we compute the hash of these strings to avoid so many string compares.
@@ -165,4 +166,28 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   }
 
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
+}
+
+AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(HttpResponseCode code)
+{
+    // best effort attempt to map HTTP response codes to CoreErrors
+    switch(code)
+    {
+        case HttpResponseCode::UNAUTHORIZED:
+        case HttpResponseCode::FORBIDDEN:
+            return AWSError<CoreErrors>(CoreErrors::ACCESS_DENIED, false/*retry*/);
+        case HttpResponseCode::NOT_FOUND:
+            return AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, false/*retry*/);
+        case HttpResponseCode::TOO_MANY_REQUESTS:
+            return AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true/*retry*/);
+        case HttpResponseCode::INTERNAL_SERVER_ERROR:
+            return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, true/*retry*/);
+        case HttpResponseCode::BANDWIDTH_LIMIT_EXCEEDED:
+            return AWSError<CoreErrors>(CoreErrors::THROTTLING, true/*retry*/);
+        case HttpResponseCode::SERVICE_UNAVAILABLE:
+            return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true/*retry*/);
+        default:
+            int codeValue = static_cast<int>(code);
+            return AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);
+    }
 }
