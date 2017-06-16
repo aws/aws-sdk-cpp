@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_MTURK_API MTurkErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_MTURK_API MTurkErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  MTurkErrorMarshaller() {}
-  virtual ~MTurkErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace MTurk

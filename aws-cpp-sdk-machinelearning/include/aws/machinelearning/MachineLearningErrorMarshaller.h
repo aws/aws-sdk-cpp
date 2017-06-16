@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_MACHINELEARNING_API MachineLearningErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_MACHINELEARNING_API MachineLearningErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  MachineLearningErrorMarshaller() {}
-  virtual ~MachineLearningErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace MachineLearning

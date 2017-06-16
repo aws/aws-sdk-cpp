@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ECR_API ECRErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ECR_API ECRErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ECRErrorMarshaller() {}
-  virtual ~ECRErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ECR

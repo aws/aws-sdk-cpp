@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_WAF_API WAFErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_WAF_API WAFErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  WAFErrorMarshaller() {}
-  virtual ~WAFErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace WAF

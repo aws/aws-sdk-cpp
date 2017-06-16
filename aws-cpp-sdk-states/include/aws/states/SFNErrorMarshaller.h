@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SFN_API SFNErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_SFN_API SFNErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  SFNErrorMarshaller() {}
-  virtual ~SFNErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace SFN

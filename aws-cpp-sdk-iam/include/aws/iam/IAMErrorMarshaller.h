@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_IAM_API IAMErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_IAM_API IAMErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  IAMErrorMarshaller() {}
-  virtual ~IAMErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace IAM

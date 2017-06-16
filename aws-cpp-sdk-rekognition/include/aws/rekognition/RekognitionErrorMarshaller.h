@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_REKOGNITION_API RekognitionErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_REKOGNITION_API RekognitionErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  RekognitionErrorMarshaller() {}
-  virtual ~RekognitionErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Rekognition

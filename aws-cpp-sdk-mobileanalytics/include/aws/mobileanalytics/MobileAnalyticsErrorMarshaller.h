@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_MOBILEANALYTICS_API MobileAnalyticsErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_MOBILEANALYTICS_API MobileAnalyticsErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  MobileAnalyticsErrorMarshaller() {}
-  virtual ~MobileAnalyticsErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace MobileAnalytics

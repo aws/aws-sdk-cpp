@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDTRAIL_API CloudTrailErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CLOUDTRAIL_API CloudTrailErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CloudTrailErrorMarshaller() {}
-  virtual ~CloudTrailErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CloudTrail

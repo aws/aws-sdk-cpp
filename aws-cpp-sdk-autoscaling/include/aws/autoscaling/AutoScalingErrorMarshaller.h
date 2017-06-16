@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_AUTOSCALING_API AutoScalingErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_AUTOSCALING_API AutoScalingErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  AutoScalingErrorMarshaller() {}
-  virtual ~AutoScalingErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace AutoScaling

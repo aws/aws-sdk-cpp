@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ACM_API ACMErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ACM_API ACMErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ACMErrorMarshaller() {}
-  virtual ~ACMErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ACM

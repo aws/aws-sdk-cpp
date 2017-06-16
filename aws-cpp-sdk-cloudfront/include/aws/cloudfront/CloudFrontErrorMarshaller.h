@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDFRONT_API CloudFrontErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CLOUDFRONT_API CloudFrontErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  CloudFrontErrorMarshaller() {}
-  virtual ~CloudFrontErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CloudFront

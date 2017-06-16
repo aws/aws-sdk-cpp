@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_APIGATEWAY_API APIGatewayErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_APIGATEWAY_API APIGatewayErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  APIGatewayErrorMarshaller() {}
-  virtual ~APIGatewayErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace APIGateway

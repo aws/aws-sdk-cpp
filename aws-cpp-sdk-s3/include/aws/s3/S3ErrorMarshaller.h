@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_S3_API S3ErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_S3_API S3ErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  S3ErrorMarshaller() {}
-  virtual ~S3ErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace S3

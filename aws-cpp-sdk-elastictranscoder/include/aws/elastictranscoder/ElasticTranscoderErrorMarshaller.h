@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ELASTICTRANSCODER_API ElasticTranscoderErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ELASTICTRANSCODER_API ElasticTranscoderErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ElasticTranscoderErrorMarshaller() {}
-  virtual ~ElasticTranscoderErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ElasticTranscoder

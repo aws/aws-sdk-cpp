@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  ElasticBeanstalkErrorMarshaller() {}
-  virtual ~ElasticBeanstalkErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ElasticBeanstalk

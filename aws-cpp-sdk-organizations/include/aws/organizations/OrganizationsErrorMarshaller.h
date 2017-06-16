@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ORGANIZATIONS_API OrganizationsErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ORGANIZATIONS_API OrganizationsErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  OrganizationsErrorMarshaller() {}
-  virtual ~OrganizationsErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Organizations

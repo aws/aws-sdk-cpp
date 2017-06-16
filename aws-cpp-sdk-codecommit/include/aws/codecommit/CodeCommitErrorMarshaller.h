@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODECOMMIT_API CodeCommitErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CODECOMMIT_API CodeCommitErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CodeCommitErrorMarshaller() {}
-  virtual ~CodeCommitErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CodeCommit

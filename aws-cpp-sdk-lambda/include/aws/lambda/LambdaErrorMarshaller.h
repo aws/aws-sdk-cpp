@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_LAMBDA_API LambdaErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_LAMBDA_API LambdaErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  LambdaErrorMarshaller() {}
-  virtual ~LambdaErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Lambda

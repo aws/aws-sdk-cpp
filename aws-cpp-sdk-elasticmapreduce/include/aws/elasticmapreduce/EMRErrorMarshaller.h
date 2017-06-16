@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_EMR_API EMRErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_EMR_API EMRErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  EMRErrorMarshaller() {}
-  virtual ~EMRErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace EMR

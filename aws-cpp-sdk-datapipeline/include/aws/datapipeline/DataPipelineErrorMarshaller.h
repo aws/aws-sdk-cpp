@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DATAPIPELINE_API DataPipelineErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_DATAPIPELINE_API DataPipelineErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  DataPipelineErrorMarshaller() {}
-  virtual ~DataPipelineErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace DataPipeline

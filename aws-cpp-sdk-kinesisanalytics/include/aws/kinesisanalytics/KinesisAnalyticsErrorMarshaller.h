@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_KINESISANALYTICS_API KinesisAnalyticsErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_KINESISANALYTICS_API KinesisAnalyticsErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  KinesisAnalyticsErrorMarshaller() {}
-  virtual ~KinesisAnalyticsErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace KinesisAnalytics

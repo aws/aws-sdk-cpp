@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_STS_API STSErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_STS_API STSErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  STSErrorMarshaller() {}
-  virtual ~STSErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace STS

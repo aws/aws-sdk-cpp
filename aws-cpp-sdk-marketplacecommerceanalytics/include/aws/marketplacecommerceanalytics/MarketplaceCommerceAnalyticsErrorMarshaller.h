@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  MarketplaceCommerceAnalyticsErrorMarshaller() {}
-  virtual ~MarketplaceCommerceAnalyticsErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace MarketplaceCommerceAnalytics

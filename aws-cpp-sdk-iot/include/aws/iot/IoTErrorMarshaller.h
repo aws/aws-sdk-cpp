@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_IOT_API IoTErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_IOT_API IoTErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  IoTErrorMarshaller() {}
-  virtual ~IoTErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace IoT

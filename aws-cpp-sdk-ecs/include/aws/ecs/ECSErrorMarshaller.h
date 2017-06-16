@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ECS_API ECSErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ECS_API ECSErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ECSErrorMarshaller() {}
-  virtual ~ECSErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ECS

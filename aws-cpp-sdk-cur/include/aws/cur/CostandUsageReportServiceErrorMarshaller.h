@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CostandUsageReportServiceErrorMarshaller() {}
-  virtual ~CostandUsageReportServiceErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CostandUsageReportService

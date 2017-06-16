@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_PINPOINT_API PinpointErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_PINPOINT_API PinpointErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  PinpointErrorMarshaller() {}
-  virtual ~PinpointErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Pinpoint

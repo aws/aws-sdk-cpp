@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODEDEPLOY_API CodeDeployErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CODEDEPLOY_API CodeDeployErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CodeDeployErrorMarshaller() {}
-  virtual ~CodeDeployErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CodeDeploy

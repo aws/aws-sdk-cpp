@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  ElasticLoadBalancingErrorMarshaller() {}
-  virtual ~ElasticLoadBalancingErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ElasticLoadBalancing

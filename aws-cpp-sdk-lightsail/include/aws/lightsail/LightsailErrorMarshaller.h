@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_LIGHTSAIL_API LightsailErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_LIGHTSAIL_API LightsailErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  LightsailErrorMarshaller() {}
-  virtual ~LightsailErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Lightsail

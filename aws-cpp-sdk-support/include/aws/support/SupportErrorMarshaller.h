@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SUPPORT_API SupportErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_SUPPORT_API SupportErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  SupportErrorMarshaller() {}
-  virtual ~SupportErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Support

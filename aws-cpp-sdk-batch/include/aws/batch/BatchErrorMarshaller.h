@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_BATCH_API BatchErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_BATCH_API BatchErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  BatchErrorMarshaller() {}
-  virtual ~BatchErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Batch

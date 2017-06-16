@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ElasticsearchServiceErrorMarshaller() {}
-  virtual ~ElasticsearchServiceErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ElasticsearchService

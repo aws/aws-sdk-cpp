@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CloudWatchEventsErrorMarshaller() {}
-  virtual ~CloudWatchEventsErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CloudWatchEvents

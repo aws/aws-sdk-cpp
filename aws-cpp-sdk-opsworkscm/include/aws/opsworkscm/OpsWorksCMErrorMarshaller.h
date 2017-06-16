@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_OPSWORKSCM_API OpsWorksCMErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_OPSWORKSCM_API OpsWorksCMErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  OpsWorksCMErrorMarshaller() {}
-  virtual ~OpsWorksCMErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace OpsWorksCM

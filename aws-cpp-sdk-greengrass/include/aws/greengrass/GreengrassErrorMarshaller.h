@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_GREENGRASS_API GreengrassErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_GREENGRASS_API GreengrassErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  GreengrassErrorMarshaller() {}
-  virtual ~GreengrassErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Greengrass

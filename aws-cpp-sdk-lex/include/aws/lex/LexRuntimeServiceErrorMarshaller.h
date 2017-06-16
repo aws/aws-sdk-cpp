@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  LexRuntimeServiceErrorMarshaller() {}
-  virtual ~LexRuntimeServiceErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace LexRuntimeService

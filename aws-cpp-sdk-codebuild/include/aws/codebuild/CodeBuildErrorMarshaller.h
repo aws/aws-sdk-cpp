@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODEBUILD_API CodeBuildErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CODEBUILD_API CodeBuildErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CodeBuildErrorMarshaller() {}
-  virtual ~CodeBuildErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CodeBuild

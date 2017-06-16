@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SHIELD_API ShieldErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_SHIELD_API ShieldErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ShieldErrorMarshaller() {}
-  virtual ~ShieldErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Shield

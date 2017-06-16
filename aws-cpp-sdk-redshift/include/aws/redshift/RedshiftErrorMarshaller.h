@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_REDSHIFT_API RedshiftErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_REDSHIFT_API RedshiftErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  RedshiftErrorMarshaller() {}
-  virtual ~RedshiftErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace Redshift

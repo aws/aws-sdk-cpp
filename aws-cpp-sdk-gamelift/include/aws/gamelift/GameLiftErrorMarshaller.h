@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_GAMELIFT_API GameLiftErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_GAMELIFT_API GameLiftErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  GameLiftErrorMarshaller() {}
-  virtual ~GameLiftErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace GameLift

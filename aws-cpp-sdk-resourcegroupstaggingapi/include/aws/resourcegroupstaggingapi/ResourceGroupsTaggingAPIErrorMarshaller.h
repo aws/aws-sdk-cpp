@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  ResourceGroupsTaggingAPIErrorMarshaller() {}
-  virtual ~ResourceGroupsTaggingAPIErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace ResourceGroupsTaggingAPI

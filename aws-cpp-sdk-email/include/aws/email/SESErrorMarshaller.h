@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SES_API SESErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_SES_API SESErrorMarshaller : public Client::XmlErrorMarshaller
 {
 public:
-  SESErrorMarshaller() {}
-  virtual ~SESErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace SES

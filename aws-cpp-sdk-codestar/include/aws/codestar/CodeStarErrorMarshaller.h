@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODESTAR_API CodeStarErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CODESTAR_API CodeStarErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CodeStarErrorMarshaller() {}
-  virtual ~CodeStarErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CodeStar

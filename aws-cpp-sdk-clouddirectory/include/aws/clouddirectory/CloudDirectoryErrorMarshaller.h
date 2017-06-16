@@ -23,13 +23,10 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDDIRECTORY_API CloudDirectoryErrorMarshaller : public Client::AWSErrorMarshaller
+class AWS_CLOUDDIRECTORY_API CloudDirectoryErrorMarshaller : public Client::JsonErrorMarshaller
 {
 public:
-  CloudDirectoryErrorMarshaller() {}
-  virtual ~CloudDirectoryErrorMarshaller() {}
-
-  virtual Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const;
+  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
 } // namespace CloudDirectory
