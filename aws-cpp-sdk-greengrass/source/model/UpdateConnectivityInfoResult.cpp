@@ -38,9 +38,9 @@ UpdateConnectivityInfoResult::UpdateConnectivityInfoResult(const AmazonWebServic
 UpdateConnectivityInfoResult& UpdateConnectivityInfoResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("Message"))
+  if(jsonValue.ValueExists("message"))
   {
-    m_message = jsonValue.GetString("Message");
+    m_message = jsonValue.GetString("message");
 
   }
 

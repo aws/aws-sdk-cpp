@@ -52,7 +52,7 @@ Aws::String PutIntegrationRequest::SerializePayload() const
 
   if(m_integrationHttpMethodHasBeenSet)
   {
-   payload.WithString("integrationHttpMethod", m_integrationHttpMethod);
+   payload.WithString("httpMethod", m_integrationHttpMethod);
 
   }
 

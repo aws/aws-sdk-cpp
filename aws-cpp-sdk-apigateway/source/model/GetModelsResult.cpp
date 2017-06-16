@@ -44,12 +44,12 @@ GetModelsResult& GetModelsResult::operator =(const AmazonWebServiceResult<JsonVa
 
   }
 
-  if(jsonValue.ValueExists("items"))
+  if(jsonValue.ValueExists("item"))
   {
-    Array<JsonValue> itemsJsonList = jsonValue.GetArray("items");
-    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
+    Array<JsonValue> itemJsonList = jsonValue.GetArray("item");
+    for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
-      m_items.push_back(itemsJsonList[itemsIndex].AsObject());
+      m_items.push_back(itemJsonList[itemIndex].AsObject());
     }
   }
 

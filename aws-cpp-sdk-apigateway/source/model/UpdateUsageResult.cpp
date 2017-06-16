@@ -62,12 +62,12 @@ UpdateUsageResult& UpdateUsageResult::operator =(const AmazonWebServiceResult<Js
 
   }
 
-  if(jsonValue.ValueExists("items"))
+  if(jsonValue.ValueExists("values"))
   {
-    Aws::Map<Aws::String, JsonValue> itemsJsonMap = jsonValue.GetObject("items").GetAllObjects();
-    for(auto& itemsItem : itemsJsonMap)
+    Aws::Map<Aws::String, JsonValue> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
+    for(auto& valuesItem : valuesJsonMap)
     {
-      Array<JsonValue> listOfUsageJsonList = itemsItem.second.AsArray();
+      Array<JsonValue> listOfUsageJsonList = valuesItem.second.AsArray();
       Aws::Vector<Aws::Vector<long long>> listOfUsageList;
       listOfUsageList.reserve((size_t)listOfUsageJsonList.GetLength());
       for(unsigned listOfUsageIndex = 0; listOfUsageIndex < listOfUsageJsonList.GetLength(); ++listOfUsageIndex)
@@ -81,7 +81,7 @@ UpdateUsageResult& UpdateUsageResult::operator =(const AmazonWebServiceResult<Js
         }
         listOfUsageList.push_back(std::move(listOfLongList));
       }
-      m_items[itemsItem.first] = std::move(listOfUsageList);
+      m_items[valuesItem.first] = std::move(listOfUsageList);
     }
   }
 

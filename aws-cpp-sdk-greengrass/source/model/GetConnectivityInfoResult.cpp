@@ -47,9 +47,9 @@ GetConnectivityInfoResult& GetConnectivityInfoResult::operator =(const AmazonWeb
     }
   }
 
-  if(jsonValue.ValueExists("Message"))
+  if(jsonValue.ValueExists("message"))
   {
-    m_message = jsonValue.GetString("Message");
+    m_message = jsonValue.GetString("message");
 
   }
 
