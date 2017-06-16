@@ -42,7 +42,8 @@ Service::Service() :
     m_endTimeHasBeenSet(false),
     m_edgesHasBeenSet(false),
     m_summaryStatisticsHasBeenSet(false),
-    m_durationHistogramHasBeenSet(false)
+    m_durationHistogramHasBeenSet(false),
+    m_responseTimeHistogramHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ Service::Service(const JsonValue& jsonValue) :
     m_endTimeHasBeenSet(false),
     m_edgesHasBeenSet(false),
     m_summaryStatisticsHasBeenSet(false),
-    m_durationHistogramHasBeenSet(false)
+    m_durationHistogramHasBeenSet(false),
+    m_responseTimeHistogramHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +162,16 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_durationHistogramHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResponseTimeHistogram"))
+  {
+    Array<JsonValue> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
+    {
+      m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());
+    }
+    m_responseTimeHistogramHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +261,17 @@ JsonValue Service::Jsonize() const
      durationHistogramJsonList[durationHistogramIndex].AsObject(m_durationHistogram[durationHistogramIndex].Jsonize());
    }
    payload.WithArray("DurationHistogram", std::move(durationHistogramJsonList));
+
+  }
+
+  if(m_responseTimeHistogramHasBeenSet)
+  {
+   Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
+   for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
+   {
+     responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject(m_responseTimeHistogram[responseTimeHistogramIndex].Jsonize());
+   }
+   payload.WithArray("ResponseTimeHistogram", std::move(responseTimeHistogramJsonList));
 
   }
 

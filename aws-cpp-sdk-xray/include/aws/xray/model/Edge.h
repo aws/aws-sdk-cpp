@@ -140,37 +140,37 @@ namespace Model
     inline Edge& WithSummaryStatistics(EdgeStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline void SetResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = value; }
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::move(value); }
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline Edge& WithResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { SetResponseTimeHistogram(value); return *this;}
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline Edge& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(std::move(value)); return *this;}
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline Edge& AddResponseTimeHistogram(const HistogramEntry& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(value); return *this; }
 
     /**
-     * <p>Histogram describing the prominence of response times on the edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline Edge& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
 

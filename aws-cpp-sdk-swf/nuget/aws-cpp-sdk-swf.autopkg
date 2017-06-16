@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SWF;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20120125.153;
+        version : 1.0.20120125.154;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Workflow Service);

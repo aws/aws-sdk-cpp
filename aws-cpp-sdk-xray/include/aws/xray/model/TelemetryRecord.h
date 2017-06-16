@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p></p><p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TelemetryRecord">AWS
    * API Reference</a></p>
    */
@@ -47,112 +47,112 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline int GetSegmentsReceivedCount() const{ return m_segmentsReceivedCount; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetSegmentsReceivedCount(int value) { m_segmentsReceivedCountHasBeenSet = true; m_segmentsReceivedCount = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithSegmentsReceivedCount(int value) { SetSegmentsReceivedCount(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline int GetSegmentsSentCount() const{ return m_segmentsSentCount; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetSegmentsSentCount(int value) { m_segmentsSentCountHasBeenSet = true; m_segmentsSentCount = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithSegmentsSentCount(int value) { SetSegmentsSentCount(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline int GetSegmentsSpilloverCount() const{ return m_segmentsSpilloverCount; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetSegmentsSpilloverCount(int value) { m_segmentsSpilloverCountHasBeenSet = true; m_segmentsSpilloverCount = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithSegmentsSpilloverCount(int value) { SetSegmentsSpilloverCount(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline int GetSegmentsRejectedCount() const{ return m_segmentsRejectedCount; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetSegmentsRejectedCount(int value) { m_segmentsRejectedCountHasBeenSet = true; m_segmentsRejectedCount = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithSegmentsRejectedCount(int value) { SetSegmentsRejectedCount(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline const BackendConnectionErrors& GetBackendConnectionErrors() const{ return m_backendConnectionErrors; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetBackendConnectionErrors(const BackendConnectionErrors& value) { m_backendConnectionErrorsHasBeenSet = true; m_backendConnectionErrors = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetBackendConnectionErrors(BackendConnectionErrors&& value) { m_backendConnectionErrorsHasBeenSet = true; m_backendConnectionErrors = std::move(value); }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithBackendConnectionErrors(const BackendConnectionErrors& value) { SetBackendConnectionErrors(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline TelemetryRecord& WithBackendConnectionErrors(BackendConnectionErrors&& value) { SetBackendConnectionErrors(std::move(value)); return *this;}
 

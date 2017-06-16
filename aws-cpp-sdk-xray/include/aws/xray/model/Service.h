@@ -429,39 +429,74 @@ namespace Model
     inline Service& WithSummaryStatistics(ServiceStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline const Aws::Vector<HistogramEntry>& GetDurationHistogram() const{ return m_durationHistogram; }
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline void SetDurationHistogram(const Aws::Vector<HistogramEntry>& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = value; }
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline void SetDurationHistogram(Aws::Vector<HistogramEntry>&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = std::move(value); }
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline Service& WithDurationHistogram(const Aws::Vector<HistogramEntry>& value) { SetDurationHistogram(value); return *this;}
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline Service& WithDurationHistogram(Aws::Vector<HistogramEntry>&& value) { SetDurationHistogram(std::move(value)); return *this;}
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline Service& AddDurationHistogram(const HistogramEntry& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(value); return *this; }
 
     /**
-     * <p>Histogram mapping the spread of trace durations</p>
+     * <p>A histogram that maps the spread of service durations.</p>
      */
     inline Service& AddDurationHistogram(HistogramEntry&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline void SetResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = value; }
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::move(value); }
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline Service& WithResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { SetResponseTimeHistogram(value); return *this;}
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline Service& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(std::move(value)); return *this;}
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline Service& AddResponseTimeHistogram(const HistogramEntry& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(value); return *this; }
+
+    /**
+     * <p>A histogram that maps the spread of service response times.</p>
+     */
+    inline Service& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
 
   private:
     int m_referenceId;
@@ -488,6 +523,8 @@ namespace Model
     bool m_summaryStatisticsHasBeenSet;
     Aws::Vector<HistogramEntry> m_durationHistogram;
     bool m_durationHistogramHasBeenSet;
+    Aws::Vector<HistogramEntry> m_responseTimeHistogram;
+    bool m_responseTimeHistogramHasBeenSet;
   };
 
 } // namespace Model
