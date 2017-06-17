@@ -268,7 +268,7 @@ namespace Aws
                     PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
-                    uploadPartRequest.SetDataSentEventHandler([handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); });
+                    uploadPartRequest.SetDataSentEventHandler([this, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); TriggerUploadProgressCallback(*handle); });
                     uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                         .WithContentLength(static_cast<long long>(lengthToWrite))
