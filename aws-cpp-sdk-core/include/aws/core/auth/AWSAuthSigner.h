@@ -25,6 +25,7 @@
 
 #include <memory>
 #include <atomic>
+#include <mutex>
 #include <chrono>
 
 namespace Aws

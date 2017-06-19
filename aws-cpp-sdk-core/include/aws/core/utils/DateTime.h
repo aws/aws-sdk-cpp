@@ -17,9 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <iomanip>
-#include <ctime>
-#include <mutex>
+#include <chrono>
 
 namespace Aws
 {
