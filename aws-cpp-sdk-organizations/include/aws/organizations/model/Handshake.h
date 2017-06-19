@@ -43,7 +43,9 @@ namespace Model
    * relationship between two accounts (an <i>originator</i> and a <i>recipient</i>).
    * For example, when a master account (the originator) invites another account (the
    * recipient) to join its organization, the two accounts exchange information as a
-   * series of handshake requests and responses. </p><p><h3>See Also:</h3>   <a
+   * series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that
+   * are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after
+   * entering that state After that they are deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake">AWS
    * API Reference</a></p>
    */

@@ -387,7 +387,9 @@ namespace Model
          * organization, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
+         * appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
          * API Reference</a></p>
          */
@@ -407,7 +409,9 @@ namespace Model
          * organization, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
+         * appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
          * API Reference</a></p>
          *
@@ -429,7 +433,9 @@ namespace Model
          * organization, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
+         * appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
          * API Reference</a></p>
          *
@@ -557,8 +563,9 @@ namespace Model
          * <code>CANCELED</code>. </p> <p>This operation can be called only from the
          * account that originated the handshake. The recipient of the handshake can't
          * cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is
-         * canceled, the recipient can no longer respond to that handshake. </p><p><h3>See
-         * Also:</h3>   <a
+         * canceled, the recipient can no longer respond to that handshake.</p> <p>After
+         * you cancel a handshake, it continues to appear in the results of relevant APIs
+         * for only 30 days. After that it is deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">AWS
          * API Reference</a></p>
          */
@@ -569,8 +576,9 @@ namespace Model
          * <code>CANCELED</code>. </p> <p>This operation can be called only from the
          * account that originated the handshake. The recipient of the handshake can't
          * cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is
-         * canceled, the recipient can no longer respond to that handshake. </p><p><h3>See
-         * Also:</h3>   <a
+         * canceled, the recipient can no longer respond to that handshake.</p> <p>After
+         * you cancel a handshake, it continues to appear in the results of relevant APIs
+         * for only 30 days. After that it is deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">AWS
          * API Reference</a></p>
          *
@@ -583,8 +591,9 @@ namespace Model
          * <code>CANCELED</code>. </p> <p>This operation can be called only from the
          * account that originated the handshake. The recipient of the handshake can't
          * cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is
-         * canceled, the recipient can no longer respond to that handshake. </p><p><h3>See
-         * Also:</h3>   <a
+         * canceled, the recipient can no longer respond to that handshake.</p> <p>After
+         * you cancel a handshake, it continues to appear in the results of relevant APIs
+         * for only 30 days. After that it is deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">AWS
          * API Reference</a></p>
          *
@@ -851,7 +860,9 @@ namespace Model
          * operation can be called only from the account that received the handshake. The
          * originator of the handshake can use <a>CancelHandshake</a> instead. The
          * originator can't reactivate a declined request, but can re-initiate the process
-         * with a new handshake request.</p><p><h3>See Also:</h3>   <a
+         * with a new handshake request.</p> <p>After you decline a handshake, it continues
+         * to appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">AWS
          * API Reference</a></p>
          */
@@ -863,7 +874,9 @@ namespace Model
          * operation can be called only from the account that received the handshake. The
          * originator of the handshake can use <a>CancelHandshake</a> instead. The
          * originator can't reactivate a declined request, but can re-initiate the process
-         * with a new handshake request.</p><p><h3>See Also:</h3>   <a
+         * with a new handshake request.</p> <p>After you decline a handshake, it continues
+         * to appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">AWS
          * API Reference</a></p>
          *
@@ -877,7 +890,9 @@ namespace Model
          * operation can be called only from the account that received the handshake. The
          * originator of the handshake can use <a>CancelHandshake</a> instead. The
          * originator can't reactivate a declined request, but can re-initiate the process
-         * with a new handshake request.</p><p><h3>See Also:</h3>   <a
+         * with a new handshake request.</p> <p>After you decline a handshake, it continues
+         * to appear in the results of relevant APIs for only 30 days. After that it is
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">AWS
          * API Reference</a></p>
          *
@@ -1057,8 +1072,10 @@ namespace Model
         /**
          * <p>Retrieves information about a previously requested handshake. The handshake
          * ID comes from the response to the original <a>InviteAccountToOrganization</a>
-         * operation that generated the handshake.</p> <p>This operation can be called from
-         * any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * operation that generated the handshake.</p> <p>You can access handshakes that
+         * are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+         * state. They are then deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">AWS
          * API Reference</a></p>
          */
@@ -1067,8 +1084,10 @@ namespace Model
         /**
          * <p>Retrieves information about a previously requested handshake. The handshake
          * ID comes from the response to the original <a>InviteAccountToOrganization</a>
-         * operation that generated the handshake.</p> <p>This operation can be called from
-         * any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * operation that generated the handshake.</p> <p>You can access handshakes that
+         * are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+         * state. They are then deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">AWS
          * API Reference</a></p>
          *
@@ -1079,8 +1098,10 @@ namespace Model
         /**
          * <p>Retrieves information about a previously requested handshake. The handshake
          * ID comes from the response to the original <a>InviteAccountToOrganization</a>
-         * operation that generated the handshake.</p> <p>This operation can be called from
-         * any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * operation that generated the handshake.</p> <p>You can access handshakes that
+         * are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+         * state. They are then deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">AWS
          * API Reference</a></p>
          *
@@ -1425,9 +1446,15 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
+         * invite AWS accounts only from the same reseller as the master account. For
+         * example, if your organization's master account was created by Amazon Internet
+         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * other AISPL accounts to your organization. You can't combine accounts from AISPL
+         * and AWS. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+         * Billing in India</a>.</p> </important> <p>This operation can be called only from
+         * the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          */
@@ -1437,9 +1464,15 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
+         * invite AWS accounts only from the same reseller as the master account. For
+         * example, if your organization's master account was created by Amazon Internet
+         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * other AISPL accounts to your organization. You can't combine accounts from AISPL
+         * and AWS. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+         * Billing in India</a>.</p> </important> <p>This operation can be called only from
+         * the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1451,9 +1484,15 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
+         * invite AWS accounts only from the same reseller as the master account. For
+         * example, if your organization's master account was created by Amazon Internet
+         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * other AISPL accounts to your organization. You can't combine accounts from AISPL
+         * and AWS. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+         * Billing in India</a>.</p> </important> <p>This operation can be called only from
+         * the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1466,12 +1505,19 @@ namespace Model
          * operation is performed by the account that wants to leave. To remove a member
          * account as a user in the master account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
-         * called only from a member account in the organization.</p> <important> <p>The
-         * master account in an organization with all features enabled can set service
-         * control policies (SCPs) that can restrict what administrators of member accounts
-         * can do, including preventing them from successfully calling
-         * <code>LeaveOrganization</code> and leaving the organization. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * called only from a member account in the organization.</p> <important> <ul> <li>
+         * <p>The master account in an organization with all features enabled can set
+         * service control policies (SCPs) that can restrict what administrators of member
+         * accounts can do, including preventing them from successfully calling
+         * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
+         * <p>If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can leave an organization only after you enable
+         * IAM user access to billing in your account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          */
@@ -1482,12 +1528,19 @@ namespace Model
          * operation is performed by the account that wants to leave. To remove a member
          * account as a user in the master account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
-         * called only from a member account in the organization.</p> <important> <p>The
-         * master account in an organization with all features enabled can set service
-         * control policies (SCPs) that can restrict what administrators of member accounts
-         * can do, including preventing them from successfully calling
-         * <code>LeaveOrganization</code> and leaving the organization. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * called only from a member account in the organization.</p> <important> <ul> <li>
+         * <p>The master account in an organization with all features enabled can set
+         * service control policies (SCPs) that can restrict what administrators of member
+         * accounts can do, including preventing them from successfully calling
+         * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
+         * <p>If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can leave an organization only after you enable
+         * IAM user access to billing in your account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          *
@@ -1500,12 +1553,19 @@ namespace Model
          * operation is performed by the account that wants to leave. To remove a member
          * account as a user in the master account, use
          * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
-         * called only from a member account in the organization.</p> <important> <p>The
-         * master account in an organization with all features enabled can set service
-         * control policies (SCPs) that can restrict what administrators of member accounts
-         * can do, including preventing them from successfully calling
-         * <code>LeaveOrganization</code> and leaving the organization. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * called only from a member account in the organization.</p> <important> <ul> <li>
+         * <p>The master account in an organization with all features enabled can set
+         * service control policies (SCPs) that can restrict what administrators of member
+         * accounts can do, including preventing them from successfully calling
+         * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
+         * <p>If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can leave an organization only after you enable
+         * IAM user access to billing in your account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          *
@@ -1656,8 +1716,10 @@ namespace Model
 
         /**
          * <p>Lists the current handshakes that are associated with the account of the
-         * requesting user.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
+         * appear in the results of this API for only 30 days after changing to that state.
+         * After that they are deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          */
@@ -1665,8 +1727,10 @@ namespace Model
 
         /**
          * <p>Lists the current handshakes that are associated with the account of the
-         * requesting user.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
+         * appear in the results of this API for only 30 days after changing to that state.
+         * After that they are deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -1676,8 +1740,10 @@ namespace Model
 
         /**
          * <p>Lists the current handshakes that are associated with the account of the
-         * requesting user.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
+         * appear in the results of this API for only 30 days after changing to that state.
+         * After that they are deleted and no longer accessible.</p> <p>This operation can
+         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -1689,8 +1755,11 @@ namespace Model
          * <p>Lists the handshakes that are associated with the organization that the
          * requesting user is part of. The <code>ListHandshakesForOrganization</code>
          * operation returns a list of handshake structures. Each structure contains
-         * details and status about a handshake.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
+         * DECLINED, or CANCELED appear in the results of this API for only 30 days after
+         * changing to that state. After that they are deleted and no longer
+         * accessible.</p> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          */
@@ -1700,8 +1769,11 @@ namespace Model
          * <p>Lists the handshakes that are associated with the organization that the
          * requesting user is part of. The <code>ListHandshakesForOrganization</code>
          * operation returns a list of handshake structures. Each structure contains
-         * details and status about a handshake.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
+         * DECLINED, or CANCELED appear in the results of this API for only 30 days after
+         * changing to that state. After that they are deleted and no longer
+         * accessible.</p> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -1713,8 +1785,11 @@ namespace Model
          * <p>Lists the handshakes that are associated with the organization that the
          * requesting user is part of. The <code>ListHandshakesForOrganization</code>
          * operation returns a list of handshake structures. Each structure contains
-         * details and status about a handshake.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
+         * DECLINED, or CANCELED appear in the results of this API for only 30 days after
+         * changing to that state. After that they are deleted and no longer
+         * accessible.</p> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -1959,9 +2034,15 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove only
-         * existing accounts that were invited to join the organization. You cannot remove
-         * accounts that were created by AWS Organizations.</p> </important><p><h3>See
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
+         * only accounts that were created outside your organization and invited to join.
+         * If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can remove a member account only after you enable
+         * IAM user access to billing in the member account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
@@ -1976,9 +2057,15 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove only
-         * existing accounts that were invited to join the organization. You cannot remove
-         * accounts that were created by AWS Organizations.</p> </important><p><h3>See
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
+         * only accounts that were created outside your organization and invited to join.
+         * If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can remove a member account only after you enable
+         * IAM user access to billing in the member account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
@@ -1995,9 +2082,15 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove only
-         * existing accounts that were invited to join the organization. You cannot remove
-         * accounts that were created by AWS Organizations.</p> </important><p><h3>See
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
+         * only accounts that were created outside your organization and invited to join.
+         * If you created the account using the AWS Organizations console, the
+         * Organizations API, or the Organizations CLI commands, then you cannot remove the
+         * account.</p> </li> <li> <p>You can remove a member account only after you enable
+         * IAM user access to billing in the member account. For more information, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
+         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>

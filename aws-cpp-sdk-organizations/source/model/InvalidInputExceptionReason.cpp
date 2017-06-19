@@ -46,6 +46,7 @@ namespace Aws
         static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("INVALID_NEXT_TOKEN");
         static const int MAX_LIMIT_EXCEEDED_FILTER_HASH = HashingUtils::HashString("MAX_LIMIT_EXCEEDED_FILTER");
         static const int MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS_HASH = HashingUtils::HashString("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
+        static const int INVALID_FULL_NAME_TARGET_HASH = HashingUtils::HashString("INVALID_FULL_NAME_TARGET");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return InvalidInputExceptionReason::MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS;
           }
+          else if (hashCode == INVALID_FULL_NAME_TARGET_HASH)
+          {
+            return InvalidInputExceptionReason::INVALID_FULL_NAME_TARGET;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +166,8 @@ namespace Aws
             return "MAX_LIMIT_EXCEEDED_FILTER";
           case InvalidInputExceptionReason::MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS:
             return "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS";
+          case InvalidInputExceptionReason::INVALID_FULL_NAME_TARGET:
+            return "INVALID_FULL_NAME_TARGET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

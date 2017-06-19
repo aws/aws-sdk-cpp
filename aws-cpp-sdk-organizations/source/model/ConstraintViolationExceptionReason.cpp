@@ -38,6 +38,8 @@ namespace Aws
         static const int MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         static const int MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         static const int ACCOUNT_CANNOT_LEAVE_ORGANIZATION_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
+        static const int ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA");
+        static const int ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION");
         static const int MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
         static const int MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
         static const int ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
@@ -78,6 +80,14 @@ namespace Aws
           else if (hashCode == ACCOUNT_CANNOT_LEAVE_ORGANIZATION_HASH)
           {
             return ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_ORGANIZATION;
+          }
+          else if (hashCode == ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA_HASH)
+          {
+            return ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA;
+          }
+          else if (hashCode == ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION_HASH)
+          {
+            return ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION;
           }
           else if (hashCode == MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH)
           {
@@ -125,6 +135,10 @@ namespace Aws
             return "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_ORGANIZATION:
             return "ACCOUNT_CANNOT_LEAVE_ORGANIZATION";
+          case ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA:
+            return "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA";
+          case ConstraintViolationExceptionReason::ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION:
+            return "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION";
           case ConstraintViolationExceptionReason::MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED:
             return "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED";
           case ConstraintViolationExceptionReason::MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED:
