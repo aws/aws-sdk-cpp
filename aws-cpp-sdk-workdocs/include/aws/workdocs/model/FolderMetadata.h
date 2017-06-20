@@ -345,22 +345,34 @@ namespace Model
      */
     inline FolderMetadata& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The size of the folder metadata.</p>
+     */
     inline long long GetSize() const{ return m_size; }
 
-    
+    /**
+     * <p>The size of the folder metadata.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
-    
+    /**
+     * <p>The size of the folder metadata.</p>
+     */
     inline FolderMetadata& WithSize(long long value) { SetSize(value); return *this;}
 
-    
+    /**
+     * <p>The size of the latest version of the folder metadata.</p>
+     */
     inline long long GetLatestVersionSize() const{ return m_latestVersionSize; }
 
-    
+    /**
+     * <p>The size of the latest version of the folder metadata.</p>
+     */
     inline void SetLatestVersionSize(long long value) { m_latestVersionSizeHasBeenSet = true; m_latestVersionSize = value; }
 
-    
+    /**
+     * <p>The size of the latest version of the folder metadata.</p>
+     */
     inline FolderMetadata& WithLatestVersionSize(long long value) { SetLatestVersionSize(value); return *this;}
 
   private:

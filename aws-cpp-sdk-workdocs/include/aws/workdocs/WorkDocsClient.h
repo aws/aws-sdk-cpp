@@ -31,12 +31,15 @@
 #include <aws/workdocs/model/CreateUserResult.h>
 #include <aws/workdocs/model/DeleteCustomMetadataResult.h>
 #include <aws/workdocs/model/DeleteLabelsResult.h>
+#include <aws/workdocs/model/DescribeActivitiesResult.h>
 #include <aws/workdocs/model/DescribeCommentsResult.h>
 #include <aws/workdocs/model/DescribeDocumentVersionsResult.h>
 #include <aws/workdocs/model/DescribeFolderContentsResult.h>
 #include <aws/workdocs/model/DescribeNotificationSubscriptionsResult.h>
 #include <aws/workdocs/model/DescribeResourcePermissionsResult.h>
+#include <aws/workdocs/model/DescribeRootFoldersResult.h>
 #include <aws/workdocs/model/DescribeUsersResult.h>
+#include <aws/workdocs/model/GetCurrentUserResult.h>
 #include <aws/workdocs/model/GetDocumentResult.h>
 #include <aws/workdocs/model/GetDocumentPathResult.h>
 #include <aws/workdocs/model/GetDocumentVersionResult.h>
@@ -108,12 +111,15 @@ namespace Model
         class DeleteLabelsRequest;
         class DeleteNotificationSubscriptionRequest;
         class DeleteUserRequest;
+        class DescribeActivitiesRequest;
         class DescribeCommentsRequest;
         class DescribeDocumentVersionsRequest;
         class DescribeFolderContentsRequest;
         class DescribeNotificationSubscriptionsRequest;
         class DescribeResourcePermissionsRequest;
+        class DescribeRootFoldersRequest;
         class DescribeUsersRequest;
+        class GetCurrentUserRequest;
         class GetDocumentRequest;
         class GetDocumentPathRequest;
         class GetDocumentVersionRequest;
@@ -145,12 +151,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteLabelsResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteLabelsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteNotificationSubscriptionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeActivitiesResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeActivitiesOutcome;
         typedef Aws::Utils::Outcome<DescribeCommentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeCommentsOutcome;
         typedef Aws::Utils::Outcome<DescribeDocumentVersionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeDocumentVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeFolderContentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeFolderContentsOutcome;
         typedef Aws::Utils::Outcome<DescribeNotificationSubscriptionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeNotificationSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeResourcePermissionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeResourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRootFoldersResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeRootFoldersOutcome;
         typedef Aws::Utils::Outcome<DescribeUsersResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeUsersOutcome;
+        typedef Aws::Utils::Outcome<GetCurrentUserResult, Aws::Client::AWSError<WorkDocsErrors>> GetCurrentUserOutcome;
         typedef Aws::Utils::Outcome<GetDocumentResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentOutcome;
         typedef Aws::Utils::Outcome<GetDocumentPathResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentPathOutcome;
         typedef Aws::Utils::Outcome<GetDocumentVersionResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentVersionOutcome;
@@ -182,12 +191,15 @@ namespace Model
         typedef std::future<DeleteLabelsOutcome> DeleteLabelsOutcomeCallable;
         typedef std::future<DeleteNotificationSubscriptionOutcome> DeleteNotificationSubscriptionOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+        typedef std::future<DescribeActivitiesOutcome> DescribeActivitiesOutcomeCallable;
         typedef std::future<DescribeCommentsOutcome> DescribeCommentsOutcomeCallable;
         typedef std::future<DescribeDocumentVersionsOutcome> DescribeDocumentVersionsOutcomeCallable;
         typedef std::future<DescribeFolderContentsOutcome> DescribeFolderContentsOutcomeCallable;
         typedef std::future<DescribeNotificationSubscriptionsOutcome> DescribeNotificationSubscriptionsOutcomeCallable;
         typedef std::future<DescribeResourcePermissionsOutcome> DescribeResourcePermissionsOutcomeCallable;
+        typedef std::future<DescribeRootFoldersOutcome> DescribeRootFoldersOutcomeCallable;
         typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
+        typedef std::future<GetCurrentUserOutcome> GetCurrentUserOutcomeCallable;
         typedef std::future<GetDocumentOutcome> GetDocumentOutcomeCallable;
         typedef std::future<GetDocumentPathOutcome> GetDocumentPathOutcomeCallable;
         typedef std::future<GetDocumentVersionOutcome> GetDocumentVersionOutcomeCallable;
@@ -222,12 +234,15 @@ namespace Model
     typedef std::function<void(const WorkDocsClient*, const Model::DeleteLabelsRequest&, const Model::DeleteLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DeleteNotificationSubscriptionRequest&, const Model::DeleteNotificationSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationSubscriptionResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::DescribeActivitiesRequest&, const Model::DescribeActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActivitiesResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeCommentsRequest&, const Model::DescribeCommentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCommentsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeDocumentVersionsRequest&, const Model::DescribeDocumentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentVersionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeFolderContentsRequest&, const Model::DescribeFolderContentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderContentsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeNotificationSubscriptionsRequest&, const Model::DescribeNotificationSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeResourcePermissionsRequest&, const Model::DescribeResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::DescribeRootFoldersRequest&, const Model::DescribeRootFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRootFoldersResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::GetCurrentUserRequest&, const Model::GetCurrentUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentUserResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::GetDocumentRequest&, const Model::GetDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::GetDocumentPathRequest&, const Model::GetDocumentPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentPathResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::GetDocumentVersionRequest&, const Model::GetDocumentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentVersionResponseReceivedHandler;
@@ -820,6 +835,34 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the user activities in a specified time period.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeActivitiesOutcome DescribeActivities(const Model::DescribeActivitiesRequest& request) const;
+
+        /**
+         * <p>Describes the user activities in a specified time period.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeActivitiesOutcomeCallable DescribeActivitiesCallable(const Model::DescribeActivitiesRequest& request) const;
+
+        /**
+         * <p>Describes the user activities in a specified time period.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeActivitiesAsync(const Model::DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all the comments for the specified document version.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">AWS
@@ -966,6 +1009,43 @@ namespace Model
         virtual void DescribeResourcePermissionsAsync(const Model::DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the current user's special folders; the <code>RootFolder</code> and
+         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRootFoldersOutcome DescribeRootFolders(const Model::DescribeRootFoldersRequest& request) const;
+
+        /**
+         * <p>Describes the current user's special folders; the <code>RootFolder</code> and
+         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRootFoldersOutcomeCallable DescribeRootFoldersCallable(const Model::DescribeRootFoldersRequest& request) const;
+
+        /**
+         * <p>Describes the current user's special folders; the <code>RootFolder</code> and
+         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRootFoldersAsync(const Model::DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified users. You can describe all users or filter the
          * results (for example, by status or organization).</p> <p>By default, Amazon
          * WorkDocs returns the first 24 active or pending users. If there are more
@@ -1001,6 +1081,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves details of the current user for whom the authentication token was
+         * generated. This is not a valid action for SigV4 (administrative API)
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCurrentUserOutcome GetCurrentUser(const Model::GetCurrentUserRequest& request) const;
+
+        /**
+         * <p>Retrieves details of the current user for whom the authentication token was
+         * generated. This is not a valid action for SigV4 (administrative API)
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCurrentUserOutcomeCallable GetCurrentUserCallable(const Model::GetCurrentUserRequest& request) const;
+
+        /**
+         * <p>Retrieves details of the current user for whom the authentication token was
+         * generated. This is not a valid action for SigV4 (administrative API)
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCurrentUserAsync(const Model::GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details of a document.</p><p><h3>See Also:</h3>   <a
@@ -1403,12 +1514,15 @@ namespace Model
         void DeleteLabelsAsyncHelper(const Model::DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotificationSubscriptionAsyncHelper(const Model::DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeActivitiesAsyncHelper(const Model::DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCommentsAsyncHelper(const Model::DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDocumentVersionsAsyncHelper(const Model::DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFolderContentsAsyncHelper(const Model::DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotificationSubscriptionsAsyncHelper(const Model::DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourcePermissionsAsyncHelper(const Model::DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRootFoldersAsyncHelper(const Model::DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUsersAsyncHelper(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCurrentUserAsyncHelper(const Model::GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentAsyncHelper(const Model::GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentPathAsyncHelper(const Model::GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentVersionAsyncHelper(const Model::GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

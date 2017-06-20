@@ -45,12 +45,15 @@
 #include <aws/workdocs/model/DeleteLabelsRequest.h>
 #include <aws/workdocs/model/DeleteNotificationSubscriptionRequest.h>
 #include <aws/workdocs/model/DeleteUserRequest.h>
+#include <aws/workdocs/model/DescribeActivitiesRequest.h>
 #include <aws/workdocs/model/DescribeCommentsRequest.h>
 #include <aws/workdocs/model/DescribeDocumentVersionsRequest.h>
 #include <aws/workdocs/model/DescribeFolderContentsRequest.h>
 #include <aws/workdocs/model/DescribeNotificationSubscriptionsRequest.h>
 #include <aws/workdocs/model/DescribeResourcePermissionsRequest.h>
+#include <aws/workdocs/model/DescribeRootFoldersRequest.h>
 #include <aws/workdocs/model/DescribeUsersRequest.h>
+#include <aws/workdocs/model/GetCurrentUserRequest.h>
 #include <aws/workdocs/model/GetDocumentRequest.h>
 #include <aws/workdocs/model/GetDocumentPathRequest.h>
 #include <aws/workdocs/model/GetDocumentVersionRequest.h>
@@ -794,6 +797,41 @@ void WorkDocsClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
   handler(this, request, DeleteUser(request), context);
 }
 
+DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/api/v1/activities";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return DescribeActivitiesOutcome(DescribeActivitiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeActivitiesOutcome(outcome.GetError());
+  }
+}
+
+DescribeActivitiesOutcomeCallable WorkDocsClient::DescribeActivitiesCallable(const DescribeActivitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeActivitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActivities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::DescribeActivitiesAsync(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeActivitiesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::DescribeActivitiesAsyncHelper(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeActivities(request), context);
+}
+
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
 {
   Aws::StringStream ss;
@@ -981,6 +1019,41 @@ void WorkDocsClient::DescribeResourcePermissionsAsyncHelper(const DescribeResour
   handler(this, request, DescribeResourcePermissions(request), context);
 }
 
+DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/api/v1/me/root";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRootFoldersOutcome(DescribeRootFoldersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRootFoldersOutcome(outcome.GetError());
+  }
+}
+
+DescribeRootFoldersOutcomeCallable WorkDocsClient::DescribeRootFoldersCallable(const DescribeRootFoldersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRootFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRootFolders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::DescribeRootFoldersAsync(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRootFoldersAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::DescribeRootFoldersAsyncHelper(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRootFolders(request), context);
+}
+
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
   Aws::StringStream ss;
@@ -1014,6 +1087,41 @@ void WorkDocsClient::DescribeUsersAsync(const DescribeUsersRequest& request, con
 void WorkDocsClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUsers(request), context);
+}
+
+GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/api/v1/me";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetCurrentUserOutcome(GetCurrentUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCurrentUserOutcome(outcome.GetError());
+  }
+}
+
+GetCurrentUserOutcomeCallable WorkDocsClient::GetCurrentUserCallable(const GetCurrentUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCurrentUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCurrentUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::GetCurrentUserAsync(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCurrentUserAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::GetCurrentUserAsyncHelper(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCurrentUser(request), context);
 }
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const

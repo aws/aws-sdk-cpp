@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ConfigService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20141112.157;
+        version : 1.0.20141112.158;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Config);
