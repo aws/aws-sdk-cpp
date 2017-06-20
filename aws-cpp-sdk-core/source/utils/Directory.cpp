@@ -20,6 +20,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <fstream>
 #include <cassert>
+#include <algorithm>
 
 namespace Aws
 {
@@ -62,6 +63,66 @@ namespace Aws
 
 			return ss.str();
 		}
+
+        Aws::String GetDirectoryName(const char* fileName)
+        {
+            struct duplicate_path_delims {
+                bool operator()(char a, char b) const {
+                    return a == PATH_DELIM && b == PATH_DELIM;
+                }
+            };
+
+            Aws::String pathName = Aws::String(fileName);
+
+            if (pathName.empty()) return ".";
+
+            // Remove duplicate path delimiters
+            pathName.erase(
+                std::unique(pathName.begin(),
+                            pathName.end(),
+                            duplicate_path_delims()),
+                pathName.end());
+
+            // Remove trailing path delimiter
+            if (pathName.back() == PATH_DELIM)
+            {
+#ifdef _WIN32
+                // For windows, if the path is like "C:\\", return "C:"
+                if (isalpha(pathName.at(0)) && pathName.at(1) == ':'
+                    && pathName.size() == 3)
+                {
+                    return Aws::String(pathName.begin(), pathName.end() - 1);
+                }
+#else
+                // For Linux, if the path is like "/", just return this
+                if (pathName.size() == 1)
+                {
+                    return pathName;
+                }
+#endif
+                pathName.pop_back();
+            }
+
+            const auto lastPathDelim = std::find(pathName.rbegin(),
+                                                 pathName.rend(),
+                                                 PATH_DELIM);
+
+            if (lastPathDelim == pathName.rend())
+            {
+                // No path delimiters found
+                return ".";
+            }
+            else if (lastPathDelim.base() - pathName.begin() == 1)
+            {
+                // Path delimiter is first char.
+                // *Note*: The iterator is used here to check the beginning
+                // of string and not the front(), because for "/d/f" will return "/"
+                // but it should return "/d"
+                return Aws::String("") + PATH_DELIM;
+            }
+
+            return Aws::String(pathName.begin(), lastPathDelim.base() - 1);
+        }
 
         bool DeepCopyDirectory(const char* from, const char* to)
         {

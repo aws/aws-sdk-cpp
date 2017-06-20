@@ -45,6 +45,12 @@ namespace FileSystem
     AWS_CORE_API Aws::String GetExecutableDirectory();
 
     /**
+     * Returns the directory part of a filename. If filename is empty string or if no path delimiters found
+     * then the "." is returned.
+     */
+    AWS_CORE_API Aws::String GetDirectoryName(const char* fileName);
+
+    /**
     * Creates directory if it doesn't exist. Returns true if the directory was created
     * or already exists. False for failure.
     */

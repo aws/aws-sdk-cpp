@@ -100,6 +100,8 @@ namespace Aws
                                                                       const DownloadConfiguration& downloadConfig)
         {
 
+            Aws::FileSystem::CreateDirectoryIfNotExists(Aws::FileSystem::GetDirectoryName(writeToFile.c_str()).c_str());
+
             auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 

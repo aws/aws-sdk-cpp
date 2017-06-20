@@ -63,6 +63,80 @@ TEST(FileTest, TempFile)
     ASSERT_FALSE(testIn.good());
 }
 
+TEST(FileTest, TestGetDirectoryName)
+{
+#ifdef _WIN32
+    const char* test1 = "d\\f";
+    EXPECT_STREQ("d", Aws::FileSystem::GetDirectoryName(test1).c_str());
+
+    const char* test2 = "C:\\d\\f";
+    EXPECT_STREQ("C:\\d", Aws::FileSystem::GetDirectoryName(test2).c_str());
+
+    const char* test3 = "d\\f\\";
+    EXPECT_STREQ("d", Aws::FileSystem::GetDirectoryName(test3).c_str());
+
+    const char* test4 = "C:\\d\\f\\";
+    EXPECT_STREQ("C:\\d", Aws::FileSystem::GetDirectoryName(test4).c_str());
+
+    const char* test5 = "f";
+    EXPECT_STREQ(".", Aws::FileSystem::GetDirectoryName(test5).c_str());
+
+    const char* test6 = "C:\\";
+    EXPECT_STREQ("C:", Aws::FileSystem::GetDirectoryName(test6).c_str());
+
+    const char* test7 = "C:\\\\";
+    EXPECT_STREQ("C:", Aws::FileSystem::GetDirectoryName(test7).c_str());
+
+    const char* test8 = "C:\\d";
+    EXPECT_STREQ("C:", Aws::FileSystem::GetDirectoryName(test8).c_str());
+
+    const char* test9 = "C:\\\\\\";
+    EXPECT_STREQ("C:", Aws::FileSystem::GetDirectoryName(test9).c_str());
+
+    const char* test10 = "C:\\\\\\d\\\\\\";
+    EXPECT_STREQ("C:", Aws::FileSystem::GetDirectoryName(test10).c_str());
+#else
+    const char* test1 = "d/f";
+    EXPECT_STREQ("d", Aws::FileSystem::GetDirectoryName(test1).c_str());
+
+    const char* test2 = "/d/f";
+    EXPECT_STREQ("/d", Aws::FileSystem::GetDirectoryName(test2).c_str());
+
+    const char* test3 = "d/f/";
+    EXPECT_STREQ("d", Aws::FileSystem::GetDirectoryName(test3).c_str());
+
+    const char* test4 = "/d/f/";
+    EXPECT_STREQ("/d", Aws::FileSystem::GetDirectoryName(test4).c_str());
+
+    const char* test5 = "f";
+    EXPECT_STREQ(".", Aws::FileSystem::GetDirectoryName(test5).c_str());
+
+    const char* test6 = "/";
+    EXPECT_STREQ("/", Aws::FileSystem::GetDirectoryName(test6).c_str());
+
+    const char* test7 = "//";
+    EXPECT_STREQ("/", Aws::FileSystem::GetDirectoryName(test7).c_str());
+
+    const char* test8 = "//d";
+    EXPECT_STREQ("/", Aws::FileSystem::GetDirectoryName(test8).c_str());
+
+    const char* test9 = "///";
+    EXPECT_STREQ("/", Aws::FileSystem::GetDirectoryName(test9).c_str());
+
+    const char* test10 = "///d///";
+    EXPECT_STREQ("/", Aws::FileSystem::GetDirectoryName(test10).c_str());
+#endif
+
+    const char* test11 = "";
+    EXPECT_STREQ(".", Aws::FileSystem::GetDirectoryName(test11).c_str());
+
+    const char* test12 = ".";
+    EXPECT_STREQ(".", Aws::FileSystem::GetDirectoryName(test12).c_str());
+
+    const char* test13 = "..";
+    EXPECT_STREQ(".", Aws::FileSystem::GetDirectoryName(test13).c_str());
+}
+
 class DirectoryTreeTest : public ::testing::Test
 {
 public:
