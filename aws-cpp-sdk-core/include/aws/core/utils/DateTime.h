@@ -26,7 +26,8 @@ namespace Aws
         enum class DateFormat
         {
             RFC822, //for http headers
-            ISO_8601 //for query and xml payloads
+            ISO_8601, //for query and xml payloads
+            AutoDetect
         };
 
         enum class Month

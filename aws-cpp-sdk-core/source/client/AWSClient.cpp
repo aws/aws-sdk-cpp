@@ -169,11 +169,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             DateTime serverTime;
             if (awsDateHeaderIter != headers.end())
             {
-                serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::RFC822);
+                serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::AutoDetect);
             }
             else if (dateHeaderIter != headers.end())
             {
-                serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::RFC822);
+                serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
             }
             else
             {

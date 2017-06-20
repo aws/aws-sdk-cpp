@@ -1123,6 +1123,29 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         timeStruct = parser.GetParsedTimestamp();
         break;      
     }
+    case DateFormat::AutoDetect:
+    {
+        RFC822DateParser rfcParser(timestamp);
+        rfcParser.Parse();
+        if(rfcParser.WasParseSuccessful())
+        {
+            m_valid = true;
+            isUtc = rfcParser.ShouldIAssumeThisIsUTC();
+            timeStruct = rfcParser.GetParsedTimestamp();
+            break;
+        }
+        ISO_8601DateParser isoParser(timestamp);
+        isoParser.Parse();
+        if (isoParser.WasParseSuccessful())
+        {
+            m_valid = true;
+            isUtc = isoParser.ShouldIAssumeThisIsUTC();
+            timeStruct = isoParser.GetParsedTimestamp();
+            break;
+        }
+        m_valid = false;
+        break;
+    }
     default:       
         assert(0);
     }    

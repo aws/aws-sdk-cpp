@@ -136,3 +136,20 @@ TEST(DateTimeTest, TestMillisParsing)
     ASSERT_EQ(gmtDateMillis, gmtDate.Millis());
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
+
+TEST(DateTimeTest, TestFormatAutoDetect)
+{
+    const char rfcDate[] = "Wed, 02 Oct 2002 08:05:09 GMT";  
+    DateTime parsedRFCDate(rfcDate, DateFormat::AutoDetect);
+    ASSERT_TRUE(parsedRFCDate.WasParseSuccessful());
+    ASSERT_EQ(DateTime(rfcDate, DateFormat::RFC822), parsedRFCDate);
+
+    const char isoDate[] = "2002-10-02T08:05:09Z";
+    DateTime parsedISODate(isoDate, DateFormat::AutoDetect);
+    ASSERT_TRUE(parsedISODate.WasParseSuccessful());
+    ASSERT_EQ(DateTime(isoDate, DateFormat::ISO_8601), parsedISODate);
+
+    const char badDate[] = "2002 10,02T08 05 09G";
+    DateTime parsedBadDate(badDate, DateFormat::AutoDetect);
+    ASSERT_FALSE(parsedBadDate.WasParseSuccessful());
+}
