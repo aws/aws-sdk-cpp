@@ -119,5 +119,9 @@ setup_install()
 
 install (FILES ${ALL_TEXT_TO_SPEECH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/text-to-speech)
 
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
+
 do_packaging()
 

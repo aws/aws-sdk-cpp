@@ -39,13 +39,9 @@ if(BUILD_ONLY)
     LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)  
 else()
     set(TEMP_SDK_BUILD_LIST ${GENERATED_SERVICE_LIST})
-    list(APPEND TEMP_SDK_BUILD_LIST "access-management")
-    list(APPEND TEMP_SDK_BUILD_LIST "identity-management")
-    list(APPEND TEMP_SDK_BUILD_LIST "queues")
-    list(APPEND TEMP_SDK_BUILD_LIST "transfer")
-    list(APPEND TEMP_SDK_BUILD_LIST "s3-encryption")
     list(APPEND TEMP_SDK_BUILD_LIST "core")
-    list(APPEND TEMP_SDK_BUILD_LIST "text-to-speech")
+
+    list(APPEND TEMP_SDK_BUILD_LIST ${HIGH_LEVEL_SDK_LIST})
 
     set(SDK_BUILD_LIST ${TEMP_SDK_BUILD_LIST})
 
@@ -78,7 +74,6 @@ endif()
 
 if(REGENERATE_CLIENTS)
     message(STATUS "Regenerating clients that have been selected for build.")
-    
     set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
     list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
     LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
@@ -101,6 +96,25 @@ if(REGENERATE_CLIENTS)
            message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
         endif()
     endforeach()
+
+    foreach(SDK IN LISTS HIGH_LEVEL_SDK_LIST)
+        if (BUILD_ONLY) 
+            list(FIND BUILD_ONLY ${SDK} INDEX)
+            # when BUILD_ONLY is set only update high level sdks specified in it.
+            if (INDEX GREATER_EQUAL 0)
+                execute_process(
+                    COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                )
+            endif()
+        else()
+            execute_process(
+                COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            )
+        endif()
+    endforeach()
+
 endif()
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.

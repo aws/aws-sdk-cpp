@@ -51,5 +51,9 @@ setup_install()
 install (FILES ${AWS_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identity-management)
 install (FILES ${AWS_IDENTITY_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identity-management/auth)
 
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
+
 do_packaging()
 

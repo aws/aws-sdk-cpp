@@ -45,4 +45,8 @@ setup_install()
 
 install (FILES ${AWS_ACCESS_MANAGEMENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/access-management)
 
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
+
 do_packaging()
