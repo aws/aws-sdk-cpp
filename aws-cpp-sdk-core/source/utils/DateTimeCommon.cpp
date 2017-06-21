@@ -619,7 +619,13 @@ public:
                         stateStartIndex = index + 1;
                         m_parsedTimestamp.tm_year -= 1900;
                     }
-                    else if(isdigit(c))
+                    else if (isspace(c) && index - stateStartIndex == 2)
+                    {
+                        m_state = 5;
+                        stateStartIndex = index + 1;
+                        m_parsedTimestamp.tm_year += 2000 - 1900;
+                    }
+                    else if (isdigit(c))
                     {
                         m_parsedTimestamp.tm_year = m_parsedTimestamp.tm_year * 10 + (c - '0');
                     }

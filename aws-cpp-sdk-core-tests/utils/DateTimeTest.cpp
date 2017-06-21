@@ -35,6 +35,7 @@ TEST(DateTimeTest, TestDefault)
 TEST(DateTimeTest, TestRFC822Parsing)
 {
     const char* gmtDateStr = "Wed, 02 Oct 2002 08:05:09 GMT";  
+    const char* twoDigitYearVersion = "Wed, 02 Oct 02 08:05:09 GMT";  
     DateTime gmtDate(gmtDateStr, DateFormat::RFC822);    
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -45,6 +46,8 @@ TEST(DateTimeTest, TestRFC822Parsing)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::RFC822));    
+
+    ASSERT_EQ(gmtDate, DateTime(twoDigitYearVersion, DateFormat::RFC822));
 }
 
 TEST(DateTimeTest, TestRFC822Parsing_DOS_Stopped)
