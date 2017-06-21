@@ -126,20 +126,20 @@ namespace Aws
 
             HashResult MD5OpenSSLImpl::Calculate(const Aws::String& str)
             {
-                MD5_CTX md5;
-                MD5_Init(&md5);
-                MD5_Update(&md5, str.c_str(), str.size());
+                auto ctx = EVP_MD_CTX_create();
+                EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
+                EVP_DigestUpdate(ctx, str.c_str(), str.size());
 
-                ByteBuffer hash(MD5_DIGEST_LENGTH);
-                MD5_Final(hash.GetUnderlyingData(), &md5);
+                ByteBuffer hash(EVP_MD_size(EVP_md5()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
                 return HashResult(std::move(hash));
             }
 
             HashResult MD5OpenSSLImpl::Calculate(Aws::IStream& stream)
             {
-                MD5_CTX md5;
-                MD5_Init(&md5);
+                auto ctx = EVP_MD_CTX_create();
+                EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
                 auto currentPos = stream.tellg();
                 if (currentPos == -1)
@@ -157,35 +157,35 @@ namespace Aws
 
                     if (bytesRead > 0)
                     {
-                        MD5_Update(&md5, streamBuffer, static_cast<size_t>(bytesRead));
+                        EVP_DigestUpdate(ctx, streamBuffer, static_cast<size_t>(bytesRead));
                     }
                 }
 
                 stream.clear();
                 stream.seekg(currentPos, stream.beg);
 
-                ByteBuffer hash(MD5_DIGEST_LENGTH);
-                MD5_Final(hash.GetUnderlyingData(), &md5);
+                ByteBuffer hash(EVP_MD_size(EVP_md5()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
                 return HashResult(std::move(hash));
             }
 
             HashResult Sha256OpenSSLImpl::Calculate(const Aws::String& str)
             {
-                SHA256_CTX sha256;
-                SHA256_Init(&sha256);
-                SHA256_Update(&sha256, str.c_str(), str.size());
+                auto ctx = EVP_MD_CTX_create();
+                EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
+                EVP_DigestUpdate(ctx, str.c_str(), str.size());
 
-                ByteBuffer hash(SHA256_DIGEST_LENGTH);
-                SHA256_Final(hash.GetUnderlyingData(), &sha256);
+                ByteBuffer hash(EVP_MD_size(EVP_sha256()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
                 return HashResult(std::move(hash));
             }
 
             HashResult Sha256OpenSSLImpl::Calculate(Aws::IStream& stream)
             {
-                SHA256_CTX sha256;
-                SHA256_Init(&sha256);
+                auto ctx = EVP_MD_CTX_create();
+                EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
 
                 auto currentPos = stream.tellg();
                 if (currentPos == -1)
@@ -204,15 +204,15 @@ namespace Aws
 
                     if (bytesRead > 0)
                     {
-                        SHA256_Update(&sha256, streamBuffer, static_cast<size_t>(bytesRead));
+                        EVP_DigestUpdate(ctx, streamBuffer, static_cast<size_t>(bytesRead));
                     }
                 }
 
                 stream.clear();
                 stream.seekg(currentPos, stream.beg);
 
-                ByteBuffer hash(SHA256_DIGEST_LENGTH);
-                SHA256_Final(hash.GetUnderlyingData(), &sha256);
+                ByteBuffer hash(EVP_MD_size(EVP_sha256()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
                 return HashResult(std::move(hash));
             }
