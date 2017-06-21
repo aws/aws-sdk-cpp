@@ -192,6 +192,8 @@ AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(
             return AWSError<CoreErrors>(CoreErrors::THROTTLING, true/*retry*/);
         case HttpResponseCode::SERVICE_UNAVAILABLE:
             return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true/*retry*/);
+        case HttpResponseCode::REQUEST_TIMEOUT:
+            return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true/*retry*/);
         default:
             int codeValue = static_cast<int>(code);
             return AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);
