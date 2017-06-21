@@ -32,7 +32,9 @@ ActivatedRule::ActivatedRule() :
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_type(WafRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ActivatedRule::ActivatedRule(const JsonValue& jsonValue) :
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_type(WafRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,13 @@ ActivatedRule& ActivatedRule::operator =(const JsonValue& jsonValue)
     m_actionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = WafRuleTypeMapper::GetWafRuleTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +102,11 @@ JsonValue ActivatedRule::Jsonize() const
   {
    payload.WithObject("Action", m_action.Jsonize());
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", WafRuleTypeMapper::GetNameForWafRuleType(m_type));
   }
 
   return payload;

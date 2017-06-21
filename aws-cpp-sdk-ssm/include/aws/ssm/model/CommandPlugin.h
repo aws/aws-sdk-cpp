@@ -561,37 +561,51 @@ namespace Model
     inline CommandPlugin& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the region where the output is stored in Amazon S3.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 

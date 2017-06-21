@@ -17,6 +17,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf/model/WafAction.h>
+#include <aws/waf/model/WafRuleType.h>
 #include <utility>
 
 namespace Aws
@@ -217,6 +218,56 @@ namespace Model
      */
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
+     * REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     * request will fail because the request tries to add a REGULAR rule with the
+     * specified ID, which does not exist. </p>
+     */
+    inline const WafRuleType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
+     * REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     * request will fail because the request tries to add a REGULAR rule with the
+     * specified ID, which does not exist. </p>
+     */
+    inline void SetType(const WafRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
+     * REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     * request will fail because the request tries to add a REGULAR rule with the
+     * specified ID, which does not exist. </p>
+     */
+    inline void SetType(WafRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
+     * REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     * request will fail because the request tries to add a REGULAR rule with the
+     * specified ID, which does not exist. </p>
+     */
+    inline ActivatedRule& WithType(const WafRuleType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
+     * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
+     * REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     * request will fail because the request tries to add a REGULAR rule with the
+     * specified ID, which does not exist. </p>
+     */
+    inline ActivatedRule& WithType(WafRuleType&& value) { SetType(std::move(value)); return *this;}
+
   private:
     int m_priority;
     bool m_priorityHasBeenSet;
@@ -224,6 +275,8 @@ namespace Model
     bool m_ruleIdHasBeenSet;
     WafAction m_action;
     bool m_actionHasBeenSet;
+    WafRuleType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

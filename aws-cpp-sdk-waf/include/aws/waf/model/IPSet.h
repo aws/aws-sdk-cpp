@@ -179,84 +179,63 @@ namespace Model
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline const Aws::Vector<IPSetDescriptor>& GetIPSetDescriptors() const{ return m_iPSetDescriptors; }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline void SetIPSetDescriptors(const Aws::Vector<IPSetDescriptor>& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = value; }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline void SetIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = std::move(value); }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline IPSet& WithIPSetDescriptors(const Aws::Vector<IPSetDescriptor>& value) { SetIPSetDescriptors(value); return *this;}
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline IPSet& WithIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { SetIPSetDescriptors(std::move(value)); return *this;}
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline IPSet& AddIPSetDescriptors(const IPSetDescriptor& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(value); return *this; }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from. If the
-     * <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:</p> <ul> <li>
-     * <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
-     * balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if
-     * the viewer did use an HTTP proxy or a load balancer to send the request</p>
-     * </li> </ul>
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline IPSet& AddIPSetDescriptors(IPSetDescriptor&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(std::move(value)); return *this; }
 

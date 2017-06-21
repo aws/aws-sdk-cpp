@@ -32,6 +32,7 @@ static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidA
 static const int DOES_NOT_EXIST_HASH = HashingUtils::HashString("DoesNotExistException");
 static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidCommandId");
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
+static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 static const int CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomSchemaCountLimitExceededException");
 static const int INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH = HashingUtils::HashString("InvalidAutomationExecutionParametersException");
@@ -63,15 +64,19 @@ static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("Docume
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
 static const int ITEM_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemSizeLimitExceededException");
+static const int PARAMETER_PATTERN_MISMATCH_HASH = HashingUtils::HashString("ParameterPatternMismatchException");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter");
 static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterNotFound");
 static const int AUTOMATION_DEFINITION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionNotFoundException");
 static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
+static const int INVALID_ALLOWED_PATTERN_HASH = HashingUtils::HashString("InvalidAllowedPatternException");
 static const int INVOCATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InvocationDoesNotExist");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int INVALID_ACTIVATION_HASH = HashingUtils::HashString("InvalidActivation");
+static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HierarchyLevelLimitExceededException");
 static const int UNSUPPORTED_PARAMETER_TYPE_HASH = HashingUtils::HashString("UnsupportedParameterType");
 static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
+static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
@@ -114,6 +119,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SCHEDULE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
+  }
+  else if (hashCode == HIERARCHY_TYPE_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_TYPE_MISMATCH), false);
   }
   else if (hashCode == INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH)
   {
@@ -239,6 +248,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == PARAMETER_PATTERN_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_PATTERN_MISMATCH), false);
+  }
   else if (hashCode == INVALID_FILTER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
@@ -255,6 +268,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_VERSION_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == INVALID_ALLOWED_PATTERN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), false);
+  }
   else if (hashCode == INVOCATION_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVOCATION_DOES_NOT_EXIST), false);
@@ -267,6 +284,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), false);
   }
+  else if (hashCode == HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_LEVEL_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == UNSUPPORTED_PARAMETER_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), false);
@@ -274,6 +295,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_KEY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+  }
+  else if (hashCode == INVALID_FILTER_OPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), false);
   }
   else if (hashCode == PARAMETER_ALREADY_EXISTS_HASH)
   {

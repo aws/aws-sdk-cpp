@@ -129,8 +129,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<WebACLUpdate>& GetUpdates() const{ return m_updates; }
 
@@ -140,8 +141,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<WebACLUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
@@ -151,8 +153,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<WebACLUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
@@ -162,8 +165,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline UpdateWebACLRequest& WithUpdates(const Aws::Vector<WebACLUpdate>& value) { SetUpdates(value); return *this;}
 
@@ -173,8 +177,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline UpdateWebACLRequest& WithUpdates(Aws::Vector<WebACLUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
@@ -184,8 +189,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline UpdateWebACLRequest& AddUpdates(const WebACLUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
@@ -195,8 +201,9 @@ namespace Model
      * <a>WebACL</a>. For more information, see the applicable data types:</p> <ul>
      * <li> <p> <a>WebACLUpdate</a>: Contains <code>Action</code> and
      * <code>ActivatedRule</code> </p> </li> <li> <p> <a>ActivatedRule</a>: Contains
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-     * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
+     * <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code> </p> </li> <li> <p> <a>WafAction</a>: Contains
+     * <code>Type</code> </p> </li> </ul>
      */
     inline UpdateWebACLRequest& AddUpdates(WebACLUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 

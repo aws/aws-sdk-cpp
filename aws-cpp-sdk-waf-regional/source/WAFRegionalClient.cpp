@@ -30,6 +30,7 @@
 #include <aws/waf-regional/model/AssociateWebACLRequest.h>
 #include <aws/waf-regional/model/CreateByteMatchSetRequest.h>
 #include <aws/waf-regional/model/CreateIPSetRequest.h>
+#include <aws/waf-regional/model/CreateRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/CreateRuleRequest.h>
 #include <aws/waf-regional/model/CreateSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/CreateSqlInjectionMatchSetRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/waf-regional/model/CreateXssMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf-regional/model/DeleteIPSetRequest.h>
+#include <aws/waf-regional/model/DeleteRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/DeleteRuleRequest.h>
 #include <aws/waf-regional/model/DeleteSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/DeleteSqlInjectionMatchSetRequest.h>
@@ -47,6 +49,8 @@
 #include <aws/waf-regional/model/GetChangeTokenRequest.h>
 #include <aws/waf-regional/model/GetChangeTokenStatusRequest.h>
 #include <aws/waf-regional/model/GetIPSetRequest.h>
+#include <aws/waf-regional/model/GetRateBasedRuleRequest.h>
+#include <aws/waf-regional/model/GetRateBasedRuleManagedKeysRequest.h>
 #include <aws/waf-regional/model/GetRuleRequest.h>
 #include <aws/waf-regional/model/GetSampledRequestsRequest.h>
 #include <aws/waf-regional/model/GetSizeConstraintSetRequest.h>
@@ -56,6 +60,7 @@
 #include <aws/waf-regional/model/GetXssMatchSetRequest.h>
 #include <aws/waf-regional/model/ListByteMatchSetsRequest.h>
 #include <aws/waf-regional/model/ListIPSetsRequest.h>
+#include <aws/waf-regional/model/ListRateBasedRulesRequest.h>
 #include <aws/waf-regional/model/ListResourcesForWebACLRequest.h>
 #include <aws/waf-regional/model/ListRulesRequest.h>
 #include <aws/waf-regional/model/ListSizeConstraintSetsRequest.h>
@@ -64,6 +69,7 @@
 #include <aws/waf-regional/model/ListXssMatchSetsRequest.h>
 #include <aws/waf-regional/model/UpdateByteMatchSetRequest.h>
 #include <aws/waf-regional/model/UpdateIPSetRequest.h>
+#include <aws/waf-regional/model/UpdateRateBasedRuleRequest.h>
 #include <aws/waf-regional/model/UpdateRuleRequest.h>
 #include <aws/waf-regional/model/UpdateSizeConstraintSetRequest.h>
 #include <aws/waf-regional/model/UpdateSqlInjectionMatchSetRequest.h>
@@ -237,6 +243,41 @@ void WAFRegionalClient::CreateIPSetAsync(const CreateIPSetRequest& request, cons
 void WAFRegionalClient::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateIPSet(request), context);
+}
+
+CreateRateBasedRuleOutcome WAFRegionalClient::CreateRateBasedRule(const CreateRateBasedRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateRateBasedRuleOutcome(CreateRateBasedRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRateBasedRuleOutcome(outcome.GetError());
+  }
+}
+
+CreateRateBasedRuleOutcomeCallable WAFRegionalClient::CreateRateBasedRuleCallable(const CreateRateBasedRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRateBasedRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRateBasedRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::CreateRateBasedRuleAsync(const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRateBasedRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::CreateRateBasedRuleAsyncHelper(const CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRateBasedRule(request), context);
 }
 
 CreateRuleOutcome WAFRegionalClient::CreateRule(const CreateRuleRequest& request) const
@@ -482,6 +523,41 @@ void WAFRegionalClient::DeleteIPSetAsync(const DeleteIPSetRequest& request, cons
 void WAFRegionalClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteIPSet(request), context);
+}
+
+DeleteRateBasedRuleOutcome WAFRegionalClient::DeleteRateBasedRule(const DeleteRateBasedRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRateBasedRuleOutcome(DeleteRateBasedRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRateBasedRuleOutcome(outcome.GetError());
+  }
+}
+
+DeleteRateBasedRuleOutcomeCallable WAFRegionalClient::DeleteRateBasedRuleCallable(const DeleteRateBasedRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRateBasedRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRateBasedRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::DeleteRateBasedRuleAsync(const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRateBasedRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::DeleteRateBasedRuleAsyncHelper(const DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRateBasedRule(request), context);
 }
 
 DeleteRuleOutcome WAFRegionalClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -834,6 +910,76 @@ void WAFRegionalClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, cons
   handler(this, request, GetIPSet(request), context);
 }
 
+GetRateBasedRuleOutcome WAFRegionalClient::GetRateBasedRule(const GetRateBasedRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetRateBasedRuleOutcome(GetRateBasedRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRateBasedRuleOutcome(outcome.GetError());
+  }
+}
+
+GetRateBasedRuleOutcomeCallable WAFRegionalClient::GetRateBasedRuleCallable(const GetRateBasedRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRateBasedRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRateBasedRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::GetRateBasedRuleAsync(const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRateBasedRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::GetRateBasedRuleAsyncHelper(const GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRateBasedRule(request), context);
+}
+
+GetRateBasedRuleManagedKeysOutcome WAFRegionalClient::GetRateBasedRuleManagedKeys(const GetRateBasedRuleManagedKeysRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetRateBasedRuleManagedKeysOutcome(GetRateBasedRuleManagedKeysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRateBasedRuleManagedKeysOutcome(outcome.GetError());
+  }
+}
+
+GetRateBasedRuleManagedKeysOutcomeCallable WAFRegionalClient::GetRateBasedRuleManagedKeysCallable(const GetRateBasedRuleManagedKeysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRateBasedRuleManagedKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRateBasedRuleManagedKeys(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::GetRateBasedRuleManagedKeysAsync(const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRateBasedRuleManagedKeysAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::GetRateBasedRuleManagedKeysAsyncHelper(const GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRateBasedRuleManagedKeys(request), context);
+}
+
 GetRuleOutcome WAFRegionalClient::GetRule(const GetRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1149,6 +1295,41 @@ void WAFRegionalClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, 
   handler(this, request, ListIPSets(request), context);
 }
 
+ListRateBasedRulesOutcome WAFRegionalClient::ListRateBasedRules(const ListRateBasedRulesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListRateBasedRulesOutcome(ListRateBasedRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRateBasedRulesOutcome(outcome.GetError());
+  }
+}
+
+ListRateBasedRulesOutcomeCallable WAFRegionalClient::ListRateBasedRulesCallable(const ListRateBasedRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRateBasedRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRateBasedRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::ListRateBasedRulesAsync(const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRateBasedRulesAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::ListRateBasedRulesAsyncHelper(const ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRateBasedRules(request), context);
+}
+
 ListResourcesForWebACLOutcome WAFRegionalClient::ListResourcesForWebACL(const ListResourcesForWebACLRequest& request) const
 {
   Aws::StringStream ss;
@@ -1427,6 +1608,41 @@ void WAFRegionalClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, cons
 void WAFRegionalClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIPSet(request), context);
+}
+
+UpdateRateBasedRuleOutcome WAFRegionalClient::UpdateRateBasedRule(const UpdateRateBasedRuleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRateBasedRuleOutcome(UpdateRateBasedRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRateBasedRuleOutcome(outcome.GetError());
+  }
+}
+
+UpdateRateBasedRuleOutcomeCallable WAFRegionalClient::UpdateRateBasedRuleCallable(const UpdateRateBasedRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRateBasedRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRateBasedRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFRegionalClient::UpdateRateBasedRuleAsync(const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRateBasedRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WAFRegionalClient::UpdateRateBasedRuleAsyncHelper(const UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRateBasedRule(request), context);
 }
 
 UpdateRuleOutcome WAFRegionalClient::UpdateRule(const UpdateRuleRequest& request) const

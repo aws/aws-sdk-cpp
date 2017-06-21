@@ -271,14 +271,17 @@ namespace Model
      * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When
      * creating a group of weighted, latency, geolocation, or failover resource record
      * sets, specify the same value for all of the resource record sets in the
-     * group.</p> <note> <p>SPF records were formerly used to verify the identity of
-     * the sender of email messages. However, we no longer recommend that you create
-     * resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * group.</p> <p>Valid values for multivalue answer resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> |
+     * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <note> <p>SPF records were formerly used to verify the identity of the sender of
+     * email messages. However, we no longer recommend that you create resource record
+     * sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
@@ -288,9 +291,9 @@ namespace Model
      * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
      * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
      * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set for
-     * which you're creating the alias. Specify any value except <code>NS</code> or
-     * <code>SOA</code>.</p> </li> </ul>
+     * set in this hosted zone:</b> Specify the type of the resource record set that
+     * you're creating the alias for. All values are supported except <code>NS</code>
+     * and <code>SOA</code>.</p> </li> </ul>
      */
     inline const RRType& GetType() const{ return m_type; }
 
@@ -308,14 +311,17 @@ namespace Model
      * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When
      * creating a group of weighted, latency, geolocation, or failover resource record
      * sets, specify the same value for all of the resource record sets in the
-     * group.</p> <note> <p>SPF records were formerly used to verify the identity of
-     * the sender of email messages. However, we no longer recommend that you create
-     * resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * group.</p> <p>Valid values for multivalue answer resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> |
+     * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <note> <p>SPF records were formerly used to verify the identity of the sender of
+     * email messages. However, we no longer recommend that you create resource record
+     * sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
@@ -325,9 +331,9 @@ namespace Model
      * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
      * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
      * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set for
-     * which you're creating the alias. Specify any value except <code>NS</code> or
-     * <code>SOA</code>.</p> </li> </ul>
+     * set in this hosted zone:</b> Specify the type of the resource record set that
+     * you're creating the alias for. All values are supported except <code>NS</code>
+     * and <code>SOA</code>.</p> </li> </ul>
      */
     inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -345,14 +351,17 @@ namespace Model
      * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When
      * creating a group of weighted, latency, geolocation, or failover resource record
      * sets, specify the same value for all of the resource record sets in the
-     * group.</p> <note> <p>SPF records were formerly used to verify the identity of
-     * the sender of email messages. However, we no longer recommend that you create
-     * resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * group.</p> <p>Valid values for multivalue answer resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> |
+     * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <note> <p>SPF records were formerly used to verify the identity of the sender of
+     * email messages. However, we no longer recommend that you create resource record
+     * sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
@@ -362,9 +371,9 @@ namespace Model
      * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
      * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
      * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set for
-     * which you're creating the alias. Specify any value except <code>NS</code> or
-     * <code>SOA</code>.</p> </li> </ul>
+     * set in this hosted zone:</b> Specify the type of the resource record set that
+     * you're creating the alias for. All values are supported except <code>NS</code>
+     * and <code>SOA</code>.</p> </li> </ul>
      */
     inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -382,14 +391,17 @@ namespace Model
      * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When
      * creating a group of weighted, latency, geolocation, or failover resource record
      * sets, specify the same value for all of the resource record sets in the
-     * group.</p> <note> <p>SPF records were formerly used to verify the identity of
-     * the sender of email messages. However, we no longer recommend that you create
-     * resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * group.</p> <p>Valid values for multivalue answer resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> |
+     * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <note> <p>SPF records were formerly used to verify the identity of the sender of
+     * email messages. However, we no longer recommend that you create resource record
+     * sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
@@ -399,9 +411,9 @@ namespace Model
      * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
      * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
      * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set for
-     * which you're creating the alias. Specify any value except <code>NS</code> or
-     * <code>SOA</code>.</p> </li> </ul>
+     * set in this hosted zone:</b> Specify the type of the resource record set that
+     * you're creating the alias for. All values are supported except <code>NS</code>
+     * and <code>SOA</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithType(const RRType& value) { SetType(value); return *this;}
 
@@ -419,14 +431,17 @@ namespace Model
      * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When
      * creating a group of weighted, latency, geolocation, or failover resource record
      * sets, specify the same value for all of the resource record sets in the
-     * group.</p> <note> <p>SPF records were formerly used to verify the identity of
-     * the sender of email messages. However, we no longer recommend that you create
-     * resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * group.</p> <p>Valid values for multivalue answer resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> |
+     * <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
+     * <note> <p>SPF records were formerly used to verify the identity of the sender of
+     * email messages. However, we no longer recommend that you create resource record
+     * sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
@@ -436,9 +451,9 @@ namespace Model
      * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
      * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
      * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set for
-     * which you're creating the alias. Specify any value except <code>NS</code> or
-     * <code>SOA</code>.</p> </li> </ul>
+     * set in this hosted zone:</b> Specify the type of the resource record set that
+     * you're creating the alias for. All values are supported except <code>NS</code>
+     * and <code>SOA</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
@@ -1073,59 +1088,125 @@ namespace Model
     inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(std::move(value)); return *this;}
 
     /**
+     * <p> <i>Multivalue answer resource record sets only</i>: To route traffic
+     * approximately randomly to multiple resources, such as web servers, create one
+     * multivalue answer record for each resource and specify <code>true</code> for
+     * <code>MultiValueAnswer</code>. Note the following:</p> <ul> <li> <p>If you
+     * associate a health check with a multivalue answer resource record set, Amazon
+     * Route 53 responds to DNS queries with the corresponding IP address only when the
+     * health check is healthy.</p> </li> <li> <p>If you don't associate a health check
+     * with a multivalue answer record, Amazon Route 53 always considers the record to
+     * be healthy.</p> </li> <li> <p>Amazon Route 53 responds to DNS queries with up to
+     * eight healthy records; if you have eight or fewer healthy records, Amazon Route
+     * 53 responds to all DNS queries with all the healthy records.</p> </li> <li>
+     * <p>If you have more than eight healthy records, Amazon Route 53 responds to
+     * different DNS resolvers with different combinations of healthy records.</p>
+     * </li> <li> <p>When all records are unhealthy, Amazon Route 53 responds to DNS
+     * queries with up to eight unhealthy records.</p> </li> <li> <p>If a resource
+     * becomes unavailable after a resolver caches a response, client software
+     * typically tries another of the IP addresses in the response.</p> </li> </ul>
+     * <p>You can't create multivalue answer alias records.</p>
+     */
+    inline bool GetMultiValueAnswer() const{ return m_multiValueAnswer; }
+
+    /**
+     * <p> <i>Multivalue answer resource record sets only</i>: To route traffic
+     * approximately randomly to multiple resources, such as web servers, create one
+     * multivalue answer record for each resource and specify <code>true</code> for
+     * <code>MultiValueAnswer</code>. Note the following:</p> <ul> <li> <p>If you
+     * associate a health check with a multivalue answer resource record set, Amazon
+     * Route 53 responds to DNS queries with the corresponding IP address only when the
+     * health check is healthy.</p> </li> <li> <p>If you don't associate a health check
+     * with a multivalue answer record, Amazon Route 53 always considers the record to
+     * be healthy.</p> </li> <li> <p>Amazon Route 53 responds to DNS queries with up to
+     * eight healthy records; if you have eight or fewer healthy records, Amazon Route
+     * 53 responds to all DNS queries with all the healthy records.</p> </li> <li>
+     * <p>If you have more than eight healthy records, Amazon Route 53 responds to
+     * different DNS resolvers with different combinations of healthy records.</p>
+     * </li> <li> <p>When all records are unhealthy, Amazon Route 53 responds to DNS
+     * queries with up to eight unhealthy records.</p> </li> <li> <p>If a resource
+     * becomes unavailable after a resolver caches a response, client software
+     * typically tries another of the IP addresses in the response.</p> </li> </ul>
+     * <p>You can't create multivalue answer alias records.</p>
+     */
+    inline void SetMultiValueAnswer(bool value) { m_multiValueAnswerHasBeenSet = true; m_multiValueAnswer = value; }
+
+    /**
+     * <p> <i>Multivalue answer resource record sets only</i>: To route traffic
+     * approximately randomly to multiple resources, such as web servers, create one
+     * multivalue answer record for each resource and specify <code>true</code> for
+     * <code>MultiValueAnswer</code>. Note the following:</p> <ul> <li> <p>If you
+     * associate a health check with a multivalue answer resource record set, Amazon
+     * Route 53 responds to DNS queries with the corresponding IP address only when the
+     * health check is healthy.</p> </li> <li> <p>If you don't associate a health check
+     * with a multivalue answer record, Amazon Route 53 always considers the record to
+     * be healthy.</p> </li> <li> <p>Amazon Route 53 responds to DNS queries with up to
+     * eight healthy records; if you have eight or fewer healthy records, Amazon Route
+     * 53 responds to all DNS queries with all the healthy records.</p> </li> <li>
+     * <p>If you have more than eight healthy records, Amazon Route 53 responds to
+     * different DNS resolvers with different combinations of healthy records.</p>
+     * </li> <li> <p>When all records are unhealthy, Amazon Route 53 responds to DNS
+     * queries with up to eight unhealthy records.</p> </li> <li> <p>If a resource
+     * becomes unavailable after a resolver caches a response, client software
+     * typically tries another of the IP addresses in the response.</p> </li> </ul>
+     * <p>You can't create multivalue answer alias records.</p>
+     */
+    inline ResourceRecordSet& WithMultiValueAnswer(bool value) { SetMultiValueAnswer(value); return *this;}
+
+    /**
      * <p>The resource record cache time to live (TTL), in seconds. Note the
-     * following:</p> <ul> <li> <p>If you're creating an alias resource record set,
-     * omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
-     * the alias target. </p> </li> <li> <p>If you're associating this resource record
-     * set with a health check (if you're adding a <code>HealthCheckId</code> element),
-     * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
-     * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted resource record sets must have
-     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
-     * resource record sets includes one or more weighted alias resource record sets
-     * for which the alias target is an ELB load balancer, we recommend that you
-     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
-     * resource record sets that have the same name and type. Values other than 60
-     * seconds (the TTL for load balancers) will change the effect of the values that
-     * you specify for <code>Weight</code>.</p> </li> </ul>
+     * following:</p> <ul> <li> <p>If you're creating or updating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </p> </li> <li> <p>If you're associating
+     * this resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</p> </li> <li> <p>All of the resource record sets in a group of
+     * weighted resource record sets must have the same value for <code>TTL</code>.</p>
+     * </li> <li> <p>If a group of weighted resource record sets includes one or more
+     * weighted alias resource record sets for which the alias target is an ELB load
+     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
+     * of the non-alias weighted resource record sets that have the same name and type.
+     * Values other than 60 seconds (the TTL for load balancers) will change the effect
+     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline long long GetTTL() const{ return m_tTL; }
 
     /**
      * <p>The resource record cache time to live (TTL), in seconds. Note the
-     * following:</p> <ul> <li> <p>If you're creating an alias resource record set,
-     * omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
-     * the alias target. </p> </li> <li> <p>If you're associating this resource record
-     * set with a health check (if you're adding a <code>HealthCheckId</code> element),
-     * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
-     * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted resource record sets must have
-     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
-     * resource record sets includes one or more weighted alias resource record sets
-     * for which the alias target is an ELB load balancer, we recommend that you
-     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
-     * resource record sets that have the same name and type. Values other than 60
-     * seconds (the TTL for load balancers) will change the effect of the values that
-     * you specify for <code>Weight</code>.</p> </li> </ul>
+     * following:</p> <ul> <li> <p>If you're creating or updating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </p> </li> <li> <p>If you're associating
+     * this resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</p> </li> <li> <p>All of the resource record sets in a group of
+     * weighted resource record sets must have the same value for <code>TTL</code>.</p>
+     * </li> <li> <p>If a group of weighted resource record sets includes one or more
+     * weighted alias resource record sets for which the alias target is an ELB load
+     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
+     * of the non-alias weighted resource record sets that have the same name and type.
+     * Values other than 60 seconds (the TTL for load balancers) will change the effect
+     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
     /**
      * <p>The resource record cache time to live (TTL), in seconds. Note the
-     * following:</p> <ul> <li> <p>If you're creating an alias resource record set,
-     * omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
-     * the alias target. </p> </li> <li> <p>If you're associating this resource record
-     * set with a health check (if you're adding a <code>HealthCheckId</code> element),
-     * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
-     * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted resource record sets must have
-     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
-     * resource record sets includes one or more weighted alias resource record sets
-     * for which the alias target is an ELB load balancer, we recommend that you
-     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
-     * resource record sets that have the same name and type. Values other than 60
-     * seconds (the TTL for load balancers) will change the effect of the values that
-     * you specify for <code>Weight</code>.</p> </li> </ul>
+     * following:</p> <ul> <li> <p>If you're creating or updating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </p> </li> <li> <p>If you're associating
+     * this resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</p> </li> <li> <p>All of the resource record sets in a group of
+     * weighted resource record sets must have the same value for <code>TTL</code>.</p>
+     * </li> <li> <p>If a group of weighted resource record sets includes one or more
+     * weighted alias resource record sets for which the alias target is an ELB load
+     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
+     * of the non-alias weighted resource record sets that have the same name and type.
+     * Values other than 60 seconds (the TTL for load balancers) will change the effect
+     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
 
@@ -1808,6 +1889,8 @@ namespace Model
     bool m_geoLocationHasBeenSet;
     ResourceRecordSetFailover m_failover;
     bool m_failoverHasBeenSet;
+    bool m_multiValueAnswer;
+    bool m_multiValueAnswerHasBeenSet;
     long long m_tTL;
     bool m_tTLHasBeenSet;
     Aws::Vector<ResourceRecord> m_resourceRecords;

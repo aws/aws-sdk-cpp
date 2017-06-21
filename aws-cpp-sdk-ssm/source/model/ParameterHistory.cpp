@@ -36,7 +36,8 @@ ParameterHistory::ParameterHistory() :
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedUserHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_allowedPatternHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ParameterHistory::ParameterHistory(const JsonValue& jsonValue) :
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedUserHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_allowedPatternHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ ParameterHistory& ParameterHistory::operator =(const JsonValue& jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllowedPattern"))
+  {
+    m_allowedPattern = jsonValue.GetString("AllowedPattern");
+
+    m_allowedPatternHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +157,12 @@ JsonValue ParameterHistory::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("Value", m_value);
+
+  }
+
+  if(m_allowedPatternHasBeenSet)
+  {
+   payload.WithString("AllowedPattern", m_allowedPattern);
 
   }
 

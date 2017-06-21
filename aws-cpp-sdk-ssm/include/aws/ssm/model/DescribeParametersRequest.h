@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParametersFilter.h>
+#include <aws/ssm/model/ParameterStringFilter.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,41 @@ namespace Model
      * results.</p>
      */
     inline DescribeParametersRequest& AddFilters(ParametersFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline void SetParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = value; }
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline void SetParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::move(value); }
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline DescribeParametersRequest& WithParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { SetParameterFilters(value); return *this;}
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline DescribeParametersRequest& WithParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { SetParameterFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline DescribeParametersRequest& AddParameterFilters(const ParameterStringFilter& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(value); return *this; }
+
+    /**
+     * <p>Filters to limit the request results.</p>
+     */
+    inline DescribeParametersRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -146,6 +182,8 @@ namespace Model
   private:
     Aws::Vector<ParametersFilter> m_filters;
     bool m_filtersHasBeenSet;
+    Aws::Vector<ParameterStringFilter> m_parameterFilters;
+    bool m_parameterFiltersHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;

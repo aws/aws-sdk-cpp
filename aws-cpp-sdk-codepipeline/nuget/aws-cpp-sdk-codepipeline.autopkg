@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CodePipeline;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20150709.158;
+        version : 1.0.20150709.159;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CodePipeline);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0.1
+            AWSSDKCPP-Core/1.0.159
        }
     }
 

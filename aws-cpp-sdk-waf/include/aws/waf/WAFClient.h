@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf/model/CreateByteMatchSetResult.h>
 #include <aws/waf/model/CreateIPSetResult.h>
+#include <aws/waf/model/CreateRateBasedRuleResult.h>
 #include <aws/waf/model/CreateRuleResult.h>
 #include <aws/waf/model/CreateSizeConstraintSetResult.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetResult.h>
@@ -30,6 +31,7 @@
 #include <aws/waf/model/CreateXssMatchSetResult.h>
 #include <aws/waf/model/DeleteByteMatchSetResult.h>
 #include <aws/waf/model/DeleteIPSetResult.h>
+#include <aws/waf/model/DeleteRateBasedRuleResult.h>
 #include <aws/waf/model/DeleteRuleResult.h>
 #include <aws/waf/model/DeleteSizeConstraintSetResult.h>
 #include <aws/waf/model/DeleteSqlInjectionMatchSetResult.h>
@@ -39,6 +41,8 @@
 #include <aws/waf/model/GetChangeTokenResult.h>
 #include <aws/waf/model/GetChangeTokenStatusResult.h>
 #include <aws/waf/model/GetIPSetResult.h>
+#include <aws/waf/model/GetRateBasedRuleResult.h>
+#include <aws/waf/model/GetRateBasedRuleManagedKeysResult.h>
 #include <aws/waf/model/GetRuleResult.h>
 #include <aws/waf/model/GetSampledRequestsResult.h>
 #include <aws/waf/model/GetSizeConstraintSetResult.h>
@@ -47,6 +51,7 @@
 #include <aws/waf/model/GetXssMatchSetResult.h>
 #include <aws/waf/model/ListByteMatchSetsResult.h>
 #include <aws/waf/model/ListIPSetsResult.h>
+#include <aws/waf/model/ListRateBasedRulesResult.h>
 #include <aws/waf/model/ListRulesResult.h>
 #include <aws/waf/model/ListSizeConstraintSetsResult.h>
 #include <aws/waf/model/ListSqlInjectionMatchSetsResult.h>
@@ -54,6 +59,7 @@
 #include <aws/waf/model/ListXssMatchSetsResult.h>
 #include <aws/waf/model/UpdateByteMatchSetResult.h>
 #include <aws/waf/model/UpdateIPSetResult.h>
+#include <aws/waf/model/UpdateRateBasedRuleResult.h>
 #include <aws/waf/model/UpdateRuleResult.h>
 #include <aws/waf/model/UpdateSizeConstraintSetResult.h>
 #include <aws/waf/model/UpdateSqlInjectionMatchSetResult.h>
@@ -106,6 +112,7 @@ namespace Model
 {
         class CreateByteMatchSetRequest;
         class CreateIPSetRequest;
+        class CreateRateBasedRuleRequest;
         class CreateRuleRequest;
         class CreateSizeConstraintSetRequest;
         class CreateSqlInjectionMatchSetRequest;
@@ -113,6 +120,7 @@ namespace Model
         class CreateXssMatchSetRequest;
         class DeleteByteMatchSetRequest;
         class DeleteIPSetRequest;
+        class DeleteRateBasedRuleRequest;
         class DeleteRuleRequest;
         class DeleteSizeConstraintSetRequest;
         class DeleteSqlInjectionMatchSetRequest;
@@ -122,6 +130,8 @@ namespace Model
         class GetChangeTokenRequest;
         class GetChangeTokenStatusRequest;
         class GetIPSetRequest;
+        class GetRateBasedRuleRequest;
+        class GetRateBasedRuleManagedKeysRequest;
         class GetRuleRequest;
         class GetSampledRequestsRequest;
         class GetSizeConstraintSetRequest;
@@ -130,6 +140,7 @@ namespace Model
         class GetXssMatchSetRequest;
         class ListByteMatchSetsRequest;
         class ListIPSetsRequest;
+        class ListRateBasedRulesRequest;
         class ListRulesRequest;
         class ListSizeConstraintSetsRequest;
         class ListSqlInjectionMatchSetsRequest;
@@ -137,6 +148,7 @@ namespace Model
         class ListXssMatchSetsRequest;
         class UpdateByteMatchSetRequest;
         class UpdateIPSetRequest;
+        class UpdateRateBasedRuleRequest;
         class UpdateRuleRequest;
         class UpdateSizeConstraintSetRequest;
         class UpdateSqlInjectionMatchSetRequest;
@@ -145,6 +157,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CreateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<CreateIPSetResult, Aws::Client::AWSError<WAFErrors>> CreateIPSetOutcome;
+        typedef Aws::Utils::Outcome<CreateRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> CreateRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<CreateRuleResult, Aws::Client::AWSError<WAFErrors>> CreateRuleOutcome;
         typedef Aws::Utils::Outcome<CreateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> CreateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<CreateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateSqlInjectionMatchSetOutcome;
@@ -152,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFErrors>> DeleteIPSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<DeleteSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSqlInjectionMatchSetOutcome;
@@ -161,6 +175,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChangeTokenResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenOutcome;
         typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenStatusOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<WAFErrors>> GetIPSetOutcome;
+        typedef Aws::Utils::Outcome<GetRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleOutcome;
+        typedef Aws::Utils::Outcome<GetRateBasedRuleManagedKeysResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRuleResult, Aws::Client::AWSError<WAFErrors>> GetRuleOutcome;
         typedef Aws::Utils::Outcome<GetSampledRequestsResult, Aws::Client::AWSError<WAFErrors>> GetSampledRequestsOutcome;
         typedef Aws::Utils::Outcome<GetSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> GetSizeConstraintSetOutcome;
@@ -169,6 +185,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<ListByteMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListByteMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<WAFErrors>> ListIPSetsOutcome;
+        typedef Aws::Utils::Outcome<ListRateBasedRulesResult, Aws::Client::AWSError<WAFErrors>> ListRateBasedRulesOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<WAFErrors>> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListSizeConstraintSetsResult, Aws::Client::AWSError<WAFErrors>> ListSizeConstraintSetsOutcome;
         typedef Aws::Utils::Outcome<ListSqlInjectionMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListSqlInjectionMatchSetsOutcome;
@@ -176,6 +193,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListXssMatchSetsOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFErrors>> UpdateIPSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> UpdateRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateRuleResult, Aws::Client::AWSError<WAFErrors>> UpdateRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<UpdateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSqlInjectionMatchSetOutcome;
@@ -184,6 +202,7 @@ namespace Model
 
         typedef std::future<CreateByteMatchSetOutcome> CreateByteMatchSetOutcomeCallable;
         typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
+        typedef std::future<CreateRateBasedRuleOutcome> CreateRateBasedRuleOutcomeCallable;
         typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
         typedef std::future<CreateSizeConstraintSetOutcome> CreateSizeConstraintSetOutcomeCallable;
         typedef std::future<CreateSqlInjectionMatchSetOutcome> CreateSqlInjectionMatchSetOutcomeCallable;
@@ -191,6 +210,7 @@ namespace Model
         typedef std::future<CreateXssMatchSetOutcome> CreateXssMatchSetOutcomeCallable;
         typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
+        typedef std::future<DeleteRateBasedRuleOutcome> DeleteRateBasedRuleOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DeleteSizeConstraintSetOutcome> DeleteSizeConstraintSetOutcomeCallable;
         typedef std::future<DeleteSqlInjectionMatchSetOutcome> DeleteSqlInjectionMatchSetOutcomeCallable;
@@ -200,6 +220,8 @@ namespace Model
         typedef std::future<GetChangeTokenOutcome> GetChangeTokenOutcomeCallable;
         typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
+        typedef std::future<GetRateBasedRuleOutcome> GetRateBasedRuleOutcomeCallable;
+        typedef std::future<GetRateBasedRuleManagedKeysOutcome> GetRateBasedRuleManagedKeysOutcomeCallable;
         typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
         typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
         typedef std::future<GetSizeConstraintSetOutcome> GetSizeConstraintSetOutcomeCallable;
@@ -208,6 +230,7 @@ namespace Model
         typedef std::future<GetXssMatchSetOutcome> GetXssMatchSetOutcomeCallable;
         typedef std::future<ListByteMatchSetsOutcome> ListByteMatchSetsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
+        typedef std::future<ListRateBasedRulesOutcome> ListRateBasedRulesOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListSizeConstraintSetsOutcome> ListSizeConstraintSetsOutcomeCallable;
         typedef std::future<ListSqlInjectionMatchSetsOutcome> ListSqlInjectionMatchSetsOutcomeCallable;
@@ -215,6 +238,7 @@ namespace Model
         typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
+        typedef std::future<UpdateRateBasedRuleOutcome> UpdateRateBasedRuleOutcomeCallable;
         typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
         typedef std::future<UpdateSizeConstraintSetOutcome> UpdateSizeConstraintSetOutcomeCallable;
         typedef std::future<UpdateSqlInjectionMatchSetOutcome> UpdateSqlInjectionMatchSetOutcomeCallable;
@@ -226,6 +250,7 @@ namespace Model
 
     typedef std::function<void(const WAFClient*, const Model::CreateByteMatchSetRequest&, const Model::CreateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateIPSetRequest&, const Model::CreateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::CreateRateBasedRuleRequest&, const Model::CreateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateSizeConstraintSetRequest&, const Model::CreateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateSqlInjectionMatchSetRequest&, const Model::CreateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSqlInjectionMatchSetResponseReceivedHandler;
@@ -233,6 +258,7 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::CreateXssMatchSetRequest&, const Model::CreateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteRateBasedRuleRequest&, const Model::DeleteRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSizeConstraintSetRequest&, const Model::DeleteSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSqlInjectionMatchSetRequest&, const Model::DeleteSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSqlInjectionMatchSetResponseReceivedHandler;
@@ -242,6 +268,8 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenRequest&, const Model::GetChangeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleRequest&, const Model::GetRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleManagedKeysRequest&, const Model::GetRateBasedRuleManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRuleRequest&, const Model::GetRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetSampledRequestsRequest&, const Model::GetSampledRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampledRequestsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetSizeConstraintSetRequest&, const Model::GetSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSizeConstraintSetResponseReceivedHandler;
@@ -250,6 +278,7 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetXssMatchSetRequest&, const Model::GetXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListByteMatchSetsRequest&, const Model::ListByteMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByteMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListRateBasedRulesRequest&, const Model::ListRateBasedRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRateBasedRulesResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSizeConstraintSetsRequest&, const Model::ListSizeConstraintSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSizeConstraintSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSqlInjectionMatchSetsRequest&, const Model::ListSqlInjectionMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSqlInjectionMatchSetsResponseReceivedHandler;
@@ -257,6 +286,7 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::UpdateRateBasedRuleRequest&, const Model::UpdateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSizeConstraintSetRequest&, const Model::UpdateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSqlInjectionMatchSetRequest&, const Model::UpdateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSqlInjectionMatchSetResponseReceivedHandler;
@@ -454,6 +484,172 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
+         * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
+         * WAF allows from a specified IP address in a five-minute period. The
+         * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects,
+         * <code>ByteMatchSet</code> objects, and other predicates that identify the
+         * requests that you want to count or block if these requests exceed the
+         * <code>RateLimit</code>.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request not only must exceed the
+         * <code>RateLimit</code>, but it also must match all the specifications to be
+         * counted or blocked. For example, suppose you add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>An <code>IPSet</code> that matches
+         * the IP address <code>192.0.2.44/32</code> </p> </li> <li> <p>A
+         * <code>ByteMatchSet</code> that matches <code>BadBot</code> in the
+         * <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that meet the conditions in the rule. For a request to be
+         * blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+         * <code>User-Agent</code> header in the request must contain the value
+         * <code>BadBot</code>. Further, requests that match these two conditions must be
+         * received at a rate of more than 15,000 requests every five minutes. If both
+         * conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the
+         * rate drops below 15,000 for a five-minute period, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your site.</p> <p>To
+         * create and configure a <code>RateBasedRule</code>, perform the following
+         * steps:</p> <ol> <li> <p>Create and update the predicates that you want to
+         * include in the rule. For more information, see <a>CreateByteMatchSet</a>,
+         * <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRule</code> request.</p>
+         * </li> <li> <p>Submit a <code>CreateRateBasedRule</code> request.</p> </li> <li>
+         * <p>Use <code>GetChangeToken</code> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateRateBasedRule</code> request to specify the
+         * predicates that you want to include in the rule.</p> </li> <li> <p>Create and
+         * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
+         * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRateBasedRuleOutcome CreateRateBasedRule(const Model::CreateRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
+         * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
+         * WAF allows from a specified IP address in a five-minute period. The
+         * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects,
+         * <code>ByteMatchSet</code> objects, and other predicates that identify the
+         * requests that you want to count or block if these requests exceed the
+         * <code>RateLimit</code>.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request not only must exceed the
+         * <code>RateLimit</code>, but it also must match all the specifications to be
+         * counted or blocked. For example, suppose you add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>An <code>IPSet</code> that matches
+         * the IP address <code>192.0.2.44/32</code> </p> </li> <li> <p>A
+         * <code>ByteMatchSet</code> that matches <code>BadBot</code> in the
+         * <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that meet the conditions in the rule. For a request to be
+         * blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+         * <code>User-Agent</code> header in the request must contain the value
+         * <code>BadBot</code>. Further, requests that match these two conditions must be
+         * received at a rate of more than 15,000 requests every five minutes. If both
+         * conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the
+         * rate drops below 15,000 for a five-minute period, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your site.</p> <p>To
+         * create and configure a <code>RateBasedRule</code>, perform the following
+         * steps:</p> <ol> <li> <p>Create and update the predicates that you want to
+         * include in the rule. For more information, see <a>CreateByteMatchSet</a>,
+         * <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRule</code> request.</p>
+         * </li> <li> <p>Submit a <code>CreateRateBasedRule</code> request.</p> </li> <li>
+         * <p>Use <code>GetChangeToken</code> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateRateBasedRule</code> request to specify the
+         * predicates that you want to include in the rule.</p> </li> <li> <p>Create and
+         * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
+         * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRateBasedRuleOutcomeCallable CreateRateBasedRuleCallable(const Model::CreateRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
+         * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
+         * WAF allows from a specified IP address in a five-minute period. The
+         * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects,
+         * <code>ByteMatchSet</code> objects, and other predicates that identify the
+         * requests that you want to count or block if these requests exceed the
+         * <code>RateLimit</code>.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request not only must exceed the
+         * <code>RateLimit</code>, but it also must match all the specifications to be
+         * counted or blocked. For example, suppose you add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>An <code>IPSet</code> that matches
+         * the IP address <code>192.0.2.44/32</code> </p> </li> <li> <p>A
+         * <code>ByteMatchSet</code> that matches <code>BadBot</code> in the
+         * <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that meet the conditions in the rule. For a request to be
+         * blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+         * <code>User-Agent</code> header in the request must contain the value
+         * <code>BadBot</code>. Further, requests that match these two conditions must be
+         * received at a rate of more than 15,000 requests every five minutes. If both
+         * conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the
+         * rate drops below 15,000 for a five-minute period, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your site.</p> <p>To
+         * create and configure a <code>RateBasedRule</code>, perform the following
+         * steps:</p> <ol> <li> <p>Create and update the predicates that you want to
+         * include in the rule. For more information, see <a>CreateByteMatchSet</a>,
+         * <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRule</code> request.</p>
+         * </li> <li> <p>Submit a <code>CreateRateBasedRule</code> request.</p> </li> <li>
+         * <p>Use <code>GetChangeToken</code> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateRateBasedRule</code> request to specify the
+         * predicates that you want to include in the rule.</p> </li> <li> <p>Create and
+         * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
+         * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRateBasedRuleAsync(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects,
@@ -1003,6 +1199,64 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's
+         * still used in any <code>WebACL</code> objects or if it still includes any
+         * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
+         * to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.</p> <p>To
+         * permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>RateBasedRule</code> to
+         * remove predicates, if any. For more information, see
+         * <a>UpdateRateBasedRule</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRateBasedRuleOutcome DeleteRateBasedRule(const Model::DeleteRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's
+         * still used in any <code>WebACL</code> objects or if it still includes any
+         * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
+         * to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.</p> <p>To
+         * permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>RateBasedRule</code> to
+         * remove predicates, if any. For more information, see
+         * <a>UpdateRateBasedRule</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRateBasedRuleOutcomeCallable DeleteRateBasedRuleCallable(const Model::DeleteRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's
+         * still used in any <code>WebACL</code> objects or if it still includes any
+         * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
+         * to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.</p> <p>To
+         * permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>RateBasedRule</code> to
+         * remove predicates, if any. For more information, see
+         * <a>UpdateRateBasedRule</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRateBasedRule</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRateBasedRuleAsync(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes a <a>Rule</a>. You can't delete a <code>Rule</code> if
          * it's still used in any <code>WebACL</code> objects or if it still includes any
          * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
@@ -1441,6 +1695,74 @@ namespace Model
         virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code>
+         * that you included in the <code>GetRateBasedRule</code> request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRateBasedRuleOutcome GetRateBasedRule(const Model::GetRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code>
+         * that you included in the <code>GetRateBasedRule</code> request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRateBasedRuleOutcomeCallable GetRateBasedRuleCallable(const Model::GetRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code>
+         * that you included in the <code>GetRateBasedRule</code> request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRateBasedRuleAsync(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of IP addresses currently being blocked by the
+         * <a>RateBasedRule</a> that is specified by the <code>RuleId</code>. The maximum
+         * number of managed keys that will be blocked is 10,000. If more than 10,000
+         * addresses exceed the rate limit, the 10,000 addresses with the highest rates
+         * will be blocked.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRateBasedRuleManagedKeysOutcome GetRateBasedRuleManagedKeys(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
+
+        /**
+         * <p>Returns an array of IP addresses currently being blocked by the
+         * <a>RateBasedRule</a> that is specified by the <code>RuleId</code>. The maximum
+         * number of managed keys that will be blocked is 10,000. If more than 10,000
+         * addresses exceed the rate limit, the 10,000 addresses with the highest rates
+         * will be blocked.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRateBasedRuleManagedKeysOutcomeCallable GetRateBasedRuleManagedKeysCallable(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
+
+        /**
+         * <p>Returns an array of IP addresses currently being blocked by the
+         * <a>RateBasedRule</a> that is specified by the <code>RuleId</code>. The maximum
+         * number of managed keys that will be blocked is 10,000. If more than 10,000
+         * addresses exceed the rate limit, the 10,000 addresses with the highest rates
+         * will be blocked.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRateBasedRuleManagedKeysAsync(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you
          * included in the <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">AWS API
@@ -1687,6 +2009,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRateBasedRulesOutcome ListRateBasedRules(const Model::ListRateBasedRulesRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRateBasedRulesOutcomeCallable ListRateBasedRulesCallable(const Model::ListRateBasedRulesRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRateBasedRulesAsync(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
@@ -2056,6 +2403,115 @@ namespace Model
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Inserts or deletes <a>Predicate</a> objects in a rule and updates the
+         * <code>RateLimit</code> in the rule. </p> <p>Each <code>Predicate</code> object
+         * identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+         * specifies the web requests that you want to block or count. The
+         * <code>RateLimit</code> specifies the number of requests every five minutes that
+         * triggers the rule.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request must match all the predicates and exceed
+         * the <code>RateLimit</code> to be counted or blocked. For example, suppose you
+         * add the following to a <code>RateBasedRule</code>:</p> <ul> <li> <p>An
+         * <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> </p>
+         * </li> <li> <p>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in
+         * the <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that satisfy the rule. For a request to be blocked, it must come
+         * from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code> header in
+         * the request must contain the value <code>BadBot</code>. Further, requests that
+         * match these two conditions much be received at a rate of more than 15,000 every
+         * five minutes. If the rate drops below this limit, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your
+         * site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRateBasedRuleOutcome UpdateRateBasedRule(const Model::UpdateRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>Predicate</a> objects in a rule and updates the
+         * <code>RateLimit</code> in the rule. </p> <p>Each <code>Predicate</code> object
+         * identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+         * specifies the web requests that you want to block or count. The
+         * <code>RateLimit</code> specifies the number of requests every five minutes that
+         * triggers the rule.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request must match all the predicates and exceed
+         * the <code>RateLimit</code> to be counted or blocked. For example, suppose you
+         * add the following to a <code>RateBasedRule</code>:</p> <ul> <li> <p>An
+         * <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> </p>
+         * </li> <li> <p>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in
+         * the <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that satisfy the rule. For a request to be blocked, it must come
+         * from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code> header in
+         * the request must contain the value <code>BadBot</code>. Further, requests that
+         * match these two conditions much be received at a rate of more than 15,000 every
+         * five minutes. If the rate drops below this limit, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your
+         * site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRateBasedRuleOutcomeCallable UpdateRateBasedRuleCallable(const Model::UpdateRateBasedRuleRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>Predicate</a> objects in a rule and updates the
+         * <code>RateLimit</code> in the rule. </p> <p>Each <code>Predicate</code> object
+         * identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+         * specifies the web requests that you want to block or count. The
+         * <code>RateLimit</code> specifies the number of requests every five minutes that
+         * triggers the rule.</p> <p>If you add more than one predicate to a
+         * <code>RateBasedRule</code>, a request must match all the predicates and exceed
+         * the <code>RateLimit</code> to be counted or blocked. For example, suppose you
+         * add the following to a <code>RateBasedRule</code>:</p> <ul> <li> <p>An
+         * <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> </p>
+         * </li> <li> <p>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in
+         * the <code>User-Agent</code> header</p> </li> </ul> <p>Further, you specify a
+         * <code>RateLimit</code> of 15,000.</p> <p>You then add the
+         * <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to
+         * block requests that satisfy the rule. For a request to be blocked, it must come
+         * from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code> header in
+         * the request must contain the value <code>BadBot</code>. Further, requests that
+         * match these two conditions much be received at a rate of more than 15,000 every
+         * five minutes. If the rate drops below this limit, AWS WAF no longer blocks the
+         * requests.</p> <p>As a second example, suppose you want to limit requests to a
+         * particular page on your site. To do this, you could add the following to a
+         * <code>RateBasedRule</code>:</p> <ul> <li> <p>A <code>ByteMatchSet</code> with
+         * <code>FieldToMatch</code> of <code>URI</code> </p> </li> <li> <p>A
+         * <code>PositionalConstraint</code> of <code>STARTS_WITH</code> </p> </li> <li>
+         * <p>A <code>TargetString</code> of <code>login</code> </p> </li> </ul>
+         * <p>Further, you specify a <code>RateLimit</code> of 15,000.</p> <p>By adding
+         * this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit
+         * requests to your login page without affecting the rest of your
+         * site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRateBasedRuleAsync(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each
          * <code>Predicate</code> object identifies a predicate, such as a
          * <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you
@@ -2411,8 +2867,12 @@ namespace Model
          * <li> <p>Submit an <code>UpdateWebACL</code> request to specify the
          * <code>Rules</code> that you want to include in the <code>WebACL</code>, to
          * specify the default action, and to associate the <code>WebACL</code> with a
-         * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
-         * use the AWS WAF API to allow or block HTTP requests, see the <a
+         * CloudFront distribution. </p> </li> </ol> <p>Be aware that if you try to add a
+         * RATE_BASED rule to a web ACL without setting the rule type when first creating
+         * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to
+         * add a REGULAR rule (the default rule type) with the specified ID, which does not
+         * exist. </p> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
@@ -2455,8 +2915,12 @@ namespace Model
          * <li> <p>Submit an <code>UpdateWebACL</code> request to specify the
          * <code>Rules</code> that you want to include in the <code>WebACL</code>, to
          * specify the default action, and to associate the <code>WebACL</code> with a
-         * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
-         * use the AWS WAF API to allow or block HTTP requests, see the <a
+         * CloudFront distribution. </p> </li> </ol> <p>Be aware that if you try to add a
+         * RATE_BASED rule to a web ACL without setting the rule type when first creating
+         * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to
+         * add a REGULAR rule (the default rule type) with the specified ID, which does not
+         * exist. </p> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
@@ -2501,8 +2965,12 @@ namespace Model
          * <li> <p>Submit an <code>UpdateWebACL</code> request to specify the
          * <code>Rules</code> that you want to include in the <code>WebACL</code>, to
          * specify the default action, and to associate the <code>WebACL</code> with a
-         * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
-         * use the AWS WAF API to allow or block HTTP requests, see the <a
+         * CloudFront distribution. </p> </li> </ol> <p>Be aware that if you try to add a
+         * RATE_BASED rule to a web ACL without setting the rule type when first creating
+         * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to
+         * add a REGULAR rule (the default rule type) with the specified ID, which does not
+         * exist. </p> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
@@ -2616,6 +3084,7 @@ namespace Model
         /**Async helpers**/
         void CreateByteMatchSetAsyncHelper(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIPSetAsyncHelper(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRateBasedRuleAsyncHelper(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRuleAsyncHelper(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSizeConstraintSetAsyncHelper(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSqlInjectionMatchSetAsyncHelper(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2623,6 +3092,7 @@ namespace Model
         void CreateXssMatchSetAsyncHelper(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRateBasedRuleAsyncHelper(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSizeConstraintSetAsyncHelper(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSqlInjectionMatchSetAsyncHelper(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2632,6 +3102,8 @@ namespace Model
         void GetChangeTokenAsyncHelper(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRateBasedRuleAsyncHelper(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRateBasedRuleManagedKeysAsyncHelper(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRuleAsyncHelper(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSampledRequestsAsyncHelper(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSizeConstraintSetAsyncHelper(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2640,6 +3112,7 @@ namespace Model
         void GetXssMatchSetAsyncHelper(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListByteMatchSetsAsyncHelper(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRateBasedRulesAsyncHelper(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSizeConstraintSetsAsyncHelper(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSqlInjectionMatchSetsAsyncHelper(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2647,6 +3120,7 @@ namespace Model
         void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRateBasedRuleAsyncHelper(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRuleAsyncHelper(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSizeConstraintSetAsyncHelper(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSqlInjectionMatchSetAsyncHelper(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

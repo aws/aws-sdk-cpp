@@ -449,8 +449,7 @@ namespace Model
          * changes are propagating, <code>GetChange</code> returns a status of
          * <code>PENDING</code>. When propagation is complete, <code>GetChange</code>
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
-         * Amazon Route 53 name servers in a few minutes. In rare circumstances,
-         * propagation can take up to 30 minutes. For more information, see
+         * Amazon Route 53 name servers within 60 seconds. For more information, see
          * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
          * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a
@@ -516,8 +515,7 @@ namespace Model
          * changes are propagating, <code>GetChange</code> returns a status of
          * <code>PENDING</code>. When propagation is complete, <code>GetChange</code>
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
-         * Amazon Route 53 name servers in a few minutes. In rare circumstances,
-         * propagation can take up to 30 minutes. For more information, see
+         * Amazon Route 53 name servers within 60 seconds. For more information, see
          * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
          * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a
@@ -585,8 +583,7 @@ namespace Model
          * changes are propagating, <code>GetChange</code> returns a status of
          * <code>PENDING</code>. When propagation is complete, <code>GetChange</code>
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
-         * Amazon Route 53 name servers in a few minutes. In rare circumstances,
-         * propagation can take up to 30 minutes. For more information, see
+         * Amazon Route 53 name servers within 60 seconds. For more information, see
          * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
          * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a

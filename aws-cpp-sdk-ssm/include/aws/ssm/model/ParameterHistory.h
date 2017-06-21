@@ -279,6 +279,48 @@ namespace Model
      */
     inline ParameterHistory& WithValue(const char* value) { SetValue(value); return *this;}
 
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline ParameterHistory& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline ParameterHistory& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline ParameterHistory& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -294,6 +336,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_value;
     bool m_valueHasBeenSet;
+    Aws::String m_allowedPattern;
+    bool m_allowedPatternHasBeenSet;
   };
 
 } // namespace Model

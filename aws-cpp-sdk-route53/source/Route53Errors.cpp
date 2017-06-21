@@ -68,7 +68,6 @@ static const int HOSTED_ZONE_NOT_EMPTY_HASH = HashingUtils::HashString("HostedZo
 static const int HEALTH_CHECK_ALREADY_EXISTS_HASH = HashingUtils::HashString("HealthCheckAlreadyExists");
 static const int TOO_MANY_TRAFFIC_POLICIES_HASH = HashingUtils::HashString("TooManyTrafficPolicies");
 static const int HOSTED_ZONE_ALREADY_EXISTS_HASH = HashingUtils::HashString("HostedZoneAlreadyExists");
-static const int HEALTH_CHECK_IN_USE_HASH = HashingUtils::HashString("HealthCheckInUse");
 static const int DELEGATION_SET_ALREADY_REUSABLE_HASH = HashingUtils::HashString("DelegationSetAlreadyReusable");
 static const int TRAFFIC_POLICY_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrafficPolicyAlreadyExists");
 static const int NO_SUCH_HEALTH_CHECK_HASH = HashingUtils::HashString("NoSuchHealthCheck");
@@ -237,10 +236,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == HOSTED_ZONE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HOSTED_ZONE_ALREADY_EXISTS), false);
-  }
-  else if (hashCode == HEALTH_CHECK_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HEALTH_CHECK_IN_USE), false);
   }
   else if (hashCode == DELEGATION_SET_ALREADY_REUSABLE_HASH)
   {

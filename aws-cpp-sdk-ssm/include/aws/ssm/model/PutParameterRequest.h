@@ -168,37 +168,51 @@ namespace Model
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline PutParameterRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter key ID that you want to add to the system.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
+     * the SecureString data type. If you don't specify a key ID, the system uses the
+     * default key associated with your AWS account.</p>
      */
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -220,6 +234,55 @@ namespace Model
      */
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
 
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline PutParameterRequest& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline PutParameterRequest& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
+
+    /**
+     * <p>A regular expression used to validate the parameter value. For example, for
+     * String types with values restricted to numbers, you can specify the following:
+     * AllowedPattern=^\d+$ </p>
+     */
+    inline PutParameterRequest& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -233,6 +296,8 @@ namespace Model
     bool m_keyIdHasBeenSet;
     bool m_overwrite;
     bool m_overwriteHasBeenSet;
+    Aws::String m_allowedPattern;
+    bool m_allowedPatternHasBeenSet;
   };
 
 } // namespace Model

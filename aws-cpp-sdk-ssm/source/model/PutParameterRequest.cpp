@@ -30,7 +30,8 @@ PutParameterRequest::PutParameterRequest() :
     m_typeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_overwrite(false),
-    m_overwriteHasBeenSet(false)
+    m_overwriteHasBeenSet(false),
+    m_allowedPatternHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,12 @@ Aws::String PutParameterRequest::SerializePayload() const
   if(m_overwriteHasBeenSet)
   {
    payload.WithBool("Overwrite", m_overwrite);
+
+  }
+
+  if(m_allowedPatternHasBeenSet)
+  {
+   payload.WithString("AllowedPattern", m_allowedPattern);
 
   }
 

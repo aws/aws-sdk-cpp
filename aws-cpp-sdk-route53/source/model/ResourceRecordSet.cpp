@@ -42,6 +42,8 @@ ResourceRecordSet::ResourceRecordSet() :
     m_geoLocationHasBeenSet(false),
     m_failover(ResourceRecordSetFailover::NOT_SET),
     m_failoverHasBeenSet(false),
+    m_multiValueAnswer(false),
+    m_multiValueAnswerHasBeenSet(false),
     m_tTL(0),
     m_tTLHasBeenSet(false),
     m_resourceRecordsHasBeenSet(false),
@@ -63,6 +65,8 @@ ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) :
     m_geoLocationHasBeenSet(false),
     m_failover(ResourceRecordSetFailover::NOT_SET),
     m_failoverHasBeenSet(false),
+    m_multiValueAnswer(false),
+    m_multiValueAnswerHasBeenSet(false),
     m_tTL(0),
     m_tTLHasBeenSet(false),
     m_resourceRecordsHasBeenSet(false),
@@ -120,6 +124,12 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     {
       m_failover = ResourceRecordSetFailoverMapper::GetResourceRecordSetFailoverForName(StringUtils::Trim(failoverNode.GetText().c_str()).c_str());
       m_failoverHasBeenSet = true;
+    }
+    XmlNode multiValueAnswerNode = resultNode.FirstChild("MultiValueAnswer");
+    if(!multiValueAnswerNode.IsNull())
+    {
+      m_multiValueAnswer = StringUtils::ConvertToBool(StringUtils::Trim(multiValueAnswerNode.GetText().c_str()).c_str());
+      m_multiValueAnswerHasBeenSet = true;
     }
     XmlNode tTLNode = resultNode.FirstChild("TTL");
     if(!tTLNode.IsNull())
@@ -207,6 +217,14 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   {
    XmlNode failoverNode = parentNode.CreateChildElement("Failover");
    failoverNode.SetText(ResourceRecordSetFailoverMapper::GetNameForResourceRecordSetFailover(m_failover));
+  }
+
+  if(m_multiValueAnswerHasBeenSet)
+  {
+   XmlNode multiValueAnswerNode = parentNode.CreateChildElement("MultiValueAnswer");
+  ss << m_multiValueAnswer;
+   multiValueAnswerNode.SetText(ss.str());
+  ss.str("");
   }
 
   if(m_tTLHasBeenSet)

@@ -35,7 +35,8 @@ ParameterMetadata::ParameterMetadata() :
     m_keyIdHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedUserHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_allowedPatternHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ParameterMetadata::ParameterMetadata(const JsonValue& jsonValue) :
     m_keyIdHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedUserHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_allowedPatternHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ ParameterMetadata& ParameterMetadata::operator =(const JsonValue& jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllowedPattern"))
+  {
+    m_allowedPattern = jsonValue.GetString("AllowedPattern");
+
+    m_allowedPatternHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,12 @@ JsonValue ParameterMetadata::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_allowedPatternHasBeenSet)
+  {
+   payload.WithString("AllowedPattern", m_allowedPattern);
 
   }
 

@@ -40,6 +40,7 @@
 #include <aws/ssm/model/DeleteDocumentRequest.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowRequest.h>
 #include <aws/ssm/model/DeleteParameterRequest.h>
+#include <aws/ssm/model/DeleteParametersRequest.h>
 #include <aws/ssm/model/DeletePatchBaselineRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>
@@ -78,8 +79,10 @@
 #include <aws/ssm/model/GetMaintenanceWindowRequest.h>
 #include <aws/ssm/model/GetMaintenanceWindowExecutionRequest.h>
 #include <aws/ssm/model/GetMaintenanceWindowExecutionTaskRequest.h>
+#include <aws/ssm/model/GetParameterRequest.h>
 #include <aws/ssm/model/GetParameterHistoryRequest.h>
 #include <aws/ssm/model/GetParametersRequest.h>
+#include <aws/ssm/model/GetParametersByPathRequest.h>
 #include <aws/ssm/model/GetPatchBaselineRequest.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
@@ -625,6 +628,41 @@ void SSMClient::DeleteParameterAsync(const DeleteParameterRequest& request, cons
 void SSMClient::DeleteParameterAsyncHelper(const DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteParameter(request), context);
+}
+
+DeleteParametersOutcome SSMClient::DeleteParameters(const DeleteParametersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteParametersOutcome(DeleteParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteParametersOutcome(outcome.GetError());
+  }
+}
+
+DeleteParametersOutcomeCallable SSMClient::DeleteParametersCallable(const DeleteParametersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteParametersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteParameters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DeleteParametersAsync(const DeleteParametersRequest& request, const DeleteParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteParametersAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DeleteParametersAsyncHelper(const DeleteParametersRequest& request, const DeleteParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteParameters(request), context);
 }
 
 DeletePatchBaselineOutcome SSMClient::DeletePatchBaseline(const DeletePatchBaselineRequest& request) const
@@ -1957,6 +1995,41 @@ void SSMClient::GetMaintenanceWindowExecutionTaskAsyncHelper(const GetMaintenanc
   handler(this, request, GetMaintenanceWindowExecutionTask(request), context);
 }
 
+GetParameterOutcome SSMClient::GetParameter(const GetParameterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetParameterOutcome(GetParameterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetParameterOutcome(outcome.GetError());
+  }
+}
+
+GetParameterOutcomeCallable SSMClient::GetParameterCallable(const GetParameterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetParameterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetParameter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetParameterAsync(const GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetParameterAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetParameterAsyncHelper(const GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetParameter(request), context);
+}
+
 GetParameterHistoryOutcome SSMClient::GetParameterHistory(const GetParameterHistoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -2025,6 +2098,41 @@ void SSMClient::GetParametersAsync(const GetParametersRequest& request, const Ge
 void SSMClient::GetParametersAsyncHelper(const GetParametersRequest& request, const GetParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetParameters(request), context);
+}
+
+GetParametersByPathOutcome SSMClient::GetParametersByPath(const GetParametersByPathRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetParametersByPathOutcome(GetParametersByPathResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetParametersByPathOutcome(outcome.GetError());
+  }
+}
+
+GetParametersByPathOutcomeCallable SSMClient::GetParametersByPathCallable(const GetParametersByPathRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetParametersByPathOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetParametersByPath(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetParametersByPathAsync(const GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetParametersByPathAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetParametersByPathAsyncHelper(const GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetParametersByPath(request), context);
 }
 
 GetPatchBaselineOutcome SSMClient::GetPatchBaseline(const GetPatchBaselineRequest& request) const

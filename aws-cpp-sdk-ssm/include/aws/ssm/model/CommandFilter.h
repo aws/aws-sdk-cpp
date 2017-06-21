@@ -47,62 +47,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the filter. For example, requested date and time.</p>
+     * <p>The name of the filter.</p>
      */
     inline const CommandFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>The name of the filter. For example, requested date and time.</p>
+     * <p>The name of the filter.</p>
      */
     inline void SetKey(const CommandFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The name of the filter. For example, requested date and time.</p>
+     * <p>The name of the filter.</p>
      */
     inline void SetKey(CommandFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The name of the filter. For example, requested date and time.</p>
+     * <p>The name of the filter.</p>
      */
     inline CommandFilter& WithKey(const CommandFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The name of the filter. For example, requested date and time.</p>
+     * <p>The name of the filter.</p>
      */
     inline CommandFilter& WithKey(CommandFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline CommandFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline CommandFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The filter value. For example: June 30, 2015.</p>
+     * <p>The filter value. </p>
      */
     inline CommandFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

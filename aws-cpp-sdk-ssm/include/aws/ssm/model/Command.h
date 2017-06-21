@@ -593,51 +593,51 @@ namespace Model
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline Command& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline Command& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
-     * <p>The region where the Amazon Simple Storage Service (Amazon S3) output bucket
-     * is located. The default value is the region where Run Command is being
-     * called.</p>
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
      */
     inline Command& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
