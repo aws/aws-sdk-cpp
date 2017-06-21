@@ -175,7 +175,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             {
                 serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
             }
-            else
+
+            if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
             {
                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
                serverTime = m_signer->GetSigningTimestamp();
