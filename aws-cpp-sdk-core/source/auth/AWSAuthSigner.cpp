@@ -387,7 +387,7 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
 
     if (!hashResult.IsSuccess())
     {
-        AWS_LOG_ERROR(v4LogTag, "Unable to hash (sha256) request body");
+        AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hash (sha256) request body");
         return "";
     }
 

@@ -154,7 +154,7 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistChangesToFile(const 
     }
     else
     {
-        AWS_LOG_ERROR(LOG_TAG, "Failed persisting changes to file.");
+        AWS_LOGSTREAM_ERROR(LOG_TAG, "Failed persisting changes to file.");
     }
 }
 

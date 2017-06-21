@@ -60,7 +60,7 @@ Message SQSQueue::Top() const
     {
         while (m_continue)
         {
-            AWS_LOG_TRACE(CLASS_TAG, "Polling for new message with timeout of 1 second with a maximum of 1 message.");
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Polling for new message with timeout of 1 second with a maximum of 1 message.");
             ReceiveMessageRequest receiveMessageRequest;
             receiveMessageRequest.SetMaxNumberOfMessages(1);
             receiveMessageRequest.SetQueueUrl(m_queueUrl);
@@ -70,7 +70,7 @@ Message SQSQueue::Top() const
             ReceiveMessageOutcome receiveMessageOutcome = m_client->ReceiveMessage(receiveMessageRequest);
             if (receiveMessageOutcome.IsSuccess() && receiveMessageOutcome.GetResult().GetMessages().size() > 0)
             {
-                AWS_LOG_DEBUG(CLASS_TAG, "Message found, returning");
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Message found, returning");
                 return receiveMessageOutcome.GetResult().GetMessages()[0];
             }
             else if (!receiveMessageOutcome.IsSuccess())
@@ -79,12 +79,12 @@ Message SQSQueue::Top() const
                                                                                       " and message: " << receiveMessageOutcome.GetError().GetMessage());
             }
 
-            AWS_LOG_TRACE(CLASS_TAG, "No message found, continuing poll until something is found or object is deleted.");
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "No message found, continuing poll until something is found or object is deleted.");
         }
     }
     else
     {
-        AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, not polling. Call EnsureQueueIsInitialized before calling this method.");
+        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Queue is not initialized, not polling. Call EnsureQueueIsInitialized before calling this method.");
     }
 
     return Message();
@@ -105,7 +105,7 @@ void SQSQueue::Delete(const Message& message)
     }
     else
     {
-        AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, not deleting. Call EnsureQueueIsInitialized before calling this method.");
+        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Queue is not initialized, not deleting. Call EnsureQueueIsInitialized before calling this method.");
     }
 }
 
@@ -126,7 +126,7 @@ void SQSQueue::Push(const Message& message)
    }
     else
    {
-       AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, not pushing. Call EnsureQueueIsInitialized before calling this method.");
+       AWS_LOGSTREAM_ERROR(CLASS_TAG, "Queue is not initialized, not pushing. Call EnsureQueueIsInitialized before calling this method.");
    }
 }
 
@@ -144,7 +144,7 @@ void SQSQueue::RequestArn()
     }
     else
     {
-        AWS_LOG_ERROR(CLASS_TAG, "Queue is not initialized, cannot get Arn. Call EnsureQueueIsInitialized before calling this method.");
+        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Queue is not initialized, cannot get Arn. Call EnsureQueueIsInitialized before calling this method.");
     }
 }
 
@@ -153,7 +153,7 @@ void SQSQueue::EnsureQueueIsInitialized()
     AWS_LOGSTREAM_INFO(CLASS_TAG, "Checking that queue " << m_queueName << " is initialized and ready to use.")
     if(!IsInitialized())
     {
-        AWS_LOG_DEBUG(CLASS_TAG, "Fetching queue url");
+        AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Fetching queue url");
         GetQueueUrlRequest getQueueUrlRequest;
         getQueueUrlRequest.SetQueueName(m_queueName);
 
@@ -214,7 +214,7 @@ void SQSQueue::OnMessageDeletedOutcomeReceived(const SQSClient*, const DeleteMes
     }
     else
     {
-        AWS_LOG_TRACE(CLASS_TAG, "Message successfully deleted.");
+        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Message successfully deleted.");
         auto& deleteSuccess = GetMessageDeleteSuccessEventHandler();
 
         if (deleteSuccess)
@@ -241,7 +241,7 @@ void SQSQueue::OnMessageSentOutcomeReceived(const SQSClient*, const SendMessageR
     }
     else
     {
-        AWS_LOG_TRACE(CLASS_TAG, "Message successfully sent.");
+        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Message successfully sent.");
         auto& sendSuccess = GetMessageSendSuccessEventHandler();
 
         if (sendSuccess)
@@ -267,7 +267,7 @@ void SQSQueue::OnGetQueueAttributesOutcomeReceived(const SQSClient*, const GetQu
     }
     else
     {
-        AWS_LOG_TRACE(CLASS_TAG, "GetQueueAttribute successfull.");
+        AWS_LOGSTREAM_TRACE(CLASS_TAG, "GetQueueAttribute successfull.");
         auto& queueAttributeSuccessHandler = GetQueueAttributeSuccessEventHandler();
 
         if (queueAttributeSuccessHandler)

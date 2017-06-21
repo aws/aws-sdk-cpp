@@ -35,26 +35,26 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
 
 CurlHandleContainer::~CurlHandleContainer()
 {
-    AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlHandleContainer.");
+    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlHandleContainer.");
     for (CURL* handle : m_handleContainer.ShutdownAndWait(m_poolSize))
     {
-        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up %p.", handle);
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << handle);
         curl_easy_cleanup(handle);
     }
 }
 
 CURL* CurlHandleContainer::AcquireCurlHandle()
 {
-    AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
 
     if(!m_handleContainer.HasResourcesAvailable())
     {
-        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No current connections available in pool. Attempting to create new connections.");
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No current connections available in pool. Attempting to create new connections.");
         CheckAndGrowPool();
     }
 
     CURL* handle = m_handleContainer.Acquire();
-    AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
+    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
     return handle;
 }
@@ -67,7 +67,7 @@ void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
         SetDefaultOptionsOnHandle(handle);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
         m_handleContainer.Release(handle);
-        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
     }
 }
 
@@ -92,7 +92,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
             }
             else
             {
-                AWS_LOG_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate. Will continue retrying until amount to add has exhausted.");
+                AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate. Will continue retrying until amount to add has exhausted.");
             }
         }
 
@@ -102,7 +102,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
         return actuallyAdded > 0;
     }
 
-    AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool cannot be grown any further, already at max size.");
+    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool cannot be grown any further, already at max size.");
 
     return false;
 }

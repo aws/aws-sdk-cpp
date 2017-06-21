@@ -141,14 +141,14 @@ namespace Aws
                 status = BCryptGetProperty(m_algorithmHandle, BCRYPT_HASH_LENGTH, (PBYTE)&m_hashBufferLength, sizeof(m_hashBufferLength), &resultLength, 0);
                 if (!NT_SUCCESS(status) || m_hashBufferLength <= 0)
                 {
-                    AWS_LOG_ERROR(logTag, "Error computing hash buffer length.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error computing hash buffer length.");
                     return;
                 }
 
                 m_hashBuffer = Aws::NewArray<BYTE>(m_hashBufferLength, logTag);
                 if (!m_hashBuffer)
                 {
-                    AWS_LOG_ERROR(logTag, "Error allocating hash buffer.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error allocating hash buffer.");
                     return;
                 }
 
@@ -156,14 +156,14 @@ namespace Aws
                 status = BCryptGetProperty(m_algorithmHandle, BCRYPT_OBJECT_LENGTH, (PBYTE)&m_hashObjectLength, sizeof(m_hashObjectLength), &resultLength, 0);
                 if (!NT_SUCCESS(status) || m_hashObjectLength <= 0)
                 {
-                    AWS_LOG_ERROR(logTag, "Error computing hash object length.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error computing hash object length.");
                     return;
                 }
 
                 m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
                 if (!m_hashObject)
                 {
-                    AWS_LOG_ERROR(logTag, "Error allocating hash object.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error allocating hash object.");
                     return;
                 }
             }
@@ -184,14 +184,14 @@ namespace Aws
                 NTSTATUS status = BCryptHashData(context.m_hashHandle, data, dataLength, 0);
                 if (!NT_SUCCESS(status))
                 {
-                    AWS_LOG_ERROR(logTag, "Error computing hash.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error computing hash.");
                     return HashResult();
                 }
 
                 status = BCryptFinishHash(context.m_hashHandle, m_hashBuffer, m_hashBufferLength, 0);
                 if (!NT_SUCCESS(status))
                 {
-                    AWS_LOG_ERROR(logTag, "Error obtaining computed hash");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error obtaining computed hash");
                     return HashResult();
                 }
 
@@ -210,7 +210,7 @@ namespace Aws
                 BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
                 if (!context.IsValid())
                 {
-                    AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
                     return HashResult();
                 }
 
@@ -229,7 +229,7 @@ namespace Aws
                 BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength, secret);
                 if (!context.IsValid())
                 {
-                    AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
                     return HashResult();
                 }
 
@@ -246,7 +246,7 @@ namespace Aws
                 BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
                 if (!context.IsValid())
                 {
-                    AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
                     return false;
                 }
 
@@ -262,7 +262,7 @@ namespace Aws
                         status = BCryptHashData(context.m_hashHandle, (PBYTE)streamBuffer, (ULONG)bytesRead, 0);
                         if (!NT_SUCCESS(status))
                         {
-                            AWS_LOG_ERROR(logTag, "Error computing hash.");
+                            AWS_LOGSTREAM_ERROR(logTag, "Error computing hash.");
                             return false;
                         }
                     }
@@ -276,7 +276,7 @@ namespace Aws
                 status = BCryptFinishHash(context.m_hashHandle, m_hashBuffer, m_hashBufferLength, 0);
                 if (!NT_SUCCESS(status))
                 {
-                    AWS_LOG_ERROR(logTag, "Error obtaining computed hash");
+                    AWS_LOGSTREAM_ERROR(logTag, "Error obtaining computed hash");
                     return false;
                 }
 

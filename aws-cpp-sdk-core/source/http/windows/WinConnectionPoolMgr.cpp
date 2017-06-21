@@ -39,13 +39,13 @@ WinConnectionPoolMgr::~WinConnectionPoolMgr()
 {
     if (!m_hostConnections.empty())
     {
-        AWS_LOG_WARN(GetLogTag(), "Connection pool manager clearing with host connections not empty!");
+        AWS_LOGSTREAM_WARN(GetLogTag(), "Connection pool manager clearing with host connections not empty!");
     }
 }
 
 void WinConnectionPoolMgr::DoCleanup()
 {
-    AWS_LOG_INFO(GetLogTag(), "Cleaning up conneciton pool mgr.");
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Cleaning up conneciton pool mgr.");
     for (auto& hostHandles : m_hostConnections)
     {
         for(void* handleToClose : hostHandles.second->hostConnections.ShutdownAndWait(hostHandles.second->currentPoolSize))
@@ -73,12 +73,12 @@ void* WinConnectionPoolMgr::AquireConnectionForHost(const Aws::String& host, uin
 
         if (foundPool != m_hostConnections.end())
         {
-            AWS_LOG_DEBUG(GetLogTag(), "Pool found, reusing");
+            AWS_LOGSTREAM_DEBUG(GetLogTag(), "Pool found, reusing");
             hostConnectionContainer = foundPool->second;
         }
         else
         {
-            AWS_LOG_DEBUG(GetLogTag(), "Pool doesn't exist for endpoint, creating...");
+            AWS_LOGSTREAM_DEBUG(GetLogTag(), "Pool doesn't exist for endpoint, creating...");
             //mutex doesn't have a frickin move. We have to dynamically allocate.
             HostConnectionContainer* newHostContainer = Aws::New<HostConnectionContainer>(GetLogTag());
             newHostContainer->currentPoolSize = 0;
@@ -91,7 +91,7 @@ void* WinConnectionPoolMgr::AquireConnectionForHost(const Aws::String& host, uin
 
     if(!hostConnectionContainer->hostConnections.HasResourcesAvailable())
     {
-        AWS_LOG_DEBUG(GetLogTag(), "Pool has no available existing connections for endpoint, attempting to grow pool.");
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Pool has no available existing connections for endpoint, attempting to grow pool.");
         CheckAndGrowPool(host, *hostConnectionContainer);
     }
 

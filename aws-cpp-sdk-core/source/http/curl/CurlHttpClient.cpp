@@ -223,7 +223,7 @@ void CurlHttpClient::InitGlobalState()
 {
     if (!isInit)
     {
-        AWS_LOG_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library");
+        AWS_LOGSTREAM_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library");
         isInit = true;
 #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
         curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
@@ -318,7 +318,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     Aws::StringStream headerStream;
     HeaderValueCollection requestHeaders = request.GetHeaders();
 
-    AWS_LOG_TRACE(CURL_HTTP_CLIENT_TAG, "Including headers:");
+    AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Including headers:");
     for (auto& requestHeader : requestHeaders)
     {
         headerStream.str("");
@@ -463,7 +463,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
                 if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
                 {
                     response = nullptr;
-                    AWS_LOG_ERROR(CURL_HTTP_CLIENT_TAG, "Response body length doesn't match the content-length header.");
+                    AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response body length doesn't match the content-length header.");
                 }
             }
 

@@ -172,7 +172,7 @@ Aws::String GetHomeDirectory()
 
     if(homeDir.empty())
     {
-        AWS_LOG_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
+        AWS_LOGSTREAM_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
 
         passwd pw;
         passwd *p_pw = nullptr;

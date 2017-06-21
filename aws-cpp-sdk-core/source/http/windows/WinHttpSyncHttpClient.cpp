@@ -93,11 +93,11 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
     if (!config.verifySSL)
     {
-        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
+        AWS_LOGSTREAM_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
         DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | SECURITY_FLAG_IGNORE_CERT_CN_INVALID;
 
         if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
-            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
     }
     else
     {
@@ -109,7 +109,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         }
     }
 
-    AWS_LOG_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinHttpConnectionPoolMgr>(GetLogTag(),
         GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
 }
@@ -147,7 +147,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
         requestFlags = WINHTTP_DISABLE_REDIRECTS;
 
         if (!WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_DISABLE_FEATURE, &requestFlags, sizeof(requestFlags)))
-            AWS_LOG_FATAL(GetLogTag(), "Failed to turn off redirects!");
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn off redirects!");
     }
     return hHttpRequest;
 }
@@ -201,7 +201,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
     }
        
     BOOL queryResult = false;
-    AWS_LOG_DEBUG(GetLogTag(), "Received headers:");
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received headers:");
     WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, nullptr, &dwSize, WINHTTP_NO_HEADER_INDEX);
     
     //I know it's ugly, but this is how MSFT says to do it so....

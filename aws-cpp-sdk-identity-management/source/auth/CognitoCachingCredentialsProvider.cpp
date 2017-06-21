@@ -44,16 +44,16 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 {
     if (IsTimeExpired(m_expiry.load()))
     {
-        AWS_LOG_TRACE(LOG_TAG, "Expiry expired, attempting to aquire lock and refresh credentials.");
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Expiry expired, attempting to aquire lock and refresh credentials.");
         std::lock_guard<std::mutex> locker(m_credsMutex);
-        AWS_LOG_TRACE(LOG_TAG, "Lock aquired, checking if the expiry is still expired.");
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Lock aquired, checking if the expiry is still expired.");
         if (IsTimeExpired(m_expiry.load()))
         {
-            AWS_LOG_INFO(LOG_TAG, "Expiry expired on cognito credentials attempting to pull new credentials.");
+            AWS_LOGSTREAM_INFO(LOG_TAG, "Expiry expired on cognito credentials attempting to pull new credentials.");
             auto getCredentialsForIdentityOutcome = GetCredentialsFromCognito();
             if (getCredentialsForIdentityOutcome.IsSuccess())
             {
-                AWS_LOG_INFO(LOG_TAG, "Successfully obtained cognito credentials");
+                AWS_LOGSTREAM_INFO(LOG_TAG, "Successfully obtained cognito credentials");
                 const auto& cognitoCreds = getCredentialsForIdentityOutcome.GetResult().GetCredentials();
 
                 //If we went from anonymous to authenticated on a different machine than the original
@@ -62,7 +62,7 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 
                 if (m_identityRepository->GetIdentityId() != parentIdentityId)
                 {
-                    AWS_LOG_INFO(LOG_TAG, "A parent identity was from cognito which is different from the anonymous identity. Swapping that out now.");
+                    AWS_LOGSTREAM_INFO(LOG_TAG, "A parent identity was from cognito which is different from the anonymous identity. Swapping that out now.");
                     m_identityRepository->PersistIdentityId(parentIdentityId);
                 }
 
@@ -94,7 +94,7 @@ bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 
 void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoIdentityProvider&)
 {
-    AWS_LOG_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
+    AWS_LOGSTREAM_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
     m_expiry.store(DateTime().SecondsWithMSPrecision());
 }
 

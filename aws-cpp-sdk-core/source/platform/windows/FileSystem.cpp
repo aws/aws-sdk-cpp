@@ -143,7 +143,7 @@ Aws::String GetHomeDirectory()
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
     if(homeDir.empty())
     {
-        AWS_LOG_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
+        AWS_LOGSTREAM_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
         HANDLE hToken;
     
         if (OpenProcessToken(GetCurrentProcess(), TOKEN_READ, &hToken))

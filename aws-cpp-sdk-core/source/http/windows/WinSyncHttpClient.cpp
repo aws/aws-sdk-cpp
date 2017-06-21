@@ -78,7 +78,7 @@ void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hH
     if(request.GetHeaders().size() > 0)
     {
         Aws::StringStream ss;
-        AWS_LOG_DEBUG(GetLogTag(), "with headers:");
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "with headers:");
         for (auto& header : request.GetHeaders())
         {
             ss << header.first << ": " << header.second << "\r\n";
@@ -91,7 +91,7 @@ void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hH
     }
     else
     {
-        AWS_LOG_DEBUG(GetLogTag(), "with no headers");
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "with no headers");
     }
 }
 
@@ -243,7 +243,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
             if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
             {
                 success = false;
-                AWS_LOG_ERROR(GetLogTag(), "Response body length doesn't match the content-length header.");
+                AWS_LOGSTREAM_ERROR(GetLogTag(), "Response body length doesn't match the content-length header.");
             }
         }
 
