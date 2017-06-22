@@ -109,7 +109,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         }
     }
 
-    AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle " << GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinHttpConnectionPoolMgr>(GetLogTag(),
         GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
 }
