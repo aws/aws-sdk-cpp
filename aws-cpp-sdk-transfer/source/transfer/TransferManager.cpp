@@ -15,6 +15,7 @@
 
 #include <aws/transfer/TransferManager.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -46,6 +47,18 @@ namespace Aws
             Aws::String rootDirectory;
             Aws::String prefix;
         };
+
+        std::shared_ptr<TransferManager> TransferManager::Create(const TransferManagerConfiguration& config)
+        {
+            // Because TransferManager's ctor is private (to ensure it's always constructed as a shared_ptr)
+            // Aws::MakeShared does not have access to that private constructor. This workaround essentially 
+            // enables Aws::MakeShared to construct TransferManager.
+            struct MakeSharedEnabler : public TransferManager {
+                MakeSharedEnabler(const TransferManagerConfiguration& config) : TransferManager(config) {}
+            };
+
+            return Aws::MakeShared<MakeSharedEnabler>(CLASS_TAG, config);
+        }
 
         TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
         {
@@ -181,8 +194,10 @@ namespace Aws
             assert(m_transferConfig.transferInitiatedCallback);
             Aws::FileSystem::CreateDirectoryIfNotExists(directory.c_str());
          
-            auto handler = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
-                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { HandleListObjectsResponse(client, request, outcome, context); };
+            auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
+            auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request,
+                const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
 
             Aws::S3::Model::ListObjectsV2Request request;
             request.WithBucket(bucketName)
@@ -284,10 +299,11 @@ namespace Aws
                     asyncContext->handle = handle;
                     asyncContext->partState = partsIter->second;
 
-                    auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
+                    auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
+                    auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
                         const Aws::S3::Model::UploadPartOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
                     {
-                        HandleUploadPartResponse(client, request, outcome, context);
+                        self->HandleUploadPartResponse(client, request, outcome, context);
                     };
 
                     m_transferConfig.s3Client->UploadPartAsync(uploadPartRequest, callback, asyncContext);
@@ -355,10 +371,11 @@ namespace Aws
             asyncContext->handle = handle;
             asyncContext->partState = partState;
 
-            auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
+            auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
+            auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
                 const Aws::S3::Model::PutObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
             {
-                HandlePutObjectResponse(client, request, outcome, context);
+                self->HandlePutObjectResponse(client, request, outcome, context);
             };
 
             m_transferConfig.s3Client->PutObjectAsync(putObjectRequest, callback, asyncContext);
@@ -663,10 +680,11 @@ namespace Aws
                     asyncContext->handle = handle;
                     asyncContext->partState = partState;
 
-                    auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
+                    auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
+                    auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
                         const Aws::S3::Model::GetObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
                     {
-                        HandleGetObjectResponse(client, request, outcome, context);
+                        self->HandleGetObjectResponse(client, request, outcome, context);
                     };
 
                     handle->AddPendingPart(partState);
@@ -775,8 +793,9 @@ namespace Aws
         void TransferManager::HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
-            auto handler = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
-                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { HandleListObjectsResponse(client, request, outcome, context); };
+            auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
+            auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
 
             if (outcome.IsSuccess())
             {

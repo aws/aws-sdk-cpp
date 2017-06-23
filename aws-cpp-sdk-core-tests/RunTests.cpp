@@ -29,7 +29,7 @@
 int main(int argc, char** argv)
 {
 #if !defined(_WIN32) && !defined(ORBIS)
-	// In order to fix github issue at https://github.com/aws/aws-sdk-cpp/issues/232
+    // In order to fix github issue at https://github.com/aws/aws-sdk-cpp/issues/232
     // Created dir by this process will be set with mode 0777, so that multiple users can build on the same machine
 	umask(0);
 #endif

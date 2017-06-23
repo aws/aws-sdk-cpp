@@ -25,6 +25,8 @@
 #include <aws/core/utils/ResourceManager.h>
 #include <aws/core/client/AsyncCallerContext.h>
 
+#include <memory>
+
 namespace Aws
 {    
     namespace Transfer
@@ -123,13 +125,13 @@ namespace Aws
          *  The key interface for controlling and knowing the status of your upload is the TransferHandle. An instance of TransferHandle is returned from each of the public functions in this interface.
          *  Keep a reference to the pointer. Each of the callbacks will also pass the handle that has received an update. None of the public methods in this interface block.
          */
-        class  AWS_TRANSFER_API TransferManager
+        class AWS_TRANSFER_API TransferManager : public std::enable_shared_from_this<TransferManager>
         {
         public:
             /**
-             * Initializes TransferManager with config.
+             * Create a new TransferManager instance intialized with config. 
              */
-            TransferManager(const TransferManagerConfiguration& config);
+            static std::shared_ptr<TransferManager> Create(const TransferManagerConfiguration& config);
 
             ~TransferManager();
 
@@ -207,6 +209,11 @@ namespace Aws
 
         private:
             /**
+             * To ensure TransferManager is always created as a shared_ptr, since it inherits enable_shared_from_this.
+             */
+            TransferManager(const TransferManagerConfiguration& config);
+
+            /**
              * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
              * then a multi-part upload will be performed. If fileName is not empty, it will be set to the TransferHandle.
              */
@@ -244,5 +251,7 @@ namespace Aws
             Aws::Utils::ExclusiveOwnershipResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
         };
+
+        
     }
 }
