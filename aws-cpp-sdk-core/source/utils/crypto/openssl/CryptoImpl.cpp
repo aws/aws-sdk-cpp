@@ -127,6 +127,7 @@ namespace Aws
             HashResult MD5OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 auto ctx = EVP_MD_CTX_create();
+                EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
                 EVP_DigestUpdate(ctx, str.c_str(), str.size());
 
@@ -139,6 +140,7 @@ namespace Aws
             HashResult MD5OpenSSLImpl::Calculate(Aws::IStream& stream)
             {
                 auto ctx = EVP_MD_CTX_create();
+                EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
                 auto currentPos = stream.tellg();
