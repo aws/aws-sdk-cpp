@@ -115,19 +115,29 @@ namespace Model
      */
     inline PipelineContext& WithStage(StageContext&& value) { SetStage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline const ActionContext& GetAction() const{ return m_action; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAction(const ActionContext& value) { m_actionHasBeenSet = true; m_action = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAction(ActionContext&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PipelineContext& WithAction(const ActionContext& value) { SetAction(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
 
   private:

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/lightsail/model/GetOperationsForResourceResult.h>
+#include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,35 +21,35 @@
 
 #include <utility>
 
-using namespace Aws::Lightsail::Model;
+using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOperationsForResourceResult::GetOperationsForResourceResult()
+ListPipelineExecutionsResult::ListPipelineExecutionsResult()
 {
 }
 
-GetOperationsForResourceResult::GetOperationsForResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPipelineExecutionsResult::ListPipelineExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOperationsForResourceResult& GetOperationsForResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPipelineExecutionsResult& ListPipelineExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("operations"))
+  if(jsonValue.ValueExists("pipelineExecutionSummaries"))
   {
-    Array<JsonValue> operationsJsonList = jsonValue.GetArray("operations");
-    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
+    Array<JsonValue> pipelineExecutionSummariesJsonList = jsonValue.GetArray("pipelineExecutionSummaries");
+    for(unsigned pipelineExecutionSummariesIndex = 0; pipelineExecutionSummariesIndex < pipelineExecutionSummariesJsonList.GetLength(); ++pipelineExecutionSummariesIndex)
     {
-      m_operations.push_back(operationsJsonList[operationsIndex].AsObject());
+      m_pipelineExecutionSummaries.push_back(pipelineExecutionSummariesJsonList[pipelineExecutionSummariesIndex].AsObject());
     }
   }
 
-  if(jsonValue.ValueExists("nextPageToken"))
+  if(jsonValue.ValueExists("nextToken"))
   {
-    m_nextPageToken = jsonValue.GetString("nextPageToken");
+    m_nextToken = jsonValue.GetString("nextToken");
 
   }
 

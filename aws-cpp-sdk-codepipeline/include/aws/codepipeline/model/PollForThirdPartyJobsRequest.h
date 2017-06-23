@@ -40,19 +40,29 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline PollForThirdPartyJobsRequest& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline PollForThirdPartyJobsRequest& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
     /**

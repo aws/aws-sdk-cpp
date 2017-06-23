@@ -31,6 +31,7 @@
 #include <aws/codepipeline/model/GetPipelineStateResult.h>
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsResult.h>
 #include <aws/codepipeline/model/ListActionTypesResult.h>
+#include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/codepipeline/model/ListPipelinesResult.h>
 #include <aws/codepipeline/model/PollForJobsResult.h>
 #include <aws/codepipeline/model/PollForThirdPartyJobsResult.h>
@@ -99,6 +100,7 @@ namespace Model
         class GetPipelineStateRequest;
         class GetThirdPartyJobDetailsRequest;
         class ListActionTypesRequest;
+        class ListPipelineExecutionsRequest;
         class ListPipelinesRequest;
         class PollForJobsRequest;
         class PollForThirdPartyJobsRequest;
@@ -126,6 +128,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPipelineStateResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineStateOutcome;
         typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetThirdPartyJobDetailsOutcome;
         typedef Aws::Utils::Outcome<ListActionTypesResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionTypesOutcome;
+        typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelineExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelinesOutcome;
         typedef Aws::Utils::Outcome<PollForJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForJobsOutcome;
         typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForThirdPartyJobsOutcome;
@@ -153,6 +156,7 @@ namespace Model
         typedef std::future<GetPipelineStateOutcome> GetPipelineStateOutcomeCallable;
         typedef std::future<GetThirdPartyJobDetailsOutcome> GetThirdPartyJobDetailsOutcomeCallable;
         typedef std::future<ListActionTypesOutcome> ListActionTypesOutcomeCallable;
+        typedef std::future<ListPipelineExecutionsOutcome> ListPipelineExecutionsOutcomeCallable;
         typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
         typedef std::future<PollForJobsOutcome> PollForJobsOutcomeCallable;
         typedef std::future<PollForThirdPartyJobsOutcome> PollForThirdPartyJobsOutcomeCallable;
@@ -183,6 +187,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineStateRequest&, const Model::GetPipelineStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineStateResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetThirdPartyJobDetailsRequest&, const Model::GetThirdPartyJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyJobDetailsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionTypesRequest&, const Model::ListActionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionTypesResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::ListPipelineExecutionsRequest&, const Model::ListPipelineExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PollForJobsRequest&, const Model::PollForJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForJobsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PollForThirdPartyJobsRequest&, const Model::PollForThirdPartyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForThirdPartyJobsResponseReceivedHandler;
@@ -726,6 +731,34 @@ namespace Model
         virtual void ListActionTypesAsync(const Model::ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a summary of the most recent executions for a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPipelineExecutionsOutcome ListPipelineExecutions(const Model::ListPipelineExecutionsRequest& request) const;
+
+        /**
+         * <p>Gets a summary of the most recent executions for a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPipelineExecutionsOutcomeCallable ListPipelineExecutionsCallable(const Model::ListPipelineExecutionsRequest& request) const;
+
+        /**
+         * <p>Gets a summary of the most recent executions for a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPipelineExecutionsAsync(const Model::ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a summary of all of the pipelines associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">AWS
@@ -1113,6 +1146,7 @@ namespace Model
         void GetPipelineStateAsyncHelper(const Model::GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetThirdPartyJobDetailsAsyncHelper(const Model::GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListActionTypesAsyncHelper(const Model::ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPipelineExecutionsAsyncHelper(const Model::ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PollForJobsAsyncHelper(const Model::PollForJobsRequest& request, const PollForJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PollForThirdPartyJobsAsyncHelper(const Model::PollForThirdPartyJobsRequest& request, const PollForThirdPartyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

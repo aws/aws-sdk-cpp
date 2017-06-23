@@ -50,19 +50,29 @@ namespace Model
     ActionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline const ActionTypeId& GetId() const{ return m_id; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetId(const ActionTypeId& value) { m_idHasBeenSet = true; m_id = value; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetId(ActionTypeId&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline ActionType& WithId(const ActionTypeId& value) { SetId(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline ActionType& WithId(ActionTypeId&& value) { SetId(std::move(value)); return *this;}
 
     /**

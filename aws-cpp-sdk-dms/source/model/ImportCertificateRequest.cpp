@@ -26,7 +26,8 @@ using namespace Aws::Utils;
 ImportCertificateRequest::ImportCertificateRequest() : 
     m_certificateIdentifierHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
-    m_certificateWalletHasBeenSet(false)
+    m_certificateWalletHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,17 @@ Aws::String ImportCertificateRequest::SerializePayload() const
   if(m_certificateWalletHasBeenSet)
   {
    payload.WithString("CertificateWallet", HashingUtils::Base64Encode(m_certificateWallet));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.WriteReadable();

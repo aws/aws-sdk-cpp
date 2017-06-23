@@ -53,49 +53,79 @@ namespace Model
     JobData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline JobData& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline JobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
     inline const ActionConfiguration& GetActionConfiguration() const{ return m_actionConfiguration; }
 
-    
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
     inline void SetActionConfiguration(const ActionConfiguration& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = value; }
 
-    
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
     inline void SetActionConfiguration(ActionConfiguration&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
     inline JobData& WithActionConfiguration(const ActionConfiguration& value) { SetActionConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
     inline JobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline const PipelineContext& GetPipelineContext() const{ return m_pipelineContext; }
 
-    
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
 
-    
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline JobData& WithPipelineContext(const PipelineContext& value) { SetPipelineContext(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
 
     /**
@@ -168,19 +198,44 @@ namespace Model
      */
     inline JobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline const AWSSessionCredentials& GetArtifactCredentials() const{ return m_artifactCredentials; }
 
-    
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
 
-    
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::move(value); }
 
-    
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline JobData& WithArtifactCredentials(const AWSSessionCredentials& value) { SetArtifactCredentials(value); return *this;}
 
-    
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
 
     /**
@@ -225,19 +280,34 @@ namespace Model
      */
     inline JobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
     inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
 
-    
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
-    
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
     inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
     inline JobData& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
     inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
   private:

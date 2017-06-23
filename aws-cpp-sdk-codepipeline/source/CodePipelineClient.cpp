@@ -41,6 +41,7 @@
 #include <aws/codepipeline/model/GetPipelineStateRequest.h>
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsRequest.h>
 #include <aws/codepipeline/model/ListActionTypesRequest.h>
+#include <aws/codepipeline/model/ListPipelineExecutionsRequest.h>
 #include <aws/codepipeline/model/ListPipelinesRequest.h>
 #include <aws/codepipeline/model/PollForJobsRequest.h>
 #include <aws/codepipeline/model/PollForThirdPartyJobsRequest.h>
@@ -606,6 +607,41 @@ void CodePipelineClient::ListActionTypesAsync(const ListActionTypesRequest& requ
 void CodePipelineClient::ListActionTypesAsyncHelper(const ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListActionTypes(request), context);
+}
+
+ListPipelineExecutionsOutcome CodePipelineClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListPipelineExecutionsOutcome(ListPipelineExecutionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPipelineExecutionsOutcome(outcome.GetError());
+  }
+}
+
+ListPipelineExecutionsOutcomeCallable CodePipelineClient::ListPipelineExecutionsCallable(const ListPipelineExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPipelineExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPipelineExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::ListPipelineExecutionsAsync(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPipelineExecutionsAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::ListPipelineExecutionsAsyncHelper(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPipelineExecutions(request), context);
 }
 
 ListPipelinesOutcome CodePipelineClient::ListPipelines(const ListPipelinesRequest& request) const

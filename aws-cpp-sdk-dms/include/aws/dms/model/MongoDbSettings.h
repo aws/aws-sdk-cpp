@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * �� For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline const AuthMechanismValue& GetAuthMechanism() const{ return m_authMechanism; }
@@ -256,7 +256,7 @@ namespace Model
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * �� For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline void SetAuthMechanism(const AuthMechanismValue& value) { m_authMechanismHasBeenSet = true; m_authMechanism = value; }
@@ -264,7 +264,7 @@ namespace Model
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * �� For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline void SetAuthMechanism(AuthMechanismValue&& value) { m_authMechanismHasBeenSet = true; m_authMechanism = std::move(value); }
@@ -272,7 +272,7 @@ namespace Model
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * �� For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(const AuthMechanismValue& value) { SetAuthMechanism(value); return *this;}
@@ -280,7 +280,7 @@ namespace Model
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * �� For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(AuthMechanismValue&& value) { SetAuthMechanism(std::move(value)); return *this;}

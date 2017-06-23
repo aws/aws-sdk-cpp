@@ -18,6 +18,8 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +141,41 @@ namespace Model
      */
     inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(std::move(value)); return *this;}
 
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline ImportCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline ImportCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline ImportCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline ImportCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
     Aws::String m_certificateIdentifier;
     bool m_certificateIdentifierHasBeenSet;
@@ -146,6 +183,8 @@ namespace Model
     bool m_certificatePemHasBeenSet;
     Aws::Utils::ByteBuffer m_certificateWallet;
     bool m_certificateWalletHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

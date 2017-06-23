@@ -125,19 +125,29 @@ namespace Model
      */
     inline PutThirdPartyJobFailureResultRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about failure details.</p>
+     */
     inline const FailureDetails& GetFailureDetails() const{ return m_failureDetails; }
 
-    
+    /**
+     * <p>Represents information about failure details.</p>
+     */
     inline void SetFailureDetails(const FailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
-    
+    /**
+     * <p>Represents information about failure details.</p>
+     */
     inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about failure details.</p>
+     */
     inline PutThirdPartyJobFailureResultRequest& WithFailureDetails(const FailureDetails& value) { SetFailureDetails(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about failure details.</p>
+     */
     inline PutThirdPartyJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
   private:

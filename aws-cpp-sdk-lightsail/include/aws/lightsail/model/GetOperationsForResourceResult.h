@@ -86,43 +86,50 @@ namespace Model
     inline GetOperationsForResourceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextPageCount() const{ return m_nextPageCount; }
+    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextPageCount(const Aws::String& value) { m_nextPageCount = value; }
+    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextPageCount(Aws::String&& value) { m_nextPageCount = std::move(value); }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextPageCount(const char* value) { m_nextPageCount.assign(value); }
+    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline GetOperationsForResourceResult& WithNextPageCount(const Aws::String& value) { SetNextPageCount(value); return *this;}
+    inline GetOperationsForResourceResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline GetOperationsForResourceResult& WithNextPageCount(Aws::String&& value) { SetNextPageCount(std::move(value)); return *this;}
+    inline GetOperationsForResourceResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the number of pages of results that remain.</p>
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
      */
-    inline GetOperationsForResourceResult& WithNextPageCount(const char* value) { SetNextPageCount(value); return *this;}
+    inline GetOperationsForResourceResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
     Aws::Vector<Operation> m_operations;
-    Aws::String m_nextPageCount;
+    Aws::String m_nextPageToken;
   };
 
 } // namespace Model

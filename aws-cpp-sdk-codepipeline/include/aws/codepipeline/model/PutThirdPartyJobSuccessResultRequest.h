@@ -126,19 +126,29 @@ namespace Model
      */
     inline PutThirdPartyJobSuccessResultRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about a current revision.</p>
+     */
     inline const CurrentRevision& GetCurrentRevision() const{ return m_currentRevision; }
 
-    
+    /**
+     * <p>Represents information about a current revision.</p>
+     */
     inline void SetCurrentRevision(const CurrentRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
 
-    
+    /**
+     * <p>Represents information about a current revision.</p>
+     */
     inline void SetCurrentRevision(CurrentRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about a current revision.</p>
+     */
     inline PutThirdPartyJobSuccessResultRequest& WithCurrentRevision(const CurrentRevision& value) { SetCurrentRevision(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about a current revision.</p>
+     */
     inline PutThirdPartyJobSuccessResultRequest& WithCurrentRevision(CurrentRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
 
     /**
@@ -211,19 +221,34 @@ namespace Model
      */
     inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
-    
+    /**
+     * <p>The details of the actions taken and results produced on an artifact as it
+     * passes through stages in the pipeline. </p>
+     */
     inline const ExecutionDetails& GetExecutionDetails() const{ return m_executionDetails; }
 
-    
+    /**
+     * <p>The details of the actions taken and results produced on an artifact as it
+     * passes through stages in the pipeline. </p>
+     */
     inline void SetExecutionDetails(const ExecutionDetails& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = value; }
 
-    
+    /**
+     * <p>The details of the actions taken and results produced on an artifact as it
+     * passes through stages in the pipeline. </p>
+     */
     inline void SetExecutionDetails(ExecutionDetails&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = std::move(value); }
 
-    
+    /**
+     * <p>The details of the actions taken and results produced on an artifact as it
+     * passes through stages in the pipeline. </p>
+     */
     inline PutThirdPartyJobSuccessResultRequest& WithExecutionDetails(const ExecutionDetails& value) { SetExecutionDetails(value); return *this;}
 
-    
+    /**
+     * <p>The details of the actions taken and results produced on an artifact as it
+     * passes through stages in the pipeline. </p>
+     */
     inline PutThirdPartyJobSuccessResultRequest& WithExecutionDetails(ExecutionDetails&& value) { SetExecutionDetails(std::move(value)); return *this;}
 
   private:

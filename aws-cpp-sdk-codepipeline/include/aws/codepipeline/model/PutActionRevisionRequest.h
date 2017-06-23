@@ -160,19 +160,29 @@ namespace Model
      */
     inline PutActionRevisionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline const ActionRevision& GetActionRevision() const{ return m_actionRevision; }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline void SetActionRevision(const ActionRevision& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = value; }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline void SetActionRevision(ActionRevision&& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline PutActionRevisionRequest& WithActionRevision(const ActionRevision& value) { SetActionRevision(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline PutActionRevisionRequest& WithActionRevision(ActionRevision&& value) { SetActionRevision(std::move(value)); return *this;}
 
   private:

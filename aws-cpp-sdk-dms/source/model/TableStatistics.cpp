@@ -41,6 +41,10 @@ TableStatistics::TableStatistics() :
     m_ddlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
+    m_fullLoadCondtnlChkFailedRows(0),
+    m_fullLoadCondtnlChkFailedRowsHasBeenSet(false),
+    m_fullLoadErrorRows(0),
+    m_fullLoadErrorRowsHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false)
 {
@@ -59,6 +63,10 @@ TableStatistics::TableStatistics(const JsonValue& jsonValue) :
     m_ddlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
+    m_fullLoadCondtnlChkFailedRows(0),
+    m_fullLoadCondtnlChkFailedRowsHasBeenSet(false),
+    m_fullLoadErrorRows(0),
+    m_fullLoadErrorRowsHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false)
 {
@@ -114,6 +122,20 @@ TableStatistics& TableStatistics::operator =(const JsonValue& jsonValue)
     m_fullLoadRows = jsonValue.GetInt64("FullLoadRows");
 
     m_fullLoadRowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadCondtnlChkFailedRows"))
+  {
+    m_fullLoadCondtnlChkFailedRows = jsonValue.GetInt64("FullLoadCondtnlChkFailedRows");
+
+    m_fullLoadCondtnlChkFailedRowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadErrorRows"))
+  {
+    m_fullLoadErrorRows = jsonValue.GetInt64("FullLoadErrorRows");
+
+    m_fullLoadErrorRowsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastUpdateTime"))
@@ -176,6 +198,18 @@ JsonValue TableStatistics::Jsonize() const
   if(m_fullLoadRowsHasBeenSet)
   {
    payload.WithInt64("FullLoadRows", m_fullLoadRows);
+
+  }
+
+  if(m_fullLoadCondtnlChkFailedRowsHasBeenSet)
+  {
+   payload.WithInt64("FullLoadCondtnlChkFailedRows", m_fullLoadCondtnlChkFailedRows);
+
+  }
+
+  if(m_fullLoadErrorRowsHasBeenSet)
+  {
+   payload.WithInt64("FullLoadErrorRows", m_fullLoadErrorRows);
 
   }
 

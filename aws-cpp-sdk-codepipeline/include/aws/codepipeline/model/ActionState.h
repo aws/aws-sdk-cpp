@@ -83,34 +83,54 @@ namespace Model
      */
     inline ActionState& WithActionName(const char* value) { SetActionName(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline const ActionRevision& GetCurrentRevision() const{ return m_currentRevision; }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline void SetCurrentRevision(const ActionRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline void SetCurrentRevision(ActionRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline ActionState& WithCurrentRevision(const ActionRevision& value) { SetCurrentRevision(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
     inline ActionState& WithCurrentRevision(ActionRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Represents information about the run of an action.</p>
+     */
     inline const ActionExecution& GetLatestExecution() const{ return m_latestExecution; }
 
-    
+    /**
+     * <p>Represents information about the run of an action.</p>
+     */
     inline void SetLatestExecution(const ActionExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
 
-    
+    /**
+     * <p>Represents information about the run of an action.</p>
+     */
     inline void SetLatestExecution(ActionExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
 
-    
+    /**
+     * <p>Represents information about the run of an action.</p>
+     */
     inline ActionState& WithLatestExecution(const ActionExecution& value) { SetLatestExecution(value); return *this;}
 
-    
+    /**
+     * <p>Represents information about the run of an action.</p>
+     */
     inline ActionState& WithLatestExecution(ActionExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
 
     /**

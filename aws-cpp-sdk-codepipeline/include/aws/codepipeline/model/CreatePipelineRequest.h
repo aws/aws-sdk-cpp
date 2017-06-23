@@ -40,19 +40,34 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
 
-    
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
 
-    
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
 
-    
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline CreatePipelineRequest& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
 
-    
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline CreatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:

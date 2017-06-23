@@ -17,8 +17,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/PipelineExecutionStatus.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/codepipeline/model/ArtifactRevision.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,68 +35,17 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about an execution of a pipeline.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineExecution">AWS
+   * <p>Summary information about a pipeline execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineExecution
+  class AWS_CODEPIPELINE_API PipelineExecutionSummary
   {
   public:
-    PipelineExecution();
-    PipelineExecution(const Aws::Utils::Json::JsonValue& jsonValue);
-    PipelineExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PipelineExecutionSummary();
+    PipelineExecutionSummary(const Aws::Utils::Json::JsonValue& jsonValue);
+    PipelineExecutionSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline PipelineExecution& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline PipelineExecution& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipeline that was executed.</p>
-     */
-    inline PipelineExecution& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
-
-    /**
-     * <p>The version number of the pipeline that was executed.</p>
-     */
-    inline int GetPipelineVersion() const{ return m_pipelineVersion; }
-
-    /**
-     * <p>The version number of the pipeline that was executed.</p>
-     */
-    inline void SetPipelineVersion(int value) { m_pipelineVersionHasBeenSet = true; m_pipelineVersion = value; }
-
-    /**
-     * <p>The version number of the pipeline that was executed.</p>
-     */
-    inline PipelineExecution& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
 
     /**
      * <p>The ID of the pipeline execution.</p>
@@ -122,17 +70,17 @@ namespace Model
     /**
      * <p>The ID of the pipeline execution.</p>
      */
-    inline PipelineExecution& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
+    inline PipelineExecutionSummary& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
 
     /**
      * <p>The ID of the pipeline execution.</p>
      */
-    inline PipelineExecution& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
+    inline PipelineExecutionSummary& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline execution.</p>
      */
-    inline PipelineExecution& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    inline PipelineExecutionSummary& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
@@ -176,7 +124,7 @@ namespace Model
      * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
      * </li> </ul>
      */
-    inline PipelineExecution& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
+    inline PipelineExecutionSummary& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
@@ -187,54 +135,72 @@ namespace Model
      * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
      * </li> </ul>
      */
-    inline PipelineExecution& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PipelineExecutionSummary& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
-    inline const Aws::Vector<ArtifactRevision>& GetArtifactRevisions() const{ return m_artifactRevisions; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
-    inline void SetArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
-    inline void SetArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = std::move(value); }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
-    inline PipelineExecution& WithArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { SetArtifactRevisions(value); return *this;}
+    inline PipelineExecutionSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
-    inline PipelineExecution& WithArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { SetArtifactRevisions(std::move(value)); return *this;}
+    inline PipelineExecutionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
      */
-    inline PipelineExecution& AddArtifactRevisions(const ArtifactRevision& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(value); return *this; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
      */
-    inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(std::move(value)); return *this; }
+    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
+
+    /**
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
+     */
+    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
+
+    /**
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
+     */
+    inline PipelineExecutionSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
+
+    /**
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
+     */
+    inline PipelineExecutionSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
   private:
-    Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
-    int m_pipelineVersion;
-    bool m_pipelineVersionHasBeenSet;
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet;
-    Aws::Vector<ArtifactRevision> m_artifactRevisions;
-    bool m_artifactRevisionsHasBeenSet;
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
+    Aws::Utils::DateTime m_lastUpdateTime;
+    bool m_lastUpdateTimeHasBeenSet;
   };
 
 } // namespace Model

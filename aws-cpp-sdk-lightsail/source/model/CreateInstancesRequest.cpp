@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 CreateInstancesRequest::CreateInstancesRequest() : 
     m_instanceNamesHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_customImageNameHasBeenSet(false),
     m_blueprintIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
@@ -51,12 +50,6 @@ Aws::String CreateInstancesRequest::SerializePayload() const
   if(m_availabilityZoneHasBeenSet)
   {
    payload.WithString("availabilityZone", m_availabilityZone);
-
-  }
-
-  if(m_customImageNameHasBeenSet)
-  {
-   payload.WithString("customImageName", m_customImageName);
 
   }
 

@@ -47,19 +47,29 @@ namespace Model
     CreateCustomActionTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateCustomActionTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>Returns information about the details of an action type.</p>
+     */
     inline const ActionType& GetActionType() const{ return m_actionType; }
 
-    
+    /**
+     * <p>Returns information about the details of an action type.</p>
+     */
     inline void SetActionType(const ActionType& value) { m_actionType = value; }
 
-    
+    /**
+     * <p>Returns information about the details of an action type.</p>
+     */
     inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
 
-    
+    /**
+     * <p>Returns information about the details of an action type.</p>
+     */
     inline CreateCustomActionTypeResult& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
 
-    
+    /**
+     * <p>Returns information about the details of an action type.</p>
+     */
     inline CreateCustomActionTypeResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
   private:

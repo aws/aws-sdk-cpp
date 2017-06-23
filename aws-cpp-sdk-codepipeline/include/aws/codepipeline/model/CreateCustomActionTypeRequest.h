@@ -162,19 +162,29 @@ namespace Model
      */
     inline CreateCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
-    
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline const ActionTypeSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline void SetSettings(const ActionTypeSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline void SetSettings(ActionTypeSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline CreateCustomActionTypeRequest& WithSettings(const ActionTypeSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline CreateCustomActionTypeRequest& WithSettings(ActionTypeSettings&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
@@ -254,34 +264,54 @@ namespace Model
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(ActionConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline const ArtifactDetails& GetInputArtifactDetails() const{ return m_inputArtifactDetails; }
 
-    
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline void SetInputArtifactDetails(const ArtifactDetails& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = value; }
 
-    
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline void SetInputArtifactDetails(ArtifactDetails&& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = std::move(value); }
 
-    
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline CreateCustomActionTypeRequest& WithInputArtifactDetails(const ArtifactDetails& value) { SetInputArtifactDetails(value); return *this;}
 
-    
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline CreateCustomActionTypeRequest& WithInputArtifactDetails(ArtifactDetails&& value) { SetInputArtifactDetails(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
     inline const ArtifactDetails& GetOutputArtifactDetails() const{ return m_outputArtifactDetails; }
 
-    
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
     inline void SetOutputArtifactDetails(const ArtifactDetails& value) { m_outputArtifactDetailsHasBeenSet = true; m_outputArtifactDetails = value; }
 
-    
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
     inline void SetOutputArtifactDetails(ArtifactDetails&& value) { m_outputArtifactDetailsHasBeenSet = true; m_outputArtifactDetails = std::move(value); }
 
-    
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
     inline CreateCustomActionTypeRequest& WithOutputArtifactDetails(const ArtifactDetails& value) { SetOutputArtifactDetails(value); return *this;}
 
-    
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
     inline CreateCustomActionTypeRequest& WithOutputArtifactDetails(ArtifactDetails&& value) { SetOutputArtifactDetails(std::move(value)); return *this;}
 
   private:

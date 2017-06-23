@@ -164,41 +164,6 @@ namespace Model
     inline CreateInstancesRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The name for your custom image.</p>
-     */
-    inline const Aws::String& GetCustomImageName() const{ return m_customImageName; }
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline void SetCustomImageName(const Aws::String& value) { m_customImageNameHasBeenSet = true; m_customImageName = value; }
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline void SetCustomImageName(Aws::String&& value) { m_customImageNameHasBeenSet = true; m_customImageName = std::move(value); }
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline void SetCustomImageName(const char* value) { m_customImageNameHasBeenSet = true; m_customImageName.assign(value); }
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline CreateInstancesRequest& WithCustomImageName(const Aws::String& value) { SetCustomImageName(value); return *this;}
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline CreateInstancesRequest& WithCustomImageName(Aws::String&& value) { SetCustomImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for your custom image.</p>
-     */
-    inline CreateInstancesRequest& WithCustomImageName(const char* value) { SetCustomImageName(value); return *this;}
-
-    /**
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
      * blueprints operation to return a list of available images (or
@@ -420,8 +385,6 @@ namespace Model
     bool m_instanceNamesHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    Aws::String m_customImageName;
-    bool m_customImageNameHasBeenSet;
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet;
     Aws::String m_bundleId;

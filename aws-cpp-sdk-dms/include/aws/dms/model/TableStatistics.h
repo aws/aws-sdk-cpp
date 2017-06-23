@@ -195,6 +195,42 @@ namespace Model
     inline TableStatistics& WithFullLoadRows(long long value) { SetFullLoadRows(value); return *this;}
 
     /**
+     * <p>The number of rows that failed conditional checks during the Full Load
+     * operation (valid only for DynamoDB as a target migrations).</p>
+     */
+    inline long long GetFullLoadCondtnlChkFailedRows() const{ return m_fullLoadCondtnlChkFailedRows; }
+
+    /**
+     * <p>The number of rows that failed conditional checks during the Full Load
+     * operation (valid only for DynamoDB as a target migrations).</p>
+     */
+    inline void SetFullLoadCondtnlChkFailedRows(long long value) { m_fullLoadCondtnlChkFailedRowsHasBeenSet = true; m_fullLoadCondtnlChkFailedRows = value; }
+
+    /**
+     * <p>The number of rows that failed conditional checks during the Full Load
+     * operation (valid only for DynamoDB as a target migrations).</p>
+     */
+    inline TableStatistics& WithFullLoadCondtnlChkFailedRows(long long value) { SetFullLoadCondtnlChkFailedRows(value); return *this;}
+
+    /**
+     * <p>The number of rows that failed to load during the Full Load operation (valid
+     * only for DynamoDB as a target migrations).</p>
+     */
+    inline long long GetFullLoadErrorRows() const{ return m_fullLoadErrorRows; }
+
+    /**
+     * <p>The number of rows that failed to load during the Full Load operation (valid
+     * only for DynamoDB as a target migrations).</p>
+     */
+    inline void SetFullLoadErrorRows(long long value) { m_fullLoadErrorRowsHasBeenSet = true; m_fullLoadErrorRows = value; }
+
+    /**
+     * <p>The number of rows that failed to load during the Full Load operation (valid
+     * only for DynamoDB as a target migrations).</p>
+     */
+    inline TableStatistics& WithFullLoadErrorRows(long long value) { SetFullLoadErrorRows(value); return *this;}
+
+    /**
      * <p>The last time the table was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
@@ -269,6 +305,10 @@ namespace Model
     bool m_ddlsHasBeenSet;
     long long m_fullLoadRows;
     bool m_fullLoadRowsHasBeenSet;
+    long long m_fullLoadCondtnlChkFailedRows;
+    bool m_fullLoadCondtnlChkFailedRowsHasBeenSet;
+    long long m_fullLoadErrorRows;
+    bool m_fullLoadErrorRowsHasBeenSet;
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
     Aws::String m_tableState;
