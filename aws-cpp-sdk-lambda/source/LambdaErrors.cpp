@@ -31,6 +31,7 @@ namespace LambdaErrorMapper
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
+static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
@@ -65,6 +66,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == K_M_S_DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), false);
+  }
+  else if (hashCode == INVALID_RUNTIME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_RUNTIME), false);
   }
   else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
   {

@@ -335,37 +335,58 @@ namespace Model
     inline PublishVersionResult& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline void SetLastModified(const Aws::String& value) { m_lastModified = value; }
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline void SetLastModified(Aws::String&& value) { m_lastModified = std::move(value); }
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline void SetLastModified(const char* value) { m_lastModified.assign(value); }
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline PublishVersionResult& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline PublishVersionResult& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
-     * <p>The time stamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function. The time stamp is
+     * conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD
+     * (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.</p>
      */
     inline PublishVersionResult& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 

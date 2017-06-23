@@ -119,10 +119,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
-     * runtime version as of November, 2016. Existing functions will be supported until
-     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
-     * runtime version as soon as possible.</p> </note>
+     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
+     * must migrate existing functions to the newer Node.js runtime versions available
+     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
+     * one-time extension until June 30, 2017 by going to the Lambda console and
+     * following the instructions provided. Failure to do so will result in an invalid
+     * parmaeter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
@@ -131,10 +135,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
-     * runtime version as of November, 2016. Existing functions will be supported until
-     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
-     * runtime version as soon as possible.</p> </note>
+     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
+     * must migrate existing functions to the newer Node.js runtime versions available
+     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
+     * one-time extension until June 30, 2017 by going to the Lambda console and
+     * following the instructions provided. Failure to do so will result in an invalid
+     * parmaeter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
@@ -143,10 +151,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
-     * runtime version as of November, 2016. Existing functions will be supported until
-     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
-     * runtime version as soon as possible.</p> </note>
+     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
+     * must migrate existing functions to the newer Node.js runtime versions available
+     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
+     * one-time extension until June 30, 2017 by going to the Lambda console and
+     * following the instructions provided. Failure to do so will result in an invalid
+     * parmaeter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
@@ -155,10 +167,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
-     * runtime version as of November, 2016. Existing functions will be supported until
-     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
-     * runtime version as soon as possible.</p> </note>
+     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
+     * must migrate existing functions to the newer Node.js runtime versions available
+     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
+     * one-time extension until June 30, 2017 by going to the Lambda console and
+     * following the instructions provided. Failure to do so will result in an invalid
+     * parmaeter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
@@ -167,10 +183,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
-     * runtime version as of November, 2016. Existing functions will be supported until
-     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
-     * runtime version as soon as possible.</p> </note>
+     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
+     * must migrate existing functions to the newer Node.js runtime versions available
+     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
+     * one-time extension until June 30, 2017 by going to the Lambda console and
+     * following the instructions provided. Failure to do so will result in an invalid
+     * parmaeter error being returned. Note that you will have to follow this procedure
+     * for each region that contains functions written in the Node v0.10.42
+     * runtime.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
