@@ -35,6 +35,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGene
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.budgets.BudgetsCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.waf.WafCppClientGenerator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,6 +69,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-budgets", new BudgetsCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-waf", new WafCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
 
