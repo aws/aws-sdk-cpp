@@ -113,7 +113,26 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
-    m_signer(signer),
+    m_errorMarshaller(errorMarshaller),
+    m_retryStrategy(configuration.retryStrategy),
+    m_writeRateLimiter(configuration.writeRateLimiter),
+    m_readRateLimiter(configuration.readRateLimiter),
+    m_userAgent(configuration.userAgent),
+    m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
+{
+    if (signer) 
+    {
+        m_signerMap.emplace(signer->GetName(), signer);
+    }
+    m_signerMap.emplace(Aws::Auth::NULL_SIGNER, Aws::MakeShared<Aws::Client::AWSNullSigner>(AWS_CLIENT_LOG_TAG));
+    InitializeGlobalStatics();
+}
+
+AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
+    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    m_httpClient(CreateHttpClient(configuration)),
+    m_signerMap(signerMap),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
@@ -123,6 +142,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
 {
     InitializeGlobalStatics();
 }
+
 
 AWSClient::~AWSClient()
 {
@@ -137,6 +157,22 @@ void AWSClient::DisableRequestProcessing()
 void AWSClient::EnableRequestProcessing() 
 { 
     m_httpClient->EnableRequestProcessing();
+}
+
+Aws::Client::AWSAuthSigner* AWSClient::GetAuthSignerByName(const Aws::String& AuthSignerName) const
+{
+    auto iter = m_signerMap.find(AuthSignerName);
+    if (iter == m_signerMap.end()) 
+    {
+        // A NULL_SIGNER typed signer is plugged into m_signerMap during construction.
+        iter = m_signerMap.find(Aws::Auth::NULL_SIGNER);
+        assert(iter != m_signerMap.end());
+        return iter->second.get();
+    }
+    else
+    {
+        return iter->second.get();
+    }
 }
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
@@ -159,6 +195,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
+            auto signer = GetAuthSignerByName(request.GetAuthSignerName());
 
             //detect clock skew and try to correct.            
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
@@ -179,16 +216,16 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
             {
                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
-               serverTime = m_signer->GetSigningTimestamp();
+               serverTime = signer->GetSigningTimestamp();
             }
 
             AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-            auto diff = DateTime::Diff(serverTime, m_signer->GetSigningTimestamp());
+            auto diff = DateTime::Diff(serverTime, signer->GetSigningTimestamp());
             //only try again if clock skew was the cause of the error.
             if(diff >= TIME_DIFF_MAX || diff <= TIME_DIF_MIN)
             {
                 AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
-                m_signer->SetClockSkew(diff);
+                signer->SetClockSkew(diff);
                 auto newError = AWSError<CoreErrors>(
                     outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
                 newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
@@ -249,8 +286,8 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
-
-    if (!m_signer->SignRequest(*httpRequest, request.SignBody()))
+    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    if (!signer->SignRequest(*httpRequest, request.SignBody()))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
@@ -274,8 +311,8 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method) const
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-    
-    if (!m_signer->SignRequest(*httpRequest))
+    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    if (!signer->SignRequest(*httpRequest))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
@@ -402,17 +439,20 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    if (m_signer->PresignRequest(*request, expirationInSeconds))
+    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    if (signer->PresignRequest(*request, expirationInSeconds))
     {
         return request->GetURIString();
     }
 
     return "";
 }
+
 Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    if (m_signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
     {
         return request->GetURIString();
     }
@@ -423,7 +463,8 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    if (m_signer->PresignRequest(*request, region, expirationInSeconds))
+    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    if (signer->PresignRequest(*request, region, expirationInSeconds))
     {
         return request->GetURIString();
     }
@@ -436,7 +477,8 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    if (m_signer->PresignRequest(*httpRequest, region, expirationInSeconds))
+    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    if (signer->PresignRequest(*httpRequest, region, expirationInSeconds))
     {
         return httpRequest->GetURIString();
     }
@@ -449,7 +491,8 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    if (m_signer->PresignRequest(*httpRequest, region, serviceName, expirationInSeconds))
+    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    if (signer->PresignRequest(*httpRequest, region, serviceName, expirationInSeconds))
     {
         return httpRequest->GetURIString();
     }
@@ -462,7 +505,8 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    if (m_signer->PresignRequest(*httpRequest, expirationInSeconds))
+    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    if (signer->PresignRequest(*httpRequest, expirationInSeconds))
     {
         return httpRequest->GetURIString();
     }
@@ -492,6 +536,14 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
     BASECLASS(configuration, signer, errorMarshaller)
 {
 }
+
+AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(configuration, signerMap, errorMarshaller)
+{
+}
+
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -582,11 +634,17 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-
 AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     BASECLASS(configuration, signer, errorMarshaller)
+{
+}
+
+AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
+    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(configuration, signerMap, errorMarshaller)
 {
 }
 

@@ -24,6 +24,7 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/auth/AWSAuthSigner.h>
 
 namespace Aws
 {
@@ -130,12 +131,16 @@ namespace Aws
         /**
          * get closure for notification that a request is being retried
          */
-         inline virtual const RequestRetryHandler& GetRequestRetryHandler() const { return m_requestRetryHandler; }
+        inline virtual const RequestRetryHandler& GetRequestRetryHandler() const { return m_requestRetryHandler; }
         /**
          * If this is set to true, content-md5 needs to be computed and set on the request
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
+        /**
+         * Return the Auth method's name used for request, defaulted to AuthV4Signer.
+         */
+        inline virtual Aws::String GetAuthSignerName() const { return Aws::Auth::DEFAULT_AUTHV4_SIGNER; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the 

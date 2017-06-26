@@ -88,18 +88,25 @@ namespace Aws
         public:
             /**
              * configuration will be used for http client settings, retry strategy, throttles, and signing information.
-             * supplied signer will be used for all requests.
+             * supplied signer will be used for all requests, aws sdk clients will use default AuthV4Signer.
              * errorMarshaller tells the client how to convert error payloads into AWSError objects.
              */
             AWSClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
+            /**
+             * Customized client could pass a signerMap to ctor and choose one from it when making a request.
+             */
+            AWSClient(const Aws::Client::ClientConfiguration& configuration,
+                const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+                const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
+
             virtual ~AWSClient();
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSecodns defaults
-             * to 0 which is the default 7 days.
+             * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
 
@@ -191,6 +198,11 @@ namespace Aws
                 return m_errorMarshaller;
             }
 
+            /**
+             * Gets the corresonding signer based on request's name
+             */
+            Aws::Client::AWSAuthSigner* GetAuthSignerByName(const Aws::String& AuthSignerName) const;
+
         private:
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
@@ -202,7 +214,7 @@ namespace Aws
                 Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-            std::shared_ptr<Aws::Client::AWSAuthSigner> m_signer;
+            Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>> m_signerMap;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
@@ -229,6 +241,13 @@ namespace Aws
             AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
+
+            /**
+             * Simply calls AWSClient constructor.
+             */
+            AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+                    const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
+                    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             virtual ~AWSJsonClient() = default;
 
@@ -272,6 +291,10 @@ namespace Aws
 
             AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
+                const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
+
+            AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
+                const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             virtual ~AWSXMLClient() = default;
