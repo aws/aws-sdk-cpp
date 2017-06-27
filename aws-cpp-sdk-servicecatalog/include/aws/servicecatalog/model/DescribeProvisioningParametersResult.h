@@ -19,6 +19,7 @@
 #include <aws/servicecatalog/model/ProvisioningArtifactParameter.h>
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
+#include <aws/servicecatalog/model/TagOptionSummary.h>
 #include <utility>
 
 namespace Aws
@@ -177,10 +178,53 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& AddUsageInstructions(UsageInstruction&& value) { m_usageInstructions.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline const Aws::Vector<TagOptionSummary>& GetTagOptions() const{ return m_tagOptions; }
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline void SetTagOptions(const Aws::Vector<TagOptionSummary>& value) { m_tagOptions = value; }
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline void SetTagOptions(Aws::Vector<TagOptionSummary>&& value) { m_tagOptions = std::move(value); }
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithTagOptions(const Aws::Vector<TagOptionSummary>& value) { SetTagOptions(value); return *this;}
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithTagOptions(Aws::Vector<TagOptionSummary>&& value) { SetTagOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddTagOptions(const TagOptionSummary& value) { m_tagOptions.push_back(value); return *this; }
+
+    /**
+     * <p>List of TagOptions associated with the provisioned provisioning
+     * parameters.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddTagOptions(TagOptionSummary&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
+
   private:
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
     Aws::Vector<ConstraintSummary> m_constraintSummaries;
     Aws::Vector<UsageInstruction> m_usageInstructions;
+    Aws::Vector<TagOptionSummary> m_tagOptions;
   };
 
 } // namespace Model

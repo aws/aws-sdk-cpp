@@ -53,6 +53,15 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const AmazonWebServ
     }
   }
 
+  if(jsonValue.ValueExists("TagOptions"))
+  {
+    Array<JsonValue> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
+    {
+      m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;
