@@ -58,7 +58,7 @@ private:
     const CurlHandleContainer& operator = (const CurlHandleContainer&&) = delete;
 
     bool CheckAndGrowPool();
-    void SetDefaultOptionsOnHandle(void* handle);
+    void SetDefaultOptionsOnHandle(CURL* handle);
 
     Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
     unsigned m_maxPoolSize;

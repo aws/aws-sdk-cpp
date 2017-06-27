@@ -107,7 +107,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
     return false;
 }
 
-void CurlHandleContainer::SetDefaultOptionsOnHandle(void* handle)
+void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
 {
     //for timeouts to work in a multi-threaded context,
     //always turn signals off. This also forces dns queries to
