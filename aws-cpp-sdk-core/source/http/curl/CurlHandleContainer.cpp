@@ -112,9 +112,9 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     //for timeouts to work in a multi-threaded context,
     //always turn signals off. This also forces dns queries to
     //not be included in the timeout calculations.
-    curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
-    curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, 0L);
-    curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, 1L);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout / 1000);
+    curl_easy_setopt((CURL*)handle, CURLOPT_NOSIGNAL, 1L);
+    curl_easy_setopt((CURL*)handle, CURLOPT_TIMEOUT_MS, 0L);
+    curl_easy_setopt((CURL*)handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
+    curl_easy_setopt((CURL*)handle, CURLOPT_LOW_SPEED_LIMIT, 1L);
+    curl_easy_setopt((CURL*)handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout / 1000);
 }
