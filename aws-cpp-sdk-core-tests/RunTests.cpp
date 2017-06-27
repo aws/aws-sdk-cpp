@@ -20,6 +20,7 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/MemoryTesting.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
 
 #if !defined(_WIN32) && !defined(ORBIS)
 #include <sys/stat.h>
@@ -29,7 +30,7 @@ int main(int argc, char** argv)
 {
 #if !defined(_WIN32) && !defined(ORBIS)
 	// In order to fix github issue at https://github.com/aws/aws-sdk-cpp/issues/232
-        // Created dir by this process will be set with mode 0777, so that multiple users can build on the same machine
+    // Created dir by this process will be set with mode 0777, so that multiple users can build on the same machine
 	umask(0);
 #endif
 

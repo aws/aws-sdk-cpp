@@ -51,9 +51,9 @@ static const int SUCCESS_RESPONSE_MAX = 299;
 
 static const char* AWS_CLIENT_LOG_TAG = "AWSClient";
 //4 Minutes
-static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::milliseconds(240000); 
+static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4); 
 //-4 Minutes
-static const std::chrono::milliseconds TIME_DIF_MIN = std::chrono::milliseconds(-240000);
+static const std::chrono::milliseconds TIME_DIFF_MIN = std::chrono::minutes(-4);
 
 std::atomic<int> AWSClient::s_refCount(0);
 
@@ -222,10 +222,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
             auto diff = DateTime::Diff(serverTime, signer->GetSigningTimestamp());
             //only try again if clock skew was the cause of the error.
-            if(diff >= TIME_DIFF_MAX || diff <= TIME_DIF_MIN)
+            if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
             {
                 AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
                 signer->SetClockSkew(diff);
+                //don't sleep at all if clock skew was the problem.
                 auto newError = AWSError<CoreErrors>(
                     outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
                 newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
