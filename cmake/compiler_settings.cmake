@@ -71,7 +71,6 @@ elseif(USE_GCC_FLAGS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -Wextra")
 
     if(COMPILER_CLANG)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-private-field")
         if(PLATFORM_ANDROID)
             if(ANDROID_ABI MATCHES "mips*")
                 string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")

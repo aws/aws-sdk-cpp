@@ -152,7 +152,6 @@ namespace Aws
                 Aws::OStream& m_stream;
                 CipherMode m_cipherMode;
                 bool m_isFinalized;
-                size_t m_bufferSize;
                 int16_t m_blockOffset;
             };
         }

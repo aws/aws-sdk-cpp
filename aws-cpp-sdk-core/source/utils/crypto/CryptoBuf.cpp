@@ -238,8 +238,7 @@ namespace Aws
 
             SymmetricCryptoBufSink::SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize, int16_t blockOffset)
                     :
-                    m_osBuf(bufferSize), m_cipher(cipher), m_stream(stream), m_cipherMode(cipherMode), m_isFinalized(false),
-                    m_bufferSize(bufferSize), m_blockOffset(blockOffset)
+                    m_osBuf(bufferSize), m_cipher(cipher), m_stream(stream), m_cipherMode(cipherMode), m_isFinalized(false), m_blockOffset(blockOffset)
             {
                 assert(m_blockOffset < 16 && m_blockOffset >= 0);
                 char* outputBase = reinterpret_cast<char*>(m_osBuf.GetUnderlyingData());
