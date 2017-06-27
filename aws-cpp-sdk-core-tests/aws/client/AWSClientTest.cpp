@@ -17,6 +17,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
@@ -79,12 +80,31 @@ private:
     bool m_shouldComputeMd5;
 };
 
+class CountedRetryStrategy : public DefaultRetryStrategy
+{
+public:
+    CountedRetryStrategy() : m_attemptedRetries(0) {}
+    bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
+    {
+        if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries)) 
+        {
+            m_attemptedRetries = attemptedRetries + 1;
+            return true;
+        }
+        return false;
+    }
+    int GetAttemptedRetriesCount() { return m_attemptedRetries; }
+private:
+    mutable int m_attemptedRetries;
+};
+
 class MockAWSClient : AWSClient
 {
-    typedef Aws::Utils::DateTime DateTime;
-    typedef Aws::Utils::DateFormat DateFormat;
-    public:
-    MockAWSClient() : AWSClient(ClientConfiguration(), 
+    using DateTime = Aws::Utils::DateTime;
+    using DateFormat = Aws::Utils::DateFormat;
+
+public:
+    MockAWSClient(const ClientConfiguration& config) : AWSClient(config, 
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, 
                 Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "AKIDEXAMPLE", 
                     "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"), "service", "us-east-1"), nullptr) { }
@@ -92,7 +112,6 @@ class MockAWSClient : AWSClient
     Aws::Client::HttpResponseOutcome MakeRequest(const AmazonWebServiceRequest& request)
     {
         const URI uri("domain.com/something");
-        // headers["x-amz-date"] = requestTime.ToGmtString(DateFormat::ISO_8601);
         const auto method = HttpMethod::HTTP_GET;
         HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method));
         return httpOutcome;
@@ -116,101 +135,139 @@ protected:
 
 class AWSClientTestSuite : public ::testing::Test
 {
-    protected:
-        std::shared_ptr<MockHttpClient> mockHttpClient;
-        std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+protected:
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+    std::shared_ptr<CountedRetryStrategy> countedRetryStrategy;
+    Aws::UniquePtr<MockAWSClient> client;
 
-        void SetUp()
+    void SetUp()
+    {
+        ClientConfiguration config;
+        config.scheme = Scheme::HTTP;
+        config.connectTimeoutMs = 30000;
+        config.requestTimeoutMs = 30000;           
+        countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
+        config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy);
+
+        mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+        mockHttpClientFactory->SetClient(mockHttpClient);
+        SetHttpClientFactory(mockHttpClientFactory);
+        client = Aws::MakeUnique<MockAWSClient>(ALLOCATION_TAG, config);
+    }
+
+    void TearDown()
+    {
+        client = nullptr;
+        mockHttpClient = nullptr;
+        mockHttpClientFactory = nullptr;
+
+        CleanupHttp();
+        InitHttp();
+    }
+
+    int GetRequestAttemptedRetries()
+    {
+        return countedRetryStrategy->GetAttemptedRetriesCount();
+    }
+
+    void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)
+    {
+        auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"), 
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, *httpRequest);
+        httpResponse->SetResponseCode(code);
+        httpResponse->GetResponseBody() << "";
+        for(auto&& header : headers)
         {
-            // Create a client
-            ClientConfiguration config;
-            config.scheme = Scheme::HTTP;
-            config.connectTimeoutMs = 30000;
-            config.requestTimeoutMs = 30000;           
-
-            mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
-            mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
-            mockHttpClientFactory->SetClient(mockHttpClient);
-            SetHttpClientFactory(mockHttpClientFactory);
+            httpResponse->AddHeader(header.first, header.second);
         }
-
-        void TearDown()
-        {
-            mockHttpClient = nullptr;
-            mockHttpClientFactory = nullptr;
-
-            CleanupHttp();
-            InitHttp();
-        }
-
-        void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)
-        {
-            auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"), 
-                    HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, *httpRequest);
-            httpResponse->SetResponseCode(code);
-            httpResponse->GetResponseBody() << "";
-            for(auto&& header : headers)
-            {
-                httpResponse->AddHeader(header.first, header.second);
-            }
-            mockHttpClient->AddResponseToReturn(httpResponse);
-        }
+        mockHttpClient->AddResponseToReturn(httpResponse);
+    }
 };
 
 TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
 {
-    HeaderValueCollection responseHeaders, requestHeaders, emptyHeaders;
+    HeaderValueCollection responseHeaders, requestHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
-    MockAWSClient client;
     AmazonWebServiceRequestMock request;
     requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
     request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
-    auto outcome = client.MakeRequest(request);
+    auto outcome = client->MakeRequest(request);
     ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(1, GetRequestAttemptedRetries());
 }
 
 TEST_F(AWSClientTestSuite, TestClockSkewWithinAcceptableRange)
 {
-    HeaderValueCollection responseHeaders, requestHeaders, emptyHeaders;
+    HeaderValueCollection responseHeaders, requestHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::minutes(2)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 2 minutes
-    MockAWSClient client;
     AmazonWebServiceRequestMock request;
     requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
     request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
-    QueueMockResponse(HttpResponseCode::OK, responseHeaders); // this will make this test fail if the 4min constraint changes, otherwise it's not needed
-    auto outcome = client.MakeRequest(request);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(0, GetRequestAttemptedRetries());
 }
 
 TEST_F(AWSClientTestSuite, TestClockSkewConsecutiveRequests)
 {
     // first request should set the skew offset and retry, but following requests should not
-    HeaderValueCollection responseHeaders, requestHeaders, emptyHeaders;
+    HeaderValueCollection responseHeaders, requestHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
-    MockAWSClient client;
     AmazonWebServiceRequestMock request;
     requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
     request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
-    QueueMockResponse(HttpResponseCode::UNAUTHORIZED, responseHeaders);
-    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
-    auto outcome = client.MakeRequest(request);
+    auto outcome = client->MakeRequest(request);
     ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(1, GetRequestAttemptedRetries());
 
-    outcome = client.MakeRequest(request);
-    ASSERT_FALSE(outcome.IsSuccess());
+    QueueMockResponse(HttpResponseCode::UNAUTHORIZED, responseHeaders);
+    outcome = client->MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
     ASSERT_EQ(HttpResponseCode::UNAUTHORIZED, outcome.GetError().GetResponseCode());
+    ASSERT_EQ(1, GetRequestAttemptedRetries());
 
-    outcome = client.MakeRequest(request);
-    ASSERT_FALSE(outcome.IsSuccess());
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
+    outcome = client->MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
     ASSERT_EQ(HttpResponseCode::FORBIDDEN, outcome.GetError().GetResponseCode());
+    ASSERT_EQ(1, GetRequestAttemptedRetries()); 
 }
 
+TEST_F(AWSClientTestSuite, TestClockCorrectedAfterBeingAdjusted)
+{
+    // after making a request with a skewed clock, the client adjusts for the client's clock skew. However, 
+    // later the client's clock is corrected via NTP for example. The skew should be reset to 0.
+
+    // the skewed request (and the offset adjust happens)
+    HeaderValueCollection responseHeaders, requestHeaders;
+    responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
+    AmazonWebServiceRequestMock request;
+    requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
+    request.SetHeaders(requestHeaders);
+    QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    auto outcome = client->MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(1, GetRequestAttemptedRetries());
+
+    // the request after the client's clock is synchronized. 
+    responseHeaders.clear();
+    responseHeaders.emplace("Date", DateTime::Now().ToGmtString(DateFormat::RFC822)); // server is in sync with client
+    QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    outcome = client->MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess()); 
+    ASSERT_EQ(1, GetRequestAttemptedRetries());
+}
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
 {

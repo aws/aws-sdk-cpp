@@ -224,11 +224,22 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             //only try again if clock skew was the cause of the error.
             if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
             {
-                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
+                // client's clock is within range of server's clock. reset skew to 0.
+                const auto clientDiff = DateTime::Diff(serverTime, DateTime::Now());
+                if(clientDiff < TIME_DIFF_MAX && clientDiff > TIME_DIFF_MIN)
+                {
+                    AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "The client's clock is within the server's clock acceptable range."
+                            "Resetting the signer's clock skew to " << clientDiff.count() << " milliseconds.");
+                    diff = clientDiff;
+                }
+                else 
+                {
+                    AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
+                }
+
                 signer->SetClockSkew(diff);
-                //don't sleep at all if clock skew was the problem.
                 auto newError = AWSError<CoreErrors>(
-                    outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
+                        outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
                 newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
                 newError.SetResponseCode(outcome.GetError().GetResponseCode());
                 outcome = newError;
