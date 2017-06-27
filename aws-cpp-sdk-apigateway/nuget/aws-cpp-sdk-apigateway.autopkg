@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-APIGateway;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20150709.162;
+        version : 1.0.20150709.163;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon API Gateway);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0.162
+            AWSSDKCPP-Core/1.0.163
        }
     }
 

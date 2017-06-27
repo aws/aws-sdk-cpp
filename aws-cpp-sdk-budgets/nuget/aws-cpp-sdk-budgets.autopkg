@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Budgets;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20161020.162;
+        version : 1.0.20161020.163;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Budgets);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0.162
+            AWSSDKCPP-Core/1.0.163
        }
     }
 
