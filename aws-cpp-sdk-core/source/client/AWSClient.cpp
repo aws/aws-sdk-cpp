@@ -187,7 +187,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             return outcome;
         }
-        else if(!m_httpClient->IsRequestProcessingEnabled())
+        else if (!m_httpClient->IsRequestProcessingEnabled())
         {
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request was cancelled externally.");
             return outcome;
