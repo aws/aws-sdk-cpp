@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <aws/servicecatalog/model/TagOptionDetail.h>
 #include <utility>
 
 namespace Aws
@@ -139,10 +140,46 @@ namespace Model
      */
     inline DescribeProductAsAdminResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline const Aws::Vector<TagOptionDetail>& GetTagOptions() const{ return m_tagOptions; }
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline void SetTagOptions(const Aws::Vector<TagOptionDetail>& value) { m_tagOptions = value; }
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline void SetTagOptions(Aws::Vector<TagOptionDetail>&& value) { m_tagOptions = std::move(value); }
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline DescribeProductAsAdminResult& WithTagOptions(const Aws::Vector<TagOptionDetail>& value) { SetTagOptions(value); return *this;}
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline DescribeProductAsAdminResult& WithTagOptions(Aws::Vector<TagOptionDetail>&& value) { SetTagOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline DescribeProductAsAdminResult& AddTagOptions(const TagOptionDetail& value) { m_tagOptions.push_back(value); return *this; }
+
+    /**
+     * <p>List of TagOptions associated with the product.</p>
+     */
+    inline DescribeProductAsAdminResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
+
   private:
     ProductViewDetail m_productViewDetail;
     Aws::Vector<ProvisioningArtifactSummary> m_provisioningArtifactSummaries;
     Aws::Vector<Tag> m_tags;
+    Aws::Vector<TagOptionDetail> m_tagOptions;
   };
 
 } // namespace Model

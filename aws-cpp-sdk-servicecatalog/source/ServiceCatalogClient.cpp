@@ -30,11 +30,13 @@
 #include <aws/servicecatalog/model/AcceptPortfolioShareRequest.h>
 #include <aws/servicecatalog/model/AssociatePrincipalWithPortfolioRequest.h>
 #include <aws/servicecatalog/model/AssociateProductWithPortfolioRequest.h>
+#include <aws/servicecatalog/model/AssociateTagOptionWithResourceRequest.h>
 #include <aws/servicecatalog/model/CreateConstraintRequest.h>
 #include <aws/servicecatalog/model/CreatePortfolioRequest.h>
 #include <aws/servicecatalog/model/CreatePortfolioShareRequest.h>
 #include <aws/servicecatalog/model/CreateProductRequest.h>
 #include <aws/servicecatalog/model/CreateProvisioningArtifactRequest.h>
+#include <aws/servicecatalog/model/CreateTagOptionRequest.h>
 #include <aws/servicecatalog/model/DeleteConstraintRequest.h>
 #include <aws/servicecatalog/model/DeletePortfolioRequest.h>
 #include <aws/servicecatalog/model/DeletePortfolioShareRequest.h>
@@ -49,8 +51,10 @@
 #include <aws/servicecatalog/model/DescribeProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DescribeProvisioningParametersRequest.h>
 #include <aws/servicecatalog/model/DescribeRecordRequest.h>
+#include <aws/servicecatalog/model/DescribeTagOptionRequest.h>
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioRequest.h>
+#include <aws/servicecatalog/model/DisassociateTagOptionFromResourceRequest.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListLaunchPathsRequest.h>
@@ -60,6 +64,8 @@
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsRequest.h>
 #include <aws/servicecatalog/model/ListRecordHistoryRequest.h>
+#include <aws/servicecatalog/model/ListResourcesForTagOptionRequest.h>
+#include <aws/servicecatalog/model/ListTagOptionsRequest.h>
 #include <aws/servicecatalog/model/ProvisionProductRequest.h>
 #include <aws/servicecatalog/model/RejectPortfolioShareRequest.h>
 #include <aws/servicecatalog/model/ScanProvisionedProductsRequest.h>
@@ -71,6 +77,7 @@
 #include <aws/servicecatalog/model/UpdateProductRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisioningArtifactRequest.h>
+#include <aws/servicecatalog/model/UpdateTagOptionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -239,6 +246,41 @@ void ServiceCatalogClient::AssociateProductWithPortfolioAsync(const AssociatePro
 void ServiceCatalogClient::AssociateProductWithPortfolioAsyncHelper(const AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateProductWithPortfolio(request), context);
+}
+
+AssociateTagOptionWithResourceOutcome ServiceCatalogClient::AssociateTagOptionWithResource(const AssociateTagOptionWithResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateTagOptionWithResourceOutcome(AssociateTagOptionWithResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateTagOptionWithResourceOutcome(outcome.GetError());
+  }
+}
+
+AssociateTagOptionWithResourceOutcomeCallable ServiceCatalogClient::AssociateTagOptionWithResourceCallable(const AssociateTagOptionWithResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateTagOptionWithResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTagOptionWithResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::AssociateTagOptionWithResourceAsync(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateTagOptionWithResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::AssociateTagOptionWithResourceAsyncHelper(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateTagOptionWithResource(request), context);
 }
 
 CreateConstraintOutcome ServiceCatalogClient::CreateConstraint(const CreateConstraintRequest& request) const
@@ -414,6 +456,41 @@ void ServiceCatalogClient::CreateProvisioningArtifactAsync(const CreateProvision
 void ServiceCatalogClient::CreateProvisioningArtifactAsyncHelper(const CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateProvisioningArtifact(request), context);
+}
+
+CreateTagOptionOutcome ServiceCatalogClient::CreateTagOption(const CreateTagOptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateTagOptionOutcome(CreateTagOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTagOptionOutcome(outcome.GetError());
+  }
+}
+
+CreateTagOptionOutcomeCallable ServiceCatalogClient::CreateTagOptionCallable(const CreateTagOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTagOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTagOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::CreateTagOptionAsync(const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTagOptionAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::CreateTagOptionAsyncHelper(const CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTagOption(request), context);
 }
 
 DeleteConstraintOutcome ServiceCatalogClient::DeleteConstraint(const DeleteConstraintRequest& request) const
@@ -906,6 +983,41 @@ void ServiceCatalogClient::DescribeRecordAsyncHelper(const DescribeRecordRequest
   handler(this, request, DescribeRecord(request), context);
 }
 
+DescribeTagOptionOutcome ServiceCatalogClient::DescribeTagOption(const DescribeTagOptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTagOptionOutcome(DescribeTagOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTagOptionOutcome(outcome.GetError());
+  }
+}
+
+DescribeTagOptionOutcomeCallable ServiceCatalogClient::DescribeTagOptionCallable(const DescribeTagOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTagOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTagOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribeTagOptionAsync(const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagOptionAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribeTagOptionAsyncHelper(const DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTagOption(request), context);
+}
+
 DisassociatePrincipalFromPortfolioOutcome ServiceCatalogClient::DisassociatePrincipalFromPortfolio(const DisassociatePrincipalFromPortfolioRequest& request) const
 {
   Aws::StringStream ss;
@@ -974,6 +1086,41 @@ void ServiceCatalogClient::DisassociateProductFromPortfolioAsync(const Disassoci
 void ServiceCatalogClient::DisassociateProductFromPortfolioAsyncHelper(const DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateProductFromPortfolio(request), context);
+}
+
+DisassociateTagOptionFromResourceOutcome ServiceCatalogClient::DisassociateTagOptionFromResource(const DisassociateTagOptionFromResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateTagOptionFromResourceOutcome(DisassociateTagOptionFromResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateTagOptionFromResourceOutcome(outcome.GetError());
+  }
+}
+
+DisassociateTagOptionFromResourceOutcomeCallable ServiceCatalogClient::DisassociateTagOptionFromResourceCallable(const DisassociateTagOptionFromResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateTagOptionFromResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTagOptionFromResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DisassociateTagOptionFromResourceAsync(const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTagOptionFromResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DisassociateTagOptionFromResourceAsyncHelper(const DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateTagOptionFromResource(request), context);
 }
 
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(const ListAcceptedPortfolioSharesRequest& request) const
@@ -1289,6 +1436,76 @@ void ServiceCatalogClient::ListRecordHistoryAsync(const ListRecordHistoryRequest
 void ServiceCatalogClient::ListRecordHistoryAsyncHelper(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRecordHistory(request), context);
+}
+
+ListResourcesForTagOptionOutcome ServiceCatalogClient::ListResourcesForTagOption(const ListResourcesForTagOptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListResourcesForTagOptionOutcome(ListResourcesForTagOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourcesForTagOptionOutcome(outcome.GetError());
+  }
+}
+
+ListResourcesForTagOptionOutcomeCallable ServiceCatalogClient::ListResourcesForTagOptionCallable(const ListResourcesForTagOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourcesForTagOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourcesForTagOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListResourcesForTagOptionAsync(const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourcesForTagOptionAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListResourcesForTagOptionAsyncHelper(const ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourcesForTagOption(request), context);
+}
+
+ListTagOptionsOutcome ServiceCatalogClient::ListTagOptions(const ListTagOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagOptionsOutcome(ListTagOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagOptionsOutcome(outcome.GetError());
+  }
+}
+
+ListTagOptionsOutcomeCallable ServiceCatalogClient::ListTagOptionsCallable(const ListTagOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListTagOptionsAsync(const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListTagOptionsAsyncHelper(const ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagOptions(request), context);
 }
 
 ProvisionProductOutcome ServiceCatalogClient::ProvisionProduct(const ProvisionProductRequest& request) const
@@ -1674,5 +1891,40 @@ void ServiceCatalogClient::UpdateProvisioningArtifactAsync(const UpdateProvision
 void ServiceCatalogClient::UpdateProvisioningArtifactAsyncHelper(const UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProvisioningArtifact(request), context);
+}
+
+UpdateTagOptionOutcome ServiceCatalogClient::UpdateTagOption(const UpdateTagOptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTagOptionOutcome(UpdateTagOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTagOptionOutcome(outcome.GetError());
+  }
+}
+
+UpdateTagOptionOutcomeCallable ServiceCatalogClient::UpdateTagOptionCallable(const UpdateTagOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTagOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTagOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::UpdateTagOptionAsync(const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTagOptionAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::UpdateTagOptionAsyncHelper(const UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTagOption(request), context);
 }
 

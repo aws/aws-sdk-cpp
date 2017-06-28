@@ -163,20 +163,17 @@ namespace Model
     inline DescribeProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
     /**
-     * <p>Selects verbose results. If set to true, the CloudFormation template is
-     * returned.</p>
+     * <p>Enable a verbose level of details for the provisioning artifact.</p>
      */
     inline bool GetVerbose() const{ return m_verbose; }
 
     /**
-     * <p>Selects verbose results. If set to true, the CloudFormation template is
-     * returned.</p>
+     * <p>Enable a verbose level of details for the provisioning artifact.</p>
      */
     inline void SetVerbose(bool value) { m_verboseHasBeenSet = true; m_verbose = value; }
 
     /**
-     * <p>Selects verbose results. If set to true, the CloudFormation template is
-     * returned.</p>
+     * <p>Enable a verbose level of details for the provisioning artifact.</p>
      */
     inline DescribeProvisioningArtifactRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 

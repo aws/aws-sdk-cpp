@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about a provisioning artifact.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Stores summary information about a provisioning artifact.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactSummary">AWS
    * API Reference</a></p>
    */
@@ -49,107 +49,107 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact identifier.</p>
+     * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact name.</p>
+     * <p>The name of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The provisioning artifact description.</p>
+     * <p>The description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 

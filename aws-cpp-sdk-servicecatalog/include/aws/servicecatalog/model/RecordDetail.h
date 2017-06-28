@@ -127,7 +127,7 @@ namespace Model
      * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
      * the requested operation failed and some remediation is occurring. For example, a
-     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * rollback.</p> <p> <code>SUCCEEDED</code> - The requested operation has
      * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
      * has completed but has failed. Investigate using the error messages returned.</p>
      */
@@ -139,7 +139,7 @@ namespace Model
      * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
      * the requested operation failed and some remediation is occurring. For example, a
-     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * rollback.</p> <p> <code>SUCCEEDED</code> - The requested operation has
      * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
      * has completed but has failed. Investigate using the error messages returned.</p>
      */
@@ -151,7 +151,7 @@ namespace Model
      * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
      * the requested operation failed and some remediation is occurring. For example, a
-     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * rollback.</p> <p> <code>SUCCEEDED</code> - The requested operation has
      * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
      * has completed but has failed. Investigate using the error messages returned.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
      * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
      * the requested operation failed and some remediation is occurring. For example, a
-     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * rollback.</p> <p> <code>SUCCEEDED</code> - The requested operation has
      * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
      * has completed but has failed. Investigate using the error messages returned.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
      * <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but
      * the requested operation failed and some remediation is occurring. For example, a
-     * roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has
+     * rollback.</p> <p> <code>SUCCEEDED</code> - The requested operation has
      * successfully completed.</p> <p> <code>FAILED</code> - The requested operation
      * has completed but has failed. Investigate using the error messages returned.</p>
      */
