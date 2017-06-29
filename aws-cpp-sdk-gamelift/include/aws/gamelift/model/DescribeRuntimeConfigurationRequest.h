@@ -40,37 +40,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline DescribeRuntimeConfigurationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline DescribeRuntimeConfigurationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to get the runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
     inline DescribeRuntimeConfigurationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

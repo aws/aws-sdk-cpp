@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
@@ -189,7 +189,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
@@ -197,7 +197,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::move(value); }
@@ -205,7 +205,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
@@ -213,7 +213,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
@@ -221,7 +221,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(std::move(value)); return *this;}
@@ -229,7 +229,7 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
-     * launch path and launch parameters instead of a runtime configuration will
+     * launch path and launch parameters instead of a run-time configuration will
      * continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
@@ -237,56 +237,56 @@ namespace Model
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
-     * server launch path and launch parameters instead of a runtime configuration will
-     * continue to work.)</p>
+     * server launch path and launch parameters instead of a run-time configuration
+     * will continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
@@ -550,76 +550,76 @@ namespace Model
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance. A CreateFleet request must include a
-     * runtime configuration with at least one server process configuration; otherwise
-     * the request will fail with an invalid request exception. (This parameter
-     * replaces the parameters <code>ServerLaunchPath</code> and
+     * run-time configuration with at least one server process configuration; otherwise
+     * the request fails with an invalid request exception. (This parameter replaces
+     * the parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>; requests that contain values for these
-     * parameters instead of a runtime configuration will continue to work.) </p>
+     * parameters instead of a run-time configuration will continue to work.) </p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance. A CreateFleet request must include a
-     * runtime configuration with at least one server process configuration; otherwise
-     * the request will fail with an invalid request exception. (This parameter
-     * replaces the parameters <code>ServerLaunchPath</code> and
+     * run-time configuration with at least one server process configuration; otherwise
+     * the request fails with an invalid request exception. (This parameter replaces
+     * the parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>; requests that contain values for these
-     * parameters instead of a runtime configuration will continue to work.) </p>
+     * parameters instead of a run-time configuration will continue to work.) </p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance. A CreateFleet request must include a
-     * runtime configuration with at least one server process configuration; otherwise
-     * the request will fail with an invalid request exception. (This parameter
-     * replaces the parameters <code>ServerLaunchPath</code> and
+     * run-time configuration with at least one server process configuration; otherwise
+     * the request fails with an invalid request exception. (This parameter replaces
+     * the parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>; requests that contain values for these
-     * parameters instead of a runtime configuration will continue to work.) </p>
+     * parameters instead of a run-time configuration will continue to work.) </p>
      */
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance. A CreateFleet request must include a
-     * runtime configuration with at least one server process configuration; otherwise
-     * the request will fail with an invalid request exception. (This parameter
-     * replaces the parameters <code>ServerLaunchPath</code> and
+     * run-time configuration with at least one server process configuration; otherwise
+     * the request fails with an invalid request exception. (This parameter replaces
+     * the parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>; requests that contain values for these
-     * parameters instead of a runtime configuration will continue to work.) </p>
+     * parameters instead of a run-time configuration will continue to work.) </p>
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance. A CreateFleet request must include a
-     * runtime configuration with at least one server process configuration; otherwise
-     * the request will fail with an invalid request exception. (This parameter
-     * replaces the parameters <code>ServerLaunchPath</code> and
+     * run-time configuration with at least one server process configuration; otherwise
+     * the request fails with an invalid request exception. (This parameter replaces
+     * the parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>; requests that contain values for these
-     * parameters instead of a runtime configuration will continue to work.) </p>
+     * parameters instead of a run-time configuration will continue to work.) </p>
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
@@ -655,65 +655,57 @@ namespace Model
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group, or use a new name to create a new metric
-     * group. Currently, a fleet can only be included in one metric group at a
-     * time.</p>
+     * name to add this fleet to the group. Or use a new name to create a new metric
+     * group. A fleet can only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 

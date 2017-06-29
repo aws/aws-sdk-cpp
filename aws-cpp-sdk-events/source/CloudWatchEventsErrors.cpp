@@ -29,6 +29,7 @@ namespace CloudWatchEventsErrorMapper
 {
 
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
@@ -41,6 +42,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::POLICY_LENGTH_EXCEEDED), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

@@ -39,9 +39,12 @@ namespace Model
    * player reservation for a game session or actual player activity in a game
    * session. A player session object (including player data) is automatically passed
    * to a game session when the player connects to the game session and is
-   * validated.</p> <p>Player session-related operations include:</p> <ul> <li> <p>
+   * validated.</p> <p>Player-session-related operations include:</p> <ul> <li> <p>
    * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
-   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> </ul><p><h3>See
+   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
+   * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+   * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+   * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>

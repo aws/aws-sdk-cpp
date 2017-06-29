@@ -34,7 +34,8 @@ Event::Event() :
     m_eventCode(EventCode::NOT_SET),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_eventTimeHasBeenSet(false)
+    m_eventTimeHasBeenSet(false),
+    m_preSignedLogUrlHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Event::Event(const JsonValue& jsonValue) :
     m_eventCode(EventCode::NOT_SET),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_eventTimeHasBeenSet(false)
+    m_eventTimeHasBeenSet(false),
+    m_preSignedLogUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ Event& Event::operator =(const JsonValue& jsonValue)
     m_eventTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreSignedLogUrl"))
+  {
+    m_preSignedLogUrl = jsonValue.GetString("PreSignedLogUrl");
+
+    m_preSignedLogUrlHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +128,12 @@ JsonValue Event::Jsonize() const
   if(m_eventTimeHasBeenSet)
   {
    payload.WithDouble("EventTime", m_eventTime.SecondsWithMSPrecision());
+  }
+
+  if(m_preSignedLogUrlHasBeenSet)
+  {
+   payload.WithString("PreSignedLogUrl", m_preSignedLogUrl);
+
   }
 
   return payload;

@@ -38,8 +38,8 @@ namespace Model
    * <p>Properties describing a fleet alias.</p> <p>Alias-related operations
    * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
    * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-   * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
+   * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API
    * Reference</a></p>
    */

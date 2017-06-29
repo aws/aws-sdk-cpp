@@ -28,6 +28,7 @@
 #include <aws/events/CloudWatchEventsEndpoint.h>
 #include <aws/events/CloudWatchEventsErrorMarshaller.h>
 #include <aws/events/model/DeleteRuleRequest.h>
+#include <aws/events/model/DescribeEventBusRequest.h>
 #include <aws/events/model/DescribeRuleRequest.h>
 #include <aws/events/model/DisableRuleRequest.h>
 #include <aws/events/model/EnableRuleRequest.h>
@@ -35,8 +36,10 @@
 #include <aws/events/model/ListRulesRequest.h>
 #include <aws/events/model/ListTargetsByRuleRequest.h>
 #include <aws/events/model/PutEventsRequest.h>
+#include <aws/events/model/PutPermissionRequest.h>
 #include <aws/events/model/PutRuleRequest.h>
 #include <aws/events/model/PutTargetsRequest.h>
+#include <aws/events/model/RemovePermissionRequest.h>
 #include <aws/events/model/RemoveTargetsRequest.h>
 #include <aws/events/model/TestEventPatternRequest.h>
 
@@ -137,6 +140,41 @@ void CloudWatchEventsClient::DeleteRuleAsync(const DeleteRuleRequest& request, c
 void CloudWatchEventsClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRule(request), context);
+}
+
+DescribeEventBusOutcome CloudWatchEventsClient::DescribeEventBus(const DescribeEventBusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEventBusOutcome(DescribeEventBusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEventBusOutcome(outcome.GetError());
+  }
+}
+
+DescribeEventBusOutcomeCallable CloudWatchEventsClient::DescribeEventBusCallable(const DescribeEventBusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventBusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventBus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DescribeEventBusAsync(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventBusAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DescribeEventBusAsyncHelper(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventBus(request), context);
 }
 
 DescribeRuleOutcome CloudWatchEventsClient::DescribeRule(const DescribeRuleRequest& request) const
@@ -384,6 +422,41 @@ void CloudWatchEventsClient::PutEventsAsyncHelper(const PutEventsRequest& reques
   handler(this, request, PutEvents(request), context);
 }
 
+PutPermissionOutcome CloudWatchEventsClient::PutPermission(const PutPermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutPermissionOutcome(NoResult());
+  }
+  else
+  {
+    return PutPermissionOutcome(outcome.GetError());
+  }
+}
+
+PutPermissionOutcomeCallable CloudWatchEventsClient::PutPermissionCallable(const PutPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::PutPermissionAsyncHelper(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermission(request), context);
+}
+
 PutRuleOutcome CloudWatchEventsClient::PutRule(const PutRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -452,6 +525,41 @@ void CloudWatchEventsClient::PutTargetsAsync(const PutTargetsRequest& request, c
 void CloudWatchEventsClient::PutTargetsAsyncHelper(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutTargets(request), context);
+}
+
+RemovePermissionOutcome CloudWatchEventsClient::RemovePermission(const RemovePermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemovePermissionOutcome(NoResult());
+  }
+  else
+  {
+    return RemovePermissionOutcome(outcome.GetError());
+  }
+}
+
+RemovePermissionOutcomeCallable CloudWatchEventsClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemovePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemovePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemovePermission(request), context);
 }
 
 RemoveTargetsOutcome CloudWatchEventsClient::RemoveTargets(const RemoveTargetsRequest& request) const

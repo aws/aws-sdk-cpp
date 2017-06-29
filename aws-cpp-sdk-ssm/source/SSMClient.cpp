@@ -35,6 +35,7 @@
 #include <aws/ssm/model/CreateDocumentRequest.h>
 #include <aws/ssm/model/CreateMaintenanceWindowRequest.h>
 #include <aws/ssm/model/CreatePatchBaselineRequest.h>
+#include <aws/ssm/model/CreateResourceDataSyncRequest.h>
 #include <aws/ssm/model/DeleteActivationRequest.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
 #include <aws/ssm/model/DeleteDocumentRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/ssm/model/DeleteParameterRequest.h>
 #include <aws/ssm/model/DeleteParametersRequest.h>
 #include <aws/ssm/model/DeletePatchBaselineRequest.h>
+#include <aws/ssm/model/DeleteResourceDataSyncRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowRequest.h>
@@ -91,6 +93,7 @@
 #include <aws/ssm/model/ListDocumentVersionsRequest.h>
 #include <aws/ssm/model/ListDocumentsRequest.h>
 #include <aws/ssm/model/ListInventoryEntriesRequest.h>
+#include <aws/ssm/model/ListResourceDataSyncRequest.h>
 #include <aws/ssm/model/ListTagsForResourceRequest.h>
 #include <aws/ssm/model/ModifyDocumentPermissionRequest.h>
 #include <aws/ssm/model/PutInventoryRequest.h>
@@ -455,6 +458,41 @@ void SSMClient::CreatePatchBaselineAsyncHelper(const CreatePatchBaselineRequest&
   handler(this, request, CreatePatchBaseline(request), context);
 }
 
+CreateResourceDataSyncOutcome SSMClient::CreateResourceDataSync(const CreateResourceDataSyncRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateResourceDataSyncOutcome(CreateResourceDataSyncResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateResourceDataSyncOutcome(outcome.GetError());
+  }
+}
+
+CreateResourceDataSyncOutcomeCallable SSMClient::CreateResourceDataSyncCallable(const CreateResourceDataSyncRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceDataSyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceDataSync(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::CreateResourceDataSyncAsync(const CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceDataSyncAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::CreateResourceDataSyncAsyncHelper(const CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourceDataSync(request), context);
+}
+
 DeleteActivationOutcome SSMClient::DeleteActivation(const DeleteActivationRequest& request) const
 {
   Aws::StringStream ss;
@@ -698,6 +736,41 @@ void SSMClient::DeletePatchBaselineAsync(const DeletePatchBaselineRequest& reque
 void SSMClient::DeletePatchBaselineAsyncHelper(const DeletePatchBaselineRequest& request, const DeletePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePatchBaseline(request), context);
+}
+
+DeleteResourceDataSyncOutcome SSMClient::DeleteResourceDataSync(const DeleteResourceDataSyncRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourceDataSyncOutcome(DeleteResourceDataSyncResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteResourceDataSyncOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourceDataSyncOutcomeCallable SSMClient::DeleteResourceDataSyncCallable(const DeleteResourceDataSyncRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceDataSyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceDataSync(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DeleteResourceDataSyncAsync(const DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceDataSyncAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DeleteResourceDataSyncAsyncHelper(const DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourceDataSync(request), context);
 }
 
 DeregisterManagedInstanceOutcome SSMClient::DeregisterManagedInstance(const DeregisterManagedInstanceRequest& request) const
@@ -2413,6 +2486,41 @@ void SSMClient::ListInventoryEntriesAsync(const ListInventoryEntriesRequest& req
 void SSMClient::ListInventoryEntriesAsyncHelper(const ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInventoryEntries(request), context);
+}
+
+ListResourceDataSyncOutcome SSMClient::ListResourceDataSync(const ListResourceDataSyncRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceDataSyncOutcome(ListResourceDataSyncResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceDataSyncOutcome(outcome.GetError());
+  }
+}
+
+ListResourceDataSyncOutcomeCallable SSMClient::ListResourceDataSyncCallable(const ListResourceDataSyncRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceDataSyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceDataSync(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListResourceDataSyncAsync(const ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceDataSyncAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListResourceDataSyncAsyncHelper(const ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceDataSync(request), context);
 }
 
 ListTagsForResourceOutcome SSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

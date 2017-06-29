@@ -240,74 +240,74 @@ namespace Model
     inline UpdateFleetAttributesRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline UpdateFleetAttributesRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline UpdateFleetAttributesRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline UpdateFleetAttributesRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline UpdateFleetAttributesRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Names of metric groups to include this fleet with. A fleet metric group is
-     * used in Amazon CloudWatch to aggregate metrics from multiple fleets. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to
-     * create a new metric group. Currently, a fleet can only be included in one metric
-     * group at a time.</p>
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
      */
     inline UpdateFleetAttributesRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 

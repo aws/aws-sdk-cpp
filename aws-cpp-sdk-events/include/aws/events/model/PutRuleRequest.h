@@ -73,43 +73,43 @@ namespace Model
     inline PutRuleRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline PutRuleRequest& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline PutRuleRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
      * minutes)".</p>
      */
     inline PutRuleRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}

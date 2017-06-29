@@ -36,7 +36,13 @@ namespace Model
    * <p>Information about a player session that was created as part of a
    * <a>StartGameSessionPlacement</a> request. This object contains only the player
    * ID and player session ID. To retrieve full details on a player session, call
-   * <a>DescribePlayerSessions</a> with the player session ID.</p><p><h3>See
+   * <a>DescribePlayerSessions</a> with the player session ID.</p>
+   * <p>Player-session-related operations include:</p> <ul> <li> <p>
+   * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
+   * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+   * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+   * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlacedPlayerSession">AWS
    * API Reference</a></p>

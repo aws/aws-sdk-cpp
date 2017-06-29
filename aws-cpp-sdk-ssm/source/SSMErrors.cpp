@@ -41,15 +41,18 @@ static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("Max
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRole");
+static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
 static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTarget");
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsError");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
+static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
+static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
@@ -77,6 +80,7 @@ static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString(
 static const int UNSUPPORTED_PARAMETER_TYPE_HASH = HashingUtils::HashString("UnsupportedParameterType");
 static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
 static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
+static const int RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("ResourceDataSyncInvalidConfigurationException");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
@@ -156,6 +160,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), false);
   }
+  else if (hashCode == RESOURCE_DATA_SYNC_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), false);
+  }
   else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
@@ -176,6 +184,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
   }
+  else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), false);
+  }
   else if (hashCode == DUPLICATE_DOCUMENT_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
@@ -191,6 +203,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS), false);
   }
   else if (hashCode == INVALID_PLUGIN_NAME_HASH)
   {
@@ -299,6 +315,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_OPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), false);
+  }
+  else if (hashCode == RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_INVALID_CONFIGURATION), false);
   }
   else if (hashCode == PARAMETER_ALREADY_EXISTS_HASH)
   {

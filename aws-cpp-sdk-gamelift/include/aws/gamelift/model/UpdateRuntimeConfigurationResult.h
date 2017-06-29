@@ -48,31 +48,31 @@ namespace Model
     UpdateRuntimeConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The runtime configuration currently in force. If the update was successful,
+     * <p>The run-time configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
 
     /**
-     * <p>The runtime configuration currently in force. If the update was successful,
+     * <p>The run-time configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfiguration = value; }
 
     /**
-     * <p>The runtime configuration currently in force. If the update was successful,
+     * <p>The run-time configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration currently in force. If the update was successful,
+     * <p>The run-time configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
     inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration currently in force. If the update was successful,
+     * <p>The run-time configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
     inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}

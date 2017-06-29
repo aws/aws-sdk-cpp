@@ -41,43 +41,43 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline UpdateRuntimeConfigurationRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline UpdateRuntimeConfigurationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to update runtime configuration for.</p>
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline UpdateRuntimeConfigurationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
-     * The runtime configuration for a fleet has a collection of server process
+     * The run-time configuration for a fleet has a collection of server process
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that

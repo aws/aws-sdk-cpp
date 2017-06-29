@@ -38,7 +38,16 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a game session.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a game session.</p> <p>Game-session-related operations
+   * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+   * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+   * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+   * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+   * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession">AWS
    * API Reference</a></p>
    */

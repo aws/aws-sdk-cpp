@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/DescribeEventBusResult.h>
 #include <aws/events/model/DescribeRuleResult.h>
 #include <aws/events/model/ListRuleNamesByTargetResult.h>
 #include <aws/events/model/ListRulesResult.h>
@@ -77,6 +78,7 @@ namespace CloudWatchEvents
 namespace Model
 {
         class DeleteRuleRequest;
+        class DescribeEventBusRequest;
         class DescribeRuleRequest;
         class DisableRuleRequest;
         class EnableRuleRequest;
@@ -84,12 +86,15 @@ namespace Model
         class ListRulesRequest;
         class ListTargetsByRuleRequest;
         class PutEventsRequest;
+        class PutPermissionRequest;
         class PutRuleRequest;
         class PutTargetsRequest;
+        class RemovePermissionRequest;
         class RemoveTargetsRequest;
         class TestEventPatternRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventBusResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DescribeEventBusOutcome;
         typedef Aws::Utils::Outcome<DescribeRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DescribeRuleOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DisableRuleOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> EnableRuleOutcome;
@@ -97,12 +102,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListTargetsByRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListTargetsByRuleOutcome;
         typedef Aws::Utils::Outcome<PutEventsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutPermissionOutcome;
         typedef Aws::Utils::Outcome<PutRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutRuleOutcome;
         typedef Aws::Utils::Outcome<PutTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutTargetsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<RemoveTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemoveTargetsOutcome;
         typedef Aws::Utils::Outcome<TestEventPatternResult, Aws::Client::AWSError<CloudWatchEventsErrors>> TestEventPatternOutcome;
 
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+        typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
         typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
         typedef std::future<DisableRuleOutcome> DisableRuleOutcomeCallable;
         typedef std::future<EnableRuleOutcome> EnableRuleOutcomeCallable;
@@ -110,8 +118,10 @@ namespace Model
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListTargetsByRuleOutcome> ListTargetsByRuleOutcomeCallable;
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
+        typedef std::future<PutPermissionOutcome> PutPermissionOutcomeCallable;
         typedef std::future<PutRuleOutcome> PutRuleOutcomeCallable;
         typedef std::future<PutTargetsOutcome> PutTargetsOutcomeCallable;
+        typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<RemoveTargetsOutcome> RemoveTargetsOutcomeCallable;
         typedef std::future<TestEventPatternOutcome> TestEventPatternOutcomeCallable;
 } // namespace Model
@@ -119,6 +129,7 @@ namespace Model
   class CloudWatchEventsClient;
 
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeEventBusRequest&, const Model::DescribeEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventBusResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DescribeRuleRequest&, const Model::DescribeRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::DisableRuleRequest&, const Model::DisableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::EnableRuleRequest&, const Model::EnableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRuleResponseReceivedHandler;
@@ -126,8 +137,10 @@ namespace Model
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListTargetsByRuleRequest&, const Model::ListTargetsByRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTargetsByRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::PutPermissionRequest&, const Model::PutPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutRuleRequest&, const Model::PutRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutTargetsRequest&, const Model::PutTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTargetsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::RemoveTargetsRequest&, const Model::RemoveTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTargetsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::TestEventPatternRequest&, const Model::TestEventPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestEventPatternResponseReceivedHandler;
 
@@ -209,6 +222,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Displays the external AWS accounts that are permitted to write events to your
+         * account using your account's event bus, and the associated policy. To enable
+         * your account to receive events from other accounts, use
+         * <a>PutPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventBusOutcome DescribeEventBus(const Model::DescribeEventBusRequest& request) const;
+
+        /**
+         * <p>Displays the external AWS accounts that are permitted to write events to your
+         * account using your account's event bus, and the associated policy. To enable
+         * your account to receive events from other accounts, use
+         * <a>PutPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventBusOutcomeCallable DescribeEventBusCallable(const Model::DescribeEventBusRequest& request) const;
+
+        /**
+         * <p>Displays the external AWS accounts that are permitted to write events to your
+         * account using your account's event bus, and the associated policy. To enable
+         * your account to receive events from other accounts, use
+         * <a>PutPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventBusAsync(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified rule.</p><p><h3>See Also:</h3>   <a
@@ -419,6 +466,52 @@ namespace Model
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
+         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
+         * your account are triggered by these events arriving to your default event bus.
+         * </p> <p>For another account to send events to your account, that external
+         * account must have a CloudWatch Events rule with your account's default event bus
+         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
+         * default event bus, run <code>PutPermission</code> once for each of these
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
+
+        /**
+         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
+         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
+         * your account are triggered by these events arriving to your default event bus.
+         * </p> <p>For another account to send events to your account, that external
+         * account must have a CloudWatch Events rule with your account's default event bus
+         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
+         * default event bus, run <code>PutPermission</code> once for each of these
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionOutcomeCallable PutPermissionCallable(const Model::PutPermissionRequest& request) const;
+
+        /**
+         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
+         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
+         * your account are triggered by these events arriving to your default event bus.
+         * </p> <p>For another account to send events to your account, that external
+         * account must have a CloudWatch Events rule with your account's default event bus
+         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
+         * default event bus, run <code>PutPermission</code> once for each of these
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionAsync(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or updates the specified rule. Rules are enabled by default, or based
          * on value of the state. You can disable a rule using <a>DisableRule</a>.</p>
          * <p>When you create or update a rule, incoming events might not immediately start
@@ -485,37 +578,47 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered. Example targets include EC2 instances, AWS
-         * Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions
-         * state machines, and built-in targets. Note that creating rules with built-in
-         * targets is supported only in the AWS Management Console.</p> <p>For some target
-         * types, <code>PutTargets</code> provides target-specific parameters. If the
-         * target is an Amazon Kinesis stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTarget</code>. For more information, see <a
+         * are invoked when a rule is triggered.</p> <p>You can configure the following as
+         * targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li>
+         * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
+         * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
+         * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
+         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-         * <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually
-         * exclusive and optional parameters of a target. When a rule is triggered due to a
-         * matched event:</p> <ul> <li> <p>If none of the following arguments are specified
-         * for a target, then the entire event is passed to the target in JSON form (unless
-         * the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing
-         * from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is
-         * specified in the form of valid JSON, then the matched event is overridden with
-         * this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of
-         * JSONPath (for example, <code>$.detail</code>), then only the part of the event
-         * specified in the path is passed to the target (for example, only the detail part
-         * of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is
-         * specified, then one or more specified JSONPaths are extracted from the event and
-         * used as values in a template that you specify as the input to the target.</p>
-         * </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or
+         * <p>If another AWS account is in the same region and has granted you permission
+         * (using <code>PutPermission</code>), you can set that account's event bus as a
+         * target of the rules in your account. To send the matched events to the other
+         * account, specify that account's event bus as the <code>Arn</code> when you run
+         * <code>PutTargets</code>. For more information about enabling cross-account
+         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+         * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
+         * none of the following arguments are specified for a target, then the entire
+         * event is passed to the target in JSON form (unless the target is Amazon EC2 Run
+         * Command or Amazon ECS task, in which case nothing from the event is passed to
+         * the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid
+         * JSON, then the matched event is overridden with this constant.</p> </li> <li>
+         * <p>If <b>InputPath</b> is specified in the form of JSONPath (for example,
+         * <code>$.detail</code>), then only the part of the event specified in the path is
+         * passed to the target (for example, only the detail part of the event is
+         * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
+         * more specified JSONPaths are extracted from the event and used as values in a
+         * template that you specify as the input to the target.</p> </li> </ul> <p>When
+         * you specify <code>Input</code>, <code>InputPath</code>, or
          * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
          * notation.</p> <p>When you add targets to a rule and the associated rule triggers
          * soon after, new or updated targets might not be immediately invoked. Please
@@ -532,37 +635,47 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered. Example targets include EC2 instances, AWS
-         * Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions
-         * state machines, and built-in targets. Note that creating rules with built-in
-         * targets is supported only in the AWS Management Console.</p> <p>For some target
-         * types, <code>PutTargets</code> provides target-specific parameters. If the
-         * target is an Amazon Kinesis stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTarget</code>. For more information, see <a
+         * are invoked when a rule is triggered.</p> <p>You can configure the following as
+         * targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li>
+         * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
+         * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
+         * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
+         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-         * <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually
-         * exclusive and optional parameters of a target. When a rule is triggered due to a
-         * matched event:</p> <ul> <li> <p>If none of the following arguments are specified
-         * for a target, then the entire event is passed to the target in JSON form (unless
-         * the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing
-         * from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is
-         * specified in the form of valid JSON, then the matched event is overridden with
-         * this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of
-         * JSONPath (for example, <code>$.detail</code>), then only the part of the event
-         * specified in the path is passed to the target (for example, only the detail part
-         * of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is
-         * specified, then one or more specified JSONPaths are extracted from the event and
-         * used as values in a template that you specify as the input to the target.</p>
-         * </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or
+         * <p>If another AWS account is in the same region and has granted you permission
+         * (using <code>PutPermission</code>), you can set that account's event bus as a
+         * target of the rules in your account. To send the matched events to the other
+         * account, specify that account's event bus as the <code>Arn</code> when you run
+         * <code>PutTargets</code>. For more information about enabling cross-account
+         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+         * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
+         * none of the following arguments are specified for a target, then the entire
+         * event is passed to the target in JSON form (unless the target is Amazon EC2 Run
+         * Command or Amazon ECS task, in which case nothing from the event is passed to
+         * the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid
+         * JSON, then the matched event is overridden with this constant.</p> </li> <li>
+         * <p>If <b>InputPath</b> is specified in the form of JSONPath (for example,
+         * <code>$.detail</code>), then only the part of the event specified in the path is
+         * passed to the target (for example, only the detail part of the event is
+         * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
+         * more specified JSONPaths are extracted from the event and used as values in a
+         * template that you specify as the input to the target.</p> </li> </ul> <p>When
+         * you specify <code>Input</code>, <code>InputPath</code>, or
          * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
          * notation.</p> <p>When you add targets to a rule and the associated rule triggers
          * soon after, new or updated targets might not be immediately invoked. Please
@@ -581,37 +694,47 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered. Example targets include EC2 instances, AWS
-         * Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions
-         * state machines, and built-in targets. Note that creating rules with built-in
-         * targets is supported only in the AWS Management Console.</p> <p>For some target
-         * types, <code>PutTargets</code> provides target-specific parameters. If the
-         * target is an Amazon Kinesis stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
-         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
-         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTarget</code>. For more information, see <a
+         * are invoked when a rule is triggered.</p> <p>You can configure the following as
+         * targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li>
+         * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
+         * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
+         * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
+         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
+         * </ul> <p>Note that creating rules with built-in targets is supported only in the
+         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
+         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
+         * you can optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
+         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
+         * CloudWatch Events relies on IAM roles that you specify in the
+         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-         * <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually
-         * exclusive and optional parameters of a target. When a rule is triggered due to a
-         * matched event:</p> <ul> <li> <p>If none of the following arguments are specified
-         * for a target, then the entire event is passed to the target in JSON form (unless
-         * the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing
-         * from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is
-         * specified in the form of valid JSON, then the matched event is overridden with
-         * this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of
-         * JSONPath (for example, <code>$.detail</code>), then only the part of the event
-         * specified in the path is passed to the target (for example, only the detail part
-         * of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is
-         * specified, then one or more specified JSONPaths are extracted from the event and
-         * used as values in a template that you specify as the input to the target.</p>
-         * </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or
+         * <p>If another AWS account is in the same region and has granted you permission
+         * (using <code>PutPermission</code>), you can set that account's event bus as a
+         * target of the rules in your account. To send the matched events to the other
+         * account, specify that account's event bus as the <code>Arn</code> when you run
+         * <code>PutTargets</code>. For more information about enabling cross-account
+         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+         * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
+         * none of the following arguments are specified for a target, then the entire
+         * event is passed to the target in JSON form (unless the target is Amazon EC2 Run
+         * Command or Amazon ECS task, in which case nothing from the event is passed to
+         * the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid
+         * JSON, then the matched event is overridden with this constant.</p> </li> <li>
+         * <p>If <b>InputPath</b> is specified in the form of JSONPath (for example,
+         * <code>$.detail</code>), then only the part of the event specified in the path is
+         * passed to the target (for example, only the detail part of the event is
+         * passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or
+         * more specified JSONPaths are extracted from the event and used as values in a
+         * template that you specify as the input to the target.</p> </li> </ul> <p>When
+         * you specify <code>Input</code>, <code>InputPath</code>, or
          * <code>InputTransformer</code>, you must use JSON dot notation, not bracket
          * notation.</p> <p>When you add targets to a rule and the associated rule triggers
          * soon after, new or updated targets might not be immediately invoked. Please
@@ -626,6 +749,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutTargetsAsync(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Revokes the permission of another AWS account to be able to put events to
+         * your default event bus. Specify the account to revoke by the
+         * <code>StatementId</code> value that you associated with the account when you
+         * granted it permission with <code>PutPermission</code>. You can find the
+         * <code>StatementId</code> by using <a>DescribeEventBus</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
+
+        /**
+         * <p>Revokes the permission of another AWS account to be able to put events to
+         * your default event bus. Specify the account to revoke by the
+         * <code>StatementId</code> value that you associated with the account when you
+         * granted it permission with <code>PutPermission</code>. You can find the
+         * <code>StatementId</code> by using <a>DescribeEventBus</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
+
+        /**
+         * <p>Revokes the permission of another AWS account to be able to put events to
+         * your default event bus. Specify the account to revoke by the
+         * <code>StatementId</code> value that you associated with the account when you
+         * granted it permission with <code>PutPermission</code>. You can find the
+         * <code>StatementId</code> by using <a>DescribeEventBus</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified targets from the specified rule. When the rule is
@@ -719,6 +882,7 @@ namespace Model
 
         /**Async helpers**/
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventBusAsyncHelper(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuleAsyncHelper(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableRuleAsyncHelper(const Model::DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableRuleAsyncHelper(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -726,8 +890,10 @@ namespace Model
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTargetsByRuleAsyncHelper(const Model::ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionAsyncHelper(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRuleAsyncHelper(const Model::PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTargetsAsyncHelper(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTargetsAsyncHelper(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestEventPatternAsyncHelper(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

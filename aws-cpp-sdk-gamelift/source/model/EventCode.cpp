@@ -56,6 +56,9 @@ namespace Aws
         static const int SERVER_PROCESS_FORCE_TERMINATED_HASH = HashingUtils::HashString("SERVER_PROCESS_FORCE_TERMINATED");
         static const int SERVER_PROCESS_PROCESS_EXIT_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
         static const int GAME_SESSION_ACTIVATION_TIMEOUT_HASH = HashingUtils::HashString("GAME_SESSION_ACTIVATION_TIMEOUT");
+        static const int FLEET_CREATION_EXTRACTING_BUILD_HASH = HashingUtils::HashString("FLEET_CREATION_EXTRACTING_BUILD");
+        static const int FLEET_CREATION_RUNNING_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_RUNNING_INSTALLER");
+        static const int FLEET_CREATION_VALIDATING_RUNTIME_CONFIG_HASH = HashingUtils::HashString("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -165,6 +168,18 @@ namespace Aws
           {
             return EventCode::GAME_SESSION_ACTIVATION_TIMEOUT;
           }
+          else if (hashCode == FLEET_CREATION_EXTRACTING_BUILD_HASH)
+          {
+            return EventCode::FLEET_CREATION_EXTRACTING_BUILD;
+          }
+          else if (hashCode == FLEET_CREATION_RUNNING_INSTALLER_HASH)
+          {
+            return EventCode::FLEET_CREATION_RUNNING_INSTALLER;
+          }
+          else if (hashCode == FLEET_CREATION_VALIDATING_RUNTIME_CONFIG_HASH)
+          {
+            return EventCode::FLEET_CREATION_VALIDATING_RUNTIME_CONFIG;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -231,6 +246,12 @@ namespace Aws
             return "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT";
           case EventCode::GAME_SESSION_ACTIVATION_TIMEOUT:
             return "GAME_SESSION_ACTIVATION_TIMEOUT";
+          case EventCode::FLEET_CREATION_EXTRACTING_BUILD:
+            return "FLEET_CREATION_EXTRACTING_BUILD";
+          case EventCode::FLEET_CREATION_RUNNING_INSTALLER:
+            return "FLEET_CREATION_RUNNING_INSTALLER";
+          case EventCode::FLEET_CREATION_VALIDATING_RUNTIME_CONFIG:
+            return "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

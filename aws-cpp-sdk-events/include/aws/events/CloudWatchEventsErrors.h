@@ -58,7 +58,8 @@ enum class CloudWatchEventsErrors
   CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL,
   INVALID_EVENT_PATTERN,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  POLICY_LENGTH_EXCEEDED
 };
 namespace CloudWatchEventsErrorMapper
 {

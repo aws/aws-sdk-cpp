@@ -39,7 +39,24 @@ namespace Model
 {
 
   /**
-   * <p>General properties describing a fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>General properties describing a fleet.</p> <p>Fleet-related operations
+   * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+   * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
+   * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
+   * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
+   * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+   * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
+   * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
+   * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
+   * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
+   * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
+   * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
+   * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
+   * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -370,7 +387,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -378,7 +395,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -386,7 +403,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -394,7 +411,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -402,7 +419,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -410,7 +427,7 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
@@ -418,58 +435,58 @@ namespace Model
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
      * fleets created after this date are specified in the fleet's
      * <a>RuntimeConfiguration</a>.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
@@ -479,8 +496,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
@@ -491,8 +508,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
@@ -503,8 +520,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
@@ -515,8 +532,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
@@ -527,8 +544,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
@@ -539,8 +556,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
@@ -551,8 +568,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
@@ -563,8 +580,8 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * Amazon GameLift will automatically upload logs that are stored on each instance
-     * at <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
@@ -681,65 +698,65 @@ namespace Model
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline FleetAttributes& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline FleetAttributes& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline FleetAttributes& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline FleetAttributes& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
-     * you can view metrics for an individual fleet or aggregated metrics for a fleets
-     * that are in a fleet metric group. Currently, a fleet can be included in only one
-     * metric group at a time.</p>
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
      */
     inline FleetAttributes& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 

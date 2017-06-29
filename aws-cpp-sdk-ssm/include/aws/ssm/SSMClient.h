@@ -29,6 +29,7 @@
 #include <aws/ssm/model/CreateDocumentResult.h>
 #include <aws/ssm/model/CreateMaintenanceWindowResult.h>
 #include <aws/ssm/model/CreatePatchBaselineResult.h>
+#include <aws/ssm/model/CreateResourceDataSyncResult.h>
 #include <aws/ssm/model/DeleteActivationResult.h>
 #include <aws/ssm/model/DeleteAssociationResult.h>
 #include <aws/ssm/model/DeleteDocumentResult.h>
@@ -36,6 +37,7 @@
 #include <aws/ssm/model/DeleteParameterResult.h>
 #include <aws/ssm/model/DeleteParametersResult.h>
 #include <aws/ssm/model/DeletePatchBaselineResult.h>
+#include <aws/ssm/model/DeleteResourceDataSyncResult.h>
 #include <aws/ssm/model/DeregisterManagedInstanceResult.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupResult.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowResult.h>
@@ -85,6 +87,7 @@
 #include <aws/ssm/model/ListDocumentVersionsResult.h>
 #include <aws/ssm/model/ListDocumentsResult.h>
 #include <aws/ssm/model/ListInventoryEntriesResult.h>
+#include <aws/ssm/model/ListResourceDataSyncResult.h>
 #include <aws/ssm/model/ListTagsForResourceResult.h>
 #include <aws/ssm/model/ModifyDocumentPermissionResult.h>
 #include <aws/ssm/model/PutInventoryResult.h>
@@ -157,6 +160,7 @@ namespace Model
         class CreateDocumentRequest;
         class CreateMaintenanceWindowRequest;
         class CreatePatchBaselineRequest;
+        class CreateResourceDataSyncRequest;
         class DeleteActivationRequest;
         class DeleteAssociationRequest;
         class DeleteDocumentRequest;
@@ -164,6 +168,7 @@ namespace Model
         class DeleteParameterRequest;
         class DeleteParametersRequest;
         class DeletePatchBaselineRequest;
+        class DeleteResourceDataSyncRequest;
         class DeregisterManagedInstanceRequest;
         class DeregisterPatchBaselineForPatchGroupRequest;
         class DeregisterTargetFromMaintenanceWindowRequest;
@@ -213,6 +218,7 @@ namespace Model
         class ListDocumentVersionsRequest;
         class ListDocumentsRequest;
         class ListInventoryEntriesRequest;
+        class ListResourceDataSyncRequest;
         class ListTagsForResourceRequest;
         class ModifyDocumentPermissionRequest;
         class PutInventoryRequest;
@@ -241,6 +247,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDocumentResult, Aws::Client::AWSError<SSMErrors>> CreateDocumentOutcome;
         typedef Aws::Utils::Outcome<CreateMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> CreateMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<CreatePatchBaselineResult, Aws::Client::AWSError<SSMErrors>> CreatePatchBaselineOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceDataSyncResult, Aws::Client::AWSError<SSMErrors>> CreateResourceDataSyncOutcome;
         typedef Aws::Utils::Outcome<DeleteActivationResult, Aws::Client::AWSError<SSMErrors>> DeleteActivationOutcome;
         typedef Aws::Utils::Outcome<DeleteAssociationResult, Aws::Client::AWSError<SSMErrors>> DeleteAssociationOutcome;
         typedef Aws::Utils::Outcome<DeleteDocumentResult, Aws::Client::AWSError<SSMErrors>> DeleteDocumentOutcome;
@@ -248,6 +255,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteParameterResult, Aws::Client::AWSError<SSMErrors>> DeleteParameterOutcome;
         typedef Aws::Utils::Outcome<DeleteParametersResult, Aws::Client::AWSError<SSMErrors>> DeleteParametersOutcome;
         typedef Aws::Utils::Outcome<DeletePatchBaselineResult, Aws::Client::AWSError<SSMErrors>> DeletePatchBaselineOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourceDataSyncResult, Aws::Client::AWSError<SSMErrors>> DeleteResourceDataSyncOutcome;
         typedef Aws::Utils::Outcome<DeregisterManagedInstanceResult, Aws::Client::AWSError<SSMErrors>> DeregisterManagedInstanceOutcome;
         typedef Aws::Utils::Outcome<DeregisterPatchBaselineForPatchGroupResult, Aws::Client::AWSError<SSMErrors>> DeregisterPatchBaselineForPatchGroupOutcome;
         typedef Aws::Utils::Outcome<DeregisterTargetFromMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> DeregisterTargetFromMaintenanceWindowOutcome;
@@ -297,6 +305,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDocumentVersionsResult, Aws::Client::AWSError<SSMErrors>> ListDocumentVersionsOutcome;
         typedef Aws::Utils::Outcome<ListDocumentsResult, Aws::Client::AWSError<SSMErrors>> ListDocumentsOutcome;
         typedef Aws::Utils::Outcome<ListInventoryEntriesResult, Aws::Client::AWSError<SSMErrors>> ListInventoryEntriesOutcome;
+        typedef Aws::Utils::Outcome<ListResourceDataSyncResult, Aws::Client::AWSError<SSMErrors>> ListResourceDataSyncOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SSMErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ModifyDocumentPermissionResult, Aws::Client::AWSError<SSMErrors>> ModifyDocumentPermissionOutcome;
         typedef Aws::Utils::Outcome<PutInventoryResult, Aws::Client::AWSError<SSMErrors>> PutInventoryOutcome;
@@ -325,6 +334,7 @@ namespace Model
         typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
         typedef std::future<CreateMaintenanceWindowOutcome> CreateMaintenanceWindowOutcomeCallable;
         typedef std::future<CreatePatchBaselineOutcome> CreatePatchBaselineOutcomeCallable;
+        typedef std::future<CreateResourceDataSyncOutcome> CreateResourceDataSyncOutcomeCallable;
         typedef std::future<DeleteActivationOutcome> DeleteActivationOutcomeCallable;
         typedef std::future<DeleteAssociationOutcome> DeleteAssociationOutcomeCallable;
         typedef std::future<DeleteDocumentOutcome> DeleteDocumentOutcomeCallable;
@@ -332,6 +342,7 @@ namespace Model
         typedef std::future<DeleteParameterOutcome> DeleteParameterOutcomeCallable;
         typedef std::future<DeleteParametersOutcome> DeleteParametersOutcomeCallable;
         typedef std::future<DeletePatchBaselineOutcome> DeletePatchBaselineOutcomeCallable;
+        typedef std::future<DeleteResourceDataSyncOutcome> DeleteResourceDataSyncOutcomeCallable;
         typedef std::future<DeregisterManagedInstanceOutcome> DeregisterManagedInstanceOutcomeCallable;
         typedef std::future<DeregisterPatchBaselineForPatchGroupOutcome> DeregisterPatchBaselineForPatchGroupOutcomeCallable;
         typedef std::future<DeregisterTargetFromMaintenanceWindowOutcome> DeregisterTargetFromMaintenanceWindowOutcomeCallable;
@@ -381,6 +392,7 @@ namespace Model
         typedef std::future<ListDocumentVersionsOutcome> ListDocumentVersionsOutcomeCallable;
         typedef std::future<ListDocumentsOutcome> ListDocumentsOutcomeCallable;
         typedef std::future<ListInventoryEntriesOutcome> ListInventoryEntriesOutcomeCallable;
+        typedef std::future<ListResourceDataSyncOutcome> ListResourceDataSyncOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyDocumentPermissionOutcome> ModifyDocumentPermissionOutcomeCallable;
         typedef std::future<PutInventoryOutcome> PutInventoryOutcomeCallable;
@@ -412,6 +424,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::CreateDocumentRequest&, const Model::CreateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateMaintenanceWindowRequest&, const Model::CreateMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreatePatchBaselineRequest&, const Model::CreatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePatchBaselineResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::CreateResourceDataSyncRequest&, const Model::CreateResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceDataSyncResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteActivationRequest&, const Model::DeleteActivationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActivationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteAssociationRequest&, const Model::DeleteAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteDocumentRequest&, const Model::DeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentResponseReceivedHandler;
@@ -419,6 +432,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DeleteParameterRequest&, const Model::DeleteParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParameterResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteParametersRequest&, const Model::DeleteParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParametersResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeletePatchBaselineRequest&, const Model::DeletePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePatchBaselineResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DeleteResourceDataSyncRequest&, const Model::DeleteResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceDataSyncResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterManagedInstanceRequest&, const Model::DeregisterManagedInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterManagedInstanceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterPatchBaselineForPatchGroupRequest&, const Model::DeregisterPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterPatchBaselineForPatchGroupResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterTargetFromMaintenanceWindowRequest&, const Model::DeregisterTargetFromMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetFromMaintenanceWindowResponseReceivedHandler;
@@ -468,6 +482,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::ListDocumentVersionsRequest&, const Model::ListDocumentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentVersionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListDocumentsRequest&, const Model::ListDocumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListInventoryEntriesRequest&, const Model::ListInventoryEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInventoryEntriesResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ListResourceDataSyncRequest&, const Model::ListResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDataSyncResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ModifyDocumentPermissionRequest&, const Model::ModifyDocumentPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDocumentPermissionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::PutInventoryRequest&, const Model::PutInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInventoryResponseReceivedHandler;
@@ -845,6 +860,64 @@ namespace Model
         virtual void CreatePatchBaselineAsync(const Model::CreatePatchBaselineRequest& request, const CreatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
+         * This is an asynchronous operation that returns immediately. After a successful
+         * initial sync is completed, the system continuously syncs data to the Amazon S3
+         * bucket. To check the status of the sync, use the <a
+         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
+         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
+         * you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
+         * policy for Resource Data Sync, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
+         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceDataSyncOutcome CreateResourceDataSync(const Model::CreateResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
+         * This is an asynchronous operation that returns immediately. After a successful
+         * initial sync is completed, the system continuously syncs data to the Amazon S3
+         * bucket. To check the status of the sync, use the <a
+         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
+         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
+         * you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
+         * policy for Resource Data Sync, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
+         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateResourceDataSyncOutcomeCallable CreateResourceDataSyncCallable(const Model::CreateResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
+         * This is an asynchronous operation that returns immediately. After a successful
+         * initial sync is completed, the system continuously syncs data to the Amazon S3
+         * bucket. To check the status of the sync, use the <a
+         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
+         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
+         * you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
+         * policy for Resource Data Sync, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
+         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateResourceDataSyncAsync(const Model::CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an activation. You are not required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
          * instances. Deleting an activation does not de-register managed instances. You
@@ -1051,6 +1124,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePatchBaselineAsync(const Model::DeletePatchBaselineRequest& request, const DeletePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * deleted, changes to inventory data on managed instances are no longer synced
+         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
+         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceDataSyncOutcome DeleteResourceDataSync(const Model::DeleteResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * deleted, changes to inventory data on managed instances are no longer synced
+         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
+         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceDataSyncOutcomeCallable DeleteResourceDataSyncCallable(const Model::DeleteResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * deleted, changes to inventory data on managed instances are no longer synced
+         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
+         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceDataSyncAsync(const Model::DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
@@ -2183,8 +2290,8 @@ namespace Model
 
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-         * Parameter Hierarchies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2192,8 +2299,8 @@ namespace Model
 
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-         * Parameter Hierarchies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2203,8 +2310,8 @@ namespace Model
 
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-         * Parameter Hierarchies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2438,6 +2545,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists your resource data sync configurations. Includes information about the
+         * last time a sync attempted to start, the last sync status, and the last time a
+         * sync successfully completed.</p> <p>The number of sync configurations might be
+         * too large to return using a single call to <code>ListResourceDataSync</code>.
+         * You can limit the number of sync configurations returned by using the
+         * <code>MaxResults</code> parameter. To determine whether there are more sync
+         * configurations to list, check the value of <code>NextToken</code> in the output.
+         * If there are more sync configurations to list, you can request them by
+         * specifying the <code>NextToken</code> returned in the call to the parameter of a
+         * subsequent call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceDataSyncOutcome ListResourceDataSync(const Model::ListResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Lists your resource data sync configurations. Includes information about the
+         * last time a sync attempted to start, the last sync status, and the last time a
+         * sync successfully completed.</p> <p>The number of sync configurations might be
+         * too large to return using a single call to <code>ListResourceDataSync</code>.
+         * You can limit the number of sync configurations returned by using the
+         * <code>MaxResults</code> parameter. To determine whether there are more sync
+         * configurations to list, check the value of <code>NextToken</code> in the output.
+         * If there are more sync configurations to list, you can request them by
+         * specifying the <code>NextToken</code> returned in the call to the parameter of a
+         * subsequent call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceDataSyncOutcomeCallable ListResourceDataSyncCallable(const Model::ListResourceDataSyncRequest& request) const;
+
+        /**
+         * <p>Lists your resource data sync configurations. Includes information about the
+         * last time a sync attempted to start, the last sync status, and the last time a
+         * sync successfully completed.</p> <p>The number of sync configurations might be
+         * too large to return using a single call to <code>ListResourceDataSync</code>.
+         * You can limit the number of sync configurations returned by using the
+         * <code>MaxResults</code> parameter. To determine whether there are more sync
+         * configurations to list, check the value of <code>NextToken</code> in the output.
+         * If there are more sync configurations to list, you can request them by
+         * specifying the <code>NextToken</code> returned in the call to the parameter of a
+         * subsequent call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceDataSyncAsync(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
@@ -2963,6 +3122,7 @@ namespace Model
         void CreateDocumentAsyncHelper(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMaintenanceWindowAsyncHelper(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePatchBaselineAsyncHelper(const Model::CreatePatchBaselineRequest& request, const CreatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateResourceDataSyncAsyncHelper(const Model::CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteActivationAsyncHelper(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssociationAsyncHelper(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDocumentAsyncHelper(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2970,6 +3130,7 @@ namespace Model
         void DeleteParameterAsyncHelper(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteParametersAsyncHelper(const Model::DeleteParametersRequest& request, const DeleteParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePatchBaselineAsyncHelper(const Model::DeletePatchBaselineRequest& request, const DeletePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourceDataSyncAsyncHelper(const Model::DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterManagedInstanceAsyncHelper(const Model::DeregisterManagedInstanceRequest& request, const DeregisterManagedInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterPatchBaselineForPatchGroupAsyncHelper(const Model::DeregisterPatchBaselineForPatchGroupRequest& request, const DeregisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTargetFromMaintenanceWindowAsyncHelper(const Model::DeregisterTargetFromMaintenanceWindowRequest& request, const DeregisterTargetFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3019,6 +3180,7 @@ namespace Model
         void ListDocumentVersionsAsyncHelper(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDocumentsAsyncHelper(const Model::ListDocumentsRequest& request, const ListDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInventoryEntriesAsyncHelper(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourceDataSyncAsyncHelper(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDocumentPermissionAsyncHelper(const Model::ModifyDocumentPermissionRequest& request, const ModifyDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutInventoryAsyncHelper(const Model::PutInventoryRequest& request, const PutInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
