@@ -101,7 +101,7 @@ if(REGENERATE_CLIENTS)
         if (BUILD_ONLY) 
             list(FIND BUILD_ONLY ${SDK} INDEX)
             # when BUILD_ONLY is set only update high level sdks specified in it.
-            if (INDEX GREATER_EQUAL 0)
+            if ((INDEX GREATER 0) OR (INDEX EQUAL 0))
                 execute_process(
                     COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
