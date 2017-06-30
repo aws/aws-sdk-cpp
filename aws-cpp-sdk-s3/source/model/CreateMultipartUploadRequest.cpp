@@ -50,7 +50,8 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_sSECustomerKeyMD5HasBeenSet(false),
     m_sSEKMSKeyIdHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayerHasBeenSet(false),
+    m_taggingHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,13 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
   if(m_requestPayerHasBeenSet)
   {
     headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+  }
+
+  if(m_taggingHasBeenSet)
+  {
+    ss << m_tagging;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-tagging", ss.str()));
+    ss.str("");
   }
 
   return headers;
