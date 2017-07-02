@@ -32,7 +32,7 @@ Aws::String Aws::Utils::Xml::DecodeEscapedXmlText(const Aws::String& textToDecod
     StringUtils::Replace(decodedString, "&apos;", "'");
     StringUtils::Replace(decodedString, "&lt;", "<");
     StringUtils::Replace(decodedString, "&gt;", ">");
-    StringUtils::Replace(decodedString, "&amp;;", "&");
+    StringUtils::Replace(decodedString, "&amp;", "&");
 
     return decodedString;
 }
