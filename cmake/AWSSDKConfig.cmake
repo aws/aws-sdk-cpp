@@ -208,7 +208,7 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
     endforeach()
 endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
-# output high level lib dependencies such as for transfter; sqs; dynamodb etc.
+# output high level lib dependencies such as for transfer; sqs; dynamodb etc.
 macro(AWSSDK_LIB_DEPS HIGH_LEVEL_LIB_NAME OUTPUT_VAR)
     get_dependencies_for_sdk(${HIGH_LEVEL_LIB_NAME} DEPENDENCY_LIST)
     if (DEPENDENCY_LIST)

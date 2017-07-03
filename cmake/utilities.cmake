@@ -9,17 +9,28 @@ macro(generate_pkgconfig_link_flags LIBS_LIST OUTPUT_VAR)
     endforeach()
 endmacro()
 
-macro(copyDlls exeName)
+function(copyDlls exeName)
     if(PLATFORM_WINDOWS AND BUILD_SHARED_LIBS)
-        foreach(arg ${ARGN})
-            add_custom_command(TARGET ${exeName}
+        string(FIND ${CMAKE_GENERATOR} "Visual Studio" INDEX)
+        if(0 EQUAL INDEX)
+            foreach(arg ${ARGN})
+                add_custom_command(TARGET ${exeName}
                     POST_BUILD
                     COMMAND ${CMAKE_COMMAND} -E copy_if_different
                     "${CMAKE_BINARY_DIR}/${arg}/$<CONFIGURATION>/${arg}.dll"
                     ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIGURATION>/)
-        endforeach()
+            endforeach()
+        else()
+            foreach(arg ${ARGN})
+                add_custom_command(TARGET ${exeName}
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    "${CMAKE_BINARY_DIR}/${arg}/${arg}.dll"
+                    ${CMAKE_CURRENT_BINARY_DIR})
+            endforeach()
+        endif()
     endif()
-endmacro()
+endfunction()
 
 # this function is based on the unity build function described at: https://cheind.wordpress.com/2009/12/10/reducing-compilation-time-unity-builds/
 function(enable_unity_build UNITY_SUFFIX SOURCE_FILES)
