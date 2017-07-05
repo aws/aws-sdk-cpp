@@ -116,13 +116,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -131,13 +130,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -146,13 +144,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -161,13 +158,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -176,13 +172,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -191,13 +186,12 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
@@ -206,24 +200,23 @@ namespace Model
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
      * a value for each dimension. CloudWatch treats each unique combination of
-     * dimensions as a separate metric. You can't retrieve statistics using
-     * combinations of dimensions that were not specially published. You must specify
-     * the same dimensions that were used when the metrics were created. For an
-     * example, see <a
+     * dimensions as a separate metric. If a specific combination of dimensions was not
+     * published, you can't retrieve statistics for it. You must specify the same
+     * dimensions that were used when the metrics were created. For an example, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
-     * information on specifying dimensions, see <a
+     * information about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The time stamp that determines the first data point to return. Note that
-     * start times are evaluated relative to the time that CloudWatch receives the
-     * request.</p> <p>The value specified is inclusive; results include data points
-     * with the specified time stamp. The time stamp must be in ISO 8601 UTC format
-     * (for example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
+     * <p>The time stamp that determines the first data point to return. Start times
+     * are evaluated relative to the time that CloudWatch receives the request.</p>
+     * <p>The value specified is inclusive; results include data points with the
+     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
+     * example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
      * stamp as follows:</p> <ul> <li> <p>Start time less than 15 days ago - Round down
      * to the nearest whole minute. For example, 12:32:34 is rounded down to
      * 12:32:00.</p> </li> <li> <p>Start time between 15 and 63 days ago - Round down
@@ -235,11 +228,11 @@ namespace Model
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time stamp that determines the first data point to return. Note that
-     * start times are evaluated relative to the time that CloudWatch receives the
-     * request.</p> <p>The value specified is inclusive; results include data points
-     * with the specified time stamp. The time stamp must be in ISO 8601 UTC format
-     * (for example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
+     * <p>The time stamp that determines the first data point to return. Start times
+     * are evaluated relative to the time that CloudWatch receives the request.</p>
+     * <p>The value specified is inclusive; results include data points with the
+     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
+     * example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
      * stamp as follows:</p> <ul> <li> <p>Start time less than 15 days ago - Round down
      * to the nearest whole minute. For example, 12:32:34 is rounded down to
      * 12:32:00.</p> </li> <li> <p>Start time between 15 and 63 days ago - Round down
@@ -251,11 +244,11 @@ namespace Model
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time stamp that determines the first data point to return. Note that
-     * start times are evaluated relative to the time that CloudWatch receives the
-     * request.</p> <p>The value specified is inclusive; results include data points
-     * with the specified time stamp. The time stamp must be in ISO 8601 UTC format
-     * (for example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
+     * <p>The time stamp that determines the first data point to return. Start times
+     * are evaluated relative to the time that CloudWatch receives the request.</p>
+     * <p>The value specified is inclusive; results include data points with the
+     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
+     * example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
      * stamp as follows:</p> <ul> <li> <p>Start time less than 15 days ago - Round down
      * to the nearest whole minute. For example, 12:32:34 is rounded down to
      * 12:32:00.</p> </li> <li> <p>Start time between 15 and 63 days ago - Round down
@@ -267,11 +260,11 @@ namespace Model
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time stamp that determines the first data point to return. Note that
-     * start times are evaluated relative to the time that CloudWatch receives the
-     * request.</p> <p>The value specified is inclusive; results include data points
-     * with the specified time stamp. The time stamp must be in ISO 8601 UTC format
-     * (for example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
+     * <p>The time stamp that determines the first data point to return. Start times
+     * are evaluated relative to the time that CloudWatch receives the request.</p>
+     * <p>The value specified is inclusive; results include data points with the
+     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
+     * example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
      * stamp as follows:</p> <ul> <li> <p>Start time less than 15 days ago - Round down
      * to the nearest whole minute. For example, 12:32:34 is rounded down to
      * 12:32:00.</p> </li> <li> <p>Start time between 15 and 63 days ago - Round down
@@ -283,11 +276,11 @@ namespace Model
     inline GetMetricStatisticsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time stamp that determines the first data point to return. Note that
-     * start times are evaluated relative to the time that CloudWatch receives the
-     * request.</p> <p>The value specified is inclusive; results include data points
-     * with the specified time stamp. The time stamp must be in ISO 8601 UTC format
-     * (for example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
+     * <p>The time stamp that determines the first data point to return. Start times
+     * are evaluated relative to the time that CloudWatch receives the request.</p>
+     * <p>The value specified is inclusive; results include data points with the
+     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
+     * example, 2016-10-03T23:00:00Z).</p> <p>CloudWatch rounds the specified time
      * stamp as follows:</p> <ul> <li> <p>Start time less than 15 days ago - Round down
      * to the nearest whole minute. For example, 12:32:34 is rounded down to
      * 12:32:00.</p> </li> <li> <p>Start time between 15 and 63 days ago - Round down
@@ -300,159 +293,186 @@ namespace Model
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
-     * value specified is exclusive; results will include data points up to the
-     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
-     * example, 2016-10-10T23:00:00Z).</p>
+     * value specified is exclusive; results include data points up to the specified
+     * time stamp. The time stamp must be in ISO 8601 UTC format (for example,
+     * 2016-10-10T23:00:00Z).</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
-     * value specified is exclusive; results will include data points up to the
-     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
-     * example, 2016-10-10T23:00:00Z).</p>
+     * value specified is exclusive; results include data points up to the specified
+     * time stamp. The time stamp must be in ISO 8601 UTC format (for example,
+     * 2016-10-10T23:00:00Z).</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
-     * value specified is exclusive; results will include data points up to the
-     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
-     * example, 2016-10-10T23:00:00Z).</p>
+     * value specified is exclusive; results include data points up to the specified
+     * time stamp. The time stamp must be in ISO 8601 UTC format (for example,
+     * 2016-10-10T23:00:00Z).</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
-     * value specified is exclusive; results will include data points up to the
-     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
-     * example, 2016-10-10T23:00:00Z).</p>
+     * value specified is exclusive; results include data points up to the specified
+     * time stamp. The time stamp must be in ISO 8601 UTC format (for example,
+     * 2016-10-10T23:00:00Z).</p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
-     * value specified is exclusive; results will include data points up to the
-     * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
-     * example, 2016-10-10T23:00:00Z).</p>
+     * value specified is exclusive; results include data points up to the specified
+     * time stamp. The time stamp must be in ISO 8601 UTC format (for example,
+     * 2016-10-10T23:00:00Z).</p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The granularity, in seconds, of the returned data points. A period can be as
-     * short as one minute (60 seconds) and must be a multiple of 60. The default value
-     * is 60.</p> <p>If the <code>StartTime</code> parameter specifies a time stamp
-     * that is greater than 15 days ago, you must specify the period as follows or no
-     * data points in that time range is returned:</p> <ul> <li> <p>Start time between
-     * 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> <li>
-     * <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1
-     * hour).</p> </li> </ul>
+     * short as one minute (60 seconds) and must be a multiple of 60. </p> <p>If the
+     * <code>StartTime</code> parameter specifies a time stamp that is greater than 15
+     * days ago, you must specify the period as follows or no data points in that time
+     * range is returned:</p> <ul> <li> <p>Start time between 15 and 63 days ago - Use
+     * a multiple of 300 seconds (5 minutes).</p> </li> <li> <p>Start time greater than
+     * 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
      * <p>The granularity, in seconds, of the returned data points. A period can be as
-     * short as one minute (60 seconds) and must be a multiple of 60. The default value
-     * is 60.</p> <p>If the <code>StartTime</code> parameter specifies a time stamp
-     * that is greater than 15 days ago, you must specify the period as follows or no
-     * data points in that time range is returned:</p> <ul> <li> <p>Start time between
-     * 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> <li>
-     * <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1
-     * hour).</p> </li> </ul>
+     * short as one minute (60 seconds) and must be a multiple of 60. </p> <p>If the
+     * <code>StartTime</code> parameter specifies a time stamp that is greater than 15
+     * days ago, you must specify the period as follows or no data points in that time
+     * range is returned:</p> <ul> <li> <p>Start time between 15 and 63 days ago - Use
+     * a multiple of 300 seconds (5 minutes).</p> </li> <li> <p>Start time greater than
+     * 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
      * <p>The granularity, in seconds, of the returned data points. A period can be as
-     * short as one minute (60 seconds) and must be a multiple of 60. The default value
-     * is 60.</p> <p>If the <code>StartTime</code> parameter specifies a time stamp
-     * that is greater than 15 days ago, you must specify the period as follows or no
-     * data points in that time range is returned:</p> <ul> <li> <p>Start time between
-     * 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> <li>
-     * <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1
-     * hour).</p> </li> </ul>
+     * short as one minute (60 seconds) and must be a multiple of 60. </p> <p>If the
+     * <code>StartTime</code> parameter specifies a time stamp that is greater than 15
+     * days ago, you must specify the period as follows or no data points in that time
+     * range is returned:</p> <ul> <li> <p>Start time between 15 and 63 days ago - Use
+     * a multiple of 300 seconds (5 minutes).</p> </li> <li> <p>Start time greater than
+     * 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
     inline GetMetricStatisticsRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline const Aws::Vector<Statistic>& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline void SetStatistics(const Aws::Vector<Statistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline void SetStatistics(Aws::Vector<Statistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& WithStatistics(const Aws::Vector<Statistic>& value) { SetStatistics(value); return *this;}
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& WithStatistics(Aws::Vector<Statistic>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& AddStatistics(const Statistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.</p>
+     * <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>,
+     * you must specify either <code>Statistics</code> or
+     * <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExtendedStatistics() const{ return m_extendedStatistics; }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline void SetExtendedStatistics(const Aws::Vector<Aws::String>& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline void SetExtendedStatistics(Aws::Vector<Aws::String>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = std::move(value); }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& WithExtendedStatistics(const Aws::Vector<Aws::String>& value) { SetExtendedStatistics(value); return *this;}
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& WithExtendedStatistics(Aws::Vector<Aws::String>&& value) { SetExtendedStatistics(std::move(value)); return *this;}
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(const Aws::String& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(Aws::String&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
+     * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
+     * <code>GetMetricStatistics</code>, you must specify either
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(const char* value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
 

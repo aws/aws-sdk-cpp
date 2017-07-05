@@ -156,27 +156,27 @@ namespace Model
 
     /**
      * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
-     * type Double, Amazon CloudWatch rejects values that are either too small or too
-     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * type Double, CloudWatch rejects values that are either too small or too large.
+     * Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or
+     * 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
      * +Infinity, -Infinity) are not supported.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
      * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
-     * type Double, Amazon CloudWatch rejects values that are either too small or too
-     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * type Double, CloudWatch rejects values that are either too small or too large.
+     * Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or
+     * 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
      * +Infinity, -Infinity) are not supported.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
-     * type Double, Amazon CloudWatch rejects values that are either too small or too
-     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * type Double, CloudWatch rejects values that are either too small or too large.
+     * Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or
+     * 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
      * +Infinity, -Infinity) are not supported.</p>
      */
     inline MetricDatum& WithValue(double value) { SetValue(value); return *this;}
@@ -231,6 +231,15 @@ namespace Model
      */
     inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
+    
+    inline int GetStorageResolution() const{ return m_storageResolution; }
+
+    
+    inline void SetStorageResolution(int value) { m_storageResolutionHasBeenSet = true; m_storageResolution = value; }
+
+    
+    inline MetricDatum& WithStorageResolution(int value) { SetStorageResolution(value); return *this;}
+
   private:
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
@@ -244,6 +253,8 @@ namespace Model
     bool m_statisticValuesHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+    int m_storageResolution;
+    bool m_storageResolutionHasBeenSet;
   };
 
 } // namespace Model

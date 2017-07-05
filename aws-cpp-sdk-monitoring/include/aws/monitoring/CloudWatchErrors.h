@@ -55,7 +55,9 @@ enum class CloudWatchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DASHBOARD_INVALID_INPUT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DASHBOARD_NOT_FOUND,
+  INTERNAL_SERVICE_FAULT,
   INVALID_FORMAT_FAULT,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED_FAULT,
