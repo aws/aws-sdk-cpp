@@ -81,44 +81,44 @@ namespace Model
     inline DescribeAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline const Aws::String& GetAlarmNamePrefix() const{ return m_alarmNamePrefix; }
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline void SetAlarmNamePrefix(const Aws::String& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = value; }
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline void SetAlarmNamePrefix(Aws::String&& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = std::move(value); }
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline void SetAlarmNamePrefix(const char* value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix.assign(value); }
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(const Aws::String& value) { SetAlarmNamePrefix(value); return *this;}
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(Aws::String&& value) { SetAlarmNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
-     * parameter is specified.</p>
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(const char* value) { SetAlarmNamePrefix(value); return *this;}
 

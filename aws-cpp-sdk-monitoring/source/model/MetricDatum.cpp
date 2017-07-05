@@ -38,7 +38,9 @@ MetricDatum::MetricDatum() :
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
     m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_storageResolution(0),
+    m_storageResolutionHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ MetricDatum::MetricDatum(const XmlNode& xmlNode) :
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
     m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_storageResolution(0),
+    m_storageResolutionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +107,12 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
       m_unitHasBeenSet = true;
     }
+    XmlNode storageResolutionNode = resultNode.FirstChild("StorageResolution");
+    if(!storageResolutionNode.IsNull())
+    {
+      m_storageResolution = StringUtils::ConvertToInt32(StringUtils::Trim(storageResolutionNode.GetText().c_str()).c_str());
+      m_storageResolutionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -148,6 +158,11 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
 
+  if(m_storageResolutionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageResolution=" << m_storageResolution << "&";
+  }
+
 }
 
 void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -183,6 +198,10 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+  }
+  if(m_storageResolutionHasBeenSet)
+  {
+      oStream << location << ".StorageResolution=" << m_storageResolution << "&";
   }
 }
 

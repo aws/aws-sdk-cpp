@@ -677,17 +677,23 @@ namespace Model
     inline PutMetricAlarmRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The period, in seconds, over which the specified statistic is applied.</p>
+     * <p>The period, in seconds, over which the specified statistic is applied. An
+     * alarm's total current evaluation period can be no longer than one day, so this
+     * number multiplied by <code>EvaluationPeriods</code> must be 86,400 or less.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period, in seconds, over which the specified statistic is applied.</p>
+     * <p>The period, in seconds, over which the specified statistic is applied. An
+     * alarm's total current evaluation period can be no longer than one day, so this
+     * number multiplied by <code>EvaluationPeriods</code> must be 86,400 or less.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period, in seconds, over which the specified statistic is applied.</p>
+     * <p>The period, in seconds, over which the specified statistic is applied. An
+     * alarm's total current evaluation period can be no longer than one day, so this
+     * number multiplied by <code>EvaluationPeriods</code> must be 86,400 or less.</p>
      */
     inline PutMetricAlarmRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
@@ -698,8 +704,8 @@ namespace Model
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the Amazon CloudWatch alarm can get stuck
-     * in the <code>INSUFFICIENT DATA</code> state. </p>
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
@@ -710,8 +716,8 @@ namespace Model
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the Amazon CloudWatch alarm can get stuck
-     * in the <code>INSUFFICIENT DATA</code> state. </p>
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
@@ -722,8 +728,8 @@ namespace Model
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the Amazon CloudWatch alarm can get stuck
-     * in the <code>INSUFFICIENT DATA</code> state. </p>
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
@@ -734,8 +740,8 @@ namespace Model
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the Amazon CloudWatch alarm can get stuck
-     * in the <code>INSUFFICIENT DATA</code> state. </p>
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline PutMetricAlarmRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
@@ -746,26 +752,29 @@ namespace Model
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the Amazon CloudWatch alarm can get stuck
-     * in the <code>INSUFFICIENT DATA</code> state. </p>
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline PutMetricAlarmRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
     /**
-     * <p>The number of periods over which data is compared to the specified
-     * threshold.</p>
+     * <p>The number of periods over which data is compared to the specified threshold.
+     * An alarm's total current evaluation period can be no longer than one day, so
+     * this number multiplied by <code>Period</code> must be 86,400 or less.</p>
      */
     inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
-     * <p>The number of periods over which data is compared to the specified
-     * threshold.</p>
+     * <p>The number of periods over which data is compared to the specified threshold.
+     * An alarm's total current evaluation period can be no longer than one day, so
+     * this number multiplied by <code>Period</code> must be 86,400 or less.</p>
      */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
-     * <p>The number of periods over which data is compared to the specified
-     * threshold.</p>
+     * <p>The number of periods over which data is compared to the specified threshold.
+     * An alarm's total current evaluation period can be no longer than one day, so
+     * this number multiplied by <code>Period</code> must be 86,400 or less.</p>
      */
     inline PutMetricAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
@@ -886,10 +895,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -899,10 +908,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -912,10 +921,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -925,10 +934,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -938,10 +947,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -951,10 +960,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
@@ -964,10 +973,10 @@ namespace Model
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
-     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * <code>ignore</code>, the alarm state does not change during periods with too few
      * data points to be statistically significant. If you specify
-     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
-     * and possibly change state no matter how many data points are available. For more
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate

@@ -771,46 +771,109 @@ namespace Model
      */
     inline MetricAlarm& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline MetricAlarm& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline MetricAlarm& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
     inline MetricAlarm& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline void SetEvaluateLowSampleCountPercentile(Aws::String&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = std::move(value); }
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline void SetEvaluateLowSampleCountPercentile(const char* value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile.assign(value); }
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const Aws::String& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(Aws::String&& value) { SetEvaluateLowSampleCountPercentile(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm will always be evaluated and possibly change state no matter how
+     * many data points are available.</p>
+     */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
 
   private:
