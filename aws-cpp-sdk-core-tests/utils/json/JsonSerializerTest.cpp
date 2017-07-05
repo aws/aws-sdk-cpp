@@ -294,3 +294,14 @@ TEST(JsonSerializerTest, TestNullSanity)
     ASSERT_EQ("{\n}\n", emptyObjValue);
 }
 
+TEST(JsonSerializerTest, TestCopy)
+{
+    JsonValue value;
+    ASSERT_TRUE(value.WasParseSuccessful());
+    JsonValue copied_value(value);
+    ASSERT_TRUE(copied_value.WasParseSuccessful());
+    JsonValue copied_value2;
+    copied_value2 = value;
+    ASSERT_TRUE(copied_value2.WasParseSuccessful());
+}
+
