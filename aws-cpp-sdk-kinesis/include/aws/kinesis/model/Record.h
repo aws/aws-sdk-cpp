@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
+#include <aws/kinesis/model/EncryptionType.h>
 #include <utility>
 
 namespace Aws
@@ -49,37 +50,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline Record& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the record in the stream.</p>
+     * <p>The unique identifier of the record within its shard.</p>
      */
     inline Record& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
@@ -188,6 +189,51 @@ namespace Model
      */
     inline Record& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
 
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
+
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline Record& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
+
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline Record& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+
   private:
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
@@ -197,6 +243,8 @@ namespace Model
     bool m_dataHasBeenSet;
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet;
+    EncryptionType m_encryptionType;
+    bool m_encryptionTypeHasBeenSet;
   };
 
 } // namespace Model

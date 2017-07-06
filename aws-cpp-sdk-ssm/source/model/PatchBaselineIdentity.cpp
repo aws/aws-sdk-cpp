@@ -31,6 +31,8 @@ namespace Model
 PatchBaselineIdentity::PatchBaselineIdentity() : 
     m_baselineIdHasBeenSet(false),
     m_baselineNameHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false),
     m_baselineDescriptionHasBeenSet(false),
     m_defaultBaseline(false),
     m_defaultBaselineHasBeenSet(false)
@@ -40,6 +42,8 @@ PatchBaselineIdentity::PatchBaselineIdentity() :
 PatchBaselineIdentity::PatchBaselineIdentity(const JsonValue& jsonValue) : 
     m_baselineIdHasBeenSet(false),
     m_baselineNameHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false),
     m_baselineDescriptionHasBeenSet(false),
     m_defaultBaseline(false),
     m_defaultBaselineHasBeenSet(false)
@@ -61,6 +65,13 @@ PatchBaselineIdentity& PatchBaselineIdentity::operator =(const JsonValue& jsonVa
     m_baselineName = jsonValue.GetString("BaselineName");
 
     m_baselineNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
+
+    m_operatingSystemHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BaselineDescription"))
@@ -94,6 +105,11 @@ JsonValue PatchBaselineIdentity::Jsonize() const
   {
    payload.WithString("BaselineName", m_baselineName);
 
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   if(m_baselineDescriptionHasBeenSet)

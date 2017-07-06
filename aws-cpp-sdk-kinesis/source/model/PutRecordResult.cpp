@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRecordResult::PutRecordResult()
+PutRecordResult::PutRecordResult() : 
+    m_encryptionType(EncryptionType::NOT_SET)
 {
 }
 
-PutRecordResult::PutRecordResult(const AmazonWebServiceResult<JsonValue>& result)
+PutRecordResult::PutRecordResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_encryptionType(EncryptionType::NOT_SET)
 {
   *this = result;
 }
@@ -47,6 +49,12 @@ PutRecordResult& PutRecordResult::operator =(const AmazonWebServiceResult<JsonVa
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
+
+  }
+
+  if(jsonValue.ValueExists("EncryptionType"))
+  {
+    m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
 
   }
 

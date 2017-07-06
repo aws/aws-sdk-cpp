@@ -45,7 +45,9 @@ KeyMetadata::KeyMetadata() :
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false)
+    m_expirationModelHasBeenSet(false),
+    m_keyManager(KeyManagerType::NOT_SET),
+    m_keyManagerHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ KeyMetadata::KeyMetadata(const JsonValue& jsonValue) :
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false)
+    m_expirationModelHasBeenSet(false),
+    m_keyManager(KeyManagerType::NOT_SET),
+    m_keyManagerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,13 @@ KeyMetadata& KeyMetadata::operator =(const JsonValue& jsonValue)
     m_expirationModelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyManager"))
+  {
+    m_keyManager = KeyManagerTypeMapper::GetKeyManagerTypeForName(jsonValue.GetString("KeyManager"));
+
+    m_keyManagerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +238,11 @@ JsonValue KeyMetadata::Jsonize() const
   if(m_expirationModelHasBeenSet)
   {
    payload.WithString("ExpirationModel", ExpirationModelTypeMapper::GetNameForExpirationModelType(m_expirationModel));
+  }
+
+  if(m_keyManagerHasBeenSet)
+  {
+   payload.WithString("KeyManager", KeyManagerTypeMapper::GetNameForKeyManagerType(m_keyManager));
   }
 
   return payload;

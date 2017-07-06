@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/OperatingSystem.h>
 #include <utility>
 
 namespace Aws
@@ -71,9 +72,41 @@ namespace Model
      */
     inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
+
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
   private:
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
+    OperatingSystem m_operatingSystem;
+    bool m_operatingSystemHasBeenSet;
   };
 
 } // namespace Model

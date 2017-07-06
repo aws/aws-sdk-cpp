@@ -19,6 +19,7 @@
 #include <aws/kinesis/model/StreamStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kinesis/model/EncryptionType.h>
 #include <aws/kinesis/model/Shard.h>
 #include <aws/kinesis/model/EnhancedMetrics.h>
 #include <utility>
@@ -329,6 +330,93 @@ namespace Model
      */
     inline StreamDescription& AddEnhancedMonitoring(EnhancedMetrics&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
+
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline StreamDescription& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
+
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline StreamDescription& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline StreamDescription& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline StreamDescription& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The GUID for the customer-managed KMS key used for encryption on the
+     * stream.</p>
+     */
+    inline StreamDescription& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
   private:
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
@@ -346,6 +434,10 @@ namespace Model
     bool m_streamCreationTimestampHasBeenSet;
     Aws::Vector<EnhancedMetrics> m_enhancedMonitoring;
     bool m_enhancedMonitoringHasBeenSet;
+    EncryptionType m_encryptionType;
+    bool m_encryptionTypeHasBeenSet;
+    Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
   };
 
 } // namespace Model

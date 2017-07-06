@@ -229,19 +229,34 @@ namespace Model
      */
     inline CreateMicrosoftADRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline const DirectoryVpcSettings& GetVpcSettings() const{ return m_vpcSettings; }
 
-    
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline void SetVpcSettings(const DirectoryVpcSettings& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
 
-    
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline void SetVpcSettings(DirectoryVpcSettings&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::move(value); }
 
-    
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline CreateMicrosoftADRequest& WithVpcSettings(const DirectoryVpcSettings& value) { SetVpcSettings(value); return *this;}
 
-    
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline CreateMicrosoftADRequest& WithVpcSettings(DirectoryVpcSettings&& value) { SetVpcSettings(std::move(value)); return *this;}
 
   private:

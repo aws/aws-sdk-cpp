@@ -30,6 +30,8 @@ namespace Model
 
 PatchRule::PatchRule() : 
     m_patchFilterGroupHasBeenSet(false),
+    m_complianceLevel(PatchComplianceLevel::NOT_SET),
+    m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
     m_approveAfterDaysHasBeenSet(false)
 {
@@ -37,6 +39,8 @@ PatchRule::PatchRule() :
 
 PatchRule::PatchRule(const JsonValue& jsonValue) : 
     m_patchFilterGroupHasBeenSet(false),
+    m_complianceLevel(PatchComplianceLevel::NOT_SET),
+    m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
     m_approveAfterDaysHasBeenSet(false)
 {
@@ -50,6 +54,13 @@ PatchRule& PatchRule::operator =(const JsonValue& jsonValue)
     m_patchFilterGroup = jsonValue.GetObject("PatchFilterGroup");
 
     m_patchFilterGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceLevel"))
+  {
+    m_complianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ComplianceLevel"));
+
+    m_complianceLevelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ApproveAfterDays"))
@@ -70,6 +81,11 @@ JsonValue PatchRule::Jsonize() const
   {
    payload.WithObject("PatchFilterGroup", m_patchFilterGroup.Jsonize());
 
+  }
+
+  if(m_complianceLevelHasBeenSet)
+  {
+   payload.WithString("ComplianceLevel", PatchComplianceLevelMapper::GetNameForPatchComplianceLevel(m_complianceLevel));
   }
 
   if(m_approveAfterDaysHasBeenSet)

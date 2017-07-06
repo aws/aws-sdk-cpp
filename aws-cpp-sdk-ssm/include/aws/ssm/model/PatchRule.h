@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/PatchFilterGroup.h>
+#include <aws/ssm/model/PatchComplianceLevel.h>
 #include <utility>
 
 namespace Aws
@@ -71,6 +72,41 @@ namespace Model
     inline PatchRule& WithPatchFilterGroup(PatchFilterGroup&& value) { SetPatchFilterGroup(std::move(value)); return *this;}
 
     /**
+     * <p>A compliance severity level for all approved patches in a patch baseline.
+     * Valid compliance severity levels include the following: Unspecified, Critical,
+     * High, Medium, Low, and Informational.</p>
+     */
+    inline const PatchComplianceLevel& GetComplianceLevel() const{ return m_complianceLevel; }
+
+    /**
+     * <p>A compliance severity level for all approved patches in a patch baseline.
+     * Valid compliance severity levels include the following: Unspecified, Critical,
+     * High, Medium, Low, and Informational.</p>
+     */
+    inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
+
+    /**
+     * <p>A compliance severity level for all approved patches in a patch baseline.
+     * Valid compliance severity levels include the following: Unspecified, Critical,
+     * High, Medium, Low, and Informational.</p>
+     */
+    inline void SetComplianceLevel(PatchComplianceLevel&& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = std::move(value); }
+
+    /**
+     * <p>A compliance severity level for all approved patches in a patch baseline.
+     * Valid compliance severity levels include the following: Unspecified, Critical,
+     * High, Medium, Low, and Informational.</p>
+     */
+    inline PatchRule& WithComplianceLevel(const PatchComplianceLevel& value) { SetComplianceLevel(value); return *this;}
+
+    /**
+     * <p>A compliance severity level for all approved patches in a patch baseline.
+     * Valid compliance severity levels include the following: Unspecified, Critical,
+     * High, Medium, Low, and Informational.</p>
+     */
+    inline PatchRule& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
+
+    /**
      * <p>The number of days after the release date of each patch matched by the rule
      * the patch is marked as approved in the patch baseline.</p>
      */
@@ -91,6 +127,8 @@ namespace Model
   private:
     PatchFilterGroup m_patchFilterGroup;
     bool m_patchFilterGroupHasBeenSet;
+    PatchComplianceLevel m_complianceLevel;
+    bool m_complianceLevelHasBeenSet;
     int m_approveAfterDays;
     bool m_approveAfterDaysHasBeenSet;
   };

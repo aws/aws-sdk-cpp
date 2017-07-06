@@ -16,9 +16,11 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/OperatingSystem.h>
 #include <aws/ssm/model/PatchFilterGroup.h>
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -116,6 +118,31 @@ namespace Model
     inline UpdatePatchBaselineResult& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>The operating system rule used by the updated patch baseline.</p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>The operating system rule used by the updated patch baseline.</p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystem = value; }
+
+    /**
+     * <p>The operating system rule used by the updated patch baseline.</p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystem = std::move(value); }
+
+    /**
+     * <p>The operating system rule used by the updated patch baseline.</p>
+     */
+    inline UpdatePatchBaselineResult& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>The operating system rule used by the updated patch baseline.</p>
+     */
+    inline UpdatePatchBaselineResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
+    /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
     inline const PatchFilterGroup& GetGlobalFilters() const{ return m_globalFilters; }
@@ -204,6 +231,36 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
     inline UpdatePatchBaselineResult& AddApprovedPatches(const char* value) { m_approvedPatches.push_back(value); return *this; }
+
+    /**
+     * <p>The compliance severity level assigned to the patch baseline after the update
+     * completed.</p>
+     */
+    inline const PatchComplianceLevel& GetApprovedPatchesComplianceLevel() const{ return m_approvedPatchesComplianceLevel; }
+
+    /**
+     * <p>The compliance severity level assigned to the patch baseline after the update
+     * completed.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevel = value; }
+
+    /**
+     * <p>The compliance severity level assigned to the patch baseline after the update
+     * completed.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { m_approvedPatchesComplianceLevel = std::move(value); }
+
+    /**
+     * <p>The compliance severity level assigned to the patch baseline after the update
+     * completed.</p>
+     */
+    inline UpdatePatchBaselineResult& WithApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { SetApprovedPatchesComplianceLevel(value); return *this;}
+
+    /**
+     * <p>The compliance severity level assigned to the patch baseline after the update
+     * completed.</p>
+     */
+    inline UpdatePatchBaselineResult& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -333,9 +390,11 @@ namespace Model
   private:
     Aws::String m_baselineId;
     Aws::String m_name;
+    OperatingSystem m_operatingSystem;
     PatchFilterGroup m_globalFilters;
     PatchRuleGroup m_approvalRules;
     Aws::Vector<Aws::String> m_approvedPatches;
+    PatchComplianceLevel m_approvedPatchesComplianceLevel;
     Aws::Vector<Aws::String> m_rejectedPatches;
     Aws::Utils::DateTime m_createdDate;
     Aws::Utils::DateTime m_modifiedDate;

@@ -16,10 +16,12 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
+#include <aws/ssm/model/OperatingSystem.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchFilterGroup.h>
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/PatchComplianceLevel.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -39,6 +41,41 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     */
+    inline CreatePatchBaselineRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     */
+    inline CreatePatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -166,6 +203,51 @@ namespace Model
     inline CreatePatchBaselineRequest& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
     /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. Valid compliance severity levels include the following: CRITICAL,
+     * HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is
+     * UNSPECIFIED.</p>
+     */
+    inline const PatchComplianceLevel& GetApprovedPatchesComplianceLevel() const{ return m_approvedPatchesComplianceLevel; }
+
+    /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. Valid compliance severity levels include the following: CRITICAL,
+     * HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is
+     * UNSPECIFIED.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
+
+    /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. Valid compliance severity levels include the following: CRITICAL,
+     * HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is
+     * UNSPECIFIED.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = std::move(value); }
+
+    /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. Valid compliance severity levels include the following: CRITICAL,
+     * HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is
+     * UNSPECIFIED.</p>
+     */
+    inline CreatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { SetApprovedPatchesComplianceLevel(value); return *this;}
+
+    /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. Valid compliance severity levels include the following: CRITICAL,
+     * HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is
+     * UNSPECIFIED.</p>
+     */
+    inline CreatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
+
+    /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
@@ -276,6 +358,8 @@ namespace Model
     inline CreatePatchBaselineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+    OperatingSystem m_operatingSystem;
+    bool m_operatingSystemHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
     PatchFilterGroup m_globalFilters;
@@ -284,6 +368,8 @@ namespace Model
     bool m_approvalRulesHasBeenSet;
     Aws::Vector<Aws::String> m_approvedPatches;
     bool m_approvedPatchesHasBeenSet;
+    PatchComplianceLevel m_approvedPatchesComplianceLevel;
+    bool m_approvedPatchesComplianceLevelHasBeenSet;
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet;
     Aws::String m_description;

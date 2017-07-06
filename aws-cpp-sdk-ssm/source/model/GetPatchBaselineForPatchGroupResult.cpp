@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult()
+GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult() : 
+    m_operatingSystem(OperatingSystem::NOT_SET)
 {
 }
 
-GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_operatingSystem(OperatingSystem::NOT_SET)
 {
   *this = result;
 }
@@ -47,6 +49,12 @@ GetPatchBaselineForPatchGroupResult& GetPatchBaselineForPatchGroupResult::operat
   if(jsonValue.ValueExists("PatchGroup"))
   {
     m_patchGroup = jsonValue.GetString("PatchGroup");
+
+  }
+
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
 
   }
 

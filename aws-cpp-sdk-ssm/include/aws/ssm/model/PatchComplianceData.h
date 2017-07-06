@@ -84,37 +84,37 @@ namespace Model
     inline PatchComplianceData& WithTitle(const char* value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline const Aws::String& GetKBId() const{ return m_kBId; }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline void SetKBId(const Aws::String& value) { m_kBIdHasBeenSet = true; m_kBId = value; }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline void SetKBId(Aws::String&& value) { m_kBIdHasBeenSet = true; m_kBId = std::move(value); }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline void SetKBId(const char* value) { m_kBIdHasBeenSet = true; m_kBId.assign(value); }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline PatchComplianceData& WithKBId(const Aws::String& value) { SetKBId(value); return *this;}
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline PatchComplianceData& WithKBId(Aws::String&& value) { SetKBId(std::move(value)); return *this;}
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The operating system-specific ID of the patch.</p>
      */
     inline PatchComplianceData& WithKBId(const char* value) { SetKBId(value); return *this;}
 
@@ -226,27 +226,32 @@ namespace Model
     inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time the patch was installed on the instance.</p>
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
      */
     inline const Aws::Utils::DateTime& GetInstalledTime() const{ return m_installedTime; }
 
     /**
-     * <p>The date/time the patch was installed on the instance.</p>
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
      */
     inline void SetInstalledTime(const Aws::Utils::DateTime& value) { m_installedTimeHasBeenSet = true; m_installedTime = value; }
 
     /**
-     * <p>The date/time the patch was installed on the instance.</p>
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
      */
     inline void SetInstalledTime(Aws::Utils::DateTime&& value) { m_installedTimeHasBeenSet = true; m_installedTime = std::move(value); }
 
     /**
-     * <p>The date/time the patch was installed on the instance.</p>
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
      */
     inline PatchComplianceData& WithInstalledTime(const Aws::Utils::DateTime& value) { SetInstalledTime(value); return *this;}
 
     /**
-     * <p>The date/time the patch was installed on the instance.</p>
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
      */
     inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
 

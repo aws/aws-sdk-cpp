@@ -23,10 +23,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePatchBaselineRequest::CreatePatchBaselineRequest() : 
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_globalFiltersHasBeenSet(false),
     m_approvalRulesHasBeenSet(false),
     m_approvedPatchesHasBeenSet(false),
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesComplianceLevelHasBeenSet(false),
     m_rejectedPatchesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
@@ -37,6 +41,11 @@ CreatePatchBaselineRequest::CreatePatchBaselineRequest() :
 Aws::String CreatePatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -65,6 +74,11 @@ Aws::String CreatePatchBaselineRequest::SerializePayload() const
    }
    payload.WithArray("ApprovedPatches", std::move(approvedPatchesJsonList));
 
+  }
+
+  if(m_approvedPatchesComplianceLevelHasBeenSet)
+  {
+   payload.WithString("ApprovedPatchesComplianceLevel", PatchComplianceLevelMapper::GetNameForPatchComplianceLevel(m_approvedPatchesComplianceLevel));
   }
 
   if(m_rejectedPatchesHasBeenSet)

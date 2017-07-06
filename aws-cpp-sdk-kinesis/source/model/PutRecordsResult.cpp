@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PutRecordsResult::PutRecordsResult() : 
-    m_failedRecordCount(0)
+    m_failedRecordCount(0),
+    m_encryptionType(EncryptionType::NOT_SET)
 {
 }
 
 PutRecordsResult::PutRecordsResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedRecordCount(0)
+    m_failedRecordCount(0),
+    m_encryptionType(EncryptionType::NOT_SET)
 {
   *this = result;
 }
@@ -53,6 +55,12 @@ PutRecordsResult& PutRecordsResult::operator =(const AmazonWebServiceResult<Json
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("EncryptionType"))
+  {
+    m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
+
   }
 
 

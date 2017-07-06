@@ -31,6 +31,8 @@ namespace Model
 PatchStatus::PatchStatus() : 
     m_deploymentStatus(PatchDeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
+    m_complianceLevel(PatchComplianceLevel::NOT_SET),
+    m_complianceLevelHasBeenSet(false),
     m_approvalDateHasBeenSet(false)
 {
 }
@@ -38,6 +40,8 @@ PatchStatus::PatchStatus() :
 PatchStatus::PatchStatus(const JsonValue& jsonValue) : 
     m_deploymentStatus(PatchDeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
+    m_complianceLevel(PatchComplianceLevel::NOT_SET),
+    m_complianceLevelHasBeenSet(false),
     m_approvalDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +54,13 @@ PatchStatus& PatchStatus::operator =(const JsonValue& jsonValue)
     m_deploymentStatus = PatchDeploymentStatusMapper::GetPatchDeploymentStatusForName(jsonValue.GetString("DeploymentStatus"));
 
     m_deploymentStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceLevel"))
+  {
+    m_complianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ComplianceLevel"));
+
+    m_complianceLevelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ApprovalDate"))
@@ -69,6 +80,11 @@ JsonValue PatchStatus::Jsonize() const
   if(m_deploymentStatusHasBeenSet)
   {
    payload.WithString("DeploymentStatus", PatchDeploymentStatusMapper::GetNameForPatchDeploymentStatus(m_deploymentStatus));
+  }
+
+  if(m_complianceLevelHasBeenSet)
+  {
+   payload.WithString("ComplianceLevel", PatchComplianceLevelMapper::GetNameForPatchComplianceLevel(m_complianceLevel));
   }
 
   if(m_approvalDateHasBeenSet)

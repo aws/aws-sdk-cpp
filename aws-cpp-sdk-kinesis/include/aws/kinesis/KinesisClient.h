@@ -96,6 +96,8 @@ namespace Model
         class PutRecordsRequest;
         class RemoveTagsFromStreamRequest;
         class SplitShardRequest;
+        class StartStreamEncryptionRequest;
+        class StopStreamEncryptionRequest;
         class UpdateShardCountRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
@@ -116,6 +118,8 @@ namespace Model
         typedef Aws::Utils::Outcome<PutRecordsResult, Aws::Client::AWSError<KinesisErrors>> PutRecordsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> RemoveTagsFromStreamOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> SplitShardOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> StartStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KinesisErrors>> StopStreamEncryptionOutcome;
         typedef Aws::Utils::Outcome<UpdateShardCountResult, Aws::Client::AWSError<KinesisErrors>> UpdateShardCountOutcome;
 
         typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
@@ -136,6 +140,8 @@ namespace Model
         typedef std::future<PutRecordsOutcome> PutRecordsOutcomeCallable;
         typedef std::future<RemoveTagsFromStreamOutcome> RemoveTagsFromStreamOutcomeCallable;
         typedef std::future<SplitShardOutcome> SplitShardOutcomeCallable;
+        typedef std::future<StartStreamEncryptionOutcome> StartStreamEncryptionOutcomeCallable;
+        typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCallable;
         typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
 } // namespace Model
 
@@ -159,6 +165,8 @@ namespace Model
     typedef std::function<void(const KinesisClient*, const Model::PutRecordsRequest&, const Model::PutRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordsResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::RemoveTagsFromStreamRequest&, const Model::RemoveTagsFromStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::SplitShardRequest&, const Model::SplitShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SplitShardResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::StartStreamEncryptionRequest&, const Model::StartStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamEncryptionResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::StopStreamEncryptionRequest&, const Model::StopStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamEncryptionResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShardCountResponseReceivedHandler;
 
   /**
@@ -1198,9 +1206,11 @@ namespace Model
          * <p>If a <code>PutRecord</code> request cannot be processed because of
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for 24 hours from the time that they are added to a
+         * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
          * API Reference</a></p>
          */
@@ -1238,9 +1248,11 @@ namespace Model
          * <p>If a <code>PutRecord</code> request cannot be processed because of
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for 24 hours from the time that they are added to a
+         * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -1280,9 +1292,11 @@ namespace Model
          * <p>If a <code>PutRecord</code> request cannot be processed because of
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for 24 hours from the time that they are added to a
+         * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -1341,10 +1355,10 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer
-         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
-         * the time that they are added to an Amazon Kinesis stream. This retention period
-         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>By default, data records are accessible for 24 hours from the
+         * time that they are added to a stream. You can use
+         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
+         * modify this retention period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          */
@@ -1401,10 +1415,10 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer
-         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
-         * the time that they are added to an Amazon Kinesis stream. This retention period
-         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>By default, data records are accessible for 24 hours from the
+         * time that they are added to a stream. You can use
+         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
+         * modify this retention period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          *
@@ -1463,10 +1477,10 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer
-         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
-         * the time that they are added to an Amazon Kinesis stream. This retention period
-         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>By default, data records are accessible for 24 hours from the
+         * time that they are added to a stream. You can use
+         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
+         * modify this retention period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          *
@@ -1663,6 +1677,140 @@ namespace Model
         virtual void SplitShardAsync(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables or updates server-side encryption using an AWS KMS key for a
+         * specified stream. </p> <p>Starting encryption is an asynchronous operation. Upon
+         * receiving the request, Amazon Kinesis returns immediately and sets the status of
+         * the stream to <code>UPDATING</code>. After the update is complete, Amazon
+         * Kinesis sets the status of the stream back to <code>ACTIVE</code>. Updating or
+         * applying encryption normally takes a few seconds to complete but it can take
+         * minutes. You can continue to read and write data to your stream while its status
+         * is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>,
+         * records written to the stream will begin to be encrypted. </p> <p>API Limits:
+         * You can successfully apply a new AWS KMS key for server-side encryption 25 times
+         * in a rolling 24 hour period.</p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are encrypted. After you’ve enabled encryption, you can verify encryption
+         * was applied by inspecting the API response from <code>PutRecord</code> or
+         * <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartStreamEncryptionOutcome StartStreamEncryption(const Model::StartStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Enables or updates server-side encryption using an AWS KMS key for a
+         * specified stream. </p> <p>Starting encryption is an asynchronous operation. Upon
+         * receiving the request, Amazon Kinesis returns immediately and sets the status of
+         * the stream to <code>UPDATING</code>. After the update is complete, Amazon
+         * Kinesis sets the status of the stream back to <code>ACTIVE</code>. Updating or
+         * applying encryption normally takes a few seconds to complete but it can take
+         * minutes. You can continue to read and write data to your stream while its status
+         * is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>,
+         * records written to the stream will begin to be encrypted. </p> <p>API Limits:
+         * You can successfully apply a new AWS KMS key for server-side encryption 25 times
+         * in a rolling 24 hour period.</p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are encrypted. After you’ve enabled encryption, you can verify encryption
+         * was applied by inspecting the API response from <code>PutRecord</code> or
+         * <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartStreamEncryptionOutcomeCallable StartStreamEncryptionCallable(const Model::StartStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Enables or updates server-side encryption using an AWS KMS key for a
+         * specified stream. </p> <p>Starting encryption is an asynchronous operation. Upon
+         * receiving the request, Amazon Kinesis returns immediately and sets the status of
+         * the stream to <code>UPDATING</code>. After the update is complete, Amazon
+         * Kinesis sets the status of the stream back to <code>ACTIVE</code>. Updating or
+         * applying encryption normally takes a few seconds to complete but it can take
+         * minutes. You can continue to read and write data to your stream while its status
+         * is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>,
+         * records written to the stream will begin to be encrypted. </p> <p>API Limits:
+         * You can successfully apply a new AWS KMS key for server-side encryption 25 times
+         * in a rolling 24 hour period.</p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are encrypted. After you’ve enabled encryption, you can verify encryption
+         * was applied by inspecting the API response from <code>PutRecord</code> or
+         * <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartStreamEncryptionAsync(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disables server-side encryption for a specified stream. </p> <p>Stopping
+         * encryption is an asynchronous operation. Upon receiving the request, Amazon
+         * Kinesis returns immediately and sets the status of the stream to
+         * <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+         * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally
+         * takes a few seconds to complete but it can take minutes. You can continue to
+         * read and write data to your stream while its status is <code>UPDATING</code>.
+         * Once the status of the stream is <code>ACTIVE</code> records written to the
+         * stream will no longer be encrypted by the Amazon Kinesis Streams service. </p>
+         * <p>API Limits: You can successfully disable server-side encryption 25 times in a
+         * rolling 24 hour period. </p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are no longer subject to encryption. After you’ve disabled encryption,
+         * you can verify encryption was not applied by inspecting the API response from
+         * <code>PutRecord</code> or <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopStreamEncryptionOutcome StopStreamEncryption(const Model::StopStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Disables server-side encryption for a specified stream. </p> <p>Stopping
+         * encryption is an asynchronous operation. Upon receiving the request, Amazon
+         * Kinesis returns immediately and sets the status of the stream to
+         * <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+         * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally
+         * takes a few seconds to complete but it can take minutes. You can continue to
+         * read and write data to your stream while its status is <code>UPDATING</code>.
+         * Once the status of the stream is <code>ACTIVE</code> records written to the
+         * stream will no longer be encrypted by the Amazon Kinesis Streams service. </p>
+         * <p>API Limits: You can successfully disable server-side encryption 25 times in a
+         * rolling 24 hour period. </p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are no longer subject to encryption. After you’ve disabled encryption,
+         * you can verify encryption was not applied by inspecting the API response from
+         * <code>PutRecord</code> or <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopStreamEncryptionOutcomeCallable StopStreamEncryptionCallable(const Model::StopStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Disables server-side encryption for a specified stream. </p> <p>Stopping
+         * encryption is an asynchronous operation. Upon receiving the request, Amazon
+         * Kinesis returns immediately and sets the status of the stream to
+         * <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+         * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally
+         * takes a few seconds to complete but it can take minutes. You can continue to
+         * read and write data to your stream while its status is <code>UPDATING</code>.
+         * Once the status of the stream is <code>ACTIVE</code> records written to the
+         * stream will no longer be encrypted by the Amazon Kinesis Streams service. </p>
+         * <p>API Limits: You can successfully disable server-side encryption 25 times in a
+         * rolling 24 hour period. </p> <p>Note: It can take up to 5 seconds after the
+         * stream is in an <code>ACTIVE</code> status before all records written to the
+         * stream are no longer subject to encryption. After you’ve disabled encryption,
+         * you can verify encryption was not applied by inspecting the API response from
+         * <code>PutRecord</code> or <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopStreamEncryptionAsync(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the shard count of the specified stream to the specified number of
          * shards.</p> <p>Updating the shard count is an asynchronous operation. Upon
          * receiving the request, Amazon Kinesis returns immediately and sets the status of
@@ -1671,13 +1819,17 @@ namespace Model
          * the size of the stream, the scaling action could take a few minutes to complete.
          * You can continue to read and write data to your stream while its status is
          * <code>UPDATING</code>.</p> <p>To update the shard count, Amazon Kinesis performs
-         * splits and merges and individual shards. This can cause short-lived shards to be
+         * splits or merges on individual shards. This can cause short-lived shards to be
          * created, in addition to the final shards. We recommend that you double or halve
          * the shard count, as this results in the fewest number of splits or merges.</p>
-         * <p>This operation has a rate limit of twice per rolling 24 hour period. You
-         * cannot scale above double your current shard count, scale below half your
-         * current shard count, or exceed the shard limits for your account.</p> <p>For the
-         * default limits for an AWS account, see <a
+         * <p>This operation has the following limits, which are per region per account
+         * unless otherwise noted:</p> <ul> <li> <p>scale more than twice per rolling 24
+         * hour period</p> </li> <li> <p>scale up above double your current shard count</p>
+         * </li> <li> <p>scale down below half your current shard count</p> </li> <li>
+         * <p>scale up above 200 shards in a stream</p> </li> <li> <p>scale a stream with
+         * more than 200 shards down unless the result is less than 200 shards</p> </li>
+         * <li> <p>scale up above the shard limits for your account</p> </li> <li> <p/>
+         * </li> </ul> <p>For the default limits for an AWS account, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
@@ -1697,13 +1849,17 @@ namespace Model
          * the size of the stream, the scaling action could take a few minutes to complete.
          * You can continue to read and write data to your stream while its status is
          * <code>UPDATING</code>.</p> <p>To update the shard count, Amazon Kinesis performs
-         * splits and merges and individual shards. This can cause short-lived shards to be
+         * splits or merges on individual shards. This can cause short-lived shards to be
          * created, in addition to the final shards. We recommend that you double or halve
          * the shard count, as this results in the fewest number of splits or merges.</p>
-         * <p>This operation has a rate limit of twice per rolling 24 hour period. You
-         * cannot scale above double your current shard count, scale below half your
-         * current shard count, or exceed the shard limits for your account.</p> <p>For the
-         * default limits for an AWS account, see <a
+         * <p>This operation has the following limits, which are per region per account
+         * unless otherwise noted:</p> <ul> <li> <p>scale more than twice per rolling 24
+         * hour period</p> </li> <li> <p>scale up above double your current shard count</p>
+         * </li> <li> <p>scale down below half your current shard count</p> </li> <li>
+         * <p>scale up above 200 shards in a stream</p> </li> <li> <p>scale a stream with
+         * more than 200 shards down unless the result is less than 200 shards</p> </li>
+         * <li> <p>scale up above the shard limits for your account</p> </li> <li> <p/>
+         * </li> </ul> <p>For the default limits for an AWS account, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
@@ -1725,13 +1881,17 @@ namespace Model
          * the size of the stream, the scaling action could take a few minutes to complete.
          * You can continue to read and write data to your stream while its status is
          * <code>UPDATING</code>.</p> <p>To update the shard count, Amazon Kinesis performs
-         * splits and merges and individual shards. This can cause short-lived shards to be
+         * splits or merges on individual shards. This can cause short-lived shards to be
          * created, in addition to the final shards. We recommend that you double or halve
          * the shard count, as this results in the fewest number of splits or merges.</p>
-         * <p>This operation has a rate limit of twice per rolling 24 hour period. You
-         * cannot scale above double your current shard count, scale below half your
-         * current shard count, or exceed the shard limits for your account.</p> <p>For the
-         * default limits for an AWS account, see <a
+         * <p>This operation has the following limits, which are per region per account
+         * unless otherwise noted:</p> <ul> <li> <p>scale more than twice per rolling 24
+         * hour period</p> </li> <li> <p>scale up above double your current shard count</p>
+         * </li> <li> <p>scale down below half your current shard count</p> </li> <li>
+         * <p>scale up above 200 shards in a stream</p> </li> <li> <p>scale a stream with
+         * more than 200 shards down unless the result is less than 200 shards</p> </li>
+         * <li> <p>scale up above the shard limits for your account</p> </li> <li> <p/>
+         * </li> </ul> <p>For the default limits for an AWS account, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
@@ -1767,6 +1927,8 @@ namespace Model
         void PutRecordsAsyncHelper(const Model::PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromStreamAsyncHelper(const Model::RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SplitShardAsyncHelper(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartStreamEncryptionAsyncHelper(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopStreamEncryptionAsyncHelper(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateShardCountAsyncHelper(const Model::UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

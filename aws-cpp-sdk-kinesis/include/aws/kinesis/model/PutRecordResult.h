@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis/model/EncryptionType.h>
 #include <utility>
 
 namespace Aws
@@ -138,9 +139,55 @@ namespace Model
      */
     inline PutRecordResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+    /**
+     * <p>The encryption type to use on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type to use on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
+
+    /**
+     * <p>The encryption type to use on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
+
+    /**
+     * <p>The encryption type to use on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline PutRecordResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
+
+    /**
+     * <p>The encryption type to use on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed KMS key.</p>
+     * </li> </ul>
+     */
+    inline PutRecordResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+
   private:
     Aws::String m_shardId;
     Aws::String m_sequenceNumber;
+    EncryptionType m_encryptionType;
   };
 
 } // namespace Model

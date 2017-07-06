@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/PatchDeploymentStatus.h>
+#include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -77,6 +78,31 @@ namespace Model
     inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
     /**
+     * <p>The compliance severity level for a patch.</p>
+     */
+    inline const PatchComplianceLevel& GetComplianceLevel() const{ return m_complianceLevel; }
+
+    /**
+     * <p>The compliance severity level for a patch.</p>
+     */
+    inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
+
+    /**
+     * <p>The compliance severity level for a patch.</p>
+     */
+    inline void SetComplianceLevel(PatchComplianceLevel&& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = std::move(value); }
+
+    /**
+     * <p>The compliance severity level for a patch.</p>
+     */
+    inline PatchStatus& WithComplianceLevel(const PatchComplianceLevel& value) { SetComplianceLevel(value); return *this;}
+
+    /**
+     * <p>The compliance severity level for a patch.</p>
+     */
+    inline PatchStatus& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
+
+    /**
      * <p>The date the patch was approved (or will be approved if the status is
      * PENDING_APPROVAL).</p>
      */
@@ -109,6 +135,8 @@ namespace Model
   private:
     PatchDeploymentStatus m_deploymentStatus;
     bool m_deploymentStatusHasBeenSet;
+    PatchComplianceLevel m_complianceLevel;
+    bool m_complianceLevelHasBeenSet;
     Aws::Utils::DateTime m_approvalDate;
     bool m_approvalDateHasBeenSet;
   };

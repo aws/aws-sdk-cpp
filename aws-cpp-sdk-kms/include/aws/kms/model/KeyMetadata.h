@@ -21,6 +21,7 @@
 #include <aws/kms/model/KeyState.h>
 #include <aws/kms/model/OriginType.h>
 #include <aws/kms/model/ExpirationModelType.h>
+#include <aws/kms/model/KeyManagerType.h>
 #include <utility>
 
 namespace Aws
@@ -491,6 +492,46 @@ namespace Model
      */
     inline KeyMetadata& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
 
+    /**
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * information about the difference, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
+
+    /**
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * information about the difference, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
+
+    /**
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * information about the difference, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
+
+    /**
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * information about the difference, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
+
+    /**
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * information about the difference, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline KeyMetadata& WithKeyManager(KeyManagerType&& value) { SetKeyManager(std::move(value)); return *this;}
+
   private:
     Aws::String m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet;
@@ -516,6 +557,8 @@ namespace Model
     bool m_originHasBeenSet;
     ExpirationModelType m_expirationModel;
     bool m_expirationModelHasBeenSet;
+    KeyManagerType m_keyManager;
+    bool m_keyManagerHasBeenSet;
   };
 
 } // namespace Model

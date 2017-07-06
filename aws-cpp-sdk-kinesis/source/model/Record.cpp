@@ -33,7 +33,9 @@ Record::Record() :
     m_sequenceNumberHasBeenSet(false),
     m_approximateArrivalTimestampHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
+    m_partitionKeyHasBeenSet(false),
+    m_encryptionType(EncryptionType::NOT_SET),
+    m_encryptionTypeHasBeenSet(false)
 {
 }
 
@@ -41,7 +43,9 @@ Record::Record(const JsonValue& jsonValue) :
     m_sequenceNumberHasBeenSet(false),
     m_approximateArrivalTimestampHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
+    m_partitionKeyHasBeenSet(false),
+    m_encryptionType(EncryptionType::NOT_SET),
+    m_encryptionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,13 @@ Record& Record::operator =(const JsonValue& jsonValue)
     m_partitionKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionType"))
+  {
+    m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
+
+    m_encryptionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +113,11 @@ JsonValue Record::Jsonize() const
   {
    payload.WithString("PartitionKey", m_partitionKey);
 
+  }
+
+  if(m_encryptionTypeHasBeenSet)
+  {
+   payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
   return payload;

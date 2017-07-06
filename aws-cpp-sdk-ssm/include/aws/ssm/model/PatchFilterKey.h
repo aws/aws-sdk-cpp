@@ -29,7 +29,10 @@ namespace Model
     PRODUCT,
     CLASSIFICATION,
     MSRC_SEVERITY,
-    PATCH_ID
+    PATCH_ID,
+    SECTION,
+    PRIORITY,
+    SEVERITY
   };
 
 namespace PatchFilterKeyMapper

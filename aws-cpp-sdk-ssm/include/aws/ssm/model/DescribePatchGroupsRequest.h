@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/PatchOrchestratorFilter.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +52,48 @@ namespace Model
      * <p>The maximum number of patch groups to return (per page).</p>
      */
     inline DescribePatchGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline DescribePatchGroupsRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline DescribePatchGroupsRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline DescribePatchGroupsRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline DescribePatchGroupsRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -96,6 +140,8 @@ namespace Model
   private:
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    Aws::Vector<PatchOrchestratorFilter> m_filters;
+    bool m_filtersHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -56,6 +56,12 @@ GetDeployablePatchSnapshotForInstanceResult& GetDeployablePatchSnapshotForInstan
 
   }
 
+  if(jsonValue.ValueExists("Product"))
+  {
+    m_product = jsonValue.GetString("Product");
+
+  }
+
 
 
   return *this;

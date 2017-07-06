@@ -26,11 +26,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePatchBaselineResult::UpdatePatchBaselineResult()
+UpdatePatchBaselineResult::UpdatePatchBaselineResult() : 
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
 {
 }
 
-UpdatePatchBaselineResult::UpdatePatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePatchBaselineResult::UpdatePatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
 {
   *this = result;
 }
@@ -47,6 +51,12 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const AmazonWeb
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
+
+  }
+
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
 
   }
 
@@ -69,6 +79,12 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const AmazonWeb
     {
       m_approvedPatches.push_back(approvedPatchesJsonList[approvedPatchesIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("ApprovedPatchesComplianceLevel"))
+  {
+    m_approvedPatchesComplianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ApprovedPatchesComplianceLevel"));
+
   }
 
   if(jsonValue.ValueExists("RejectedPatches"))

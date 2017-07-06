@@ -20,6 +20,7 @@
 #include <aws/ssm/model/PatchFilterGroup.h>
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/PatchComplianceLevel.h>
 #include <utility>
 
 namespace Aws
@@ -200,6 +201,31 @@ namespace Model
     inline UpdatePatchBaselineRequest& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
     /**
+     * <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+     */
+    inline const PatchComplianceLevel& GetApprovedPatchesComplianceLevel() const{ return m_approvedPatchesComplianceLevel; }
+
+    /**
+     * <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
+
+    /**
+     * <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+     */
+    inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = std::move(value); }
+
+    /**
+     * <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+     */
+    inline UpdatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { SetApprovedPatchesComplianceLevel(value); return *this;}
+
+    /**
+     * <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+     */
+    inline UpdatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
+
+    /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
@@ -285,6 +311,8 @@ namespace Model
     bool m_approvalRulesHasBeenSet;
     Aws::Vector<Aws::String> m_approvedPatches;
     bool m_approvedPatchesHasBeenSet;
+    PatchComplianceLevel m_approvedPatchesComplianceLevel;
+    bool m_approvedPatchesComplianceLevelHasBeenSet;
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet;
     Aws::String m_description;

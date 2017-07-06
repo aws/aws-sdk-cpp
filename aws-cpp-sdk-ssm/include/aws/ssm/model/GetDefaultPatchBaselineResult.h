@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/OperatingSystem.h>
 #include <utility>
 
 namespace Aws
@@ -76,8 +77,34 @@ namespace Model
      */
     inline GetDefaultPatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
+    /**
+     * <p>The operating system for the returned patch baseline. </p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>The operating system for the returned patch baseline. </p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystem = value; }
+
+    /**
+     * <p>The operating system for the returned patch baseline. </p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystem = std::move(value); }
+
+    /**
+     * <p>The operating system for the returned patch baseline. </p>
+     */
+    inline GetDefaultPatchBaselineResult& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>The operating system for the returned patch baseline. </p>
+     */
+    inline GetDefaultPatchBaselineResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
   private:
     Aws::String m_baselineId;
+    OperatingSystem m_operatingSystem;
   };
 
 } // namespace Model

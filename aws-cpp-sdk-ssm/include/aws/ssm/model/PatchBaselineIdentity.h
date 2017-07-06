@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/OperatingSystem.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +118,41 @@ namespace Model
     inline PatchBaselineIdentity& WithBaselineName(const char* value) { SetBaselineName(value); return *this;}
 
     /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
+     */
+    inline PatchBaselineIdentity& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. Supported
+     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
+     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
+     */
+    inline PatchBaselineIdentity& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
+    /**
      * <p>The description of the patch baseline.</p>
      */
     inline const Aws::String& GetBaselineDescription() const{ return m_baselineDescription; }
@@ -152,17 +188,23 @@ namespace Model
     inline PatchBaselineIdentity& WithBaselineDescription(const char* value) { SetBaselineDescription(value); return *this;}
 
     /**
-     * <p>Whether this is the default baseline.</p>
+     * <p>Whether this is the default baseline. Note that Systems Manager supports
+     * creating multiple default patch baselines. For example, you can create a default
+     * patch baseline for each operating system.</p>
      */
     inline bool GetDefaultBaseline() const{ return m_defaultBaseline; }
 
     /**
-     * <p>Whether this is the default baseline.</p>
+     * <p>Whether this is the default baseline. Note that Systems Manager supports
+     * creating multiple default patch baselines. For example, you can create a default
+     * patch baseline for each operating system.</p>
      */
     inline void SetDefaultBaseline(bool value) { m_defaultBaselineHasBeenSet = true; m_defaultBaseline = value; }
 
     /**
-     * <p>Whether this is the default baseline.</p>
+     * <p>Whether this is the default baseline. Note that Systems Manager supports
+     * creating multiple default patch baselines. For example, you can create a default
+     * patch baseline for each operating system.</p>
      */
     inline PatchBaselineIdentity& WithDefaultBaseline(bool value) { SetDefaultBaseline(value); return *this;}
 
@@ -171,6 +213,8 @@ namespace Model
     bool m_baselineIdHasBeenSet;
     Aws::String m_baselineName;
     bool m_baselineNameHasBeenSet;
+    OperatingSystem m_operatingSystem;
+    bool m_operatingSystemHasBeenSet;
     Aws::String m_baselineDescription;
     bool m_baselineDescriptionHasBeenSet;
     bool m_defaultBaseline;

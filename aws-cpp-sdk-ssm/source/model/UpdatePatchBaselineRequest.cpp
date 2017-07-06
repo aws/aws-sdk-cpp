@@ -28,6 +28,8 @@ UpdatePatchBaselineRequest::UpdatePatchBaselineRequest() :
     m_globalFiltersHasBeenSet(false),
     m_approvalRulesHasBeenSet(false),
     m_approvedPatchesHasBeenSet(false),
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesComplianceLevelHasBeenSet(false),
     m_rejectedPatchesHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -70,6 +72,11 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
    }
    payload.WithArray("ApprovedPatches", std::move(approvedPatchesJsonList));
 
+  }
+
+  if(m_approvedPatchesComplianceLevelHasBeenSet)
+  {
+   payload.WithString("ApprovedPatchesComplianceLevel", PatchComplianceLevelMapper::GetNameForPatchComplianceLevel(m_approvedPatchesComplianceLevel));
   }
 
   if(m_rejectedPatchesHasBeenSet)

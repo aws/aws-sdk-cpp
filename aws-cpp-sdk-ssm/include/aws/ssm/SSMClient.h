@@ -870,8 +870,8 @@ namespace Model
          * recommend that you secure access to the Amazon S3 bucket by creating a
          * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
          * policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
-         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
+         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -888,8 +888,8 @@ namespace Model
          * recommend that you secure access to the Amazon S3 bucket by creating a
          * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
          * policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
-         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
+         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -908,8 +908,8 @@ namespace Model
          * recommend that you secure access to the Amazon S3 bucket by creating a
          * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
          * policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Creating
-         * a Resource Data Sync</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
+         * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1472,7 +1472,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Note that this API applies only to Windows
+         * patch baselines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -1480,7 +1481,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Note that this API applies only to Windows
+         * patch baselines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1490,7 +1492,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Note that this API applies only to Windows
+         * patch baselines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1990,14 +1993,18 @@ namespace Model
         virtual void GetCommandInvocationAsync(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
+         * creating multiple default patch baselines. For example, you can create a default
+         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDefaultPatchBaselineOutcome GetDefaultPatchBaseline(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
+         * creating multiple default patch baselines. For example, you can create a default
+         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -2006,7 +2013,9 @@ namespace Model
         virtual Model::GetDefaultPatchBaselineOutcomeCallable GetDefaultPatchBaselineCallable(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
+         * creating multiple default patch baselines. For example, you can create a default
+         * patch baseline for each operating system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -2016,7 +2025,7 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
@@ -2025,7 +2034,7 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
@@ -2036,7 +2045,7 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetPatchBaselineForPatchGroupRequest::GetPatchBaselineForPatchGroupRequest() : 
-    m_patchGroupHasBeenSet(false)
+    m_patchGroupHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String GetPatchBaselineForPatchGroupRequest::SerializePayload() const
   {
    payload.WithString("PatchGroup", m_patchGroup);
 
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   return payload.WriteReadable();

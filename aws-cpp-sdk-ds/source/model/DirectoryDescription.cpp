@@ -51,7 +51,9 @@ DirectoryDescription::DirectoryDescription() :
     m_radiusStatusHasBeenSet(false),
     m_stageReasonHasBeenSet(false),
     m_ssoEnabled(false),
-    m_ssoEnabledHasBeenSet(false)
+    m_ssoEnabledHasBeenSet(false),
+    m_desiredNumberOfDomainControllers(0),
+    m_desiredNumberOfDomainControllersHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ DirectoryDescription::DirectoryDescription(const JsonValue& jsonValue) :
     m_radiusStatusHasBeenSet(false),
     m_stageReasonHasBeenSet(false),
     m_ssoEnabled(false),
-    m_ssoEnabledHasBeenSet(false)
+    m_ssoEnabledHasBeenSet(false),
+    m_desiredNumberOfDomainControllers(0),
+    m_desiredNumberOfDomainControllersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -214,6 +218,13 @@ DirectoryDescription& DirectoryDescription::operator =(const JsonValue& jsonValu
     m_ssoEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DesiredNumberOfDomainControllers"))
+  {
+    m_desiredNumberOfDomainControllers = jsonValue.GetInteger("DesiredNumberOfDomainControllers");
+
+    m_desiredNumberOfDomainControllersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -325,6 +336,12 @@ JsonValue DirectoryDescription::Jsonize() const
   if(m_ssoEnabledHasBeenSet)
   {
    payload.WithBool("SsoEnabled", m_ssoEnabled);
+
+  }
+
+  if(m_desiredNumberOfDomainControllersHasBeenSet)
+  {
+   payload.WithInteger("DesiredNumberOfDomainControllers", m_desiredNumberOfDomainControllers);
 
   }
 

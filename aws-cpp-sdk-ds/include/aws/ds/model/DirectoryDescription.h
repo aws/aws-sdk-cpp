@@ -668,6 +668,24 @@ namespace Model
      */
     inline DirectoryDescription& WithSsoEnabled(bool value) { SetSsoEnabled(value); return *this;}
 
+    /**
+     * <p>The desired number of domain controllers in the directory if the directory is
+     * Microsoft AD.</p>
+     */
+    inline int GetDesiredNumberOfDomainControllers() const{ return m_desiredNumberOfDomainControllers; }
+
+    /**
+     * <p>The desired number of domain controllers in the directory if the directory is
+     * Microsoft AD.</p>
+     */
+    inline void SetDesiredNumberOfDomainControllers(int value) { m_desiredNumberOfDomainControllersHasBeenSet = true; m_desiredNumberOfDomainControllers = value; }
+
+    /**
+     * <p>The desired number of domain controllers in the directory if the directory is
+     * Microsoft AD.</p>
+     */
+    inline DirectoryDescription& WithDesiredNumberOfDomainControllers(int value) { SetDesiredNumberOfDomainControllers(value); return *this;}
+
   private:
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
@@ -705,6 +723,8 @@ namespace Model
     bool m_stageReasonHasBeenSet;
     bool m_ssoEnabled;
     bool m_ssoEnabledHasBeenSet;
+    int m_desiredNumberOfDomainControllers;
+    bool m_desiredNumberOfDomainControllersHasBeenSet;
   };
 
 } // namespace Model

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesis/model/EncryptionType.h>
 #include <aws/kinesis/model/PutRecordsResultEntry.h>
 #include <utility>
 
@@ -128,9 +129,50 @@ namespace Model
      */
     inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The encryption type used on the records. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
+     * records using a customer-managed KMS key.</p> </li> </ul>
+     */
+    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type used on the records. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
+     * records using a customer-managed KMS key.</p> </li> </ul>
+     */
+    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
+
+    /**
+     * <p>The encryption type used on the records. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
+     * records using a customer-managed KMS key.</p> </li> </ul>
+     */
+    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
+
+    /**
+     * <p>The encryption type used on the records. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
+     * records using a customer-managed KMS key.</p> </li> </ul>
+     */
+    inline PutRecordsResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
+
+    /**
+     * <p>The encryption type used on the records. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
+     * records using a customer-managed KMS key.</p> </li> </ul>
+     */
+    inline PutRecordsResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+
   private:
     int m_failedRecordCount;
     Aws::Vector<PutRecordsResultEntry> m_records;
+    EncryptionType m_encryptionType;
   };
 
 } // namespace Model

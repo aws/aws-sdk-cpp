@@ -22,13 +22,22 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDefaultPatchBaselineRequest::GetDefaultPatchBaselineRequest()
+GetDefaultPatchBaselineRequest::GetDefaultPatchBaselineRequest() : 
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false)
 {
 }
 
 Aws::String GetDefaultPatchBaselineRequest::SerializePayload() const
 {
-  return "";
+  JsonValue payload;
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  }
+
+  return payload.WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDefaultPatchBaselineRequest::GetRequestSpecificHeaders() const
