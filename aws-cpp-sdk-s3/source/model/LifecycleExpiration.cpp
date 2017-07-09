@@ -98,7 +98,7 @@ void LifecycleExpiration::AddToNode(XmlNode& parentNode) const
   if(m_expiredObjectDeleteMarkerHasBeenSet)
   {
    XmlNode expiredObjectDeleteMarkerNode = parentNode.CreateChildElement("ExpiredObjectDeleteMarker");
-  ss << m_expiredObjectDeleteMarker;
+  ss << std::boolalpha << m_expiredObjectDeleteMarker;
    expiredObjectDeleteMarkerNode.SetText(ss.str());
   ss.str("");
   }
