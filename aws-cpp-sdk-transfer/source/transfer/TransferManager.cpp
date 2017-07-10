@@ -916,7 +916,7 @@ namespace Aws
                 const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName)
         {
             fileStream->seekg(0, std::ios_base::end);
-            size_t length = static_cast<size_t>(fileStream->tellg());
+            auto length = fileStream->tellg();
             fileStream->seekg(0, std::ios_base::beg);
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length, fileName);
             handle->SetContentType(contentType);
