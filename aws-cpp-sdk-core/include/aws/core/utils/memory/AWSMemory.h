@@ -114,7 +114,11 @@ namespace Aws
 
             // if we need to remember the # of items in the array (because we need to call their destructors) then allocate extra memory and keep the # of items in the extra slot
             std::size_t allocationSize = amount * sizeof(T);
+#if defined(_MSC_VER) && _MSC_VER < 1900
+            std::size_t headerSize = std::max(sizeof(std::size_t), __alignof(T));
+#else
             std::size_t headerSize = std::max(sizeof(std::size_t), alignof(T));
+#endif
 
             if (trackMemberCount)
             {
@@ -167,7 +171,11 @@ namespace Aws
 
         if (destroyMembers)
         {
+#if defined(_MSC_VER) && _MSC_VER < 1900
+            std::size_t headerSize = std::max(sizeof(std::size_t), __alignof(T));
+#else
             std::size_t headerSize = std::max(sizeof(std::size_t), alignof(T));
+#endif
 
             std::size_t *pointerToAmount = reinterpret_cast<std::size_t*>(reinterpret_cast<char*>(pointerToTArray) - headerSize);
             std::size_t amount = *pointerToAmount;
