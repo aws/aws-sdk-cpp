@@ -21,6 +21,7 @@
 
 #include <memory>
 #include <cstdlib>
+#include <algorithm>
 
 namespace Aws
 {
@@ -113,9 +114,10 @@ namespace Aws
 
             // if we need to remember the # of items in the array (because we need to call their destructors) then allocate extra memory and keep the # of items in the extra slot
             std::size_t allocationSize = amount * sizeof(T);
+            int headerSize = std::max(sizeof(std::size_t), alignOf(T));
             if (trackMemberCount)
             {
-                allocationSize += sizeof(std::size_t);
+                allocationSize += headerSize;
             }
 
             void* rawMemory = Malloc(allocationTag, allocationSize);
@@ -125,7 +127,7 @@ namespace Aws
             {
                 std::size_t* pointerToAmount = reinterpret_cast<std::size_t*>(rawMemory);
                 *pointerToAmount = amount;
-                pointerToT = reinterpret_cast<T*>(reinterpret_cast<void*>(pointerToAmount + 1));
+                pointerToT = reinterpret_cast<T*>(reinterpret_cast<void*>(pointerToAmount + headerSize));
             }
             else
             {
@@ -163,7 +165,8 @@ namespace Aws
 
         if (destroyMembers)
         {
-            std::size_t *pointerToAmount = reinterpret_cast<std::size_t *>(reinterpret_cast<void *>(pointerToTArray)) - 1;
+            int headerSize = std::max(sizeof(std::size_t), alignof(T));
+            std::size_t *pointerToAmount = reinterpret_cast<std::size_t*>(reinterpret_cast<char*>(pointerToTArray) - headerSize);
             std::size_t amount = *pointerToAmount;
 
             for (std::size_t i = amount; i > 0; --i)
