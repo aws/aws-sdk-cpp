@@ -37,6 +37,7 @@ namespace Aws
         static const char* const AP_NORTHEAST_2 = "ap-northeast-2";
         static const char* const SA_EAST_1 = "sa-east-1";
         static const char* const AP_SOUTH_1 = "ap-south-1";
+        static const char* const CN_NORTH_1 = "cn-north-1";
     }
 
 } // namespace Aws
