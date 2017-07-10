@@ -70,7 +70,7 @@ namespace Aws
 
             Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
             std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
-            const Aws::S3Encryption::CryptoConfiguration& m_cryptoConfig;
+            const Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;
         };
     }
 }
