@@ -114,7 +114,7 @@ namespace Aws
 
             // if we need to remember the # of items in the array (because we need to call their destructors) then allocate extra memory and keep the # of items in the extra slot
             std::size_t allocationSize = amount * sizeof(T);
-            int headerSize = std::max(sizeof(std::size_t), alignOf(T));
+            int headerSize = std::max(sizeof(std::size_t), alignof(T));
             if (trackMemberCount)
             {
                 allocationSize += headerSize;
