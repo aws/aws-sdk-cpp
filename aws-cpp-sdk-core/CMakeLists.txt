@@ -321,30 +321,25 @@ if(PLATFORM_CUSTOM)
   endif()
 endif()
 
-include_directories(${Core_INCLUDES})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 if(NOT PLATFORM_CUSTOM)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs)
-endif()
-
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    add_definitions(-DAWS_CORE_EXPORTS=1)
+    target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs")
 endif()
 
 if(BUILD_CURL)
-  set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${CURL_INCLUDE_DIR}" )
+    target_include_directories(${PROJECT_NAME} PRIVATE "${CURL_INCLUDE_DIR}")
 endif()
 
 if(BUILD_OPENSSL)
-  set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${OPENSSL_INCLUDE_DIR}" )
+    target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
 endif()
 
 if(BUILD_ZLIB)
-  set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${ZLIB_INCLUDE_DIR}" )
+    target_include_directories(${PROJECT_NAME} PRIVATE "${ZLIB_INCLUDE_DIR}")
 endif()
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
-add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
@@ -368,28 +363,16 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
-    target_compile_definitions(${PROJECT_NAME} PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
 
     if(BUILD_SHARED_LIBS)
-        target_compile_definitions(${PROJECT_NAME} PUBLIC -DUSE_IMPORT_EXPORT=1)
+        target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_IMPORT_EXPORT=1")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_CORE_EXPORTS=1")
     endif()
 endif()
 
-if(USE_GCC_FLAGS)
-    target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++${CPP_STANDARD}")
-
-    if(NOT ENABLE_RTTI)
-        target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
-    endif()
-else()
-
-    if(NOT ENABLE_RTTI)
-        target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
-    endif()
-endif()
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
 
 if(SIMPLE_INSTALL)
     install (

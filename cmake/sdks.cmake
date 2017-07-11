@@ -178,9 +178,8 @@ endif()
 LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
 LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST) 
 
-macro(add_sdks)
+function(add_sdks)
     LIST(APPEND EXPORTS "")
-
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
 
@@ -234,4 +233,4 @@ macro(add_sdks)
     foreach(EXPORT_TARGET IN LISTS EXPORTS)
         file(APPEND ${CMAKE_BINARY_DIR}/aws-sdk-cpp-config.cmake "include(\"\${CMAKE_CURRENT_LIST_DIR}/${EXPORT_TARGET}/${EXPORT_TARGET}-config.cmake\")\n")
     endforeach()
-endmacro()
+endfunction()
