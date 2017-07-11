@@ -34,7 +34,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const AmazonWebServiceR
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "${typeInfo.shape.name}")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "${typeInfo.shape.name}"))
   {
     resultNode = rootNode.FirstChild("${typeInfo.shape.name}");
   }
@@ -45,10 +45,11 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const AmazonWebServiceR
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersDeserializeXml.vm")
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::${metadata.namespace}::Model::${typeInfo.className}", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::${metadata.namespace}::Model::${typeInfo.className}", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
 #if($shape.hasHeaderMembers())
   const auto& headers = result.GetHeaderValueCollection();
 #foreach($memberEntry in $shape.members.entrySet())
