@@ -419,7 +419,7 @@ namespace Aws
             PartStateMap pendingParts, queuedParts, failedParts, completedParts;
             transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
 
-            if (pendingParts.size() == 0 && queuedParts.size() == 0)
+            if (pendingParts.size() == 0 && queuedParts.size() == 0 && transferContext->handle->LockForCompletion())
             {               
                 if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
                 {

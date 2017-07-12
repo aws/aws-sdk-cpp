@@ -70,6 +70,7 @@ namespace Aws
             m_isMultipart(false), 
             m_direction(TransferDirection::UPLOAD), 
             m_bytesTransferred(0), 
+            m_lastPart(false),
             m_bytesTotalSize(totalSize),
             m_bucket(bucketName), 
             m_key(keyName), 
@@ -85,6 +86,7 @@ namespace Aws
             m_isMultipart(false), 
             m_direction(TransferDirection::DOWNLOAD), 
             m_bytesTransferred(0), 
+            m_lastPart(false),
             m_bytesTotalSize(0),
             m_bucket(bucketName), 
             m_key(keyName), 
@@ -100,6 +102,7 @@ namespace Aws
             m_isMultipart(false), 
             m_direction(TransferDirection::DOWNLOAD), 
             m_bytesTransferred(0), 
+            m_lastPart(false),
             m_bytesTotalSize(0),
             m_bucket(bucketName), 
             m_key(keyName), 
@@ -269,6 +272,7 @@ namespace Aws
         void TransferHandle::Restart()
         {
             m_cancel.store(false);
+            m_lastPart.store(false);
         }
 
         bool TransferHandle::ShouldContinue() const

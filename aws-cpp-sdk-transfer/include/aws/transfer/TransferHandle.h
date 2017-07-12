@@ -328,6 +328,12 @@ namespace Aws
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
+            bool LockForCompletion() 
+            {
+                bool expected = false;
+                return m_lastPart.compare_exchange_strong(expected, true/*desired*/);
+            }
+
         private:
 
             void CleanupDownloadStream();
@@ -340,6 +346,7 @@ namespace Aws
             PartStateMap m_queuedParts;
             PartStateMap m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;
+            std::atomic<bool> m_lastPart;
             uint64_t m_bytesTotalSize;
             Aws::String m_bucket;
             Aws::String m_key;
