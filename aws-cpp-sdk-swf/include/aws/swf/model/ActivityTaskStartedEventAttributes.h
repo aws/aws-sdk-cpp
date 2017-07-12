@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ActivityTaskStarted</code> event.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the details of the <code>ActivityTaskStarted</code>
+   * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskStartedEventAttributes">AWS
    * API Reference</a></p>
    */

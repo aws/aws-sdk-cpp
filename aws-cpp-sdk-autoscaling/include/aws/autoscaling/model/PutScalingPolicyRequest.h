@@ -18,6 +18,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling/model/TargetTrackingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <utility>
 
@@ -29,6 +30,9 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for PutScalingPolicy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicyType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API PutScalingPolicyRequest : public AutoScalingRequest
   {
@@ -111,112 +115,119 @@ namespace Model
     inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
-     * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
-     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
-     * more information, see <a
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
@@ -245,7 +256,8 @@ namespace Model
      * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
      * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
      * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <code>ValidationError</code>.</p> <p>This parameter is supported if the policy
+     * type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>
      */
     inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
 
@@ -254,7 +266,8 @@ namespace Model
      * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
      * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
      * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <code>ValidationError</code>.</p> <p>This parameter is supported if the policy
+     * type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>
      */
     inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
 
@@ -263,7 +276,8 @@ namespace Model
      * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
      * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
      * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <code>ValidationError</code>.</p> <p>This parameter is supported if the policy
+     * type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
@@ -294,8 +308,8 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
      * the next scaling activity can start. If this parameter is not specified, the
-     * default cooldown period for the group applies.</p> <p>This parameter is not
-     * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
+     * default cooldown period for the group applies.</p> <p>This parameter is
+     * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
@@ -305,8 +319,8 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
      * the next scaling activity can start. If this parameter is not specified, the
-     * default cooldown period for the group applies.</p> <p>This parameter is not
-     * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
+     * default cooldown period for the group applies.</p> <p>This parameter is
+     * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
@@ -316,8 +330,8 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
      * the next scaling activity can start. If this parameter is not specified, the
-     * default cooldown period for the group applies.</p> <p>This parameter is not
-     * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
+     * default cooldown period for the group applies.</p> <p>This parameter is
+     * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
@@ -325,65 +339,65 @@ namespace Model
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline const Aws::String& GetMetricAggregationType() const{ return m_metricAggregationType; }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline void SetMetricAggregationType(const Aws::String& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline void SetMetricAggregationType(Aws::String&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline void SetMetricAggregationType(const char* value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType.assign(value); }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithMetricAggregationType(const Aws::String& value) { SetMetricAggregationType(value); return *this;}
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithMetricAggregationType(Aws::String&& value) { SetMetricAggregationType(std::move(value)); return *this;}
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
-     * <p>This parameter is not supported if the policy type is
-     * <code>SimpleScaling</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
 
@@ -439,26 +453,64 @@ namespace Model
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics. The default is to use the value specified
-     * for the default cooldown period for the group.</p> <p>This parameter is not
-     * supported if the policy type is <code>SimpleScaling</code>.</p>
+     * for the default cooldown period for the group.</p> <p>This parameter is
+     * supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p>
      */
     inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
 
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics. The default is to use the value specified
-     * for the default cooldown period for the group.</p> <p>This parameter is not
-     * supported if the policy type is <code>SimpleScaling</code>.</p>
+     * for the default cooldown period for the group.</p> <p>This parameter is
+     * supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics. The default is to use the value specified
-     * for the default cooldown period for the group.</p> <p>This parameter is not
-     * supported if the policy type is <code>SimpleScaling</code>.</p>
+     * for the default cooldown period for the group.</p> <p>This parameter is
+     * supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
+
+    /**
+     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
+     * required if the policy type is <code>TargetTrackingScaling</code> and not
+     * supported otherwise.</p>
+     */
+    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+
+    /**
+     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
+     * required if the policy type is <code>TargetTrackingScaling</code> and not
+     * supported otherwise.</p>
+     */
+    inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
+
+    /**
+     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
+     * required if the policy type is <code>TargetTrackingScaling</code> and not
+     * supported otherwise.</p>
+     */
+    inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
+     * required if the policy type is <code>TargetTrackingScaling</code> and not
+     * supported otherwise.</p>
+     */
+    inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
+     * required if the policy type is <code>TargetTrackingScaling</code> and not
+     * supported otherwise.</p>
+     */
+    inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;
@@ -483,6 +535,8 @@ namespace Model
     bool m_stepAdjustmentsHasBeenSet;
     int m_estimatedInstanceWarmup;
     bool m_estimatedInstanceWarmupHasBeenSet;
+    TargetTrackingConfiguration m_targetTrackingConfiguration;
+    bool m_targetTrackingConfigurationHasBeenSet;
   };
 
 } // namespace Model

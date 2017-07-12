@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details for the <code>LambdaFunctionTimedOut</code>
+   * <p>Provides details of the <code>LambdaFunctionTimedOut</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionTimedOutEventAttributes">AWS
    * API Reference</a></p>
@@ -48,43 +48,43 @@ namespace Model
 
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this AWS Lambda function was scheduled. This information can be useful for
-     * diagnosing problems by tracing back the chain of events leading up to this
-     * event.</p>
+     * when this activity task was scheduled. To help diagnose issues, use this
+     * information to trace back the chain of events leading up to this event.</p>
      */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
 
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this AWS Lambda function was scheduled. This information can be useful for
-     * diagnosing problems by tracing back the chain of events leading up to this
-     * event.</p>
+     * when this activity task was scheduled. To help diagnose issues, use this
+     * information to trace back the chain of events leading up to this event.</p>
      */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this AWS Lambda function was scheduled. This information can be useful for
-     * diagnosing problems by tracing back the chain of events leading up to this
-     * event.</p>
+     * when this activity task was scheduled. To help diagnose issues, use this
+     * information to trace back the chain of events leading up to this event.</p>
      */
     inline LambdaFunctionTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
     /**
-     * <p>The ID of the <code>LambdaFunctionStarted</code> event recorded in the
-     * history.</p>
+     * <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when
+     * this activity task started. To help diagnose issues, use this information to
+     * trace back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
 
     /**
-     * <p>The ID of the <code>LambdaFunctionStarted</code> event recorded in the
-     * history.</p>
+     * <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when
+     * this activity task started. To help diagnose issues, use this information to
+     * trace back the chain of events leading up to this event.</p>
      */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
     /**
-     * <p>The ID of the <code>LambdaFunctionStarted</code> event recorded in the
-     * history.</p>
+     * <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when
+     * this activity task started. To help diagnose issues, use this information to
+     * trace back the chain of events leading up to this event.</p>
      */
     inline LambdaFunctionTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 

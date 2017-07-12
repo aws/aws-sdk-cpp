@@ -33,19 +33,22 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>RequestCancelExternalWorkflowExecution</code>
-   * decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to
-   * control this decision's access to Amazon SWF resources as follows:</p> <ul>
-   * <li>Use a <code>Resource</code> element with the domain name to limit the action
-   * to only specified domains.</li> <li>Use an <code>Action</code> element to allow
-   * or deny permission to call this action.</li> <li>You cannot use an IAM policy to
-   * constrain this action's parameters.</li> </ul> <p>If the caller does not have
+   * <p>Provides the details of the
+   * <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p> <b>Access
+   * Control</b> </p> <p>You can use IAM policies to control this decision's access
+   * to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code>
+   * element with the domain name to limit the action to only specified domains.</p>
+   * </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to
+   * call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain
+   * this action's parameters.</p> </li> </ul> <p>If the caller doesn't have
    * sufficient permissions to invoke the action, or the parameter values fall
    * outside the specified constraints, the action fails. The associated event
-   * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-   * details and example IAM policies, see <a
+   * attribute's <code>cause</code> parameter is set to
+   * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+   * <a
    * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-   * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+   * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelExternalWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
@@ -58,44 +61,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> The <code>workflowId</code> of the external workflow
-     * execution to cancel.</p>
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
@@ -135,44 +138,44 @@ namespace Model
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 

@@ -82,47 +82,52 @@ namespace Model
     inline DomainInfo& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
-     * properly registered and available. You can use this domain for registering types
-     * and creating new workflow executions. </li> <li> <b>DEPRECATED</b>: The domain
-     * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
-     * create new workflow executions in this domain. </li> </ul>
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
      */
     inline const RegistrationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
-     * properly registered and available. You can use this domain for registering types
-     * and creating new workflow executions. </li> <li> <b>DEPRECATED</b>: The domain
-     * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
-     * create new workflow executions in this domain. </li> </ul>
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
      */
     inline void SetStatus(const RegistrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
-     * properly registered and available. You can use this domain for registering types
-     * and creating new workflow executions. </li> <li> <b>DEPRECATED</b>: The domain
-     * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
-     * create new workflow executions in this domain. </li> </ul>
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
      */
     inline void SetStatus(RegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
-     * properly registered and available. You can use this domain for registering types
-     * and creating new workflow executions. </li> <li> <b>DEPRECATED</b>: The domain
-     * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
-     * create new workflow executions in this domain. </li> </ul>
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
      */
     inline DomainInfo& WithStatus(const RegistrationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
-     * properly registered and available. You can use this domain for registering types
-     * and creating new workflow executions. </li> <li> <b>DEPRECATED</b>: The domain
-     * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
-     * create new workflow executions in this domain. </li> </ul>
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
      */
     inline DomainInfo& WithStatus(RegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

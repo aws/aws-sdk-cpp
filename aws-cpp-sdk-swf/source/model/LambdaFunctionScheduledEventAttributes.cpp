@@ -31,6 +31,7 @@ namespace Model
 LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_controlHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_startToCloseTimeoutHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
@@ -41,6 +42,7 @@ LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes()
 LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_controlHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_startToCloseTimeoutHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
@@ -63,6 +65,13 @@ LambdaFunctionScheduledEventAttributes& LambdaFunctionScheduledEventAttributes::
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("control"))
+  {
+    m_control = jsonValue.GetString("control");
+
+    m_controlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("input"))
@@ -102,6 +111,12 @@ JsonValue LambdaFunctionScheduledEventAttributes::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_controlHasBeenSet)
+  {
+   payload.WithString("control", m_control);
 
   }
 

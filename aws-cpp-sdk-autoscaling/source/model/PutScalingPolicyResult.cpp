@@ -53,6 +53,17 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServic
     {
       m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
     }
+    XmlNode alarmsNode = resultNode.FirstChild("Alarms");
+    if(!alarmsNode.IsNull())
+    {
+      XmlNode alarmsMember = alarmsNode.FirstChild("member");
+      while(!alarmsMember.IsNull())
+      {
+        m_alarms.push_back(alarmsMember);
+        alarmsMember = alarmsMember.NextNode("member");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -29,6 +29,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateAutoScalingGroup.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroupType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API CreateAutoScalingGroupRequest : public AutoScalingRequest
   {
@@ -248,24 +252,21 @@ namespace Model
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group. If you do not specify a desired
-     * capacity, the default is the minimum size of the group.</p>
+     * equal to the maximum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group. If you do not specify a desired
-     * capacity, the default is the minimum size of the group.</p>
+     * equal to the maximum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group. If you do not specify a desired
-     * capacity, the default is the minimum size of the group.</p>
+     * equal to the maximum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

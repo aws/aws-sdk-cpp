@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling/model/TargetTrackingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <aws/autoscaling/model/Alarm.h>
 #include <utility>
@@ -315,19 +316,19 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * further trigger-related scaling activities can start.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * further trigger-related scaling activities can start.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * further trigger-related scaling activities can start.</p>
      */
     inline ScalingPolicy& WithCooldown(int value) { SetCooldown(value); return *this;}
 
@@ -468,6 +469,31 @@ namespace Model
      */
     inline ScalingPolicy& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>A target tracking policy.</p>
+     */
+    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+
+    /**
+     * <p>A target tracking policy.</p>
+     */
+    inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
+
+    /**
+     * <p>A target tracking policy.</p>
+     */
+    inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
+
+    /**
+     * <p>A target tracking policy.</p>
+     */
+    inline ScalingPolicy& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
+
+    /**
+     * <p>A target tracking policy.</p>
+     */
+    inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
+
   private:
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
@@ -495,6 +521,8 @@ namespace Model
     bool m_estimatedInstanceWarmupHasBeenSet;
     Aws::Vector<Alarm> m_alarms;
     bool m_alarmsHasBeenSet;
+    TargetTrackingConfiguration m_targetTrackingConfiguration;
+    bool m_targetTrackingConfigurationHasBeenSet;
   };
 
 } // namespace Model

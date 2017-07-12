@@ -45,17 +45,17 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The count of activity tasks whose status is OPEN.</p>
+     * <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
      */
     inline int GetOpenActivityTasks() const{ return m_openActivityTasks; }
 
     /**
-     * <p>The count of activity tasks whose status is OPEN.</p>
+     * <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
      */
     inline void SetOpenActivityTasks(int value) { m_openActivityTasksHasBeenSet = true; m_openActivityTasks = value; }
 
     /**
-     * <p>The count of activity tasks whose status is OPEN.</p>
+     * <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
      */
     inline WorkflowExecutionOpenCounts& WithOpenActivityTasks(int value) { SetOpenActivityTasks(value); return *this;}
 
@@ -96,32 +96,32 @@ namespace Model
     inline WorkflowExecutionOpenCounts& WithOpenTimers(int value) { SetOpenTimers(value); return *this;}
 
     /**
-     * <p>The count of child workflow executions whose status is OPEN.</p>
+     * <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
      */
     inline int GetOpenChildWorkflowExecutions() const{ return m_openChildWorkflowExecutions; }
 
     /**
-     * <p>The count of child workflow executions whose status is OPEN.</p>
+     * <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
      */
     inline void SetOpenChildWorkflowExecutions(int value) { m_openChildWorkflowExecutionsHasBeenSet = true; m_openChildWorkflowExecutions = value; }
 
     /**
-     * <p>The count of child workflow executions whose status is OPEN.</p>
+     * <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
      */
     inline WorkflowExecutionOpenCounts& WithOpenChildWorkflowExecutions(int value) { SetOpenChildWorkflowExecutions(value); return *this;}
 
     /**
-     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     * <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
      */
     inline int GetOpenLambdaFunctions() const{ return m_openLambdaFunctions; }
 
     /**
-     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     * <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
      */
     inline void SetOpenLambdaFunctions(int value) { m_openLambdaFunctionsHasBeenSet = true; m_openLambdaFunctions = value; }
 
     /**
-     * <p>The count of AWS Lambda functions that are currently executing.</p>
+     * <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
      */
     inline WorkflowExecutionOpenCounts& WithOpenLambdaFunctions(int value) { SetOpenLambdaFunctions(value); return *this;}
 

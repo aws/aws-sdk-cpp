@@ -46,86 +46,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
-     * workflow type name and version must be unique with in a domain.</note>
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
-     * of workflow type name and version must be unique with in a domain.</note>
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithVersion(const char* value) { SetVersion(value); return *this;}
 

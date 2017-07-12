@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p> Provides details of the <code>ExternalWorkflowExecutionSignaled</code>
+   * <p>Provides the details of the <code>ExternalWorkflowExecutionSignaled</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ExternalWorkflowExecutionSignaledEventAttributes">AWS
    * API Reference</a></p>
@@ -47,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p> The external workflow execution that the signal was delivered to.</p>
+     * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline const WorkflowExecution& GetWorkflowExecution() const{ return m_workflowExecution; }
 
     /**
-     * <p> The external workflow execution that the signal was delivered to.</p>
+     * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline void SetWorkflowExecution(const WorkflowExecution& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
 
     /**
-     * <p> The external workflow execution that the signal was delivered to.</p>
+     * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
-     * <p> The external workflow execution that the signal was delivered to.</p>
+     * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(const WorkflowExecution& value) { SetWorkflowExecution(value); return *this;}
 
     /**
-     * <p> The external workflow execution that the signal was delivered to.</p>
+     * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 

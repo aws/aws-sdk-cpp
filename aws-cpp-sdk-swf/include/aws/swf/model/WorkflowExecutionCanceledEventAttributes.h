@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>WorkflowExecutionCanceled</code>
+   * <p>Provides the details of the <code>WorkflowExecutionCanceled</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCanceledEventAttributes">AWS
    * API Reference</a></p>
@@ -47,37 +47,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline WorkflowExecutionCanceledEventAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline WorkflowExecutionCanceledEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details for the cancellation (if any).</p>
+     * <p>The details of the cancellation.</p>
      */
     inline WorkflowExecutionCanceledEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 

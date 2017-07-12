@@ -36,23 +36,26 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ContinueAsNewWorkflowExecution</code>
-   * decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to
-   * control this decision's access to Amazon SWF resources as follows:</p> <ul>
-   * <li>Use a <code>Resource</code> element with the domain name to limit the action
-   * to only specified domains.</li> <li>Use an <code>Action</code> element to allow
-   * or deny permission to call this action.</li> <li>Constrain the following
-   * parameters by using a <code>Condition</code> element with the appropriate keys.
-   * <ul> <li> <code>tag</code>: <i>Optional.</i>. A tag used to identify the
-   * workflow execution</li> <li><code>taskList</code>: String constraint. The key is
-   * <code>swf:taskList.name</code>.</li> <li><code>workflowType.version</code>:
-   * String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul>
-   * </li> </ul> <p>If the caller does not have sufficient permissions to invoke the
-   * action, or the parameter values fall outside the specified constraints, the
-   * action fails. The associated event attribute's <b>cause</b> parameter will be
-   * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+   * <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code>
+   * decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
+   * control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>
+   * <p>Use a <code>Resource</code> element with the domain name to limit the action
+   * to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element
+   * to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the
+   * following parameters by using a <code>Condition</code> element with the
+   * appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify
+   * the workflow execution</p> </li> <li> <p> <code>taskList</code> – String
+   * constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p>
+   * <code>workflowType.version</code> – String constraint. The key is
+   * <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+   * caller doesn't have sufficient permissions to invoke the action, or the
+   * parameter values fall outside the specified constraints, the action fails. The
+   * associated event attribute's <code>cause</code> parameter is set to
+   * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+   * <a
    * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-   * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+   * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ContinueAsNewWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
@@ -102,190 +105,205 @@ namespace Model
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline void SetExecutionStartToCloseTimeout(const Aws::String& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline void SetExecutionStartToCloseTimeout(const char* value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout.assign(value); }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const Aws::String& value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
-     * registering the workflow type.</p> <p>The duration is specified in seconds; an
-     * integer greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.</p> <note>An execution start-to-close timeout for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this field. If neither this field is set nor a default execution
-     * start-to-close timeout was specified at registration time then a fault will be
-     * returned.</note>
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
-    
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
-    
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
-    
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
-    
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
-    
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
-     * the decision tasks for this workflow execution. This overrides the
-     * defaultTaskPriority specified when registering the workflow type. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
@@ -294,12 +312,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
 
@@ -308,12 +326,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline void SetTaskStartToCloseTimeout(const Aws::String& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
 
@@ -322,12 +340,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::move(value); }
 
@@ -336,12 +354,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline void SetTaskStartToCloseTimeout(const char* value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout.assign(value); }
 
@@ -350,12 +368,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const Aws::String& value) { SetTaskStartToCloseTimeout(value); return *this;}
 
@@ -364,12 +382,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(std::move(value)); return *this;}
 
@@ -378,12 +396,12 @@ namespace Model
      * execution. This parameter overrides the
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p> <note>A task start-to-close
-     * timeout for the new workflow execution must be specified either as a default for
-     * the workflow type or through this parameter. If neither this parameter is set
-     * nor a default task start-to-close timeout was specified at registration time
-     * then a fault will be returned.</note>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
 
@@ -393,16 +411,17 @@ namespace Model
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
      * timeout. This policy overrides the default child policy specified when
      * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
-     * supported child policies are:</p> <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to
-     * cancel will be attempted for each child execution by recording a
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul> <note>A child policy for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this parameter. If neither this parameter is set nor a default child
-     * policy was specified at registration time then a fault will be returned.</note>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
 
@@ -412,16 +431,17 @@ namespace Model
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
      * timeout. This policy overrides the default child policy specified when
      * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
-     * supported child policies are:</p> <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to
-     * cancel will be attempted for each child execution by recording a
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul> <note>A child policy for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this parameter. If neither this parameter is set nor a default child
-     * policy was specified at registration time then a fault will be returned.</note>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
      */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
@@ -431,16 +451,17 @@ namespace Model
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
      * timeout. This policy overrides the default child policy specified when
      * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
-     * supported child policies are:</p> <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to
-     * cancel will be attempted for each child execution by recording a
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul> <note>A child policy for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this parameter. If neither this parameter is set nor a default child
-     * policy was specified at registration time then a fault will be returned.</note>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
      */
     inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
@@ -450,16 +471,17 @@ namespace Model
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
      * timeout. This policy overrides the default child policy specified when
      * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
-     * supported child policies are:</p> <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to
-     * cancel will be attempted for each child execution by recording a
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul> <note>A child policy for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this parameter. If neither this parameter is set nor a default child
-     * policy was specified at registration time then a fault will be returned.</note>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
 
@@ -469,16 +491,17 @@ namespace Model
      * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
      * timeout. This policy overrides the default child policy specified when
      * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
-     * supported child policies are:</p> <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to
-     * cancel will be attempted for each child execution by recording a
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul> <note>A child policy for this
-     * workflow execution must be specified either as a default for the workflow type
-     * or through this parameter. If neither this parameter is set nor a default child
-     * policy was specified at registration time then a fault will be returned.</note>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
@@ -546,80 +569,73 @@ namespace Model
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& AddTagList(const char* value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline const Aws::String& GetWorkflowTypeVersion() const{ return m_workflowTypeVersion; }
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline void SetWorkflowTypeVersion(const Aws::String& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = value; }
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline void SetWorkflowTypeVersion(Aws::String&& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = std::move(value); }
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline void SetWorkflowTypeVersion(const char* value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion.assign(value); }
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(const Aws::String& value) { SetWorkflowTypeVersion(value); return *this;}
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(Aws::String&& value) { SetWorkflowTypeVersion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(const char* value) { SetWorkflowTypeVersion(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline void SetLambdaRole(const Aws::String& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = value; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline void SetLambdaRole(const char* value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(const Aws::String& value) { SetLambdaRole(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(Aws::String&& value) { SetLambdaRole(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
-     * functions.</p> <note>In order for this workflow execution to invoke AWS Lambda
-     * functions, an appropriate IAM role must be specified either as a default for the
-     * workflow type or through this field.</note>
+     * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 

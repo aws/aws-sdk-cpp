@@ -33,19 +33,21 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>RecordMarker</code> decision.</p> <p><b>Access
-   * Control</b></p> <p>You can use IAM policies to control this decision's access to
-   * Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code>
-   * element with the domain name to limit the action to only specified domains.</li>
-   * <li>Use an <code>Action</code> element to allow or deny permission to call this
-   * action.</li> <li>You cannot use an IAM policy to constrain this action's
-   * parameters.</li> </ul> <p>If the caller does not have sufficient permissions to
-   * invoke the action, or the parameter values fall outside the specified
-   * constraints, the action fails. The associated event attribute's <b>cause</b>
-   * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
-   * policies, see <a
+   * <p>Provides the details of the <code>RecordMarker</code> decision.</p> <p>
+   * <b>Access Control</b> </p> <p>You can use IAM policies to control this
+   * decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+   * <code>Resource</code> element with the domain name to limit the action to only
+   * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+   * or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM
+   * policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller
+   * doesn't have sufficient permissions to invoke the action, or the parameter
+   * values fall outside the specified constraints, the action fails. The associated
+   * event attribute's <code>cause</code> parameter is set to
+   * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+   * <a
    * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-   * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+   * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordMarkerDecisionAttributes">AWS
    * API Reference</a></p>
    */
@@ -58,72 +60,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline const Aws::String& GetMarkerName() const{ return m_markerName; }
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline void SetMarkerName(const Aws::String& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline void SetMarkerName(Aws::String&& value) { m_markerNameHasBeenSet = true; m_markerName = std::move(value); }
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline void SetMarkerName(const char* value) { m_markerNameHasBeenSet = true; m_markerName.assign(value); }
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithMarkerName(const Aws::String& value) { SetMarkerName(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithMarkerName(Aws::String&& value) { SetMarkerName(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> The name of the marker.</p>
+     * <p> The name of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> details of the marker.</p>
+     * <p> The details of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 

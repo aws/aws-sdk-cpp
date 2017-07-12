@@ -35,9 +35,9 @@ WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes
     m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_taskListHasBeenSet(false),
+    m_taskPriorityHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
     m_continuedExecutionRunIdHasBeenSet(false),
     m_parentWorkflowExecutionHasBeenSet(false),
     m_parentInitiatedEventId(0),
@@ -53,9 +53,9 @@ WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes
     m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_taskListHasBeenSet(false),
+    m_taskPriorityHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
     m_continuedExecutionRunIdHasBeenSet(false),
     m_parentWorkflowExecutionHasBeenSet(false),
     m_parentInitiatedEventId(0),
@@ -102,6 +102,13 @@ WorkflowExecutionStartedEventAttributes& WorkflowExecutionStartedEventAttributes
     m_taskListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskPriority"))
+  {
+    m_taskPriority = jsonValue.GetString("taskPriority");
+
+    m_taskPriorityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workflowType"))
   {
     m_workflowType = jsonValue.GetObject("workflowType");
@@ -117,13 +124,6 @@ WorkflowExecutionStartedEventAttributes& WorkflowExecutionStartedEventAttributes
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());
     }
     m_tagListHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("taskPriority"))
-  {
-    m_taskPriority = jsonValue.GetString("taskPriority");
-
-    m_taskPriorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("continuedExecutionRunId"))
@@ -190,6 +190,12 @@ JsonValue WorkflowExecutionStartedEventAttributes::Jsonize() const
 
   }
 
+  if(m_taskPriorityHasBeenSet)
+  {
+   payload.WithString("taskPriority", m_taskPriority);
+
+  }
+
   if(m_workflowTypeHasBeenSet)
   {
    payload.WithObject("workflowType", m_workflowType.Jsonize());
@@ -204,12 +210,6 @@ JsonValue WorkflowExecutionStartedEventAttributes::Jsonize() const
      tagListJsonList[tagListIndex].AsString(m_tagList[tagListIndex]);
    }
    payload.WithArray("tagList", std::move(tagListJsonList));
-
-  }
-
-  if(m_taskPriorityHasBeenSet)
-  {
-   payload.WithString("taskPriority", m_taskPriority);
 
   }
 

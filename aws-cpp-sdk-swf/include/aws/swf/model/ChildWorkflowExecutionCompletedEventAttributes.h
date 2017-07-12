@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ChildWorkflowExecutionCompleted</code>
+   * <p>Provides the details of the <code>ChildWorkflowExecutionCompleted</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionCompletedEventAttributes">AWS
    * API Reference</a></p>
@@ -99,61 +99,64 @@ namespace Model
     inline ChildWorkflowExecutionCompletedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the child workflow execution (if any).</p>
+     * <p>The result of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 

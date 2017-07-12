@@ -50,55 +50,60 @@ namespace Model
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running. </li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new tasks of this type. </li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running. </p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new tasks of this type. </p>
+     * </li> </ul>
      */
     inline const ActivityTypeInfo& GetTypeInfo() const{ return m_typeInfo; }
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running. </li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new tasks of this type. </li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running. </p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new tasks of this type. </p>
+     * </li> </ul>
      */
     inline void SetTypeInfo(const ActivityTypeInfo& value) { m_typeInfo = value; }
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running. </li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new tasks of this type. </li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running. </p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new tasks of this type. </p>
+     * </li> </ul>
      */
     inline void SetTypeInfo(ActivityTypeInfo&& value) { m_typeInfo = std::move(value); }
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running. </li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new tasks of this type. </li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running. </p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new tasks of this type. </p>
+     * </li> </ul>
      */
     inline DescribeActivityTypeResult& WithTypeInfo(const ActivityTypeInfo& value) { SetTypeInfo(value); return *this;}
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running. </li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new tasks of this type. </li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running. </p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new tasks of this type. </p>
+     * </li> </ul>
      */
     inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 

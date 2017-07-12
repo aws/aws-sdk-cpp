@@ -47,44 +47,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline const Aws::String& GetTag() const{ return m_tag; }
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline void SetTag(const Aws::String& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline void SetTag(Aws::String&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline void SetTag(const char* value) { m_tagHasBeenSet = true; m_tag.assign(value); }
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline TagFilter& WithTag(const Aws::String& value) { SetTag(value); return *this;}
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline TagFilter& WithTag(Aws::String&& value) { SetTag(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> Specifies the tag that must be associated with the execution
-     * for it to meet the filter criteria.</p>
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
      */
     inline TagFilter& WithTag(const char* value) { SetTag(value); return *this;}
 

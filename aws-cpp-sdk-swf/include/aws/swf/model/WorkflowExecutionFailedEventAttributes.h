@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>WorkflowExecutionFailed</code>
+   * <p>Provides the details of the <code>WorkflowExecutionFailed</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionFailedEventAttributes">AWS
    * API Reference</a></p>
@@ -47,72 +47,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p>The descriptive reason provided for the failure (if any).</p>
+     * <p>The descriptive reason provided for the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithReason(const char* value) { SetReason(value); return *this;}
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the failure (if any).</p>
+     * <p>The details of the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 

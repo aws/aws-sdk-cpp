@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ActivityTaskCompleted</code>
+   * <p>Provides the details of the <code>ActivityTaskCompleted</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskCompletedEventAttributes">AWS
    * API Reference</a></p>
@@ -47,37 +47,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline ActivityTaskCompletedEventAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline ActivityTaskCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
-     * <p>The results of the activity task (if any).</p>
+     * <p>The results of the activity task.</p>
      */
     inline ActivityTaskCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 

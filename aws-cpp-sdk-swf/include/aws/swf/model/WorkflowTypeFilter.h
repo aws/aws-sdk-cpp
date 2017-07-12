@@ -48,37 +48,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline WorkflowTypeFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline WorkflowTypeFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p><b>Required.</b> Name of the workflow type.</p>
+     * <p> Name of the workflow type.</p>
      */
     inline WorkflowTypeFilter& WithName(const char* value) { SetName(value); return *this;}
 

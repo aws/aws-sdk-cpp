@@ -161,7 +161,7 @@ namespace Model
     inline GetWorkflowExecutionHistoryRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results that will be returned per call.
+     * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
      * default is 1000, which is the maximum allowed page size. You can, however,
      * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
@@ -171,7 +171,7 @@ namespace Model
     inline int GetMaximumPageSize() const{ return m_maximumPageSize; }
 
     /**
-     * <p>The maximum number of results that will be returned per call.
+     * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
      * default is 1000, which is the maximum allowed page size. You can, however,
      * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
@@ -181,7 +181,7 @@ namespace Model
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
-     * <p>The maximum number of results that will be returned per call.
+     * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
      * default is 1000, which is the maximum allowed page size. You can, however,
      * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper

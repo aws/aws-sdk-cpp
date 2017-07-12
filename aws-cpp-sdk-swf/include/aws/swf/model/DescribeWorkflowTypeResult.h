@@ -50,85 +50,90 @@ namespace Model
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
      * workflow type (returned in the WorkflowTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running.</li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateWorkflowType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new workflow executions of this type.</li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running.</p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new workflow executions of this
+     * type.</p> </li> </ul>
      */
     inline const WorkflowTypeInfo& GetTypeInfo() const{ return m_typeInfo; }
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
      * workflow type (returned in the WorkflowTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running.</li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateWorkflowType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new workflow executions of this type.</li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running.</p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new workflow executions of this
+     * type.</p> </li> </ul>
      */
     inline void SetTypeInfo(const WorkflowTypeInfo& value) { m_typeInfo = value; }
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
      * workflow type (returned in the WorkflowTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running.</li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateWorkflowType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new workflow executions of this type.</li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running.</p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new workflow executions of this
+     * type.</p> </li> </ul>
      */
     inline void SetTypeInfo(WorkflowTypeInfo&& value) { m_typeInfo = std::move(value); }
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
      * workflow type (returned in the WorkflowTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running.</li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateWorkflowType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new workflow executions of this type.</li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running.</p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new workflow executions of this
+     * type.</p> </li> </ul>
      */
     inline DescribeWorkflowTypeResult& WithTypeInfo(const WorkflowTypeInfo& value) { SetTypeInfo(value); return *this;}
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
      * workflow type (returned in the WorkflowTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <b>REGISTERED</b>: The type is registered and
-     * available. Workers supporting this type should be running.</li> <li>
-     * <b>DEPRECATED</b>: The type was deprecated using <a>DeprecateWorkflowType</a>,
-     * but is still in use. You should keep workers supporting this type running. You
-     * cannot create new workflow executions of this type.</li> </ul>
+     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
+     * and available. Workers supporting this type should be running.</p> </li> <li>
+     * <p> <code>DEPRECATED</code> – The type was deprecated using
+     * <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers
+     * supporting this type running. You cannot create new workflow executions of this
+     * type.</p> </li> </ul>
      */
     inline DescribeWorkflowTypeResult& WithTypeInfo(WorkflowTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 
     /**
      * <p>Configuration settings of the workflow type registered through
-     * <a>RegisterWorkflowType</a></p>
+     * <a>RegisterWorkflowType</a> </p>
      */
     inline const WorkflowTypeConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Configuration settings of the workflow type registered through
-     * <a>RegisterWorkflowType</a></p>
+     * <a>RegisterWorkflowType</a> </p>
      */
     inline void SetConfiguration(const WorkflowTypeConfiguration& value) { m_configuration = value; }
 
     /**
      * <p>Configuration settings of the workflow type registered through
-     * <a>RegisterWorkflowType</a></p>
+     * <a>RegisterWorkflowType</a> </p>
      */
     inline void SetConfiguration(WorkflowTypeConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
      * <p>Configuration settings of the workflow type registered through
-     * <a>RegisterWorkflowType</a></p>
+     * <a>RegisterWorkflowType</a> </p>
      */
     inline DescribeWorkflowTypeResult& WithConfiguration(const WorkflowTypeConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Configuration settings of the workflow type registered through
-     * <a>RegisterWorkflowType</a></p>
+     * <a>RegisterWorkflowType</a> </p>
      */
     inline DescribeWorkflowTypeResult& WithConfiguration(WorkflowTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

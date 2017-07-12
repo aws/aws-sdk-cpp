@@ -52,99 +52,106 @@ namespace Model
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline void SetTaskStartToCloseTimeout(const Aws::String& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline void SetTaskStartToCloseTimeout(const char* value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout.assign(value); }
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(const Aws::String& value) { SetTaskStartToCloseTimeout(value); return *this;}
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
-     * execution.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetExecutionStartToCloseTimeout(const Aws::String& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetExecutionStartToCloseTimeout(const char* value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout.assign(value); }
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(const Aws::String& value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. The value "NONE"
-     * can be used to specify unlimited duration.</p>
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
@@ -185,7 +192,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
 
@@ -196,7 +203,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
 
@@ -207,7 +214,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
 
@@ -218,7 +225,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
 
@@ -229,7 +236,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
 
@@ -240,7 +247,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
 
@@ -251,7 +258,7 @@ namespace Model
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
@@ -259,13 +266,13 @@ namespace Model
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
      * explicitly or due to an expired timeout.</p> <p>The supported child policies
-     * are:</p> <ul> <li><b>TERMINATE:</b> the child executions will be
-     * terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to cancel will be
-     * attempted for each child execution by recording a
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
 
@@ -273,13 +280,13 @@ namespace Model
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
      * explicitly or due to an expired timeout.</p> <p>The supported child policies
-     * are:</p> <ul> <li><b>TERMINATE:</b> the child executions will be
-     * terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to cancel will be
-     * attempted for each child execution by recording a
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
      */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
@@ -287,13 +294,13 @@ namespace Model
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
      * explicitly or due to an expired timeout.</p> <p>The supported child policies
-     * are:</p> <ul> <li><b>TERMINATE:</b> the child executions will be
-     * terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to cancel will be
-     * attempted for each child execution by recording a
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
      */
     inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
@@ -301,13 +308,13 @@ namespace Model
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
      * explicitly or due to an expired timeout.</p> <p>The supported child policies
-     * are:</p> <ul> <li><b>TERMINATE:</b> the child executions will be
-     * terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to cancel will be
-     * attempted for each child execution by recording a
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
      */
     inline WorkflowExecutionConfiguration& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
 
@@ -315,55 +322,48 @@ namespace Model
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
      * explicitly or due to an expired timeout.</p> <p>The supported child policies
-     * are:</p> <ul> <li><b>TERMINATE:</b> the child executions will be
-     * terminated.</li> <li><b>REQUEST_CANCEL:</b> a request to cancel will be
-     * attempted for each child execution by recording a
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
-     * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
-     * executions will continue to run.</li> </ul>
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
      */
     inline WorkflowExecutionConfiguration& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline void SetLambdaRole(const Aws::String& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = value; }
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::move(value); }
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline void SetLambdaRole(const char* value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole.assign(value); }
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline WorkflowExecutionConfiguration& WithLambdaRole(const Aws::String& value) { SetLambdaRole(value); return *this;}
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline WorkflowExecutionConfiguration& WithLambdaRole(Aws::String&& value) { SetLambdaRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role used by this workflow execution when invoking AWS Lambda
-     * functions.</p>
+     * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline WorkflowExecutionConfiguration& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>WorkflowExecutionSignaled</code>
+   * <p>Provides the details of the <code>WorkflowExecutionSignaled</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionSignaledEventAttributes">AWS
    * API Reference</a></p>
@@ -90,44 +90,44 @@ namespace Model
     inline WorkflowExecutionSignaledEventAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>Inputs provided with the signal (if any). The decider can use the signal name
-     * and inputs to determine how to process the signal.</p>
+     * <p>The inputs provided with the signal. The decider can use the signal name and
+     * inputs to determine how to process the signal.</p>
      */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 

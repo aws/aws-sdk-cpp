@@ -39,7 +39,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a workflow execution. </p><p><h3>See Also:</h3>  
+   * <p>Contains information about a workflow execution.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionInfo">AWS
    * API Reference</a></p>
@@ -184,76 +184,76 @@ namespace Model
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
-     * closed:</p> <ul> <li> <code>COMPLETED</code>: the execution was successfully
-     * completed.</li> <li> <code>CANCELED</code>: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up before
-     * the execution is closed.</li> <li> <code>TERMINATED</code>: the execution was
-     * force terminated.</li> <li> <code>FAILED</code>: the execution failed to
-     * complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in
-     * the alloted time and was automatically timed out.</li> <li>
-     * <code>CONTINUED_AS_NEW</code>: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to carry on
-     * the workflow.</li> </ul>
+     * closed:</p> <ul> <li> <p> <code>COMPLETED</code> – the execution was
+     * successfully completed.</p> </li> <li> <p> <code>CANCELED</code> – the execution
+     * was canceled.Cancellation allows the implementation to gracefully clean up
+     * before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> – the
+     * execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> – the
+     * execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> – the
+     * execution did not complete in the alloted time and was automatically timed
+     * out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is
+     * logically continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</p> </li> </ul>
      */
     inline const CloseStatus& GetCloseStatus() const{ return m_closeStatus; }
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
-     * closed:</p> <ul> <li> <code>COMPLETED</code>: the execution was successfully
-     * completed.</li> <li> <code>CANCELED</code>: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up before
-     * the execution is closed.</li> <li> <code>TERMINATED</code>: the execution was
-     * force terminated.</li> <li> <code>FAILED</code>: the execution failed to
-     * complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in
-     * the alloted time and was automatically timed out.</li> <li>
-     * <code>CONTINUED_AS_NEW</code>: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to carry on
-     * the workflow.</li> </ul>
+     * closed:</p> <ul> <li> <p> <code>COMPLETED</code> – the execution was
+     * successfully completed.</p> </li> <li> <p> <code>CANCELED</code> – the execution
+     * was canceled.Cancellation allows the implementation to gracefully clean up
+     * before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> – the
+     * execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> – the
+     * execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> – the
+     * execution did not complete in the alloted time and was automatically timed
+     * out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is
+     * logically continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</p> </li> </ul>
      */
     inline void SetCloseStatus(const CloseStatus& value) { m_closeStatusHasBeenSet = true; m_closeStatus = value; }
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
-     * closed:</p> <ul> <li> <code>COMPLETED</code>: the execution was successfully
-     * completed.</li> <li> <code>CANCELED</code>: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up before
-     * the execution is closed.</li> <li> <code>TERMINATED</code>: the execution was
-     * force terminated.</li> <li> <code>FAILED</code>: the execution failed to
-     * complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in
-     * the alloted time and was automatically timed out.</li> <li>
-     * <code>CONTINUED_AS_NEW</code>: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to carry on
-     * the workflow.</li> </ul>
+     * closed:</p> <ul> <li> <p> <code>COMPLETED</code> – the execution was
+     * successfully completed.</p> </li> <li> <p> <code>CANCELED</code> – the execution
+     * was canceled.Cancellation allows the implementation to gracefully clean up
+     * before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> – the
+     * execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> – the
+     * execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> – the
+     * execution did not complete in the alloted time and was automatically timed
+     * out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is
+     * logically continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</p> </li> </ul>
      */
     inline void SetCloseStatus(CloseStatus&& value) { m_closeStatusHasBeenSet = true; m_closeStatus = std::move(value); }
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
-     * closed:</p> <ul> <li> <code>COMPLETED</code>: the execution was successfully
-     * completed.</li> <li> <code>CANCELED</code>: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up before
-     * the execution is closed.</li> <li> <code>TERMINATED</code>: the execution was
-     * force terminated.</li> <li> <code>FAILED</code>: the execution failed to
-     * complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in
-     * the alloted time and was automatically timed out.</li> <li>
-     * <code>CONTINUED_AS_NEW</code>: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to carry on
-     * the workflow.</li> </ul>
+     * closed:</p> <ul> <li> <p> <code>COMPLETED</code> – the execution was
+     * successfully completed.</p> </li> <li> <p> <code>CANCELED</code> – the execution
+     * was canceled.Cancellation allows the implementation to gracefully clean up
+     * before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> – the
+     * execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> – the
+     * execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> – the
+     * execution did not complete in the alloted time and was automatically timed
+     * out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is
+     * logically continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</p> </li> </ul>
      */
     inline WorkflowExecutionInfo& WithCloseStatus(const CloseStatus& value) { SetCloseStatus(value); return *this;}
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
-     * closed:</p> <ul> <li> <code>COMPLETED</code>: the execution was successfully
-     * completed.</li> <li> <code>CANCELED</code>: the execution was
-     * canceled.Cancellation allows the implementation to gracefully clean up before
-     * the execution is closed.</li> <li> <code>TERMINATED</code>: the execution was
-     * force terminated.</li> <li> <code>FAILED</code>: the execution failed to
-     * complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in
-     * the alloted time and was automatically timed out.</li> <li>
-     * <code>CONTINUED_AS_NEW</code>: the execution is logically continued. This means
-     * the current execution was completed and a new execution was started to carry on
-     * the workflow.</li> </ul>
+     * closed:</p> <ul> <li> <p> <code>COMPLETED</code> – the execution was
+     * successfully completed.</p> </li> <li> <p> <code>CANCELED</code> – the execution
+     * was canceled.Cancellation allows the implementation to gracefully clean up
+     * before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> – the
+     * execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> – the
+     * execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> – the
+     * execution did not complete in the alloted time and was automatically timed
+     * out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is
+     * logically continued. This means the current execution was completed and a new
+     * execution was started to carry on the workflow.</p> </li> </ul>
      */
     inline WorkflowExecutionInfo& WithCloseStatus(CloseStatus&& value) { SetCloseStatus(std::move(value)); return *this;}
 

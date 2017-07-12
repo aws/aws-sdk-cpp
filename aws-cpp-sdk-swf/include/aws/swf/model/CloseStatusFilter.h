@@ -47,32 +47,32 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p><b>Required.</b> The close status that must match the close status of an
-     * execution for it to meet the criteria of this filter.</p>
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
      */
     inline const CloseStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p><b>Required.</b> The close status that must match the close status of an
-     * execution for it to meet the criteria of this filter.</p>
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
      */
     inline void SetStatus(const CloseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p><b>Required.</b> The close status that must match the close status of an
-     * execution for it to meet the criteria of this filter.</p>
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
      */
     inline void SetStatus(CloseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p><b>Required.</b> The close status that must match the close status of an
-     * execution for it to meet the criteria of this filter.</p>
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
      */
     inline CloseStatusFilter& WithStatus(const CloseStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p><b>Required.</b> The close status that must match the close status of an
-     * execution for it to meet the criteria of this filter.</p>
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
      */
     inline CloseStatusFilter& WithStatus(CloseStatus&& value) { SetStatus(std::move(value)); return *this;}
 

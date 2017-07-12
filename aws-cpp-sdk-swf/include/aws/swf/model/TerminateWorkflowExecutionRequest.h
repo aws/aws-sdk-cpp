@@ -143,79 +143,72 @@ namespace Model
     inline TerminateWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> A descriptive reason for terminating the workflow
-     * execution.</p>
+     * <p> A descriptive reason for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
+     * <p> Details for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithDetails(const char* value) { SetDetails(value); return *this;}
 
@@ -223,17 +216,17 @@ namespace Model
      * <p>If set, specifies the policy to use for the child workflow executions of the
      * workflow execution being terminated. This policy overrides the child policy
      * specified for the workflow execution at registration time or when starting the
-     * execution.</p> <p>The supported child policies are:</p> <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
      * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
      * its history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
-     * action will be taken. The child executions will continue to run.</li> </ul>
-     * <note>A child policy for this workflow execution must be specified either as a
-     * default for the workflow type or through this parameter. If neither this
-     * parameter is set nor a default child policy was specified at registration time
-     * then a fault will be returned.</note>
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * be specified either as a default for the workflow type or through this
+     * parameter. If neither this parameter is set nor a default child policy was
+     * specified at registration time then a fault is returned.</p> </note>
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
 
@@ -241,17 +234,17 @@ namespace Model
      * <p>If set, specifies the policy to use for the child workflow executions of the
      * workflow execution being terminated. This policy overrides the child policy
      * specified for the workflow execution at registration time or when starting the
-     * execution.</p> <p>The supported child policies are:</p> <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
      * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
      * its history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
-     * action will be taken. The child executions will continue to run.</li> </ul>
-     * <note>A child policy for this workflow execution must be specified either as a
-     * default for the workflow type or through this parameter. If neither this
-     * parameter is set nor a default child policy was specified at registration time
-     * then a fault will be returned.</note>
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * be specified either as a default for the workflow type or through this
+     * parameter. If neither this parameter is set nor a default child policy was
+     * specified at registration time then a fault is returned.</p> </note>
      */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
@@ -259,17 +252,17 @@ namespace Model
      * <p>If set, specifies the policy to use for the child workflow executions of the
      * workflow execution being terminated. This policy overrides the child policy
      * specified for the workflow execution at registration time or when starting the
-     * execution.</p> <p>The supported child policies are:</p> <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
      * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
      * its history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
-     * action will be taken. The child executions will continue to run.</li> </ul>
-     * <note>A child policy for this workflow execution must be specified either as a
-     * default for the workflow type or through this parameter. If neither this
-     * parameter is set nor a default child policy was specified at registration time
-     * then a fault will be returned.</note>
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * be specified either as a default for the workflow type or through this
+     * parameter. If neither this parameter is set nor a default child policy was
+     * specified at registration time then a fault is returned.</p> </note>
      */
     inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
@@ -277,17 +270,17 @@ namespace Model
      * <p>If set, specifies the policy to use for the child workflow executions of the
      * workflow execution being terminated. This policy overrides the child policy
      * specified for the workflow execution at registration time or when starting the
-     * execution.</p> <p>The supported child policies are:</p> <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
      * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
      * its history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
-     * action will be taken. The child executions will continue to run.</li> </ul>
-     * <note>A child policy for this workflow execution must be specified either as a
-     * default for the workflow type or through this parameter. If neither this
-     * parameter is set nor a default child policy was specified at registration time
-     * then a fault will be returned.</note>
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * be specified either as a default for the workflow type or through this
+     * parameter. If neither this parameter is set nor a default child policy was
+     * specified at registration time then a fault is returned.</p> </note>
      */
     inline TerminateWorkflowExecutionRequest& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
 
@@ -295,17 +288,17 @@ namespace Model
      * <p>If set, specifies the policy to use for the child workflow executions of the
      * workflow execution being terminated. This policy overrides the child policy
      * specified for the workflow execution at registration time or when starting the
-     * execution.</p> <p>The supported child policies are:</p> <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
      * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
      * its history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
-     * action will be taken. The child executions will continue to run.</li> </ul>
-     * <note>A child policy for this workflow execution must be specified either as a
-     * default for the workflow type or through this parameter. If neither this
-     * parameter is set nor a default child policy was specified at registration time
-     * then a fault will be returned.</note>
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * be specified either as a default for the workflow type or through this
+     * parameter. If neither this parameter is set nor a default child policy was
+     * specified at registration time then a fault is returned.</p> </note>
      */
     inline TerminateWorkflowExecutionRequest& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 

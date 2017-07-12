@@ -33,19 +33,21 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>FailWorkflowExecution</code> decision.</p>
-   * <p><b>Access Control</b></p> <p>You can use IAM policies to control this
-   * decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a
+   * <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p>
+   * <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this
+   * decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
    * <code>Resource</code> element with the domain name to limit the action to only
-   * specified domains.</li> <li>Use an <code>Action</code> element to allow or deny
-   * permission to call this action.</li> <li>You cannot use an IAM policy to
-   * constrain this action's parameters.</li> </ul> <p>If the caller does not have
-   * sufficient permissions to invoke the action, or the parameter values fall
-   * outside the specified constraints, the action fails. The associated event
-   * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-   * details and example IAM policies, see <a
+   * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+   * or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM
+   * policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller
+   * doesn't have sufficient permissions to invoke the action, or the parameter
+   * values fall outside the specified constraints, the action fails. The associated
+   * event attribute's <code>cause</code> parameter is set to
+   * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+   * <a
    * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-   * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+   * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/FailWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
@@ -93,37 +95,37 @@ namespace Model
     inline FailWorkflowExecutionDecisionAttributes& WithReason(const char* value) { SetReason(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline FailWorkflowExecutionDecisionAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline FailWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> Details of the failure.</p>
+     * <p> Details of the failure.</p>
      */
     inline FailWorkflowExecutionDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 

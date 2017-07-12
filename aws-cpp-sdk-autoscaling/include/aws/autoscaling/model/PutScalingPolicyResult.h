@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/autoscaling/model/Alarm.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +37,11 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of PutScalingPolicy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PolicyARNType">AWS
+   * API Reference</a></p>
+   */
   class AWS_AUTOSCALING_API PutScalingPolicyResult
   {
   public:
@@ -77,6 +84,55 @@ namespace Model
      */
     inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
 
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarms = value; }
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline PutScalingPolicyResult& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline PutScalingPolicyResult& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline PutScalingPolicyResult& AddAlarms(const Alarm& value) { m_alarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
+     * will be empty if the policy type is anything other than
+     * <code>TargetTrackingScaling</code>.</p>
+     */
+    inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,6 +150,7 @@ namespace Model
 
   private:
     Aws::String m_policyARN;
+    Aws::Vector<Alarm> m_alarms;
     ResponseMetadata m_responseMetadata;
   };
 

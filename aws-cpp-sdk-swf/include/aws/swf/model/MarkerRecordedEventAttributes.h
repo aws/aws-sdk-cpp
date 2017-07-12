@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>MarkerRecorded</code> event.</p><p><h3>See
+   * <p>Provides the details of the <code>MarkerRecorded</code> event.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/MarkerRecordedEventAttributes">AWS
    * API Reference</a></p>
@@ -82,37 +82,37 @@ namespace Model
     inline MarkerRecordedEventAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline MarkerRecordedEventAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline MarkerRecordedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details of the marker (if any).</p>
+     * <p>The details of the marker.</p>
      */
     inline MarkerRecordedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ChildWorkflowExecutionTimedOut</code>
+   * <p>Provides the details of the <code>ChildWorkflowExecutionTimedOut</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionTimedOutEventAttributes">AWS
    * API Reference</a></p>
@@ -130,25 +130,28 @@ namespace Model
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline ChildWorkflowExecutionTimedOutEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 

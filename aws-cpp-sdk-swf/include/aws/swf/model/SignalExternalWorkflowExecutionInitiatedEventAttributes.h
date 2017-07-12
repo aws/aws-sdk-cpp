@@ -33,8 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code>
-   * event.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the details of the
+   * <code>SignalExternalWorkflowExecutionInitiated</code> event.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalExternalWorkflowExecutionInitiatedEventAttributes">AWS
    * API Reference</a></p>
    */
@@ -159,37 +160,37 @@ namespace Model
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>Input provided to the signal (if any).</p>
+     * <p>The input provided to the signal.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 
@@ -218,44 +219,44 @@ namespace Model
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> data attached to the event that can be used by the decider
-     * in subsequent decision tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 

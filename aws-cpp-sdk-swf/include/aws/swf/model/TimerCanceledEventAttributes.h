@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p> Provides details of the <code>TimerCanceled</code> event. </p><p><h3>See
+   * <p> Provides the details of the <code>TimerCanceled</code> event. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TimerCanceledEventAttributes">AWS
    * API Reference</a></p>
@@ -47,37 +47,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline const Aws::String& GetTimerId() const{ return m_timerId; }
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline TimerCanceledEventAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline TimerCanceledEventAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID of the timer that was canceled. </p>
+     * <p>The unique ID of the timer that was canceled.</p>
      */
     inline TimerCanceledEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 

@@ -76,8 +76,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -85,8 +85,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -94,8 +94,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -103,8 +103,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -112,8 +112,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -121,8 +121,8 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -130,78 +130,85 @@ namespace Model
      * <p>The name of the activity type within the domain.</p> <p>The specified string
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     * literal string quotarnquot.</p>
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the activity type.</p> <note>The activity type consists of the
-     * name and version, the combination of which must be unique within the
-     * domain.</note> <p>The specified string must not start or end with whitespace. It
-     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -244,8 +251,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const{ return m_defaultTaskStartToCloseTimeout; }
 
@@ -253,8 +261,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskStartToCloseTimeout(const Aws::String& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
 
@@ -262,8 +271,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
 
@@ -271,8 +281,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskStartToCloseTimeout(const char* value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout.assign(value); }
 
@@ -280,8 +291,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(const Aws::String& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
 
@@ -289,8 +301,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
 
@@ -298,8 +311,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a worker can take to
      * process tasks of this activity type. This default can be overridden when
      * scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
 
@@ -308,13 +322,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskHeartbeatTimeout() const{ return m_defaultTaskHeartbeatTimeout; }
 
@@ -323,13 +337,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskHeartbeatTimeout(const Aws::String& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = value; }
 
@@ -338,13 +352,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = std::move(value); }
 
@@ -353,13 +367,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskHeartbeatTimeout(const char* value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout.assign(value); }
 
@@ -368,13 +382,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(const Aws::String& value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
 
@@ -383,13 +397,13 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(std::move(value)); return *this;}
 
@@ -398,130 +412,130 @@ namespace Model
      * task of this type must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      * task is automatically timed out. This default can be overridden when scheduling
-     * an activity task using the <code>ScheduleActivityTask</code> decision. If the
-     * activity worker subsequently attempts to record a heartbeat or returns a result,
-     * the activity worker receives an <code>UnknownResource</code> fault. In this
-     * case, Amazon SWF no longer considers the activity task to be valid; the activity
-     * worker should clean up the activity task.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(const char* value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
-     * activity type. This default task list is used if a task list is not provided
-     * when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.</p>
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
      */
     inline const TaskList& GetDefaultTaskList() const{ return m_defaultTaskList; }
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
-     * activity type. This default task list is used if a task list is not provided
-     * when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.</p>
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
      */
     inline void SetDefaultTaskList(const TaskList& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
-     * activity type. This default task list is used if a task list is not provided
-     * when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.</p>
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
      */
     inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
-     * activity type. This default task list is used if a task list is not provided
-     * when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.</p>
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskList(const TaskList& value) { SetDefaultTaskList(value); return *this;}
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
-     * activity type. This default task list is used if a task list is not provided
-     * when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.</p>
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
-     * then "0" will be used. Valid values are integers that range from Java's
+     * then <code>0</code> is used. Valid values are integers that range from Java's
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
 
@@ -529,8 +543,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskScheduleToStartTimeout() const{ return m_defaultTaskScheduleToStartTimeout; }
 
@@ -538,8 +553,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToStartTimeout(const Aws::String& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = value; }
 
@@ -547,8 +563,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = std::move(value); }
 
@@ -556,8 +573,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToStartTimeout(const char* value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout.assign(value); }
 
@@ -565,8 +583,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(const Aws::String& value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
 
@@ -574,8 +593,9 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(std::move(value)); return *this;}
 
@@ -583,71 +603,72 @@ namespace Model
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
      * when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.</p> <p>The duration is specified in seconds; an integer greater than
-     * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(const char* value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskScheduleToCloseTimeout() const{ return m_defaultTaskScheduleToCloseTimeout; }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToCloseTimeout(const Aws::String& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = value; }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline void SetDefaultTaskScheduleToCloseTimeout(const char* value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout.assign(value); }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(const Aws::String& value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.</p> <p>The duration is specified in
-     * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.</p>
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(const char* value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
 

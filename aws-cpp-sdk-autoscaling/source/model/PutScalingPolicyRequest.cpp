@@ -36,7 +36,8 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_metricAggregationTypeHasBeenSet(false),
     m_stepAdjustmentsHasBeenSet(false),
     m_estimatedInstanceWarmup(0),
-    m_estimatedInstanceWarmupHasBeenSet(false)
+    m_estimatedInstanceWarmupHasBeenSet(false),
+    m_targetTrackingConfigurationHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,11 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_estimatedInstanceWarmupHasBeenSet)
   {
     ss << "EstimatedInstanceWarmup=" << m_estimatedInstanceWarmup << "&";
+  }
+
+  if(m_targetTrackingConfigurationHasBeenSet)
+  {
+    m_targetTrackingConfiguration.OutputToStream(ss, "TargetTrackingConfiguration");
   }
 
   ss << "Version=2011-01-01";

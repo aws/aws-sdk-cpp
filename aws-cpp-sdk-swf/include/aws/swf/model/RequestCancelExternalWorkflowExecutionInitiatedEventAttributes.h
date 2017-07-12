@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the
+   * <p>Provides the details of the
    * <code>RequestCancelExternalWorkflowExecutionInitiated</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelExternalWorkflowExecutionInitiatedEventAttributes">AWS
@@ -152,44 +152,44 @@ namespace Model
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 

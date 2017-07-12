@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>WorkflowExecutionCompleted</code>
+   * <p>Provides the details of the <code>WorkflowExecutionCompleted</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCompletedEventAttributes">AWS
    * API Reference</a></p>

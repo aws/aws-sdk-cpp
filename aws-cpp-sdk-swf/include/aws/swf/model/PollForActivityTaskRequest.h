@@ -76,8 +76,9 @@ namespace Model
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string quotarnquot.</p>
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
@@ -85,8 +86,9 @@ namespace Model
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string quotarnquot.</p>
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
@@ -94,8 +96,9 @@ namespace Model
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string quotarnquot.</p>
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
@@ -103,8 +106,9 @@ namespace Model
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string quotarnquot.</p>
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
      */
     inline PollForActivityTaskRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
@@ -112,8 +116,9 @@ namespace Model
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string quotarnquot.</p>
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
      */
     inline PollForActivityTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 

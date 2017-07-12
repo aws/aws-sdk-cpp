@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ChildWorkflowExecutionStarted</code>
+   * <p>Provides the details of the <code>ChildWorkflowExecutionStarted</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionStartedEventAttributes">AWS
    * API Reference</a></p>
@@ -73,51 +73,54 @@ namespace Model
     inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the child workflow execution. </p>
+     * <p>The type of the child workflow execution.</p>
      */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
 
     /**
-     * <p>The type of the child workflow execution. </p>
+     * <p>The type of the child workflow execution.</p>
      */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
-     * <p>The type of the child workflow execution. </p>
+     * <p>The type of the child workflow execution.</p>
      */
     inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
-     * <p>The type of the child workflow execution. </p>
+     * <p>The type of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
 
     /**
-     * <p>The type of the child workflow execution. </p>
+     * <p>The type of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code> decision to start
-     * this child workflow execution. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
      */
     inline ChildWorkflowExecutionStartedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 

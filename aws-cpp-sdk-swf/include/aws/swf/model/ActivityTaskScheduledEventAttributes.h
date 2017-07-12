@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ActivityTaskScheduled</code>
+   * <p>Provides the details of the <code>ActivityTaskScheduled</code>
    * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskScheduledEventAttributes">AWS
    * API Reference</a></p>
@@ -144,44 +144,44 @@ namespace Model
     inline ActivityTaskScheduledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> Data attached to the event that can be used by the decider
-     * in subsequent workflow tasks. This data is not sent to the activity.</p>
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
@@ -330,86 +330,86 @@ namespace Model
     inline ActivityTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
 
     /**
-     * <p><i>Optional.</i> The priority to assign to the scheduled activity task. If
-     * set, this will override any default priority value that was assigned when the
-     * activity type was registered.</p> <p>Valid values are integers that range from
-     * Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
-     * priority.</p> <p>For more information about setting task priority, see <a
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
@@ -441,7 +441,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline const Aws::String& GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
@@ -450,7 +450,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline void SetHeartbeatTimeout(const Aws::String& value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
@@ -459,7 +459,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline void SetHeartbeatTimeout(Aws::String&& value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = std::move(value); }
@@ -468,7 +468,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline void SetHeartbeatTimeout(const char* value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout.assign(value); }
@@ -477,7 +477,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(const Aws::String& value) { SetHeartbeatTimeout(value); return *this;}
@@ -486,7 +486,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(Aws::String&& value) { SetHeartbeatTimeout(std::move(value)); return *this;}
@@ -495,7 +495,7 @@ namespace Model
      * <p>The maximum time before which the worker processing this task must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
      * exceeded, the activity task is automatically timed out. If the worker
-     * subsequently attempts to record a heartbeat or return a result, it will be
+     * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(const char* value) { SetHeartbeatTimeout(value); return *this;}

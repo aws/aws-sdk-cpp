@@ -46,86 +46,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline ActivityType& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline ActivityType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of this activity.</p> <note>The combination of activity type name
-     * and version must be unique within a domain.</note>
+     * <p>The name of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique within a domain.</p> </note>
      */
     inline ActivityType& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline ActivityType& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline ActivityType& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of this activity.</p> <note>The combination of activity type name
-     * and version must be unique with in a domain.</note>
+     * <p>The version of this activity.</p> <note> <p>The combination of activity type
+     * name and version must be unique with in a domain.</p> </note>
      */
     inline ActivityType& WithVersion(const char* value) { SetVersion(value); return *this;}
 

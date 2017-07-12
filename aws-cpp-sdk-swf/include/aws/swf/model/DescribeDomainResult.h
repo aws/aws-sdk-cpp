@@ -47,34 +47,64 @@ namespace Model
     DescribeDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The basic information about a domain, such as its name, status, and
+     * description.</p>
+     */
     inline const DomainInfo& GetDomainInfo() const{ return m_domainInfo; }
 
-    
+    /**
+     * <p>The basic information about a domain, such as its name, status, and
+     * description.</p>
+     */
     inline void SetDomainInfo(const DomainInfo& value) { m_domainInfo = value; }
 
-    
+    /**
+     * <p>The basic information about a domain, such as its name, status, and
+     * description.</p>
+     */
     inline void SetDomainInfo(DomainInfo&& value) { m_domainInfo = std::move(value); }
 
-    
+    /**
+     * <p>The basic information about a domain, such as its name, status, and
+     * description.</p>
+     */
     inline DescribeDomainResult& WithDomainInfo(const DomainInfo& value) { SetDomainInfo(value); return *this;}
 
-    
+    /**
+     * <p>The basic information about a domain, such as its name, status, and
+     * description.</p>
+     */
     inline DescribeDomainResult& WithDomainInfo(DomainInfo&& value) { SetDomainInfo(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The domain configuration. Currently, this includes only the domain's
+     * retention period.</p>
+     */
     inline const DomainConfiguration& GetConfiguration() const{ return m_configuration; }
 
-    
+    /**
+     * <p>The domain configuration. Currently, this includes only the domain's
+     * retention period.</p>
+     */
     inline void SetConfiguration(const DomainConfiguration& value) { m_configuration = value; }
 
-    
+    /**
+     * <p>The domain configuration. Currently, this includes only the domain's
+     * retention period.</p>
+     */
     inline void SetConfiguration(DomainConfiguration&& value) { m_configuration = std::move(value); }
 
-    
+    /**
+     * <p>The domain configuration. Currently, this includes only the domain's
+     * retention period.</p>
+     */
     inline DescribeDomainResult& WithConfiguration(const DomainConfiguration& value) { SetConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The domain configuration. Currently, this includes only the domain's
+     * retention period.</p>
+     */
     inline DescribeDomainResult& WithConfiguration(DomainConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
