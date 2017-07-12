@@ -217,19 +217,19 @@ namespace Aws
              * Creates TransferHandle.
              * fileName is not necessary if this handle will upload data from an IOStream
              */
-            std::shared_ptr<TransferHandle> CreateUploadFileHandle(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
+            std::shared_ptr<TransferHandle> CreateUploadFileHandle(Aws::IOStream* fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
                     const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName = "");
 
             /**
              * Submits the actual task to task schecduler
              */
-            std::shared_ptr<TransferHandle> SubmitUpload(const std::shared_ptr<TransferHandle>& handle, const std::shared_ptr<Aws::IOStream>& fileStream = nullptr);
+            std::shared_ptr<TransferHandle> SubmitUpload(const std::shared_ptr<TransferHandle>& handle, Aws::IOStream* fileStream = nullptr);
 
             /**
              * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
              * then a multi-part upload will be performed. 
              */
-            std::shared_ptr<TransferHandle> DoUploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
+            std::shared_ptr<TransferHandle> DoUploadFile(Aws::IOStream* fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
                     const Aws::Map<Aws::String, Aws::String>& metadata);
 
             /**
@@ -243,8 +243,11 @@ namespace Aws
             bool MultipartUploadSupported(uint64_t length) const;
             bool InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle);
 
-            void DoMultiPartUpload(std::shared_ptr<Aws::IOStream> streamToPut, const std::shared_ptr<TransferHandle>& handle);
-            void DoSinglePartUpload(std::shared_ptr<Aws::IOStream> streamToPut, const std::shared_ptr<TransferHandle>& handle);
+            void DoMultiPartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle);
+            void DoSinglePartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle);
+
+            void DoMultiPartUpload(const std::shared_ptr<TransferHandle>& handle);
+            void DoSinglePartUpload(const std::shared_ptr<TransferHandle>& handle);
 
             void DoDownload(const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle);
