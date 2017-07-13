@@ -298,10 +298,15 @@ TEST(JsonSerializerTest, TestCopy)
 {
     JsonValue value;
     ASSERT_TRUE(value.WasParseSuccessful());
-    JsonValue copied_value(value);
-    ASSERT_TRUE(copied_value.WasParseSuccessful());
-    JsonValue copied_value2;
-    copied_value2 = value;
-    ASSERT_TRUE(copied_value2.WasParseSuccessful());
+    JsonValue copiedValue(value);
+    ASSERT_TRUE(copiedValue.WasParseSuccessful());
+    JsonValue copiedValue2;
+    copiedValue2 = value;
+    ASSERT_TRUE(copiedValue2.WasParseSuccessful());
+    JsonValue bad(Aws::String("not valid json"));
+    ASSERT_FALSE(bad.WasParseSuccessful());
+    copiedValue = bad;
+    ASSERT_FALSE(copiedValue.WasParseSuccessful());
+    
 }
 
