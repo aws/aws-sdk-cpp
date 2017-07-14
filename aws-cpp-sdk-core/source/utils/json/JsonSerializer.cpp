@@ -390,12 +390,16 @@ JsonValue& JsonValue::WithObject(const Aws::String& key, const JsonValue&& value
 JsonValue& JsonValue::AsObject(const JsonValue& value)
 {
     m_value = value.m_value;
+    m_wasParseSuccessful = value.m_wasParseSuccessful;
+    m_errorMessage = value.m_errorMessage;
     return *this;
 }
 
 JsonValue& JsonValue::AsObject(JsonValue && value)
 {
     m_value = std::move(value.m_value);
+    m_wasParseSuccessful = value.m_wasParseSuccessful;
+    m_errorMessage = value.m_errorMessage;
     return *this;
 }
 
