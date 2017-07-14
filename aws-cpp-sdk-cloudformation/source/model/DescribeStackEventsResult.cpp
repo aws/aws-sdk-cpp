@@ -41,7 +41,7 @@ DescribeStackEventsResult& DescribeStackEventsResult::operator =(const AmazonWeb
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeStackEventsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeStackEventsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeStackEventsResult");
   }
@@ -66,9 +66,10 @@ DescribeStackEventsResult& DescribeStackEventsResult::operator =(const AmazonWeb
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackEventsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackEventsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

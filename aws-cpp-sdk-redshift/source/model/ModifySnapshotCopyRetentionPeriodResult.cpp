@@ -41,7 +41,7 @@ ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "ModifySnapshotCopyRetentionPeriodResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifySnapshotCopyRetentionPeriodResult"))
   {
     resultNode = rootNode.FirstChild("ModifySnapshotCopyRetentionPeriodResult");
   }
@@ -55,9 +55,10 @@ ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifySnapshotCopyRetentionPeriodResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifySnapshotCopyRetentionPeriodResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

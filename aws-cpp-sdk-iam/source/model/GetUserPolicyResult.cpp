@@ -41,7 +41,7 @@ GetUserPolicyResult& GetUserPolicyResult::operator =(const AmazonWebServiceResul
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "GetUserPolicyResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetUserPolicyResult"))
   {
     resultNode = rootNode.FirstChild("GetUserPolicyResult");
   }
@@ -65,9 +65,10 @@ GetUserPolicyResult& GetUserPolicyResult::operator =(const AmazonWebServiceResul
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetUserPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetUserPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

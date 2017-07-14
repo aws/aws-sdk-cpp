@@ -97,6 +97,9 @@ namespace Aws
         static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
         static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
         static const int g2_8xlarge_HASH = HashingUtils::HashString("g2.8xlarge");
+        static const int g3_4xlarge_HASH = HashingUtils::HashString("g3.4xlarge");
+        static const int g3_8xlarge_HASH = HashingUtils::HashString("g3.8xlarge");
+        static const int g3_16xlarge_HASH = HashingUtils::HashString("g3.16xlarge");
         static const int cg1_4xlarge_HASH = HashingUtils::HashString("cg1.4xlarge");
         static const int p2_xlarge_HASH = HashingUtils::HashString("p2.xlarge");
         static const int p2_8xlarge_HASH = HashingUtils::HashString("p2.8xlarge");
@@ -380,6 +383,18 @@ namespace Aws
           {
             return InstanceType::g2_8xlarge;
           }
+          else if (hashCode == g3_4xlarge_HASH)
+          {
+            return InstanceType::g3_4xlarge;
+          }
+          else if (hashCode == g3_8xlarge_HASH)
+          {
+            return InstanceType::g3_8xlarge;
+          }
+          else if (hashCode == g3_16xlarge_HASH)
+          {
+            return InstanceType::g3_16xlarge;
+          }
           else if (hashCode == cg1_4xlarge_HASH)
           {
             return InstanceType::cg1_4xlarge;
@@ -568,6 +583,12 @@ namespace Aws
             return "g2.2xlarge";
           case InstanceType::g2_8xlarge:
             return "g2.8xlarge";
+          case InstanceType::g3_4xlarge:
+            return "g3.4xlarge";
+          case InstanceType::g3_8xlarge:
+            return "g3.8xlarge";
+          case InstanceType::g3_16xlarge:
+            return "g3.16xlarge";
           case InstanceType::cg1_4xlarge:
             return "cg1.4xlarge";
           case InstanceType::p2_xlarge:

@@ -43,7 +43,7 @@ RejectVpcPeeringConnectionResponse& RejectVpcPeeringConnectionResponse::operator
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "RejectVpcPeeringConnectionResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "RejectVpcPeeringConnectionResponse"))
   {
     resultNode = rootNode.FirstChild("RejectVpcPeeringConnectionResponse");
   }
@@ -57,9 +57,10 @@ RejectVpcPeeringConnectionResponse& RejectVpcPeeringConnectionResponse::operator
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RejectVpcPeeringConnectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RejectVpcPeeringConnectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

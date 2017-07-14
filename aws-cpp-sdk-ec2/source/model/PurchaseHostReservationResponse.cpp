@@ -43,7 +43,7 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "PurchaseHostReservationResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "PurchaseHostReservationResponse"))
   {
     resultNode = rootNode.FirstChild("PurchaseHostReservationResponse");
   }
@@ -83,9 +83,10 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseHostReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseHostReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

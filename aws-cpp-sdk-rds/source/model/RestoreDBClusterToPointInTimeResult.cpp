@@ -41,7 +41,7 @@ RestoreDBClusterToPointInTimeResult& RestoreDBClusterToPointInTimeResult::operat
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "RestoreDBClusterToPointInTimeResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "RestoreDBClusterToPointInTimeResult"))
   {
     resultNode = rootNode.FirstChild("RestoreDBClusterToPointInTimeResult");
   }
@@ -55,9 +55,10 @@ RestoreDBClusterToPointInTimeResult& RestoreDBClusterToPointInTimeResult::operat
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::RestoreDBClusterToPointInTimeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::RestoreDBClusterToPointInTimeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

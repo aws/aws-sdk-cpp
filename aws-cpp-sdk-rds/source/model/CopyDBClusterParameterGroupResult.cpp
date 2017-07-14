@@ -41,7 +41,7 @@ CopyDBClusterParameterGroupResult& CopyDBClusterParameterGroupResult::operator =
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "CopyDBClusterParameterGroupResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CopyDBClusterParameterGroupResult"))
   {
     resultNode = rootNode.FirstChild("CopyDBClusterParameterGroupResult");
   }
@@ -55,9 +55,10 @@ CopyDBClusterParameterGroupResult& CopyDBClusterParameterGroupResult::operator =
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CopyDBClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CopyDBClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

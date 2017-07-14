@@ -41,7 +41,7 @@ PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "PurchaseReservedNodeOfferingResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "PurchaseReservedNodeOfferingResult"))
   {
     resultNode = rootNode.FirstChild("PurchaseReservedNodeOfferingResult");
   }
@@ -55,9 +55,10 @@ PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::PurchaseReservedNodeOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::PurchaseReservedNodeOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

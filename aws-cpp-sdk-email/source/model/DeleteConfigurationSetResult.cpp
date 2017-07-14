@@ -41,7 +41,7 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Ama
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DeleteConfigurationSetResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteConfigurationSetResult"))
   {
     resultNode = rootNode.FirstChild("DeleteConfigurationSetResult");
   }
@@ -50,9 +50,10 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Ama
   {
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::SES::Model::DeleteConfigurationSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::DeleteConfigurationSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

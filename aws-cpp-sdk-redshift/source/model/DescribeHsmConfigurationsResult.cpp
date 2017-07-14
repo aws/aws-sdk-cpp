@@ -41,7 +41,7 @@ DescribeHsmConfigurationsResult& DescribeHsmConfigurationsResult::operator =(con
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeHsmConfigurationsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeHsmConfigurationsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeHsmConfigurationsResult");
   }
@@ -66,9 +66,10 @@ DescribeHsmConfigurationsResult& DescribeHsmConfigurationsResult::operator =(con
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeHsmConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeHsmConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

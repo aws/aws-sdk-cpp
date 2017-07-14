@@ -41,7 +41,7 @@ DescribeLoadBalancerAttributesResult& DescribeLoadBalancerAttributesResult::oper
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeLoadBalancerAttributesResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeLoadBalancerAttributesResult"))
   {
     resultNode = rootNode.FirstChild("DescribeLoadBalancerAttributesResult");
   }
@@ -55,9 +55,10 @@ DescribeLoadBalancerAttributesResult& DescribeLoadBalancerAttributesResult::oper
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancerAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancerAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

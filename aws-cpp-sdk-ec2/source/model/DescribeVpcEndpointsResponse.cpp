@@ -41,7 +41,7 @@ DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Ama
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeVpcEndpointsResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVpcEndpointsResponse"))
   {
     resultNode = rootNode.FirstChild("DescribeVpcEndpointsResponse");
   }
@@ -66,9 +66,10 @@ DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Ama
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

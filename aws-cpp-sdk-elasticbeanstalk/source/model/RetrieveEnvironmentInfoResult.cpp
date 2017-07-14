@@ -41,7 +41,7 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "RetrieveEnvironmentInfoResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "RetrieveEnvironmentInfoResult"))
   {
     resultNode = rootNode.FirstChild("RetrieveEnvironmentInfoResult");
   }
@@ -61,9 +61,10 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::RetrieveEnvironmentInfoResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::RetrieveEnvironmentInfoResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

@@ -41,7 +41,7 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "AssociateSubnetCidrBlockResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AssociateSubnetCidrBlockResponse"))
   {
     resultNode = rootNode.FirstChild("AssociateSubnetCidrBlockResponse");
   }
@@ -60,9 +60,10 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateSubnetCidrBlockResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateSubnetCidrBlockResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

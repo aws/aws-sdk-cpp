@@ -41,7 +41,7 @@ CreateDBClusterResult& CreateDBClusterResult::operator =(const AmazonWebServiceR
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "CreateDBClusterResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDBClusterResult"))
   {
     resultNode = rootNode.FirstChild("CreateDBClusterResult");
   }
@@ -55,9 +55,10 @@ CreateDBClusterResult& CreateDBClusterResult::operator =(const AmazonWebServiceR
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBClusterResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBClusterResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

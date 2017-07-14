@@ -41,7 +41,7 @@ CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const A
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "CompleteLifecycleActionResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CompleteLifecycleActionResult"))
   {
     resultNode = rootNode.FirstChild("CompleteLifecycleActionResult");
   }
@@ -50,9 +50,10 @@ CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const A
   {
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::CompleteLifecycleActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::CompleteLifecycleActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

@@ -41,7 +41,7 @@ DescribeAvailabilityOptionsResult& DescribeAvailabilityOptionsResult::operator =
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeAvailabilityOptionsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAvailabilityOptionsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeAvailabilityOptionsResult");
   }
@@ -55,9 +55,10 @@ DescribeAvailabilityOptionsResult& DescribeAvailabilityOptionsResult::operator =
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeAvailabilityOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeAvailabilityOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

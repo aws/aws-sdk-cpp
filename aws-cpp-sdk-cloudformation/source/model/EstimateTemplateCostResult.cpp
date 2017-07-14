@@ -41,7 +41,7 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const AmazonW
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "EstimateTemplateCostResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "EstimateTemplateCostResult"))
   {
     resultNode = rootNode.FirstChild("EstimateTemplateCostResult");
   }
@@ -55,9 +55,10 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const AmazonW
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::EstimateTemplateCostResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::EstimateTemplateCostResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

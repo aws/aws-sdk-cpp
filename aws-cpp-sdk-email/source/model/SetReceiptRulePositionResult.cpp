@@ -41,7 +41,7 @@ SetReceiptRulePositionResult& SetReceiptRulePositionResult::operator =(const Ama
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "SetReceiptRulePositionResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "SetReceiptRulePositionResult"))
   {
     resultNode = rootNode.FirstChild("SetReceiptRulePositionResult");
   }
@@ -50,9 +50,10 @@ SetReceiptRulePositionResult& SetReceiptRulePositionResult::operator =(const Ama
   {
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::SES::Model::SetReceiptRulePositionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::SetReceiptRulePositionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

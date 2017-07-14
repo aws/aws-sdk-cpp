@@ -41,7 +41,7 @@ GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "GetAccountPasswordPolicyResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetAccountPasswordPolicyResult"))
   {
     resultNode = rootNode.FirstChild("GetAccountPasswordPolicyResult");
   }
@@ -55,9 +55,10 @@ GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetAccountPasswordPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetAccountPasswordPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

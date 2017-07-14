@@ -41,7 +41,7 @@ AllocateHostsResponse& AllocateHostsResponse::operator =(const AmazonWebServiceR
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "AllocateHostsResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AllocateHostsResponse"))
   {
     resultNode = rootNode.FirstChild("AllocateHostsResponse");
   }
@@ -61,9 +61,10 @@ AllocateHostsResponse& AllocateHostsResponse::operator =(const AmazonWebServiceR
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AllocateHostsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AllocateHostsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

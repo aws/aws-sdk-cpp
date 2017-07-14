@@ -41,7 +41,7 @@ ModifyTargetGroupResult& ModifyTargetGroupResult::operator =(const AmazonWebServ
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "ModifyTargetGroupResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyTargetGroupResult"))
   {
     resultNode = rootNode.FirstChild("ModifyTargetGroupResult");
   }
@@ -61,9 +61,10 @@ ModifyTargetGroupResult& ModifyTargetGroupResult::operator =(const AmazonWebServ
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyTargetGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyTargetGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

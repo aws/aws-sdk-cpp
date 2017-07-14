@@ -41,7 +41,7 @@ DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(c
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeOptionGroupOptionsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeOptionGroupOptionsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeOptionGroupOptionsResult");
   }
@@ -66,9 +66,10 @@ DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(c
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeOptionGroupOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeOptionGroupOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

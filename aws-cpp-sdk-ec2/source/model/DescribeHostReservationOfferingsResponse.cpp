@@ -41,7 +41,7 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeHostReservationOfferingsResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeHostReservationOfferingsResponse"))
   {
     resultNode = rootNode.FirstChild("DescribeHostReservationOfferingsResponse");
   }
@@ -66,9 +66,10 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeHostReservationOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeHostReservationOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

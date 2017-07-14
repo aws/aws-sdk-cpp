@@ -41,7 +41,7 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Amazo
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeAccountLimitsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAccountLimitsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeAccountLimitsResult");
   }
@@ -66,9 +66,10 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Amazo
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeAccountLimitsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeAccountLimitsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

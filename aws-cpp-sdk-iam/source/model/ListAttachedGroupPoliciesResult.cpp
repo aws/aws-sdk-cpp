@@ -43,7 +43,7 @@ ListAttachedGroupPoliciesResult& ListAttachedGroupPoliciesResult::operator =(con
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "ListAttachedGroupPoliciesResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListAttachedGroupPoliciesResult"))
   {
     resultNode = rootNode.FirstChild("ListAttachedGroupPoliciesResult");
   }
@@ -73,9 +73,10 @@ ListAttachedGroupPoliciesResult& ListAttachedGroupPoliciesResult::operator =(con
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListAttachedGroupPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListAttachedGroupPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

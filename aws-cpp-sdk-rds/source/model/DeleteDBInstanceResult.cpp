@@ -41,7 +41,7 @@ DeleteDBInstanceResult& DeleteDBInstanceResult::operator =(const AmazonWebServic
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DeleteDBInstanceResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteDBInstanceResult"))
   {
     resultNode = rootNode.FirstChild("DeleteDBInstanceResult");
   }
@@ -55,9 +55,10 @@ DeleteDBInstanceResult& DeleteDBInstanceResult::operator =(const AmazonWebServic
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteDBInstanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteDBInstanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

@@ -41,7 +41,7 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "PurchaseReservedCacheNodesOfferingResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "PurchaseReservedCacheNodesOfferingResult"))
   {
     resultNode = rootNode.FirstChild("PurchaseReservedCacheNodesOfferingResult");
   }
@@ -55,9 +55,10 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::PurchaseReservedCacheNodesOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::PurchaseReservedCacheNodesOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

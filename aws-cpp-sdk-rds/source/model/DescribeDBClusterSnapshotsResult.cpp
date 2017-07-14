@@ -41,7 +41,7 @@ DescribeDBClusterSnapshotsResult& DescribeDBClusterSnapshotsResult::operator =(c
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeDBClusterSnapshotsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBClusterSnapshotsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeDBClusterSnapshotsResult");
   }
@@ -66,9 +66,10 @@ DescribeDBClusterSnapshotsResult& DescribeDBClusterSnapshotsResult::operator =(c
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBClusterSnapshotsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBClusterSnapshotsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

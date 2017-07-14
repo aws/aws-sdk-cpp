@@ -41,7 +41,7 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeSpotFleetRequestHistoryResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeSpotFleetRequestHistoryResponse"))
   {
     resultNode = rootNode.FirstChild("DescribeSpotFleetRequestHistoryResponse");
   }
@@ -81,9 +81,10 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotFleetRequestHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotFleetRequestHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

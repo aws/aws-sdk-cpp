@@ -43,7 +43,7 @@ ListAccessKeysResult& ListAccessKeysResult::operator =(const AmazonWebServiceRes
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "ListAccessKeysResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListAccessKeysResult"))
   {
     resultNode = rootNode.FirstChild("ListAccessKeysResult");
   }
@@ -73,9 +73,10 @@ ListAccessKeysResult& ListAccessKeysResult::operator =(const AmazonWebServiceRes
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListAccessKeysResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListAccessKeysResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

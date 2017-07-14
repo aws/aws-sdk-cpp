@@ -41,7 +41,7 @@ DetachLoadBalancerTargetGroupsResult& DetachLoadBalancerTargetGroupsResult::oper
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DetachLoadBalancerTargetGroupsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DetachLoadBalancerTargetGroupsResult"))
   {
     resultNode = rootNode.FirstChild("DetachLoadBalancerTargetGroupsResult");
   }
@@ -50,9 +50,10 @@ DetachLoadBalancerTargetGroupsResult& DetachLoadBalancerTargetGroupsResult::oper
   {
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DetachLoadBalancerTargetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DetachLoadBalancerTargetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

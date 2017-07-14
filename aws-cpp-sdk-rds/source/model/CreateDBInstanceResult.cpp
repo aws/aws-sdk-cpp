@@ -41,7 +41,7 @@ CreateDBInstanceResult& CreateDBInstanceResult::operator =(const AmazonWebServic
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "CreateDBInstanceResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDBInstanceResult"))
   {
     resultNode = rootNode.FirstChild("CreateDBInstanceResult");
   }
@@ -55,9 +55,10 @@ CreateDBInstanceResult& CreateDBInstanceResult::operator =(const AmazonWebServic
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBInstanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBInstanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

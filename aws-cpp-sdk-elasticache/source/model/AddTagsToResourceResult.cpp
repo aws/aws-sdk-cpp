@@ -41,7 +41,7 @@ AddTagsToResourceResult& AddTagsToResourceResult::operator =(const AmazonWebServ
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "AddTagsToResourceResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AddTagsToResourceResult"))
   {
     resultNode = rootNode.FirstChild("AddTagsToResourceResult");
   }
@@ -61,9 +61,10 @@ AddTagsToResourceResult& AddTagsToResourceResult::operator =(const AmazonWebServ
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::AddTagsToResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::AddTagsToResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

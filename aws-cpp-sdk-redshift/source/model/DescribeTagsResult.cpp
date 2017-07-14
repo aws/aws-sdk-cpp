@@ -41,7 +41,7 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeTagsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTagsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeTagsResult");
   }
@@ -66,9 +66,10 @@ DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

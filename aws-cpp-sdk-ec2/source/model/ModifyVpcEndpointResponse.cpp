@@ -43,7 +43,7 @@ ModifyVpcEndpointResponse& ModifyVpcEndpointResponse::operator =(const AmazonWeb
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "ModifyVpcEndpointResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyVpcEndpointResponse"))
   {
     resultNode = rootNode.FirstChild("ModifyVpcEndpointResponse");
   }
@@ -57,9 +57,10 @@ ModifyVpcEndpointResponse& ModifyVpcEndpointResponse::operator =(const AmazonWeb
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVpcEndpointResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVpcEndpointResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

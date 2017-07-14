@@ -41,7 +41,7 @@ DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const AmazonWebServic
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DeleteFlowLogsResponse")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteFlowLogsResponse"))
   {
     resultNode = rootNode.FirstChild("DeleteFlowLogsResponse");
   }
@@ -61,9 +61,10 @@ DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const AmazonWebServic
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteFlowLogsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteFlowLogsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

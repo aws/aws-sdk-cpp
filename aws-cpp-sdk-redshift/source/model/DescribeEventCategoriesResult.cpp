@@ -41,7 +41,7 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeEventCategoriesResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEventCategoriesResult"))
   {
     resultNode = rootNode.FirstChild("DescribeEventCategoriesResult");
   }
@@ -61,9 +61,10 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEventCategoriesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEventCategoriesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

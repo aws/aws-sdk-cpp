@@ -41,7 +41,7 @@ AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "AttachLoadBalancerToSubnetsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AttachLoadBalancerToSubnetsResult"))
   {
     resultNode = rootNode.FirstChild("AttachLoadBalancerToSubnetsResult");
   }
@@ -61,9 +61,10 @@ AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::AttachLoadBalancerToSubnetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::AttachLoadBalancerToSubnetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

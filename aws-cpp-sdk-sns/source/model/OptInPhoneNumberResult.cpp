@@ -41,7 +41,7 @@ OptInPhoneNumberResult& OptInPhoneNumberResult::operator =(const AmazonWebServic
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "OptInPhoneNumberResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "OptInPhoneNumberResult"))
   {
     resultNode = rootNode.FirstChild("OptInPhoneNumberResult");
   }
@@ -50,9 +50,10 @@ OptInPhoneNumberResult& OptInPhoneNumberResult::operator =(const AmazonWebServic
   {
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::OptInPhoneNumberResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::OptInPhoneNumberResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

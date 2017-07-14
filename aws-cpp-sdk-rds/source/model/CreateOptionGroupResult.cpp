@@ -41,7 +41,7 @@ CreateOptionGroupResult& CreateOptionGroupResult::operator =(const AmazonWebServ
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "CreateOptionGroupResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateOptionGroupResult"))
   {
     resultNode = rootNode.FirstChild("CreateOptionGroupResult");
   }
@@ -55,9 +55,10 @@ CreateOptionGroupResult& CreateOptionGroupResult::operator =(const AmazonWebServ
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateOptionGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateOptionGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

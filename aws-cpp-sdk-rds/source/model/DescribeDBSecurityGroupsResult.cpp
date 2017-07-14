@@ -41,7 +41,7 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DescribeDBSecurityGroupsResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBSecurityGroupsResult"))
   {
     resultNode = rootNode.FirstChild("DescribeDBSecurityGroupsResult");
   }
@@ -66,9 +66,10 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBSecurityGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBSecurityGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

@@ -41,7 +41,7 @@ DisableAvailabilityZonesForLoadBalancerResult& DisableAvailabilityZonesForLoadBa
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "DisableAvailabilityZonesForLoadBalancerResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DisableAvailabilityZonesForLoadBalancerResult"))
   {
     resultNode = rootNode.FirstChild("DisableAvailabilityZonesForLoadBalancerResult");
   }
@@ -61,9 +61,10 @@ DisableAvailabilityZonesForLoadBalancerResult& DisableAvailabilityZonesForLoadBa
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DisableAvailabilityZonesForLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DisableAvailabilityZonesForLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }

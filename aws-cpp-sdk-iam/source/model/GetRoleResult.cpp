@@ -41,7 +41,7 @@ GetRoleResult& GetRoleResult::operator =(const AmazonWebServiceResult<XmlDocumen
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (rootNode.GetName() != "GetRoleResult")
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetRoleResult"))
   {
     resultNode = rootNode.FirstChild("GetRoleResult");
   }
@@ -55,9 +55,10 @@ GetRoleResult& GetRoleResult::operator =(const AmazonWebServiceResult<XmlDocumen
     }
   }
 
-  XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-  m_responseMetadata = responseMetadataNode;
-  AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetRoleResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
-
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetRoleResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  }
   return *this;
 }
