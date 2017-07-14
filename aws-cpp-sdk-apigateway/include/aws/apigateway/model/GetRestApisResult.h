@@ -74,37 +74,37 @@ namespace Model
     inline GetRestApisResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<RestApi>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<RestApi>& value) { m_items = value; }
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<RestApi>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRestApisResult& WithItems(const Aws::Vector<RestApi>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRestApisResult& WithItems(Aws::Vector<RestApi>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRestApisResult& AddItems(const RestApi& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of links to the current page of <a>RestApi</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRestApisResult& AddItems(RestApi&& value) { m_items.push_back(std::move(value)); return *this; }
 

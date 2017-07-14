@@ -80,17 +80,17 @@ namespace Model
     inline GetApiKeysRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline GetApiKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

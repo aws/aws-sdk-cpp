@@ -121,44 +121,37 @@ namespace Model
     inline GetApiKeysResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<ApiKey>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<ApiKey>& value) { m_items = value; }
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<ApiKey>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetApiKeysResult& WithItems(const Aws::Vector<ApiKey>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetApiKeysResult& WithItems(Aws::Vector<ApiKey>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetApiKeysResult& AddItems(const ApiKey& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of any <a>ApiKey</a> resources in the collection of
-     * <a>ApiKey</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetApiKeysResult& AddItems(ApiKey&& value) { m_items.push_back(std::move(value)); return *this; }
 

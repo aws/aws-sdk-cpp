@@ -207,35 +207,35 @@ namespace Model
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * paramater for Spot Instances.</p>
+     * parameter for Spot Instances.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * paramater for Spot Instances.</p>
+     * parameter for Spot Instances.</p>
      */
     inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * paramater for Spot Instances.</p>
+     * parameter for Spot Instances.</p>
      */
     inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = std::move(value); }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * paramater for Spot Instances.</p>
+     * parameter for Spot Instances.</p>
      */
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * paramater for Spot Instances.</p>
+     * parameter for Spot Instances.</p>
      */
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
 

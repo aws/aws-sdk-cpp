@@ -94,72 +94,72 @@ namespace Model
     inline GetBasePathMappingResult& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiId = value; }
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiId = std::move(value); }
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiId.assign(value); }
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetBasePathMappingResult& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetBasePathMappingResult& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetBasePathMappingResult& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline void SetStage(const Aws::String& value) { m_stage = value; }
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline void SetStage(Aws::String&& value) { m_stage = std::move(value); }
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline void SetStage(const char* value) { m_stage.assign(value); }
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline GetBasePathMappingResult& WithStage(const Aws::String& value) { SetStage(value); return *this;}
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline GetBasePathMappingResult& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API's stage.</p>
+     * <p>The name of the associated stage.</p>
      */
     inline GetBasePathMappingResult& WithStage(const char* value) { SetStage(value); return *this;}
 

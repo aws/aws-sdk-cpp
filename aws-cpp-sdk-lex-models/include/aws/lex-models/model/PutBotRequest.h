@@ -160,47 +160,67 @@ namespace Model
     inline PutBotRequest& AddIntents(Intent&& value) { m_intentsHasBeenSet = true; m_intents.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>When Amazon Lex doesn't understand the user's intent, it uses one of these
-     * messages to get clarification. For example, "Sorry, I didn't understand. Please
-     * repeat." Amazon Lex repeats the clarification prompt the number of times
-     * specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it
-     * sends the message specified in <code>abortStatement</code>. </p>
+     * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
+     * get clarification. To specify how many times Amazon Lex should repeate the
+     * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
+     * still doesn't understand, it sends the message in the
+     * <code>abortStatement</code> field. </p> <p>When you create a clarification
+     * prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this
+     * clarification prompt: "What would you like to do? You can say 'Order a pizza' or
+     * 'Order a drink.'"</p>
      */
     inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
 
     /**
-     * <p>When Amazon Lex doesn't understand the user's intent, it uses one of these
-     * messages to get clarification. For example, "Sorry, I didn't understand. Please
-     * repeat." Amazon Lex repeats the clarification prompt the number of times
-     * specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it
-     * sends the message specified in <code>abortStatement</code>. </p>
+     * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
+     * get clarification. To specify how many times Amazon Lex should repeate the
+     * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
+     * still doesn't understand, it sends the message in the
+     * <code>abortStatement</code> field. </p> <p>When you create a clarification
+     * prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this
+     * clarification prompt: "What would you like to do? You can say 'Order a pizza' or
+     * 'Order a drink.'"</p>
      */
     inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = value; }
 
     /**
-     * <p>When Amazon Lex doesn't understand the user's intent, it uses one of these
-     * messages to get clarification. For example, "Sorry, I didn't understand. Please
-     * repeat." Amazon Lex repeats the clarification prompt the number of times
-     * specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it
-     * sends the message specified in <code>abortStatement</code>. </p>
+     * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
+     * get clarification. To specify how many times Amazon Lex should repeate the
+     * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
+     * still doesn't understand, it sends the message in the
+     * <code>abortStatement</code> field. </p> <p>When you create a clarification
+     * prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this
+     * clarification prompt: "What would you like to do? You can say 'Order a pizza' or
+     * 'Order a drink.'"</p>
      */
     inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = std::move(value); }
 
     /**
-     * <p>When Amazon Lex doesn't understand the user's intent, it uses one of these
-     * messages to get clarification. For example, "Sorry, I didn't understand. Please
-     * repeat." Amazon Lex repeats the clarification prompt the number of times
-     * specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it
-     * sends the message specified in <code>abortStatement</code>. </p>
+     * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
+     * get clarification. To specify how many times Amazon Lex should repeate the
+     * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
+     * still doesn't understand, it sends the message in the
+     * <code>abortStatement</code> field. </p> <p>When you create a clarification
+     * prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this
+     * clarification prompt: "What would you like to do? You can say 'Order a pizza' or
+     * 'Order a drink.'"</p>
      */
     inline PutBotRequest& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
 
     /**
-     * <p>When Amazon Lex doesn't understand the user's intent, it uses one of these
-     * messages to get clarification. For example, "Sorry, I didn't understand. Please
-     * repeat." Amazon Lex repeats the clarification prompt the number of times
-     * specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it
-     * sends the message specified in <code>abortStatement</code>. </p>
+     * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
+     * get clarification. To specify how many times Amazon Lex should repeate the
+     * clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex
+     * still doesn't understand, it sends the message in the
+     * <code>abortStatement</code> field. </p> <p>When you create a clarification
+     * prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this
+     * clarification prompt: "What would you like to do? You can say 'Order a pizza' or
+     * 'Order a drink.'"</p>
      */
     inline PutBotRequest& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
 
@@ -338,8 +358,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
@@ -347,8 +367,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
 
@@ -356,8 +376,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
 
@@ -365,8 +385,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
 
@@ -374,8 +394,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline PutBotRequest& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
@@ -383,8 +403,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline PutBotRequest& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
@@ -392,8 +412,8 @@ namespace Model
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
      * interactions with the user. The locale configured for the voice must match the
      * locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in
-     * the <i>Amazon Polly Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline PutBotRequest& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 

@@ -51,37 +51,37 @@ namespace Model
     GetStagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<Stage>& GetItem() const{ return m_item; }
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItem(const Aws::Vector<Stage>& value) { m_item = value; }
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItem(Aws::Vector<Stage>&& value) { m_item = std::move(value); }
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetStagesResult& WithItem(const Aws::Vector<Stage>& value) { SetItem(value); return *this;}
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetStagesResult& WithItem(Aws::Vector<Stage>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetStagesResult& AddItem(const Stage& value) { m_item.push_back(value); return *this; }
 
     /**
-     * <p>An individual <a>Stage</a> resource.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetStagesResult& AddItem(Stage&& value) { m_item.push_back(std::move(value)); return *this; }
 

@@ -72,49 +72,49 @@ namespace Model
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline DeleteIntentVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline DeleteIntentVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
      * <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code>
-     * version, use the operation.</p>
+     * version, use the <a>DeleteIntent</a> operation.</p>
      */
     inline DeleteIntentVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

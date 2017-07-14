@@ -75,44 +75,37 @@ namespace Model
     inline GetDocumentationVersionsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<DocumentationVersion>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<DocumentationVersion>& value) { m_items = value; }
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<DocumentationVersion>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationVersionsResult& WithItems(const Aws::Vector<DocumentationVersion>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationVersionsResult& WithItems(Aws::Vector<DocumentationVersion>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationVersionsResult& AddItems(const DocumentationVersion& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of <a>DocumentationVersion</a> items from the
-     * <a>DocumentationVersions</a> collection of an API.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationVersionsResult& AddItems(DocumentationVersion&& value) { m_items.push_back(std::move(value)); return *this; }
 

@@ -40,37 +40,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutMethodResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutMethodResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 

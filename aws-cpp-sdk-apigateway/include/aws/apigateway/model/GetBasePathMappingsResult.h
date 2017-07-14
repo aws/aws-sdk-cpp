@@ -73,44 +73,37 @@ namespace Model
     inline GetBasePathMappingsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<BasePathMapping>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<BasePathMapping>& value) { m_items = value; }
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<BasePathMapping>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetBasePathMappingsResult& WithItems(const Aws::Vector<BasePathMapping>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetBasePathMappingsResult& WithItems(Aws::Vector<BasePathMapping>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetBasePathMappingsResult& AddItems(const BasePathMapping& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
-     * base path mapping resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetBasePathMappingsResult& AddItems(BasePathMapping&& value) { m_items.push_back(std::move(value)); return *this; }
 

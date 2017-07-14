@@ -39,44 +39,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline DeleteDocumentationPartRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline DeleteDocumentationPartRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies the identifier of an API of the to-be-deleted
-     * documentation part.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline DeleteDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 

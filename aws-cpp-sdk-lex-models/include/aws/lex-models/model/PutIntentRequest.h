@@ -369,77 +369,82 @@ namespace Model
     inline PutIntentRequest& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 
     /**
-     * <p>A user prompt for additional activity after an intent is fulfilled. For
-     * example, after the <code>OrderPizza</code> intent is fulfilled (your Lambda
-     * function placed an order with a pizzeria), you might prompt the user to find if
-     * they want to order a drink (assuming that you have defined an
-     * <code>OrderDrink</code> intent in your bot).</p> <note> <p>The
-     * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one. For example, your bot may not solicit both
-     * the following: </p> <p> Follow up prompt - "<code>$session.FirstName</code>,
-     * your pizza order has been placed. Would you like to order a drink or a dessert?"
-     * </p> <p> Conclusion statement - "<code>$session.FirstName</code>, your pizza
-     * order has been placed." </p> </note>
+     * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
+     * an intent. For example, after the <code>OrderPizza</code> intent is fulfilled,
+     * you might prompt the user to order a drink.</p> <p>The action that Amazon Lex
+     * takes depends on the user's response, as follows:</p> <ul> <li> <p>If the user
+     * says "Yes" it responds with the clarification prompt that is configured for the
+     * bot.</p> </li> <li> <p>if the user says "Yes" and continues with an utterance
+     * that triggers an intent it starts a conversation for the intent.</p> </li> <li>
+     * <p>If the user says "No" it responds with the rejection statement configured for
+     * the the follow-up prompt.</p> </li> <li> <p>If it doesn't recognize the
+     * utterance it repeats the follow-up prompt again.</p> </li> </ul> <p>The
+     * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+     * are mutually exclusive. You can specify only one. </p>
      */
     inline const FollowUpPrompt& GetFollowUpPrompt() const{ return m_followUpPrompt; }
 
     /**
-     * <p>A user prompt for additional activity after an intent is fulfilled. For
-     * example, after the <code>OrderPizza</code> intent is fulfilled (your Lambda
-     * function placed an order with a pizzeria), you might prompt the user to find if
-     * they want to order a drink (assuming that you have defined an
-     * <code>OrderDrink</code> intent in your bot).</p> <note> <p>The
-     * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one. For example, your bot may not solicit both
-     * the following: </p> <p> Follow up prompt - "<code>$session.FirstName</code>,
-     * your pizza order has been placed. Would you like to order a drink or a dessert?"
-     * </p> <p> Conclusion statement - "<code>$session.FirstName</code>, your pizza
-     * order has been placed." </p> </note>
+     * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
+     * an intent. For example, after the <code>OrderPizza</code> intent is fulfilled,
+     * you might prompt the user to order a drink.</p> <p>The action that Amazon Lex
+     * takes depends on the user's response, as follows:</p> <ul> <li> <p>If the user
+     * says "Yes" it responds with the clarification prompt that is configured for the
+     * bot.</p> </li> <li> <p>if the user says "Yes" and continues with an utterance
+     * that triggers an intent it starts a conversation for the intent.</p> </li> <li>
+     * <p>If the user says "No" it responds with the rejection statement configured for
+     * the the follow-up prompt.</p> </li> <li> <p>If it doesn't recognize the
+     * utterance it repeats the follow-up prompt again.</p> </li> </ul> <p>The
+     * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+     * are mutually exclusive. You can specify only one. </p>
      */
     inline void SetFollowUpPrompt(const FollowUpPrompt& value) { m_followUpPromptHasBeenSet = true; m_followUpPrompt = value; }
 
     /**
-     * <p>A user prompt for additional activity after an intent is fulfilled. For
-     * example, after the <code>OrderPizza</code> intent is fulfilled (your Lambda
-     * function placed an order with a pizzeria), you might prompt the user to find if
-     * they want to order a drink (assuming that you have defined an
-     * <code>OrderDrink</code> intent in your bot).</p> <note> <p>The
-     * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one. For example, your bot may not solicit both
-     * the following: </p> <p> Follow up prompt - "<code>$session.FirstName</code>,
-     * your pizza order has been placed. Would you like to order a drink or a dessert?"
-     * </p> <p> Conclusion statement - "<code>$session.FirstName</code>, your pizza
-     * order has been placed." </p> </note>
+     * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
+     * an intent. For example, after the <code>OrderPizza</code> intent is fulfilled,
+     * you might prompt the user to order a drink.</p> <p>The action that Amazon Lex
+     * takes depends on the user's response, as follows:</p> <ul> <li> <p>If the user
+     * says "Yes" it responds with the clarification prompt that is configured for the
+     * bot.</p> </li> <li> <p>if the user says "Yes" and continues with an utterance
+     * that triggers an intent it starts a conversation for the intent.</p> </li> <li>
+     * <p>If the user says "No" it responds with the rejection statement configured for
+     * the the follow-up prompt.</p> </li> <li> <p>If it doesn't recognize the
+     * utterance it repeats the follow-up prompt again.</p> </li> </ul> <p>The
+     * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+     * are mutually exclusive. You can specify only one. </p>
      */
     inline void SetFollowUpPrompt(FollowUpPrompt&& value) { m_followUpPromptHasBeenSet = true; m_followUpPrompt = std::move(value); }
 
     /**
-     * <p>A user prompt for additional activity after an intent is fulfilled. For
-     * example, after the <code>OrderPizza</code> intent is fulfilled (your Lambda
-     * function placed an order with a pizzeria), you might prompt the user to find if
-     * they want to order a drink (assuming that you have defined an
-     * <code>OrderDrink</code> intent in your bot).</p> <note> <p>The
-     * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one. For example, your bot may not solicit both
-     * the following: </p> <p> Follow up prompt - "<code>$session.FirstName</code>,
-     * your pizza order has been placed. Would you like to order a drink or a dessert?"
-     * </p> <p> Conclusion statement - "<code>$session.FirstName</code>, your pizza
-     * order has been placed." </p> </note>
+     * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
+     * an intent. For example, after the <code>OrderPizza</code> intent is fulfilled,
+     * you might prompt the user to order a drink.</p> <p>The action that Amazon Lex
+     * takes depends on the user's response, as follows:</p> <ul> <li> <p>If the user
+     * says "Yes" it responds with the clarification prompt that is configured for the
+     * bot.</p> </li> <li> <p>if the user says "Yes" and continues with an utterance
+     * that triggers an intent it starts a conversation for the intent.</p> </li> <li>
+     * <p>If the user says "No" it responds with the rejection statement configured for
+     * the the follow-up prompt.</p> </li> <li> <p>If it doesn't recognize the
+     * utterance it repeats the follow-up prompt again.</p> </li> </ul> <p>The
+     * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+     * are mutually exclusive. You can specify only one. </p>
      */
     inline PutIntentRequest& WithFollowUpPrompt(const FollowUpPrompt& value) { SetFollowUpPrompt(value); return *this;}
 
     /**
-     * <p>A user prompt for additional activity after an intent is fulfilled. For
-     * example, after the <code>OrderPizza</code> intent is fulfilled (your Lambda
-     * function placed an order with a pizzeria), you might prompt the user to find if
-     * they want to order a drink (assuming that you have defined an
-     * <code>OrderDrink</code> intent in your bot).</p> <note> <p>The
-     * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one. For example, your bot may not solicit both
-     * the following: </p> <p> Follow up prompt - "<code>$session.FirstName</code>,
-     * your pizza order has been placed. Would you like to order a drink or a dessert?"
-     * </p> <p> Conclusion statement - "<code>$session.FirstName</code>, your pizza
-     * order has been placed." </p> </note>
+     * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
+     * an intent. For example, after the <code>OrderPizza</code> intent is fulfilled,
+     * you might prompt the user to order a drink.</p> <p>The action that Amazon Lex
+     * takes depends on the user's response, as follows:</p> <ul> <li> <p>If the user
+     * says "Yes" it responds with the clarification prompt that is configured for the
+     * bot.</p> </li> <li> <p>if the user says "Yes" and continues with an utterance
+     * that triggers an intent it starts a conversation for the intent.</p> </li> <li>
+     * <p>If the user says "No" it responds with the rejection statement configured for
+     * the the follow-up prompt.</p> </li> <li> <p>If it doesn't recognize the
+     * utterance it repeats the follow-up prompt again.</p> </li> </ul> <p>The
+     * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
+     * are mutually exclusive. You can specify only one. </p>
      */
     inline PutIntentRequest& WithFollowUpPrompt(FollowUpPrompt&& value) { SetFollowUpPrompt(std::move(value)); return *this;}
 

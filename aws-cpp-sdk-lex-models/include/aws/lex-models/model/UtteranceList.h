@@ -85,44 +85,51 @@ namespace Model
     inline UtteranceList& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline const Aws::Vector<UtteranceData>& GetUtterances() const{ return m_utterances; }
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline void SetUtterances(const Aws::Vector<UtteranceData>& value) { m_utterancesHasBeenSet = true; m_utterances = value; }
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline void SetUtterances(Aws::Vector<UtteranceData>&& value) { m_utterancesHasBeenSet = true; m_utterances = std::move(value); }
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline UtteranceList& WithUtterances(const Aws::Vector<UtteranceData>& value) { SetUtterances(value); return *this;}
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline UtteranceList& WithUtterances(Aws::Vector<UtteranceData>&& value) { SetUtterances(std::move(value)); return *this;}
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline UtteranceList& AddUtterances(const UtteranceData& value) { m_utterancesHasBeenSet = true; m_utterances.push_back(value); return *this; }
 
     /**
-     * <p>One or more objects that contain information about the utterances that have
-     * been made to a bot. The maximum number of object is 100.</p>
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
      */
     inline UtteranceList& AddUtterances(UtteranceData&& value) { m_utterancesHasBeenSet = true; m_utterances.push_back(std::move(value)); return *this; }
 

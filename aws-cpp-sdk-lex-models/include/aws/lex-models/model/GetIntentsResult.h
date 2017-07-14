@@ -44,37 +44,44 @@ namespace Model
     GetIntentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline const Aws::Vector<IntentMetadata>& GetIntents() const{ return m_intents; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(const Aws::Vector<IntentMetadata>& value) { m_intents = value; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(Aws::Vector<IntentMetadata>&& value) { m_intents = std::move(value); }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetIntentsResult& WithIntents(const Aws::Vector<IntentMetadata>& value) { SetIntents(value); return *this;}
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetIntentsResult& WithIntents(Aws::Vector<IntentMetadata>&& value) { SetIntents(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetIntentsResult& AddIntents(const IntentMetadata& value) { m_intents.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetIntentsResult& AddIntents(IntentMetadata&& value) { m_intents.push_back(std::move(value)); return *this; }
 

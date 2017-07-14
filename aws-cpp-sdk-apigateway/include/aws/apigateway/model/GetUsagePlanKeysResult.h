@@ -74,37 +74,37 @@ namespace Model
     inline GetUsagePlanKeysResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<UsagePlanKey>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<UsagePlanKey>& value) { m_items = value; }
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<UsagePlanKey>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlanKeysResult& WithItems(const Aws::Vector<UsagePlanKey>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlanKeysResult& WithItems(Aws::Vector<UsagePlanKey>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlanKeysResult& AddItems(const UsagePlanKey& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Gets the current item of the usage plan keys collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlanKeysResult& AddItems(UsagePlanKey&& value) { m_items.push_back(std::move(value)); return *this; }
 

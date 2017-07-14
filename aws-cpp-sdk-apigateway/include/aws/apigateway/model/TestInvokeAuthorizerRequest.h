@@ -40,37 +40,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 

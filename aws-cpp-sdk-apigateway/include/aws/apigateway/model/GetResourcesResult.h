@@ -73,37 +73,37 @@ namespace Model
     inline GetResourcesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<Resource>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<Resource>& value) { m_items = value; }
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<Resource>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetResourcesResult& WithItems(const Aws::Vector<Resource>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetResourcesResult& WithItems(Aws::Vector<Resource>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetResourcesResult& AddItems(const Resource& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Gets the current <a>Resource</a> resource in the collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetResourcesResult& AddItems(Resource&& value) { m_items.push_back(std::move(value)); return *this; }
 

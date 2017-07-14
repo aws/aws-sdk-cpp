@@ -79,51 +79,58 @@ namespace Model
     inline GetUtterancesViewResult& WithBotName(const char* value) { SetBotName(value); return *this;}
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline const Aws::Vector<UtteranceList>& GetUtterances() const{ return m_utterances; }
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline void SetUtterances(const Aws::Vector<UtteranceList>& value) { m_utterances = value; }
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline void SetUtterances(Aws::Vector<UtteranceList>&& value) { m_utterances = std::move(value); }
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline GetUtterancesViewResult& WithUtterances(const Aws::Vector<UtteranceList>& value) { SetUtterances(value); return *this;}
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline GetUtterancesViewResult& WithUtterances(Aws::Vector<UtteranceList>&& value) { SetUtterances(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline GetUtterancesViewResult& AddUtterances(const UtteranceList& value) { m_utterances.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, each containing a list of objects describing the
-     * utterances that were processed by your bot. The response contains a maximum of
-     * 100 <code>UtteranceData</code> objects for each version.</p>
+     * <p>An array of <a>UtteranceList</a> objects, each containing a list of
+     * <a>UtteranceData</a> objects describing the utterances that were processed by
+     * your bot. The response contains a maximum of 100 <code>UtteranceData</code>
+     * objects for each version.</p>
      */
     inline GetUtterancesViewResult& AddUtterances(UtteranceList&& value) { m_utterances.push_back(std::move(value)); return *this; }
 

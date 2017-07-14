@@ -66,62 +66,110 @@ namespace Model
     inline ImportRestApiRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Custom header parameters as part of the request.</p>
+     * <p>Custom header parameters as part of the request. For example, to exclude
+     * <a>DocumentationParts</a> from an imported API, set
+     * <code>ignore=documentation</code> as a <code>parameters</code> value, as in the
+     * AWS CLI command of <code>aws apigateway import-rest-api --parameters
+     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -196,31 +196,31 @@ namespace Model
 
     /**
      * <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before
-     * fulfilling the user's request. For more information, see . </p>
+     * fulfilling the user's request. For more information, see <a>PutIntent</a>. </p>
      */
     inline const Prompt& GetConfirmationPrompt() const{ return m_confirmationPrompt; }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before
-     * fulfilling the user's request. For more information, see . </p>
+     * fulfilling the user's request. For more information, see <a>PutIntent</a>. </p>
      */
     inline void SetConfirmationPrompt(const Prompt& value) { m_confirmationPrompt = value; }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before
-     * fulfilling the user's request. For more information, see . </p>
+     * fulfilling the user's request. For more information, see <a>PutIntent</a>. </p>
      */
     inline void SetConfirmationPrompt(Prompt&& value) { m_confirmationPrompt = std::move(value); }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before
-     * fulfilling the user's request. For more information, see . </p>
+     * fulfilling the user's request. For more information, see <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithConfirmationPrompt(const Prompt& value) { SetConfirmationPrompt(value); return *this;}
 
     /**
      * <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before
-     * fulfilling the user's request. For more information, see . </p>
+     * fulfilling the user's request. For more information, see <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
 
@@ -261,31 +261,36 @@ namespace Model
 
     /**
      * <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user
-     * activity after the intent is fulfilled. For more information, see .</p>
+     * activity after the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>.</p>
      */
     inline const FollowUpPrompt& GetFollowUpPrompt() const{ return m_followUpPrompt; }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user
-     * activity after the intent is fulfilled. For more information, see .</p>
+     * activity after the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>.</p>
      */
     inline void SetFollowUpPrompt(const FollowUpPrompt& value) { m_followUpPrompt = value; }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user
-     * activity after the intent is fulfilled. For more information, see .</p>
+     * activity after the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>.</p>
      */
     inline void SetFollowUpPrompt(FollowUpPrompt&& value) { m_followUpPrompt = std::move(value); }
 
     /**
      * <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user
-     * activity after the intent is fulfilled. For more information, see .</p>
+     * activity after the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>.</p>
      */
     inline GetIntentResult& WithFollowUpPrompt(const FollowUpPrompt& value) { SetFollowUpPrompt(value); return *this;}
 
     /**
      * <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user
-     * activity after the intent is fulfilled. For more information, see .</p>
+     * activity after the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>.</p>
      */
     inline GetIntentResult& WithFollowUpPrompt(FollowUpPrompt&& value) { SetFollowUpPrompt(std::move(value)); return *this;}
 
@@ -321,56 +326,61 @@ namespace Model
 
     /**
      * <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for
-     * each user input. For more information, see . </p>
+     * each user input. For more information, see <a>PutIntent</a>. </p>
      */
     inline const CodeHook& GetDialogCodeHook() const{ return m_dialogCodeHook; }
 
     /**
      * <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for
-     * each user input. For more information, see . </p>
+     * each user input. For more information, see <a>PutIntent</a>. </p>
      */
     inline void SetDialogCodeHook(const CodeHook& value) { m_dialogCodeHook = value; }
 
     /**
      * <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for
-     * each user input. For more information, see . </p>
+     * each user input. For more information, see <a>PutIntent</a>. </p>
      */
     inline void SetDialogCodeHook(CodeHook&& value) { m_dialogCodeHook = std::move(value); }
 
     /**
      * <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for
-     * each user input. For more information, see . </p>
+     * each user input. For more information, see <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithDialogCodeHook(const CodeHook& value) { SetDialogCodeHook(value); return *this;}
 
     /**
      * <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for
-     * each user input. For more information, see . </p>
+     * each user input. For more information, see <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithDialogCodeHook(CodeHook&& value) { SetDialogCodeHook(std::move(value)); return *this;}
 
     /**
-     * <p>Describes how the intent is fulfilled. For more information, see . </p>
+     * <p>Describes how the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>. </p>
      */
     inline const FulfillmentActivity& GetFulfillmentActivity() const{ return m_fulfillmentActivity; }
 
     /**
-     * <p>Describes how the intent is fulfilled. For more information, see . </p>
+     * <p>Describes how the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>. </p>
      */
     inline void SetFulfillmentActivity(const FulfillmentActivity& value) { m_fulfillmentActivity = value; }
 
     /**
-     * <p>Describes how the intent is fulfilled. For more information, see . </p>
+     * <p>Describes how the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>. </p>
      */
     inline void SetFulfillmentActivity(FulfillmentActivity&& value) { m_fulfillmentActivity = std::move(value); }
 
     /**
-     * <p>Describes how the intent is fulfilled. For more information, see . </p>
+     * <p>Describes how the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithFulfillmentActivity(const FulfillmentActivity& value) { SetFulfillmentActivity(value); return *this;}
 
     /**
-     * <p>Describes how the intent is fulfilled. For more information, see . </p>
+     * <p>Describes how the intent is fulfilled. For more information, see
+     * <a>PutIntent</a>. </p>
      */
     inline GetIntentResult& WithFulfillmentActivity(FulfillmentActivity&& value) { SetFulfillmentActivity(std::move(value)); return *this;}
 

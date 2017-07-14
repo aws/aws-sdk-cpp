@@ -84,51 +84,65 @@ namespace Model
     inline Statement& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline const Aws::String& GetResponseCard() const{ return m_responseCard; }
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline void SetResponseCard(const Aws::String& value) { m_responseCardHasBeenSet = true; m_responseCard = value; }
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline void SetResponseCard(Aws::String&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::move(value); }
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline void SetResponseCard(const char* value) { m_responseCardHasBeenSet = true; m_responseCard.assign(value); }
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline Statement& WithResponseCard(const Aws::String& value) { SetResponseCard(value); return *this;}
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline Statement& WithResponseCard(Aws::String&& value) { SetResponseCard(std::move(value)); return *this;}
 
     /**
-     * <p> At runtime, if the client is using the API, Amazon Lex includes the response
-     * card in the response. It substitutes all of the session attributes and slot
-     * values for placeholders in the response card. </p>
+     * <p> At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * API, Amazon Lex includes the response card in the response. It substitutes all
+     * of the session attributes and slot values for placeholders in the response card.
+     * </p>
      */
     inline Statement& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
 

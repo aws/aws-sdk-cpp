@@ -119,97 +119,104 @@ namespace Model
     inline GetBotResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline const Aws::Vector<Intent>& GetIntents() const{ return m_intents; }
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(const Aws::Vector<Intent>& value) { m_intents = value; }
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(Aws::Vector<Intent>&& value) { m_intents = std::move(value); }
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithIntents(const Aws::Vector<Intent>& value) { SetIntents(value); return *this;}
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithIntents(Aws::Vector<Intent>&& value) { SetIntents(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetBotResult& AddIntents(const Intent& value) { m_intents.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline GetBotResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The message Amazon Lex uses when it doesn't understand the user's request.
-     * For more information, see . </p>
+     * For more information, see <a>PutBot</a>. </p>
      */
     inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
 
     /**
      * <p>The message Amazon Lex uses when it doesn't understand the user's request.
-     * For more information, see . </p>
+     * For more information, see <a>PutBot</a>. </p>
      */
     inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPrompt = value; }
 
     /**
      * <p>The message Amazon Lex uses when it doesn't understand the user's request.
-     * For more information, see . </p>
+     * For more information, see <a>PutBot</a>. </p>
      */
     inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPrompt = std::move(value); }
 
     /**
      * <p>The message Amazon Lex uses when it doesn't understand the user's request.
-     * For more information, see . </p>
+     * For more information, see <a>PutBot</a>. </p>
      */
     inline GetBotResult& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
 
     /**
      * <p>The message Amazon Lex uses when it doesn't understand the user's request.
-     * For more information, see . </p>
+     * For more information, see <a>PutBot</a>. </p>
      */
     inline GetBotResult& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
 
     /**
      * <p>The message that Amazon Lex returns when the user elects to end the
-     * conversation without completing it. For more information, see .</p>
+     * conversation without completing it. For more information, see <a>PutBot</a>.</p>
      */
     inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
 
     /**
      * <p>The message that Amazon Lex returns when the user elects to end the
-     * conversation without completing it. For more information, see .</p>
+     * conversation without completing it. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
 
     /**
      * <p>The message that Amazon Lex returns when the user elects to end the
-     * conversation without completing it. For more information, see .</p>
+     * conversation without completing it. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
 
     /**
      * <p>The message that Amazon Lex returns when the user elects to end the
-     * conversation without completing it. For more information, see .</p>
+     * conversation without completing it. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
 
     /**
      * <p>The message that Amazon Lex returns when the user elects to end the
-     * conversation without completing it. For more information, see .</p>
+     * conversation without completing it. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
 
@@ -357,61 +364,61 @@ namespace Model
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSeconds = value; }
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetVoiceId(const Aws::String& value) { m_voiceId = value; }
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetVoiceId(Aws::String&& value) { m_voiceId = std::move(value); }
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetVoiceId(const char* value) { m_voiceId.assign(value); }
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-     * user. For more information, see .</p>
+     * user. For more information, see <a>PutBot</a>.</p>
      */
     inline GetBotResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 

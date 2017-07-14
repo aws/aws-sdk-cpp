@@ -426,14 +426,14 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
-         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
-         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-         * returns a <code>ResourceInUseException</code> exception that includes a
-         * reference to the alias that refers to the bot. To remove the reference to the
-         * bot, delete the alias. If you get the same exception again, delete the referring
-         * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteBot</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
+         * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
+         * exception that includes a reference to the alias that refers to the bot. To
+         * remove the reference to the bot, delete the alias. If you get the same exception
+         * again, delete the referring alias until the <code>DeleteBot</code> operation is
+         * successful.</p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBot</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">AWS
          * API Reference</a></p>
          */
@@ -441,14 +441,14 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
-         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
-         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-         * returns a <code>ResourceInUseException</code> exception that includes a
-         * reference to the alias that refers to the bot. To remove the reference to the
-         * bot, delete the alias. If you get the same exception again, delete the referring
-         * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteBot</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
+         * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
+         * exception that includes a reference to the alias that refers to the bot. To
+         * remove the reference to the bot, delete the alias. If you get the same exception
+         * again, delete the referring alias until the <code>DeleteBot</code> operation is
+         * successful.</p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBot</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">AWS
          * API Reference</a></p>
          *
@@ -458,14 +458,14 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
-         * To delete a specific version of the bot, use the operation.</p> <p>If a bot has
-         * an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-         * returns a <code>ResourceInUseException</code> exception that includes a
-         * reference to the alias that refers to the bot. To remove the reference to the
-         * bot, delete the alias. If you get the same exception again, delete the referring
-         * alias until the <code>DeleteBot</code> operation is successful.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteBot</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
+         * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
+         * exception that includes a reference to the alias that refers to the bot. To
+         * remove the reference to the bot, delete the alias. If you get the same exception
+         * again, delete the referring alias until the <code>DeleteBot</code> operation is
+         * successful.</p> <p>This operation requires permissions for the
+         * <code>lex:DeleteBot</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">AWS
          * API Reference</a></p>
          *
@@ -558,7 +558,7 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
-         * operation. </p> <p>This operation requires permissions for the
+         * <a>DeleteBot</a> operation. </p> <p>This operation requires permissions for the
          * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
          * API Reference</a></p>
@@ -567,7 +567,7 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
-         * operation. </p> <p>This operation requires permissions for the
+         * <a>DeleteBot</a> operation. </p> <p>This operation requires permissions for the
          * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
          * API Reference</a></p>
@@ -578,7 +578,7 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
-         * operation. </p> <p>This operation requires permissions for the
+         * <a>DeleteBot</a> operation. </p> <p>This operation requires permissions for the
          * <code>lex:DeleteBotVersion</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">AWS
          * API Reference</a></p>
@@ -589,17 +589,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
-         * version. To delete a specific version of the intent, use the operation.</p> <p>
-         * You can delete a version of an intent only if it is not referenced. To delete an
-         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
-         * must remove those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, it provides an example reference
-         * that shows where the intent is referenced. To remove the reference to the
-         * intent, either update the bot or delete it. If you get the same exception when
-         * you attempt to delete the intent again, repeat until the intent has no
-         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
-         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
-         * action. </p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the intent, use the
+         * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
+         * intent only if it is not referenced. To delete an intent that is referred to in
+         * one or more bots (see <a>how-it-works</a>), you must remove those references
+         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * exception, it provides an example reference that shows where the intent is
+         * referenced. To remove the reference to the intent, either update the bot or
+         * delete it. If you get the same exception when you attempt to delete the intent
+         * again, repeat until the intent has no references and the call to
+         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          */
@@ -607,17 +608,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
-         * version. To delete a specific version of the intent, use the operation.</p> <p>
-         * You can delete a version of an intent only if it is not referenced. To delete an
-         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
-         * must remove those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, it provides an example reference
-         * that shows where the intent is referenced. To remove the reference to the
-         * intent, either update the bot or delete it. If you get the same exception when
-         * you attempt to delete the intent again, repeat until the intent has no
-         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
-         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
-         * action. </p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the intent, use the
+         * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
+         * intent only if it is not referenced. To delete an intent that is referred to in
+         * one or more bots (see <a>how-it-works</a>), you must remove those references
+         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * exception, it provides an example reference that shows where the intent is
+         * referenced. To remove the reference to the intent, either update the bot or
+         * delete it. If you get the same exception when you attempt to delete the intent
+         * again, repeat until the intent has no references and the call to
+         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          *
@@ -627,17 +629,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
-         * version. To delete a specific version of the intent, use the operation.</p> <p>
-         * You can delete a version of an intent only if it is not referenced. To delete an
-         * intent that is referred to in one or more bots (see <a>how-it-works</a>), you
-         * must remove those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, it provides an example reference
-         * that shows where the intent is referenced. To remove the reference to the
-         * intent, either update the bot or delete it. If you get the same exception when
-         * you attempt to delete the intent again, repeat until the intent has no
-         * references and the call to <code>DeleteIntent</code> is successful. </p> </note>
-         * <p> This operation requires permission for the <code>lex:DeleteIntent</code>
-         * action. </p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the intent, use the
+         * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
+         * intent only if it is not referenced. To delete an intent that is referred to in
+         * one or more bots (see <a>how-it-works</a>), you must remove those references
+         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * exception, it provides an example reference that shows where the intent is
+         * referenced. To remove the reference to the intent, either update the bot or
+         * delete it. If you get the same exception when you attempt to delete the intent
+         * again, repeat until the intent has no references and the call to
+         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
          * API Reference</a></p>
          *
@@ -647,8 +650,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of an intent. To delete all versions of a intent,
-         * use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * use the <a>DeleteIntent</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
          * API Reference</a></p>
          */
@@ -656,8 +660,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of an intent. To delete all versions of a intent,
-         * use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * use the <a>DeleteIntent</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
          * API Reference</a></p>
          *
@@ -667,8 +672,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of an intent. To delete all versions of a intent,
-         * use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * use the <a>DeleteIntent</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteIntentVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">AWS
          * API Reference</a></p>
          *
@@ -678,17 +684,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. To delete a specific version of the slot type, use the operation.</p>
-         * <p> You can delete a version of a slot type only if it is not referenced. To
-         * delete a slot type that is referred to in one or more intents, you must remove
-         * those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, the exception provides an example
-         * reference that shows the intent where the slot type is referenced. To remove the
-         * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the slot type again, repeat until
-         * the slot type has no references and the <code>DeleteSlotType</code> call is
-         * successful. </p> </note> <p>This operation requires permission for the
-         * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the slot type, use the
+         * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
+         * slot type only if it is not referenced. To delete a slot type that is referred
+         * to in one or more intents, you must remove those references first. </p> <note>
+         * <p> If you get the <code>ResourceInUseException</code> exception, the exception
+         * provides an example reference that shows the intent where the slot type is
+         * referenced. To remove the reference to the slot type, either update the intent
+         * or delete it. If you get the same exception when you attempt to delete the slot
+         * type again, repeat until the slot type has no references and the
+         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * requires permission for the <code>lex:DeleteSlotType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
          */
@@ -696,17 +703,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. To delete a specific version of the slot type, use the operation.</p>
-         * <p> You can delete a version of a slot type only if it is not referenced. To
-         * delete a slot type that is referred to in one or more intents, you must remove
-         * those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, the exception provides an example
-         * reference that shows the intent where the slot type is referenced. To remove the
-         * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the slot type again, repeat until
-         * the slot type has no references and the <code>DeleteSlotType</code> call is
-         * successful. </p> </note> <p>This operation requires permission for the
-         * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the slot type, use the
+         * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
+         * slot type only if it is not referenced. To delete a slot type that is referred
+         * to in one or more intents, you must remove those references first. </p> <note>
+         * <p> If you get the <code>ResourceInUseException</code> exception, the exception
+         * provides an example reference that shows the intent where the slot type is
+         * referenced. To remove the reference to the slot type, either update the intent
+         * or delete it. If you get the same exception when you attempt to delete the slot
+         * type again, repeat until the slot type has no references and the
+         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * requires permission for the <code>lex:DeleteSlotType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
          *
@@ -716,17 +724,18 @@ namespace Model
 
         /**
          * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
-         * version. To delete a specific version of the slot type, use the operation.</p>
-         * <p> You can delete a version of a slot type only if it is not referenced. To
-         * delete a slot type that is referred to in one or more intents, you must remove
-         * those references first. </p> <note> <p> If you get the
-         * <code>ResourceInUseException</code> exception, the exception provides an example
-         * reference that shows the intent where the slot type is referenced. To remove the
-         * reference to the slot type, either update the intent or delete it. If you get
-         * the same exception when you attempt to delete the slot type again, repeat until
-         * the slot type has no references and the <code>DeleteSlotType</code> call is
-         * successful. </p> </note> <p>This operation requires permission for the
-         * <code>lex:DeleteSlotType</code> action.</p><p><h3>See Also:</h3>   <a
+         * version. To delete a specific version of the slot type, use the
+         * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
+         * slot type only if it is not referenced. To delete a slot type that is referred
+         * to in one or more intents, you must remove those references first. </p> <note>
+         * <p> If you get the <code>ResourceInUseException</code> exception, the exception
+         * provides an example reference that shows the intent where the slot type is
+         * referenced. To remove the reference to the slot type, either update the intent
+         * or delete it. If you get the same exception when you attempt to delete the slot
+         * type again, repeat until the slot type has no references and the
+         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * requires permission for the <code>lex:DeleteSlotType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
          * API Reference</a></p>
          *
@@ -736,8 +745,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a slot type. To delete all versions of a slot
-         * type, use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * type, use the <a>DeleteSlotType</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
          * API Reference</a></p>
          */
@@ -745,8 +755,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a slot type. To delete all versions of a slot
-         * type, use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * type, use the <a>DeleteSlotType</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
          * API Reference</a></p>
          *
@@ -756,8 +767,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a slot type. To delete all versions of a slot
-         * type, use the operation. </p> <p>This operation requires permissions for the
-         * <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See Also:</h3>   <a
+         * type, use the <a>DeleteSlotType</a> operation. </p> <p>This operation requires
+         * permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">AWS
          * API Reference</a></p>
          *
@@ -769,11 +781,11 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * operation, and then stored indefinately for use in improving the ability of your
-         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
-         * operation to manually delete stored utterances for a specific user.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteUtterances</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * improving the ability of your bot to respond to user input.</p> <p>Use the
+         * <code>DeleteStoredUtterances</code> operation to manually delete stored
+         * utterances for a specific user.</p> <p>This operation requires permissions for
+         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          */
@@ -783,11 +795,11 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * operation, and then stored indefinately for use in improving the ability of your
-         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
-         * operation to manually delete stored utterances for a specific user.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteUtterances</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * improving the ability of your bot to respond to user input.</p> <p>Use the
+         * <code>DeleteStoredUtterances</code> operation to manually delete stored
+         * utterances for a specific user.</p> <p>This operation requires permissions for
+         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -799,11 +811,11 @@ namespace Model
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot unless the <code>childDirected</code> field in the bot is set
          * to <code>true</code>. Utterances are stored for 15 days for use with the
-         * operation, and then stored indefinately for use in improving the ability of your
-         * bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code>
-         * operation to manually delete stored utterances for a specific user.</p> <p>This
-         * operation requires permissions for the <code>lex:DeleteUtterances</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <a>GetUtterancesView</a> operation, and then stored indefinately for use in
+         * improving the ability of your bot to respond to user input.</p> <p>Use the
+         * <code>DeleteStoredUtterances</code> operation to manually delete stored
+         * utterances for a specific user.</p> <p>This operation requires permissions for
+         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -1438,7 +1450,7 @@ namespace Model
          * version.</p> <p>If the bot's <code>childDirected</code> field is set to
          * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
          * with the <code>GetUtterancesView</code> operation. For more information, see
-         * .</p> <p>This operation requires permissions for the
+         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1462,7 +1474,7 @@ namespace Model
          * version.</p> <p>If the bot's <code>childDirected</code> field is set to
          * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
          * with the <code>GetUtterancesView</code> operation. For more information, see
-         * .</p> <p>This operation requires permissions for the
+         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1488,7 +1500,7 @@ namespace Model
          * version.</p> <p>If the bot's <code>childDirected</code> field is set to
          * <code>true</code>, utterances for the bot are not stored and cannot be retrieved
          * with the <code>GetUtterancesView</code> operation. For more information, see
-         * .</p> <p>This operation requires permissions for the
+         * <a>PutBot</a>.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1499,11 +1511,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you only required to specify a name. You can use this
-         * to add intents later, or to remove intents from an existing bot. When you create
-         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
-         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
-         * more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you are only required to specify a name. You can use
+         * this to add intents later, or to remove intents from an existing bot. When you
+         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * returns the <code/> response <code>FAILED</code>. You can build the bot after
+         * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values
@@ -1520,11 +1532,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you only required to specify a name. You can use this
-         * to add intents later, or to remove intents from an existing bot. When you create
-         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
-         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
-         * more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you are only required to specify a name. You can use
+         * this to add intents later, or to remove intents from an existing bot. When you
+         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * returns the <code/> response <code>FAILED</code>. You can build the bot after
+         * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values
@@ -1543,11 +1555,11 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
-         * you create or update a bot you only required to specify a name. You can use this
-         * to add intents later, or to remove intents from an existing bot. When you create
-         * a bot with a name only, the bot is created or updated but Amazon Lex returns the
-         * <code/> response <code>FAILED</code>. You can build the bot after you add one or
-         * more intents. For more information about Amazon Lex bots, see
+         * you create or update a bot you are only required to specify a name. You can use
+         * this to add intents later, or to remove intents from an existing bot. When you
+         * create a bot with a name only, the bot is created or updated but Amazon Lex
+         * returns the <code/> response <code>FAILED</code>. You can build the bot after
+         * you add one or more intents. For more information about Amazon Lex bots, see
          * <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the
          * fields in the request replace the existing values in the <code>$LATEST</code>
          * version of the bot. Amazon Lex removes any fields that you don't provide values

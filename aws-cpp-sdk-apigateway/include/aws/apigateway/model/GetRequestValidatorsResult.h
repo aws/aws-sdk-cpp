@@ -76,44 +76,37 @@ namespace Model
     inline GetRequestValidatorsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<RequestValidator>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<RequestValidator>& value) { m_items = value; }
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<RequestValidator>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRequestValidatorsResult& WithItems(const Aws::Vector<RequestValidator>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRequestValidatorsResult& WithItems(Aws::Vector<RequestValidator>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRequestValidatorsResult& AddItems(const RequestValidator& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of <a>RequestValidator</a> resources in the
-     * <a>RequestValidators</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetRequestValidatorsResult& AddItems(RequestValidator&& value) { m_items.push_back(std::move(value)); return *this; }
 

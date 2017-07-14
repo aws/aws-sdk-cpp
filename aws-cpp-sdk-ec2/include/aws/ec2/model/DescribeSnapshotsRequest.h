@@ -49,7 +49,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -81,7 +81,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -113,7 +113,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -145,7 +145,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -177,7 +177,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -209,7 +209,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
@@ -241,7 +241,7 @@ namespace Model
      * from an Amazon-maintained list (<code>amazon</code> |
      * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
      * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM consolew.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
      * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
      * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
      * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>

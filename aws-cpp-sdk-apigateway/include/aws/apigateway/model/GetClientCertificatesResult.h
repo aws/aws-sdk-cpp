@@ -73,44 +73,37 @@ namespace Model
     inline GetClientCertificatesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<ClientCertificate>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<ClientCertificate>& value) { m_items = value; }
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<ClientCertificate>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetClientCertificatesResult& WithItems(const Aws::Vector<ClientCertificate>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetClientCertificatesResult& WithItems(Aws::Vector<ClientCertificate>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetClientCertificatesResult& AddItems(const ClientCertificate& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of any <a>ClientCertificate</a> resources in the collection
-     * of <a>ClientCertificate</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetClientCertificatesResult& AddItems(ClientCertificate&& value) { m_items.push_back(std::move(value)); return *this; }
 

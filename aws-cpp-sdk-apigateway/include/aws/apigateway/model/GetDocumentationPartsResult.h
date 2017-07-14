@@ -73,44 +73,37 @@ namespace Model
     inline GetDocumentationPartsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<DocumentationPart>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<DocumentationPart>& value) { m_items = value; }
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<DocumentationPart>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationPartsResult& WithItems(const Aws::Vector<DocumentationPart>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationPartsResult& WithItems(Aws::Vector<DocumentationPart>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationPartsResult& AddItems(const DocumentationPart& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of <a>DocumentationPart</a> resources in the
-     * <a>DocumentationParts</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDocumentationPartsResult& AddItems(DocumentationPart&& value) { m_items.push_back(std::move(value)); return *this; }
 

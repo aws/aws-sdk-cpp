@@ -73,44 +73,37 @@ namespace Model
     inline GetUsagePlansResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<UsagePlan>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<UsagePlan>& value) { m_items = value; }
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<UsagePlan>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlansResult& WithItems(const Aws::Vector<UsagePlan>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlansResult& WithItems(Aws::Vector<UsagePlan>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlansResult& AddItems(const UsagePlan& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Gets the current item when enumerating the collection of
-     * <a>UsagePlan</a>.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetUsagePlansResult& AddItems(UsagePlan&& value) { m_items.push_back(std::move(value)); return *this; }
 

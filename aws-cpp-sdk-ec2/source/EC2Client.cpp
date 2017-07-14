@@ -70,6 +70,7 @@
 #include <aws/ec2/model/CreateNetworkAclRequest.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfaceRequest.h>
+#include <aws/ec2/model/CreateNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/ec2/model/CreateReservedInstancesListingRequest.h>
 #include <aws/ec2/model/CreateRouteRequest.h>
@@ -96,6 +97,7 @@
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
 #include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
+#include <aws/ec2/model/DeleteNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/DeletePlacementGroupRequest.h>
 #include <aws/ec2/model/DeleteRouteRequest.h>
 #include <aws/ec2/model/DeleteRouteTableRequest.h>
@@ -143,6 +145,7 @@
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/ec2/model/DescribeNetworkAclsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeRequest.h>
+#include <aws/ec2/model/DescribeNetworkInterfacePermissionsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 #include <aws/ec2/model/DescribePrefixListsRequest.h>
@@ -1827,6 +1830,41 @@ void EC2Client::CreateNetworkInterfaceAsyncHelper(const CreateNetworkInterfaceRe
   handler(this, request, CreateNetworkInterface(request), context);
 }
 
+CreateNetworkInterfacePermissionOutcome EC2Client::CreateNetworkInterfacePermission(const CreateNetworkInterfacePermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateNetworkInterfacePermissionOutcome(CreateNetworkInterfacePermissionResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateNetworkInterfacePermissionOutcome(outcome.GetError());
+  }
+}
+
+CreateNetworkInterfacePermissionOutcomeCallable EC2Client::CreateNetworkInterfacePermissionCallable(const CreateNetworkInterfacePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkInterfacePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkInterfacePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateNetworkInterfacePermissionAsync(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkInterfacePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateNetworkInterfacePermissionAsyncHelper(const CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNetworkInterfacePermission(request), context);
+}
+
 CreatePlacementGroupOutcome EC2Client::CreatePlacementGroup(const CreatePlacementGroupRequest& request) const
 {
   Aws::StringStream ss;
@@ -2735,6 +2773,41 @@ void EC2Client::DeleteNetworkInterfaceAsync(const DeleteNetworkInterfaceRequest&
 void EC2Client::DeleteNetworkInterfaceAsyncHelper(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteNetworkInterface(request), context);
+}
+
+DeleteNetworkInterfacePermissionOutcome EC2Client::DeleteNetworkInterfacePermission(const DeleteNetworkInterfacePermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteNetworkInterfacePermissionOutcome(DeleteNetworkInterfacePermissionResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteNetworkInterfacePermissionOutcome(outcome.GetError());
+  }
+}
+
+DeleteNetworkInterfacePermissionOutcomeCallable EC2Client::DeleteNetworkInterfacePermissionCallable(const DeleteNetworkInterfacePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkInterfacePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkInterfacePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteNetworkInterfacePermissionAsync(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkInterfacePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteNetworkInterfacePermissionAsyncHelper(const DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNetworkInterfacePermission(request), context);
 }
 
 DeletePlacementGroupOutcome EC2Client::DeletePlacementGroup(const DeletePlacementGroupRequest& request) const
@@ -4380,6 +4453,41 @@ void EC2Client::DescribeNetworkInterfaceAttributeAsync(const DescribeNetworkInte
 void EC2Client::DescribeNetworkInterfaceAttributeAsyncHelper(const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeNetworkInterfaceAttribute(request), context);
+}
+
+DescribeNetworkInterfacePermissionsOutcome EC2Client::DescribeNetworkInterfacePermissions(const DescribeNetworkInterfacePermissionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeNetworkInterfacePermissionsOutcome(DescribeNetworkInterfacePermissionsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeNetworkInterfacePermissionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeNetworkInterfacePermissionsOutcomeCallable EC2Client::DescribeNetworkInterfacePermissionsCallable(const DescribeNetworkInterfacePermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNetworkInterfacePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNetworkInterfacePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeNetworkInterfacePermissionsAsync(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNetworkInterfacePermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeNetworkInterfacePermissionsAsyncHelper(const DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNetworkInterfacePermissions(request), context);
 }
 
 DescribeNetworkInterfacesOutcome EC2Client::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest& request) const

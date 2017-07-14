@@ -72,49 +72,49 @@ namespace Model
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline DeleteBotVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline DeleteBotVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
      * version of the bot. To delete the <code>$LATEST</code> version, use the
-     * operation.</p>
+     * <a>DeleteBot</a> operation.</p>
      */
     inline DeleteBotVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

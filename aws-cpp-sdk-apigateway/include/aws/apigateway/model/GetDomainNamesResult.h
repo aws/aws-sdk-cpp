@@ -73,44 +73,37 @@ namespace Model
     inline GetDomainNamesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<DomainName>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<DomainName>& value) { m_items = value; }
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<DomainName>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDomainNamesResult& WithItems(const Aws::Vector<DomainName>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDomainNamesResult& WithItems(Aws::Vector<DomainName>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDomainNamesResult& AddItems(const DomainName& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The current page of any <a>DomainName</a> resources in the collection of
-     * <a>DomainName</a> resources.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetDomainNamesResult& AddItems(DomainName&& value) { m_items.push_back(std::move(value)); return *this; }
 

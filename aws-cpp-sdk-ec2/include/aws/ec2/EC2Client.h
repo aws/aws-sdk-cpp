@@ -57,6 +57,7 @@
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
+#include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/CreateReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CreateRouteResponse.h>
 #include <aws/ec2/model/CreateRouteTableResponse.h>
@@ -73,6 +74,7 @@
 #include <aws/ec2/model/DeleteEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
+#include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
@@ -106,6 +108,7 @@
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
 #include <aws/ec2/model/DescribeNetworkAclsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeResponse.h>
+#include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsResponse.h>
 #include <aws/ec2/model/DescribePrefixListsResponse.h>
@@ -279,6 +282,7 @@ namespace Model
         class CreateNetworkAclRequest;
         class CreateNetworkAclEntryRequest;
         class CreateNetworkInterfaceRequest;
+        class CreateNetworkInterfacePermissionRequest;
         class CreatePlacementGroupRequest;
         class CreateReservedInstancesListingRequest;
         class CreateRouteRequest;
@@ -305,6 +309,7 @@ namespace Model
         class DeleteNetworkAclRequest;
         class DeleteNetworkAclEntryRequest;
         class DeleteNetworkInterfaceRequest;
+        class DeleteNetworkInterfacePermissionRequest;
         class DeletePlacementGroupRequest;
         class DeleteRouteRequest;
         class DeleteRouteTableRequest;
@@ -352,6 +357,7 @@ namespace Model
         class DescribeNatGatewaysRequest;
         class DescribeNetworkAclsRequest;
         class DescribeNetworkInterfaceAttributeRequest;
+        class DescribeNetworkInterfacePermissionsRequest;
         class DescribeNetworkInterfacesRequest;
         class DescribePlacementGroupsRequest;
         class DescribePrefixListsRequest;
@@ -509,6 +515,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateNetworkAclResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreatePlacementGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReservedInstancesListingResponse, Aws::Client::AWSError<EC2Errors>> CreateReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CreateRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteOutcome;
@@ -535,6 +542,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclEntryOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeletePlacementGroupOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteTableOutcome;
@@ -582,6 +590,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeNatGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkAclsResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkAclsOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkInterfaceAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkInterfaceAttributeOutcome;
+        typedef Aws::Utils::Outcome<DescribeNetworkInterfacePermissionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkInterfacePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkInterfacesResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkInterfacesOutcome;
         typedef Aws::Utils::Outcome<DescribePlacementGroupsResponse, Aws::Client::AWSError<EC2Errors>> DescribePlacementGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribePrefixListsResponse, Aws::Client::AWSError<EC2Errors>> DescribePrefixListsOutcome;
@@ -739,6 +748,7 @@ namespace Model
         typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
         typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
         typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
+        typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<CreatePlacementGroupOutcome> CreatePlacementGroupOutcomeCallable;
         typedef std::future<CreateReservedInstancesListingOutcome> CreateReservedInstancesListingOutcomeCallable;
         typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
@@ -765,6 +775,7 @@ namespace Model
         typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
         typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
         typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
+        typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<DeletePlacementGroupOutcome> DeletePlacementGroupOutcomeCallable;
         typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
         typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
@@ -812,6 +823,7 @@ namespace Model
         typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
         typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
         typedef std::future<DescribeNetworkInterfaceAttributeOutcome> DescribeNetworkInterfaceAttributeOutcomeCallable;
+        typedef std::future<DescribeNetworkInterfacePermissionsOutcome> DescribeNetworkInterfacePermissionsOutcomeCallable;
         typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
         typedef std::future<DescribePlacementGroupsOutcome> DescribePlacementGroupsOutcomeCallable;
         typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
@@ -972,6 +984,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclEntryRequest&, const Model::CreateNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclEntryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfaceRequest&, const Model::CreateNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfaceResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfacePermissionRequest&, const Model::CreateNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreatePlacementGroupRequest&, const Model::CreatePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlacementGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateReservedInstancesListingRequest&, const Model::CreateReservedInstancesListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReservedInstancesListingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateRouteRequest&, const Model::CreateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteResponseReceivedHandler;
@@ -998,6 +1011,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclRequest&, const Model::DeleteNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclEntryRequest&, const Model::DeleteNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclEntryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfaceRequest&, const Model::DeleteNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfaceResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfacePermissionRequest&, const Model::DeleteNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeletePlacementGroupRequest&, const Model::DeletePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlacementGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteRequest&, const Model::DeleteRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteTableRequest&, const Model::DeleteRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteTableResponseReceivedHandler;
@@ -1045,6 +1059,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkAclsRequest&, const Model::DescribeNetworkAclsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkAclsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfaceAttributeRequest&, const Model::DescribeNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfaceAttributeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacePermissionsRequest&, const Model::DescribeNetworkInterfacePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfacePermissionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacesRequest&, const Model::DescribeNetworkInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePlacementGroupsRequest&, const Model::DescribePlacementGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlacementGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrefixListsRequest&, const Model::DescribePrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrefixListsResponseReceivedHandler;
@@ -3272,6 +3287,40 @@ namespace Model
         virtual void CreateNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Grants an AWS authorized partner account permission to attach the specified
+         * network interface to an instance in their account.</p> <p>You can grant
+         * permission to a single AWS account only, and only one account at a
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNetworkInterfacePermissionOutcome CreateNetworkInterfacePermission(const Model::CreateNetworkInterfacePermissionRequest& request) const;
+
+        /**
+         * <p>Grants an AWS authorized partner account permission to attach the specified
+         * network interface to an instance in their account.</p> <p>You can grant
+         * permission to a single AWS account only, and only one account at a
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNetworkInterfacePermissionOutcomeCallable CreateNetworkInterfacePermissionCallable(const Model::CreateNetworkInterfacePermissionRequest& request) const;
+
+        /**
+         * <p>Grants an AWS authorized partner account permission to attach the specified
+         * network interface to an instance in their account.</p> <p>You can grant
+         * permission to a single AWS account only, and only one account at a
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a placement group that you launch cluster instances into. You must
          * give the group a name that's unique within the scope of your account.</p> <p>For
          * more information about placement groups and cluster instances, see <a
@@ -4568,6 +4617,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNetworkInterfaceAsync(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a permission for a network interface. By default, you cannot delete
+         * the permission if the account for which you're removing the permission has
+         * attached the network interface to an instance. However, you can force delete the
+         * permission, regardless of any attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkInterfacePermissionOutcome DeleteNetworkInterfacePermission(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
+
+        /**
+         * <p>Deletes a permission for a network interface. By default, you cannot delete
+         * the permission if the account for which you're removing the permission has
+         * attached the network interface to an instance. However, you can force delete the
+         * permission, regardless of any attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNetworkInterfacePermissionOutcomeCallable DeleteNetworkInterfacePermissionCallable(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
+
+        /**
+         * <p>Deletes a permission for a network interface. By default, you cannot delete
+         * the permission if the account for which you're removing the permission has
+         * attached the network interface to an instance. However, you can force delete the
+         * permission, regardless of any attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNetworkInterfacePermissionAsync(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified placement group. You must terminate all instances in
@@ -6029,10 +6112,11 @@ namespace Model
 
         /**
          * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
-         * Amazon EC2 performs status checks on running EC2 instances to identify hardware
-         * and software issues. For more information, see <a
+         * instances are described, unless you specifically indicate to return the status
+         * of all instances.</p> <p>Instance status includes the following components:</p>
+         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
+         * running EC2 instances to identify hardware and software issues. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -6056,10 +6140,11 @@ namespace Model
 
         /**
          * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
-         * Amazon EC2 performs status checks on running EC2 instances to identify hardware
-         * and software issues. For more information, see <a
+         * instances are described, unless you specifically indicate to return the status
+         * of all instances.</p> <p>Instance status includes the following components:</p>
+         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
+         * running EC2 instances to identify hardware and software issues. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -6085,10 +6170,11 @@ namespace Model
 
         /**
          * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
-         * Amazon EC2 performs status checks on running EC2 instances to identify hardware
-         * and software issues. For more information, see <a
+         * instances are described, unless you specifically indicate to return the status
+         * of all instances.</p> <p>Instance status includes the following components:</p>
+         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
+         * running EC2 instances to identify hardware and software issues. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -6358,6 +6444,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeNetworkInterfaceAttributeAsync(const Model::DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the permissions for your network interfaces. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNetworkInterfacePermissionsOutcome DescribeNetworkInterfacePermissions(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the permissions for your network interfaces. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNetworkInterfacePermissionsOutcomeCallable DescribeNetworkInterfacePermissionsCallable(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the permissions for your network interfaces. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNetworkInterfacePermissionsAsync(const Model::DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your network interfaces.</p><p><h3>See Also:</h3>  
@@ -11617,6 +11731,7 @@ namespace Model
         void CreateNetworkAclAsyncHelper(const Model::CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclEntryAsyncHelper(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkInterfaceAsyncHelper(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNetworkInterfacePermissionAsyncHelper(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlacementGroupAsyncHelper(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReservedInstancesListingAsyncHelper(const Model::CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRouteAsyncHelper(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11643,6 +11758,7 @@ namespace Model
         void DeleteNetworkAclAsyncHelper(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclEntryAsyncHelper(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInterfaceAsyncHelper(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNetworkInterfacePermissionAsyncHelper(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePlacementGroupAsyncHelper(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteAsyncHelper(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteTableAsyncHelper(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11690,6 +11806,7 @@ namespace Model
         void DescribeNatGatewaysAsyncHelper(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkAclsAsyncHelper(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkInterfaceAttributeAsyncHelper(const Model::DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNetworkInterfacePermissionsAsyncHelper(const Model::DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkInterfacesAsyncHelper(const Model::DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlacementGroupsAsyncHelper(const Model::DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePrefixListsAsyncHelper(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

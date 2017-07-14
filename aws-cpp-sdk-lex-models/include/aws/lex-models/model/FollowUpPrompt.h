@@ -34,11 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>After an intent is fulfilled, you might prompt the user for additional
-   * activity. For example, after the <code>OrderPizza</code> intent is fulfilled
-   * (the pizza order is placed with a pizzeria), you might prompt the user to find
-   * out whether the user wants to order drinks (another intent you defined in your
-   * bot).</p><p><h3>See Also:</h3>   <a
+   * <p>A prompt for additional activity after an intent is fulfilled. For example,
+   * after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user
+   * to find out whether the user wants to order drinks.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/FollowUpPrompt">AWS
    * API Reference</a></p>
    */
@@ -51,62 +50,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Obtains information from the user. </p>
+     * <p>Prompts for information from the user. </p>
      */
     inline const Prompt& GetPrompt() const{ return m_prompt; }
 
     /**
-     * <p>Obtains information from the user. </p>
+     * <p>Prompts for information from the user. </p>
      */
     inline void SetPrompt(const Prompt& value) { m_promptHasBeenSet = true; m_prompt = value; }
 
     /**
-     * <p>Obtains information from the user. </p>
+     * <p>Prompts for information from the user. </p>
      */
     inline void SetPrompt(Prompt&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
 
     /**
-     * <p>Obtains information from the user. </p>
+     * <p>Prompts for information from the user. </p>
      */
     inline FollowUpPrompt& WithPrompt(const Prompt& value) { SetPrompt(value); return *this;}
 
     /**
-     * <p>Obtains information from the user. </p>
+     * <p>Prompts for information from the user. </p>
      */
     inline FollowUpPrompt& WithPrompt(Prompt&& value) { SetPrompt(std::move(value)); return *this;}
 
     /**
-     * <p>If the user answers "no" to the question defined in
-     * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p>
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
      */
     inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
 
     /**
-     * <p>If the user answers "no" to the question defined in
-     * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p>
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
      */
     inline void SetRejectionStatement(const Statement& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = value; }
 
     /**
-     * <p>If the user answers "no" to the question defined in
-     * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p>
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
      */
     inline void SetRejectionStatement(Statement&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::move(value); }
 
     /**
-     * <p>If the user answers "no" to the question defined in
-     * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p>
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
      */
     inline FollowUpPrompt& WithRejectionStatement(const Statement& value) { SetRejectionStatement(value); return *this;}
 
     /**
-     * <p>If the user answers "no" to the question defined in
-     * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p>
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
      */
     inline FollowUpPrompt& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 

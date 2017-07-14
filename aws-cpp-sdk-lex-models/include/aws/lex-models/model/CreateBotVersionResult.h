@@ -119,97 +119,104 @@ namespace Model
     inline CreateBotVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline const Aws::Vector<Intent>& GetIntents() const{ return m_intents; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(const Aws::Vector<Intent>& value) { m_intents = value; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline void SetIntents(Aws::Vector<Intent>&& value) { m_intents = std::move(value); }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithIntents(const Aws::Vector<Intent>& value) { SetIntents(value); return *this;}
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithIntents(Aws::Vector<Intent>&& value) { SetIntents(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& AddIntents(const Intent& value) { m_intents.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>Intent</code> objects. For more information, see .</p>
+     * <p>An array of <code>Intent</code> objects. For more information, see
+     * <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
-     * request. For more information, see . </p>
+     * request. For more information, see <a>PutBot</a>. </p>
      */
     inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
 
     /**
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
-     * request. For more information, see . </p>
+     * request. For more information, see <a>PutBot</a>. </p>
      */
     inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPrompt = value; }
 
     /**
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
-     * request. For more information, see . </p>
+     * request. For more information, see <a>PutBot</a>. </p>
      */
     inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPrompt = std::move(value); }
 
     /**
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
-     * request. For more information, see . </p>
+     * request. For more information, see <a>PutBot</a>. </p>
      */
     inline CreateBotVersionResult& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
 
     /**
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
-     * request. For more information, see . </p>
+     * request. For more information, see <a>PutBot</a>. </p>
      */
     inline CreateBotVersionResult& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
 
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
-     * information, see .</p>
+     * information, see <a>PutBot</a>.</p>
      */
     inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
 
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
-     * information, see .</p>
+     * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
 
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
-     * information, see .</p>
+     * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
 
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
-     * information, see .</p>
+     * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
 
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
-     * information, see .</p>
+     * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
 
@@ -357,19 +364,19 @@ namespace Model
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSeconds = value; }
 
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
-     * conversation. For more information, see .</p>
+     * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 

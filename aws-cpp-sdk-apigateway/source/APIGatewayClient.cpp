@@ -49,6 +49,7 @@
 #include <aws/apigateway/model/DeleteDocumentationPartRequest.h>
 #include <aws/apigateway/model/DeleteDocumentationVersionRequest.h>
 #include <aws/apigateway/model/DeleteDomainNameRequest.h>
+#include <aws/apigateway/model/DeleteGatewayResponseRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationResponseRequest.h>
 #include <aws/apigateway/model/DeleteMethodRequest.h>
@@ -81,6 +82,8 @@
 #include <aws/apigateway/model/GetDomainNameRequest.h>
 #include <aws/apigateway/model/GetDomainNamesRequest.h>
 #include <aws/apigateway/model/GetExportRequest.h>
+#include <aws/apigateway/model/GetGatewayResponseRequest.h>
+#include <aws/apigateway/model/GetGatewayResponsesRequest.h>
 #include <aws/apigateway/model/GetIntegrationRequest.h>
 #include <aws/apigateway/model/GetIntegrationResponseRequest.h>
 #include <aws/apigateway/model/GetMethodRequest.h>
@@ -107,6 +110,7 @@
 #include <aws/apigateway/model/ImportApiKeysRequest.h>
 #include <aws/apigateway/model/ImportDocumentationPartsRequest.h>
 #include <aws/apigateway/model/ImportRestApiRequest.h>
+#include <aws/apigateway/model/PutGatewayResponseRequest.h>
 #include <aws/apigateway/model/PutIntegrationRequest.h>
 #include <aws/apigateway/model/PutIntegrationResponseRequest.h>
 #include <aws/apigateway/model/PutMethodRequest.h>
@@ -123,6 +127,7 @@
 #include <aws/apigateway/model/UpdateDocumentationPartRequest.h>
 #include <aws/apigateway/model/UpdateDocumentationVersionRequest.h>
 #include <aws/apigateway/model/UpdateDomainNameRequest.h>
+#include <aws/apigateway/model/UpdateGatewayResponseRequest.h>
 #include <aws/apigateway/model/UpdateIntegrationRequest.h>
 #include <aws/apigateway/model/UpdateIntegrationResponseRequest.h>
 #include <aws/apigateway/model/UpdateMethodRequest.h>
@@ -1006,6 +1011,44 @@ void APIGatewayClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& requ
 void APIGatewayClient::DeleteDomainNameAsyncHelper(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDomainName(request), context);
+}
+
+DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const DeleteGatewayResponseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/gatewayresponses/";
+  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGatewayResponseOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteGatewayResponseOutcome(outcome.GetError());
+  }
+}
+
+DeleteGatewayResponseOutcomeCallable APIGatewayClient::DeleteGatewayResponseCallable(const DeleteGatewayResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGatewayResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::DeleteGatewayResponseAsync(const DeleteGatewayResponseRequest& request, const DeleteGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayResponseAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteGatewayResponseAsyncHelper(const DeleteGatewayResponseRequest& request, const DeleteGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGatewayResponse(request), context);
 }
 
 DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegrationRequest& request) const
@@ -2211,6 +2254,81 @@ void APIGatewayClient::GetExportAsyncHelper(const GetExportRequest& request, con
   handler(this, request, GetExport(request), context);
 }
 
+GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayResponseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/gatewayresponses/";
+  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetGatewayResponseOutcome(GetGatewayResponseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetGatewayResponseOutcome(outcome.GetError());
+  }
+}
+
+GetGatewayResponseOutcomeCallable APIGatewayClient::GetGatewayResponseCallable(const GetGatewayResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGatewayResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetGatewayResponseAsync(const GetGatewayResponseRequest& request, const GetGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayResponseAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetGatewayResponseAsyncHelper(const GetGatewayResponseRequest& request, const GetGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGatewayResponse(request), context);
+}
+
+GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewayResponsesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/gatewayresponses";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetGatewayResponsesOutcome(GetGatewayResponsesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetGatewayResponsesOutcome(outcome.GetError());
+  }
+}
+
+GetGatewayResponsesOutcomeCallable APIGatewayClient::GetGatewayResponsesCallable(const GetGatewayResponsesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayResponsesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGatewayResponses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetGatewayResponsesAsync(const GetGatewayResponsesRequest& request, const GetGatewayResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayResponsesAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetGatewayResponsesAsyncHelper(const GetGatewayResponsesRequest& request, const GetGatewayResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGatewayResponses(request), context);
+}
+
 GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationRequest& request) const
 {
   Aws::StringStream ss;
@@ -3187,6 +3305,44 @@ void APIGatewayClient::ImportRestApiAsyncHelper(const ImportRestApiRequest& requ
   handler(this, request, ImportRestApi(request), context);
 }
 
+PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayResponseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/gatewayresponses/";
+  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutGatewayResponseOutcome(PutGatewayResponseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutGatewayResponseOutcome(outcome.GetError());
+  }
+}
+
+PutGatewayResponseOutcomeCallable APIGatewayClient::PutGatewayResponseCallable(const PutGatewayResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutGatewayResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutGatewayResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::PutGatewayResponseAsync(const PutGatewayResponseRequest& request, const PutGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutGatewayResponseAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::PutGatewayResponseAsyncHelper(const PutGatewayResponseRequest& request, const PutGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutGatewayResponse(request), context);
+}
+
 PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationRequest& request) const
 {
   Aws::StringStream ss;
@@ -3797,6 +3953,44 @@ void APIGatewayClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& requ
 void APIGatewayClient::UpdateDomainNameAsyncHelper(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDomainName(request), context);
+}
+
+UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const UpdateGatewayResponseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/gatewayresponses/";
+  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGatewayResponseOutcome(UpdateGatewayResponseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGatewayResponseOutcome(outcome.GetError());
+  }
+}
+
+UpdateGatewayResponseOutcomeCallable APIGatewayClient::UpdateGatewayResponseCallable(const UpdateGatewayResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::UpdateGatewayResponseAsync(const UpdateGatewayResponseRequest& request, const UpdateGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayResponseAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateGatewayResponseAsyncHelper(const UpdateGatewayResponseRequest& request, const UpdateGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGatewayResponse(request), context);
 }
 
 UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegrationRequest& request) const

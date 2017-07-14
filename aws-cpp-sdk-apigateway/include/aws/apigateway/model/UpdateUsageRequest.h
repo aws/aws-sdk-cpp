@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The PATCH request to grant a temporary extension to the reamining quota of a
+   * <p>The PATCH request to grant a temporary extension to the remaining quota of a
    * usage plan associated with a specified API key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsageRequest">AWS
    * API Reference</a></p>

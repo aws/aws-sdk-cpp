@@ -70,44 +70,37 @@ namespace Model
     inline GetSdkTypesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline const Aws::Vector<SdkType>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(const Aws::Vector<SdkType>& value) { m_items = value; }
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline void SetItems(Aws::Vector<SdkType>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetSdkTypesResult& WithItems(const Aws::Vector<SdkType>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetSdkTypesResult& WithItems(Aws::Vector<SdkType>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetSdkTypesResult& AddItems(const SdkType& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The set of <a>SdkType</a> items that comprise this view of the
-     * <a>SdkTypes</a> collection.</p>
+     * <p>The current page of elements from this collection.</p>
      */
     inline GetSdkTypesResult& AddItems(SdkType&& value) { m_items.push_back(std::move(value)); return *this; }
 
