@@ -49,7 +49,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false)
+    m_tracingConfigHasBeenSet(false),
+    m_masterArnHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
     m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false)
+    m_tracingConfigHasBeenSet(false),
+    m_masterArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
     m_tracingConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MasterArn"))
+  {
+    m_masterArn = jsonValue.GetString("MasterArn");
+
+    m_masterArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -305,6 +314,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_tracingConfigHasBeenSet)
   {
    payload.WithObject("TracingConfig", m_tracingConfig.Jsonize());
+
+  }
+
+  if(m_masterArnHasBeenSet)
+  {
+   payload.WithString("MasterArn", m_masterArn);
 
   }
 

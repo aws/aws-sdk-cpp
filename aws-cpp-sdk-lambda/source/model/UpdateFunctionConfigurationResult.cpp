@@ -148,6 +148,12 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("MasterArn"))
+  {
+    m_masterArn = jsonValue.GetString("MasterArn");
+
+  }
+
 
 
   return *this;

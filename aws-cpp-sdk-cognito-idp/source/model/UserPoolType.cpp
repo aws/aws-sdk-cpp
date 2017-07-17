@@ -40,6 +40,7 @@ UserPoolType::UserPoolType() :
     m_schemaAttributesHasBeenSet(false),
     m_autoVerifiedAttributesHasBeenSet(false),
     m_aliasAttributesHasBeenSet(false),
+    m_usernameAttributesHasBeenSet(false),
     m_smsVerificationMessageHasBeenSet(false),
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
@@ -70,6 +71,7 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_schemaAttributesHasBeenSet(false),
     m_autoVerifiedAttributesHasBeenSet(false),
     m_aliasAttributesHasBeenSet(false),
+    m_usernameAttributesHasBeenSet(false),
     m_smsVerificationMessageHasBeenSet(false),
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
@@ -168,6 +170,16 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
       m_aliasAttributes.push_back(AliasAttributeTypeMapper::GetAliasAttributeTypeForName(aliasAttributesJsonList[aliasAttributesIndex].AsString()));
     }
     m_aliasAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UsernameAttributes"))
+  {
+    Array<JsonValue> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
+    for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
+    {
+      m_usernameAttributes.push_back(UsernameAttributeTypeMapper::GetUsernameAttributeTypeForName(usernameAttributesJsonList[usernameAttributesIndex].AsString()));
+    }
+    m_usernameAttributesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SmsVerificationMessage"))
@@ -340,6 +352,17 @@ JsonValue UserPoolType::Jsonize() const
      aliasAttributesJsonList[aliasAttributesIndex].AsString(AliasAttributeTypeMapper::GetNameForAliasAttributeType(m_aliasAttributes[aliasAttributesIndex]));
    }
    payload.WithArray("AliasAttributes", std::move(aliasAttributesJsonList));
+
+  }
+
+  if(m_usernameAttributesHasBeenSet)
+  {
+   Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
+   for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
+   {
+     usernameAttributesJsonList[usernameAttributesIndex].AsString(UsernameAttributeTypeMapper::GetNameForUsernameAttributeType(m_usernameAttributes[usernameAttributesIndex]));
+   }
+   payload.WithArray("UsernameAttributes", std::move(usernameAttributesJsonList));
 
   }
 

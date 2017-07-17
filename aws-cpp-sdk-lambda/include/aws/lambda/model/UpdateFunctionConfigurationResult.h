@@ -619,6 +619,41 @@ namespace Model
      */
     inline UpdateFunctionConfigurationResult& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
 
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(const Aws::String& value) { m_masterArn = value; }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(Aws::String&& value) { m_masterArn = std::move(value); }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(const char* value) { m_masterArn.assign(value); }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
+
   private:
     Aws::String m_functionName;
     Aws::String m_functionArn;
@@ -637,6 +672,7 @@ namespace Model
     EnvironmentResponse m_environment;
     Aws::String m_kMSKeyArn;
     TracingConfigResponse m_tracingConfig;
+    Aws::String m_masterArn;
   };
 
 } // namespace Model

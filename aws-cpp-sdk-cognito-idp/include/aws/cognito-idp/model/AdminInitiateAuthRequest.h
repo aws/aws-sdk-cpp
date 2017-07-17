@@ -117,7 +117,7 @@ namespace Model
      * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRPA</code> and return the SRP variables to be used for next challenge
+     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
      * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
@@ -135,7 +135,7 @@ namespace Model
      * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRPA</code> and return the SRP variables to be used for next challenge
+     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
      * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
@@ -153,7 +153,7 @@ namespace Model
      * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRPA</code> and return the SRP variables to be used for next challenge
+     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
      * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
@@ -171,7 +171,7 @@ namespace Model
      * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRPA</code> and return the SRP variables to be used for next challenge
+     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
      * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
@@ -189,7 +189,7 @@ namespace Model
      * on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRPA</code> and return the SRP variables to be used for next challenge
+     * <code>SRP_A</code> and return the SRP variables to be used for next challenge
      * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
@@ -206,7 +206,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -225,7 +225,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -244,7 +244,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -263,7 +263,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -282,7 +282,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -301,7 +301,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -320,7 +320,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -339,7 +339,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -358,7 +358,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -377,7 +377,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -396,7 +396,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
@@ -415,7 +415,7 @@ namespace Model
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you are invoking. The required values depend on the
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
-     * <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),

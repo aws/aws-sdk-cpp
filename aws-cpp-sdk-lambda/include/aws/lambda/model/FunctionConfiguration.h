@@ -618,6 +618,41 @@ namespace Model
      */
     inline FunctionConfiguration& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
 
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(const Aws::String& value) { m_masterArnHasBeenSet = true; m_masterArn = value; }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(Aws::String&& value) { m_masterArnHasBeenSet = true; m_masterArn = std::move(value); }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline void SetMasterArn(const char* value) { m_masterArnHasBeenSet = true; m_masterArn.assign(value); }
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline FunctionConfiguration& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline FunctionConfiguration& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
+     */
+    inline FunctionConfiguration& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -653,6 +688,8 @@ namespace Model
     bool m_kMSKeyArnHasBeenSet;
     TracingConfigResponse m_tracingConfig;
     bool m_tracingConfigHasBeenSet;
+    Aws::String m_masterArn;
+    bool m_masterArnHasBeenSet;
   };
 
 } // namespace Model

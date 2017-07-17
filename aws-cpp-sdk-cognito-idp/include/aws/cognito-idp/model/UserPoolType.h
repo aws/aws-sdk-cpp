@@ -30,6 +30,7 @@
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
+#include <aws/cognito-idp/model/UsernameAttributeType.h>
 #include <utility>
 
 namespace Aws
@@ -359,6 +360,48 @@ namespace Model
      * <p>Specifies the attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline void SetUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = value; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline void SetUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = std::move(value); }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline UserPoolType& WithUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { SetUsernameAttributes(value); return *this;}
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline UserPoolType& WithUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { SetUsernameAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline UserPoolType& AddUsernameAttributes(const UsernameAttributeType& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline UserPoolType& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The contents of the SMS verification message.</p>
@@ -854,6 +897,8 @@ namespace Model
     bool m_autoVerifiedAttributesHasBeenSet;
     Aws::Vector<AliasAttributeType> m_aliasAttributes;
     bool m_aliasAttributesHasBeenSet;
+    Aws::Vector<UsernameAttributeType> m_usernameAttributes;
+    bool m_usernameAttributesHasBeenSet;
     Aws::String m_smsVerificationMessage;
     bool m_smsVerificationMessageHasBeenSet;
     Aws::String m_emailVerificationMessage;
