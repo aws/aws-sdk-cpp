@@ -26,6 +26,7 @@ namespace Model
   enum class TimeUnit
   {
     NOT_SET,
+    DAILY,
     MONTHLY,
     QUARTERLY,
     ANNUALLY

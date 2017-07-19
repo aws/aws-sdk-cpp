@@ -32,6 +32,7 @@ namespace Aws
 
         static const int USAGE_HASH = HashingUtils::HashString("USAGE");
         static const int COST_HASH = HashingUtils::HashString("COST");
+        static const int RI_UTILIZATION_HASH = HashingUtils::HashString("RI_UTILIZATION");
 
 
         BudgetType GetBudgetTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == COST_HASH)
           {
             return BudgetType::COST;
+          }
+          else if (hashCode == RI_UTILIZATION_HASH)
+          {
+            return BudgetType::RI_UTILIZATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "USAGE";
           case BudgetType::COST:
             return "COST";
+          case BudgetType::RI_UTILIZATION:
+            return "RI_UTILIZATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

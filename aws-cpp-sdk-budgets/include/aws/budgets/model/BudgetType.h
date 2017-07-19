@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     USAGE,
-    COST
+    COST,
+    RI_UTILIZATION
   };
 
 namespace BudgetTypeMapper

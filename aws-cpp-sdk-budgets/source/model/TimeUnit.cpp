@@ -30,6 +30,7 @@ namespace Aws
       namespace TimeUnitMapper
       {
 
+        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
         static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
         static const int QUARTERLY_HASH = HashingUtils::HashString("QUARTERLY");
         static const int ANNUALLY_HASH = HashingUtils::HashString("ANNUALLY");
@@ -38,7 +39,11 @@ namespace Aws
         TimeUnit GetTimeUnitForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == MONTHLY_HASH)
+          if (hashCode == DAILY_HASH)
+          {
+            return TimeUnit::DAILY;
+          }
+          else if (hashCode == MONTHLY_HASH)
           {
             return TimeUnit::MONTHLY;
           }
@@ -64,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeUnit::DAILY:
+            return "DAILY";
           case TimeUnit::MONTHLY:
             return "MONTHLY";
           case TimeUnit::QUARTERLY:
