@@ -62,6 +62,10 @@ namespace Aws
             void* GetClientModule() const override;
 
             WinINetSyncHttpClient &operator =(const WinINetSyncHttpClient &rhs);
+
+            bool m_usingProxy;
+            Aws::String m_proxyUserName;
+            Aws::String m_proxyPassword;
         };
 
     } // namespace Http

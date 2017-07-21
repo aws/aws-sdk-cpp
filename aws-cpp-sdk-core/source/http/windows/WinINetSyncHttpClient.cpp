@@ -50,9 +50,9 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     const char* proxyHosts = nullptr;
     Aws::String strProxyHosts;
 
-    bool isUsingProxy = !config.proxyHost.empty();
+    m_usingProxy = !config.proxyHost.empty();
     //setup initial proxy config.
-    if (isUsingProxy)
+    if (m_usingProxy)
     {
         const char* const proxySchemeString = Aws::Http::SchemeMapper::ToString(config.proxyScheme);
         AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings scheme " << proxySchemeString
@@ -66,20 +66,15 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
         proxyHosts = strProxyHosts.c_str();
 
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Adding proxy host string to wininet " << proxyHosts);
+
+        m_proxyUserName = config.proxyUserName;
+        m_proxyPassword = config.proxyPassword;
     }
 
     SetOpenHandle(InternetOpenA(config.userAgent.c_str(), inetFlags, proxyHosts, nullptr, 0));
 
     //override offline mode.
     InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_IGNORE_OFFLINE, nullptr, 0);
-    //add proxy auth credentials to everything using this handle.
-    if (isUsingProxy)
-    {
-        if (!config.proxyUserName.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
-            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
-        if (!config.proxyPassword.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
-            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
-    }
 
     if (!config.verifySSL)
     {
@@ -98,7 +93,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
 
 WinINetSyncHttpClient::~WinINetSyncHttpClient()
 {
-
+    InternetCloseHandle(GetOpenHandle());   
 }
 
 void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
@@ -125,6 +120,15 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
     HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle " << hHttpRequest);
+
+    //add proxy auth credentials to everything using this handle.
+    if (m_usingProxy)
+    {
+        if (!m_proxyUserName.empty() && !InternetSetOptionA(hHttpRequest, INTERNET_OPTION_PROXY_USERNAME, (LPVOID)m_proxyUserName.c_str(), (DWORD)m_proxyUserName.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
+        if (!m_proxyPassword.empty() && !InternetSetOptionA(hHttpRequest, INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)m_proxyPassword.c_str(), (DWORD)m_proxyPassword.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
+    }
 
     return hHttpRequest;
 }

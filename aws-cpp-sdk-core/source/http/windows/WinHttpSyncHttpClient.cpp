@@ -51,12 +51,12 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
     m_allowRedirects = config.followRedirects;
 
-    bool isUsingProxy = !config.proxyHost.empty();
+    m_usingProxy = !config.proxyHost.empty();
     //setup initial proxy config.
 
     Aws::WString proxyString;
 
-    if (isUsingProxy)
+    if (m_usingProxy)
     {
         const char* const proxySchemeString = Aws::Http::SchemeMapper::ToString(config.proxyScheme);
         AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings scheme " << proxySchemeString
@@ -71,6 +71,9 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
         proxyString = StringUtils::ToWString(proxyHosts);
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Adding proxy host string to winhttp " << proxyHosts);
+
+        m_proxyUserName = StringUtils::ToWString(config.proxyUserName.c_str());
+        m_proxyPassword = StringUtils::ToWString(config.proxyPassword.c_str());
     }
 
     Aws::WString openString = StringUtils::ToWString(config.userAgent.c_str());
@@ -80,15 +83,6 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     if (!WinHttpSetTimeouts(GetOpenHandle(), config.connectTimeoutMs, config.connectTimeoutMs, -1, config.requestTimeoutMs))
     {
         AWS_LOGSTREAM_WARN(GetLogTag(), "Error setting timeouts " << GetLastError());
-    }
-
-    //add proxy auth credentials to everything using this handle.
-    if (isUsingProxy)
-    {
-        if (!config.proxyUserName.empty() && !WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
-            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
-        if (!config.proxyPassword.empty() && !WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
-            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
 
     if (!config.verifySSL)
@@ -117,7 +111,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
 WinHttpSyncHttpClient::~WinHttpSyncHttpClient()
 {
-
+    WinHttpCloseHandle(GetOpenHandle());
 }
 
 void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
@@ -141,7 +135,16 @@ void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
     HINTERNET hHttpRequest = WinHttpOpenRequest(connection, StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())).c_str(),
         wss.c_str(), nullptr, nullptr, accept, requestFlags);
 
-      //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest
+    //add proxy auth credentials to everything using this handle.
+    if (m_usingProxy)
+    {
+        if (!m_proxyUserName.empty() && !WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_PROXY_USERNAME, (LPVOID)m_proxyUserName.c_str(), (DWORD)m_proxyUserName.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
+        if (!m_proxyPassword.empty() && !WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_PROXY_PASSWORD, (LPVOID)m_proxyPassword.c_str(), (DWORD)m_proxyPassword.length()))
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
+    }
+
+    //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest
     if (!m_allowRedirects)
     {
         requestFlags = WINHTTP_DISABLE_REDIRECTS;
