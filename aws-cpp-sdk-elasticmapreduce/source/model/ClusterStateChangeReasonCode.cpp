@@ -33,6 +33,7 @@ namespace Aws
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
         static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
         static const int INSTANCE_FAILURE_HASH = HashingUtils::HashString("INSTANCE_FAILURE");
+        static const int INSTANCE_FLEET_TIMEOUT_HASH = HashingUtils::HashString("INSTANCE_FLEET_TIMEOUT");
         static const int BOOTSTRAP_FAILURE_HASH = HashingUtils::HashString("BOOTSTRAP_FAILURE");
         static const int USER_REQUEST_HASH = HashingUtils::HashString("USER_REQUEST");
         static const int STEP_FAILURE_HASH = HashingUtils::HashString("STEP_FAILURE");
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == INSTANCE_FAILURE_HASH)
           {
             return ClusterStateChangeReasonCode::INSTANCE_FAILURE;
+          }
+          else if (hashCode == INSTANCE_FLEET_TIMEOUT_HASH)
+          {
+            return ClusterStateChangeReasonCode::INSTANCE_FLEET_TIMEOUT;
           }
           else if (hashCode == BOOTSTRAP_FAILURE_HASH)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "VALIDATION_ERROR";
           case ClusterStateChangeReasonCode::INSTANCE_FAILURE:
             return "INSTANCE_FAILURE";
+          case ClusterStateChangeReasonCode::INSTANCE_FLEET_TIMEOUT:
+            return "INSTANCE_FLEET_TIMEOUT";
           case ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE:
             return "BOOTSTRAP_FAILURE";
           case ClusterStateChangeReasonCode::USER_REQUEST:

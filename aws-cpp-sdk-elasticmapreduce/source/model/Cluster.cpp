@@ -55,7 +55,12 @@ Cluster::Cluster() :
     m_securityConfigurationHasBeenSet(false),
     m_autoScalingRoleHasBeenSet(false),
     m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false)
+    m_scaleDownBehaviorHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false),
+    m_ebsRootVolumeSize(0),
+    m_ebsRootVolumeSizeHasBeenSet(false),
+    m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
+    m_repoUpgradeOnBootHasBeenSet(false)
 {
 }
 
@@ -86,7 +91,12 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_securityConfigurationHasBeenSet(false),
     m_autoScalingRoleHasBeenSet(false),
     m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false)
+    m_scaleDownBehaviorHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false),
+    m_ebsRootVolumeSize(0),
+    m_ebsRootVolumeSizeHasBeenSet(false),
+    m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
+    m_repoUpgradeOnBootHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -249,6 +259,27 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_scaleDownBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAmiId"))
+  {
+    m_customAmiId = jsonValue.GetString("CustomAmiId");
+
+    m_customAmiIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EbsRootVolumeSize"))
+  {
+    m_ebsRootVolumeSize = jsonValue.GetInteger("EbsRootVolumeSize");
+
+    m_ebsRootVolumeSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RepoUpgradeOnBoot"))
+  {
+    m_repoUpgradeOnBoot = RepoUpgradeOnBootMapper::GetRepoUpgradeOnBootForName(jsonValue.GetString("RepoUpgradeOnBoot"));
+
+    m_repoUpgradeOnBootHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -393,6 +424,23 @@ JsonValue Cluster::Jsonize() const
   if(m_scaleDownBehaviorHasBeenSet)
   {
    payload.WithString("ScaleDownBehavior", ScaleDownBehaviorMapper::GetNameForScaleDownBehavior(m_scaleDownBehavior));
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
+
+  }
+
+  if(m_ebsRootVolumeSizeHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeSize", m_ebsRootVolumeSize);
+
+  }
+
+  if(m_repoUpgradeOnBootHasBeenSet)
+  {
+   payload.WithString("RepoUpgradeOnBoot", RepoUpgradeOnBootMapper::GetNameForRepoUpgradeOnBoot(m_repoUpgradeOnBoot));
   }
 
   return payload;

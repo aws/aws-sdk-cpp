@@ -711,22 +711,20 @@ namespace Model
         virtual void ListInstanceGroupsAsync(const Model::ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information about the cluster instances that Amazon EMR provisions
-         * on behalf of a user when it creates the cluster. For example, this operation
-         * indicates when the EC2 instances reach the Ready state, when instances become
-         * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information for all active EC2 instances and EC2 instances
+         * terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any
+         * of the following states are considered active: AWAITING_FULFILLMENT,
+         * PROVISIONING, BOOTSTRAPPING, RUNNING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
         /**
-         * <p>Provides information about the cluster instances that Amazon EMR provisions
-         * on behalf of a user when it creates the cluster. For example, this operation
-         * indicates when the EC2 instances reach the Ready state, when instances become
-         * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information for all active EC2 instances and EC2 instances
+         * terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any
+         * of the following states are considered active: AWAITING_FULFILLMENT,
+         * PROVISIONING, BOOTSTRAPPING, RUNNING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">AWS
          * API Reference</a></p>
          *
@@ -735,11 +733,10 @@ namespace Model
         virtual Model::ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request) const;
 
         /**
-         * <p>Provides information about the cluster instances that Amazon EMR provisions
-         * on behalf of a user when it creates the cluster. For example, this operation
-         * indicates when the EC2 instances reach the Ready state, when instances become
-         * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information for all active EC2 instances and EC2 instances
+         * terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any
+         * of the following states are considered active: AWAITING_FULFILLMENT,
+         * PROVISIONING, BOOTSTRAPPING, RUNNING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">AWS
          * API Reference</a></p>
          *

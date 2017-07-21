@@ -21,6 +21,7 @@
 #include <aws/elasticmapreduce/model/InstanceCollectionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
+#include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
@@ -336,44 +337,37 @@ namespace Model
     inline Cluster& WithRunningAmiVersion(const char* value) { SetRunningAmiVersion(value); return *this;}
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline Cluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
+     * <p>The release label for the Amazon EMR release.</p>
      */
     inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
@@ -624,44 +618,44 @@ namespace Model
     inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * Configurations supplied to the EMR cluster.</p>
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
@@ -841,6 +835,101 @@ namespace Model
      */
     inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline Cluster& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline Cluster& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
+    inline Cluster& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline Cluster& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline const RepoUpgradeOnBoot& GetRepoUpgradeOnBoot() const{ return m_repoUpgradeOnBoot; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline void SetRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = value; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline void SetRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = std::move(value); }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline Cluster& WithRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { SetRepoUpgradeOnBoot(value); return *this;}
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline Cluster& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -884,6 +973,12 @@ namespace Model
     bool m_autoScalingRoleHasBeenSet;
     ScaleDownBehavior m_scaleDownBehavior;
     bool m_scaleDownBehaviorHasBeenSet;
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
+    int m_ebsRootVolumeSize;
+    bool m_ebsRootVolumeSizeHasBeenSet;
+    RepoUpgradeOnBoot m_repoUpgradeOnBoot;
+    bool m_repoUpgradeOnBootHasBeenSet;
   };
 
 } // namespace Model

@@ -157,56 +157,63 @@ namespace Model
     inline JobFlowDetail& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
+     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
+     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
+     * supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */

@@ -76,8 +76,9 @@ namespace Model
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
      * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
      * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
-     * to fulfill the remaining capacity.</p>
+     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
+     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
      */
     inline const SpotProvisioningTimeoutAction& GetTimeoutAction() const{ return m_timeoutAction; }
 
@@ -85,8 +86,9 @@ namespace Model
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
      * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
      * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
-     * to fulfill the remaining capacity.</p>
+     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
+     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
      */
     inline void SetTimeoutAction(const SpotProvisioningTimeoutAction& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
 
@@ -94,8 +96,9 @@ namespace Model
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
      * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
      * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
-     * to fulfill the remaining capacity.</p>
+     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
+     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
      */
     inline void SetTimeoutAction(SpotProvisioningTimeoutAction&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
 
@@ -103,8 +106,9 @@ namespace Model
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
      * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
      * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
-     * to fulfill the remaining capacity.</p>
+     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
+     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
      */
     inline SpotProvisioningSpecification& WithTimeoutAction(const SpotProvisioningTimeoutAction& value) { SetTimeoutAction(value); return *this;}
 
@@ -112,8 +116,9 @@ namespace Model
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
      * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
      * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
-     * to fulfill the remaining capacity.</p>
+     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
+     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
      */
     inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(std::move(value)); return *this;}
 

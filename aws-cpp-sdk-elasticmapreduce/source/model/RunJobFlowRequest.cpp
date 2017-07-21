@@ -43,7 +43,12 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_securityConfigurationHasBeenSet(false),
     m_autoScalingRoleHasBeenSet(false),
     m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false)
+    m_scaleDownBehaviorHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false),
+    m_ebsRootVolumeSize(0),
+    m_ebsRootVolumeSizeHasBeenSet(false),
+    m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
+    m_repoUpgradeOnBootHasBeenSet(false)
 {
 }
 
@@ -197,6 +202,23 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_scaleDownBehaviorHasBeenSet)
   {
    payload.WithString("ScaleDownBehavior", ScaleDownBehaviorMapper::GetNameForScaleDownBehavior(m_scaleDownBehavior));
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
+
+  }
+
+  if(m_ebsRootVolumeSizeHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeSize", m_ebsRootVolumeSize);
+
+  }
+
+  if(m_repoUpgradeOnBootHasBeenSet)
+  {
+   payload.WithString("RepoUpgradeOnBoot", RepoUpgradeOnBootMapper::GetNameForRepoUpgradeOnBoot(m_repoUpgradeOnBoot));
   }
 
   return payload.WriteReadable();

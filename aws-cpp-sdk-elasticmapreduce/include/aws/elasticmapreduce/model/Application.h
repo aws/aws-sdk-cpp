@@ -46,7 +46,7 @@ namespace Model
    * <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li> <li>
    * <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
    * launch the cluster using MapR M3 or M5 Edition, respectively.</p> </li> </ul>
-   * <note> <p>In Amazon EMR releases 4.0 and greater, the only accepted parameter is
+   * <note> <p>In Amazon EMR releases 4.x and later, the only accepted parameter is
    * the application name. To pass arguments to applications, you supply a
    * configuration for each application.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Application">AWS

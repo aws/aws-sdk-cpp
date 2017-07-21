@@ -20,6 +20,7 @@
 #include <aws/elasticmapreduce/model/JobFlowInstancesConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
+#include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -161,198 +162,184 @@ namespace Model
     inline RunJobFlowRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use ReleaseLabel.</p> </note> <p>The version of the Amazon Machine
-     * Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:</p> <ul> <li> <p>The version number of the AMI to
-     * use, for example, "2.0."</p> </li> </ul> <p>If the AMI supports multiple
-     * versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you
-     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
-     * to modify the version of Hadoop from the defaults shown above.</p> <p>For
-     * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
-     * parameter options allowed you to use latest for the latest AMI version rather
-     * than specify a numerical value. Some regions no longer support this deprecated
-     * option as they only have a newer release label version of EMR, which requires
-     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
+     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
+     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
+     * use when launching Amazon EC2 instances in the job flow. For details about the
+     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
+     * supports both Hadoop 0.18 and 0.20), you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
+     * EMR AMI version API parameter options allowed you to use latest for the latest
+     * AMI version rather than specify a numerical value. Some regions no longer
+     * support this deprecated option as they only have a newer release label version
+     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
+     * later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
-     * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     * instead of ReleaseLabel.</p>
+     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
+     * AMIs, use <code>AmiVersion</code> instead.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
@@ -460,7 +447,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -472,7 +459,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -484,7 +471,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -496,7 +483,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -508,7 +495,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -520,7 +507,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -532,7 +519,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -544,7 +531,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
@@ -556,7 +543,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -577,7 +564,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -598,7 +585,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -619,7 +606,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -640,7 +627,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -661,7 +648,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -682,7 +669,7 @@ namespace Model
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * greater, use Applications.</p> </note> <p>A list of strings that indicates
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -702,93 +689,93 @@ namespace Model
     inline RunJobFlowRequest& AddNewSupportedProducts(SupportedProductConfig&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(std::move(value)); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline RunJobFlowRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline RunJobFlowRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
-     * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
-     * "Pig", and "Spark." They are case insensitive.</p>
+     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
+     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
+     * are case insensitive.</p>
      */
     inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline RunJobFlowRequest& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline RunJobFlowRequest& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline RunJobFlowRequest& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for the EMR cluster you are creating.</p>
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
      */
     inline RunJobFlowRequest& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
@@ -1135,6 +1122,195 @@ namespace Model
      */
     inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline RunJobFlowRequest& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline RunJobFlowRequest& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline RunJobFlowRequest& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline RunJobFlowRequest& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline const RepoUpgradeOnBoot& GetRepoUpgradeOnBoot() const{ return m_repoUpgradeOnBoot; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline void SetRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = value; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline void SetRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = std::move(value); }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline RunJobFlowRequest& WithRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { SetRepoUpgradeOnBoot(value); return *this;}
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline RunJobFlowRequest& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -1174,6 +1350,12 @@ namespace Model
     bool m_autoScalingRoleHasBeenSet;
     ScaleDownBehavior m_scaleDownBehavior;
     bool m_scaleDownBehaviorHasBeenSet;
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
+    int m_ebsRootVolumeSize;
+    bool m_ebsRootVolumeSizeHasBeenSet;
+    RepoUpgradeOnBoot m_repoUpgradeOnBoot;
+    bool m_repoUpgradeOnBootHasBeenSet;
   };
 
 } // namespace Model

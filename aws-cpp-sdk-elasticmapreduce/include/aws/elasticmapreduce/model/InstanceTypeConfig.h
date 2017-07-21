@@ -91,24 +91,24 @@ namespace Model
     /**
      * <p>The number of units that a provisioned instance of this type provides toward
      * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. This
-     * value is 1 for a master instance fleet, and must be greater than 0 for core and
-     * task instance fleets. </p>
+     * value is 1 for a master instance fleet, and must be 1 or greater for core and
+     * task instance fleets. Defaults to 1 if not specified. </p>
      */
     inline int GetWeightedCapacity() const{ return m_weightedCapacity; }
 
     /**
      * <p>The number of units that a provisioned instance of this type provides toward
      * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. This
-     * value is 1 for a master instance fleet, and must be greater than 0 for core and
-     * task instance fleets. </p>
+     * value is 1 for a master instance fleet, and must be 1 or greater for core and
+     * task instance fleets. Defaults to 1 if not specified. </p>
      */
     inline void SetWeightedCapacity(int value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
      * <p>The number of units that a provisioned instance of this type provides toward
      * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. This
-     * value is 1 for a master instance fleet, and must be greater than 0 for core and
-     * task instance fleets. </p>
+     * value is 1 for a master instance fleet, and must be 1 or greater for core and
+     * task instance fleets. Defaults to 1 if not specified. </p>
      */
     inline InstanceTypeConfig& WithWeightedCapacity(int value) { SetWeightedCapacity(value); return *this;}
 
@@ -170,8 +170,8 @@ namespace Model
 
     /**
      * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
-     * as defined by <code>InstanceType</code>. Expressed as a number between 0 and
-     * 1000 (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor
+     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
+     * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
@@ -179,8 +179,8 @@ namespace Model
 
     /**
      * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
-     * as defined by <code>InstanceType</code>. Expressed as a number between 0 and
-     * 1000 (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor
+     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
+     * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
@@ -188,8 +188,8 @@ namespace Model
 
     /**
      * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
-     * as defined by <code>InstanceType</code>. Expressed as a number between 0 and
-     * 1000 (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor
+     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
+     * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */

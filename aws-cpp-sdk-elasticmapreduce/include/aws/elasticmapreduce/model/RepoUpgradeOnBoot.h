@@ -23,25 +23,19 @@ namespace EMR
 {
 namespace Model
 {
-  enum class ClusterStateChangeReasonCode
+  enum class RepoUpgradeOnBoot
   {
     NOT_SET,
-    INTERNAL_ERROR,
-    VALIDATION_ERROR,
-    INSTANCE_FAILURE,
-    INSTANCE_FLEET_TIMEOUT,
-    BOOTSTRAP_FAILURE,
-    USER_REQUEST,
-    STEP_FAILURE,
-    ALL_STEPS_COMPLETED
+    SECURITY,
+    NONE
   };
 
-namespace ClusterStateChangeReasonCodeMapper
+namespace RepoUpgradeOnBootMapper
 {
-AWS_EMR_API ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::String& name);
+AWS_EMR_API RepoUpgradeOnBoot GetRepoUpgradeOnBootForName(const Aws::String& name);
 
-AWS_EMR_API Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode value);
-} // namespace ClusterStateChangeReasonCodeMapper
+AWS_EMR_API Aws::String GetNameForRepoUpgradeOnBoot(RepoUpgradeOnBoot value);
+} // namespace RepoUpgradeOnBootMapper
 } // namespace Model
 } // namespace EMR
 } // namespace Aws
