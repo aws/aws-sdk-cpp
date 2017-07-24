@@ -194,37 +194,37 @@ namespace Model
     inline Image& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state, and then moves to
-     * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
-     * has failed.</p>
+     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
+     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
+     * <b>FAILED</b>.</p>
      */
     inline const ImageState& GetState() const{ return m_state; }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state, and then moves to
-     * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
-     * has failed.</p>
+     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
+     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
+     * <b>FAILED</b>.</p>
      */
     inline void SetState(const ImageState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state, and then moves to
-     * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
-     * has failed.</p>
+     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
+     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
+     * <b>FAILED</b>.</p>
      */
     inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state, and then moves to
-     * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
-     * has failed.</p>
+     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
+     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
+     * <b>FAILED</b>.</p>
      */
     inline Image& WithState(const ImageState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state, and then moves to
-     * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
-     * has failed.</p>
+     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
+     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
+     * <b>FAILED</b>.</p>
      */
     inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
 
@@ -389,27 +389,27 @@ namespace Model
     inline Image& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The timestamp when the image was created.</p>
+     * <p>The time stamp when the image was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The timestamp when the image was created.</p>
+     * <p>The time stamp when the image was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The timestamp when the image was created.</p>
+     * <p>The time stamp when the image was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The timestamp when the image was created.</p>
+     * <p>The time stamp when the image was created.</p>
      */
     inline Image& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The timestamp when the image was created.</p>
+     * <p>The time stamp when the image was created.</p>
      */
     inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

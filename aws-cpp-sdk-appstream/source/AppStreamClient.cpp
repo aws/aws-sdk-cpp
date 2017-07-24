@@ -28,11 +28,14 @@
 #include <aws/appstream/AppStreamEndpoint.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
+#include <aws/appstream/model/CreateDirectoryConfigRequest.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
 #include <aws/appstream/model/CreateStackRequest.h>
 #include <aws/appstream/model/CreateStreamingURLRequest.h>
+#include <aws/appstream/model/DeleteDirectoryConfigRequest.h>
 #include <aws/appstream/model/DeleteFleetRequest.h>
 #include <aws/appstream/model/DeleteStackRequest.h>
+#include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
 #include <aws/appstream/model/DescribeFleetsRequest.h>
 #include <aws/appstream/model/DescribeImagesRequest.h>
 #include <aws/appstream/model/DescribeSessionsRequest.h>
@@ -43,6 +46,7 @@
 #include <aws/appstream/model/ListAssociatedStacksRequest.h>
 #include <aws/appstream/model/StartFleetRequest.h>
 #include <aws/appstream/model/StopFleetRequest.h>
+#include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateStackRequest.h>
 
@@ -143,6 +147,41 @@ void AppStreamClient::AssociateFleetAsync(const AssociateFleetRequest& request, 
 void AppStreamClient::AssociateFleetAsyncHelper(const AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateFleet(request), context);
+}
+
+CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const CreateDirectoryConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDirectoryConfigOutcome(CreateDirectoryConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDirectoryConfigOutcome(outcome.GetError());
+  }
+}
+
+CreateDirectoryConfigOutcomeCallable AppStreamClient::CreateDirectoryConfigCallable(const CreateDirectoryConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDirectoryConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDirectoryConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateDirectoryConfigAsync(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectoryConfigAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateDirectoryConfigAsyncHelper(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDirectoryConfig(request), context);
 }
 
 CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& request) const
@@ -250,6 +289,41 @@ void AppStreamClient::CreateStreamingURLAsyncHelper(const CreateStreamingURLRequ
   handler(this, request, CreateStreamingURL(request), context);
 }
 
+DeleteDirectoryConfigOutcome AppStreamClient::DeleteDirectoryConfig(const DeleteDirectoryConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDirectoryConfigOutcome(DeleteDirectoryConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDirectoryConfigOutcome(outcome.GetError());
+  }
+}
+
+DeleteDirectoryConfigOutcomeCallable AppStreamClient::DeleteDirectoryConfigCallable(const DeleteDirectoryConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDirectoryConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDirectoryConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteDirectoryConfigAsync(const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectoryConfigAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteDirectoryConfigAsyncHelper(const DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDirectoryConfig(request), context);
+}
+
 DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::StringStream ss;
@@ -318,6 +392,41 @@ void AppStreamClient::DeleteStackAsync(const DeleteStackRequest& request, const 
 void AppStreamClient::DeleteStackAsyncHelper(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStack(request), context);
+}
+
+DescribeDirectoryConfigsOutcome AppStreamClient::DescribeDirectoryConfigs(const DescribeDirectoryConfigsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDirectoryConfigsOutcome(DescribeDirectoryConfigsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDirectoryConfigsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDirectoryConfigsOutcomeCallable AppStreamClient::DescribeDirectoryConfigsCallable(const DescribeDirectoryConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDirectoryConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDirectoryConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeDirectoryConfigsAsync(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectoryConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeDirectoryConfigsAsyncHelper(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDirectoryConfigs(request), context);
 }
 
 DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsRequest& request) const
@@ -668,6 +777,41 @@ void AppStreamClient::StopFleetAsync(const StopFleetRequest& request, const Stop
 void AppStreamClient::StopFleetAsyncHelper(const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopFleet(request), context);
+}
+
+UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const UpdateDirectoryConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDirectoryConfigOutcome(UpdateDirectoryConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDirectoryConfigOutcome(outcome.GetError());
+  }
+}
+
+UpdateDirectoryConfigOutcomeCallable AppStreamClient::UpdateDirectoryConfigCallable(const UpdateDirectoryConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDirectoryConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDirectoryConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::UpdateDirectoryConfigAsync(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDirectoryConfigAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::UpdateDirectoryConfigAsyncHelper(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDirectoryConfig(request), context);
 }
 
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const

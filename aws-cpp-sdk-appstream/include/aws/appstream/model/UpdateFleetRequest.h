@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/ComputeCapacity.h>
 #include <aws/appstream/model/VpcConfig.h>
+#include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/FleetAttribute.h>
 #include <utility>
@@ -112,43 +113,92 @@ namespace Model
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type.</p>
+     * launched from this instance type. Available instance types are:</p> <ul> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -315,19 +365,54 @@ namespace Model
     inline UpdateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>Enables or disables default Internet access for the fleet.</p>
+     * <p>Enables or disables default internet access for the fleet.</p>
      */
     inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
 
     /**
-     * <p>Enables or disables default Internet access for the fleet.</p>
+     * <p>Enables or disables default internet access for the fleet.</p>
      */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
-     * <p>Enables or disables default Internet access for the fleet.</p>
+     * <p>Enables or disables default internet access for the fleet.</p>
      */
     inline UpdateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline UpdateFleetRequest& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline UpdateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
     /**
      * <p>Fleet attributes to be deleted.</p>
@@ -385,6 +470,8 @@ namespace Model
     bool m_displayNameHasBeenSet;
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+    DomainJoinInfo m_domainJoinInfo;
+    bool m_domainJoinInfoHasBeenSet;
     Aws::Vector<FleetAttribute> m_attributesToDelete;
     bool m_attributesToDeleteHasBeenSet;
   };

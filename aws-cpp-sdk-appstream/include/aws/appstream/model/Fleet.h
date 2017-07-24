@@ -21,6 +21,7 @@
 #include <aws/appstream/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/appstream/model/FleetError.h>
 #include <utility>
 
@@ -446,19 +447,54 @@ namespace Model
     inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Whether default Internet access is enabled for the fleet. </p>
+     * <p>Whether default internet access is enabled for the fleet. </p>
      */
     inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
 
     /**
-     * <p>Whether default Internet access is enabled for the fleet. </p>
+     * <p>Whether default internet access is enabled for the fleet. </p>
      */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
-     * <p>Whether default Internet access is enabled for the fleet. </p>
+     * <p>Whether default internet access is enabled for the fleet. </p>
      */
     inline Fleet& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline Fleet& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
+
+    /**
+     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
+     * values, which are used to join domains for the AppStream 2.0 streaming
+     * instances.</p>
+     */
+    inline Fleet& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
   private:
     Aws::String m_arn;
@@ -489,6 +525,8 @@ namespace Model
     bool m_fleetErrorsHasBeenSet;
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+    DomainJoinInfo m_domainJoinInfo;
+    bool m_domainJoinInfoHasBeenSet;
   };
 
 } // namespace Model

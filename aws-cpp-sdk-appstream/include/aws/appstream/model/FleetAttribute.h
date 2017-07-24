@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     VPC_CONFIGURATION,
-    VPC_CONFIGURATION_SECURITY_GROUP_IDS
+    VPC_CONFIGURATION_SECURITY_GROUP_IDS,
+    DOMAIN_JOIN_INFO
   };
 
 namespace FleetAttributeMapper

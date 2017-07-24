@@ -78,27 +78,27 @@ namespace Model
     inline CreateStreamingURLResult& WithStreamingURL(const char* value) { SetStreamingURL(value); return *this;}
 
     /**
-     * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
+     * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
-     * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
+     * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expires = value; }
 
     /**
-     * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
+     * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
 
     /**
-     * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
+     * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
     inline CreateStreamingURLResult& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
     /**
-     * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
+     * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
     inline CreateStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 

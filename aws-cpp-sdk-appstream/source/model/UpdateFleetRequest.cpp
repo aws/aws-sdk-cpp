@@ -36,6 +36,7 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_displayNameHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
+    m_domainJoinInfoHasBeenSet(false),
     m_attributesToDeleteHasBeenSet(false)
 {
 }
@@ -101,6 +102,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_enableDefaultInternetAccessHasBeenSet)
   {
    payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
+
+  }
+
+  if(m_domainJoinInfoHasBeenSet)
+  {
+   payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
 
   }
 

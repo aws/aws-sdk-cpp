@@ -50,7 +50,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() :
     m_subnetIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification(const XmlNode& xmlNod
     m_subnetIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -205,6 +207,18 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
       m_weightedCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(weightedCapacityNode.GetText().c_str()).c_str());
       m_weightedCapacityHasBeenSet = true;
     }
+    XmlNode tagSpecificationsNode = resultNode.FirstChild("tagSpecificationSet");
+    if(!tagSpecificationsNode.IsNull())
+    {
+      XmlNode tagSpecificationsMember = tagSpecificationsNode.FirstChild("item");
+      while(!tagSpecificationsMember.IsNull())
+      {
+        m_tagSpecifications.push_back(tagSpecificationsMember);
+        tagSpecificationsMember = tagSpecificationsMember.NextNode("item");
+      }
+
+      m_tagSpecificationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -321,6 +335,17 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
         oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
   }
 
+  if(m_tagSpecificationsHasBeenSet)
+  {
+      unsigned tagSpecificationsIdx = 1;
+      for(auto& item : m_tagSpecifications)
+      {
+        Aws::StringStream tagSpecificationsSs;
+        tagSpecificationsSs << location << index << locationValue << ".TagSpecificationSet." << tagSpecificationsIdx++;
+        item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
+      }
+  }
+
 }
 
 void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -416,6 +441,16 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   if(m_weightedCapacityHasBeenSet)
   {
         oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+  }
+  if(m_tagSpecificationsHasBeenSet)
+  {
+      unsigned tagSpecificationsIdx = 1;
+      for(auto& item : m_tagSpecifications)
+      {
+        Aws::StringStream tagSpecificationsSs;
+        tagSpecificationsSs << location <<  ".TagSpecificationSet." << tagSpecificationsIdx++;
+        item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
+      }
   }
 }
 

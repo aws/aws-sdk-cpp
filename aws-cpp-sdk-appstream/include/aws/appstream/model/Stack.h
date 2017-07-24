@@ -190,27 +190,27 @@ namespace Model
     inline Stack& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The timestamp when the stack was created.</p>
+     * <p>The time stamp when the stack was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The timestamp when the stack was created.</p>
+     * <p>The time stamp when the stack was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The timestamp when the stack was created.</p>
+     * <p>The time stamp when the stack was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The timestamp when the stack was created.</p>
+     * <p>The time stamp when the stack was created.</p>
      */
     inline Stack& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The timestamp when the stack was created.</p>
+     * <p>The time stamp when the stack was created.</p>
      */
     inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

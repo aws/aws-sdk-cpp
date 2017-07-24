@@ -41,6 +41,20 @@ namespace Aws
         static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
         static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
         static const int INVALID_SUBNET_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_SUBNET_CONFIGURATION");
+        static const int SECURITY_GROUPS_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUPS_NOT_FOUND");
+        static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
+        static const int DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
+        static const int DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
+        static const int DOMAIN_JOIN_ERROR_LOGON_FAILURE_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
+        static const int DOMAIN_JOIN_ERROR_INVALID_PARAMETER_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_INVALID_PARAMETER");
+        static const int DOMAIN_JOIN_ERROR_MORE_DATA_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_MORE_DATA");
+        static const int DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN");
+        static const int DOMAIN_JOIN_ERROR_NOT_SUPPORTED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_NOT_SUPPORTED");
+        static const int DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME");
+        static const int DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
+        static const int DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
+        static const int DOMAIN_JOIN_NERR_PASSWORD_EXPIRED_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
+        static const int DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
 
 
         FleetErrorCode GetFleetErrorCodeForName(const Aws::String& name)
@@ -90,6 +104,62 @@ namespace Aws
           {
             return FleetErrorCode::INVALID_SUBNET_CONFIGURATION;
           }
+          else if (hashCode == SECURITY_GROUPS_NOT_FOUND_HASH)
+          {
+            return FleetErrorCode::SECURITY_GROUPS_NOT_FOUND;
+          }
+          else if (hashCode == IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH)
+          {
+            return FleetErrorCode::IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_FILE_NOT_FOUND;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_ACCESS_DENIED;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_LOGON_FAILURE_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_LOGON_FAILURE;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_INVALID_PARAMETER_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_INVALID_PARAMETER;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_MORE_DATA_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_MORE_DATA;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_NOT_SUPPORTED_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_NOT_SUPPORTED;
+          }
+          else if (hashCode == DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME;
+          }
+          else if (hashCode == DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED;
+          }
+          else if (hashCode == DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED;
+          }
+          else if (hashCode == DOMAIN_JOIN_NERR_PASSWORD_EXPIRED_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_NERR_PASSWORD_EXPIRED;
+          }
+          else if (hashCode == DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH)
+          {
+            return FleetErrorCode::DOMAIN_JOIN_INTERNAL_SERVICE_ERROR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +196,34 @@ namespace Aws
             return "IMAGE_NOT_FOUND";
           case FleetErrorCode::INVALID_SUBNET_CONFIGURATION:
             return "INVALID_SUBNET_CONFIGURATION";
+          case FleetErrorCode::SECURITY_GROUPS_NOT_FOUND:
+            return "SECURITY_GROUPS_NOT_FOUND";
+          case FleetErrorCode::IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION:
+            return "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_FILE_NOT_FOUND:
+            return "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_ACCESS_DENIED:
+            return "DOMAIN_JOIN_ERROR_ACCESS_DENIED";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_LOGON_FAILURE:
+            return "DOMAIN_JOIN_ERROR_LOGON_FAILURE";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_INVALID_PARAMETER:
+            return "DOMAIN_JOIN_ERROR_INVALID_PARAMETER";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_MORE_DATA:
+            return "DOMAIN_JOIN_ERROR_MORE_DATA";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN:
+            return "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_NOT_SUPPORTED:
+            return "DOMAIN_JOIN_ERROR_NOT_SUPPORTED";
+          case FleetErrorCode::DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME:
+            return "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME";
+          case FleetErrorCode::DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED:
+            return "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED";
+          case FleetErrorCode::DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED:
+            return "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED";
+          case FleetErrorCode::DOMAIN_JOIN_NERR_PASSWORD_EXPIRED:
+            return "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED";
+          case FleetErrorCode::DOMAIN_JOIN_INTERNAL_SERVICE_ERROR:
+            return "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

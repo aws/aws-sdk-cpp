@@ -25,6 +25,7 @@
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
+#include <aws/ec2/model/SpotFleetTagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -669,6 +670,41 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
 
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline const Aws::Vector<SpotFleetTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<SpotFleetTagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<SpotFleetTagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline SpotFleetLaunchSpecification& WithTagSpecifications(const Aws::Vector<SpotFleetTagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline SpotFleetLaunchSpecification& WithTagSpecifications(Aws::Vector<SpotFleetTagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline SpotFleetLaunchSpecification& AddTagSpecifications(const SpotFleetTagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline SpotFleetLaunchSpecification& AddTagSpecifications(SpotFleetTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
     Aws::Vector<GroupIdentifier> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
@@ -704,6 +740,8 @@ namespace Model
     bool m_userDataHasBeenSet;
     double m_weightedCapacity;
     bool m_weightedCapacityHasBeenSet;
+    Aws::Vector<SpotFleetTagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

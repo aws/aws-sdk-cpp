@@ -46,7 +46,8 @@ Fleet::Fleet() :
     m_createdTimeHasBeenSet(false),
     m_fleetErrorsHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false)
+    m_enableDefaultInternetAccessHasBeenSet(false),
+    m_domainJoinInfoHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Fleet::Fleet(const JsonValue& jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_fleetErrorsHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false)
+    m_enableDefaultInternetAccessHasBeenSet(false),
+    m_domainJoinInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -176,6 +178,13 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
     m_enableDefaultInternetAccessHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainJoinInfo"))
+  {
+    m_domainJoinInfo = jsonValue.GetObject("DomainJoinInfo");
+
+    m_domainJoinInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -267,6 +276,12 @@ JsonValue Fleet::Jsonize() const
   if(m_enableDefaultInternetAccessHasBeenSet)
   {
    payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
+
+  }
+
+  if(m_domainJoinInfoHasBeenSet)
+  {
+   payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
 
   }
 

@@ -223,20 +223,20 @@ namespace Model
     inline Application& WithLaunchParameters(const char* value) { SetLaunchParameters(value); return *this;}
 
     /**
-     * <p>An application can be disabled after image creation if there is a
-     * problem.</p>
+     * <p>If there is a problem, an application can be disabled after image
+     * creation.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>An application can be disabled after image creation if there is a
-     * problem.</p>
+     * <p>If there is a problem, an application can be disabled after image
+     * creation.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>An application can be disabled after image creation if there is a
-     * problem.</p>
+     * <p>If there is a problem, an application can be disabled after image
+     * creation.</p>
      */
     inline Application& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
