@@ -150,7 +150,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
 
@@ -174,7 +174,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline TypedLinkFacet& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
 
@@ -182,7 +182,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline TypedLinkFacet& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
 
@@ -190,7 +190,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
@@ -198,7 +198,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
 
@@ -206,7 +206,7 @@ namespace Model
      * <p>The set of attributes that distinguish links made from this facet from each
      * other, in the order of significance. Listing typed links can filter on the
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.</p>
+     * <a>ListIncomingTypedLinks</a> for details.</p>
      */
     inline TypedLinkFacet& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 

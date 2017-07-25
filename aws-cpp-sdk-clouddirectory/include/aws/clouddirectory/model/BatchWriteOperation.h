@@ -22,6 +22,12 @@
 #include <aws/clouddirectory/model/BatchDeleteObject.h>
 #include <aws/clouddirectory/model/BatchAddFacetToObject.h>
 #include <aws/clouddirectory/model/BatchRemoveFacetFromObject.h>
+#include <aws/clouddirectory/model/BatchAttachPolicy.h>
+#include <aws/clouddirectory/model/BatchCreateIndex.h>
+#include <aws/clouddirectory/model/BatchAttachToIndex.h>
+#include <aws/clouddirectory/model/BatchDetachFromIndex.h>
+#include <aws/clouddirectory/model/BatchAttachTypedLink.h>
+#include <aws/clouddirectory/model/BatchDetachTypedLink.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +233,201 @@ namespace Model
      */
     inline BatchWriteOperation& WithRemoveFacetFromObject(BatchRemoveFacetFromObject&& value) { SetRemoveFacetFromObject(std::move(value)); return *this;}
 
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline const BatchAttachPolicy& GetAttachPolicy() const{ return m_attachPolicy; }
+
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline void SetAttachPolicy(const BatchAttachPolicy& value) { m_attachPolicyHasBeenSet = true; m_attachPolicy = value; }
+
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline void SetAttachPolicy(BatchAttachPolicy&& value) { m_attachPolicyHasBeenSet = true; m_attachPolicy = std::move(value); }
+
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline BatchWriteOperation& WithAttachPolicy(const BatchAttachPolicy& value) { SetAttachPolicy(value); return *this;}
+
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline BatchWriteOperation& WithAttachPolicy(BatchAttachPolicy&& value) { SetAttachPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+     * for more information.</p>
+     */
+    inline const BatchCreateIndex& GetCreateIndex() const{ return m_createIndex; }
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+     * for more information.</p>
+     */
+    inline void SetCreateIndex(const BatchCreateIndex& value) { m_createIndexHasBeenSet = true; m_createIndex = value; }
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+     * for more information.</p>
+     */
+    inline void SetCreateIndex(BatchCreateIndex&& value) { m_createIndexHasBeenSet = true; m_createIndex = std::move(value); }
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+     * for more information.</p>
+     */
+    inline BatchWriteOperation& WithCreateIndex(const BatchCreateIndex& value) { SetCreateIndex(value); return *this;}
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
+     * for more information.</p>
+     */
+    inline BatchWriteOperation& WithCreateIndex(BatchCreateIndex&& value) { SetCreateIndex(std::move(value)); return *this;}
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
+    inline const BatchAttachToIndex& GetAttachToIndex() const{ return m_attachToIndex; }
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
+    inline void SetAttachToIndex(const BatchAttachToIndex& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = value; }
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
+    inline void SetAttachToIndex(BatchAttachToIndex&& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = std::move(value); }
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
+    inline BatchWriteOperation& WithAttachToIndex(const BatchAttachToIndex& value) { SetAttachToIndex(value); return *this;}
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
+    inline BatchWriteOperation& WithAttachToIndex(BatchAttachToIndex&& value) { SetAttachToIndex(std::move(value)); return *this;}
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline const BatchDetachFromIndex& GetDetachFromIndex() const{ return m_detachFromIndex; }
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline void SetDetachFromIndex(const BatchDetachFromIndex& value) { m_detachFromIndexHasBeenSet = true; m_detachFromIndex = value; }
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline void SetDetachFromIndex(BatchDetachFromIndex&& value) { m_detachFromIndexHasBeenSet = true; m_detachFromIndex = std::move(value); }
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline BatchWriteOperation& WithDetachFromIndex(const BatchDetachFromIndex& value) { SetDetachFromIndex(value); return *this;}
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline BatchWriteOperation& WithDetachFromIndex(BatchDetachFromIndex&& value) { SetDetachFromIndex(std::move(value)); return *this;}
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline const BatchAttachTypedLink& GetAttachTypedLink() const{ return m_attachTypedLink; }
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline void SetAttachTypedLink(const BatchAttachTypedLink& value) { m_attachTypedLinkHasBeenSet = true; m_attachTypedLink = value; }
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline void SetAttachTypedLink(BatchAttachTypedLink&& value) { m_attachTypedLinkHasBeenSet = true; m_attachTypedLink = std::move(value); }
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline BatchWriteOperation& WithAttachTypedLink(const BatchAttachTypedLink& value) { SetAttachTypedLink(value); return *this;}
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline BatchWriteOperation& WithAttachTypedLink(BatchAttachTypedLink&& value) { SetAttachTypedLink(std::move(value)); return *this;}
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline const BatchDetachTypedLink& GetDetachTypedLink() const{ return m_detachTypedLink; }
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline void SetDetachTypedLink(const BatchDetachTypedLink& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = value; }
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline void SetDetachTypedLink(BatchDetachTypedLink&& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = std::move(value); }
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline BatchWriteOperation& WithDetachTypedLink(const BatchDetachTypedLink& value) { SetDetachTypedLink(value); return *this;}
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.</p>
+     */
+    inline BatchWriteOperation& WithDetachTypedLink(BatchDetachTypedLink&& value) { SetDetachTypedLink(std::move(value)); return *this;}
+
   private:
     BatchCreateObject m_createObject;
     bool m_createObjectHasBeenSet;
@@ -242,6 +443,18 @@ namespace Model
     bool m_addFacetToObjectHasBeenSet;
     BatchRemoveFacetFromObject m_removeFacetFromObject;
     bool m_removeFacetFromObjectHasBeenSet;
+    BatchAttachPolicy m_attachPolicy;
+    bool m_attachPolicyHasBeenSet;
+    BatchCreateIndex m_createIndex;
+    bool m_createIndexHasBeenSet;
+    BatchAttachToIndex m_attachToIndex;
+    bool m_attachToIndexHasBeenSet;
+    BatchDetachFromIndex m_detachFromIndex;
+    bool m_detachFromIndexHasBeenSet;
+    BatchAttachTypedLink m_attachTypedLink;
+    bool m_attachTypedLinkHasBeenSet;
+    BatchDetachTypedLink m_detachTypedLink;
+    bool m_detachTypedLinkHasBeenSet;
   };
 
 } // namespace Model

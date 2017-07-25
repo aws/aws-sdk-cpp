@@ -31,7 +31,14 @@ namespace Model
     ResourceNotFoundException,
     InvalidNextTokenException,
     AccessDeniedException,
-    NotNodeException
+    NotNodeException,
+    FacetValidationException,
+    CannotListParentOfRootException,
+    NotIndexException,
+    NotPolicyException,
+    DirectoryNotEnabledException,
+    LimitExceededException,
+    InternalServiceException
   };
 
 namespace BatchReadExceptionTypeMapper

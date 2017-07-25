@@ -30,13 +30,31 @@ namespace Model
 
 BatchReadSuccessfulResponse::BatchReadSuccessfulResponse() : 
     m_listObjectAttributesHasBeenSet(false),
-    m_listObjectChildrenHasBeenSet(false)
+    m_listObjectChildrenHasBeenSet(false),
+    m_getObjectInformationHasBeenSet(false),
+    m_listAttachedIndicesHasBeenSet(false),
+    m_listObjectParentPathsHasBeenSet(false),
+    m_listObjectPoliciesHasBeenSet(false),
+    m_listPolicyAttachmentsHasBeenSet(false),
+    m_lookupPolicyHasBeenSet(false),
+    m_listIndexHasBeenSet(false),
+    m_listOutgoingTypedLinksHasBeenSet(false),
+    m_listIncomingTypedLinksHasBeenSet(false)
 {
 }
 
 BatchReadSuccessfulResponse::BatchReadSuccessfulResponse(const JsonValue& jsonValue) : 
     m_listObjectAttributesHasBeenSet(false),
-    m_listObjectChildrenHasBeenSet(false)
+    m_listObjectChildrenHasBeenSet(false),
+    m_getObjectInformationHasBeenSet(false),
+    m_listAttachedIndicesHasBeenSet(false),
+    m_listObjectParentPathsHasBeenSet(false),
+    m_listObjectPoliciesHasBeenSet(false),
+    m_listPolicyAttachmentsHasBeenSet(false),
+    m_lookupPolicyHasBeenSet(false),
+    m_listIndexHasBeenSet(false),
+    m_listOutgoingTypedLinksHasBeenSet(false),
+    m_listIncomingTypedLinksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +75,69 @@ BatchReadSuccessfulResponse& BatchReadSuccessfulResponse::operator =(const JsonV
     m_listObjectChildrenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GetObjectInformation"))
+  {
+    m_getObjectInformation = jsonValue.GetObject("GetObjectInformation");
+
+    m_getObjectInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListAttachedIndices"))
+  {
+    m_listAttachedIndices = jsonValue.GetObject("ListAttachedIndices");
+
+    m_listAttachedIndicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListObjectParentPaths"))
+  {
+    m_listObjectParentPaths = jsonValue.GetObject("ListObjectParentPaths");
+
+    m_listObjectParentPathsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListObjectPolicies"))
+  {
+    m_listObjectPolicies = jsonValue.GetObject("ListObjectPolicies");
+
+    m_listObjectPoliciesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListPolicyAttachments"))
+  {
+    m_listPolicyAttachments = jsonValue.GetObject("ListPolicyAttachments");
+
+    m_listPolicyAttachmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LookupPolicy"))
+  {
+    m_lookupPolicy = jsonValue.GetObject("LookupPolicy");
+
+    m_lookupPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListIndex"))
+  {
+    m_listIndex = jsonValue.GetObject("ListIndex");
+
+    m_listIndexHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListOutgoingTypedLinks"))
+  {
+    m_listOutgoingTypedLinks = jsonValue.GetObject("ListOutgoingTypedLinks");
+
+    m_listOutgoingTypedLinksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ListIncomingTypedLinks"))
+  {
+    m_listIncomingTypedLinks = jsonValue.GetObject("ListIncomingTypedLinks");
+
+    m_listIncomingTypedLinksHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +154,60 @@ JsonValue BatchReadSuccessfulResponse::Jsonize() const
   if(m_listObjectChildrenHasBeenSet)
   {
    payload.WithObject("ListObjectChildren", m_listObjectChildren.Jsonize());
+
+  }
+
+  if(m_getObjectInformationHasBeenSet)
+  {
+   payload.WithObject("GetObjectInformation", m_getObjectInformation.Jsonize());
+
+  }
+
+  if(m_listAttachedIndicesHasBeenSet)
+  {
+   payload.WithObject("ListAttachedIndices", m_listAttachedIndices.Jsonize());
+
+  }
+
+  if(m_listObjectParentPathsHasBeenSet)
+  {
+   payload.WithObject("ListObjectParentPaths", m_listObjectParentPaths.Jsonize());
+
+  }
+
+  if(m_listObjectPoliciesHasBeenSet)
+  {
+   payload.WithObject("ListObjectPolicies", m_listObjectPolicies.Jsonize());
+
+  }
+
+  if(m_listPolicyAttachmentsHasBeenSet)
+  {
+   payload.WithObject("ListPolicyAttachments", m_listPolicyAttachments.Jsonize());
+
+  }
+
+  if(m_lookupPolicyHasBeenSet)
+  {
+   payload.WithObject("LookupPolicy", m_lookupPolicy.Jsonize());
+
+  }
+
+  if(m_listIndexHasBeenSet)
+  {
+   payload.WithObject("ListIndex", m_listIndex.Jsonize());
+
+  }
+
+  if(m_listOutgoingTypedLinksHasBeenSet)
+  {
+   payload.WithObject("ListOutgoingTypedLinks", m_listOutgoingTypedLinks.Jsonize());
+
+  }
+
+  if(m_listIncomingTypedLinksHasBeenSet)
+  {
+   payload.WithObject("ListIncomingTypedLinks", m_listIncomingTypedLinks.Jsonize());
 
   }
 

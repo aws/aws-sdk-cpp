@@ -810,49 +810,49 @@ namespace Model
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline CreateChangeSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline CreateChangeSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline CreateChangeSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to resources in the stack. You can specify a maximum of 10
+     * propagates these tags to resources in the stack. You can specify a maximum of 50
      * tags.</p>
      */
     inline CreateChangeSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

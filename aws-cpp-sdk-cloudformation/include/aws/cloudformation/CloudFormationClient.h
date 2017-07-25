@@ -25,12 +25,19 @@
 #include <aws/cloudformation/model/ContinueUpdateRollbackResult.h>
 #include <aws/cloudformation/model/CreateChangeSetResult.h>
 #include <aws/cloudformation/model/CreateStackResult.h>
+#include <aws/cloudformation/model/CreateStackInstancesResult.h>
+#include <aws/cloudformation/model/CreateStackSetResult.h>
 #include <aws/cloudformation/model/DeleteChangeSetResult.h>
+#include <aws/cloudformation/model/DeleteStackInstancesResult.h>
+#include <aws/cloudformation/model/DeleteStackSetResult.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
+#include <aws/cloudformation/model/DescribeStackInstanceResult.h>
 #include <aws/cloudformation/model/DescribeStackResourceResult.h>
 #include <aws/cloudformation/model/DescribeStackResourcesResult.h>
+#include <aws/cloudformation/model/DescribeStackSetResult.h>
+#include <aws/cloudformation/model/DescribeStackSetOperationResult.h>
 #include <aws/cloudformation/model/DescribeStacksResult.h>
 #include <aws/cloudformation/model/EstimateTemplateCostResult.h>
 #include <aws/cloudformation/model/ExecuteChangeSetResult.h>
@@ -40,9 +47,15 @@
 #include <aws/cloudformation/model/ListChangeSetsResult.h>
 #include <aws/cloudformation/model/ListExportsResult.h>
 #include <aws/cloudformation/model/ListImportsResult.h>
+#include <aws/cloudformation/model/ListStackInstancesResult.h>
 #include <aws/cloudformation/model/ListStackResourcesResult.h>
+#include <aws/cloudformation/model/ListStackSetOperationResultsResult.h>
+#include <aws/cloudformation/model/ListStackSetOperationsResult.h>
+#include <aws/cloudformation/model/ListStackSetsResult.h>
 #include <aws/cloudformation/model/ListStacksResult.h>
+#include <aws/cloudformation/model/StopStackSetOperationResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
+#include <aws/cloudformation/model/UpdateStackSetResult.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -94,13 +107,20 @@ namespace Model
         class ContinueUpdateRollbackRequest;
         class CreateChangeSetRequest;
         class CreateStackRequest;
+        class CreateStackInstancesRequest;
+        class CreateStackSetRequest;
         class DeleteChangeSetRequest;
         class DeleteStackRequest;
+        class DeleteStackInstancesRequest;
+        class DeleteStackSetRequest;
         class DescribeAccountLimitsRequest;
         class DescribeChangeSetRequest;
         class DescribeStackEventsRequest;
+        class DescribeStackInstanceRequest;
         class DescribeStackResourceRequest;
         class DescribeStackResourcesRequest;
+        class DescribeStackSetRequest;
+        class DescribeStackSetOperationRequest;
         class DescribeStacksRequest;
         class EstimateTemplateCostRequest;
         class ExecuteChangeSetRequest;
@@ -110,24 +130,37 @@ namespace Model
         class ListChangeSetsRequest;
         class ListExportsRequest;
         class ListImportsRequest;
+        class ListStackInstancesRequest;
         class ListStackResourcesRequest;
+        class ListStackSetOperationResultsRequest;
+        class ListStackSetOperationsRequest;
+        class ListStackSetsRequest;
         class ListStacksRequest;
         class SetStackPolicyRequest;
         class SignalResourceRequest;
+        class StopStackSetOperationRequest;
         class UpdateStackRequest;
+        class UpdateStackSetRequest;
         class ValidateTemplateRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
         typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, Aws::Client::AWSError<CloudFormationErrors>> ContinueUpdateRollbackOutcome;
         typedef Aws::Utils::Outcome<CreateChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateChangeSetOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackOutcome;
+        typedef Aws::Utils::Outcome<CreateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<CreateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackSetOutcome;
         typedef Aws::Utils::Outcome<DeleteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteChangeSetOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<DeleteStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeChangeSetOutcome;
         typedef Aws::Utils::Outcome<DescribeStackEventsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackInstanceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeStackResourceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourceOutcome;
         typedef Aws::Utils::Outcome<DescribeStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStacksOutcome;
         typedef Aws::Utils::Outcome<EstimateTemplateCostResult, Aws::Client::AWSError<CloudFormationErrors>> EstimateTemplateCostOutcome;
         typedef Aws::Utils::Outcome<ExecuteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> ExecuteChangeSetOutcome;
@@ -137,24 +170,37 @@ namespace Model
         typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListChangeSetsOutcome;
         typedef Aws::Utils::Outcome<ListExportsResult, Aws::Client::AWSError<CloudFormationErrors>> ListExportsOutcome;
         typedef Aws::Utils::Outcome<ListImportsResult, Aws::Client::AWSError<CloudFormationErrors>> ListImportsOutcome;
+        typedef Aws::Utils::Outcome<ListStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackInstancesOutcome;
         typedef Aws::Utils::Outcome<ListStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetOperationResultsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationResultsOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetOperationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationsOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetsOutcome;
         typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
+        typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
+        typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
         typedef Aws::Utils::Outcome<ValidateTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> ValidateTemplateOutcome;
 
         typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
         typedef std::future<ContinueUpdateRollbackOutcome> ContinueUpdateRollbackOutcomeCallable;
         typedef std::future<CreateChangeSetOutcome> CreateChangeSetOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
+        typedef std::future<CreateStackInstancesOutcome> CreateStackInstancesOutcomeCallable;
+        typedef std::future<CreateStackSetOutcome> CreateStackSetOutcomeCallable;
         typedef std::future<DeleteChangeSetOutcome> DeleteChangeSetOutcomeCallable;
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
+        typedef std::future<DeleteStackInstancesOutcome> DeleteStackInstancesOutcomeCallable;
+        typedef std::future<DeleteStackSetOutcome> DeleteStackSetOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
         typedef std::future<DescribeStackEventsOutcome> DescribeStackEventsOutcomeCallable;
+        typedef std::future<DescribeStackInstanceOutcome> DescribeStackInstanceOutcomeCallable;
         typedef std::future<DescribeStackResourceOutcome> DescribeStackResourceOutcomeCallable;
         typedef std::future<DescribeStackResourcesOutcome> DescribeStackResourcesOutcomeCallable;
+        typedef std::future<DescribeStackSetOutcome> DescribeStackSetOutcomeCallable;
+        typedef std::future<DescribeStackSetOperationOutcome> DescribeStackSetOperationOutcomeCallable;
         typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
         typedef std::future<EstimateTemplateCostOutcome> EstimateTemplateCostOutcomeCallable;
         typedef std::future<ExecuteChangeSetOutcome> ExecuteChangeSetOutcomeCallable;
@@ -164,11 +210,17 @@ namespace Model
         typedef std::future<ListChangeSetsOutcome> ListChangeSetsOutcomeCallable;
         typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
         typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
+        typedef std::future<ListStackInstancesOutcome> ListStackInstancesOutcomeCallable;
         typedef std::future<ListStackResourcesOutcome> ListStackResourcesOutcomeCallable;
+        typedef std::future<ListStackSetOperationResultsOutcome> ListStackSetOperationResultsOutcomeCallable;
+        typedef std::future<ListStackSetOperationsOutcome> ListStackSetOperationsOutcomeCallable;
+        typedef std::future<ListStackSetsOutcome> ListStackSetsOutcomeCallable;
         typedef std::future<ListStacksOutcome> ListStacksOutcomeCallable;
         typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
         typedef std::future<SignalResourceOutcome> SignalResourceOutcomeCallable;
+        typedef std::future<StopStackSetOperationOutcome> StopStackSetOperationOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
+        typedef std::future<UpdateStackSetOutcome> UpdateStackSetOutcomeCallable;
         typedef std::future<ValidateTemplateOutcome> ValidateTemplateOutcomeCallable;
 } // namespace Model
 
@@ -178,13 +230,20 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::ContinueUpdateRollbackRequest&, const Model::ContinueUpdateRollbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContinueUpdateRollbackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateChangeSetRequest&, const Model::CreateChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::CreateStackInstancesRequest&, const Model::CreateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackInstancesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::CreateStackSetRequest&, const Model::CreateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteChangeSetRequest&, const Model::DeleteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackInstancesRequest&, const Model::DeleteStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackInstancesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackSetRequest&, const Model::DeleteStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackEventsRequest&, const Model::DescribeStackEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackEventsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackInstanceRequest&, const Model::DescribeStackInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackInstanceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourceRequest&, const Model::DescribeStackResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourcesRequest&, const Model::DescribeStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourcesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetRequest&, const Model::DescribeStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetOperationRequest&, const Model::DescribeStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::EstimateTemplateCostRequest&, const Model::EstimateTemplateCostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EstimateTemplateCostResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ExecuteChangeSetRequest&, const Model::ExecuteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteChangeSetResponseReceivedHandler;
@@ -194,11 +253,17 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::ListChangeSetsRequest&, const Model::ListChangeSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChangeSetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackInstancesRequest&, const Model::ListStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackResourcesRequest&, const Model::ListStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackResourcesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationResultsRequest&, const Model::ListStackSetOperationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationResultsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationsRequest&, const Model::ListStackSetOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetsRequest&, const Model::ListStackSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStacksRequest&, const Model::ListStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStacksResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStackPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SignalResourceRequest&, const Model::SignalResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::StopStackSetOperationRequest&, const Model::StopStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackSetRequest&, const Model::UpdateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ValidateTemplateRequest&, const Model::ValidateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateTemplateResponseReceivedHandler;
 
   /**
@@ -217,7 +282,153 @@ namespace Model
    * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
    * AWS products. If you need additional technical information about a specific AWS
    * product, you can find the product's technical documentation at <a
-   * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p>
+   * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p> <p> <i>APIs for
+   * stacks </i> </p> <p>When you use AWS CloudFormation, you manage related
+   * resources as a single unit called a stack. You create, update, and delete a
+   * collection of resources by creating, updating, and deleting stacks. All the
+   * resources in a stack are defined by the stack's AWS CloudFormation template.
+   * </p> <p>Actions</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html">ContinueUpdateRollback</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html">CreateStack</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html">DeleteStack</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html">DescribeStackEvents</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html">DescribeStackResource</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html">DescribeStackResources</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html">DescribeStacks</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html">EstimateTemplateCost</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html">GetStackPolicy</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html">GetTemplate</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html">GetTemplateSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html">ListExports</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html">ListImports</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html">ListStackResources</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html">ListStacks</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html">SetStackPolicy</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">UpdateStack</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html">ValidateTemplate</a>
+   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Export.html">Export</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterConstraints.html">ParameterConstraints</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterDeclaration.html">ParameterDeclaration</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Stack.html">Stack</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackEvent.html">StackEvent</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResource.html">StackResource</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceDetail.html">StackResourceDetail</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceSummary.html">StackResourceSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSummary.html">StackSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TemplateParameter.html">TemplateParameter</a>
+   * </p> </li> </ul> <p> <i>APIs for change sets</i> </p> <p>If you need to make
+   * changes to the running resources in a stack, you update the stack. Before making
+   * changes to your resources, you can generate a change set, which is summary of
+   * your proposed changes. Change sets allow you to see how your changes might
+   * impact your running resources, especially for critical resources, before
+   * implementing them.</p> <p>Actions</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html">DeleteChangeSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html">DescribeChangeSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html">ListChangeSets</a>
+   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Change.html">Change</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ChangeSetSummary.html">ChangeSetSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChange.html">ResourceChange</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChangeDetail.html">ResourceChangeDetail</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceTargetDefinition.html">ResourceTargetDefinition</a>
+   * </p> </li> </ul> <p> <i>APIs for stack sets</i> </p> <p>AWS CloudFormation
+   * StackSets lets you create a collection, or stack set, of stacks that can
+   * automatically and safely provision a common set of AWS resources across multiple
+   * AWS accounts and multiple AWS regions from a single AWS CloudFormation template.
+   * When you create a stack set, AWS CloudFormation provisions a stack in each of
+   * the specified accounts and regions by using the supplied AWS CloudFormation
+   * template and parameters. Stack sets let you manage a common set of AWS resources
+   * in a selection of accounts and regions in a single operation. </p>
+   * <p>Actions</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html">CreateStackSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html">DeleteStackInstances</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html">DeleteStackSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html">DescribeStackInstance</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html">DescribeStackSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html">DescribeStackSetOperation</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstances.html">ListStackInstances</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults">ListStackSetOperationResults</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations">ListStackSetOperations</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets">ListStackSets</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html">StopStackSetOperation</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstance.html.html">StackInstance</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstanceSummary.html.html">StackInstanceSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSet.html">StackSet</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperation.html.html">StackSetOperation</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationPreferences.html.html">StackSetOperationPreferences</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationResultSummary.html.html">StackSetOperationResultSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationSummary.html.html">StackSetOperationSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetSummary.html">StackSetSummary</a>
+   * </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
+   * </p> </li> </ul>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -457,6 +668,65 @@ namespace Model
         virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates stack instances for the specified accounts, within the specified
+         * regions. A stack instance refers to a stack in a specific account and region.
+         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
+         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStackInstancesOutcome CreateStackInstances(const Model::CreateStackInstancesRequest& request) const;
+
+        /**
+         * <p>Creates stack instances for the specified accounts, within the specified
+         * regions. A stack instance refers to a stack in a specific account and region.
+         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
+         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateStackInstancesOutcomeCallable CreateStackInstancesCallable(const Model::CreateStackInstancesRequest& request) const;
+
+        /**
+         * <p>Creates stack instances for the specified accounts, within the specified
+         * regions. A stack instance refers to a stack in a specific account and region.
+         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
+         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateStackInstancesAsync(const Model::CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStackSetOutcome CreateStackSet(const Model::CreateStackSetRequest& request) const;
+
+        /**
+         * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateStackSetOutcomeCallable CreateStackSetCallable(const Model::CreateStackSetRequest& request) const;
+
+        /**
+         * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateStackSetAsync(const Model::CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
          * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
@@ -520,6 +790,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes stack instances for the specified accounts, in the specified regions.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStackInstancesOutcome DeleteStackInstances(const Model::DeleteStackInstancesRequest& request) const;
+
+        /**
+         * <p>Deletes stack instances for the specified accounts, in the specified regions.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteStackInstancesOutcomeCallable DeleteStackInstancesCallable(const Model::DeleteStackInstancesRequest& request) const;
+
+        /**
+         * <p>Deletes stack instances for the specified accounts, in the specified regions.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteStackInstancesAsync(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a stack set. Before you can delete a stack set, all of its member
+         * stack instances must be deleted. For more information about how to do this, see
+         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStackSetOutcome DeleteStackSet(const Model::DeleteStackSetRequest& request) const;
+
+        /**
+         * <p>Deletes a stack set. Before you can delete a stack set, all of its member
+         * stack instances must be deleted. For more information about how to do this, see
+         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteStackSetOutcomeCallable DeleteStackSetCallable(const Model::DeleteStackSetRequest& request) const;
+
+        /**
+         * <p>Deletes a stack set. Before you can delete a stack set, all of its member
+         * stack instances must be deleted. For more information about how to do this, see
+         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteStackSetAsync(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
@@ -636,6 +965,40 @@ namespace Model
         virtual void DescribeStackEventsAsync(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the stack instance that's associated with the specified stack set,
+         * AWS account, and region.</p> <p>For a list of stack instances that are
+         * associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackInstanceOutcome DescribeStackInstance(const Model::DescribeStackInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the stack instance that's associated with the specified stack set,
+         * AWS account, and region.</p> <p>For a list of stack instances that are
+         * associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStackInstanceOutcomeCallable DescribeStackInstanceCallable(const Model::DescribeStackInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the stack instance that's associated with the specified stack set,
+         * AWS account, and region.</p> <p>For a list of stack instances that are
+         * associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStackInstanceAsync(const Model::DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
          * <p>For deleted stacks, DescribeStackResource returns resource information for up
          * to 90 days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
@@ -741,6 +1104,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStackResourcesAsync(const Model::DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the description of the specified stack set. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackSetOutcome DescribeStackSet(const Model::DescribeStackSetRequest& request) const;
+
+        /**
+         * <p>Returns the description of the specified stack set. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStackSetOutcomeCallable DescribeStackSetCallable(const Model::DescribeStackSetRequest& request) const;
+
+        /**
+         * <p>Returns the description of the specified stack set. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStackSetAsync(const Model::DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the description of the specified stack set operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackSetOperationOutcome DescribeStackSetOperation(const Model::DescribeStackSetOperationRequest& request) const;
+
+        /**
+         * <p>Returns the description of the specified stack set operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStackSetOperationOutcomeCallable DescribeStackSetOperationCallable(const Model::DescribeStackSetOperationRequest& request) const;
+
+        /**
+         * <p>Returns the description of the specified stack set operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStackSetOperationAsync(const Model::DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description for the specified stack; if no stack name was
@@ -1094,6 +1513,37 @@ namespace Model
         virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified stack set. You can filter for stack instances that are associated
+         * with a specific AWS account name or region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackInstancesOutcome ListStackInstances(const Model::ListStackInstancesRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified stack set. You can filter for stack instances that are associated
+         * with a specific AWS account name or region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStackInstancesOutcomeCallable ListStackInstancesCallable(const Model::ListStackInstancesRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified stack set. You can filter for stack instances that are associated
+         * with a specific AWS account name or region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStackInstancesAsync(const Model::ListStackInstancesRequest& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
          * deleted stacks, ListStackResources returns resource information for up to 90
          * days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
@@ -1123,6 +1573,90 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStackResourcesAsync(const Model::ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns summary information about the results of a stack set operation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackSetOperationResultsOutcome ListStackSetOperationResults(const Model::ListStackSetOperationResultsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about the results of a stack set operation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStackSetOperationResultsOutcomeCallable ListStackSetOperationResultsCallable(const Model::ListStackSetOperationResultsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about the results of a stack set operation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStackSetOperationResultsAsync(const Model::ListStackSetOperationResultsRequest& request, const ListStackSetOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns summary information about operations performed on a stack set.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackSetOperationsOutcome ListStackSetOperations(const Model::ListStackSetOperationsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about operations performed on a stack set.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStackSetOperationsOutcomeCallable ListStackSetOperationsCallable(const Model::ListStackSetOperationsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about operations performed on a stack set.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStackSetOperationsAsync(const Model::ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns summary information about stack sets that are associated with the
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackSetsOutcome ListStackSets(const Model::ListStackSetsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack sets that are associated with the
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStackSetsOutcomeCallable ListStackSetsCallable(const Model::ListStackSetsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack sets that are associated with the
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStackSetsAsync(const Model::ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the summary information for stacks whose status matches the specified
@@ -1230,6 +1764,34 @@ namespace Model
         virtual void SignalResourceAsync(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops an in-progress operation on a stack set and its associated stack
+         * instances. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopStackSetOperationOutcome StopStackSetOperation(const Model::StopStackSetOperationRequest& request) const;
+
+        /**
+         * <p>Stops an in-progress operation on a stack set and its associated stack
+         * instances. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopStackSetOperationOutcomeCallable StopStackSetOperationCallable(const Model::StopStackSetOperationRequest& request) const;
+
+        /**
+         * <p>Stops an in-progress operation on a stack set and its associated stack
+         * instances. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopStackSetOperationAsync(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a stack as specified in the template. After the call completes
          * successfully, the stack update starts. You can check the status of the stack via
          * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
@@ -1276,6 +1838,43 @@ namespace Model
         virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
+         * if the stack set operation created by updating the stack set fails (completely
+         * or partially, below or above a specified failure tolerance), the stack set is
+         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
+         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStackSetOutcome UpdateStackSet(const Model::UpdateStackSetRequest& request) const;
+
+        /**
+         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
+         * if the stack set operation created by updating the stack set fails (completely
+         * or partially, below or above a specified failure tolerance), the stack set is
+         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
+         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStackSetOutcomeCallable UpdateStackSetCallable(const Model::UpdateStackSetRequest& request) const;
+
+        /**
+         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
+         * if the stack set operation created by updating the stack set fails (completely
+         * or partially, below or above a specified failure tolerance), the stack set is
+         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
+         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStackSetAsync(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Validates a specified template. AWS CloudFormation first checks if the
          * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
          * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
@@ -1318,13 +1917,20 @@ namespace Model
         void ContinueUpdateRollbackAsyncHelper(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChangeSetAsyncHelper(const Model::CreateChangeSetRequest& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStackInstancesAsyncHelper(const Model::CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStackSetAsyncHelper(const Model::CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChangeSetAsyncHelper(const Model::DeleteChangeSetRequest& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStackInstancesAsyncHelper(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStackSetAsyncHelper(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChangeSetAsyncHelper(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackEventsAsyncHelper(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStackInstanceAsyncHelper(const Model::DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackResourceAsyncHelper(const Model::DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackResourcesAsyncHelper(const Model::DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStackSetAsyncHelper(const Model::DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStackSetOperationAsyncHelper(const Model::DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EstimateTemplateCostAsyncHelper(const Model::EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecuteChangeSetAsyncHelper(const Model::ExecuteChangeSetRequest& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1334,11 +1940,17 @@ namespace Model
         void ListChangeSetsAsyncHelper(const Model::ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImportsAsyncHelper(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStackInstancesAsyncHelper(const Model::ListStackInstancesRequest& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStackResourcesAsyncHelper(const Model::ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStackSetOperationResultsAsyncHelper(const Model::ListStackSetOperationResultsRequest& request, const ListStackSetOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStackSetOperationsAsyncHelper(const Model::ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStackSetsAsyncHelper(const Model::ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStacksAsyncHelper(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetStackPolicyAsyncHelper(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignalResourceAsyncHelper(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopStackSetOperationAsyncHelper(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStackSetAsyncHelper(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ValidateTemplateAsyncHelper(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;

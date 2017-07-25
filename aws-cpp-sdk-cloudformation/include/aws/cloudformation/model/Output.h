@@ -153,6 +153,41 @@ namespace Model
      */
     inline Output& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline const Aws::String& GetExportName() const{ return m_exportName; }
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline void SetExportName(const char* value) { m_exportNameHasBeenSet = true; m_exportName.assign(value); }
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline Output& WithExportName(const Aws::String& value) { SetExportName(value); return *this;}
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline Output& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline Output& WithExportName(const char* value) { SetExportName(value); return *this;}
+
   private:
     Aws::String m_outputKey;
     bool m_outputKeyHasBeenSet;
@@ -160,6 +195,8 @@ namespace Model
     bool m_outputValueHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_exportName;
+    bool m_exportNameHasBeenSet;
   };
 
 } // namespace Model

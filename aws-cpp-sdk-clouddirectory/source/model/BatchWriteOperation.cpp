@@ -35,7 +35,13 @@ BatchWriteOperation::BatchWriteOperation() :
     m_updateObjectAttributesHasBeenSet(false),
     m_deleteObjectHasBeenSet(false),
     m_addFacetToObjectHasBeenSet(false),
-    m_removeFacetFromObjectHasBeenSet(false)
+    m_removeFacetFromObjectHasBeenSet(false),
+    m_attachPolicyHasBeenSet(false),
+    m_createIndexHasBeenSet(false),
+    m_attachToIndexHasBeenSet(false),
+    m_detachFromIndexHasBeenSet(false),
+    m_attachTypedLinkHasBeenSet(false),
+    m_detachTypedLinkHasBeenSet(false)
 {
 }
 
@@ -46,7 +52,13 @@ BatchWriteOperation::BatchWriteOperation(const JsonValue& jsonValue) :
     m_updateObjectAttributesHasBeenSet(false),
     m_deleteObjectHasBeenSet(false),
     m_addFacetToObjectHasBeenSet(false),
-    m_removeFacetFromObjectHasBeenSet(false)
+    m_removeFacetFromObjectHasBeenSet(false),
+    m_attachPolicyHasBeenSet(false),
+    m_createIndexHasBeenSet(false),
+    m_attachToIndexHasBeenSet(false),
+    m_detachFromIndexHasBeenSet(false),
+    m_attachTypedLinkHasBeenSet(false),
+    m_detachTypedLinkHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +114,48 @@ BatchWriteOperation& BatchWriteOperation::operator =(const JsonValue& jsonValue)
     m_removeFacetFromObjectHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AttachPolicy"))
+  {
+    m_attachPolicy = jsonValue.GetObject("AttachPolicy");
+
+    m_attachPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateIndex"))
+  {
+    m_createIndex = jsonValue.GetObject("CreateIndex");
+
+    m_createIndexHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AttachToIndex"))
+  {
+    m_attachToIndex = jsonValue.GetObject("AttachToIndex");
+
+    m_attachToIndexHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DetachFromIndex"))
+  {
+    m_detachFromIndex = jsonValue.GetObject("DetachFromIndex");
+
+    m_detachFromIndexHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AttachTypedLink"))
+  {
+    m_attachTypedLink = jsonValue.GetObject("AttachTypedLink");
+
+    m_attachTypedLinkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DetachTypedLink"))
+  {
+    m_detachTypedLink = jsonValue.GetObject("DetachTypedLink");
+
+    m_detachTypedLinkHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +202,42 @@ JsonValue BatchWriteOperation::Jsonize() const
   if(m_removeFacetFromObjectHasBeenSet)
   {
    payload.WithObject("RemoveFacetFromObject", m_removeFacetFromObject.Jsonize());
+
+  }
+
+  if(m_attachPolicyHasBeenSet)
+  {
+   payload.WithObject("AttachPolicy", m_attachPolicy.Jsonize());
+
+  }
+
+  if(m_createIndexHasBeenSet)
+  {
+   payload.WithObject("CreateIndex", m_createIndex.Jsonize());
+
+  }
+
+  if(m_attachToIndexHasBeenSet)
+  {
+   payload.WithObject("AttachToIndex", m_attachToIndex.Jsonize());
+
+  }
+
+  if(m_detachFromIndexHasBeenSet)
+  {
+   payload.WithObject("DetachFromIndex", m_detachFromIndex.Jsonize());
+
+  }
+
+  if(m_attachTypedLinkHasBeenSet)
+  {
+   payload.WithObject("AttachTypedLink", m_attachTypedLink.Jsonize());
+
+  }
+
+  if(m_detachTypedLinkHasBeenSet)
+  {
+   payload.WithObject("DetachTypedLink", m_detachTypedLink.Jsonize());
 
   }
 

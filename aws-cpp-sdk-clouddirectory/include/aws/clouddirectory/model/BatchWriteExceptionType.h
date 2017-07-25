@@ -34,7 +34,15 @@ namespace Model
     FacetValidationException,
     ObjectNotDetachedException,
     ResourceNotFoundException,
-    AccessDeniedException
+    AccessDeniedException,
+    InvalidAttachmentException,
+    NotIndexException,
+    IndexedAttributeMissingException,
+    ObjectAlreadyDetachedException,
+    NotPolicyException,
+    DirectoryNotEnabledException,
+    LimitExceededException,
+    UnsupportedIndexTypeException
   };
 
 namespace BatchWriteExceptionTypeMapper

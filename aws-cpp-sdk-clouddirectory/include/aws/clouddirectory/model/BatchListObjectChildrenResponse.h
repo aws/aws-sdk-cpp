@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a <code>ListObjectChildren</code> response
+   * <p>Represents the output of a <a>ListObjectChildren</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectChildrenResponse">AWS
    * API Reference</a></p>

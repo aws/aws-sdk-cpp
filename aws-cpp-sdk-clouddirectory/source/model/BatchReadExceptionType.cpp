@@ -36,6 +36,13 @@ namespace Aws
         static const int InvalidNextTokenException_HASH = HashingUtils::HashString("InvalidNextTokenException");
         static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
         static const int NotNodeException_HASH = HashingUtils::HashString("NotNodeException");
+        static const int FacetValidationException_HASH = HashingUtils::HashString("FacetValidationException");
+        static const int CannotListParentOfRootException_HASH = HashingUtils::HashString("CannotListParentOfRootException");
+        static const int NotIndexException_HASH = HashingUtils::HashString("NotIndexException");
+        static const int NotPolicyException_HASH = HashingUtils::HashString("NotPolicyException");
+        static const int DirectoryNotEnabledException_HASH = HashingUtils::HashString("DirectoryNotEnabledException");
+        static const int LimitExceededException_HASH = HashingUtils::HashString("LimitExceededException");
+        static const int InternalServiceException_HASH = HashingUtils::HashString("InternalServiceException");
 
 
         BatchReadExceptionType GetBatchReadExceptionTypeForName(const Aws::String& name)
@@ -65,6 +72,34 @@ namespace Aws
           {
             return BatchReadExceptionType::NotNodeException;
           }
+          else if (hashCode == FacetValidationException_HASH)
+          {
+            return BatchReadExceptionType::FacetValidationException;
+          }
+          else if (hashCode == CannotListParentOfRootException_HASH)
+          {
+            return BatchReadExceptionType::CannotListParentOfRootException;
+          }
+          else if (hashCode == NotIndexException_HASH)
+          {
+            return BatchReadExceptionType::NotIndexException;
+          }
+          else if (hashCode == NotPolicyException_HASH)
+          {
+            return BatchReadExceptionType::NotPolicyException;
+          }
+          else if (hashCode == DirectoryNotEnabledException_HASH)
+          {
+            return BatchReadExceptionType::DirectoryNotEnabledException;
+          }
+          else if (hashCode == LimitExceededException_HASH)
+          {
+            return BatchReadExceptionType::LimitExceededException;
+          }
+          else if (hashCode == InternalServiceException_HASH)
+          {
+            return BatchReadExceptionType::InternalServiceException;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +126,20 @@ namespace Aws
             return "AccessDeniedException";
           case BatchReadExceptionType::NotNodeException:
             return "NotNodeException";
+          case BatchReadExceptionType::FacetValidationException:
+            return "FacetValidationException";
+          case BatchReadExceptionType::CannotListParentOfRootException:
+            return "CannotListParentOfRootException";
+          case BatchReadExceptionType::NotIndexException:
+            return "NotIndexException";
+          case BatchReadExceptionType::NotPolicyException:
+            return "NotPolicyException";
+          case BatchReadExceptionType::DirectoryNotEnabledException:
+            return "DirectoryNotEnabledException";
+          case BatchReadExceptionType::LimitExceededException:
+            return "LimitExceededException";
+          case BatchReadExceptionType::InternalServiceException:
+            return "InternalServiceException";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -259,6 +259,41 @@ namespace Model
      */
     inline GetTemplateSummaryRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline GetTemplateSummaryRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline GetTemplateSummaryRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     */
+    inline GetTemplateSummaryRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
   private:
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
@@ -266,6 +301,8 @@ namespace Model
     bool m_templateURLHasBeenSet;
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::String m_stackSetName;
+    bool m_stackSetNameHasBeenSet;
   };
 
 } // namespace Model

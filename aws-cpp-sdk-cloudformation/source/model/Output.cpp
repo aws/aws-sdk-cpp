@@ -33,14 +33,16 @@ namespace Model
 Output::Output() : 
     m_outputKeyHasBeenSet(false),
     m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_exportNameHasBeenSet(false)
 {
 }
 
 Output::Output(const XmlNode& xmlNode) : 
     m_outputKeyHasBeenSet(false),
     m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_exportNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,6 +71,12 @@ Output& Output::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode exportNameNode = resultNode.FirstChild("ExportName");
+    if(!exportNameNode.IsNull())
+    {
+      m_exportName = StringUtils::Trim(exportNameNode.GetText().c_str());
+      m_exportNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -91,6 +99,11 @@ void Output::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_exportNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExportName=" << StringUtils::URLEncode(m_exportName.c_str()) << "&";
+  }
+
 }
 
 void Output::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -106,6 +119,10 @@ void Output::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_exportNameHasBeenSet)
+  {
+      oStream << location << ".ExportName=" << StringUtils::URLEncode(m_exportName.c_str()) << "&";
   }
 }
 

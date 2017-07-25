@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a <code>CreateObject</code> response
+   * <p>Represents the output of a <a>CreateObject</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchCreateObjectResponse">AWS
    * API Reference</a></p>

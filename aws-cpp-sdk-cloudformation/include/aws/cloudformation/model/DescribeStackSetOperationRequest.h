@@ -1,0 +1,120 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/cloudformation/CloudFormation_EXPORTS.h>
+#include <aws/cloudformation/CloudFormationRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_CLOUDFORMATION_API DescribeStackSetOperationRequest : public CloudFormationRequest
+  {
+  public:
+    DescribeStackSetOperationRequest();
+    Aws::String SerializePayload() const override;
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline DescribeStackSetOperationRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline DescribeStackSetOperationRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
+    inline DescribeStackSetOperationRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline DescribeStackSetOperationRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline DescribeStackSetOperationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline DescribeStackSetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+
+  private:
+    Aws::String m_stackSetName;
+    bool m_stackSetNameHasBeenSet;
+    Aws::String m_operationId;
+    bool m_operationIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

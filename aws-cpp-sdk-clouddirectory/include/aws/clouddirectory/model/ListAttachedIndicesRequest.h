@@ -74,27 +74,27 @@ namespace Model
     inline ListAttachedIndicesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>A reference to the object to that has indices attached.</p>
+     * <p>A reference to the object that has indices attached.</p>
      */
     inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
 
     /**
-     * <p>A reference to the object to that has indices attached.</p>
+     * <p>A reference to the object that has indices attached.</p>
      */
     inline void SetTargetReference(const ObjectReference& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
 
     /**
-     * <p>A reference to the object to that has indices attached.</p>
+     * <p>A reference to the object that has indices attached.</p>
      */
     inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
 
     /**
-     * <p>A reference to the object to that has indices attached.</p>
+     * <p>A reference to the object that has indices attached.</p>
      */
     inline ListAttachedIndicesRequest& WithTargetReference(const ObjectReference& value) { SetTargetReference(value); return *this;}
 
     /**
-     * <p>A reference to the object to that has indices attached.</p>
+     * <p>A reference to the object that has indices attached.</p>
      */
     inline ListAttachedIndicesRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
