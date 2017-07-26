@@ -67,6 +67,7 @@ Instance::Instance() :
     m_iamInstanceProfileHasBeenSet(false),
     m_instanceLifecycle(InstanceLifecycleType::NOT_SET),
     m_instanceLifecycleHasBeenSet(false),
+    m_elasticGpuAssociationsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
@@ -120,6 +121,7 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_iamInstanceProfileHasBeenSet(false),
     m_instanceLifecycle(InstanceLifecycleType::NOT_SET),
     m_instanceLifecycleHasBeenSet(false),
+    m_elasticGpuAssociationsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
@@ -322,6 +324,18 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     {
       m_instanceLifecycle = InstanceLifecycleTypeMapper::GetInstanceLifecycleTypeForName(StringUtils::Trim(instanceLifecycleNode.GetText().c_str()).c_str());
       m_instanceLifecycleHasBeenSet = true;
+    }
+    XmlNode elasticGpuAssociationsNode = resultNode.FirstChild("elasticGpuAssociationSet");
+    if(!elasticGpuAssociationsNode.IsNull())
+    {
+      XmlNode elasticGpuAssociationsMember = elasticGpuAssociationsNode.FirstChild("item");
+      while(!elasticGpuAssociationsMember.IsNull())
+      {
+        m_elasticGpuAssociations.push_back(elasticGpuAssociationsMember);
+        elasticGpuAssociationsMember = elasticGpuAssociationsMember.NextNode("item");
+      }
+
+      m_elasticGpuAssociationsHasBeenSet = true;
     }
     XmlNode networkInterfacesNode = resultNode.FirstChild("networkInterfaceSet");
     if(!networkInterfacesNode.IsNull())
@@ -568,6 +582,17 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".InstanceLifecycle=" << InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle) << "&";
   }
 
+  if(m_elasticGpuAssociationsHasBeenSet)
+  {
+      unsigned elasticGpuAssociationsIdx = 1;
+      for(auto& item : m_elasticGpuAssociations)
+      {
+        Aws::StringStream elasticGpuAssociationsSs;
+        elasticGpuAssociationsSs << location << index << locationValue << ".ElasticGpuAssociationSet." << elasticGpuAssociationsIdx++;
+        item.OutputToStream(oStream, elasticGpuAssociationsSs.str().c_str());
+      }
+  }
+
   if(m_networkInterfacesHasBeenSet)
   {
       unsigned networkInterfacesIdx = 1;
@@ -773,6 +798,16 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_instanceLifecycleHasBeenSet)
   {
       oStream << location << ".InstanceLifecycle=" << InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle) << "&";
+  }
+  if(m_elasticGpuAssociationsHasBeenSet)
+  {
+      unsigned elasticGpuAssociationsIdx = 1;
+      for(auto& item : m_elasticGpuAssociations)
+      {
+        Aws::StringStream elasticGpuAssociationsSs;
+        elasticGpuAssociationsSs << location <<  ".ElasticGpuAssociationSet." << elasticGpuAssociationsIdx++;
+        item.OutputToStream(oStream, elasticGpuAssociationsSs.str().c_str());
+      }
   }
   if(m_networkInterfacesHasBeenSet)
   {

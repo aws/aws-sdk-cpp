@@ -436,29 +436,38 @@ namespace Model
         virtual void GetDashboardAsync(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets statistics for the specified metric.</p> <p>Amazon CloudWatch retains
-         * metric data as follows:</p> <ul> <li> <p>Data points with a period of 60 seconds
-         * (1-minute) are available for 15 days</p> </li> <li> <p>Data points with a period
-         * of 300 seconds (5-minute) are available for 63 days</p> </li> <li> <p>Data
-         * points with a period of 3600 seconds (1 hour) are available for 455 days (15
-         * months)</p> </li> </ul> <p>CloudWatch started retaining 5-minute and 1-hour
-         * metric data as of July 9, 2016.</p> <p>The maximum number of data points
-         * returned from a single call is 1,440. If you request more than 1,440 data
+         * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
+         * points returned from a single call is 1,440. If you request more than 1,440 data
          * points, CloudWatch returns an error. To reduce the number of data points, you
          * can narrow the specified time range and make multiple requests across adjacent
-         * time ranges, or you can increase the specified period. A period can be as short
-         * as one minute (60 seconds). Data points are not returned in chronological
-         * order.</p> <p>CloudWatch aggregates data points based on the length of the
-         * period that you specify. For example, if you request statistics with a one-hour
-         * period, CloudWatch aggregates all data points with time stamps that fall within
-         * each one-hour period. Therefore, the number of values aggregated by CloudWatch
-         * is larger than the number of data points returned.</p> <p>CloudWatch needs raw
-         * data points to calculate percentile statistics. If you publish data using a
-         * statistic set instead, you can only retrieve percentile statistics for this data
-         * if one of the following conditions is true:</p> <ul> <li> <p>The SampleCount
-         * value of the statistic set is 1.</p> </li> <li> <p>The Min and the Max values of
-         * the statistic set are equal.</p> </li> </ul> <p>For a list of metrics and
-         * dimensions supported by AWS services, see the <a
+         * time ranges, or you can increase the specified period. Data points are not
+         * returned in chronological order.</p> <p>CloudWatch aggregates data points based
+         * on the length of the period that you specify. For example, if you request
+         * statistics with a one-hour period, CloudWatch aggregates all data points with
+         * time stamps that fall within each one-hour period. Therefore, the number of
+         * values aggregated by CloudWatch is larger than the number of data points
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you can only
+         * retrieve percentile statistics for this data if one of the following conditions
+         * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
+         * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
+         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
+         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
+         * These data points are high-resolution metrics and are available only for custom
+         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
+         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
+         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
+         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
+         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p>
+         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
+         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
+         * services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -468,29 +477,38 @@ namespace Model
         virtual Model::GetMetricStatisticsOutcome GetMetricStatistics(const Model::GetMetricStatisticsRequest& request) const;
 
         /**
-         * <p>Gets statistics for the specified metric.</p> <p>Amazon CloudWatch retains
-         * metric data as follows:</p> <ul> <li> <p>Data points with a period of 60 seconds
-         * (1-minute) are available for 15 days</p> </li> <li> <p>Data points with a period
-         * of 300 seconds (5-minute) are available for 63 days</p> </li> <li> <p>Data
-         * points with a period of 3600 seconds (1 hour) are available for 455 days (15
-         * months)</p> </li> </ul> <p>CloudWatch started retaining 5-minute and 1-hour
-         * metric data as of July 9, 2016.</p> <p>The maximum number of data points
-         * returned from a single call is 1,440. If you request more than 1,440 data
+         * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
+         * points returned from a single call is 1,440. If you request more than 1,440 data
          * points, CloudWatch returns an error. To reduce the number of data points, you
          * can narrow the specified time range and make multiple requests across adjacent
-         * time ranges, or you can increase the specified period. A period can be as short
-         * as one minute (60 seconds). Data points are not returned in chronological
-         * order.</p> <p>CloudWatch aggregates data points based on the length of the
-         * period that you specify. For example, if you request statistics with a one-hour
-         * period, CloudWatch aggregates all data points with time stamps that fall within
-         * each one-hour period. Therefore, the number of values aggregated by CloudWatch
-         * is larger than the number of data points returned.</p> <p>CloudWatch needs raw
-         * data points to calculate percentile statistics. If you publish data using a
-         * statistic set instead, you can only retrieve percentile statistics for this data
-         * if one of the following conditions is true:</p> <ul> <li> <p>The SampleCount
-         * value of the statistic set is 1.</p> </li> <li> <p>The Min and the Max values of
-         * the statistic set are equal.</p> </li> </ul> <p>For a list of metrics and
-         * dimensions supported by AWS services, see the <a
+         * time ranges, or you can increase the specified period. Data points are not
+         * returned in chronological order.</p> <p>CloudWatch aggregates data points based
+         * on the length of the period that you specify. For example, if you request
+         * statistics with a one-hour period, CloudWatch aggregates all data points with
+         * time stamps that fall within each one-hour period. Therefore, the number of
+         * values aggregated by CloudWatch is larger than the number of data points
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you can only
+         * retrieve percentile statistics for this data if one of the following conditions
+         * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
+         * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
+         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
+         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
+         * These data points are high-resolution metrics and are available only for custom
+         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
+         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
+         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
+         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
+         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p>
+         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
+         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
+         * services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -502,29 +520,38 @@ namespace Model
         virtual Model::GetMetricStatisticsOutcomeCallable GetMetricStatisticsCallable(const Model::GetMetricStatisticsRequest& request) const;
 
         /**
-         * <p>Gets statistics for the specified metric.</p> <p>Amazon CloudWatch retains
-         * metric data as follows:</p> <ul> <li> <p>Data points with a period of 60 seconds
-         * (1-minute) are available for 15 days</p> </li> <li> <p>Data points with a period
-         * of 300 seconds (5-minute) are available for 63 days</p> </li> <li> <p>Data
-         * points with a period of 3600 seconds (1 hour) are available for 455 days (15
-         * months)</p> </li> </ul> <p>CloudWatch started retaining 5-minute and 1-hour
-         * metric data as of July 9, 2016.</p> <p>The maximum number of data points
-         * returned from a single call is 1,440. If you request more than 1,440 data
+         * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
+         * points returned from a single call is 1,440. If you request more than 1,440 data
          * points, CloudWatch returns an error. To reduce the number of data points, you
          * can narrow the specified time range and make multiple requests across adjacent
-         * time ranges, or you can increase the specified period. A period can be as short
-         * as one minute (60 seconds). Data points are not returned in chronological
-         * order.</p> <p>CloudWatch aggregates data points based on the length of the
-         * period that you specify. For example, if you request statistics with a one-hour
-         * period, CloudWatch aggregates all data points with time stamps that fall within
-         * each one-hour period. Therefore, the number of values aggregated by CloudWatch
-         * is larger than the number of data points returned.</p> <p>CloudWatch needs raw
-         * data points to calculate percentile statistics. If you publish data using a
-         * statistic set instead, you can only retrieve percentile statistics for this data
-         * if one of the following conditions is true:</p> <ul> <li> <p>The SampleCount
-         * value of the statistic set is 1.</p> </li> <li> <p>The Min and the Max values of
-         * the statistic set are equal.</p> </li> </ul> <p>For a list of metrics and
-         * dimensions supported by AWS services, see the <a
+         * time ranges, or you can increase the specified period. Data points are not
+         * returned in chronological order.</p> <p>CloudWatch aggregates data points based
+         * on the length of the period that you specify. For example, if you request
+         * statistics with a one-hour period, CloudWatch aggregates all data points with
+         * time stamps that fall within each one-hour period. Therefore, the number of
+         * values aggregated by CloudWatch is larger than the number of data points
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you can only
+         * retrieve percentile statistics for this data if one of the following conditions
+         * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
+         * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
+         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
+         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
+         * These data points are high-resolution metrics and are available only for custom
+         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
+         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
+         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
+         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
+         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p>
+         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
+         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
+         * services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -616,11 +643,19 @@ namespace Model
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
          * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>To copy an
-         * existing dashboard, use <code>GetDashboard</code>, and then use the data
-         * returned within <code>DashboardBody</code> as the template for the new dashboard
-         * when you call <code>PutDashboard</code> to create the copy.</p><p><h3>See
-         * Also:</h3>   <a
+         * dashboards in your account are global, not region-specific.</p> <p>A simple way
+         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
+         * dashboard. To copy an existing dashboard using the console, you can load the
+         * dashboard and then use the View/edit source command in the Actions menu to
+         * display the JSON block for that dashboard. Another way to copy a dashboard is to
+         * use <code>GetDashboard</code>, and then use the data returned within
+         * <code>DashboardBody</code> as the template for the new dashboard when you call
+         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
+         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
+         * the dashboard with a message that the dashboard was created by script and should
+         * not be changed in the console. This message could also point console users to
+         * the location of the <code>DashboardBody</code> script or the CloudFormation
+         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          */
@@ -630,11 +665,19 @@ namespace Model
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
          * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>To copy an
-         * existing dashboard, use <code>GetDashboard</code>, and then use the data
-         * returned within <code>DashboardBody</code> as the template for the new dashboard
-         * when you call <code>PutDashboard</code> to create the copy.</p><p><h3>See
-         * Also:</h3>   <a
+         * dashboards in your account are global, not region-specific.</p> <p>A simple way
+         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
+         * dashboard. To copy an existing dashboard using the console, you can load the
+         * dashboard and then use the View/edit source command in the Actions menu to
+         * display the JSON block for that dashboard. Another way to copy a dashboard is to
+         * use <code>GetDashboard</code>, and then use the data returned within
+         * <code>DashboardBody</code> as the template for the new dashboard when you call
+         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
+         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
+         * the dashboard with a message that the dashboard was created by script and should
+         * not be changed in the console. This message could also point console users to
+         * the location of the <code>DashboardBody</code> script or the CloudFormation
+         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          *
@@ -646,11 +689,19 @@ namespace Model
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
          * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>To copy an
-         * existing dashboard, use <code>GetDashboard</code>, and then use the data
-         * returned within <code>DashboardBody</code> as the template for the new dashboard
-         * when you call <code>PutDashboard</code> to create the copy.</p><p><h3>See
-         * Also:</h3>   <a
+         * dashboards in your account are global, not region-specific.</p> <p>A simple way
+         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
+         * dashboard. To copy an existing dashboard using the console, you can load the
+         * dashboard and then use the View/edit source command in the Actions menu to
+         * display the JSON block for that dashboard. Another way to copy a dashboard is to
+         * use <code>GetDashboard</code>, and then use the data returned within
+         * <code>DashboardBody</code> as the template for the new dashboard when you call
+         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
+         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
+         * the dashboard with a message that the dashboard was created by script and should
+         * not be changed in the console. This message could also point console users to
+         * the location of the <code>DashboardBody</code> script or the CloudFormation
+         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          *

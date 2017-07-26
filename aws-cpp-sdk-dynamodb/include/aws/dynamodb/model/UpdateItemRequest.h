@@ -271,88 +271,88 @@ namespace Model
     inline UpdateItemRequest& AddAttributeUpdates(const char* key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, ExpectedAttributeValue>& GetExpected() const{ return m_expected; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpected(const Aws::Map<Aws::String, ExpectedAttributeValue>& value) { m_expectedHasBeenSet = true; m_expected = value; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpected(const Aws::Map<Aws::String, ExpectedAttributeValue>& value) { SetExpected(value); return *this;}
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { SetExpected(std::move(value)); return *this;}
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpected(const Aws::String& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpected(Aws::String&& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpected(const Aws::String& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpected(Aws::String&& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpected(const char* key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -400,101 +400,101 @@ namespace Model
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appeared either before or after they were updated. For <code>UpdateItem</code>,
-     * the valid values are:</p> <ul> <li> <p> <code>NONE</code> - If
-     * <code>ReturnValues</code> is not specified, or if its value is
-     * <code>NONE</code>, then nothing is returned. (This setting is the default for
-     * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - Returns
-     * all of the attributes of the item, as they appeared before the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only the
-     * updated attributes, as they appeared before the UpdateItem operation.</p> </li>
-     * <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as
-     * they appear after the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
-     * associated with requesting a return value aside from the small network and
-     * processing overhead of receiving a larger response. No Read Capacity Units are
-     * consumed.</p> <p>Values returned are strongly consistent</p>
+     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
+     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
+     * is not specified, or if its value is <code>NONE</code>, then nothing is
+     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
+     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
+     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
+     * Returns all of the attributes of the item, as they appear after the UpdateItem
+     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
+     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
+     * </ul> <p>There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a larger
+     * response. No read capacity units are consumed.</p> <p>The values returned are
+     * strongly consistent.</p>
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appeared either before or after they were updated. For <code>UpdateItem</code>,
-     * the valid values are:</p> <ul> <li> <p> <code>NONE</code> - If
-     * <code>ReturnValues</code> is not specified, or if its value is
-     * <code>NONE</code>, then nothing is returned. (This setting is the default for
-     * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - Returns
-     * all of the attributes of the item, as they appeared before the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only the
-     * updated attributes, as they appeared before the UpdateItem operation.</p> </li>
-     * <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as
-     * they appear after the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
-     * associated with requesting a return value aside from the small network and
-     * processing overhead of receiving a larger response. No Read Capacity Units are
-     * consumed.</p> <p>Values returned are strongly consistent</p>
+     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
+     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
+     * is not specified, or if its value is <code>NONE</code>, then nothing is
+     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
+     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
+     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
+     * Returns all of the attributes of the item, as they appear after the UpdateItem
+     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
+     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
+     * </ul> <p>There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a larger
+     * response. No read capacity units are consumed.</p> <p>The values returned are
+     * strongly consistent.</p>
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appeared either before or after they were updated. For <code>UpdateItem</code>,
-     * the valid values are:</p> <ul> <li> <p> <code>NONE</code> - If
-     * <code>ReturnValues</code> is not specified, or if its value is
-     * <code>NONE</code>, then nothing is returned. (This setting is the default for
-     * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - Returns
-     * all of the attributes of the item, as they appeared before the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only the
-     * updated attributes, as they appeared before the UpdateItem operation.</p> </li>
-     * <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as
-     * they appear after the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
-     * associated with requesting a return value aside from the small network and
-     * processing overhead of receiving a larger response. No Read Capacity Units are
-     * consumed.</p> <p>Values returned are strongly consistent</p>
+     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
+     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
+     * is not specified, or if its value is <code>NONE</code>, then nothing is
+     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
+     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
+     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
+     * Returns all of the attributes of the item, as they appear after the UpdateItem
+     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
+     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
+     * </ul> <p>There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a larger
+     * response. No read capacity units are consumed.</p> <p>The values returned are
+     * strongly consistent.</p>
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appeared either before or after they were updated. For <code>UpdateItem</code>,
-     * the valid values are:</p> <ul> <li> <p> <code>NONE</code> - If
-     * <code>ReturnValues</code> is not specified, or if its value is
-     * <code>NONE</code>, then nothing is returned. (This setting is the default for
-     * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - Returns
-     * all of the attributes of the item, as they appeared before the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only the
-     * updated attributes, as they appeared before the UpdateItem operation.</p> </li>
-     * <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as
-     * they appear after the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
-     * associated with requesting a return value aside from the small network and
-     * processing overhead of receiving a larger response. No Read Capacity Units are
-     * consumed.</p> <p>Values returned are strongly consistent</p>
+     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
+     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
+     * is not specified, or if its value is <code>NONE</code>, then nothing is
+     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
+     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
+     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
+     * Returns all of the attributes of the item, as they appear after the UpdateItem
+     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
+     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
+     * </ul> <p>There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a larger
+     * response. No read capacity units are consumed.</p> <p>The values returned are
+     * strongly consistent.</p>
      */
     inline UpdateItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appeared either before or after they were updated. For <code>UpdateItem</code>,
-     * the valid values are:</p> <ul> <li> <p> <code>NONE</code> - If
-     * <code>ReturnValues</code> is not specified, or if its value is
-     * <code>NONE</code>, then nothing is returned. (This setting is the default for
-     * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - Returns
-     * all of the attributes of the item, as they appeared before the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only the
-     * updated attributes, as they appeared before the UpdateItem operation.</p> </li>
-     * <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as
-     * they appear after the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
-     * associated with requesting a return value aside from the small network and
-     * processing overhead of receiving a larger response. No Read Capacity Units are
-     * consumed.</p> <p>Values returned are strongly consistent</p>
+     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
+     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
+     * is not specified, or if its value is <code>NONE</code>, then nothing is
+     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
+     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
+     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
+     * Returns all of the attributes of the item, as they appear after the UpdateItem
+     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
+     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
+     * </ul> <p>There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a larger
+     * response. No read capacity units are consumed.</p> <p>The values returned are
+     * strongly consistent.</p>
      */
     inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 

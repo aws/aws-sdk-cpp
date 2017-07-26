@@ -182,88 +182,88 @@ namespace Model
     inline DeleteItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, ExpectedAttributeValue>& GetExpected() const{ return m_expected; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpected(const Aws::Map<Aws::String, ExpectedAttributeValue>& value) { m_expectedHasBeenSet = true; m_expected = value; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpected(const Aws::Map<Aws::String, ExpectedAttributeValue>& value) { SetExpected(value); return *this;}
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { SetExpected(std::move(value)); return *this;}
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpected(const Aws::String& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpected(Aws::String&& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpected(const Aws::String& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpected(Aws::String&& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpected(const char* key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
-     * For more information, see <a
+     * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */

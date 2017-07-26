@@ -42,7 +42,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline const Aws::String& GetDashboardName() const{ return m_dashboardName; }
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline void SetDashboardName(const Aws::String& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = value; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline void SetDashboardName(Aws::String&& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = std::move(value); }
 
@@ -66,7 +66,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline void SetDashboardName(const char* value) { m_dashboardNameHasBeenSet = true; m_dashboardName.assign(value); }
 
@@ -74,7 +74,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline PutDashboardRequest& WithDashboardName(const Aws::String& value) { SetDashboardName(value); return *this;}
 
@@ -82,7 +82,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline PutDashboardRequest& WithDashboardName(Aws::String&& value) { SetDashboardName(std::move(value)); return *this;}
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
      * dashboard is created. The maximum length is 255, and valid characters are A-Z,
-     * a-z, 0-9, ".", "-", and "_".</p>
+     * a-z, 0-9, "-", and "_".</p>
      */
     inline PutDashboardRequest& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
 

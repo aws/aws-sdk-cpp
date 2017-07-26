@@ -52,7 +52,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -78,7 +78,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -104,7 +104,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -130,7 +130,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -156,7 +156,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -182,7 +182,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -208,7 +208,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -234,7 +234,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -260,7 +260,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -286,7 +286,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,
@@ -312,7 +312,7 @@ namespace Model
      * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
      * specified item. The item to be deleted is identified by a <code>Key</code>
      * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * values that uniquely identify the item. Each entry in this map consists of an
      * attribute name and an attribute value. For each primary key, you must provide
      * <i>all</i> of the key attributes. For example, with a simple primary key, you
      * only need to provide a value for the partition key. For a composite primary key,

@@ -231,13 +231,43 @@ namespace Model
      */
     inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a
+     * high-resolution metric, so that CloudWatch stores the metric with sub-minute
+     * resolution down to one second. Setting this to 60 specifies this metric as a
+     * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
+     * Currently, high resolution is available only for custom metrics. For more
+     * information about high-resolution metrics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
+     * optional, if you do not specify it the default of 60 is used.</p>
+     */
     inline int GetStorageResolution() const{ return m_storageResolution; }
 
-    
+    /**
+     * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a
+     * high-resolution metric, so that CloudWatch stores the metric with sub-minute
+     * resolution down to one second. Setting this to 60 specifies this metric as a
+     * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
+     * Currently, high resolution is available only for custom metrics. For more
+     * information about high-resolution metrics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
+     * optional, if you do not specify it the default of 60 is used.</p>
+     */
     inline void SetStorageResolution(int value) { m_storageResolutionHasBeenSet = true; m_storageResolution = value; }
 
-    
+    /**
+     * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a
+     * high-resolution metric, so that CloudWatch stores the metric with sub-minute
+     * resolution down to one second. Setting this to 60 specifies this metric as a
+     * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
+     * Currently, high resolution is available only for custom metrics. For more
+     * information about high-resolution metrics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
+     * optional, if you do not specify it the default of 60 is used.</p>
+     */
     inline MetricDatum& WithStorageResolution(int value) { SetStorageResolution(value); return *this;}
 
   private:

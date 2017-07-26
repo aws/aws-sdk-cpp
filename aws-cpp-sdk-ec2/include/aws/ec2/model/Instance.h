@@ -33,6 +33,7 @@
 #include <aws/ec2/model/VirtualizationType.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
+#include <aws/ec2/model/ElasticGpuAssociation.h>
 #include <aws/ec2/model/InstanceNetworkInterface.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Tag.h>
@@ -980,6 +981,41 @@ namespace Model
     inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(std::move(value)); return *this;}
 
     /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline const Aws::Vector<ElasticGpuAssociation>& GetElasticGpuAssociations() const{ return m_elasticGpuAssociations; }
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline void SetElasticGpuAssociations(const Aws::Vector<ElasticGpuAssociation>& value) { m_elasticGpuAssociationsHasBeenSet = true; m_elasticGpuAssociations = value; }
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline void SetElasticGpuAssociations(Aws::Vector<ElasticGpuAssociation>&& value) { m_elasticGpuAssociationsHasBeenSet = true; m_elasticGpuAssociations = std::move(value); }
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline Instance& WithElasticGpuAssociations(const Aws::Vector<ElasticGpuAssociation>& value) { SetElasticGpuAssociations(value); return *this;}
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline Instance& WithElasticGpuAssociations(Aws::Vector<ElasticGpuAssociation>&& value) { SetElasticGpuAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline Instance& AddElasticGpuAssociations(const ElasticGpuAssociation& value) { m_elasticGpuAssociationsHasBeenSet = true; m_elasticGpuAssociations.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline Instance& AddElasticGpuAssociations(ElasticGpuAssociation&& value) { m_elasticGpuAssociationsHasBeenSet = true; m_elasticGpuAssociations.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
@@ -1373,6 +1409,8 @@ namespace Model
     bool m_iamInstanceProfileHasBeenSet;
     InstanceLifecycleType m_instanceLifecycle;
     bool m_instanceLifecycleHasBeenSet;
+    Aws::Vector<ElasticGpuAssociation> m_elasticGpuAssociations;
+    bool m_elasticGpuAssociationsHasBeenSet;
     Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
     Aws::String m_rootDeviceName;

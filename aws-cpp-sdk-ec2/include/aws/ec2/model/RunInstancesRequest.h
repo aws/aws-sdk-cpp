@@ -26,6 +26,7 @@
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
+#include <aws/ec2/model/ElasticGpuSpecification.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -1152,6 +1153,41 @@ namespace Model
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
+
+    /**
+     * <p>An Elastic GPU to associate with the instance.</p>
+     */
+    inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
+
+    /**
      * <p>The tags to apply to the resources during launch. You can tag instances and
      * volumes. The specified tags are applied to all instances or volumes that are
      * created during launch.</p>
@@ -1251,6 +1287,8 @@ namespace Model
     bool m_networkInterfacesHasBeenSet;
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+    Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
+    bool m_elasticGpuSpecificationHasBeenSet;
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

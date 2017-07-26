@@ -54,6 +54,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
+    m_elasticGpuSpecificationHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -212,6 +213,16 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+  }
+
+  if(m_elasticGpuSpecificationHasBeenSet)
+  {
+    unsigned elasticGpuSpecificationCount = 1;
+    for(auto& item : m_elasticGpuSpecification)
+    {
+      item.OutputToStream(ss, "ElasticGpuSpecification.", elasticGpuSpecificationCount, "");
+      elasticGpuSpecificationCount++;
+    }
   }
 
   if(m_tagSpecificationsHasBeenSet)

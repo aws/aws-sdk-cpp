@@ -817,7 +817,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
@@ -826,7 +826,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
@@ -835,7 +835,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline void SetEvaluateLowSampleCountPercentile(Aws::String&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = std::move(value); }
@@ -844,7 +844,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline void SetEvaluateLowSampleCountPercentile(const char* value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile.assign(value); }
@@ -853,7 +853,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const Aws::String& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
@@ -862,7 +862,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(Aws::String&& value) { SetEvaluateLowSampleCountPercentile(std::move(value)); return *this;}
@@ -871,7 +871,7 @@ namespace Model
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
      * state does not change during periods with too few data points to be
      * statistically significant. If <code>evaluate</code> or this parameter is not
-     * used, the alarm will always be evaluated and possibly change state no matter how
+     * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
