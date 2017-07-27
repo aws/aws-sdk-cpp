@@ -58,6 +58,7 @@
 #include <aws/ec2/model/CopyImageRequest.h>
 #include <aws/ec2/model/CopySnapshotRequest.h>
 #include <aws/ec2/model/CreateCustomerGatewayRequest.h>
+#include <aws/ec2/model/CreateDefaultVpcRequest.h>
 #include <aws/ec2/model/CreateDhcpOptionsRequest.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayRequest.h>
 #include <aws/ec2/model/CreateFlowLogsRequest.h>
@@ -1409,6 +1410,41 @@ void EC2Client::CreateCustomerGatewayAsync(const CreateCustomerGatewayRequest& r
 void EC2Client::CreateCustomerGatewayAsyncHelper(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCustomerGateway(request), context);
+}
+
+CreateDefaultVpcOutcome EC2Client::CreateDefaultVpc(const CreateDefaultVpcRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDefaultVpcOutcome(CreateDefaultVpcResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDefaultVpcOutcome(outcome.GetError());
+  }
+}
+
+CreateDefaultVpcOutcomeCallable EC2Client::CreateDefaultVpcCallable(const CreateDefaultVpcRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDefaultVpcOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDefaultVpc(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateDefaultVpcAsync(const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDefaultVpcAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateDefaultVpcAsyncHelper(const CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDefaultVpc(request), context);
 }
 
 CreateDhcpOptionsOutcome EC2Client::CreateDhcpOptions(const CreateDhcpOptionsRequest& request) const

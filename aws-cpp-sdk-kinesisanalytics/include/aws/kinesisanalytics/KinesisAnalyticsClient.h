@@ -178,8 +178,8 @@ namespace Model
          * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
          * more information about using CloudWatch log streams with Amazon Kinesis
          * Analytics applications, see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          */
@@ -189,8 +189,8 @@ namespace Model
          * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
          * more information about using CloudWatch log streams with Amazon Kinesis
          * Analytics applications, see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          *
@@ -202,8 +202,8 @@ namespace Model
          * <p>Adds a CloudWatch log stream to monitor application configuration errors. For
          * more information about using CloudWatch log streams with Amazon Kinesis
          * Analytics applications, see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          *
@@ -547,8 +547,8 @@ namespace Model
          * <p>Deletes a CloudWatch log stream from an application. For more information
          * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          */
@@ -558,8 +558,8 @@ namespace Model
          * <p>Deletes a CloudWatch log stream from an application. For more information
          * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          *
@@ -571,8 +571,8 @@ namespace Model
          * <p>Deletes a CloudWatch log stream from an application. For more information
          * about using CloudWatch log streams with Amazon Kinesis Analytics applications,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-         * Configuration Errors</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+         * with Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          *

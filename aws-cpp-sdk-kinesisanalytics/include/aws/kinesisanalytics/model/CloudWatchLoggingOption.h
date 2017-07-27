@@ -34,7 +34,8 @@ namespace Model
 
   /**
    * <p>Provides a description of CloudWatch logging options, including the log
-   * stream ARN and the role ARN.</p><p><h3>See Also:</h3>   <a
+   * stream Amazon Resource Name (ARN) and the role ARN.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CloudWatchLoggingOption">AWS
    * API Reference</a></p>
    */
@@ -83,49 +84,49 @@ namespace Model
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline CloudWatchLoggingOption& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline CloudWatchLoggingOption& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
-     * application messages to CloudWatch, the IAM role used must have the
+     * application messages to CloudWatch, the IAM role that is used must have the
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline CloudWatchLoggingOption& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}

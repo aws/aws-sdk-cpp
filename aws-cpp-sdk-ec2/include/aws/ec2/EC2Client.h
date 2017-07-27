@@ -46,6 +46,7 @@
 #include <aws/ec2/model/CopyImageResponse.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CreateCustomerGatewayResponse.h>
+#include <aws/ec2/model/CreateDefaultVpcResponse.h>
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
@@ -271,6 +272,7 @@ namespace Model
         class CopyImageRequest;
         class CopySnapshotRequest;
         class CreateCustomerGatewayRequest;
+        class CreateDefaultVpcRequest;
         class CreateDhcpOptionsRequest;
         class CreateEgressOnlyInternetGatewayRequest;
         class CreateFlowLogsRequest;
@@ -505,6 +507,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CopyImageResponse, Aws::Client::AWSError<EC2Errors>> CopyImageOutcome;
         typedef Aws::Utils::Outcome<CopySnapshotResponse, Aws::Client::AWSError<EC2Errors>> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCustomerGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateCustomerGatewayOutcome;
+        typedef Aws::Utils::Outcome<CreateDefaultVpcResponse, Aws::Client::AWSError<EC2Errors>> CreateDefaultVpcOutcome;
         typedef Aws::Utils::Outcome<CreateDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> CreateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<CreateEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateEgressOnlyInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> CreateFlowLogsOutcome;
@@ -739,6 +742,7 @@ namespace Model
         typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
+        typedef std::future<CreateDefaultVpcOutcome> CreateDefaultVpcOutcomeCallable;
         typedef std::future<CreateDhcpOptionsOutcome> CreateDhcpOptionsOutcomeCallable;
         typedef std::future<CreateEgressOnlyInternetGatewayOutcome> CreateEgressOnlyInternetGatewayOutcomeCallable;
         typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
@@ -976,6 +980,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCustomerGatewayRequest&, const Model::CreateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomerGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateDefaultVpcRequest&, const Model::CreateDefaultVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDhcpOptionsRequest&, const Model::CreateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateEgressOnlyInternetGatewayRequest&, const Model::CreateEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEgressOnlyInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
@@ -2660,6 +2665,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
+         * default subnet in each Availability Zone. For more information about the
+         * components of a default VPC, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
+         * <p>You can create a default VPC if you deleted your previous default VPC. You
+         * cannot have more than one default VPC per region. </p> <p>If your account
+         * supports EC2-Classic, you cannot use this action to create a default VPC in a
+         * region that supports EC2-Classic. If you want a default VPC in a region that
+         * supports EC2-Classic, see "I really want a default VPC for my existing EC2
+         * account. Is that possible?" in the <a
+         * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs
+         * FAQ</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDefaultVpcOutcome CreateDefaultVpc(const Model::CreateDefaultVpcRequest& request) const;
+
+        /**
+         * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
+         * default subnet in each Availability Zone. For more information about the
+         * components of a default VPC, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
+         * <p>You can create a default VPC if you deleted your previous default VPC. You
+         * cannot have more than one default VPC per region. </p> <p>If your account
+         * supports EC2-Classic, you cannot use this action to create a default VPC in a
+         * region that supports EC2-Classic. If you want a default VPC in a region that
+         * supports EC2-Classic, see "I really want a default VPC for my existing EC2
+         * account. Is that possible?" in the <a
+         * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs
+         * FAQ</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDefaultVpcOutcomeCallable CreateDefaultVpcCallable(const Model::CreateDefaultVpcRequest& request) const;
+
+        /**
+         * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
+         * default subnet in each Availability Zone. For more information about the
+         * components of a default VPC, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
+         * <p>You can create a default VPC if you deleted your previous default VPC. You
+         * cannot have more than one default VPC per region. </p> <p>If your account
+         * supports EC2-Classic, you cannot use this action to create a default VPC in a
+         * region that supports EC2-Classic. If you want a default VPC in a region that
+         * supports EC2-Classic, see "I really want a default VPC for my existing EC2
+         * account. Is that possible?" in the <a
+         * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs
+         * FAQ</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDefaultVpcAsync(const Model::CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a set of DHCP options for your VPC. After creating the set, you must
@@ -11758,6 +11827,7 @@ namespace Model
         void CopyImageAsyncHelper(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomerGatewayAsyncHelper(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDefaultVpcAsyncHelper(const Model::CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDhcpOptionsAsyncHelper(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEgressOnlyInternetGatewayAsyncHelper(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFlowLogsAsyncHelper(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

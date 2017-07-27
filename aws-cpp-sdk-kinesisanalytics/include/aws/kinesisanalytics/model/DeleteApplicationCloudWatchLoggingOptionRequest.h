@@ -37,52 +37,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Analytics application name.</p>
+     * <p>The Kinesis Analytics application name.</p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The version ID of the Amazon Kinesis Analytics application.</p>
+     * <p>The version ID of the Kinesis Analytics application.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The version ID of the Amazon Kinesis Analytics application.</p>
+     * <p>The version ID of the Kinesis Analytics application.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The version ID of the Amazon Kinesis Analytics application.</p>
+     * <p>The version ID of the Kinesis Analytics application.</p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 

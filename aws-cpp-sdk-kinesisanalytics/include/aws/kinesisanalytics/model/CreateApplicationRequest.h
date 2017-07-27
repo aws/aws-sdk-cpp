@@ -340,56 +340,56 @@ namespace Model
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOption>& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline void SetCloudWatchLoggingOptions(const Aws::Vector<CloudWatchLoggingOption>& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline void SetCloudWatchLoggingOptions(Aws::Vector<CloudWatchLoggingOption>&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline CreateApplicationRequest& WithCloudWatchLoggingOptions(const Aws::Vector<CloudWatchLoggingOption>& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline CreateApplicationRequest& WithCloudWatchLoggingOptions(Aws::Vector<CloudWatchLoggingOption>&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline CreateApplicationRequest& AddCloudWatchLoggingOptions(const CloudWatchLoggingOption& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions.push_back(value); return *this; }
 
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.</p>
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.</p>
      */
     inline CreateApplicationRequest& AddCloudWatchLoggingOptions(CloudWatchLoggingOption&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions.push_back(std::move(value)); return *this; }
 

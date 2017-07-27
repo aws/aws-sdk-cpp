@@ -119,70 +119,90 @@ namespace Model
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p>
+     * to access the stream on your behalf.</p> <p>Note: Either
+     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline const KinesisStreamsInput& GetKinesisStreamsInput() const{ return m_kinesisStreamsInput; }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p>
+     * to access the stream on your behalf.</p> <p>Note: Either
+     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline void SetKinesisStreamsInput(const KinesisStreamsInput& value) { m_kinesisStreamsInputHasBeenSet = true; m_kinesisStreamsInput = value; }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p>
+     * to access the stream on your behalf.</p> <p>Note: Either
+     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline void SetKinesisStreamsInput(KinesisStreamsInput&& value) { m_kinesisStreamsInputHasBeenSet = true; m_kinesisStreamsInput = std::move(value); }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p>
+     * to access the stream on your behalf.</p> <p>Note: Either
+     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline Input& WithKinesisStreamsInput(const KinesisStreamsInput& value) { SetKinesisStreamsInput(value); return *this;}
 
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
-     * to access the stream on your behalf.</p>
+     * to access the stream on your behalf.</p> <p>Note: Either
+     * <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline Input& WithKinesisStreamsInput(KinesisStreamsInput&& value) { SetKinesisStreamsInput(std::move(value)); return *this;}
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the Firehose delivery stream's ARN and an IAM role that enables
-     * Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     * Amazon Kinesis Analytics to access the stream on your behalf.</p> <p>Note:
+     * Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline const KinesisFirehoseInput& GetKinesisFirehoseInput() const{ return m_kinesisFirehoseInput; }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the Firehose delivery stream's ARN and an IAM role that enables
-     * Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     * Amazon Kinesis Analytics to access the stream on your behalf.</p> <p>Note:
+     * Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline void SetKinesisFirehoseInput(const KinesisFirehoseInput& value) { m_kinesisFirehoseInputHasBeenSet = true; m_kinesisFirehoseInput = value; }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the Firehose delivery stream's ARN and an IAM role that enables
-     * Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     * Amazon Kinesis Analytics to access the stream on your behalf.</p> <p>Note:
+     * Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline void SetKinesisFirehoseInput(KinesisFirehoseInput&& value) { m_kinesisFirehoseInputHasBeenSet = true; m_kinesisFirehoseInput = std::move(value); }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the Firehose delivery stream's ARN and an IAM role that enables
-     * Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     * Amazon Kinesis Analytics to access the stream on your behalf.</p> <p>Note:
+     * Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline Input& WithKinesisFirehoseInput(const KinesisFirehoseInput& value) { SetKinesisFirehoseInput(value); return *this;}
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
      * identifies the Firehose delivery stream's ARN and an IAM role that enables
-     * Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     * Amazon Kinesis Analytics to access the stream on your behalf.</p> <p>Note:
+     * Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is
+     * required.</p>
      */
     inline Input& WithKinesisFirehoseInput(KinesisFirehoseInput&& value) { SetKinesisFirehoseInput(std::move(value)); return *this;}
 
