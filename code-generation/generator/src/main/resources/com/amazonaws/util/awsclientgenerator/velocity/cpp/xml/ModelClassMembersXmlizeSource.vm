@@ -20,17 +20,22 @@
 #if($member.shape.enum)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}));
+#elseif($member.shape.boolean)
+  ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+  ${spaces}ss << std::boolalpha << ${memberVarName};
+  ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+  ${spaces}ss.str("");
 #elseif($member.shape.primitive)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-  ss << ${memberVarName};
+  ${spaces}ss << ${memberVarName};
   ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
-  ss.str("");
+  ${spaces}ss.str("");
 #elseif($member.shape.string)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
 #elseif($member.shape.timeStamp)
-    ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-    ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
+  ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+  ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
 #elseif($member.shape.blob)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(${memberVarName}));
@@ -50,10 +55,14 @@
 #end
 #if($member.shape.listMember.shape.enum)
     ${spaces}${lowerCaseVarName}Node.SetText(${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item));
+#elseif($member.shape.listMember.shape.boolean)
+    ${spaces}ss << std::boolalpha << item;
+    ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+    ${spaces}ss.str("");
 #elseif($member.shape.listMember.shape.primitive)
     ${spaces}ss << item;
     ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
-    ss.str("");
+    ${spaces}ss.str("");
 #elseif($member.shape.listMember.shape.string)
     ${spaces}${lowerCaseVarName}Node.SetText(item);
 #elseif($member.shape.listMember.shape.timeStamp)
