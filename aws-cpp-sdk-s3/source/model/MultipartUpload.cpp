@@ -117,8 +117,8 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
 
   if(m_initiatedHasBeenSet)
   {
-     XmlNode initiatedNode = parentNode.CreateChildElement("Initiated");
-     initiatedNode.SetText(m_initiated.ToGmtString(DateFormat::ISO_8601));
+   XmlNode initiatedNode = parentNode.CreateChildElement("Initiated");
+   initiatedNode.SetText(m_initiated.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_storageClassHasBeenSet)

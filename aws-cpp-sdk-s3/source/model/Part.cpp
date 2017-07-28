@@ -92,15 +92,15 @@ void Part::AddToNode(XmlNode& parentNode) const
   if(m_partNumberHasBeenSet)
   {
    XmlNode partNumberNode = parentNode.CreateChildElement("PartNumber");
-  ss << m_partNumber;
+   ss << m_partNumber;
    partNumberNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_lastModifiedHasBeenSet)
   {
-     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+   lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_eTagHasBeenSet)
@@ -112,9 +112,9 @@ void Part::AddToNode(XmlNode& parentNode) const
   if(m_sizeHasBeenSet)
   {
    XmlNode sizeNode = parentNode.CreateChildElement("Size");
-  ss << m_size;
+   ss << m_size;
    sizeNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

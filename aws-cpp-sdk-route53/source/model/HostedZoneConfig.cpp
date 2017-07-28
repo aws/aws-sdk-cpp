@@ -80,9 +80,9 @@ void HostedZoneConfig::AddToNode(XmlNode& parentNode) const
   if(m_privateZoneHasBeenSet)
   {
    XmlNode privateZoneNode = parentNode.CreateChildElement("PrivateZone");
-  ss << m_privateZone;
+   ss << std::boolalpha << m_privateZone;
    privateZoneNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

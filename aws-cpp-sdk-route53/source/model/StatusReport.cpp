@@ -77,8 +77,8 @@ void StatusReport::AddToNode(XmlNode& parentNode) const
 
   if(m_checkedTimeHasBeenSet)
   {
-     XmlNode checkedTimeNode = parentNode.CreateChildElement("CheckedTime");
-     checkedTimeNode.SetText(m_checkedTime.ToGmtString(DateFormat::ISO_8601));
+   XmlNode checkedTimeNode = parentNode.CreateChildElement("CheckedTime");
+   checkedTimeNode.SetText(m_checkedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

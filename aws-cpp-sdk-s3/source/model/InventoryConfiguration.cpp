@@ -128,9 +128,9 @@ void InventoryConfiguration::AddToNode(XmlNode& parentNode) const
   if(m_isEnabledHasBeenSet)
   {
    XmlNode isEnabledNode = parentNode.CreateChildElement("IsEnabled");
-  ss << m_isEnabled;
+   ss << std::boolalpha << m_isEnabled;
    isEnabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_filterHasBeenSet)

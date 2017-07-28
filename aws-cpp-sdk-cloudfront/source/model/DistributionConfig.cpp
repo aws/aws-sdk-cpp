@@ -252,9 +252,9 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
   if(m_enabledHasBeenSet)
   {
    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-  ss << m_enabled;
+   ss << std::boolalpha << m_enabled;
    enabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_viewerCertificateHasBeenSet)
@@ -284,9 +284,9 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
   if(m_isIPV6EnabledHasBeenSet)
   {
    XmlNode isIPV6EnabledNode = parentNode.CreateChildElement("IsIPV6Enabled");
-  ss << m_isIPV6Enabled;
+   ss << std::boolalpha << m_isIPV6Enabled;
    isIPV6EnabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

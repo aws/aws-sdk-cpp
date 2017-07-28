@@ -77,8 +77,8 @@ void Bucket::AddToNode(XmlNode& parentNode) const
 
   if(m_creationDateHasBeenSet)
   {
-     XmlNode creationDateNode = parentNode.CreateChildElement("CreationDate");
-     creationDateNode.SetText(m_creationDate.ToGmtString(DateFormat::ISO_8601));
+   XmlNode creationDateNode = parentNode.CreateChildElement("CreationDate");
+   creationDateNode.SetText(m_creationDate.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

@@ -120,17 +120,17 @@ void TrafficPolicySummary::AddToNode(XmlNode& parentNode) const
   if(m_latestVersionHasBeenSet)
   {
    XmlNode latestVersionNode = parentNode.CreateChildElement("LatestVersion");
-  ss << m_latestVersion;
+   ss << m_latestVersion;
    latestVersionNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_trafficPolicyCountHasBeenSet)
   {
    XmlNode trafficPolicyCountNode = parentNode.CreateChildElement("TrafficPolicyCount");
-  ss << m_trafficPolicyCount;
+   ss << m_trafficPolicyCount;
    trafficPolicyCountNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

@@ -92,17 +92,17 @@ void LoggingConfig::AddToNode(XmlNode& parentNode) const
   if(m_enabledHasBeenSet)
   {
    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-  ss << m_enabled;
+   ss << std::boolalpha << m_enabled;
    enabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_includeCookiesHasBeenSet)
   {
    XmlNode includeCookiesNode = parentNode.CreateChildElement("IncludeCookies");
-  ss << m_includeCookies;
+   ss << std::boolalpha << m_includeCookies;
    includeCookiesNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_bucketHasBeenSet)

@@ -102,9 +102,9 @@ void DeletedObject::AddToNode(XmlNode& parentNode) const
   if(m_deleteMarkerHasBeenSet)
   {
    XmlNode deleteMarkerNode = parentNode.CreateChildElement("DeleteMarker");
-  ss << m_deleteMarker;
+   ss << std::boolalpha << m_deleteMarker;
    deleteMarkerNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_deleteMarkerVersionIdHasBeenSet)

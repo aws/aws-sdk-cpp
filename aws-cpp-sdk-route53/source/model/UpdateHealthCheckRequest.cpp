@@ -60,9 +60,9 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
   if(m_healthCheckVersionHasBeenSet)
   {
    XmlNode healthCheckVersionNode = parentNode.CreateChildElement("HealthCheckVersion");
-  ss << m_healthCheckVersion;
+   ss << m_healthCheckVersion;
    healthCheckVersionNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_iPAddressHasBeenSet)
@@ -74,9 +74,9 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
   if(m_portHasBeenSet)
   {
    XmlNode portNode = parentNode.CreateChildElement("Port");
-  ss << m_port;
+   ss << m_port;
    portNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_resourcePathHasBeenSet)
@@ -100,25 +100,25 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
   if(m_failureThresholdHasBeenSet)
   {
    XmlNode failureThresholdNode = parentNode.CreateChildElement("FailureThreshold");
-  ss << m_failureThreshold;
+   ss << m_failureThreshold;
    failureThresholdNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_invertedHasBeenSet)
   {
    XmlNode invertedNode = parentNode.CreateChildElement("Inverted");
-  ss << m_inverted;
+   ss << std::boolalpha << m_inverted;
    invertedNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_healthThresholdHasBeenSet)
   {
    XmlNode healthThresholdNode = parentNode.CreateChildElement("HealthThreshold");
-  ss << m_healthThreshold;
+   ss << m_healthThreshold;
    healthThresholdNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_childHealthChecksHasBeenSet)
@@ -134,9 +134,9 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
   if(m_enableSNIHasBeenSet)
   {
    XmlNode enableSNINode = parentNode.CreateChildElement("EnableSNI");
-  ss << m_enableSNI;
+   ss << std::boolalpha << m_enableSNI;
    enableSNINode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_regionsHasBeenSet)

@@ -57,9 +57,9 @@ Aws::String CreateTrafficPolicyInstanceRequest::SerializePayload() const
   if(m_tTLHasBeenSet)
   {
    XmlNode tTLNode = parentNode.CreateChildElement("TTL");
-  ss << m_tTL;
+   ss << m_tTL;
    tTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_trafficPolicyIdHasBeenSet)
@@ -71,9 +71,9 @@ Aws::String CreateTrafficPolicyInstanceRequest::SerializePayload() const
   if(m_trafficPolicyVersionHasBeenSet)
   {
    XmlNode trafficPolicyVersionNode = parentNode.CreateChildElement("TrafficPolicyVersion");
-  ss << m_trafficPolicyVersion;
+   ss << m_trafficPolicyVersion;
    trafficPolicyVersionNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   return payloadDoc.ConvertToString();

@@ -90,17 +90,17 @@ void TrustedSigners::AddToNode(XmlNode& parentNode) const
   if(m_enabledHasBeenSet)
   {
    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-  ss << m_enabled;
+   ss << std::boolalpha << m_enabled;
    enabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_quantityHasBeenSet)
   {
    XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
-  ss << m_quantity;
+   ss << m_quantity;
    quantityNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_itemsHasBeenSet)

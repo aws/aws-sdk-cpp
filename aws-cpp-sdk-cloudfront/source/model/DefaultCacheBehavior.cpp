@@ -180,9 +180,9 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   if(m_minTTLHasBeenSet)
   {
    XmlNode minTTLNode = parentNode.CreateChildElement("MinTTL");
-  ss << m_minTTL;
+   ss << m_minTTL;
    minTTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_allowedMethodsHasBeenSet)
@@ -194,33 +194,33 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   if(m_smoothStreamingHasBeenSet)
   {
    XmlNode smoothStreamingNode = parentNode.CreateChildElement("SmoothStreaming");
-  ss << m_smoothStreaming;
+   ss << std::boolalpha << m_smoothStreaming;
    smoothStreamingNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_defaultTTLHasBeenSet)
   {
    XmlNode defaultTTLNode = parentNode.CreateChildElement("DefaultTTL");
-  ss << m_defaultTTL;
+   ss << m_defaultTTL;
    defaultTTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_maxTTLHasBeenSet)
   {
    XmlNode maxTTLNode = parentNode.CreateChildElement("MaxTTL");
-  ss << m_maxTTL;
+   ss << m_maxTTL;
    maxTTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_compressHasBeenSet)
   {
    XmlNode compressNode = parentNode.CreateChildElement("Compress");
-  ss << m_compress;
+   ss << std::boolalpha << m_compress;
    compressNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_lambdaFunctionAssociationsHasBeenSet)

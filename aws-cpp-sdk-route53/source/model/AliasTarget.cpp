@@ -94,9 +94,9 @@ void AliasTarget::AddToNode(XmlNode& parentNode) const
   if(m_evaluateTargetHealthHasBeenSet)
   {
    XmlNode evaluateTargetHealthNode = parentNode.CreateChildElement("EvaluateTargetHealth");
-  ss << m_evaluateTargetHealth;
+   ss << std::boolalpha << m_evaluateTargetHealth;
    evaluateTargetHealthNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

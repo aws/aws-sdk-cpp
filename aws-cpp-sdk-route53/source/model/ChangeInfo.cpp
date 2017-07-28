@@ -101,8 +101,8 @@ void ChangeInfo::AddToNode(XmlNode& parentNode) const
 
   if(m_submittedAtHasBeenSet)
   {
-     XmlNode submittedAtNode = parentNode.CreateChildElement("SubmittedAt");
-     submittedAtNode.SetText(m_submittedAt.ToGmtString(DateFormat::ISO_8601));
+   XmlNode submittedAtNode = parentNode.CreateChildElement("SubmittedAt");
+   submittedAtNode.SetText(m_submittedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_commentHasBeenSet)

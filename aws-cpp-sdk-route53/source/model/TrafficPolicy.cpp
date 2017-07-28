@@ -114,9 +114,9 @@ void TrafficPolicy::AddToNode(XmlNode& parentNode) const
   if(m_versionHasBeenSet)
   {
    XmlNode versionNode = parentNode.CreateChildElement("Version");
-  ss << m_version;
+   ss << m_version;
    versionNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_nameHasBeenSet)

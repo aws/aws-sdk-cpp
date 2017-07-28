@@ -122,9 +122,9 @@ void HostedZone::AddToNode(XmlNode& parentNode) const
   if(m_resourceRecordSetCountHasBeenSet)
   {
    XmlNode resourceRecordSetCountNode = parentNode.CreateChildElement("ResourceRecordSetCount");
-  ss << m_resourceRecordSetCount;
+   ss << m_resourceRecordSetCount;
    resourceRecordSetCountNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

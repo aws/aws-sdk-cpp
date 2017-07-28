@@ -83,24 +83,24 @@ void LifecycleExpiration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_dateHasBeenSet)
   {
-     XmlNode dateNode = parentNode.CreateChildElement("Date");
-     dateNode.SetText(m_date.ToGmtString(DateFormat::ISO_8601));
+   XmlNode dateNode = parentNode.CreateChildElement("Date");
+   dateNode.SetText(m_date.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_daysHasBeenSet)
   {
    XmlNode daysNode = parentNode.CreateChildElement("Days");
-  ss << m_days;
+   ss << m_days;
    daysNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_expiredObjectDeleteMarkerHasBeenSet)
   {
    XmlNode expiredObjectDeleteMarkerNode = parentNode.CreateChildElement("ExpiredObjectDeleteMarker");
-  ss << m_expiredObjectDeleteMarker;
+   ss << std::boolalpha << m_expiredObjectDeleteMarker;
    expiredObjectDeleteMarkerNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

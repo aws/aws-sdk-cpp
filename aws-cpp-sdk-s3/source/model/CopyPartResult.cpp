@@ -77,8 +77,8 @@ void CopyPartResult::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedHasBeenSet)
   {
-     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+   lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

@@ -74,9 +74,9 @@ void RestoreRequest::AddToNode(XmlNode& parentNode) const
   if(m_daysHasBeenSet)
   {
    XmlNode daysNode = parentNode.CreateChildElement("Days");
-  ss << m_days;
+   ss << m_days;
    daysNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_glacierJobParametersHasBeenSet)

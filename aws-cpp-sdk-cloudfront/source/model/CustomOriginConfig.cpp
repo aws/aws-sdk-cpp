@@ -114,17 +114,17 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
   if(m_hTTPPortHasBeenSet)
   {
    XmlNode hTTPPortNode = parentNode.CreateChildElement("HTTPPort");
-  ss << m_hTTPPort;
+   ss << m_hTTPPort;
    hTTPPortNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_hTTPSPortHasBeenSet)
   {
    XmlNode hTTPSPortNode = parentNode.CreateChildElement("HTTPSPort");
-  ss << m_hTTPSPort;
+   ss << m_hTTPSPort;
    hTTPSPortNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_originProtocolPolicyHasBeenSet)
@@ -142,17 +142,17 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
   if(m_originReadTimeoutHasBeenSet)
   {
    XmlNode originReadTimeoutNode = parentNode.CreateChildElement("OriginReadTimeout");
-  ss << m_originReadTimeout;
+   ss << m_originReadTimeout;
    originReadTimeoutNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_originKeepaliveTimeoutHasBeenSet)
   {
    XmlNode originKeepaliveTimeoutNode = parentNode.CreateChildElement("OriginKeepaliveTimeout");
-  ss << m_originKeepaliveTimeout;
+   ss << m_originKeepaliveTimeout;
    originKeepaliveTimeoutNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

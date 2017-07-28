@@ -129,8 +129,8 @@ void StreamingDistribution::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedTimeHasBeenSet)
   {
-     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_domainNameHasBeenSet)

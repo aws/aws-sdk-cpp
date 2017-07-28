@@ -196,9 +196,9 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   if(m_weightHasBeenSet)
   {
    XmlNode weightNode = parentNode.CreateChildElement("Weight");
-  ss << m_weight;
+   ss << m_weight;
    weightNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_regionHasBeenSet)
@@ -222,17 +222,17 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   if(m_multiValueAnswerHasBeenSet)
   {
    XmlNode multiValueAnswerNode = parentNode.CreateChildElement("MultiValueAnswer");
-  ss << m_multiValueAnswer;
+   ss << std::boolalpha << m_multiValueAnswer;
    multiValueAnswerNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_tTLHasBeenSet)
   {
    XmlNode tTLNode = parentNode.CreateChildElement("TTL");
-  ss << m_tTL;
+   ss << m_tTL;
    tTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_resourceRecordsHasBeenSet)

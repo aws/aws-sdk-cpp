@@ -132,9 +132,9 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
   if(m_sizeHasBeenSet)
   {
    XmlNode sizeNode = parentNode.CreateChildElement("Size");
-  ss << m_size;
+   ss << m_size;
    sizeNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_storageClassHasBeenSet)
@@ -158,15 +158,15 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
   if(m_isLatestHasBeenSet)
   {
    XmlNode isLatestNode = parentNode.CreateChildElement("IsLatest");
-  ss << m_isLatest;
+   ss << std::boolalpha << m_isLatest;
    isLatestNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_lastModifiedHasBeenSet)
   {
-     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+   lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_ownerHasBeenSet)

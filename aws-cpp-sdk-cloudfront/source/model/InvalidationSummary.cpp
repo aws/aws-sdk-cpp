@@ -85,8 +85,8 @@ void InvalidationSummary::AddToNode(XmlNode& parentNode) const
 
   if(m_createTimeHasBeenSet)
   {
-     XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
-     createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
+   XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
+   createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

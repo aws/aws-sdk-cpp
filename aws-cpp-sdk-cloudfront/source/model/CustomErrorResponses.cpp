@@ -80,9 +80,9 @@ void CustomErrorResponses::AddToNode(XmlNode& parentNode) const
   if(m_quantityHasBeenSet)
   {
    XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
-  ss << m_quantity;
+   ss << m_quantity;
    quantityNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_itemsHasBeenSet)

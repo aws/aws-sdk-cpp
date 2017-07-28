@@ -128,25 +128,25 @@ void CloudFrontOriginAccessIdentityList::AddToNode(XmlNode& parentNode) const
   if(m_maxItemsHasBeenSet)
   {
    XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
-  ss << m_maxItems;
+   ss << m_maxItems;
    maxItemsNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_isTruncatedHasBeenSet)
   {
    XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
-  ss << m_isTruncated;
+   ss << std::boolalpha << m_isTruncated;
    isTruncatedNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_quantityHasBeenSet)
   {
    XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
-  ss << m_quantity;
+   ss << m_quantity;
    quantityNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_itemsHasBeenSet)

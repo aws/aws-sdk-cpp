@@ -136,17 +136,17 @@ void CloudWatchAlarmConfiguration::AddToNode(XmlNode& parentNode) const
   if(m_evaluationPeriodsHasBeenSet)
   {
    XmlNode evaluationPeriodsNode = parentNode.CreateChildElement("EvaluationPeriods");
-  ss << m_evaluationPeriods;
+   ss << m_evaluationPeriods;
    evaluationPeriodsNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_thresholdHasBeenSet)
   {
    XmlNode thresholdNode = parentNode.CreateChildElement("Threshold");
-  ss << m_threshold;
+   ss << m_threshold;
    thresholdNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_comparisonOperatorHasBeenSet)
@@ -158,9 +158,9 @@ void CloudWatchAlarmConfiguration::AddToNode(XmlNode& parentNode) const
   if(m_periodHasBeenSet)
   {
    XmlNode periodNode = parentNode.CreateChildElement("Period");
-  ss << m_period;
+   ss << m_period;
    periodNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_metricNameHasBeenSet)

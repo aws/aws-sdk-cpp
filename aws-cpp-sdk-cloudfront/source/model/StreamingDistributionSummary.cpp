@@ -165,8 +165,8 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedTimeHasBeenSet)
   {
-     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_domainNameHasBeenSet)
@@ -208,9 +208,9 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
   if(m_enabledHasBeenSet)
   {
    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-  ss << m_enabled;
+   ss << std::boolalpha << m_enabled;
    enabledNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

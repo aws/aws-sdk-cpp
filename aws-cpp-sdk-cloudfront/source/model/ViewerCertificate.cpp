@@ -102,9 +102,9 @@ void ViewerCertificate::AddToNode(XmlNode& parentNode) const
   if(m_cloudFrontDefaultCertificateHasBeenSet)
   {
    XmlNode cloudFrontDefaultCertificateNode = parentNode.CreateChildElement("CloudFrontDefaultCertificate");
-  ss << m_cloudFrontDefaultCertificate;
+   ss << std::boolalpha << m_cloudFrontDefaultCertificate;
    cloudFrontDefaultCertificateNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_iAMCertificateIdHasBeenSet)

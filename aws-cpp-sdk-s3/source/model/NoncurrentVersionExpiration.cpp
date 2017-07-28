@@ -66,9 +66,9 @@ void NoncurrentVersionExpiration::AddToNode(XmlNode& parentNode) const
   if(m_noncurrentDaysHasBeenSet)
   {
    XmlNode noncurrentDaysNode = parentNode.CreateChildElement("NoncurrentDays");
-  ss << m_noncurrentDays;
+   ss << m_noncurrentDays;
    noncurrentDaysNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

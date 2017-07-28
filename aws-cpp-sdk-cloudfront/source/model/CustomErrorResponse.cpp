@@ -92,9 +92,9 @@ void CustomErrorResponse::AddToNode(XmlNode& parentNode) const
   if(m_errorCodeHasBeenSet)
   {
    XmlNode errorCodeNode = parentNode.CreateChildElement("ErrorCode");
-  ss << m_errorCode;
+   ss << m_errorCode;
    errorCodeNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_responsePagePathHasBeenSet)
@@ -112,9 +112,9 @@ void CustomErrorResponse::AddToNode(XmlNode& parentNode) const
   if(m_errorCachingMinTTLHasBeenSet)
   {
    XmlNode errorCachingMinTTLNode = parentNode.CreateChildElement("ErrorCachingMinTTL");
-  ss << m_errorCachingMinTTL;
+   ss << m_errorCachingMinTTL;
    errorCachingMinTTLNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

@@ -66,9 +66,9 @@ void AbortIncompleteMultipartUpload::AddToNode(XmlNode& parentNode) const
   if(m_daysAfterInitiationHasBeenSet)
   {
    XmlNode daysAfterInitiationNode = parentNode.CreateChildElement("DaysAfterInitiation");
-  ss << m_daysAfterInitiation;
+   ss << m_daysAfterInitiation;
    daysAfterInitiationNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

@@ -116,9 +116,9 @@ void HealthCheck::AddToNode(XmlNode& parentNode) const
   if(m_healthCheckVersionHasBeenSet)
   {
    XmlNode healthCheckVersionNode = parentNode.CreateChildElement("HealthCheckVersion");
-  ss << m_healthCheckVersion;
+   ss << m_healthCheckVersion;
    healthCheckVersionNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_cloudWatchAlarmConfigurationHasBeenSet)

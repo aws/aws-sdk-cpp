@@ -90,9 +90,9 @@ void ForwardedValues::AddToNode(XmlNode& parentNode) const
   if(m_queryStringHasBeenSet)
   {
    XmlNode queryStringNode = parentNode.CreateChildElement("QueryString");
-  ss << m_queryString;
+   ss << std::boolalpha << m_queryString;
    queryStringNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_cookiesHasBeenSet)

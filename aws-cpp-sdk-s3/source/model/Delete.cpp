@@ -89,9 +89,9 @@ void Delete::AddToNode(XmlNode& parentNode) const
   if(m_quietHasBeenSet)
   {
    XmlNode quietNode = parentNode.CreateChildElement("Quiet");
-  ss << m_quiet;
+   ss << std::boolalpha << m_quiet;
    quietNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }

@@ -116,15 +116,15 @@ void DeleteMarkerEntry::AddToNode(XmlNode& parentNode) const
   if(m_isLatestHasBeenSet)
   {
    XmlNode isLatestNode = parentNode.CreateChildElement("IsLatest");
-  ss << m_isLatest;
+   ss << std::boolalpha << m_isLatest;
    isLatestNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
   if(m_lastModifiedHasBeenSet)
   {
-     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
+   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+   lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

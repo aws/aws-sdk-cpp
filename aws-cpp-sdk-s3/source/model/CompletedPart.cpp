@@ -80,9 +80,9 @@ void CompletedPart::AddToNode(XmlNode& parentNode) const
   if(m_partNumberHasBeenSet)
   {
    XmlNode partNumberNode = parentNode.CreateChildElement("PartNumber");
-  ss << m_partNumber;
+   ss << m_partNumber;
    partNumberNode.SetText(ss.str());
-  ss.str("");
+   ss.str("");
   }
 
 }
