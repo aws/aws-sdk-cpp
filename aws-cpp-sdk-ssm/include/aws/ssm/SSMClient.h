@@ -97,6 +97,7 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RemoveTagsFromResourceResult.h>
+#include <aws/ssm/model/SendAutomationSignalResult.h>
 #include <aws/ssm/model/SendCommandResult.h>
 #include <aws/ssm/model/StartAutomationExecutionResult.h>
 #include <aws/ssm/model/StopAutomationExecutionResult.h>
@@ -228,6 +229,7 @@ namespace Model
         class RegisterTargetWithMaintenanceWindowRequest;
         class RegisterTaskWithMaintenanceWindowRequest;
         class RemoveTagsFromResourceRequest;
+        class SendAutomationSignalRequest;
         class SendCommandRequest;
         class StartAutomationExecutionRequest;
         class StopAutomationExecutionRequest;
@@ -315,6 +317,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterTargetWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTargetWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RegisterTaskWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTaskWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<SSMErrors>> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<SendAutomationSignalResult, Aws::Client::AWSError<SSMErrors>> SendAutomationSignalOutcome;
         typedef Aws::Utils::Outcome<SendCommandResult, Aws::Client::AWSError<SSMErrors>> SendCommandOutcome;
         typedef Aws::Utils::Outcome<StartAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> StartAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<StopAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> StopAutomationExecutionOutcome;
@@ -402,6 +405,7 @@ namespace Model
         typedef std::future<RegisterTargetWithMaintenanceWindowOutcome> RegisterTargetWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RegisterTaskWithMaintenanceWindowOutcome> RegisterTaskWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
+        typedef std::future<SendAutomationSignalOutcome> SendAutomationSignalOutcomeCallable;
         typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
         typedef std::future<StartAutomationExecutionOutcome> StartAutomationExecutionOutcomeCallable;
         typedef std::future<StopAutomationExecutionOutcome> StopAutomationExecutionOutcomeCallable;
@@ -492,6 +496,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::RegisterTargetWithMaintenanceWindowRequest&, const Model::RegisterTargetWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterTaskWithMaintenanceWindowRequest&, const Model::RegisterTaskWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::SendAutomationSignalRequest&, const Model::SendAutomationSignalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAutomationSignalResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAutomationExecutionRequest&, const Model::StartAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StopAutomationExecutionRequest&, const Model::StopAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutomationExecutionResponseReceivedHandler;
@@ -1076,14 +1081,16 @@ namespace Model
         virtual void DeleteParameterAsync(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters. This API is used to delete parameters by using
+         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteParametersOutcome DeleteParameters(const Model::DeleteParametersRequest& request) const;
 
         /**
-         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters. This API is used to delete parameters by using
+         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          *
@@ -1092,7 +1099,8 @@ namespace Model
         virtual Model::DeleteParametersOutcomeCallable DeleteParametersCallable(const Model::DeleteParametersRequest& request) const;
 
         /**
-         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters. This API is used to delete parameters by using
+         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          *
@@ -1831,14 +1839,28 @@ namespace Model
         virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -1847,7 +1869,14 @@ namespace Model
         virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2300,7 +2329,14 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2309,7 +2345,14 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2320,7 +2363,14 @@ namespace Model
         /**
          * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a>. </p><p><h3>See Also:</h3>   <a
+         * with Systems Manager Parameters</a>. </p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
+         * returned, however, can be between zero and the value of <code>MaxResults</code>.
+         * If the service reaches an internal limit while processing the results, it stops
+         * the operation and returns the matching values up to that point and a
+         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -2851,6 +2901,34 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sends a signal to an Automation execution to change the current behavior or
+         * status of the execution. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendAutomationSignalOutcome SendAutomationSignal(const Model::SendAutomationSignalRequest& request) const;
+
+        /**
+         * <p>Sends a signal to an Automation execution to change the current behavior or
+         * status of the execution. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendAutomationSignalOutcomeCallable SendAutomationSignalCallable(const Model::SendAutomationSignalRequest& request) const;
+
+        /**
+         * <p>Sends a signal to an Automation execution to change the current behavior or
+         * status of the execution. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendAutomationSignalAsync(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
          * API Reference</a></p>
@@ -3199,6 +3277,7 @@ namespace Model
         void RegisterTargetWithMaintenanceWindowAsyncHelper(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTaskWithMaintenanceWindowAsyncHelper(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendAutomationSignalAsyncHelper(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendCommandAsyncHelper(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAutomationExecutionAsyncHelper(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutomationExecutionAsyncHelper(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -14,33 +14,28 @@
 */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SSM
+namespace Inspector
 {
 namespace Model
 {
-  enum class AutomationExecutionStatus
+  enum class StopAction
   {
     NOT_SET,
-    Pending,
-    InProgress,
-    Waiting,
-    Success,
-    TimedOut,
-    Cancelled,
-    Failed
+    START_EVALUATION,
+    SKIP_EVALUATION
   };
 
-namespace AutomationExecutionStatusMapper
+namespace StopActionMapper
 {
-AWS_SSM_API AutomationExecutionStatus GetAutomationExecutionStatusForName(const Aws::String& name);
+AWS_INSPECTOR_API StopAction GetStopActionForName(const Aws::String& name);
 
-AWS_SSM_API Aws::String GetNameForAutomationExecutionStatus(AutomationExecutionStatus value);
-} // namespace AutomationExecutionStatusMapper
+AWS_INSPECTOR_API Aws::String GetNameForStopAction(StopAction value);
+} // namespace StopActionMapper
 } // namespace Model
-} // namespace SSM
+} // namespace Inspector
 } // namespace Aws

@@ -42,6 +42,7 @@ namespace Aws
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int COMPLETED_WITH_ERRORS_HASH = HashingUtils::HashString("COMPLETED_WITH_ERRORS");
+        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
 
 
         AssessmentRunState GetAssessmentRunStateForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return AssessmentRunState::COMPLETED_WITH_ERRORS;
           }
+          else if (hashCode == CANCELED_HASH)
+          {
+            return AssessmentRunState::CANCELED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -133,6 +138,8 @@ namespace Aws
             return "COMPLETED";
           case AssessmentRunState::COMPLETED_WITH_ERRORS:
             return "COMPLETED_WITH_ERRORS";
+          case AssessmentRunState::CANCELED:
+            return "CANCELED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

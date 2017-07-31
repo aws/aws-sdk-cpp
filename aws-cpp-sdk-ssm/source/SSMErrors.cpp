@@ -59,6 +59,7 @@ static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("Ass
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
 static const int AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
+static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
 static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
 static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
@@ -232,6 +233,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
   }
   else if (hashCode == INVALID_INSTANCE_ID_HASH)
   {

@@ -121,44 +121,44 @@ namespace Model
     inline AssociateTeamMemberRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline AssociateTeamMemberRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline AssociateTeamMemberRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub
-     * project.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
      */
     inline AssociateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

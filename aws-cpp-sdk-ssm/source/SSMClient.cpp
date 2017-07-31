@@ -103,6 +103,7 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RemoveTagsFromResourceRequest.h>
+#include <aws/ssm/model/SendAutomationSignalRequest.h>
 #include <aws/ssm/model/SendCommandRequest.h>
 #include <aws/ssm/model/StartAutomationExecutionRequest.h>
 #include <aws/ssm/model/StopAutomationExecutionRequest.h>
@@ -2836,6 +2837,41 @@ void SSMClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest&
 void SSMClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveTagsFromResource(request), context);
+}
+
+SendAutomationSignalOutcome SSMClient::SendAutomationSignal(const SendAutomationSignalRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendAutomationSignalOutcome(SendAutomationSignalResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendAutomationSignalOutcome(outcome.GetError());
+  }
+}
+
+SendAutomationSignalOutcomeCallable SSMClient::SendAutomationSignalCallable(const SendAutomationSignalRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendAutomationSignalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendAutomationSignal(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::SendAutomationSignalAsync(const SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendAutomationSignalAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::SendAutomationSignalAsyncHelper(const SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendAutomationSignal(request), context);
 }
 
 SendCommandOutcome SSMClient::SendCommand(const SendCommandRequest& request) const

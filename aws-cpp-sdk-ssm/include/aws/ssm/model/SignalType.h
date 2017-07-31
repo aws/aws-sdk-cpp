@@ -23,24 +23,19 @@ namespace SSM
 {
 namespace Model
 {
-  enum class AutomationExecutionStatus
+  enum class SignalType
   {
     NOT_SET,
-    Pending,
-    InProgress,
-    Waiting,
-    Success,
-    TimedOut,
-    Cancelled,
-    Failed
+    Approve,
+    Reject
   };
 
-namespace AutomationExecutionStatusMapper
+namespace SignalTypeMapper
 {
-AWS_SSM_API AutomationExecutionStatus GetAutomationExecutionStatusForName(const Aws::String& name);
+AWS_SSM_API SignalType GetSignalTypeForName(const Aws::String& name);
 
-AWS_SSM_API Aws::String GetNameForAutomationExecutionStatus(AutomationExecutionStatus value);
-} // namespace AutomationExecutionStatusMapper
+AWS_SSM_API Aws::String GetNameForSignalType(SignalType value);
+} // namespace SignalTypeMapper
 } // namespace Model
 } // namespace SSM
 } // namespace Aws

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopAssessmentRunRequest::StopAssessmentRunRequest() : 
-    m_assessmentRunArnHasBeenSet(false)
+    m_assessmentRunArnHasBeenSet(false),
+    m_stopAction(StopAction::NOT_SET),
+    m_stopActionHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String StopAssessmentRunRequest::SerializePayload() const
   {
    payload.WithString("assessmentRunArn", m_assessmentRunArn);
 
+  }
+
+  if(m_stopActionHasBeenSet)
+  {
+   payload.WithString("stopAction", StopActionMapper::GetNameForStopAction(m_stopAction));
   }
 
   return payload.WriteReadable();

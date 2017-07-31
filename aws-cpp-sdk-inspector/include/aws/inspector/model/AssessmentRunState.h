@@ -37,7 +37,8 @@ namespace Model
     FAILED,
     ERROR_,
     COMPLETED,
-    COMPLETED_WITH_ERRORS
+    COMPLETED_WITH_ERRORS,
+    CANCELED
   };
 
 namespace AssessmentRunStateMapper

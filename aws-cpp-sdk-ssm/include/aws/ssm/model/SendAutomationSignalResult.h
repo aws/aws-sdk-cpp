@@ -15,32 +15,32 @@
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
 namespace SSM
 {
 namespace Model
 {
-  enum class AutomationExecutionStatus
+  class AWS_SSM_API SendAutomationSignalResult
   {
-    NOT_SET,
-    Pending,
-    InProgress,
-    Waiting,
-    Success,
-    TimedOut,
-    Cancelled,
-    Failed
+  public:
+    SendAutomationSignalResult();
+    SendAutomationSignalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendAutomationSignalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace AutomationExecutionStatusMapper
-{
-AWS_SSM_API AutomationExecutionStatus GetAutomationExecutionStatusForName(const Aws::String& name);
-
-AWS_SSM_API Aws::String GetNameForAutomationExecutionStatus(AutomationExecutionStatus value);
-} // namespace AutomationExecutionStatusMapper
 } // namespace Model
 } // namespace SSM
 } // namespace Aws

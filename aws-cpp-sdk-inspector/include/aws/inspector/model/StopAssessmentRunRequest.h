@@ -17,6 +17,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/model/StopAction.h>
 #include <utility>
 
 namespace Aws
@@ -71,9 +72,56 @@ namespace Model
      */
     inline StopAssessmentRunRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
+    /**
+     * <p>An input option that can be set to either START_EVALUATION or
+     * SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from
+     * collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     * findings are generated.</p>
+     */
+    inline const StopAction& GetStopAction() const{ return m_stopAction; }
+
+    /**
+     * <p>An input option that can be set to either START_EVALUATION or
+     * SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from
+     * collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     * findings are generated.</p>
+     */
+    inline void SetStopAction(const StopAction& value) { m_stopActionHasBeenSet = true; m_stopAction = value; }
+
+    /**
+     * <p>An input option that can be set to either START_EVALUATION or
+     * SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from
+     * collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     * findings are generated.</p>
+     */
+    inline void SetStopAction(StopAction&& value) { m_stopActionHasBeenSet = true; m_stopAction = std::move(value); }
+
+    /**
+     * <p>An input option that can be set to either START_EVALUATION or
+     * SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from
+     * collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     * findings are generated.</p>
+     */
+    inline StopAssessmentRunRequest& WithStopAction(const StopAction& value) { SetStopAction(value); return *this;}
+
+    /**
+     * <p>An input option that can be set to either START_EVALUATION or
+     * SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from
+     * collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     * findings are generated.</p>
+     */
+    inline StopAssessmentRunRequest& WithStopAction(StopAction&& value) { SetStopAction(std::move(value)); return *this;}
+
   private:
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+    StopAction m_stopAction;
+    bool m_stopActionHasBeenSet;
   };
 
 } // namespace Model
