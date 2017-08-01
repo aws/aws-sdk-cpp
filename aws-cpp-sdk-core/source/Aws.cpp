@@ -97,10 +97,18 @@ namespace Aws
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
         Aws::Http::InitHttp();
+
+#ifdef USE_AWS_PROBES
+        Aws::Probes::SetProbeHandlers(options.probeOptions.probeHandlers);
+#endif // USE_AWS_PROBES
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
+#ifdef USE_AWS_PROBES
+        Aws::Probes::GetProbeHandlers().clear();
+#endif // USE_AWS_PROBES
+
         Aws::Http::CleanupHttp();
         Aws::Utils::Crypto::CleanupCrypto();
 

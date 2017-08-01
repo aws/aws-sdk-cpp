@@ -39,6 +39,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/probes/Probe.h>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -169,9 +170,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     HttpMethod method,
     const char* signerName) const
 {
+#ifdef USE_AWS_PROBES
+    Aws::Probes::Probe aProbe(request.GetServiceRequestName());
+#endif // USE_AWS_PROBES
     for (long retries = 0;; retries++)
     {
         HttpResponseOutcome outcome = AttemptOneRequest(uri, request, method, signerName);
+#ifdef USE_AWS_PROBES
+        aProbe.AddAttempt(outcome);
+#endif // USE_AWS_PROBES
         if (outcome.IsSuccess())
         {
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
@@ -229,7 +236,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
                 }
             }
 
-            if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries)) return outcome;
+            if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
+            {
+                return outcome;
+            }
         
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
             if(request.GetBody())
@@ -250,9 +260,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
 {
+#ifdef USE_AWS_PROBES
+    Aws::Probes::Probe aProbe(requestName);
+#endif // USE_AWS_PROBES
     for (long retries = 0;; retries++)
     {
         HttpResponseOutcome outcome = AttemptOneRequest(uri, method, signerName, requestName);
+#ifdef USE_AWS_PROBES
+        aProbe.AddAttempt(outcome);
+#endif // USE_AWS_PROBES
         if (outcome.IsSuccess() || !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
             return outcome;

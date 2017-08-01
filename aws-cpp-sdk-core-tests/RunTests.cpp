@@ -17,6 +17,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Aws.h>
+#include <aws/core/probes/SimpleProbeLogHandler.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/MemoryTesting.h>
@@ -44,6 +45,7 @@ int main(int argc, char** argv)
 
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     options.httpOptions.installSigPipeHandler = true;
+    options.probeOptions.probeHandlers.push_back(Aws::MakeShared<Aws::Probes::SimpleProbeLogHandler>("Aws_probes"));
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);

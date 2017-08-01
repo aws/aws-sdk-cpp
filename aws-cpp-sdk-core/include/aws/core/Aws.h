@@ -20,10 +20,24 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/probes/ProbeHandlerInterface.h>
 
 namespace Aws
 {
     static const char* DEFAULT_LOG_PREFIX = "aws_sdk_";
+
+    /**
+     * SDK wide options for probes collection
+     */
+    struct ProbeOptions
+    {
+        /**
+         * Defaults to empty.
+         * If set, then the probe handlers will be used to compute every operation probe.
+         */
+        Aws::Vector<std::shared_ptr<Aws::Probes::ProbeHandlerInterface>> probeHandlers;
+    };
 
     /**
      * SDK wide options for logging
@@ -199,6 +213,10 @@ namespace Aws
          * SDK wide options for crypto
          */
         CryptoOptions cryptoOptions;
+        /**
+         * SDK wide options for probe collection
+         */
+        ProbeOptions probeOptions;
     };
 
     /*

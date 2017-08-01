@@ -25,6 +25,14 @@ else()
     message(STATUS "Custom memory management disabled")
 endif()
 
+if(("${ENABLE_PROBES}" STREQUAL "1"))
+    set(USE_AWS_PROBES ON)
+    message(STATUS "Probes generation enabled;")
+else()
+    set(USE_AWS_PROBES OFF)
+    message(STATUS "Probes generation disabled")
+endif()
+
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in" 
                "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h")
 
@@ -38,6 +46,7 @@ file(GLOB HTTP_HEADERS "include/aws/core/http/*.h")
 file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
+file(GLOB PROBES_HEADERS "include/aws/core/probes/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
 file(GLOB UTILS_EVENT_HEADERS "include/aws/core/utils/event/*.h")
 file(GLOB UTILS_BASE64_HEADERS "include/aws/core/utils/base64/*.h")
@@ -62,6 +71,7 @@ file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp
 file(GLOB AWS_MODEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/aws/model/*.cpp")
 file(GLOB HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/*.cpp")
 file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard/*.cpp")
+file(GLOB PROBES_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/probes/*.cpp")
 file(GLOB CONFIG_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
@@ -111,6 +121,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_INTERNAL_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
+    ${PROBES_SOURCE}
     ${CONFIG_SOURCE}
     ${UTILS_EVENT_SOURCE}
     ${UTILS_BASE64_SOURCE}
@@ -135,6 +146,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_HEADERS}
   ${HTTP_STANDARD_HEADERS}
   ${CONFIG_HEADERS}
+  ${PROBES_HEADERS}
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
   ${UTILS_HEADERS}
@@ -199,6 +211,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
     ${HTTP_SOURCE}
+    ${PROBES_SOURCE}
     ${AWS_JSONCPP_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
@@ -234,6 +247,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
     source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
+    source_group("Header Files\\aws\\core\\probes" FILES ${PROBES_HEADERS})
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
     source_group("Header Files\\aws\\core\\platform" FILES ${PLATFORM_HEADERS})
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
@@ -275,6 +289,7 @@ if(MSVC)
     source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
     source_group("Source Files\\http" FILES ${HTTP_SOURCE})
     source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
+    source_group("Source Files\\probes" FILES ${PROBES_SOURCE})
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
     source_group("Source Files\\platform\\windows" FILES ${PLATFORM_WINDOWS_SOURCE})
     source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
@@ -410,6 +425,7 @@ install (FILES ${AWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/c
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/internal)
 install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
+install (FILES ${PROBES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/probes/)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)

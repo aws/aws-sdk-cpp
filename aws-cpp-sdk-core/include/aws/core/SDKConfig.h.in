@@ -14,6 +14,7 @@
   */
 
 #cmakedefine USE_AWS_MEMORY_MANAGEMENT
+#cmakedefine USE_AWS_PROBES
 
 #define JSON_USE_EXCEPTION 0
 
