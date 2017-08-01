@@ -74,7 +74,7 @@
 #if(!$template.atBottom)
 #if($template.currentShape.listMember.shape.map)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "JsonMap")
-#elseif($template.currentShape.mapValue.shape.list)
+#elseif($template.currentShape.listMember.shape.list)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "JsonList")
 #end
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(std::move(${template.internalCollectionName}));
