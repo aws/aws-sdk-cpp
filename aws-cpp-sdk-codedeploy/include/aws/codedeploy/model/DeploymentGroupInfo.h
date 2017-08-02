@@ -24,6 +24,8 @@
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
 #include <aws/codedeploy/model/LastDeploymentInfo.h>
+#include <aws/codedeploy/model/EC2TagSet.h>
+#include <aws/codedeploy/model/OnPremisesTagSet.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
@@ -198,72 +200,86 @@ namespace Model
     inline DeploymentGroupInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = std::move(value); }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
      */
     inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
 
@@ -597,6 +613,76 @@ namespace Model
      */
     inline DeploymentGroupInfo& WithLastAttemptedDeployment(LastDeploymentInfo&& value) { SetLastAttemptedDeployment(std::move(value)); return *this;}
 
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
+
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
+
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline DeploymentGroupInfo& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
+
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline DeploymentGroupInfo& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline void SetOnPremisesTagSet(OnPremisesTagSet&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::move(value); }
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline DeploymentGroupInfo& WithOnPremisesTagSet(const OnPremisesTagSet& value) { SetOnPremisesTagSet(value); return *this;}
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline DeploymentGroupInfo& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -632,6 +718,10 @@ namespace Model
     bool m_lastSuccessfulDeploymentHasBeenSet;
     LastDeploymentInfo m_lastAttemptedDeployment;
     bool m_lastAttemptedDeploymentHasBeenSet;
+    EC2TagSet m_ec2TagSet;
+    bool m_ec2TagSetHasBeenSet;
+    OnPremisesTagSet m_onPremisesTagSet;
+    bool m_onPremisesTagSetHasBeenSet;
   };
 
 } // namespace Model

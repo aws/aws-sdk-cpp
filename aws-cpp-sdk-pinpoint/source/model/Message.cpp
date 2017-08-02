@@ -37,6 +37,7 @@ Message::Message() :
     m_imageUrlHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_titleHasBeenSet(false),
@@ -53,6 +54,7 @@ Message::Message(const JsonValue& jsonValue) :
     m_imageUrlHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_titleHasBeenSet(false),
@@ -110,6 +112,13 @@ Message& Message::operator =(const JsonValue& jsonValue)
     m_mediaUrl = jsonValue.GetString("MediaUrl");
 
     m_mediaUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RawContent"))
+  {
+    m_rawContent = jsonValue.GetString("RawContent");
+
+    m_rawContentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SilentPush"))
@@ -178,6 +187,12 @@ JsonValue Message::Jsonize() const
   if(m_mediaUrlHasBeenSet)
   {
    payload.WithString("MediaUrl", m_mediaUrl);
+
+  }
+
+  if(m_rawContentHasBeenSet)
+  {
+   payload.WithString("RawContent", m_rawContent);
 
   }
 

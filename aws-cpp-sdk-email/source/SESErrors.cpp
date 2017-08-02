@@ -40,6 +40,7 @@ static const int EVENT_DESTINATION_DOES_NOT_EXIST_HASH = HashingUtils::HashStrin
 static const int INVALID_CONFIGURATION_SET_HASH = HashingUtils::HashString("InvalidConfigurationSet");
 static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
+static const int INVALID_S_N_S_DESTINATION_HASH = HashingUtils::HashString("InvalidSNSDestination");
 static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
@@ -99,6 +100,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == MESSAGE_REJECTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
+  }
+  else if (hashCode == INVALID_S_N_S_DESTINATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S_N_S_DESTINATION), false);
   }
   else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH)
   {

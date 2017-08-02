@@ -79,6 +79,48 @@ namespace Model
     inline CampaignEmailMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
     /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline CampaignEmailMessage& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline CampaignEmailMessage& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline CampaignEmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
+
+    /**
      * The email html body.
      */
     inline const Aws::String& GetHtmlBody() const{ return m_htmlBody; }
@@ -151,6 +193,8 @@ namespace Model
   private:
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+    Aws::String m_fromAddress;
+    bool m_fromAddressHasBeenSet;
     Aws::String m_htmlBody;
     bool m_htmlBodyHasBeenSet;
     Aws::String m_title;

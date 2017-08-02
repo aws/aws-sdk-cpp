@@ -65,6 +65,7 @@ namespace Aws
         static const int AWS_Redshift_ClusterSubnetGroup_HASH = HashingUtils::HashString("AWS::Redshift::ClusterSubnetGroup");
         static const int AWS_Redshift_EventSubscription_HASH = HashingUtils::HashString("AWS::Redshift::EventSubscription");
         static const int AWS_CloudWatch_Alarm_HASH = HashingUtils::HashString("AWS::CloudWatch::Alarm");
+        static const int AWS_CloudFormation_Stack_HASH = HashingUtils::HashString("AWS::CloudFormation::Stack");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -210,6 +211,10 @@ namespace Aws
           {
             return ResourceType::AWS_CloudWatch_Alarm;
           }
+          else if (hashCode == AWS_CloudFormation_Stack_HASH)
+          {
+            return ResourceType::AWS_CloudFormation_Stack;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -294,6 +299,8 @@ namespace Aws
             return "AWS::Redshift::EventSubscription";
           case ResourceType::AWS_CloudWatch_Alarm:
             return "AWS::CloudWatch::Alarm";
+          case ResourceType::AWS_CloudFormation_Stack:
+            return "AWS::CloudFormation::Stack";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

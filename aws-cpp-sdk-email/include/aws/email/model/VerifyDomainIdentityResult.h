@@ -49,44 +49,86 @@ namespace Model
     VerifyDomainIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationToken = value; }
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = std::move(value); }
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline void SetVerificationToken(const char* value) { m_verificationToken.assign(value); }
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
 
     /**
-     * <p>A TXT record that must be placed in the DNS settings for the domain, in order
-     * to complete domain verification.</p>
+     * <p>A TXT record that you must place in the DNS settings of the domain to
+     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
+     * the TXT record, the domain's verification status is "Pending". When Amazon SES
+     * detects the record, the domain's verification status changes to "Success". If
+     * Amazon SES is unable to detect the record within 72 hours, the domain's
+     * verification status changes to "Failed." In that case, if you still want to
+     * verify the domain, you must restart the verification process from the
+     * beginning.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 

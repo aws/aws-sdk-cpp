@@ -249,37 +249,37 @@ namespace Model
     inline APNSSandboxChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline APNSSandboxChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline APNSSandboxChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      */
     inline APNSSandboxChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 

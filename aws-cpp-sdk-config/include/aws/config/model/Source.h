@@ -87,7 +87,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
@@ -98,7 +98,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -109,7 +109,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
@@ -120,7 +120,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
@@ -131,7 +131,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline Source& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
@@ -142,7 +142,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
@@ -153,7 +153,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
      * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline Source& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

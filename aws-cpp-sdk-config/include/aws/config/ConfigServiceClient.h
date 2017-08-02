@@ -35,6 +35,7 @@
 #include <aws/config/model/GetComplianceDetailsByResourceResult.h>
 #include <aws/config/model/GetComplianceSummaryByConfigRuleResult.h>
 #include <aws/config/model/GetComplianceSummaryByResourceTypeResult.h>
+#include <aws/config/model/GetDiscoveredResourceCountsResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
@@ -101,6 +102,7 @@ namespace Model
         class GetComplianceDetailsByConfigRuleRequest;
         class GetComplianceDetailsByResourceRequest;
         class GetComplianceSummaryByResourceTypeRequest;
+        class GetDiscoveredResourceCountsRequest;
         class GetResourceConfigHistoryRequest;
         class ListDiscoveredResourcesRequest;
         class PutConfigRuleRequest;
@@ -128,6 +130,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByResourceOutcome;
         typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByResourceTypeOutcome;
+        typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetDiscoveredResourceCountsOutcome;
         typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetResourceConfigHistoryOutcome;
         typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListDiscoveredResourcesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigRuleOutcome;
@@ -155,6 +158,7 @@ namespace Model
         typedef std::future<GetComplianceDetailsByResourceOutcome> GetComplianceDetailsByResourceOutcomeCallable;
         typedef std::future<GetComplianceSummaryByConfigRuleOutcome> GetComplianceSummaryByConfigRuleOutcomeCallable;
         typedef std::future<GetComplianceSummaryByResourceTypeOutcome> GetComplianceSummaryByResourceTypeOutcomeCallable;
+        typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
         typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
@@ -185,6 +189,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByResourceRequest&, const Model::GetComplianceDetailsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByResourceTypeRequest&, const Model::GetComplianceSummaryByResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByResourceTypeResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetDiscoveredResourceCountsRequest&, const Model::GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredResourceCountsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigRuleRequest&, const Model::PutConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigRuleResponseReceivedHandler;
@@ -940,16 +945,104 @@ namespace Model
         virtual void GetComplianceSummaryByResourceTypeAsync(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the resource types, the number of each resource type, and the total
+         * number of resources that AWS Config is recording in this region for your AWS
+         * account. </p> <p class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is
+         * recording three resource types in the US East (Ohio) Region for your account: 25
+         * EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li> <li> <p>You make a
+         * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
+         * want all resource types. </p> </li> <li> <p>AWS Config returns the
+         * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
+         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
+         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
+         * <p>The response is paginated. By default, AWS Config lists 100
+         * <a>ResourceCount</a> objects on each page. You can customize this number with
+         * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
+         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
+         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
+         * and count your resources. Wait a few minutes and then retry the
+         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDiscoveredResourceCountsOutcome GetDiscoveredResourceCounts(const Model::GetDiscoveredResourceCountsRequest& request) const;
+
+        /**
+         * <p>Returns the resource types, the number of each resource type, and the total
+         * number of resources that AWS Config is recording in this region for your AWS
+         * account. </p> <p class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is
+         * recording three resource types in the US East (Ohio) Region for your account: 25
+         * EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li> <li> <p>You make a
+         * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
+         * want all resource types. </p> </li> <li> <p>AWS Config returns the
+         * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
+         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
+         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
+         * <p>The response is paginated. By default, AWS Config lists 100
+         * <a>ResourceCount</a> objects on each page. You can customize this number with
+         * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
+         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
+         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
+         * and count your resources. Wait a few minutes and then retry the
+         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDiscoveredResourceCountsOutcomeCallable GetDiscoveredResourceCountsCallable(const Model::GetDiscoveredResourceCountsRequest& request) const;
+
+        /**
+         * <p>Returns the resource types, the number of each resource type, and the total
+         * number of resources that AWS Config is recording in this region for your AWS
+         * account. </p> <p class="title"> <b>Example</b> </p> <ol> <li> <p>AWS Config is
+         * recording three resource types in the US East (Ohio) Region for your account: 25
+         * EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li> <li> <p>You make a
+         * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
+         * want all resource types. </p> </li> <li> <p>AWS Config returns the
+         * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
+         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
+         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
+         * <p>The response is paginated. By default, AWS Config lists 100
+         * <a>ResourceCount</a> objects on each page. You can customize this number with
+         * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
+         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
+         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
+         * and count your resources. Wait a few minutes and then retry the
+         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDiscoveredResourceCountsAsync(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated, and by default, AWS Config returns a
+         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
          * limit of 10 configuration items per page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to
-         * the API is limited to span a duration of seven days. It is likely that the
-         * number of records returned is smaller than the specified <code>limit</code>. In
-         * such cases, you can make another call, using the <code>nextToken</code>.</p>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
+         * API is limited to span a duration of seven days. It is likely that the number of
+         * records returned is smaller than the specified <code>limit</code>. In such
+         * cases, you can make another call, using the <code>nextToken</code>.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
@@ -959,14 +1052,14 @@ namespace Model
         /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated, and by default, AWS Config returns a
+         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
          * limit of 10 configuration items per page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to
-         * the API is limited to span a duration of seven days. It is likely that the
-         * number of records returned is smaller than the specified <code>limit</code>. In
-         * such cases, you can make another call, using the <code>nextToken</code>.</p>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
+         * API is limited to span a duration of seven days. It is likely that the number of
+         * records returned is smaller than the specified <code>limit</code>. In such
+         * cases, you can make another call, using the <code>nextToken</code>.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
@@ -978,14 +1071,14 @@ namespace Model
         /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated, and by default, AWS Config returns a
+         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
          * limit of 10 configuration items per page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to
-         * the API is limited to span a duration of seven days. It is likely that the
-         * number of records returned is smaller than the specified <code>limit</code>. In
-         * such cases, you can make another call, using the <code>nextToken</code>.</p>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
+         * API is limited to span a duration of seven days. It is likely that the number of
+         * records returned is smaller than the specified <code>limit</code>. In such
+         * cases, you can make another call, using the <code>nextToken</code>.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
@@ -1002,12 +1095,11 @@ namespace Model
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
          * resource IDs or a resource name but not both in the same request.</p> </note>
-         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
-         * <a
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
          * API Reference</a></p>
          */
@@ -1021,12 +1113,11 @@ namespace Model
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
          * resource IDs or a resource name but not both in the same request.</p> </note>
-         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
-         * <a
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
          * API Reference</a></p>
          *
@@ -1042,12 +1133,11 @@ namespace Model
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
          * resource IDs or a resource name but not both in the same request.</p> </note>
-         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
-         * <a
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
          * API Reference</a></p>
          *
@@ -1477,6 +1567,7 @@ namespace Model
         void GetComplianceDetailsByResourceAsyncHelper(const Model::GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceSummaryByConfigRuleAsyncHelper(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceSummaryByResourceTypeAsyncHelper(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDiscoveredResourceCountsAsyncHelper(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigRuleAsyncHelper(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

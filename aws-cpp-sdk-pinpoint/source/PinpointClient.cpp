@@ -27,11 +27,13 @@
 #include <aws/pinpoint/PinpointClient.h>
 #include <aws/pinpoint/PinpointEndpoint.h>
 #include <aws/pinpoint/PinpointErrorMarshaller.h>
+#include <aws/pinpoint/model/CreateAppRequest.h>
 #include <aws/pinpoint/model/CreateCampaignRequest.h>
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
+#include <aws/pinpoint/model/DeleteAppRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
 #include <aws/pinpoint/model/DeleteEmailChannelRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
@@ -40,7 +42,9 @@
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
+#include <aws/pinpoint/model/GetAppRequest.h>
 #include <aws/pinpoint/model/GetApplicationSettingsRequest.h>
+#include <aws/pinpoint/model/GetAppsRequest.h>
 #include <aws/pinpoint/model/GetCampaignRequest.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionRequest.h>
@@ -133,6 +137,41 @@ void PinpointClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateAppOutcome(outcome.GetError());
+  }
+}
+
+CreateAppOutcomeCallable PinpointClient::CreateAppCallable(const CreateAppRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateApp(request), context);
 }
 
 CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -308,6 +347,41 @@ void PinpointClient::DeleteApnsSandboxChannelAsync(const DeleteApnsSandboxChanne
 void PinpointClient::DeleteApnsSandboxChannelAsyncHelper(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApnsSandboxChannel(request), context);
+}
+
+DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAppOutcome(DeleteAppResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAppOutcome(outcome.GetError());
+  }
+}
+
+DeleteAppOutcomeCallable PinpointClient::DeleteAppCallable(const DeleteAppRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApp(request), context);
 }
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -590,6 +664,41 @@ void PinpointClient::GetApnsSandboxChannelAsyncHelper(const GetApnsSandboxChanne
   handler(this, request, GetApnsSandboxChannel(request), context);
 }
 
+GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetAppOutcome(GetAppResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAppOutcome(outcome.GetError());
+  }
+}
+
+GetAppOutcomeCallable PinpointClient::GetAppCallable(const GetAppRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApp(request), context);
+}
+
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -623,6 +732,41 @@ void PinpointClient::GetApplicationSettingsAsync(const GetApplicationSettingsReq
 void PinpointClient::GetApplicationSettingsAsyncHelper(const GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApplicationSettings(request), context);
+}
+
+GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetAppsOutcome(GetAppsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAppsOutcome(outcome.GetError());
+  }
+}
+
+GetAppsOutcomeCallable PinpointClient::GetAppsCallable(const GetAppsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApps(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetAppsAsync(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetAppsAsyncHelper(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApps(request), context);
 }
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const

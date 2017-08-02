@@ -44,37 +44,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline EmailChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline EmailChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      */
     inline EmailChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

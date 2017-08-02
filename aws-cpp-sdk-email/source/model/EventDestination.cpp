@@ -36,7 +36,8 @@ EventDestination::EventDestination() :
     m_enabledHasBeenSet(false),
     m_matchingEventTypesHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false)
+    m_cloudWatchDestinationHasBeenSet(false),
+    m_sNSDestinationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ EventDestination::EventDestination(const XmlNode& xmlNode) :
     m_enabledHasBeenSet(false),
     m_matchingEventTypesHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false)
+    m_cloudWatchDestinationHasBeenSet(false),
+    m_sNSDestinationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +95,12 @@ EventDestination& EventDestination::operator =(const XmlNode& xmlNode)
       m_cloudWatchDestination = cloudWatchDestinationNode;
       m_cloudWatchDestinationHasBeenSet = true;
     }
+    XmlNode sNSDestinationNode = resultNode.FirstChild("SNSDestination");
+    if(!sNSDestinationNode.IsNull())
+    {
+      m_sNSDestination = sNSDestinationNode;
+      m_sNSDestinationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -133,6 +141,13 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_cloudWatchDestination.OutputToStream(oStream, cloudWatchDestinationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_sNSDestinationHasBeenSet)
+  {
+      Aws::StringStream sNSDestinationLocationAndMemberSs;
+      sNSDestinationLocationAndMemberSs << location << index << locationValue << ".SNSDestination";
+      m_sNSDestination.OutputToStream(oStream, sNSDestinationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void EventDestination::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -164,6 +179,12 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String cloudWatchDestinationLocationAndMember(location);
       cloudWatchDestinationLocationAndMember += ".CloudWatchDestination";
       m_cloudWatchDestination.OutputToStream(oStream, cloudWatchDestinationLocationAndMember.c_str());
+  }
+  if(m_sNSDestinationHasBeenSet)
+  {
+      Aws::String sNSDestinationLocationAndMember(location);
+      sNSDestinationLocationAndMember += ".SNSDestination";
+      m_sNSDestination.OutputToStream(oStream, sNSDestinationLocationAndMember.c_str());
   }
 }
 

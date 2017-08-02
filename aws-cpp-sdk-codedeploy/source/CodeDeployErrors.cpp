@@ -54,6 +54,7 @@ static const int INVALID_APPLICATION_NAME_HASH = HashingUtils::HashString("Inval
 static const int RESOURCE_VALIDATION_HASH = HashingUtils::HashString("ResourceValidationException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int INVALID_DEPLOYMENT_CONFIG_NAME_HASH = HashingUtils::HashString("InvalidDeploymentConfigNameException");
+static const int INVALID_ON_PREMISES_TAG_COMBINATION_HASH = HashingUtils::HashString("InvalidOnPremisesTagCombinationException");
 static const int INVALID_FILE_EXISTS_BEHAVIOR_HASH = HashingUtils::HashString("InvalidFileExistsBehaviorException");
 static const int INSTANCE_NAME_REQUIRED_HASH = HashingUtils::HashString("InstanceNameRequiredException");
 static const int DEPLOYMENT_CONFIG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentConfigLimitExceededException");
@@ -93,6 +94,7 @@ static const int DEPLOYMENT_NOT_STARTED_HASH = HashingUtils::HashString("Deploym
 static const int LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LifecycleHookLimitExceededException");
 static const int DEPLOYMENT_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentGroupAlreadyExistsException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int INVALID_E_C2_TAG_COMBINATION_HASH = HashingUtils::HashString("InvalidEC2TagCombinationException");
 static const int DEPLOYMENT_CONFIG_NAME_REQUIRED_HASH = HashingUtils::HashString("DeploymentConfigNameRequiredException");
 static const int INVALID_DEPLOYMENT_STYLE_HASH = HashingUtils::HashString("InvalidDeploymentStyleException");
 static const int IAM_USER_ARN_ALREADY_REGISTERED_HASH = HashingUtils::HashString("IamUserArnAlreadyRegisteredException");
@@ -104,6 +106,7 @@ static const int BUCKET_NAME_FILTER_REQUIRED_HASH = HashingUtils::HashString("Bu
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
 static const int INVALID_IAM_USER_ARN_HASH = HashingUtils::HashString("InvalidIamUserArnException");
 static const int INVALID_REVISION_HASH = HashingUtils::HashString("InvalidRevisionException");
+static const int TAG_SET_LIST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagSetListLimitExceededException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
 static const int IAM_USER_ARN_REQUIRED_HASH = HashingUtils::HashString("IamUserArnRequiredException");
 
@@ -215,6 +218,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DEPLOYMENT_CONFIG_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_CONFIG_NAME), false);
+  }
+  else if (hashCode == INVALID_ON_PREMISES_TAG_COMBINATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ON_PREMISES_TAG_COMBINATION), false);
   }
   else if (hashCode == INVALID_FILE_EXISTS_BEHAVIOR_HASH)
   {
@@ -372,6 +379,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_NEXT_TOKEN), false);
   }
+  else if (hashCode == INVALID_E_C2_TAG_COMBINATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_E_C2_TAG_COMBINATION), false);
+  }
   else if (hashCode == DEPLOYMENT_CONFIG_NAME_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_NAME_REQUIRED), false);
@@ -415,6 +426,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_REVISION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_REVISION), false);
+  }
+  else if (hashCode == TAG_SET_LIST_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::TAG_SET_LIST_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == INVALID_TIME_RANGE_HASH)
   {

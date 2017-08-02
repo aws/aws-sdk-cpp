@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     messageTag,
-    emailHeader
+    emailHeader,
+    linkTag
   };
 
 namespace DimensionValueSourceMapper

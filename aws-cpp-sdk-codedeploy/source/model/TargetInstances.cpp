@@ -30,13 +30,15 @@ namespace Model
 
 TargetInstances::TargetInstances() : 
     m_tagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false)
+    m_autoScalingGroupsHasBeenSet(false),
+    m_ec2TagSetHasBeenSet(false)
 {
 }
 
 TargetInstances::TargetInstances(const JsonValue& jsonValue) : 
     m_tagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false)
+    m_autoScalingGroupsHasBeenSet(false),
+    m_ec2TagSetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,13 @@ TargetInstances& TargetInstances::operator =(const JsonValue& jsonValue)
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString());
     }
     m_autoScalingGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ec2TagSet"))
+  {
+    m_ec2TagSet = jsonValue.GetObject("ec2TagSet");
+
+    m_ec2TagSetHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +98,12 @@ JsonValue TargetInstances::Jsonize() const
      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString(m_autoScalingGroups[autoScalingGroupsIndex]);
    }
    payload.WithArray("autoScalingGroups", std::move(autoScalingGroupsJsonList));
+
+  }
+
+  if(m_ec2TagSetHasBeenSet)
+  {
+   payload.WithObject("ec2TagSet", m_ec2TagSet.Jsonize());
 
   }
 

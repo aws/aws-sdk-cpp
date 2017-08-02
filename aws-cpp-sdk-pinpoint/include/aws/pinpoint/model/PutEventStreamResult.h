@@ -34,9 +34,6 @@ namespace Pinpoint
 {
 namespace Model
 {
-  /**
-   * PutEventStream Response
-   */
   class AWS_PINPOINT_API PutEventStreamResult
   {
   public:

@@ -160,35 +160,35 @@ namespace Model
     /**
      * The channel type.
 
-Valid values: APNS, GCM
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline const ChannelType& GetChannelType() const{ return m_channelType; }
 
     /**
      * The channel type.
 
-Valid values: APNS, GCM
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
      * The channel type.
 
-Valid values: APNS, GCM
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
     /**
      * The channel type.
 
-Valid values: APNS, GCM
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointBatchItem& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
 
     /**
      * The channel type.
 
-Valid values: APNS, GCM
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointBatchItem& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
@@ -398,9 +398,10 @@ Valid values: APNS, GCM
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline const Aws::String& GetOptOut() const{ return m_optOut; }
 
@@ -408,9 +409,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline void SetOptOut(const Aws::String& value) { m_optOutHasBeenSet = true; m_optOut = value; }
 
@@ -418,9 +420,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline void SetOptOut(Aws::String&& value) { m_optOutHasBeenSet = true; m_optOut = std::move(value); }
 
@@ -428,9 +431,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline void SetOptOut(const char* value) { m_optOutHasBeenSet = true; m_optOut.assign(value); }
 
@@ -438,9 +442,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline EndpointBatchItem& WithOptOut(const Aws::String& value) { SetOptOut(value); return *this;}
 
@@ -448,9 +453,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline EndpointBatchItem& WithOptOut(Aws::String&& value) { SetOptOut(std::move(value)); return *this;}
 
@@ -458,9 +464,10 @@ NONE – User receives no
      * Indicates whether a user has opted out of receiving messages with one of the
      * following values:
 
-ALL – User receives all messages.
-NONE – User receives no
-     * messages.
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
      */
     inline EndpointBatchItem& WithOptOut(const char* value) { SetOptOut(value); return *this;}
 

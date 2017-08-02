@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/KinesisFirehoseDestination.h>
 #include <aws/email/model/CloudWatchDestination.h>
+#include <aws/email/model/SNSDestination.h>
 #include <aws/email/model/EventType.h>
 #include <utility>
 
@@ -41,10 +42,11 @@ namespace Model
    * <p>Contains information about the event destination to which the specified email
    * sending events are published.</p> <note> <p>When you create or update an event
    * destination, you must provide one, and only one, destination. The destination
-   * can be either Amazon CloudWatch or Amazon Kinesis Firehose.</p> </note> <p>Event
-   * destinations are associated with configuration sets, which enable you to publish
-   * email sending events to Amazon CloudWatch or Amazon Kinesis Firehose. For
-   * information about using configuration sets, see the <a
+   * can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification
+   * Service (Amazon SNS).</p> </note> <p>Event destinations are associated with
+   * configuration sets, which enable you to publish email sending events to Amazon
+   * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service
+   * (Amazon SNS). For information about using configuration sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS
@@ -228,6 +230,36 @@ namespace Model
      */
     inline EventDestination& WithCloudWatchDestination(CloudWatchDestination&& value) { SetCloudWatchDestination(std::move(value)); return *this;}
 
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline const SNSDestination& GetSNSDestination() const{ return m_sNSDestination; }
+
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline void SetSNSDestination(const SNSDestination& value) { m_sNSDestinationHasBeenSet = true; m_sNSDestination = value; }
+
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline void SetSNSDestination(SNSDestination&& value) { m_sNSDestinationHasBeenSet = true; m_sNSDestination = std::move(value); }
+
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline EventDestination& WithSNSDestination(const SNSDestination& value) { SetSNSDestination(value); return *this;}
+
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline EventDestination& WithSNSDestination(SNSDestination&& value) { SetSNSDestination(std::move(value)); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -239,6 +271,8 @@ namespace Model
     bool m_kinesisFirehoseDestinationHasBeenSet;
     CloudWatchDestination m_cloudWatchDestination;
     bool m_cloudWatchDestinationHasBeenSet;
+    SNSDestination m_sNSDestination;
+    bool m_sNSDestinationHasBeenSet;
   };
 
 } // namespace Model

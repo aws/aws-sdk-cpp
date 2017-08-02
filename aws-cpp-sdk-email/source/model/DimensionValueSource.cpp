@@ -32,6 +32,7 @@ namespace Aws
 
         static const int messageTag_HASH = HashingUtils::HashString("messageTag");
         static const int emailHeader_HASH = HashingUtils::HashString("emailHeader");
+        static const int linkTag_HASH = HashingUtils::HashString("linkTag");
 
 
         DimensionValueSource GetDimensionValueSourceForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == emailHeader_HASH)
           {
             return DimensionValueSource::emailHeader;
+          }
+          else if (hashCode == linkTag_HASH)
+          {
+            return DimensionValueSource::linkTag;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "messageTag";
           case DimensionValueSource::emailHeader:
             return "emailHeader";
+          case DimensionValueSource::linkTag:
+            return "linkTag";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

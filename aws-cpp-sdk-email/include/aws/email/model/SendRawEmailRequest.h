@@ -209,7 +209,9 @@ namespace Model
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
-     * </ul>
+     * <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+     * 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;,
+     * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline const RawMessage& GetRawMessage() const{ return m_rawMessage; }
 
@@ -222,7 +224,9 @@ namespace Model
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
-     * </ul>
+     * <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+     * 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;,
+     * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline void SetRawMessage(const RawMessage& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
 
@@ -235,7 +239,9 @@ namespace Model
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
-     * </ul>
+     * <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+     * 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;,
+     * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline void SetRawMessage(RawMessage&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = std::move(value); }
 
@@ -248,7 +254,9 @@ namespace Model
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
-     * </ul>
+     * <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+     * 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;,
+     * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline SendRawEmailRequest& WithRawMessage(const RawMessage& value) { SetRawMessage(value); return *this;}
 
@@ -261,7 +269,9 @@ namespace Model
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
-     * </ul>
+     * <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+     * 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;,
+     * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(std::move(value)); return *this;}
 

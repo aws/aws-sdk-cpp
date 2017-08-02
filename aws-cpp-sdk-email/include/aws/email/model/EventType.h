@@ -30,7 +30,9 @@ namespace Model
     reject,
     bounce,
     complaint,
-    delivery
+    delivery,
+    open,
+    click
   };
 
 namespace EventTypeMapper

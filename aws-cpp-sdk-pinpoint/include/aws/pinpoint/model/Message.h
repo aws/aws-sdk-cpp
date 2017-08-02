@@ -341,6 +341,48 @@ URL - The default mobile browser on
     inline Message& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 
     /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline Message& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline Message& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline Message& WithRawContent(const char* value) { SetRawContent(value); return *this;}
+
+    /**
      * Indicates if the message should display on the users device.
 
 Silent pushes can
@@ -456,6 +498,8 @@ Silent pushes can
     bool m_jsonBodyHasBeenSet;
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
+    Aws::String m_rawContent;
+    bool m_rawContentHasBeenSet;
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
     Aws::String m_title;

@@ -60,7 +60,8 @@ namespace Model
     AWS_Redshift_ClusterSecurityGroup,
     AWS_Redshift_ClusterSubnetGroup,
     AWS_Redshift_EventSubscription,
-    AWS_CloudWatch_Alarm
+    AWS_CloudWatch_Alarm,
+    AWS_CloudFormation_Stack
   };
 
 namespace ResourceTypeMapper

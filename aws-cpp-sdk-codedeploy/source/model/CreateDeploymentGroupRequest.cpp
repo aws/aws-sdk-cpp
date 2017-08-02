@@ -35,7 +35,9 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_autoRollbackConfigurationHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false)
+    m_loadBalancerInfoHasBeenSet(false),
+    m_ec2TagSetHasBeenSet(false),
+    m_onPremisesTagSetHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,18 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
   if(m_loadBalancerInfoHasBeenSet)
   {
    payload.WithObject("loadBalancerInfo", m_loadBalancerInfo.Jsonize());
+
+  }
+
+  if(m_ec2TagSetHasBeenSet)
+  {
+   payload.WithObject("ec2TagSet", m_ec2TagSet.Jsonize());
+
+  }
+
+  if(m_onPremisesTagSetHasBeenSet)
+  {
+   payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
 
   }
 

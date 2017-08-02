@@ -43,6 +43,7 @@
 #include <aws/config/model/GetComplianceDetailsByConfigRuleRequest.h>
 #include <aws/config/model/GetComplianceDetailsByResourceRequest.h>
 #include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
+#include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
 #include <aws/config/model/PutConfigRuleRequest.h>
@@ -709,6 +710,41 @@ void ConfigServiceClient::GetComplianceSummaryByResourceTypeAsync(const GetCompl
 void ConfigServiceClient::GetComplianceSummaryByResourceTypeAsyncHelper(const GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetComplianceSummaryByResourceType(request), context);
+}
+
+GetDiscoveredResourceCountsOutcome ConfigServiceClient::GetDiscoveredResourceCounts(const GetDiscoveredResourceCountsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetDiscoveredResourceCountsOutcome(GetDiscoveredResourceCountsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDiscoveredResourceCountsOutcome(outcome.GetError());
+  }
+}
+
+GetDiscoveredResourceCountsOutcomeCallable ConfigServiceClient::GetDiscoveredResourceCountsCallable(const GetDiscoveredResourceCountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDiscoveredResourceCountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDiscoveredResourceCounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetDiscoveredResourceCountsAsync(const GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDiscoveredResourceCountsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetDiscoveredResourceCountsAsyncHelper(const GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDiscoveredResourceCounts(request), context);
 }
 
 GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(const GetResourceConfigHistoryRequest& request) const

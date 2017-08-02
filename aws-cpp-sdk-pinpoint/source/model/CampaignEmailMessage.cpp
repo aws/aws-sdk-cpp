@@ -30,6 +30,7 @@ namespace Model
 
 CampaignEmailMessage::CampaignEmailMessage() : 
     m_bodyHasBeenSet(false),
+    m_fromAddressHasBeenSet(false),
     m_htmlBodyHasBeenSet(false),
     m_titleHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ CampaignEmailMessage::CampaignEmailMessage() :
 
 CampaignEmailMessage::CampaignEmailMessage(const JsonValue& jsonValue) : 
     m_bodyHasBeenSet(false),
+    m_fromAddressHasBeenSet(false),
     m_htmlBodyHasBeenSet(false),
     m_titleHasBeenSet(false)
 {
@@ -50,6 +52,13 @@ CampaignEmailMessage& CampaignEmailMessage::operator =(const JsonValue& jsonValu
     m_body = jsonValue.GetString("Body");
 
     m_bodyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FromAddress"))
+  {
+    m_fromAddress = jsonValue.GetString("FromAddress");
+
+    m_fromAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HtmlBody"))
@@ -76,6 +85,12 @@ JsonValue CampaignEmailMessage::Jsonize() const
   if(m_bodyHasBeenSet)
   {
    payload.WithString("Body", m_body);
+
+  }
+
+  if(m_fromAddressHasBeenSet)
+  {
+   payload.WithString("FromAddress", m_fromAddress);
 
   }
 

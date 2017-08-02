@@ -82,27 +82,37 @@ namespace Model
     inline AddressConfiguration& WithBodyOverride(const char* value) { SetBodyOverride(value); return *this;}
 
     /**
-     * Type of channel of this address
+     * The channel type.
+
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline const ChannelType& GetChannelType() const{ return m_channelType; }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline AddressConfiguration& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
 
     /**
-     * Type of channel of this address
+     * The channel type.
+
+Valid values: GCM | APNS | SMS | EMAIL
      */
     inline AddressConfiguration& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 

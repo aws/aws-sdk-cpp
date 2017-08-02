@@ -23,6 +23,8 @@
 #include <aws/codedeploy/model/DeploymentStyle.h>
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
+#include <aws/codedeploy/model/EC2TagSet.h>
+#include <aws/codedeploy/model/OnPremisesTagSet.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/TriggerConfig.h>
@@ -596,6 +598,71 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
 
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group will include only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group will include only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group will include only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group will include only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group will include only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group will
+     * include only on-premises instances identified by all the tag groups.</p>
+     */
+    inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group will
+     * include only on-premises instances identified by all the tag groups.</p>
+     */
+    inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group will
+     * include only on-premises instances identified by all the tag groups.</p>
+     */
+    inline void SetOnPremisesTagSet(OnPremisesTagSet&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::move(value); }
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group will
+     * include only on-premises instances identified by all the tag groups.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithOnPremisesTagSet(const OnPremisesTagSet& value) { SetOnPremisesTagSet(value); return *this;}
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group will
+     * include only on-premises instances identified by all the tag groups.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -625,6 +692,10 @@ namespace Model
     bool m_blueGreenDeploymentConfigurationHasBeenSet;
     LoadBalancerInfo m_loadBalancerInfo;
     bool m_loadBalancerInfoHasBeenSet;
+    EC2TagSet m_ec2TagSet;
+    bool m_ec2TagSetHasBeenSet;
+    OnPremisesTagSet m_onPremisesTagSet;
+    bool m_onPremisesTagSetHasBeenSet;
   };
 
 } // namespace Model

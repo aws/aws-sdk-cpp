@@ -164,37 +164,37 @@ namespace Model
     inline GCMChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline GCMChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline GCMChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline GCMChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
