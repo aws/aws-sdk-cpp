@@ -66,7 +66,8 @@ void XmlNode::SetName(const Aws::String& name)
 
 const Aws::String XmlNode::GetAttributeValue(const Aws::String& name) const
 {
-    return m_node->ToElement()->Attribute(name.c_str(), nullptr);
+	auto pointer =  m_node->ToElement()->Attribute(name.c_str(), nullptr);
+	return pointer ? pointer : "";
 }
 
 void XmlNode::SetAttributeValue(const Aws::String& name, const Aws::String& value)
