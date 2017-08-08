@@ -228,7 +228,10 @@ protected:
 
             ASSERT_TRUE(AreFilesSame(downloadFileName, sourceFileName));
 
-            ASSERT_TRUE(metadata == downloadPtr->GetMetadata());
+			auto copyMetadata = metadata;
+            // ETag will be added to Metadata when finished uploading/downloading
+			copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
+            ASSERT_TRUE(copyMetadata == downloadPtr->GetMetadata());
         }
 
         Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
