@@ -54,6 +54,7 @@ EnvironmentDescription::EnvironmentDescription() :
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
     m_environmentLinksHasBeenSet(false),
+    m_environmentArnHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -82,6 +83,7 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
     m_environmentLinksHasBeenSet(false),
+    m_environmentArnHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -213,6 +215,12 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
 
       m_environmentLinksHasBeenSet = true;
     }
+    XmlNode environmentArnNode = resultNode.FirstChild("EnvironmentArn");
+    if(!environmentArnNode.IsNull())
+    {
+      m_environmentArn = StringUtils::Trim(environmentArnNode.GetText().c_str());
+      m_environmentArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -325,6 +333,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 
+  if(m_environmentArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnvironmentArn=" << StringUtils::URLEncode(m_environmentArn.c_str()) << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -421,6 +434,10 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
         environmentLinksSs << location <<  ".EnvironmentLinks.member." << environmentLinksIdx++;
         item.OutputToStream(oStream, environmentLinksSs.str().c_str());
       }
+  }
+  if(m_environmentArnHasBeenSet)
+  {
+      oStream << location << ".EnvironmentArn=" << StringUtils::URLEncode(m_environmentArn.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

@@ -157,6 +157,11 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const AmazonW
       }
 
     }
+    XmlNode environmentArnNode = resultNode.FirstChild("EnvironmentArn");
+    if(!environmentArnNode.IsNull())
+    {
+      m_environmentArn = StringUtils::Trim(environmentArnNode.GetText().c_str());
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -238,37 +238,37 @@ namespace Model
     inline TerminateEnvironmentResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArn = value; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const char* value) { m_platformArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline TerminateEnvironmentResult& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline TerminateEnvironmentResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline TerminateEnvironmentResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
@@ -765,6 +765,48 @@ namespace Model
      */
     inline TerminateEnvironmentResult& AddEnvironmentLinks(EnvironmentLink&& value) { m_environmentLinks.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline const Aws::String& GetEnvironmentArn() const{ return m_environmentArn; }
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline void SetEnvironmentArn(const Aws::String& value) { m_environmentArn = value; }
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline void SetEnvironmentArn(Aws::String&& value) { m_environmentArn = std::move(value); }
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline void SetEnvironmentArn(const char* value) { m_environmentArn.assign(value); }
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline TerminateEnvironmentResult& WithEnvironmentArn(const Aws::String& value) { SetEnvironmentArn(value); return *this;}
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline TerminateEnvironmentResult& WithEnvironmentArn(Aws::String&& value) { SetEnvironmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
+     * reuqests that require an ARN.</p>
+     */
+    inline TerminateEnvironmentResult& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -800,6 +842,7 @@ namespace Model
     EnvironmentResourcesDescription m_resources;
     EnvironmentTier m_tier;
     Aws::Vector<EnvironmentLink> m_environmentLinks;
+    Aws::String m_environmentArn;
     ResponseMetadata m_responseMetadata;
   };
 

@@ -125,55 +125,79 @@ namespace Model
     inline DescribeApplicationVersionsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
     /**
-     * <p>Specify a maximum number of application versions to paginate in the
-     * request.</p>
+     * <p>For a paginated request. Specify a maximum number of application versions to
+     * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available application versions are retrieved in a single response.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>Specify a maximum number of application versions to paginate in the
-     * request.</p>
+     * <p>For a paginated request. Specify a maximum number of application versions to
+     * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available application versions are retrieved in a single response.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>Specify a maximum number of application versions to paginate in the
-     * request.</p>
+     * <p>For a paginated request. Specify a maximum number of application versions to
+     * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available application versions are retrieved in a single response.</p>
      */
     inline DescribeApplicationVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline DescribeApplicationVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline DescribeApplicationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
      */
     inline DescribeApplicationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

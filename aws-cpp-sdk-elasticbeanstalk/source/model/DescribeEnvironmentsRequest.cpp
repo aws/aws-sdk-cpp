@@ -27,7 +27,10 @@ DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
     m_environmentNamesHasBeenSet(false),
     m_includeDeleted(false),
     m_includeDeletedHasBeenSet(false),
-    m_includedDeletedBackToHasBeenSet(false)
+    m_includedDeletedBackToHasBeenSet(false),
+    m_maxRecords(0),
+    m_maxRecordsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -75,6 +78,16 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
   if(m_includedDeletedBackToHasBeenSet)
   {
     ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_maxRecordsHasBeenSet)
+  {
+    ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   ss << "Version=2010-12-01";

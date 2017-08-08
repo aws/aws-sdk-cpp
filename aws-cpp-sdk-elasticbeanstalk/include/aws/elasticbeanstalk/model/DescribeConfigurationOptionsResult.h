@@ -86,37 +86,37 @@ namespace Model
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArn = value; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const char* value) { m_platformArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline DescribeConfigurationOptionsResult& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline DescribeConfigurationOptionsResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline DescribeConfigurationOptionsResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 

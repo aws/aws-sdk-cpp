@@ -99,11 +99,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
@@ -111,11 +111,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
@@ -123,11 +123,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
@@ -135,11 +135,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
@@ -147,11 +147,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
@@ -159,11 +159,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
@@ -171,11 +171,11 @@ namespace Model
      * <p>A unique name for the deployment environment. Used in the application
      * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
-     * hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Default: If the CNAME parameter is not specified, the environment
-     * name becomes part of the CNAME, and therefore part of the visible URL for your
-     * application.</p>
+     * hyphen. This name must be unique within a region in your account. If the
+     * specified name already exists in the region, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME
+     * parameter is not specified, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
@@ -548,37 +548,37 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The ARN of the platform.</p>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 

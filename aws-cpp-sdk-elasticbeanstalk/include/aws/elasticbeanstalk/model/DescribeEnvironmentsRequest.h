@@ -274,6 +274,83 @@ namespace Model
      */
     inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { SetIncludedDeletedBackTo(std::move(value)); return *this;}
 
+    /**
+     * <p>For a paginated request. Specify a maximum number of environments to include
+     * in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available environments are retrieved in a single response.</p>
+     */
+    inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>For a paginated request. Specify a maximum number of environments to include
+     * in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available environments are retrieved in a single response.</p>
+     */
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+
+    /**
+     * <p>For a paginated request. Specify a maximum number of environments to include
+     * in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available environments are retrieved in a single response.</p>
+     */
+    inline DescribeEnvironmentsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline DescribeEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline DescribeEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline DescribeEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -287,6 +364,10 @@ namespace Model
     bool m_includeDeletedHasBeenSet;
     Aws::Utils::DateTime m_includedDeletedBackTo;
     bool m_includedDeletedBackToHasBeenSet;
+    int m_maxRecords;
+    bool m_maxRecordsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

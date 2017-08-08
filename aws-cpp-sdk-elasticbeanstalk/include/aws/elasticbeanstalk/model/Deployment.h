@@ -160,31 +160,31 @@ namespace Model
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p>For in-progress deployments, the time that the deloyment started.</p> <p>For
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
      */
     inline const Aws::Utils::DateTime& GetDeploymentTime() const{ return m_deploymentTime; }
 
     /**
-     * <p>For in-progress deployments, the time that the deloyment started.</p> <p>For
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
      */
     inline void SetDeploymentTime(const Aws::Utils::DateTime& value) { m_deploymentTimeHasBeenSet = true; m_deploymentTime = value; }
 
     /**
-     * <p>For in-progress deployments, the time that the deloyment started.</p> <p>For
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
      */
     inline void SetDeploymentTime(Aws::Utils::DateTime&& value) { m_deploymentTimeHasBeenSet = true; m_deploymentTime = std::move(value); }
 
     /**
-     * <p>For in-progress deployments, the time that the deloyment started.</p> <p>For
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
      */
     inline Deployment& WithDeploymentTime(const Aws::Utils::DateTime& value) { SetDeploymentTime(value); return *this;}
 
     /**
-     * <p>For in-progress deployments, the time that the deloyment started.</p> <p>For
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
      */
     inline Deployment& WithDeploymentTime(Aws::Utils::DateTime&& value) { SetDeploymentTime(std::move(value)); return *this;}

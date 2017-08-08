@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/EnvironmentDescription.h>
 #include <utility>
@@ -84,6 +85,48 @@ namespace Model
      */
     inline ComposeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline ComposeEnvironmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline ComposeEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>In a paginated request, the token that you can pass in a subsequent request
+     * to get the next response page.</p>
+     */
+    inline ComposeEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,6 +144,7 @@ namespace Model
 
   private:
     Aws::Vector<EnvironmentDescription> m_environments;
+    Aws::String m_nextToken;
     ResponseMetadata m_responseMetadata;
   };
 

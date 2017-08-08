@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Health;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.1.20160804.24;
+        version : 1.1.20160804.25;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Health APIs and Notifications);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.1.24
+            AWSSDKCPP-Core/1.1.25
        }
     }
 
