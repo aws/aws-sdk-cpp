@@ -243,7 +243,8 @@ namespace Aws
                     for (uint64_t i = 0; i < partCount; ++i)
                     {
                         uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
-                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize)));
+                        bool lastPart = (i == partCount - 1) ? true : false;
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
                     }                    
                 }
                 else
@@ -339,7 +340,7 @@ namespace Aws
 
         void TransferManager::DoSinglePartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
-            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()));
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()), true);
 
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
@@ -609,7 +610,8 @@ namespace Aws
                 for(std::size_t i = 0; i < partCount; ++i)
                 {
                     std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
-                    auto partState = Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize);
+                    bool lastPart = (i == partCount - 1) ? true : false;
+                    auto partState = Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize, lastPart);
                     partState->SetRangeBegin(i * bufferSize);
                     handle->AddQueuedPart(partState);
                 }

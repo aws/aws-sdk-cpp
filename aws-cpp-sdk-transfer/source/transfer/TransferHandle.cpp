@@ -30,10 +30,11 @@ namespace Aws
             m_sizeInBytes(0),
             m_rangeBegin(0),
             m_downloadPartStream(nullptr),
-            m_downloadBuffer(nullptr)
+            m_downloadBuffer(nullptr),
+            m_lastPart(false)
         {}
 
-        PartState::PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes) :
+        PartState::PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes, bool lastPart) :
             m_partId(partId),
             m_eTag(""),
             m_currentProgressInBytes(0),
@@ -41,7 +42,8 @@ namespace Aws
             m_sizeInBytes(sizeInBytes),
             m_rangeBegin(0),
             m_downloadPartStream(nullptr),
-            m_downloadBuffer(nullptr)
+            m_downloadBuffer(nullptr),
+            m_lastPart(lastPart)
         {}
 
 
@@ -128,6 +130,10 @@ namespace Aws
             }
             
             partState->SetETag(eTag);
+            if (partState->IsLastPart()) 
+            {
+                AddMetadataEntry("ETag", eTag);
+            }
             m_completedParts[partState->GetPartId()] = partState;
         }
 

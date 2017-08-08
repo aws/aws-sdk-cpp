@@ -54,7 +54,7 @@ namespace Aws
         {
             public:
                 PartState();
-                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes);
+                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes, bool lastPart = false);
 
                 int GetPartId() const { return m_partId; }
 
@@ -80,6 +80,9 @@ namespace Aws
                 void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
                 size_t GetRangeBegin() const { return m_rangeBegin; }
 
+                bool IsLastPart() { return m_lastPart; }
+                void SetLastPart() { m_lastPart = true; }
+
             private:
 
                 int m_partId;
@@ -92,6 +95,7 @@ namespace Aws
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<Aws::Utils::Array<unsigned char> *> m_downloadBuffer;
+                bool m_lastPart;
         };
 
         using PartPointer = std::shared_ptr< PartState >;
@@ -297,6 +301,11 @@ namespace Aws
             * In the case of a download, this is the object metadata from the GetObject operation.
             */
             inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
+
+            /**
+             * Add a new entry to or update an existed entry of m_metadata, useful when users want to get ETag directly from metadata.
+             */
+            inline void AddMetadataEntry(const Aws::String& key, const Aws::String& value) { m_metadata[key] = value; }
 
             /**
              * The current status of the operation
