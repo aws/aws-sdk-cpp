@@ -44,49 +44,49 @@ namespace Model
 
   public:
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline DescribeSourceRegionsRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */
     inline DescribeSourceRegionsRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The source region name. For example, <code>us-east-1</code>.</p>
+     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
      * </ul>
      */

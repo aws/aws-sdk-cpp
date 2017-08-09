@@ -578,79 +578,79 @@ namespace Model
     inline DBSnapshot& WithPercentProgress(int value) { SetPercentProgress(value); return *this;}
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline DBSnapshot& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline DBSnapshot& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The region that the DB snapshot was created in or copied from.</p>
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline DBSnapshot& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(Aws::String&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(Aws::String&& value) { SetSourceDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DB snapshot Arn that the DB snapshot was copied from. It only has value
-     * in case of cross customer or cross region copy.</p>
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 

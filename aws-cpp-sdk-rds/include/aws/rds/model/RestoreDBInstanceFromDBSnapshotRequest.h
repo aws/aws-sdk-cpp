@@ -46,70 +46,63 @@ namespace Model
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens (1 to 15 for SQL Server)</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-snapshot-id</code> </p>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 

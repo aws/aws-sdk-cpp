@@ -99,9 +99,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -117,9 +117,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -135,9 +135,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -153,9 +153,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -171,9 +171,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -189,9 +189,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -207,9 +207,9 @@ namespace Model
      * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
      * instance must have automatic backups enabled, its backup retention period must
      * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * region as the Read Replica, specify a valid DB instance identifier.</p> </li>
-     * <li> <p>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -302,49 +302,49 @@ namespace Model
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -524,15 +524,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
@@ -542,15 +542,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
@@ -560,15 +560,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
@@ -578,15 +578,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
@@ -596,15 +596,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
@@ -614,15 +614,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
@@ -632,15 +632,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same region in which the operation is
-     * running.</p> </li> <li> <p>All Read Replicas in one region that are created from
-     * the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet
-     * groups from the same VPC. All these Read Replicas will be created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these Read Replicas
-     * will be created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
+     * specified DB subnet group must be in the same AWS Region in which the operation
+     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
+     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
+     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
+     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
@@ -840,392 +840,392 @@ namespace Model
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you create an unencrypted Read Replica and specify a
-     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target
-     * Read Replica using the specified KMS encryption key. </p> <p>If you create an
-     * encrypted Read Replica from your AWS account, you can specify a value for
-     * <code>KmsKeyId</code> to encrypt the Read Replica with a new KMS encryption key.
-     * If you don't specify a value for <code>KmsKeyId</code>, then the Read Replica is
-     * encrypted with the same KMS key as the source DB instance. </p> <p> If you
-     * create an encrypted Read Replica in a different AWS region, then you must
-     * specify a KMS key for the destination AWS region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * encryption key. </p> <p>If you specify this parameter when you create a Read
+     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
+     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
+     * DB instance, then you do not have to specify a value for this parameter. The
+     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
+     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
+     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
+     * specific to the AWS Region that they are created in, and you cannot use
+     * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the <code>
-     * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-     * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-     * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-     * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-     * action that can be executed in the source region that contains the encrypted DB
-     * instance. The presigned URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-     * the Read Replica is created in. This region is the same one where the
+     * <p>The URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
+     * that contains the source DB instance. </p> <p>You must specify this parameter
+     * when you create an encrypted Read Replica from another AWS Region by using the
+     * Amazon RDS API. You can specify the source region option instead of this
+     * parameter when you create an encrypted Read Replica from another AWS Region by
+     * using the AWS CLI. </p> <p>The presigned URL must be a valid request for the
+     * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+     * source AWS Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values: </p> <ul> <li> <p>
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
+     * will be created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
-     * the us-east-1 region, and the source DB instance is in the west-2 region, then
+     * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
+     * the us-west-1 region, from a source DB instance in the us-east-2 region, then
      * you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1
      * region and provide a presigned URL that contains a call to the
      * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For
      * this example, the <code>DestinationRegion</code> in the presigned URL must be
-     * set to the us-east-1 region.</p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
+     * set to the us-east-1 region. </p> </li> <li> <p> <code>KmsKeyId</code> - The KMS
      * key identifier for the key to use to encrypt the Read Replica in the destination
-     * region. This is the same identifier for both the
+     * AWS Region. This is the same identifier for both the
      * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination region, and the action contained in the presigned URL.</p> </li>
-     * <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier
-     * for the encrypted Read Replica to be created. This identifier must be in the
-     * Amazon Resource Name (ARN) format for the source region. For example, if you
-     * create an encrypted Read Replica from a DB instance in the us-west-2 region,
-     * then your <code>SourceDBInstanceIdentifier</code> would look like this example:
-     * <code>
-     * arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * destination AWS Region, and the action contained in the presigned URL. </p>
+     * </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance
+     * identifier for the encrypted DB instance to be replicated. This identifier must
+     * be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+     * example, if you are creating an encrypted Read Replica from a DB instance in the
+     * us-west-2 region, then your <code>SourceDBInstanceIdentifier</code> looks like
+     * the following example:
+     * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
+     * request, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * Version 4 Signing Process</a>. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

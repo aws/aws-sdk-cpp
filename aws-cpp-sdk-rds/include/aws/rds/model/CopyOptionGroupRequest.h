@@ -49,9 +49,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -64,9 +64,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -79,9 +79,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -94,9 +94,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -109,9 +109,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -124,9 +124,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
@@ -139,9 +139,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
-     * option group is in the same region as the copy, specify a valid option group
+     * option group is in the same AWS Region as the copy, specify a valid option group
      * identifier, for example <code>my-option-group</code>, or a valid ARN.</p> </li>
-     * <li> <p>If the source option group is in a different region than the copy,
+     * <li> <p>If the source option group is in a different AWS Region than the copy,
      * specify a valid option group ARN, for example
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>

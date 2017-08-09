@@ -501,7 +501,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -516,7 +516,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -531,7 +531,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -546,7 +546,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -561,7 +561,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -576,7 +576,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -591,7 +591,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region. To see the time blocks available, see <a
+     * time per AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -606,8 +606,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -619,8 +619,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -632,8 +632,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -645,8 +645,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -658,8 +658,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -671,8 +671,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
@@ -684,8 +684,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week. To see the time blocks
-     * available, see <a
+     * time per AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>

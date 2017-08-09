@@ -522,73 +522,97 @@ namespace Model
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
-     * change is asynchronously applied as soon as possible.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
+     * groups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -641,12 +665,14 @@ namespace Model
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -658,12 +684,14 @@ namespace Model
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -675,12 +703,14 @@ namespace Model
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -692,12 +722,14 @@ namespace Model
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -709,12 +741,14 @@ namespace Model
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -726,12 +760,14 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -743,12 +779,14 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the DB instance master user. Can be any printable ASCII
-     * character except "/", """, or "@".</p> <p> Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon as
-     * possible. Between the time of the request and the completion of the request, the
+     * <p>The new password for the master user. Can be any printable ASCII character
+     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
+     * outage and the change is asynchronously applied as soon as possible. Between the
+     * time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
      * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
      * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
@@ -851,13 +889,15 @@ namespace Model
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.</p> <p>Default:
-     * Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from
-     * 0 to 35</p> </li> <li> <p>Can be specified for a MySQL Read Replica only if the
-     * source is running MySQL 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL
-     * Read Replica only if the source is running PostgreSQL 9.3.5</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
-     * </ul>
+     * value, the change is asynchronously applied as soon as possible.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The retention period for automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
+     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
+     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
+     * DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -869,13 +909,15 @@ namespace Model
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.</p> <p>Default:
-     * Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from
-     * 0 to 35</p> </li> <li> <p>Can be specified for a MySQL Read Replica only if the
-     * source is running MySQL 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL
-     * Read Replica only if the source is running PostgreSQL 9.3.5</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
-     * </ul>
+     * value, the change is asynchronously applied as soon as possible.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The retention period for automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
+     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
+     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
+     * DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -887,13 +929,15 @@ namespace Model
      * applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.</p> <p>Default:
-     * Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from
-     * 0 to 35</p> </li> <li> <p>Can be specified for a MySQL Read Replica only if the
-     * source is running MySQL 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL
-     * Read Replica only if the source is running PostgreSQL 9.3.5</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
-     * </ul>
+     * value, the change is asynchronously applied as soon as possible.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The retention period for automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
+     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
+     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
+     * DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -901,11 +945,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -913,11 +959,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -925,11 +973,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -937,11 +987,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -949,11 +1001,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -961,11 +1015,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -973,11 +1029,13 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter does not result in an outage and the change
-     * is asynchronously applied as soon as possible. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li> <li> <p>Times should be
-     * in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window</p> </li> <li> <p>Must be at least 30 minutes</p>
-     * </li> </ul>
+     * is asynchronously applied as soon as possible. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
+     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
+     * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1118,7 +1176,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1131,7 +1189,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1144,7 +1202,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1157,7 +1215,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1170,7 +1228,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1183,7 +1241,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -1196,7 +1254,7 @@ namespace Model
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>For major version upgrades, if a
-     * non-default DB parameter group is currently in use, a new DB parameter group in
+     * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
      * family.</p> <p>For a list of valid engine versions, see
@@ -2123,27 +2181,36 @@ namespace Model
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false.</p> <p> You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
+     * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false.</p> <p> You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
+     * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false.</p> <p> You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
+     * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * <p>Default: <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
