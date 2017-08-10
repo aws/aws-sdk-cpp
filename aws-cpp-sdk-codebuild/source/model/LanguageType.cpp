@@ -37,6 +37,7 @@ namespace Aws
         static const int GOLANG_HASH = HashingUtils::HashString("GOLANG");
         static const int DOCKER_HASH = HashingUtils::HashString("DOCKER");
         static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
+        static const int DOTNET_HASH = HashingUtils::HashString("DOTNET");
         static const int BASE_HASH = HashingUtils::HashString("BASE");
 
 
@@ -71,6 +72,10 @@ namespace Aws
           {
             return LanguageType::ANDROID_;
           }
+          else if (hashCode == DOTNET_HASH)
+          {
+            return LanguageType::DOTNET;
+          }
           else if (hashCode == BASE_HASH)
           {
             return LanguageType::BASE;
@@ -103,6 +108,8 @@ namespace Aws
             return "DOCKER";
           case LanguageType::ANDROID_:
             return "ANDROID";
+          case LanguageType::DOTNET:
+            return "DOTNET";
           case LanguageType::BASE:
             return "BASE";
           default:

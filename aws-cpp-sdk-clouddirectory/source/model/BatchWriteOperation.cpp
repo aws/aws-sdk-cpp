@@ -37,6 +37,7 @@ BatchWriteOperation::BatchWriteOperation() :
     m_addFacetToObjectHasBeenSet(false),
     m_removeFacetFromObjectHasBeenSet(false),
     m_attachPolicyHasBeenSet(false),
+    m_detachPolicyHasBeenSet(false),
     m_createIndexHasBeenSet(false),
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
@@ -54,6 +55,7 @@ BatchWriteOperation::BatchWriteOperation(const JsonValue& jsonValue) :
     m_addFacetToObjectHasBeenSet(false),
     m_removeFacetFromObjectHasBeenSet(false),
     m_attachPolicyHasBeenSet(false),
+    m_detachPolicyHasBeenSet(false),
     m_createIndexHasBeenSet(false),
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
@@ -119,6 +121,13 @@ BatchWriteOperation& BatchWriteOperation::operator =(const JsonValue& jsonValue)
     m_attachPolicy = jsonValue.GetObject("AttachPolicy");
 
     m_attachPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DetachPolicy"))
+  {
+    m_detachPolicy = jsonValue.GetObject("DetachPolicy");
+
+    m_detachPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreateIndex"))
@@ -208,6 +217,12 @@ JsonValue BatchWriteOperation::Jsonize() const
   if(m_attachPolicyHasBeenSet)
   {
    payload.WithObject("AttachPolicy", m_attachPolicy.Jsonize());
+
+  }
+
+  if(m_detachPolicyHasBeenSet)
+  {
+   payload.WithObject("DetachPolicy", m_detachPolicy.Jsonize());
 
   }
 

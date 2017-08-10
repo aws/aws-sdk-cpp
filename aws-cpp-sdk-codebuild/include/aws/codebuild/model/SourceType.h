@@ -29,7 +29,8 @@ namespace Model
     CODECOMMIT,
     CODEPIPELINE,
     GITHUB,
-    S3
+    S3,
+    BITBUCKET
   };
 
 namespace SourceTypeMapper

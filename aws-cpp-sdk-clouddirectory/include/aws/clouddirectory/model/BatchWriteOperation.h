@@ -23,6 +23,7 @@
 #include <aws/clouddirectory/model/BatchAddFacetToObject.h>
 #include <aws/clouddirectory/model/BatchRemoveFacetFromObject.h>
 #include <aws/clouddirectory/model/BatchAttachPolicy.h>
+#include <aws/clouddirectory/model/BatchDetachPolicy.h>
 #include <aws/clouddirectory/model/BatchCreateIndex.h>
 #include <aws/clouddirectory/model/BatchAttachToIndex.h>
 #include <aws/clouddirectory/model/BatchDetachFromIndex.h>
@@ -264,6 +265,31 @@ namespace Model
     inline BatchWriteOperation& WithAttachPolicy(BatchAttachPolicy&& value) { SetAttachPolicy(std::move(value)); return *this;}
 
     /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline const BatchDetachPolicy& GetDetachPolicy() const{ return m_detachPolicy; }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline void SetDetachPolicy(const BatchDetachPolicy& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = value; }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline void SetDetachPolicy(BatchDetachPolicy&& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = std::move(value); }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline BatchWriteOperation& WithDetachPolicy(const BatchDetachPolicy& value) { SetDetachPolicy(value); return *this;}
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline BatchWriteOperation& WithDetachPolicy(BatchDetachPolicy&& value) { SetDetachPolicy(std::move(value)); return *this;}
+
+    /**
      * <p>Creates an index object. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
      * for more information.</p>
@@ -445,6 +471,8 @@ namespace Model
     bool m_removeFacetFromObjectHasBeenSet;
     BatchAttachPolicy m_attachPolicy;
     bool m_attachPolicyHasBeenSet;
+    BatchDetachPolicy m_detachPolicy;
+    bool m_detachPolicyHasBeenSet;
     BatchCreateIndex m_createIndex;
     bool m_createIndexHasBeenSet;
     BatchAttachToIndex m_attachToIndex;

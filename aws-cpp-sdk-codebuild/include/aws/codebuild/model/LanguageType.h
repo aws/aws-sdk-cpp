@@ -33,6 +33,7 @@ namespace Model
     GOLANG,
     DOCKER,
     ANDROID_,
+    DOTNET,
     BASE
   };
 

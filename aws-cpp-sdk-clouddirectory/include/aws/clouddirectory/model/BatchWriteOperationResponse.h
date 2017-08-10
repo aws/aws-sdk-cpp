@@ -23,6 +23,7 @@
 #include <aws/clouddirectory/model/BatchAddFacetToObjectResponse.h>
 #include <aws/clouddirectory/model/BatchRemoveFacetFromObjectResponse.h>
 #include <aws/clouddirectory/model/BatchAttachPolicyResponse.h>
+#include <aws/clouddirectory/model/BatchDetachPolicyResponse.h>
 #include <aws/clouddirectory/model/BatchCreateIndexResponse.h>
 #include <aws/clouddirectory/model/BatchAttachToIndexResponse.h>
 #include <aws/clouddirectory/model/BatchDetachFromIndexResponse.h>
@@ -264,6 +265,31 @@ namespace Model
     inline BatchWriteOperationResponse& WithAttachPolicy(BatchAttachPolicyResponse&& value) { SetAttachPolicy(std::move(value)); return *this;}
 
     /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline const BatchDetachPolicyResponse& GetDetachPolicy() const{ return m_detachPolicy; }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline void SetDetachPolicy(const BatchDetachPolicyResponse& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = value; }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline void SetDetachPolicy(BatchDetachPolicyResponse&& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = std::move(value); }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline BatchWriteOperationResponse& WithDetachPolicy(const BatchDetachPolicyResponse& value) { SetDetachPolicy(value); return *this;}
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
+    inline BatchWriteOperationResponse& WithDetachPolicy(BatchDetachPolicyResponse&& value) { SetDetachPolicy(std::move(value)); return *this;}
+
+    /**
      * <p>Creates an index object. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
      * for more information.</p>
@@ -445,6 +471,8 @@ namespace Model
     bool m_removeFacetFromObjectHasBeenSet;
     BatchAttachPolicyResponse m_attachPolicy;
     bool m_attachPolicyHasBeenSet;
+    BatchDetachPolicyResponse m_detachPolicy;
+    bool m_detachPolicyHasBeenSet;
     BatchCreateIndexResponse m_createIndex;
     bool m_createIndexHasBeenSet;
     BatchAttachToIndexResponse m_attachToIndex;
