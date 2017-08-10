@@ -120,7 +120,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
     Sha256 hash;
     Aws::List<ByteBuffer> input;
     auto currentPos = stream.tellg();
-    if (currentPos == -1)
+    if (currentPos == std::ios::pos_type(-1))
     {
         currentPos = 0;
         stream.clear();
