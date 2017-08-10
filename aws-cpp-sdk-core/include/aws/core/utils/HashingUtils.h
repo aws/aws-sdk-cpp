@@ -68,6 +68,16 @@ namespace Aws
             static ByteBuffer CalculateSHA256(Aws::IOStream& stream);
 
             /**
+            * Calculates a SHA256 Tree Hash digest (not hex encoded, see tree hash definition: http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html)
+            */
+            static ByteBuffer CalculateSHA256TreeHash(const Aws::String& str);
+
+            /**
+            * Calculates a SHA256 Tree Hash digest on a stream (the entire stream is read, not hex encoded.)
+            */
+            static ByteBuffer CalculateSHA256TreeHash(Aws::IOStream& stream);
+
+            /**
             * Calculates a MD5 Hash value
             */
             static ByteBuffer CalculateMD5(const Aws::String& str);
