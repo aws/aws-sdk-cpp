@@ -63,6 +63,7 @@ namespace Aws
             void* GetClientModule() const override;
 
             bool m_usingProxy;
+            bool m_verifySSL;
             Aws::WString m_proxyUserName;
             Aws::WString m_proxyPassword;
         };
