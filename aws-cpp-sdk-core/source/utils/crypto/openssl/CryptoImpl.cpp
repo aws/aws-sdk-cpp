@@ -124,9 +124,33 @@ namespace Aws
                 }
             }
 
+            class OpensslCtxRAIIGuard 
+            {
+                public:
+                OpensslCtxRAIIGuard() 
+                {
+                    m_ctx = EVP_MD_CTX_create();
+                    assert(m_ctx != nullptr);
+                }
+
+                ~OpensslCtxRAIIGuard() 
+                {
+                    EVP_MD_CTX_destroy(m_ctx);
+                    m_ctx = nullptr;
+                }
+
+                EVP_MD_CTX* getResource() 
+                {
+                    return m_ctx;
+                }
+            private:
+                EVP_MD_CTX *m_ctx;
+            };
+
             HashResult MD5OpenSSLImpl::Calculate(const Aws::String& str)
             {
-                auto ctx = EVP_MD_CTX_create();
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
                 EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
                 EVP_DigestUpdate(ctx, str.c_str(), str.size());
@@ -139,7 +163,8 @@ namespace Aws
 
             HashResult MD5OpenSSLImpl::Calculate(Aws::IStream& stream)
             {
-                auto ctx = EVP_MD_CTX_create();
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
                 EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
@@ -174,7 +199,8 @@ namespace Aws
 
             HashResult Sha256OpenSSLImpl::Calculate(const Aws::String& str)
             {
-                auto ctx = EVP_MD_CTX_create();
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
                 EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
                 EVP_DigestUpdate(ctx, str.c_str(), str.size());
 
@@ -186,7 +212,9 @@ namespace Aws
 
             HashResult Sha256OpenSSLImpl::Calculate(Aws::IStream& stream)
             {
-                auto ctx = EVP_MD_CTX_create();
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
+
                 EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
 
                 auto currentPos = stream.tellg();
