@@ -48,27 +48,27 @@ namespace Model
     AdminCreateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The user returned in the request to create a new user.</p>
+     * <p>The newly created user.</p>
      */
     inline const UserType& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user returned in the request to create a new user.</p>
+     * <p>The newly created user.</p>
      */
     inline void SetUser(const UserType& value) { m_user = value; }
 
     /**
-     * <p>The user returned in the request to create a new user.</p>
+     * <p>The newly created user.</p>
      */
     inline void SetUser(UserType&& value) { m_user = std::move(value); }
 
     /**
-     * <p>The user returned in the request to create a new user.</p>
+     * <p>The newly created user.</p>
      */
     inline AdminCreateUserResult& WithUser(const UserType& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user returned in the request to create a new user.</p>
+     * <p>The newly created user.</p>
      */
     inline AdminCreateUserResult& WithUser(UserType&& value) { SetUser(std::move(value)); return *this;}
 

@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A user pool of the client type.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a user pool client.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientType">AWS
    * API Reference</a></p>
    */
@@ -461,42 +461,42 @@ namespace Model
     inline UserPoolClientType& AddCallbackURLs(const char* value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogoutURLs() const{ return m_logoutURLs; }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline void SetLogoutURLs(const Aws::Vector<Aws::String>& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = value; }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline void SetLogoutURLs(Aws::Vector<Aws::String>&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = std::move(value); }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline UserPoolClientType& WithLogoutURLs(const Aws::Vector<Aws::String>& value) { SetLogoutURLs(value); return *this;}
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline UserPoolClientType& WithLogoutURLs(Aws::Vector<Aws::String>&& value) { SetLogoutURLs(std::move(value)); return *this;}
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline UserPoolClientType& AddLogoutURLs(const Aws::String& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline UserPoolClientType& AddLogoutURLs(Aws::String&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list ofallowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the identity providers.</p>
      */
     inline UserPoolClientType& AddLogoutURLs(const char* value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
 

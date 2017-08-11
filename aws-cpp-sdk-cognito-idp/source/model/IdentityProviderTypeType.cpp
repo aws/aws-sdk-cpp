@@ -31,6 +31,9 @@ namespace Aws
       {
 
         static const int SAML_HASH = HashingUtils::HashString("SAML");
+        static const int Facebook_HASH = HashingUtils::HashString("Facebook");
+        static const int Google_HASH = HashingUtils::HashString("Google");
+        static const int LoginWithAmazon_HASH = HashingUtils::HashString("LoginWithAmazon");
 
 
         IdentityProviderTypeType GetIdentityProviderTypeTypeForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           if (hashCode == SAML_HASH)
           {
             return IdentityProviderTypeType::SAML;
+          }
+          else if (hashCode == Facebook_HASH)
+          {
+            return IdentityProviderTypeType::Facebook;
+          }
+          else if (hashCode == Google_HASH)
+          {
+            return IdentityProviderTypeType::Google;
+          }
+          else if (hashCode == LoginWithAmazon_HASH)
+          {
+            return IdentityProviderTypeType::LoginWithAmazon;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +71,12 @@ namespace Aws
           {
           case IdentityProviderTypeType::SAML:
             return "SAML";
+          case IdentityProviderTypeType::Facebook:
+            return "Facebook";
+          case IdentityProviderTypeType::Google:
+            return "Google";
+          case IdentityProviderTypeType::LoginWithAmazon:
+            return "LoginWithAmazon";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

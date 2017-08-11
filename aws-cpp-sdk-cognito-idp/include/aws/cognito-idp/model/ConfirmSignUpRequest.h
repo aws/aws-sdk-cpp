@@ -41,37 +41,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline ConfirmSignUpRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline ConfirmSignUpRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client associated with the user pool.</p>
      */
     inline ConfirmSignUpRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 

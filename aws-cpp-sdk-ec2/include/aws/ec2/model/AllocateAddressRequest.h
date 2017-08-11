@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/DomainType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -72,6 +73,41 @@ namespace Model
     inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline AllocateAddressRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline AllocateAddressRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     */
+    inline AllocateAddressRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -98,6 +134,8 @@ namespace Model
   private:
     DomainType m_domain;
     bool m_domainHasBeenSet;
+    Aws::String m_address;
+    bool m_addressHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

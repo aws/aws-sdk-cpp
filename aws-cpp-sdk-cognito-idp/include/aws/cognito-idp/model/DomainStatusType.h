@@ -29,7 +29,8 @@ namespace Model
     CREATING,
     DELETING,
     UPDATING,
-    ACTIVE
+    ACTIVE,
+    FAILED
   };
 
 namespace DomainStatusTypeMapper

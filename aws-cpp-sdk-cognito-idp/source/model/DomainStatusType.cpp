@@ -34,6 +34,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         DomainStatusType GetDomainStatusTypeForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == ACTIVE_HASH)
           {
             return DomainStatusType::ACTIVE;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return DomainStatusType::FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "UPDATING";
           case DomainStatusType::ACTIVE:
             return "ACTIVE";
+          case DomainStatusType::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

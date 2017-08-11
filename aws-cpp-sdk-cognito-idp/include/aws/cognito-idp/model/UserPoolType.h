@@ -21,6 +21,7 @@
 #include <aws/cognito-idp/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
@@ -509,6 +510,31 @@ namespace Model
     inline UserPoolType& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
+     * <p>The template for verification messages.</p>
+     */
+    inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const{ return m_verificationMessageTemplate; }
+
+    /**
+     * <p>The template for verification messages.</p>
+     */
+    inline void SetVerificationMessageTemplate(const VerificationMessageTemplateType& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = value; }
+
+    /**
+     * <p>The template for verification messages.</p>
+     */
+    inline void SetVerificationMessageTemplate(VerificationMessageTemplateType&& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = std::move(value); }
+
+    /**
+     * <p>The template for verification messages.</p>
+     */
+    inline UserPoolType& WithVerificationMessageTemplate(const VerificationMessageTemplateType& value) { SetVerificationMessageTemplate(value); return *this;}
+
+    /**
+     * <p>The template for verification messages.</p>
+     */
+    inline UserPoolType& WithVerificationMessageTemplate(VerificationMessageTemplateType&& value) { SetVerificationMessageTemplate(std::move(value)); return *this;}
+
+    /**
      * <p>The contents of the SMS authentication message.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
@@ -905,6 +931,8 @@ namespace Model
     bool m_emailVerificationMessageHasBeenSet;
     Aws::String m_emailVerificationSubject;
     bool m_emailVerificationSubjectHasBeenSet;
+    VerificationMessageTemplateType m_verificationMessageTemplate;
+    bool m_verificationMessageTemplateHasBeenSet;
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
     UserPoolMfaType m_mfaConfiguration;

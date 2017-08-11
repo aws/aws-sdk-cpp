@@ -32,6 +32,7 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_smsVerificationMessageHasBeenSet(false),
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
+    m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
@@ -114,6 +115,12 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
   if(m_emailVerificationSubjectHasBeenSet)
   {
    payload.WithString("EmailVerificationSubject", m_emailVerificationSubject);
+
+  }
+
+  if(m_verificationMessageTemplateHasBeenSet)
+  {
+   payload.WithObject("VerificationMessageTemplate", m_verificationMessageTemplate.Jsonize());
 
   }
 

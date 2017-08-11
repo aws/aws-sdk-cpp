@@ -33,12 +33,14 @@
 #include <aws/cognito-idp/model/AdminCreateUserRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesRequest.h>
+#include <aws/cognito-idp/model/AdminDisableProviderForUserRequest.h>
 #include <aws/cognito-idp/model/AdminDisableUserRequest.h>
 #include <aws/cognito-idp/model/AdminEnableUserRequest.h>
 #include <aws/cognito-idp/model/AdminForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetUserRequest.h>
 #include <aws/cognito-idp/model/AdminInitiateAuthRequest.h>
+#include <aws/cognito-idp/model/AdminLinkProviderForUserRequest.h>
 #include <aws/cognito-idp/model/AdminListDevicesRequest.h>
 #include <aws/cognito-idp/model/AdminListGroupsForUserRequest.h>
 #include <aws/cognito-idp/model/AdminRemoveUserFromGroupRequest.h>
@@ -54,18 +56,21 @@
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/CreateGroupRequest.h>
 #include <aws/cognito-idp/model/CreateIdentityProviderRequest.h>
+#include <aws/cognito-idp/model/CreateResourceServerRequest.h>
 #include <aws/cognito-idp/model/CreateUserImportJobRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
+#include <aws/cognito-idp/model/DeleteResourceServerRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderRequest.h>
+#include <aws/cognito-idp/model/DescribeResourceServerRequest.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientRequest.h>
@@ -76,6 +81,7 @@
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetGroupRequest.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierRequest.h>
+#include <aws/cognito-idp/model/GetUICustomizationRequest.h>
 #include <aws/cognito-idp/model/GetUserRequest.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeRequest.h>
 #include <aws/cognito-idp/model/GlobalSignOutRequest.h>
@@ -83,6 +89,7 @@
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListGroupsRequest.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersRequest.h>
+#include <aws/cognito-idp/model/ListResourceServersRequest.h>
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
@@ -90,6 +97,7 @@
 #include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
+#include <aws/cognito-idp/model/SetUICustomizationRequest.h>
 #include <aws/cognito-idp/model/SetUserSettingsRequest.h>
 #include <aws/cognito-idp/model/SignUpRequest.h>
 #include <aws/cognito-idp/model/StartUserImportJobRequest.h>
@@ -97,6 +105,7 @@
 #include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/UpdateGroupRequest.h>
 #include <aws/cognito-idp/model/UpdateIdentityProviderRequest.h>
+#include <aws/cognito-idp/model/UpdateResourceServerRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientRequest.h>
@@ -376,6 +385,41 @@ void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsyncHelper(const A
   handler(this, request, AdminDeleteUserAttributes(request), context);
 }
 
+AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisableProviderForUser(const AdminDisableProviderForUserRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminDisableProviderForUserOutcome(AdminDisableProviderForUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminDisableProviderForUserOutcome(outcome.GetError());
+  }
+}
+
+AdminDisableProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableProviderForUserCallable(const AdminDisableProviderForUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminDisableProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDisableProviderForUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminDisableProviderForUserAsync(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminDisableProviderForUserAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminDisableProviderForUserAsyncHelper(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminDisableProviderForUser(request), context);
+}
+
 AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const AdminDisableUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -584,6 +628,41 @@ void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAu
 void CognitoIdentityProviderClient::AdminInitiateAuthAsyncHelper(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AdminInitiateAuth(request), context);
+}
+
+AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProviderForUser(const AdminLinkProviderForUserRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminLinkProviderForUserOutcome(AdminLinkProviderForUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminLinkProviderForUserOutcome(outcome.GetError());
+  }
+}
+
+AdminLinkProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminLinkProviderForUserCallable(const AdminLinkProviderForUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminLinkProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminLinkProviderForUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminLinkProviderForUserAsync(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminLinkProviderForUserAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminLinkProviderForUserAsyncHelper(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminLinkProviderForUser(request), context);
 }
 
 AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const AdminListDevicesRequest& request) const
@@ -1111,6 +1190,41 @@ void CognitoIdentityProviderClient::CreateIdentityProviderAsyncHelper(const Crea
   handler(this, request, CreateIdentityProvider(request), context);
 }
 
+CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(const CreateResourceServerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateResourceServerOutcome(CreateResourceServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateResourceServerOutcome(outcome.GetError());
+  }
+}
+
+CreateResourceServerOutcomeCallable CognitoIdentityProviderClient::CreateResourceServerCallable(const CreateResourceServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::CreateResourceServerAsync(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourceServerAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::CreateResourceServerAsyncHelper(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourceServer(request), context);
+}
+
 CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(const CreateUserImportJobRequest& request) const
 {
   Aws::StringStream ss;
@@ -1321,6 +1435,41 @@ void CognitoIdentityProviderClient::DeleteIdentityProviderAsyncHelper(const Dele
   handler(this, request, DeleteIdentityProvider(request), context);
 }
 
+DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(const DeleteResourceServerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourceServerOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteResourceServerOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourceServerOutcomeCallable CognitoIdentityProviderClient::DeleteResourceServerCallable(const DeleteResourceServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::DeleteResourceServerAsync(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceServerAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::DeleteResourceServerAsyncHelper(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourceServer(request), context);
+}
+
 DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -1529,6 +1678,41 @@ void CognitoIdentityProviderClient::DescribeIdentityProviderAsync(const Describe
 void CognitoIdentityProviderClient::DescribeIdentityProviderAsyncHelper(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeIdentityProvider(request), context);
+}
+
+DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceServer(const DescribeResourceServerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeResourceServerOutcome(DescribeResourceServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeResourceServerOutcome(outcome.GetError());
+  }
+}
+
+DescribeResourceServerOutcomeCallable CognitoIdentityProviderClient::DescribeResourceServerCallable(const DescribeResourceServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::DescribeResourceServerAsync(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourceServerAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::DescribeResourceServerAsyncHelper(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeResourceServer(request), context);
 }
 
 DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJob(const DescribeUserImportJobRequest& request) const
@@ -1881,6 +2065,41 @@ void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsyncHelper(c
   handler(this, request, GetIdentityProviderByIdentifier(request), context);
 }
 
+GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(const GetUICustomizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetUICustomizationOutcome(GetUICustomizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUICustomizationOutcome(outcome.GetError());
+  }
+}
+
+GetUICustomizationOutcomeCallable CognitoIdentityProviderClient::GetUICustomizationCallable(const GetUICustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUICustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::GetUICustomizationAsync(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUICustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::GetUICustomizationAsyncHelper(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUICustomization(request), context);
+}
+
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -2124,6 +2343,41 @@ void CognitoIdentityProviderClient::ListIdentityProvidersAsync(const ListIdentit
 void CognitoIdentityProviderClient::ListIdentityProvidersAsyncHelper(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListIdentityProviders(request), context);
+}
+
+ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(const ListResourceServersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceServersOutcome(ListResourceServersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceServersOutcome(outcome.GetError());
+  }
+}
+
+ListResourceServersOutcomeCallable CognitoIdentityProviderClient::ListResourceServersCallable(const ListResourceServersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceServers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::ListResourceServersAsync(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceServersAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::ListResourceServersAsyncHelper(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceServers(request), context);
 }
 
 ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(const ListUserImportJobsRequest& request) const
@@ -2371,6 +2625,41 @@ void CognitoIdentityProviderClient::RespondToAuthChallengeAsyncHelper(const Resp
   handler(this, request, RespondToAuthChallenge(request), context);
 }
 
+SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(const SetUICustomizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetUICustomizationOutcome(SetUICustomizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetUICustomizationOutcome(outcome.GetError());
+  }
+}
+
+SetUICustomizationOutcomeCallable CognitoIdentityProviderClient::SetUICustomizationCallable(const SetUICustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUICustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::SetUICustomizationAsync(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetUICustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::SetUICustomizationAsyncHelper(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetUICustomization(request), context);
+}
+
 SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetUserSettingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -2614,6 +2903,41 @@ void CognitoIdentityProviderClient::UpdateIdentityProviderAsync(const UpdateIden
 void CognitoIdentityProviderClient::UpdateIdentityProviderAsyncHelper(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIdentityProvider(request), context);
+}
+
+UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(const UpdateResourceServerRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateResourceServerOutcome(UpdateResourceServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateResourceServerOutcome(outcome.GetError());
+  }
+}
+
+UpdateResourceServerOutcomeCallable CognitoIdentityProviderClient::UpdateResourceServerCallable(const UpdateResourceServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::UpdateResourceServerAsync(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceServerAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::UpdateResourceServerAsyncHelper(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResourceServer(request), context);
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const

@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 AllocateAddressRequest::AllocateAddressRequest() : 
     m_domain(DomainType::NOT_SET),
     m_domainHasBeenSet(false),
+    m_addressHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -35,6 +36,11 @@ Aws::String AllocateAddressRequest::SerializePayload() const
   if(m_domainHasBeenSet)
   {
     ss << "Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
+  }
+
+  if(m_addressHasBeenSet)
+  {
+    ss << "Address=" << StringUtils::URLEncode(m_address.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

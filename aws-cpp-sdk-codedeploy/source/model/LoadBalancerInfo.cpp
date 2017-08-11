@@ -29,12 +29,14 @@ namespace Model
 {
 
 LoadBalancerInfo::LoadBalancerInfo() : 
-    m_elbInfoListHasBeenSet(false)
+    m_elbInfoListHasBeenSet(false),
+    m_targetGroupInfoListHasBeenSet(false)
 {
 }
 
 LoadBalancerInfo::LoadBalancerInfo(const JsonValue& jsonValue) : 
-    m_elbInfoListHasBeenSet(false)
+    m_elbInfoListHasBeenSet(false),
+    m_targetGroupInfoListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(const JsonValue& jsonValue)
       m_elbInfoList.push_back(elbInfoListJsonList[elbInfoListIndex].AsObject());
     }
     m_elbInfoListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetGroupInfoList"))
+  {
+    Array<JsonValue> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
+    for(unsigned targetGroupInfoListIndex = 0; targetGroupInfoListIndex < targetGroupInfoListJsonList.GetLength(); ++targetGroupInfoListIndex)
+    {
+      m_targetGroupInfoList.push_back(targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject());
+    }
+    m_targetGroupInfoListHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +78,17 @@ JsonValue LoadBalancerInfo::Jsonize() const
      elbInfoListJsonList[elbInfoListIndex].AsObject(m_elbInfoList[elbInfoListIndex].Jsonize());
    }
    payload.WithArray("elbInfoList", std::move(elbInfoListJsonList));
+
+  }
+
+  if(m_targetGroupInfoListHasBeenSet)
+  {
+   Array<JsonValue> targetGroupInfoListJsonList(m_targetGroupInfoList.size());
+   for(unsigned targetGroupInfoListIndex = 0; targetGroupInfoListIndex < targetGroupInfoListJsonList.GetLength(); ++targetGroupInfoListIndex)
+   {
+     targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject(m_targetGroupInfoList[targetGroupInfoListIndex].Jsonize());
+   }
+   payload.WithArray("targetGroupInfoList", std::move(targetGroupInfoListJsonList));
 
   }
 

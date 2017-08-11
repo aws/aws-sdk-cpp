@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ELBInfo.h>
+#include <aws/codedeploy/model/TargetGroupInfo.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the load balancer used in a deployment.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about the Elastic Load Balancing load balancer or target group
+   * used in a deployment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LoadBalancerInfo">AWS
    * API Reference</a></p>
    */
@@ -48,50 +49,108 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline const Aws::Vector<ELBInfo>& GetElbInfoList() const{ return m_elbInfoList; }
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline void SetElbInfoList(const Aws::Vector<ELBInfo>& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = value; }
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline void SetElbInfoList(Aws::Vector<ELBInfo>&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = std::move(value); }
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline LoadBalancerInfo& WithElbInfoList(const Aws::Vector<ELBInfo>& value) { SetElbInfoList(value); return *this;}
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline LoadBalancerInfo& WithElbInfoList(Aws::Vector<ELBInfo>&& value) { SetElbInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline LoadBalancerInfo& AddElbInfoList(const ELBInfo& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(value); return *this; }
 
     /**
-     * <p>An array containing information about the load balancer in Elastic Load
-     * Balancing to use in a deployment.</p>
+     * <p>An array containing information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p>
      */
     inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline const Aws::Vector<TargetGroupInfo>& GetTargetGroupInfoList() const{ return m_targetGroupInfoList; }
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline void SetTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = value; }
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline void SetTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = std::move(value); }
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline LoadBalancerInfo& WithTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroupInfoList(value); return *this;}
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline LoadBalancerInfo& WithTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroupInfoList(std::move(value)); return *this;}
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline LoadBalancerInfo& AddTargetGroupInfoList(const TargetGroupInfo& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(value); return *this; }
+
+    /**
+     * <p>An array containing information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p>
+     */
+    inline LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfo&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ELBInfo> m_elbInfoList;
     bool m_elbInfoListHasBeenSet;
+    Aws::Vector<TargetGroupInfo> m_targetGroupInfoList;
+    bool m_targetGroupInfoListHasBeenSet;
   };
 
 } // namespace Model

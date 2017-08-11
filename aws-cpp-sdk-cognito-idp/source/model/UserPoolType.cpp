@@ -44,6 +44,7 @@ UserPoolType::UserPoolType() :
     m_smsVerificationMessageHasBeenSet(false),
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
+    m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
@@ -75,6 +76,7 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_smsVerificationMessageHasBeenSet(false),
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
+    m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
@@ -201,6 +203,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_emailVerificationSubject = jsonValue.GetString("EmailVerificationSubject");
 
     m_emailVerificationSubjectHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VerificationMessageTemplate"))
+  {
+    m_verificationMessageTemplate = jsonValue.GetObject("VerificationMessageTemplate");
+
+    m_verificationMessageTemplateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SmsAuthenticationMessage"))
@@ -381,6 +390,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_emailVerificationSubjectHasBeenSet)
   {
    payload.WithString("EmailVerificationSubject", m_emailVerificationSubject);
+
+  }
+
+  if(m_verificationMessageTemplateHasBeenSet)
+  {
+   payload.WithObject("VerificationMessageTemplate", m_verificationMessageTemplate.Jsonize());
 
   }
 

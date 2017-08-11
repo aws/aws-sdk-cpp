@@ -26,7 +26,10 @@ namespace Model
   enum class IdentityProviderTypeType
   {
     NOT_SET,
-    SAML
+    SAML,
+    Facebook,
+    Google,
+    LoginWithAmazon
   };
 
 namespace IdentityProviderTypeTypeMapper
