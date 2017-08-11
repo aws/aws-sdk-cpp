@@ -14,6 +14,7 @@
 #
 
 set(C2J_SPECIAL_NAME_LIST "lex:runtime.lex")
+list(APPEND C2J_SPECIAL_NAME_LIST "marketplace-entitlement:entitlement.marketplace")
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
 # cmake doesn't support maps, so we use list elements as key-value pairs; the ':' becomes a separator between key and value
@@ -44,8 +45,10 @@ list(APPEND C2J_LIST "cognito-sync:2014-06-30")
 list(APPEND C2J_LIST "config:2014-11-12")
 list(APPEND C2J_LIST "cur:2017-01-06")
 list(APPEND C2J_LIST "datapipeline:2012-10-29")
+list(APPEND C2J_LIST "dax:2017-04-19")
 list(APPEND C2J_LIST "devicefarm:2015-06-23")
 list(APPEND C2J_LIST "directconnect:2012-10-25")
+list(APPEND C2J_LIST "discovery:2015-11-01")
 list(APPEND C2J_LIST "dms:2016-01-01")
 list(APPEND C2J_LIST "ds:2015-04-16")
 list(APPEND C2J_LIST "dynamodb:2012-08-10")
@@ -86,6 +89,7 @@ list(APPEND C2J_LIST "lightsail:2016-11-28")
 list(APPEND C2J_LIST "logs:2014-03-28")
 list(APPEND C2J_LIST "machinelearning:2014-12-12")
 list(APPEND C2J_LIST "marketplacecommerceanalytics:2015-07-01")
+list(APPEND C2J_LIST "marketplace-entitlement:2017-01-11")
 list(APPEND C2J_LIST "meteringmarketplace:2016-01-14")
 list(APPEND C2J_LIST "mobileanalytics:2014-06-05")
 list(APPEND C2J_LIST "monitoring:2010-08-01")
