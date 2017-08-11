@@ -33,7 +33,7 @@ using namespace Aws::Utils::Crypto;
 static Aws::Utils::Base64::Base64 s_base64;
 
 // Aws Glacier Tree Hash calculates hash value for each 1MB data
-const static uint64_t TREE_HASH_ONE_MB = 1024 * 1024;
+const static size_t TREE_HASH_ONE_MB = 1024 * 1024;
 
 Aws::String HashingUtils::Base64Encode(const ByteBuffer& message)
 {
@@ -105,8 +105,8 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
     }
 
     Aws::List<ByteBuffer> input;
-    uint64_t pos = 0;
-    while (pos < (uint64_t)str.size())
+    size_t pos = 0;
+    while (pos < str.size())
     {
         input.push_back(hash.Calculate(Aws::String(str, pos, TREE_HASH_ONE_MB)).GetResult());
         pos += TREE_HASH_ONE_MB;
@@ -133,7 +133,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
         auto bytesRead = stream.gcount();
         if (bytesRead > 0)
         {
-            input.push_back(hash.Calculate(Aws::String(reinterpret_cast<char*>(streamBuffer.GetUnderlyingData()), bytesRead)).GetResult());
+            input.push_back(hash.Calculate(Aws::String(reinterpret_cast<char*>(streamBuffer.GetUnderlyingData()), static_cast<size_t>(bytesRead))).GetResult());
         }
     }
     stream.clear();
