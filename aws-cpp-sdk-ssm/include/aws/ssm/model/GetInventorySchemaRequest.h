@@ -134,6 +134,21 @@ namespace Model
      */
     inline GetInventorySchemaRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+    /**
+     * <p>Returns the sub-type schema for a specified inventory type.</p>
+     */
+    inline bool GetSubType() const{ return m_subType; }
+
+    /**
+     * <p>Returns the sub-type schema for a specified inventory type.</p>
+     */
+    inline void SetSubType(bool value) { m_subTypeHasBeenSet = true; m_subType = value; }
+
+    /**
+     * <p>Returns the sub-type schema for a specified inventory type.</p>
+     */
+    inline GetInventorySchemaRequest& WithSubType(bool value) { SetSubType(value); return *this;}
+
   private:
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
@@ -141,6 +156,8 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    bool m_subType;
+    bool m_subTypeHasBeenSet;
   };
 
 } // namespace Model

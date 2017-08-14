@@ -374,6 +374,66 @@ namespace Model
      */
     inline CreateFileSystemResult& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
+    /**
+     * <p>A boolean value that, if true, indicates that the file system is
+     * encrypted.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the file system is
+     * encrypted.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encrypted = value; }
+
+    /**
+     * <p>A boolean value that, if true, indicates that the file system is
+     * encrypted.</p>
+     */
+    inline CreateFileSystemResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline CreateFileSystemResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline CreateFileSystemResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline CreateFileSystemResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
     Aws::String m_ownerId;
     Aws::String m_creationToken;
@@ -384,6 +444,8 @@ namespace Model
     int m_numberOfMountTargets;
     FileSystemSize m_sizeInBytes;
     PerformanceMode m_performanceMode;
+    bool m_encrypted;
+    Aws::String m_kmsKeyId;
   };
 
 } // namespace Model

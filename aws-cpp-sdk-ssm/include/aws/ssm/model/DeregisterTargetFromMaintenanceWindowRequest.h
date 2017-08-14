@@ -106,11 +106,34 @@ namespace Model
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
+    /**
+     * <p>The system checks if the target is being referenced by a task. If the target
+     * is being referenced, the system returns and error and does not deregister the
+     * target from the Maintenance Window.</p>
+     */
+    inline bool GetSafe() const{ return m_safe; }
+
+    /**
+     * <p>The system checks if the target is being referenced by a task. If the target
+     * is being referenced, the system returns and error and does not deregister the
+     * target from the Maintenance Window.</p>
+     */
+    inline void SetSafe(bool value) { m_safeHasBeenSet = true; m_safe = value; }
+
+    /**
+     * <p>The system checks if the target is being referenced by a task. If the target
+     * is being referenced, the system returns and error and does not deregister the
+     * target from the Maintenance Window.</p>
+     */
+    inline DeregisterTargetFromMaintenanceWindowRequest& WithSafe(bool value) { SetSafe(value); return *this;}
+
   private:
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
     Aws::String m_windowTargetId;
     bool m_windowTargetIdHasBeenSet;
+    bool m_safe;
+    bool m_safeHasBeenSet;
   };
 
 } // namespace Model

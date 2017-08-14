@@ -36,6 +36,7 @@ static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("Hierar
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 static const int CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomSchemaCountLimitExceededException");
 static const int INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH = HashingUtils::HashString("InvalidAutomationExecutionParametersException");
+static const int TARGET_IN_USE_HASH = HashingUtils::HashString("TargetInUseException");
 static const int ITEM_CONTENT_MISMATCH_HASH = HashingUtils::HashString("ItemContentMismatchException");
 static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
@@ -51,6 +52,7 @@ static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashStri
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
+static const int UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("UnsupportedInventoryItemContextException");
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
 static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
@@ -76,6 +78,7 @@ static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString
 static const int INVALID_ALLOWED_PATTERN_HASH = HashingUtils::HashString("InvalidAllowedPatternException");
 static const int INVOCATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InvocationDoesNotExist");
 static const int UNSUPPORTED_OPERATING_SYSTEM_HASH = HashingUtils::HashString("UnsupportedOperatingSystem");
+static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int INVALID_ACTIVATION_HASH = HashingUtils::HashString("InvalidActivation");
 static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HierarchyLevelLimitExceededException");
@@ -91,8 +94,10 @@ static const int AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashSt
 static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
 static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
 static const int INVALID_OUTPUT_LOCATION_HASH = HashingUtils::HashString("InvalidOutputLocation");
+static const int COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ComplianceTypeCountLimitExceededException");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
+static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
 static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
 static const int INVALID_KEY_ID_HASH = HashingUtils::HashString("InvalidKeyId");
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
@@ -100,6 +105,7 @@ static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchang
 static const int TOO_MANY_UPDATES_HASH = HashingUtils::HashString("TooManyUpdates");
 static const int INVALID_DOCUMENT_SCHEMA_VERSION_HASH = HashingUtils::HashString("InvalidDocumentSchemaVersion");
 static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
+static const int SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubTypeCountLimitExceededException");
 static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("InvalidDocumentVersion");
 static const int INVALID_OUTPUT_FOLDER_HASH = HashingUtils::HashString("InvalidOutputFolder");
 static const int INVALID_RESOURCE_ID_HASH = HashingUtils::HashString("InvalidResourceId");
@@ -141,6 +147,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_EXECUTION_PARAMETERS), false);
+  }
+  else if (hashCode == TARGET_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), false);
   }
   else if (hashCode == ITEM_CONTENT_MISMATCH_HASH)
   {
@@ -201,6 +211,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), false);
+  }
+  else if (hashCode == UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), false);
   }
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {
@@ -302,6 +316,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATING_SYSTEM), false);
   }
+  else if (hashCode == FEATURE_NOT_AVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), false);
+  }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_LIMIT_EXCEEDED), false);
@@ -362,6 +380,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_LOCATION), false);
   }
+  else if (hashCode == COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
@@ -369,6 +391,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_INVENTORY_ITEM_CONTEXT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_ITEM_CONTEXT), false);
   }
   else if (hashCode == INVALID_RESULT_ATTRIBUTE_HASH)
   {
@@ -397,6 +423,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
+  }
+  else if (hashCode == SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SUB_TYPE_COUNT_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == INVALID_DOCUMENT_VERSION_HASH)
   {

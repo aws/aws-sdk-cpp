@@ -30,11 +30,14 @@ RegisterTaskWithMaintenanceWindowRequest::RegisterTaskWithMaintenanceWindowReque
     m_taskType(MaintenanceWindowTaskType::NOT_SET),
     m_taskTypeHasBeenSet(false),
     m_taskParametersHasBeenSet(false),
+    m_taskInvocationParametersHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_loggingInfoHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -89,6 +92,12 @@ Aws::String RegisterTaskWithMaintenanceWindowRequest::SerializePayload() const
 
   }
 
+  if(m_taskInvocationParametersHasBeenSet)
+  {
+   payload.WithObject("TaskInvocationParameters", m_taskInvocationParameters.Jsonize());
+
+  }
+
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("Priority", m_priority);
@@ -110,6 +119,18 @@ Aws::String RegisterTaskWithMaintenanceWindowRequest::SerializePayload() const
   if(m_loggingInfoHasBeenSet)
   {
    payload.WithObject("LoggingInfo", m_loggingInfo.Jsonize());
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

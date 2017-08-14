@@ -26,7 +26,10 @@ namespace Model
   enum class MaintenanceWindowTaskType
   {
     NOT_SET,
-    RUN_COMMAND
+    RUN_COMMAND,
+    AUTOMATION,
+    STEP_FUNCTIONS,
+    LAMBDA
   };
 
 namespace MaintenanceWindowTaskTypeMapper

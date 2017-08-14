@@ -107,37 +107,51 @@ namespace Model
     inline CreateTapeWithBarcodeRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline void SetTapeBarcode(const Aws::String& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = value; }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline void SetTapeBarcode(Aws::String&& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = std::move(value); }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline void SetTapeBarcode(const char* value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode.assign(value); }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(const Aws::String& value) { SetTapeBarcode(value); return *this;}
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(Aws::String&& value) { SetTapeBarcode(std::move(value)); return *this;}
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p>
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 

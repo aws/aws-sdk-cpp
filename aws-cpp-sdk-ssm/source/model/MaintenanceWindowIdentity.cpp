@@ -31,6 +31,7 @@ namespace Model
 MaintenanceWindowIdentity::MaintenanceWindowIdentity() : 
     m_windowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_duration(0),
@@ -43,6 +44,7 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity() :
 MaintenanceWindowIdentity::MaintenanceWindowIdentity(const JsonValue& jsonValue) : 
     m_windowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_duration(0),
@@ -67,6 +69,13 @@ MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(const JsonValue
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Enabled"))
@@ -106,6 +115,12 @@ JsonValue MaintenanceWindowIdentity::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

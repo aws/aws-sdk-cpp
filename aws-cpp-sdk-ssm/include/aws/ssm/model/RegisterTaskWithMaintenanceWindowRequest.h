@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/MaintenanceWindowTaskType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
@@ -278,6 +279,36 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
+     * <p>Parameters the task should use during execution. Populate only the fields
+     * that match the task type. All other fields should be empty. </p>
+     */
+    inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const{ return m_taskInvocationParameters; }
+
+    /**
+     * <p>Parameters the task should use during execution. Populate only the fields
+     * that match the task type. All other fields should be empty. </p>
+     */
+    inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = value; }
+
+    /**
+     * <p>Parameters the task should use during execution. Populate only the fields
+     * that match the task type. All other fields should be empty. </p>
+     */
+    inline void SetTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = std::move(value); }
+
+    /**
+     * <p>Parameters the task should use during execution. Populate only the fields
+     * that match the task type. All other fields should be empty. </p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { SetTaskInvocationParameters(value); return *this;}
+
+    /**
+     * <p>Parameters the task should use during execution. Populate only the fields
+     * that match the task type. All other fields should be empty. </p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
+
+    /**
      * <p>The priority of the task in the Maintenance Window, the lower the number the
      * higher the priority. Tasks in a Maintenance Window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
@@ -406,6 +437,76 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
     /**
+     * <p>An optional name for the task.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -453,6 +554,8 @@ namespace Model
     bool m_taskTypeHasBeenSet;
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
     bool m_taskParametersHasBeenSet;
+    MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
+    bool m_taskInvocationParametersHasBeenSet;
     int m_priority;
     bool m_priorityHasBeenSet;
     Aws::String m_maxConcurrency;
@@ -461,6 +564,10 @@ namespace Model
     bool m_maxErrorsHasBeenSet;
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

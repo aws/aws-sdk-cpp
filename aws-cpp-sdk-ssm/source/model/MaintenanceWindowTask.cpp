@@ -41,7 +41,9 @@ MaintenanceWindowTask::MaintenanceWindowTask() :
     m_loggingInfoHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false)
+    m_maxErrorsHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ MaintenanceWindowTask::MaintenanceWindowTask(const JsonValue& jsonValue) :
     m_loggingInfoHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false)
+    m_maxErrorsHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +152,20 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(const JsonValue& jsonVa
     m_maxErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +245,18 @@ JsonValue MaintenanceWindowTask::Jsonize() const
   if(m_maxErrorsHasBeenSet)
   {
    payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

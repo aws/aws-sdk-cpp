@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/MaintenanceWindowTaskType.h>
 #include <aws/ssm/model/MaintenanceWindowExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -202,6 +203,31 @@ namespace Model
      * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+
+    /**
+     * <p>The task type.</p>
+     */
+    inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
+
+    /**
+     * <p>The task type.</p>
+     */
+    inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
+
+    /**
+     * <p>The task type.</p>
+     */
+    inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskTypeHasBeenSet = true; m_taskType = std::move(value); }
+
+    /**
+     * <p>The task type.</p>
+     */
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
+
+    /**
+     * <p>The task type.</p>
+     */
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
     /**
      * <p>The parameters that were provided for the invocation when it was
@@ -462,6 +488,8 @@ namespace Model
     bool m_invocationIdHasBeenSet;
     Aws::String m_executionId;
     bool m_executionIdHasBeenSet;
+    MaintenanceWindowTaskType m_taskType;
+    bool m_taskTypeHasBeenSet;
     Aws::String m_parameters;
     bool m_parametersHasBeenSet;
     MaintenanceWindowExecutionStatus m_status;

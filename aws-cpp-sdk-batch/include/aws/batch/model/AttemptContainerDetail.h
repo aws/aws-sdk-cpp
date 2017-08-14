@@ -190,6 +190,27 @@ namespace Model
      */
     inline AttemptContainerDetail& WithReason(const char* value) { SetReason(value); return *this;}
 
+    
+    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    
+    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+
+    
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
+
+    
+    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
+
+    
+    inline AttemptContainerDetail& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+
+    
+    inline AttemptContainerDetail& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
+
+    
+    inline AttemptContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+
   private:
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
@@ -199,6 +220,8 @@ namespace Model
     bool m_exitCodeHasBeenSet;
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+    Aws::String m_logStreamName;
+    bool m_logStreamNameHasBeenSet;
   };
 
 } // namespace Model

@@ -116,6 +116,41 @@ namespace Model
     inline MaintenanceWindowIdentity& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline MaintenanceWindowIdentity& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline MaintenanceWindowIdentity& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
+    inline MaintenanceWindowIdentity& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>Whether the Maintenance Window is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -168,6 +203,8 @@ namespace Model
     bool m_windowIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
     int m_duration;

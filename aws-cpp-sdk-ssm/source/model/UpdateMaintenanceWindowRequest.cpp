@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 UpdateMaintenanceWindowRequest::UpdateMaintenanceWindowRequest() : 
     m_windowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -33,7 +34,9 @@ UpdateMaintenanceWindowRequest::UpdateMaintenanceWindowRequest() :
     m_allowUnassociatedTargets(false),
     m_allowUnassociatedTargetsHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_replace(false),
+    m_replaceHasBeenSet(false)
 {
 }
 
@@ -50,6 +53,12 @@ Aws::String UpdateMaintenanceWindowRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 
@@ -80,6 +89,12 @@ Aws::String UpdateMaintenanceWindowRequest::SerializePayload() const
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_replaceHasBeenSet)
+  {
+   payload.WithBool("Replace", m_replace);
 
   }
 

@@ -202,17 +202,17 @@ namespace Model
     inline CachediSCSIVolume& WithVolumeStatus(const char* value) { SetVolumeStatus(value); return *this;}
 
     /**
-     * <p>The size of the volume in bytes.</p>
+     * <p>The size, in bytes, of the volume capacity.</p>
      */
     inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
 
     /**
-     * <p>The size of the volume in bytes.</p>
+     * <p>The size, in bytes, of the volume capacity.</p>
      */
     inline void SetVolumeSizeInBytes(long long value) { m_volumeSizeInBytesHasBeenSet = true; m_volumeSizeInBytes = value; }
 
     /**
-     * <p>The size of the volume in bytes.</p>
+     * <p>The size, in bytes, of the volume capacity.</p>
      */
     inline CachediSCSIVolume& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
 

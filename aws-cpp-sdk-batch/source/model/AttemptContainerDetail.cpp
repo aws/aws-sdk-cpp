@@ -33,7 +33,8 @@ AttemptContainerDetail::AttemptContainerDetail() :
     m_taskArnHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_logStreamNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ AttemptContainerDetail::AttemptContainerDetail(const JsonValue& jsonValue) :
     m_taskArnHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_logStreamNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ AttemptContainerDetail& AttemptContainerDetail::operator =(const JsonValue& json
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logStreamName"))
+  {
+    m_logStreamName = jsonValue.GetString("logStreamName");
+
+    m_logStreamNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,12 @@ JsonValue AttemptContainerDetail::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", m_reason);
+
+  }
+
+  if(m_logStreamNameHasBeenSet)
+  {
+   payload.WithString("logStreamName", m_logStreamName);
 
   }
 

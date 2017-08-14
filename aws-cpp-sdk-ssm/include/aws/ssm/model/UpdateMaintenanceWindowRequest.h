@@ -107,6 +107,41 @@ namespace Model
     inline UpdateMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline UpdateMaintenanceWindowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline UpdateMaintenanceWindowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
+    inline UpdateMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
@@ -214,11 +249,34 @@ namespace Model
      */
     inline UpdateMaintenanceWindowRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+    /**
+     * <p>If you specify True, then all fields that are required by the
+     * CreateMaintenanceWindow API are also required for this API request. Optional
+     * fields that are not specified will be set to null. </p>
+     */
+    inline bool GetReplace() const{ return m_replace; }
+
+    /**
+     * <p>If you specify True, then all fields that are required by the
+     * CreateMaintenanceWindow API are also required for this API request. Optional
+     * fields that are not specified will be set to null. </p>
+     */
+    inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
+
+    /**
+     * <p>If you specify True, then all fields that are required by the
+     * CreateMaintenanceWindow API are also required for this API request. Optional
+     * fields that are not specified will be set to null. </p>
+     */
+    inline UpdateMaintenanceWindowRequest& WithReplace(bool value) { SetReplace(value); return *this;}
+
   private:
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
     int m_duration;
@@ -229,6 +287,8 @@ namespace Model
     bool m_allowUnassociatedTargetsHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
+    bool m_replace;
+    bool m_replaceHasBeenSet;
   };
 
 } // namespace Model

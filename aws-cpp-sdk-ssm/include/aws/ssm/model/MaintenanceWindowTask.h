@@ -123,62 +123,88 @@ namespace Model
     inline MaintenanceWindowTask& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the task to execute.</p>
+     * <p>TaskArn is the resource that the task uses during execution. For RUN_COMMAND
+     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
+     * tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's the State
+     * Machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The type of task.</p>
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of task.</p>
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of task.</p>
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline void SetType(MaintenanceWindowTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of task.</p>
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline MaintenanceWindowTask& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of task.</p>
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline MaintenanceWindowTask& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 
@@ -287,23 +313,23 @@ namespace Model
     inline MaintenanceWindowTask& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
-     * order with tasks that have the same priority scheduled in parallel.</p>
+     * <p>The priority of the task in the Maintenance Window. The lower the number, the
+     * higher the priority. Tasks that have the same priority are scheduled in
+     * parallel.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
-     * order with tasks that have the same priority scheduled in parallel.</p>
+     * <p>The priority of the task in the Maintenance Window. The lower the number, the
+     * higher the priority. Tasks that have the same priority are scheduled in
+     * parallel.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
-     * order with tasks that have the same priority scheduled in parallel.</p>
+     * <p>The priority of the task in the Maintenance Window. The lower the number, the
+     * higher the priority. Tasks that have the same priority are scheduled in
+     * parallel.</p>
      */
     inline MaintenanceWindowTask& WithPriority(int value) { SetPriority(value); return *this;}
 
@@ -444,6 +470,76 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+    /**
+     * <p>The task name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline MaintenanceWindowTask& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline MaintenanceWindowTask& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The task name.</p>
+     */
+    inline MaintenanceWindowTask& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline MaintenanceWindowTask& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline MaintenanceWindowTask& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline MaintenanceWindowTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
@@ -467,6 +563,10 @@ namespace Model
     bool m_maxConcurrencyHasBeenSet;
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

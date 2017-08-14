@@ -73,6 +73,48 @@ namespace Model
     inline CreateMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline CreateMaintenanceWindowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline CreateMaintenanceWindowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help your organize your Maintenance Windows. </p>
+     */
+    inline CreateMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
@@ -203,6 +245,8 @@ namespace Model
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
     int m_duration;

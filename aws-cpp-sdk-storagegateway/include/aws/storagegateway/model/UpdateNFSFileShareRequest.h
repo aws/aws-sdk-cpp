@@ -316,19 +316,19 @@ namespace Model
 
     /**
      * <p>Sets the write status of a file share: "true" if the write status is
-     * read-only, and otherwise "false".</p>
+     * read-only, otherwise "false".</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
      * <p>Sets the write status of a file share: "true" if the write status is
-     * read-only, and otherwise "false".</p>
+     * read-only, otherwise "false".</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
      * <p>Sets the write status of a file share: "true" if the write status is
-     * read-only, and otherwise "false".</p>
+     * read-only, otherwise "false".</p>
      */
     inline UpdateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 

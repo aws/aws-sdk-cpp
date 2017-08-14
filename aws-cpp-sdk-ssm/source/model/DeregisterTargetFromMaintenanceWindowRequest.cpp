@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 DeregisterTargetFromMaintenanceWindowRequest::DeregisterTargetFromMaintenanceWindowRequest() : 
     m_windowIdHasBeenSet(false),
-    m_windowTargetIdHasBeenSet(false)
+    m_windowTargetIdHasBeenSet(false),
+    m_safe(false),
+    m_safeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,12 @@ Aws::String DeregisterTargetFromMaintenanceWindowRequest::SerializePayload() con
   if(m_windowTargetIdHasBeenSet)
   {
    payload.WithString("WindowTargetId", m_windowTargetId);
+
+  }
+
+  if(m_safeHasBeenSet)
+  {
+   payload.WithBool("Safe", m_safe);
 
   }
 
