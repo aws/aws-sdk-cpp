@@ -33,7 +33,8 @@ InventoryItem::InventoryItem() :
     m_schemaVersionHasBeenSet(false),
     m_captureTimeHasBeenSet(false),
     m_contentHashHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ InventoryItem::InventoryItem(const JsonValue& jsonValue) :
     m_schemaVersionHasBeenSet(false),
     m_captureTimeHasBeenSet(false),
     m_contentHashHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,16 @@ InventoryItem& InventoryItem::operator =(const JsonValue& jsonValue)
     m_contentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Context"))
+  {
+    Aws::Map<Aws::String, JsonValue> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
+    for(auto& contextItem : contextJsonMap)
+    {
+      m_context[contextItem.first] = contextItem.second.AsString();
+    }
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +149,17 @@ JsonValue InventoryItem::Jsonize() const
      contentJsonList[contentIndex].AsObject(std::move(inventoryItemEntryJsonMap));
    }
    payload.WithArray("Content", std::move(contentJsonList));
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("Context", std::move(contextJsonMap));
 
   }
 

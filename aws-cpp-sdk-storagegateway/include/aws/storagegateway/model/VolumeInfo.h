@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */

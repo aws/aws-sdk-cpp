@@ -81,6 +81,8 @@
 #include <aws/ssm/model/GetMaintenanceWindowRequest.h>
 #include <aws/ssm/model/GetMaintenanceWindowExecutionRequest.h>
 #include <aws/ssm/model/GetMaintenanceWindowExecutionTaskRequest.h>
+#include <aws/ssm/model/GetMaintenanceWindowExecutionTaskInvocationRequest.h>
+#include <aws/ssm/model/GetMaintenanceWindowTaskRequest.h>
 #include <aws/ssm/model/GetParameterRequest.h>
 #include <aws/ssm/model/GetParameterHistoryRequest.h>
 #include <aws/ssm/model/GetParametersRequest.h>
@@ -90,12 +92,16 @@
 #include <aws/ssm/model/ListAssociationsRequest.h>
 #include <aws/ssm/model/ListCommandInvocationsRequest.h>
 #include <aws/ssm/model/ListCommandsRequest.h>
+#include <aws/ssm/model/ListComplianceItemsRequest.h>
+#include <aws/ssm/model/ListComplianceSummariesRequest.h>
 #include <aws/ssm/model/ListDocumentVersionsRequest.h>
 #include <aws/ssm/model/ListDocumentsRequest.h>
 #include <aws/ssm/model/ListInventoryEntriesRequest.h>
+#include <aws/ssm/model/ListResourceComplianceSummariesRequest.h>
 #include <aws/ssm/model/ListResourceDataSyncRequest.h>
 #include <aws/ssm/model/ListTagsForResourceRequest.h>
 #include <aws/ssm/model/ModifyDocumentPermissionRequest.h>
+#include <aws/ssm/model/PutComplianceItemsRequest.h>
 #include <aws/ssm/model/PutInventoryRequest.h>
 #include <aws/ssm/model/PutParameterRequest.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineRequest.h>
@@ -112,6 +118,8 @@
 #include <aws/ssm/model/UpdateDocumentRequest.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionRequest.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowRequest.h>
+#include <aws/ssm/model/UpdateMaintenanceWindowTargetRequest.h>
+#include <aws/ssm/model/UpdateMaintenanceWindowTaskRequest.h>
 #include <aws/ssm/model/UpdateManagedInstanceRoleRequest.h>
 #include <aws/ssm/model/UpdatePatchBaselineRequest.h>
 
@@ -2069,6 +2077,76 @@ void SSMClient::GetMaintenanceWindowExecutionTaskAsyncHelper(const GetMaintenanc
   handler(this, request, GetMaintenanceWindowExecutionTask(request), context);
 }
 
+GetMaintenanceWindowExecutionTaskInvocationOutcome SSMClient::GetMaintenanceWindowExecutionTaskInvocation(const GetMaintenanceWindowExecutionTaskInvocationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetMaintenanceWindowExecutionTaskInvocationOutcome(GetMaintenanceWindowExecutionTaskInvocationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMaintenanceWindowExecutionTaskInvocationOutcome(outcome.GetError());
+  }
+}
+
+GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable SSMClient::GetMaintenanceWindowExecutionTaskInvocationCallable(const GetMaintenanceWindowExecutionTaskInvocationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMaintenanceWindowExecutionTaskInvocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMaintenanceWindowExecutionTaskInvocation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetMaintenanceWindowExecutionTaskInvocationAsync(const GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMaintenanceWindowExecutionTaskInvocationAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetMaintenanceWindowExecutionTaskInvocationAsyncHelper(const GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMaintenanceWindowExecutionTaskInvocation(request), context);
+}
+
+GetMaintenanceWindowTaskOutcome SSMClient::GetMaintenanceWindowTask(const GetMaintenanceWindowTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetMaintenanceWindowTaskOutcome(GetMaintenanceWindowTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMaintenanceWindowTaskOutcome(outcome.GetError());
+  }
+}
+
+GetMaintenanceWindowTaskOutcomeCallable SSMClient::GetMaintenanceWindowTaskCallable(const GetMaintenanceWindowTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMaintenanceWindowTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMaintenanceWindowTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetMaintenanceWindowTaskAsync(const GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMaintenanceWindowTaskAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetMaintenanceWindowTaskAsyncHelper(const GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMaintenanceWindowTask(request), context);
+}
+
 GetParameterOutcome SSMClient::GetParameter(const GetParameterRequest& request) const
 {
   Aws::StringStream ss;
@@ -2384,6 +2462,76 @@ void SSMClient::ListCommandsAsyncHelper(const ListCommandsRequest& request, cons
   handler(this, request, ListCommands(request), context);
 }
 
+ListComplianceItemsOutcome SSMClient::ListComplianceItems(const ListComplianceItemsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListComplianceItemsOutcome(ListComplianceItemsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListComplianceItemsOutcome(outcome.GetError());
+  }
+}
+
+ListComplianceItemsOutcomeCallable SSMClient::ListComplianceItemsCallable(const ListComplianceItemsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListComplianceItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComplianceItems(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListComplianceItemsAsync(const ListComplianceItemsRequest& request, const ListComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListComplianceItemsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListComplianceItemsAsyncHelper(const ListComplianceItemsRequest& request, const ListComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListComplianceItems(request), context);
+}
+
+ListComplianceSummariesOutcome SSMClient::ListComplianceSummaries(const ListComplianceSummariesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListComplianceSummariesOutcome(ListComplianceSummariesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListComplianceSummariesOutcome(outcome.GetError());
+  }
+}
+
+ListComplianceSummariesOutcomeCallable SSMClient::ListComplianceSummariesCallable(const ListComplianceSummariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListComplianceSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComplianceSummaries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListComplianceSummariesAsync(const ListComplianceSummariesRequest& request, const ListComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListComplianceSummariesAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListComplianceSummariesAsyncHelper(const ListComplianceSummariesRequest& request, const ListComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListComplianceSummaries(request), context);
+}
+
 ListDocumentVersionsOutcome SSMClient::ListDocumentVersions(const ListDocumentVersionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -2489,6 +2637,41 @@ void SSMClient::ListInventoryEntriesAsyncHelper(const ListInventoryEntriesReques
   handler(this, request, ListInventoryEntries(request), context);
 }
 
+ListResourceComplianceSummariesOutcome SSMClient::ListResourceComplianceSummaries(const ListResourceComplianceSummariesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceComplianceSummariesOutcome(ListResourceComplianceSummariesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceComplianceSummariesOutcome(outcome.GetError());
+  }
+}
+
+ListResourceComplianceSummariesOutcomeCallable SSMClient::ListResourceComplianceSummariesCallable(const ListResourceComplianceSummariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceComplianceSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceComplianceSummaries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListResourceComplianceSummariesAsync(const ListResourceComplianceSummariesRequest& request, const ListResourceComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceComplianceSummariesAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListResourceComplianceSummariesAsyncHelper(const ListResourceComplianceSummariesRequest& request, const ListResourceComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceComplianceSummaries(request), context);
+}
+
 ListResourceDataSyncOutcome SSMClient::ListResourceDataSync(const ListResourceDataSyncRequest& request) const
 {
   Aws::StringStream ss;
@@ -2592,6 +2775,41 @@ void SSMClient::ModifyDocumentPermissionAsync(const ModifyDocumentPermissionRequ
 void SSMClient::ModifyDocumentPermissionAsyncHelper(const ModifyDocumentPermissionRequest& request, const ModifyDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyDocumentPermission(request), context);
+}
+
+PutComplianceItemsOutcome SSMClient::PutComplianceItems(const PutComplianceItemsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutComplianceItemsOutcome(PutComplianceItemsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutComplianceItemsOutcome(outcome.GetError());
+  }
+}
+
+PutComplianceItemsOutcomeCallable SSMClient::PutComplianceItemsCallable(const PutComplianceItemsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutComplianceItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutComplianceItems(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::PutComplianceItemsAsync(const PutComplianceItemsRequest& request, const PutComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutComplianceItemsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::PutComplianceItemsAsyncHelper(const PutComplianceItemsRequest& request, const PutComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutComplianceItems(request), context);
 }
 
 PutInventoryOutcome SSMClient::PutInventory(const PutInventoryRequest& request) const
@@ -3152,6 +3370,76 @@ void SSMClient::UpdateMaintenanceWindowAsync(const UpdateMaintenanceWindowReques
 void SSMClient::UpdateMaintenanceWindowAsyncHelper(const UpdateMaintenanceWindowRequest& request, const UpdateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateMaintenanceWindow(request), context);
+}
+
+UpdateMaintenanceWindowTargetOutcome SSMClient::UpdateMaintenanceWindowTarget(const UpdateMaintenanceWindowTargetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMaintenanceWindowTargetOutcome(UpdateMaintenanceWindowTargetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMaintenanceWindowTargetOutcome(outcome.GetError());
+  }
+}
+
+UpdateMaintenanceWindowTargetOutcomeCallable SSMClient::UpdateMaintenanceWindowTargetCallable(const UpdateMaintenanceWindowTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMaintenanceWindowTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMaintenanceWindowTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::UpdateMaintenanceWindowTargetAsync(const UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMaintenanceWindowTargetAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::UpdateMaintenanceWindowTargetAsyncHelper(const UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMaintenanceWindowTarget(request), context);
+}
+
+UpdateMaintenanceWindowTaskOutcome SSMClient::UpdateMaintenanceWindowTask(const UpdateMaintenanceWindowTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMaintenanceWindowTaskOutcome(UpdateMaintenanceWindowTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMaintenanceWindowTaskOutcome(outcome.GetError());
+  }
+}
+
+UpdateMaintenanceWindowTaskOutcomeCallable SSMClient::UpdateMaintenanceWindowTaskCallable(const UpdateMaintenanceWindowTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMaintenanceWindowTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMaintenanceWindowTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::UpdateMaintenanceWindowTaskAsync(const UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMaintenanceWindowTaskAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::UpdateMaintenanceWindowTaskAsyncHelper(const UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMaintenanceWindowTask(request), context);
 }
 
 UpdateManagedInstanceRoleOutcome SSMClient::UpdateManagedInstanceRole(const UpdateManagedInstanceRoleRequest& request) const

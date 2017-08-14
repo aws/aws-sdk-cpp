@@ -58,6 +58,12 @@ UpdateMaintenanceWindowResult& UpdateMaintenanceWindowResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetString("Schedule");

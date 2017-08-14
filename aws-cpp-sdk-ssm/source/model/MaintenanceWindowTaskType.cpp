@@ -31,6 +31,9 @@ namespace Aws
       {
 
         static const int RUN_COMMAND_HASH = HashingUtils::HashString("RUN_COMMAND");
+        static const int AUTOMATION_HASH = HashingUtils::HashString("AUTOMATION");
+        static const int STEP_FUNCTIONS_HASH = HashingUtils::HashString("STEP_FUNCTIONS");
+        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
 
 
         MaintenanceWindowTaskType GetMaintenanceWindowTaskTypeForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           if (hashCode == RUN_COMMAND_HASH)
           {
             return MaintenanceWindowTaskType::RUN_COMMAND;
+          }
+          else if (hashCode == AUTOMATION_HASH)
+          {
+            return MaintenanceWindowTaskType::AUTOMATION;
+          }
+          else if (hashCode == STEP_FUNCTIONS_HASH)
+          {
+            return MaintenanceWindowTaskType::STEP_FUNCTIONS;
+          }
+          else if (hashCode == LAMBDA_HASH)
+          {
+            return MaintenanceWindowTaskType::LAMBDA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +71,12 @@ namespace Aws
           {
           case MaintenanceWindowTaskType::RUN_COMMAND:
             return "RUN_COMMAND";
+          case MaintenanceWindowTaskType::AUTOMATION:
+            return "AUTOMATION";
+          case MaintenanceWindowTaskType::STEP_FUNCTIONS:
+            return "STEP_FUNCTIONS";
+          case MaintenanceWindowTaskType::LAMBDA:
+            return "LAMBDA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

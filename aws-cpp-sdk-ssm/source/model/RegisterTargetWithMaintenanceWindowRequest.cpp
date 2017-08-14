@@ -28,6 +28,8 @@ RegisterTargetWithMaintenanceWindowRequest::RegisterTargetWithMaintenanceWindowR
     m_resourceTypeHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_ownerInformationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -62,6 +64,18 @@ Aws::String RegisterTargetWithMaintenanceWindowRequest::SerializePayload() const
   if(m_ownerInformationHasBeenSet)
   {
    payload.WithString("OwnerInformation", m_ownerInformation);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

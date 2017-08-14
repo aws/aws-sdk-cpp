@@ -543,6 +543,27 @@ namespace Model
      */
     inline ContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+    
+    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    
+    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+
+    
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
+
+    
+    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
+
+    
+    inline ContainerDetail& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
+
+    
+    inline ContainerDetail& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
+
+    
+    inline ContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+
   private:
     Aws::String m_image;
     bool m_imageHasBeenSet;
@@ -576,6 +597,8 @@ namespace Model
     bool m_containerInstanceArnHasBeenSet;
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+    Aws::String m_logStreamName;
+    bool m_logStreamNameHasBeenSet;
   };
 
 } // namespace Model

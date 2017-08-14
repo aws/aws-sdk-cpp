@@ -25,7 +25,10 @@ using namespace Aws::Utils;
 CreateFileSystemRequest::CreateFileSystemRequest() : 
     m_creationTokenHasBeenSet(false),
     m_performanceMode(PerformanceMode::NOT_SET),
-    m_performanceModeHasBeenSet(false)
+    m_performanceModeHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -42,6 +45,18 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_performanceModeHasBeenSet)
   {
    payload.WithString("PerformanceMode", PerformanceModeMapper::GetNameForPerformanceMode(m_performanceMode));
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+   payload.WithBool("Encrypted", m_encrypted);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
   }
 
   return payload.WriteReadable();

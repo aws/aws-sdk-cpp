@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteFileShareRequest::DeleteFileShareRequest() : 
-    m_fileShareARNHasBeenSet(false)
+    m_fileShareARNHasBeenSet(false),
+    m_forceDelete(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeleteFileShareRequest::SerializePayload() const
   if(m_fileShareARNHasBeenSet)
   {
    payload.WithString("FileShareARN", m_fileShareARN);
+
+  }
+
+  if(m_forceDeleteHasBeenSet)
+  {
+   payload.WithBool("ForceDelete", m_forceDelete);
 
   }
 

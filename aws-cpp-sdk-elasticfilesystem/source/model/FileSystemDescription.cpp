@@ -40,7 +40,10 @@ FileSystemDescription::FileSystemDescription() :
     m_numberOfMountTargetsHasBeenSet(false),
     m_sizeInBytesHasBeenSet(false),
     m_performanceMode(PerformanceMode::NOT_SET),
-    m_performanceModeHasBeenSet(false)
+    m_performanceModeHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_numberOfMountTargetsHasBeenSet(false),
     m_sizeInBytesHasBeenSet(false),
     m_performanceMode(PerformanceMode::NOT_SET),
-    m_performanceModeHasBeenSet(false)
+    m_performanceModeHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +132,20 @@ FileSystemDescription& FileSystemDescription::operator =(const JsonValue& jsonVa
     m_performanceModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Encrypted"))
+  {
+    m_encrypted = jsonValue.GetBool("Encrypted");
+
+    m_encryptedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +202,18 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_performanceModeHasBeenSet)
   {
    payload.WithString("PerformanceMode", PerformanceModeMapper::GetNameForPerformanceMode(m_performanceMode));
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+   payload.WithBool("Encrypted", m_encrypted);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
   }
 
   return payload;

@@ -265,6 +265,102 @@ namespace Model
      */
     inline InventoryItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline InventoryItem& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+
   private:
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
@@ -276,6 +372,8 @@ namespace Model
     bool m_contentHashHasBeenSet;
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
     bool m_contentHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_context;
+    bool m_contextHasBeenSet;
   };
 
 } // namespace Model

@@ -192,6 +192,76 @@ namespace Model
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
     /**
+     * <p>An optional name for the target.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
+    inline RegisterTargetWithMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -235,6 +305,10 @@ namespace Model
     bool m_targetsHasBeenSet;
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

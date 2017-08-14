@@ -33,6 +33,8 @@ MaintenanceWindowExecutionTaskInvocationIdentity::MaintenanceWindowExecutionTask
     m_taskExecutionIdHasBeenSet(false),
     m_invocationIdHasBeenSet(false),
     m_executionIdHasBeenSet(false),
+    m_taskType(MaintenanceWindowTaskType::NOT_SET),
+    m_taskTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_status(MaintenanceWindowExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -49,6 +51,8 @@ MaintenanceWindowExecutionTaskInvocationIdentity::MaintenanceWindowExecutionTask
     m_taskExecutionIdHasBeenSet(false),
     m_invocationIdHasBeenSet(false),
     m_executionIdHasBeenSet(false),
+    m_taskType(MaintenanceWindowTaskType::NOT_SET),
+    m_taskTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_status(MaintenanceWindowExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -89,6 +93,13 @@ MaintenanceWindowExecutionTaskInvocationIdentity& MaintenanceWindowExecutionTask
     m_executionId = jsonValue.GetString("ExecutionId");
 
     m_executionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TaskType"))
+  {
+    m_taskType = MaintenanceWindowTaskTypeMapper::GetMaintenanceWindowTaskTypeForName(jsonValue.GetString("TaskType"));
+
+    m_taskTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Parameters"))
@@ -169,6 +180,11 @@ JsonValue MaintenanceWindowExecutionTaskInvocationIdentity::Jsonize() const
   {
    payload.WithString("ExecutionId", m_executionId);
 
+  }
+
+  if(m_taskTypeHasBeenSet)
+  {
+   payload.WithString("TaskType", MaintenanceWindowTaskTypeMapper::GetNameForMaintenanceWindowTaskType(m_taskType));
   }
 
   if(m_parametersHasBeenSet)

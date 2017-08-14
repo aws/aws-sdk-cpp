@@ -113,6 +113,41 @@ namespace Model
     inline GetMaintenanceWindowResult& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline GetMaintenanceWindowResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline GetMaintenanceWindowResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the Maintenance Window.</p>
+     */
+    inline GetMaintenanceWindowResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
@@ -273,6 +308,7 @@ namespace Model
   private:
     Aws::String m_windowId;
     Aws::String m_name;
+    Aws::String m_description;
     Aws::String m_schedule;
     int m_duration;
     int m_cutoff;

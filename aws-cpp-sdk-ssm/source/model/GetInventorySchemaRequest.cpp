@@ -26,7 +26,9 @@ GetInventorySchemaRequest::GetInventorySchemaRequest() :
     m_typeNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_subType(false),
+    m_subTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,12 @@ Aws::String GetInventorySchemaRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_subTypeHasBeenSet)
+  {
+   payload.WithBool("SubType", m_subType);
 
   }
 

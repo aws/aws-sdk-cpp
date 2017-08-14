@@ -405,9 +405,9 @@ namespace Model
    * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage
    * Gateway operations, their request parameters, response elements, possible
    * errors, and examples of requests and responses.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/general/latest/general/latest/gr/rande.html#sg_region">AWS
-   * Storage Gateway Regions and Endpoints</a>: Provides a list of each region and
-   * endpoints available for use with AWS Storage Gateway.</p> </li> </ul> <note>
+   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+   * Storage Gateway Regions and Endpoints:</a> Provides a list of each region and
+   * endpoints available for use with AWS Storage Gateway. </p> </li> </ul> <note>
    * <p>AWS Storage Gateway resource IDs are in uppercase. When you use these
    * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You
    * must change your resource ID to lowercase to use it with the EC2 API. For
@@ -1081,10 +1081,12 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. This operation is only supported in the
-         * tape gateway architecture.</p> <note> <p>Cache storage must be allocated to the
-         * gateway before you can create a virtual tape. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape . This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway.
+         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
+         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
+         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          */
@@ -1092,10 +1094,12 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. This operation is only supported in the
-         * tape gateway architecture.</p> <note> <p>Cache storage must be allocated to the
-         * gateway before you can create a virtual tape. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape . This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway.
+         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
+         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
+         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          *
@@ -1105,10 +1109,12 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. This operation is only supported in the
-         * tape gateway architecture.</p> <note> <p>Cache storage must be allocated to the
-         * gateway before you can create a virtual tape. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape . This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway.
+         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
+         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
+         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          *
@@ -2405,8 +2411,8 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added or removed since the gateway
-         * last listed the bucket's contents and cached the results.</p><p><h3>See
+         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
@@ -2415,8 +2421,8 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added or removed since the gateway
-         * last listed the bucket's contents and cached the results.</p><p><h3>See
+         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
@@ -2427,8 +2433,8 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added or removed since the gateway
-         * last listed the bucket's contents and cached the results.</p><p><h3>See
+         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>

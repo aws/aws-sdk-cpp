@@ -29,14 +29,16 @@ using namespace Aws;
 CreateFileSystemResult::CreateFileSystemResult() : 
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_numberOfMountTargets(0),
-    m_performanceMode(PerformanceMode::NOT_SET)
+    m_performanceMode(PerformanceMode::NOT_SET),
+    m_encrypted(false)
 {
 }
 
 CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_numberOfMountTargets(0),
-    m_performanceMode(PerformanceMode::NOT_SET)
+    m_performanceMode(PerformanceMode::NOT_SET),
+    m_encrypted(false)
 {
   *this = result;
 }
@@ -95,6 +97,18 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const AmazonWebServic
   if(jsonValue.ValueExists("PerformanceMode"))
   {
     m_performanceMode = PerformanceModeMapper::GetPerformanceModeForName(jsonValue.GetString("PerformanceMode"));
+
+  }
+
+  if(jsonValue.ValueExists("Encrypted"))
+  {
+    m_encrypted = jsonValue.GetBool("Encrypted");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
 
   }
 

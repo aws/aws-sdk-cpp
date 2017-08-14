@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateMaintenanceWindowRequest::CreateMaintenanceWindowRequest() : 
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -43,6 +44,12 @@ Aws::String CreateMaintenanceWindowRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

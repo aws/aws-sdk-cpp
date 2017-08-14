@@ -217,7 +217,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
@@ -226,7 +226,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
@@ -235,7 +235,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
@@ -244,7 +244,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
@@ -253,7 +253,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
@@ -262,7 +262,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
@@ -271,7 +271,7 @@ namespace Model
      * <p>The name of the iSCSI target used by initiators to connect to the target and
      * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
      * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}

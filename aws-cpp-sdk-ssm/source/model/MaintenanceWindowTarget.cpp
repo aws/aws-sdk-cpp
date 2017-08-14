@@ -34,7 +34,9 @@ MaintenanceWindowTarget::MaintenanceWindowTarget() :
     m_resourceType(MaintenanceWindowResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_targetsHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false)
+    m_ownerInformationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ MaintenanceWindowTarget::MaintenanceWindowTarget(const JsonValue& jsonValue) :
     m_resourceType(MaintenanceWindowResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_targetsHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false)
+    m_ownerInformationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +93,20 @@ MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(const JsonValue& js
     m_ownerInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +145,18 @@ JsonValue MaintenanceWindowTarget::Jsonize() const
   if(m_ownerInformationHasBeenSet)
   {
    payload.WithString("OwnerInformation", m_ownerInformation);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

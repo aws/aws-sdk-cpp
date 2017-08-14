@@ -235,6 +235,76 @@ namespace Model
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+    /**
+     * <p>The target name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline MaintenanceWindowTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline MaintenanceWindowTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline MaintenanceWindowTarget& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline MaintenanceWindowTarget& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline MaintenanceWindowTarget& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the target.</p>
+     */
+    inline MaintenanceWindowTarget& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
@@ -246,6 +316,10 @@ namespace Model
     bool m_targetsHasBeenSet;
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model
