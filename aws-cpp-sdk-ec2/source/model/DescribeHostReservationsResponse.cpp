@@ -51,11 +51,11 @@ DescribeHostReservationsResponse& DescribeHostReservationsResponse::operator =(c
     XmlNode hostReservationSetNode = resultNode.FirstChild("hostReservationSet");
     if(!hostReservationSetNode.IsNull())
     {
-      XmlNode hostReservationSetMember = hostReservationSetNode.FirstChild("member");
+      XmlNode hostReservationSetMember = hostReservationSetNode.FirstChild("item");
       while(!hostReservationSetMember.IsNull())
       {
         m_hostReservationSet.push_back(hostReservationSetMember);
-        hostReservationSetMember = hostReservationSetMember.NextNode("member");
+        hostReservationSetMember = hostReservationSetMember.NextNode("item");
       }
 
     }
