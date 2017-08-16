@@ -21,14 +21,18 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/AcceptMatchResult.h>
 #include <aws/gamelift/model/CreateAliasResult.h>
 #include <aws/gamelift/model/CreateBuildResult.h>
 #include <aws/gamelift/model/CreateFleetResult.h>
 #include <aws/gamelift/model/CreateGameSessionResult.h>
 #include <aws/gamelift/model/CreateGameSessionQueueResult.h>
+#include <aws/gamelift/model/CreateMatchmakingConfigurationResult.h>
+#include <aws/gamelift/model/CreateMatchmakingRuleSetResult.h>
 #include <aws/gamelift/model/CreatePlayerSessionResult.h>
 #include <aws/gamelift/model/CreatePlayerSessionsResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
+#include <aws/gamelift/model/DeleteMatchmakingConfigurationResult.h>
 #include <aws/gamelift/model/DescribeAliasResult.h>
 #include <aws/gamelift/model/DescribeBuildResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
@@ -42,6 +46,9 @@
 #include <aws/gamelift/model/DescribeGameSessionQueuesResult.h>
 #include <aws/gamelift/model/DescribeGameSessionsResult.h>
 #include <aws/gamelift/model/DescribeInstancesResult.h>
+#include <aws/gamelift/model/DescribeMatchmakingResult.h>
+#include <aws/gamelift/model/DescribeMatchmakingConfigurationsResult.h>
+#include <aws/gamelift/model/DescribeMatchmakingRuleSetsResult.h>
 #include <aws/gamelift/model/DescribePlayerSessionsResult.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationResult.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesResult.h>
@@ -55,7 +62,9 @@
 #include <aws/gamelift/model/ResolveAliasResult.h>
 #include <aws/gamelift/model/SearchGameSessionsResult.h>
 #include <aws/gamelift/model/StartGameSessionPlacementResult.h>
+#include <aws/gamelift/model/StartMatchmakingResult.h>
 #include <aws/gamelift/model/StopGameSessionPlacementResult.h>
+#include <aws/gamelift/model/StopMatchmakingResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
 #include <aws/gamelift/model/UpdateBuildResult.h>
 #include <aws/gamelift/model/UpdateFleetAttributesResult.h>
@@ -63,7 +72,9 @@
 #include <aws/gamelift/model/UpdateFleetPortSettingsResult.h>
 #include <aws/gamelift/model/UpdateGameSessionResult.h>
 #include <aws/gamelift/model/UpdateGameSessionQueueResult.h>
+#include <aws/gamelift/model/UpdateMatchmakingConfigurationResult.h>
 #include <aws/gamelift/model/UpdateRuntimeConfigurationResult.h>
+#include <aws/gamelift/model/ValidateMatchmakingRuleSetResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -110,17 +121,21 @@ namespace GameLift
 
 namespace Model
 {
+        class AcceptMatchRequest;
         class CreateAliasRequest;
         class CreateBuildRequest;
         class CreateFleetRequest;
         class CreateGameSessionRequest;
         class CreateGameSessionQueueRequest;
+        class CreateMatchmakingConfigurationRequest;
+        class CreateMatchmakingRuleSetRequest;
         class CreatePlayerSessionRequest;
         class CreatePlayerSessionsRequest;
         class DeleteAliasRequest;
         class DeleteBuildRequest;
         class DeleteFleetRequest;
         class DeleteGameSessionQueueRequest;
+        class DeleteMatchmakingConfigurationRequest;
         class DeleteScalingPolicyRequest;
         class DescribeAliasRequest;
         class DescribeBuildRequest;
@@ -135,6 +150,9 @@ namespace Model
         class DescribeGameSessionQueuesRequest;
         class DescribeGameSessionsRequest;
         class DescribeInstancesRequest;
+        class DescribeMatchmakingRequest;
+        class DescribeMatchmakingConfigurationsRequest;
+        class DescribeMatchmakingRuleSetsRequest;
         class DescribePlayerSessionsRequest;
         class DescribeRuntimeConfigurationRequest;
         class DescribeScalingPoliciesRequest;
@@ -148,7 +166,9 @@ namespace Model
         class ResolveAliasRequest;
         class SearchGameSessionsRequest;
         class StartGameSessionPlacementRequest;
+        class StartMatchmakingRequest;
         class StopGameSessionPlacementRequest;
+        class StopMatchmakingRequest;
         class UpdateAliasRequest;
         class UpdateBuildRequest;
         class UpdateFleetAttributesRequest;
@@ -156,19 +176,25 @@ namespace Model
         class UpdateFleetPortSettingsRequest;
         class UpdateGameSessionRequest;
         class UpdateGameSessionQueueRequest;
+        class UpdateMatchmakingConfigurationRequest;
         class UpdateRuntimeConfigurationRequest;
+        class ValidateMatchmakingRuleSetRequest;
 
+        typedef Aws::Utils::Outcome<AcceptMatchResult, Aws::Client::AWSError<GameLiftErrors>> AcceptMatchOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, Aws::Client::AWSError<GameLiftErrors>> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateBuildResult, Aws::Client::AWSError<GameLiftErrors>> CreateBuildOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<GameLiftErrors>> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateGameSessionResult, Aws::Client::AWSError<GameLiftErrors>> CreateGameSessionOutcome;
         typedef Aws::Utils::Outcome<CreateGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> CreateGameSessionQueueOutcome;
+        typedef Aws::Utils::Outcome<CreateMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> CreateMatchmakingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> CreateMatchmakingRuleSetOutcome;
         typedef Aws::Utils::Outcome<CreatePlayerSessionResult, Aws::Client::AWSError<GameLiftErrors>> CreatePlayerSessionOutcome;
         typedef Aws::Utils::Outcome<CreatePlayerSessionsResult, Aws::Client::AWSError<GameLiftErrors>> CreatePlayerSessionsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteBuildOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteFleetOutcome;
         typedef Aws::Utils::Outcome<DeleteGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> DeleteGameSessionQueueOutcome;
+        typedef Aws::Utils::Outcome<DeleteMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingConfigurationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeAliasResult, Aws::Client::AWSError<GameLiftErrors>> DescribeAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBuildResult, Aws::Client::AWSError<GameLiftErrors>> DescribeBuildOutcome;
@@ -183,6 +209,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeGameSessionQueuesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionQueuesOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> DescribeMatchmakingOutcome;
+        typedef Aws::Utils::Outcome<DescribeMatchmakingConfigurationsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeMatchmakingConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeMatchmakingRuleSetsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeMatchmakingRuleSetsOutcome;
         typedef Aws::Utils::Outcome<DescribePlayerSessionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribePlayerSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRuntimeConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeRuntimeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeScalingPoliciesOutcome;
@@ -196,7 +225,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ResolveAliasResult, Aws::Client::AWSError<GameLiftErrors>> ResolveAliasOutcome;
         typedef Aws::Utils::Outcome<SearchGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> SearchGameSessionsOutcome;
         typedef Aws::Utils::Outcome<StartGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StartGameSessionPlacementOutcome;
+        typedef Aws::Utils::Outcome<StartMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StartMatchmakingOutcome;
         typedef Aws::Utils::Outcome<StopGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StopGameSessionPlacementOutcome;
+        typedef Aws::Utils::Outcome<StopMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StopMatchmakingOutcome;
         typedef Aws::Utils::Outcome<UpdateAliasResult, Aws::Client::AWSError<GameLiftErrors>> UpdateAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateBuildResult, Aws::Client::AWSError<GameLiftErrors>> UpdateBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetAttributesResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetAttributesOutcome;
@@ -204,19 +235,25 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFleetPortSettingsResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetPortSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateGameSessionResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameSessionOutcome;
         typedef Aws::Utils::Outcome<UpdateGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameSessionQueueOutcome;
+        typedef Aws::Utils::Outcome<UpdateMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> UpdateMatchmakingConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateRuntimeConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> UpdateRuntimeConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ValidateMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> ValidateMatchmakingRuleSetOutcome;
 
+        typedef std::future<AcceptMatchOutcome> AcceptMatchOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateBuildOutcome> CreateBuildOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<CreateGameSessionOutcome> CreateGameSessionOutcomeCallable;
         typedef std::future<CreateGameSessionQueueOutcome> CreateGameSessionQueueOutcomeCallable;
+        typedef std::future<CreateMatchmakingConfigurationOutcome> CreateMatchmakingConfigurationOutcomeCallable;
+        typedef std::future<CreateMatchmakingRuleSetOutcome> CreateMatchmakingRuleSetOutcomeCallable;
         typedef std::future<CreatePlayerSessionOutcome> CreatePlayerSessionOutcomeCallable;
         typedef std::future<CreatePlayerSessionsOutcome> CreatePlayerSessionsOutcomeCallable;
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteBuildOutcome> DeleteBuildOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
         typedef std::future<DeleteGameSessionQueueOutcome> DeleteGameSessionQueueOutcomeCallable;
+        typedef std::future<DeleteMatchmakingConfigurationOutcome> DeleteMatchmakingConfigurationOutcomeCallable;
         typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
         typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
         typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
@@ -231,6 +268,9 @@ namespace Model
         typedef std::future<DescribeGameSessionQueuesOutcome> DescribeGameSessionQueuesOutcomeCallable;
         typedef std::future<DescribeGameSessionsOutcome> DescribeGameSessionsOutcomeCallable;
         typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+        typedef std::future<DescribeMatchmakingOutcome> DescribeMatchmakingOutcomeCallable;
+        typedef std::future<DescribeMatchmakingConfigurationsOutcome> DescribeMatchmakingConfigurationsOutcomeCallable;
+        typedef std::future<DescribeMatchmakingRuleSetsOutcome> DescribeMatchmakingRuleSetsOutcomeCallable;
         typedef std::future<DescribePlayerSessionsOutcome> DescribePlayerSessionsOutcomeCallable;
         typedef std::future<DescribeRuntimeConfigurationOutcome> DescribeRuntimeConfigurationOutcomeCallable;
         typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
@@ -244,7 +284,9 @@ namespace Model
         typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
         typedef std::future<SearchGameSessionsOutcome> SearchGameSessionsOutcomeCallable;
         typedef std::future<StartGameSessionPlacementOutcome> StartGameSessionPlacementOutcomeCallable;
+        typedef std::future<StartMatchmakingOutcome> StartMatchmakingOutcomeCallable;
         typedef std::future<StopGameSessionPlacementOutcome> StopGameSessionPlacementOutcomeCallable;
+        typedef std::future<StopMatchmakingOutcome> StopMatchmakingOutcomeCallable;
         typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
         typedef std::future<UpdateBuildOutcome> UpdateBuildOutcomeCallable;
         typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
@@ -252,22 +294,28 @@ namespace Model
         typedef std::future<UpdateFleetPortSettingsOutcome> UpdateFleetPortSettingsOutcomeCallable;
         typedef std::future<UpdateGameSessionOutcome> UpdateGameSessionOutcomeCallable;
         typedef std::future<UpdateGameSessionQueueOutcome> UpdateGameSessionQueueOutcomeCallable;
+        typedef std::future<UpdateMatchmakingConfigurationOutcome> UpdateMatchmakingConfigurationOutcomeCallable;
         typedef std::future<UpdateRuntimeConfigurationOutcome> UpdateRuntimeConfigurationOutcomeCallable;
+        typedef std::future<ValidateMatchmakingRuleSetOutcome> ValidateMatchmakingRuleSetOutcomeCallable;
 } // namespace Model
 
   class GameLiftClient;
 
+    typedef std::function<void(const GameLiftClient*, const Model::AcceptMatchRequest&, const Model::AcceptMatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptMatchResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateBuildRequest&, const Model::CreateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionRequest&, const Model::CreateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionQueueRequest&, const Model::CreateGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionQueueResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingConfigurationRequest&, const Model::CreateMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingRuleSetRequest&, const Model::CreateMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingRuleSetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreatePlayerSessionRequest&, const Model::CreatePlayerSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlayerSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreatePlayerSessionsRequest&, const Model::CreatePlayerSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlayerSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteBuildRequest&, const Model::DeleteBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameSessionQueueRequest&, const Model::DeleteGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameSessionQueueResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingConfigurationRequest&, const Model::DeleteMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScalingPolicyRequest&, const Model::DeleteScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeAliasRequest&, const Model::DescribeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeBuildRequest&, const Model::DescribeBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBuildResponseReceivedHandler;
@@ -282,6 +330,9 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionQueuesRequest&, const Model::DescribeGameSessionQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionQueuesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionsRequest&, const Model::DescribeGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeMatchmakingRequest&, const Model::DescribeMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMatchmakingResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeMatchmakingConfigurationsRequest&, const Model::DescribeMatchmakingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMatchmakingConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeMatchmakingRuleSetsRequest&, const Model::DescribeMatchmakingRuleSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMatchmakingRuleSetsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribePlayerSessionsRequest&, const Model::DescribePlayerSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlayerSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeRuntimeConfigurationRequest&, const Model::DescribeRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
@@ -295,7 +346,9 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::SearchGameSessionsRequest&, const Model::SearchGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGameSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartGameSessionPlacementRequest&, const Model::StartGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGameSessionPlacementResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::StartMatchmakingRequest&, const Model::StartMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMatchmakingResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopGameSessionPlacementRequest&, const Model::StopGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopGameSessionPlacementResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::StopMatchmakingRequest&, const Model::StopMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMatchmakingResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateBuildRequest&, const Model::UpdateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetAttributesRequest&, const Model::UpdateFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetAttributesResponseReceivedHandler;
@@ -303,7 +356,9 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetPortSettingsRequest&, const Model::UpdateFleetPortSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetPortSettingsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateGameSessionRequest&, const Model::UpdateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateGameSessionQueueRequest&, const Model::UpdateGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameSessionQueueResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::UpdateMatchmakingConfigurationRequest&, const Model::UpdateMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateRuntimeConfigurationRequest&, const Model::UpdateRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuntimeConfigurationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ValidateMatchmakingRuleSetRequest&, const Model::ValidateMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateMatchmakingRuleSetResponseReceivedHandler;
 
   /**
    * <fullname>Amazon GameLift Service</fullname> <p> Amazon GameLift is a managed
@@ -332,7 +387,7 @@ namespace Model
    * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
    * for Amazon GameLift provides a web interface to manage your Amazon GameLift
    * settings and resources. The console includes a dashboard for tracking key
-   * resources, includings builds and fleets, and displays usage and performance
+   * resources, including builds and fleets, and displays usage and performance
    * metrics for your games as customizable graphs.</p> </li> <li> <p>Amazon GameLift
    * Local is a tool for testing your game's integration with Amazon GameLift before
    * deploying it on the service. This tools supports a subset of key API actions,
@@ -353,40 +408,47 @@ namespace Model
    * GameLift Document History</a> – See changes to the Amazon GameLift service,
    * SDKs, and documentation, as well as links to release notes. </p> </li> </ul> <p>
    * <b>API SUMMARY</b> </p> <p>This list offers a functional overview of the Amazon
-   * GameLift service API.</p> <p> <b>Managing Games and Players</b> </p> <p>These
-   * actions allow you to start new game sessions, find existing game sessions, track
-   * status and other game session information, and enable access for players to join
-   * game sessions.</p> <ul> <li> <p> <b>Discover existing game sessions</b> </p>
-   * <ul> <li> <p> <a>SearchGameSessions</a> – Get all available game sessions or
+   * GameLift service API.</p> <p> <b>Managing Games and Players</b> </p> <p>Use
+   * these actions to start new game sessions, find existing game sessions, track
+   * game session status and other information, and enable player access to game
+   * sessions.</p> <ul> <li> <p> <b>Discover existing game sessions</b> </p> <ul>
+   * <li> <p> <a>SearchGameSessions</a> – Retrieve all available game sessions or
    * search for game sessions that match a set of criteria. </p> </li> </ul> </li>
-   * <li> <p> <b>Start a new game session</b> </p> <ul> <li> <p>Game session
-   * placement – Use a queue to process requests for new game sessions and place them
-   * on the best available fleet. Placement requests are asynchronous; game sessions
-   * are started whenever acceptable resources become available. </p> <ul> <li> <p>
-   * <a>StartGameSessionPlacement</a> – Request a new game session placement and add
-   * one or more players to it.</p> </li> <li> <p>
-   * <a>DescribeGameSessionPlacement</a> – Get details on a placement request,
-   * including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> – Cancel a
-   * placement request. </p> </li> </ul> </li> <li> <p> <a>CreateGameSession</a> –
-   * Request a new game session on a specific fleet. <i>Available in Amazon GameLift
-   * Local.</i> </p> </li> </ul> </li> <li> <p> <b>Manage game session data</b> </p>
-   * <ul> <li> <p> <a>DescribeGameSessions</a> – Retrieve metadata for one or more
-   * game sessions, including length of time active and current player count.
-   * <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
-   * <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session
-   * protection setting for one or more game sessions.</p> </li> <li> <p>
-   * <a>UpdateGameSession</a> – Change game session settings, such as maximum player
-   * count and join policy.</p> </li> <li> <p> <a>GetGameSessionLogUrl</a> – Get the
-   * location of saved logs for a game session.</p> </li> </ul> </li> <li> <p>
-   * <b>Manage player sessions</b> </p> <ul> <li> <p> <a>CreatePlayerSession</a> –
-   * Send a request for a player to join a game session. <i>Available in Amazon
-   * GameLift Local.</i> </p> </li> <li> <p> <a>CreatePlayerSessions</a> – Send a
-   * request for multiple players to join a game session. <i>Available in Amazon
-   * GameLift Local.</i> </p> </li> <li> <p> <a>DescribePlayerSessions</a> – Get
-   * details on player activity, including status, playing time, and player data.
-   * <i>Available in Amazon GameLift Local.</i> </p> </li> </ul> </li> </ul> <p>
-   * <b>Setting Up and Managing Game Servers</b> </p> <p>When setting up Amazon
-   * GameLift resources for your game, you first <a
+   * <li> <p> <b>Start new game sessions</b> </p> <ul> <li> <p>Start new games with
+   * Queues to find the best available hosting resources across multiple regions,
+   * minimize player latency, and balance game session activity for efficiency and
+   * cost effectiveness. </p> <ul> <li> <p> <a>StartGameSessionPlacement</a> –
+   * Request a new game session placement and add one or more players to it.</p>
+   * </li> <li> <p> <a>DescribeGameSessionPlacement</a> – Get details on a placement
+   * request, including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> –
+   * Cancel a placement request. </p> </li> </ul> </li> <li> <p>
+   * <a>CreateGameSession</a> – Start a new game session on a specific fleet.
+   * <i>Available in Amazon GameLift Local.</i> </p> </li> </ul> </li> <li> <p>
+   * <b>Start new game sessions with FlexMatch matchmaking</b> </p> <ul> <li> <p>
+   * <a>StartMatchmaking</a> – Request matchmaking for one players or a group who
+   * want to play together. </p> </li> <li> <p> <a>DescribeMatchmaking</a> – Get
+   * details on a matchmaking request, including status.</p> </li> <li> <p>
+   * <a>AcceptMatch</a> – Register that a player accepts a proposed match, for
+   * matches that require player acceptance. </p> </li> <li> <p>
+   * <a>StopMatchmaking</a> – Cancel a matchmaking request. </p> </li> </ul> </li>
+   * <li> <p> <b>Manage game session data</b> </p> <ul> <li> <p>
+   * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions,
+   * including length of time active and current player count. <i>Available in Amazon
+   * GameLift Local.</i> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> –
+   * Retrieve metadata and the game session protection setting for one or more game
+   * sessions.</p> </li> <li> <p> <a>UpdateGameSession</a> – Change game session
+   * settings, such as maximum player count and join policy.</p> </li> <li> <p>
+   * <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game
+   * session.</p> </li> </ul> </li> <li> <p> <b>Manage player sessions</b> </p> <ul>
+   * <li> <p> <a>CreatePlayerSession</a> – Send a request for a player to join a game
+   * session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
+   * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
+   * session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
+   * <a>DescribePlayerSessions</a> – Get details on player activity, including
+   * status, playing time, and player data. <i>Available in Amazon GameLift
+   * Local.</i> </p> </li> </ul> </li> </ul> <p> <b>Setting Up and Managing Game
+   * Servers</b> </p> <p>When setting up Amazon GameLift resources for your game, you
+   * first <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create
    * a game build</a> and upload it to Amazon GameLift. You can then use these
    * actions to configure and manage a fleet of resources to run your game servers,
@@ -445,11 +507,24 @@ namespace Model
    * <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.</p>
    * </li> </ul> </li> <li> <p> <b>Manage game session queues</b> </p> <ul> <li> <p>
    * <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new
-   * game sessions. </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> – Get data
-   * on all game session queues defined in a Amazon GameLift region.</p> </li> <li>
-   * <p> <a>UpdateGameSessionQueue</a> – Change the configuration of a game session
+   * game sessions. </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> – Retrieve
+   * game session queues defined in a Amazon GameLift region.</p> </li> <li> <p>
+   * <a>UpdateGameSessionQueue</a> – Change the configuration of a game session
    * queue.</p> </li> <li> <p> <a>DeleteGameSessionQueue</a> – Remove a game session
-   * queue from the region.</p> </li> </ul> </li> </ul>
+   * queue from the region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch
+   * resources</b> </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> – Create
+   * a matchmaking configuration with instructions for building a player group and
+   * placing in a new game session. </p> </li> <li> <p>
+   * <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations
+   * defined a Amazon GameLift region.</p> </li> <li> <p>
+   * <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking
+   * configuration. queue.</p> </li> <li> <p> <a>DeleteMatchmakingConfiguration</a> –
+   * Remove a matchmaking configuration from the region.</p> </li> <li> <p>
+   * <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching
+   * for player matches. </p> </li> <li> <p> <a>DescribeMatchmakingRuleSets</a> –
+   * Retrieve matchmaking rule sets defined in a Amazon GameLift region.</p> </li>
+   * <li> <p> <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of
+   * matchmaking rules. </p> </li> </ul> </li> </ul>
    */
   class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient
   {
@@ -476,6 +551,94 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~GameLiftClient();
+
+        /**
+         * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
+         * matchmaking configuration may require player acceptance; if so, then matches
+         * built with that configuration cannot be completed unless all players accept the
+         * proposed match within a specified time limit. </p> <p>When FlexMatch builds a
+         * match, all the matchmaking tickets involved in the proposed match are placed
+         * into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to
+         * get acceptance from all players in the ticket. Acceptances are only valid for
+         * tickets when they are in this status; all other acceptances result in an
+         * error.</p> <p>To register acceptance, specify the ticket ID, a response, and one
+         * or more players. Once all players have registered acceptance, the matchmaking
+         * tickets advance to status <code>PLACING</code>, where a new game session is
+         * created for the match. </p> <p>If any player rejects the match, or if
+         * acceptances are not received before a specified timeout, the proposed match is
+         * dropped. The matchmaking tickets are then handled in one of two ways: For
+         * tickets where all players accepted the match, the ticket status is returned to
+         * <code>SEARCHING</code> to find a new match. For tickets where one or more
+         * players failed to accept the match, the ticket status is set to
+         * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
+         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptMatchOutcome AcceptMatch(const Model::AcceptMatchRequest& request) const;
+
+        /**
+         * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
+         * matchmaking configuration may require player acceptance; if so, then matches
+         * built with that configuration cannot be completed unless all players accept the
+         * proposed match within a specified time limit. </p> <p>When FlexMatch builds a
+         * match, all the matchmaking tickets involved in the proposed match are placed
+         * into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to
+         * get acceptance from all players in the ticket. Acceptances are only valid for
+         * tickets when they are in this status; all other acceptances result in an
+         * error.</p> <p>To register acceptance, specify the ticket ID, a response, and one
+         * or more players. Once all players have registered acceptance, the matchmaking
+         * tickets advance to status <code>PLACING</code>, where a new game session is
+         * created for the match. </p> <p>If any player rejects the match, or if
+         * acceptances are not received before a specified timeout, the proposed match is
+         * dropped. The matchmaking tickets are then handled in one of two ways: For
+         * tickets where all players accepted the match, the ticket status is returned to
+         * <code>SEARCHING</code> to find a new match. For tickets where one or more
+         * players failed to accept the match, the ticket status is set to
+         * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
+         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptMatchOutcomeCallable AcceptMatchCallable(const Model::AcceptMatchRequest& request) const;
+
+        /**
+         * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
+         * matchmaking configuration may require player acceptance; if so, then matches
+         * built with that configuration cannot be completed unless all players accept the
+         * proposed match within a specified time limit. </p> <p>When FlexMatch builds a
+         * match, all the matchmaking tickets involved in the proposed match are placed
+         * into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to
+         * get acceptance from all players in the ticket. Acceptances are only valid for
+         * tickets when they are in this status; all other acceptances result in an
+         * error.</p> <p>To register acceptance, specify the ticket ID, a response, and one
+         * or more players. Once all players have registered acceptance, the matchmaking
+         * tickets advance to status <code>PLACING</code>, where a new game session is
+         * created for the match. </p> <p>If any player rejects the match, or if
+         * acceptances are not received before a specified timeout, the proposed match is
+         * dropped. The matchmaking tickets are then handled in one of two ways: For
+         * tickets where all players accepted the match, the ticket status is returned to
+         * <code>SEARCHING</code> to find a new match. For tickets where one or more
+         * players failed to accept the match, the ticket status is set to
+         * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
+         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptMatchAsync(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alias for a fleet. In most situations, you can use an alias ID in
@@ -659,26 +822,26 @@ namespace Model
          * (Although the run-time configuration is not a required parameter, the fleet
          * cannot be successfully activated without it.)</p> <p>You can also configure the
          * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li> <p>Fleetwide
-         * game session protection</p> </li> <li> <p>Resource creation limit</p> </li>
-         * </ul> <p>If you use Amazon CloudWatch for metrics, you can add the new fleet to
-         * a metric group. This allows you to view aggregated metrics for a set of fleets.
-         * Once you specify a metric group, the new fleet's metrics are included in the
-         * metric group's data.</p> <p>If the CreateFleet call is successful, Amazon
-         * GameLift performs the following tasks:</p> <ul> <li> <p>Creates a fleet record
-         * and sets the status to <code>NEW</code> (followed by other statuses as the fleet
-         * is activated).</p> </li> <li> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which causes Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each launch by a few seconds.</p> </li> <li> <p>Begins writing events
-         * to the fleet event log, which can be accessed in the Amazon GameLift
-         * console.</p> </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as
-         * soon as one server process in the fleet is ready to host a game session.</p>
-         * </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
+         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
+         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
+         * the new fleet to a metric group. This allows you to view aggregated metrics for
+         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
+         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
+         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
+         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
+         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
+         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
+         * instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
+         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
+         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -712,26 +875,26 @@ namespace Model
          * (Although the run-time configuration is not a required parameter, the fleet
          * cannot be successfully activated without it.)</p> <p>You can also configure the
          * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li> <p>Fleetwide
-         * game session protection</p> </li> <li> <p>Resource creation limit</p> </li>
-         * </ul> <p>If you use Amazon CloudWatch for metrics, you can add the new fleet to
-         * a metric group. This allows you to view aggregated metrics for a set of fleets.
-         * Once you specify a metric group, the new fleet's metrics are included in the
-         * metric group's data.</p> <p>If the CreateFleet call is successful, Amazon
-         * GameLift performs the following tasks:</p> <ul> <li> <p>Creates a fleet record
-         * and sets the status to <code>NEW</code> (followed by other statuses as the fleet
-         * is activated).</p> </li> <li> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which causes Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each launch by a few seconds.</p> </li> <li> <p>Begins writing events
-         * to the fleet event log, which can be accessed in the Amazon GameLift
-         * console.</p> </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as
-         * soon as one server process in the fleet is ready to host a game session.</p>
-         * </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
+         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
+         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
+         * the new fleet to a metric group. This allows you to view aggregated metrics for
+         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
+         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
+         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
+         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
+         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
+         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
+         * instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
+         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
+         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -767,26 +930,26 @@ namespace Model
          * (Although the run-time configuration is not a required parameter, the fleet
          * cannot be successfully activated without it.)</p> <p>You can also configure the
          * new fleet with the following settings:</p> <ul> <li> <p>Fleet description</p>
-         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li> <p>Fleetwide
-         * game session protection</p> </li> <li> <p>Resource creation limit</p> </li>
-         * </ul> <p>If you use Amazon CloudWatch for metrics, you can add the new fleet to
-         * a metric group. This allows you to view aggregated metrics for a set of fleets.
-         * Once you specify a metric group, the new fleet's metrics are included in the
-         * metric group's data.</p> <p>If the CreateFleet call is successful, Amazon
-         * GameLift performs the following tasks:</p> <ul> <li> <p>Creates a fleet record
-         * and sets the status to <code>NEW</code> (followed by other statuses as the fleet
-         * is activated).</p> </li> <li> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which causes Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each launch by a few seconds.</p> </li> <li> <p>Begins writing events
-         * to the fleet event log, which can be accessed in the Amazon GameLift
-         * console.</p> </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as
-         * soon as one server process in the fleet is ready to host a game session.</p>
-         * </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * </li> <li> <p>Access permissions for inbound traffic</p> </li> <li>
+         * <p>Fleet-wide game session protection</p> </li> <li> <p>Resource creation
+         * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
+         * the new fleet to a metric group. This allows you to view aggregated metrics for
+         * a set of fleets. Once you specify a metric group, the new fleet's metrics are
+         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
+         * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
+         * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
+         * target capacity to 1 (desired instances), which causes Amazon GameLift to start
+         * one new EC2 instance.</p> </li> <li> <p>Starts launching server processes on the
+         * instance. If the fleet is configured to run multiple server processes per
+         * instance, Amazon GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> as soon as one server process in the fleet is ready to host
+         * a game session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p>
+         * </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
@@ -815,20 +978,23 @@ namespace Model
          * either fleet ID or alias ID and indicate a maximum number of players to allow in
          * the game session. You can also provide a name and game-specific properties for
          * this game session. If successful, a <a>GameSession</a> object is returned
-         * containing game session properties, including a game session ID with the custom
-         * string you provided.</p> <p> <b>Idempotency tokens.</b> You can add a token that
-         * uniquely identifies game session requests. This is useful for ensuring that game
-         * session requests are idempotent. Multiple requests with the same idempotency
-         * token are processed only once; subsequent requests return the original result.
-         * All response values are the same with the exception of game session status,
-         * which may change.</p> <p> <b>Resource creation limits.</b> If you are creating a
-         * game session on a fleet with a resource creation limit policy in force, then you
-         * must specify a creator ID. Without this ID, Amazon GameLift has no way to
-         * evaluate the policy for this new game session request.</p> <p> By default, newly
-         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
-         * change the game session's player session creation policy.</p> <p> <i>Available
-         * in Amazon GameLift Local.</i> </p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * containing the game session properties and other settings you specified.</p> <p>
+         * <b>Idempotency tokens.</b> You can add a token that uniquely identifies game
+         * session requests. This is useful for ensuring that game session requests are
+         * idempotent. Multiple requests with the same idempotency token are processed only
+         * once; subsequent requests return the original result. All response values are
+         * the same with the exception of game session status, which may change.</p> <p>
+         * <b>Resource creation limits.</b> If you are creating a game session on a fleet
+         * with a resource creation limit policy in force, then you must specify a creator
+         * ID. Without this ID, Amazon GameLift has no way to evaluate the policy for this
+         * new game session request.</p> <p> <b>Player acceptance policy.</b> By default,
+         * newly created game sessions are open to new players. You can restrict new player
+         * access by using <a>UpdateGameSession</a> to change the game session's player
+         * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
+         * all active game sessions for 14 days. To access the logs, call
+         * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
+         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
          * <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -850,20 +1016,23 @@ namespace Model
          * either fleet ID or alias ID and indicate a maximum number of players to allow in
          * the game session. You can also provide a name and game-specific properties for
          * this game session. If successful, a <a>GameSession</a> object is returned
-         * containing game session properties, including a game session ID with the custom
-         * string you provided.</p> <p> <b>Idempotency tokens.</b> You can add a token that
-         * uniquely identifies game session requests. This is useful for ensuring that game
-         * session requests are idempotent. Multiple requests with the same idempotency
-         * token are processed only once; subsequent requests return the original result.
-         * All response values are the same with the exception of game session status,
-         * which may change.</p> <p> <b>Resource creation limits.</b> If you are creating a
-         * game session on a fleet with a resource creation limit policy in force, then you
-         * must specify a creator ID. Without this ID, Amazon GameLift has no way to
-         * evaluate the policy for this new game session request.</p> <p> By default, newly
-         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
-         * change the game session's player session creation policy.</p> <p> <i>Available
-         * in Amazon GameLift Local.</i> </p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * containing the game session properties and other settings you specified.</p> <p>
+         * <b>Idempotency tokens.</b> You can add a token that uniquely identifies game
+         * session requests. This is useful for ensuring that game session requests are
+         * idempotent. Multiple requests with the same idempotency token are processed only
+         * once; subsequent requests return the original result. All response values are
+         * the same with the exception of game session status, which may change.</p> <p>
+         * <b>Resource creation limits.</b> If you are creating a game session on a fleet
+         * with a resource creation limit policy in force, then you must specify a creator
+         * ID. Without this ID, Amazon GameLift has no way to evaluate the policy for this
+         * new game session request.</p> <p> <b>Player acceptance policy.</b> By default,
+         * newly created game sessions are open to new players. You can restrict new player
+         * access by using <a>UpdateGameSession</a> to change the game session's player
+         * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
+         * all active game sessions for 14 days. To access the logs, call
+         * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
+         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
          * <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -887,20 +1056,23 @@ namespace Model
          * either fleet ID or alias ID and indicate a maximum number of players to allow in
          * the game session. You can also provide a name and game-specific properties for
          * this game session. If successful, a <a>GameSession</a> object is returned
-         * containing game session properties, including a game session ID with the custom
-         * string you provided.</p> <p> <b>Idempotency tokens.</b> You can add a token that
-         * uniquely identifies game session requests. This is useful for ensuring that game
-         * session requests are idempotent. Multiple requests with the same idempotency
-         * token are processed only once; subsequent requests return the original result.
-         * All response values are the same with the exception of game session status,
-         * which may change.</p> <p> <b>Resource creation limits.</b> If you are creating a
-         * game session on a fleet with a resource creation limit policy in force, then you
-         * must specify a creator ID. Without this ID, Amazon GameLift has no way to
-         * evaluate the policy for this new game session request.</p> <p> By default, newly
-         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
-         * change the game session's player session creation policy.</p> <p> <i>Available
-         * in Amazon GameLift Local.</i> </p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * containing the game session properties and other settings you specified.</p> <p>
+         * <b>Idempotency tokens.</b> You can add a token that uniquely identifies game
+         * session requests. This is useful for ensuring that game session requests are
+         * idempotent. Multiple requests with the same idempotency token are processed only
+         * once; subsequent requests return the original result. All response values are
+         * the same with the exception of game session status, which may change.</p> <p>
+         * <b>Resource creation limits.</b> If you are creating a game session on a fleet
+         * with a resource creation limit policy in force, then you must specify a creator
+         * ID. Without this ID, Amazon GameLift has no way to evaluate the policy for this
+         * new game session request.</p> <p> <b>Player acceptance policy.</b> By default,
+         * newly created game sessions are open to new players. You can restrict new player
+         * access by using <a>UpdateGameSession</a> to change the game session's player
+         * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
+         * all active game sessions for 14 days. To access the logs, call
+         * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
+         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
          * <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -1027,6 +1199,230 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGameSessionQueueAsync(const Model::CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
+         * configuration sets out guidelines for matching players and getting the matches
+         * into games. You can set up multiple matchmaking configurations to handle the
+         * scenarios needed for your game. Each matchmaking request
+         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
+         * player attributes to support the configuration being used. </p> <p>To create a
+         * matchmaking configuration, at a minimum you must specify the following:
+         * configuration name; a rule set that governs how to evaluate players and find
+         * acceptable matches; a game session queue to use when placing a new game session
+         * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
+         * <b>Player acceptance</b> -- In each configuration, you have the option to
+         * require that all players accept participation in a proposed match. To enable
+         * this feature, set <i>AcceptanceRequired</i> to true and specify a time limit for
+         * player acceptance. Players have the option to accept or reject a proposed match,
+         * and a match does not move ahead to game session placement unless all matched
+         * players accept. </p> <p> <b>Matchmaking status notification</b> -- There are two
+         * ways to track the progress of matchmaking tickets: (1) polling ticket status
+         * with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
+         * Simple Notification Service (SNS). To use notifications, you first need to set
+         * up an SNS topic to receive the notifications, and provide the topic ARN in the
+         * matchmaking configuration (see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * Setting up Notifications for Matchmaking</a>). Since notifications promise only
+         * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
+         * no notifications are received within 30 seconds.</p> <p>Operations related to
+         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMatchmakingConfigurationOutcome CreateMatchmakingConfiguration(const Model::CreateMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
+         * configuration sets out guidelines for matching players and getting the matches
+         * into games. You can set up multiple matchmaking configurations to handle the
+         * scenarios needed for your game. Each matchmaking request
+         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
+         * player attributes to support the configuration being used. </p> <p>To create a
+         * matchmaking configuration, at a minimum you must specify the following:
+         * configuration name; a rule set that governs how to evaluate players and find
+         * acceptable matches; a game session queue to use when placing a new game session
+         * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
+         * <b>Player acceptance</b> -- In each configuration, you have the option to
+         * require that all players accept participation in a proposed match. To enable
+         * this feature, set <i>AcceptanceRequired</i> to true and specify a time limit for
+         * player acceptance. Players have the option to accept or reject a proposed match,
+         * and a match does not move ahead to game session placement unless all matched
+         * players accept. </p> <p> <b>Matchmaking status notification</b> -- There are two
+         * ways to track the progress of matchmaking tickets: (1) polling ticket status
+         * with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
+         * Simple Notification Service (SNS). To use notifications, you first need to set
+         * up an SNS topic to receive the notifications, and provide the topic ARN in the
+         * matchmaking configuration (see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * Setting up Notifications for Matchmaking</a>). Since notifications promise only
+         * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
+         * no notifications are received within 30 seconds.</p> <p>Operations related to
+         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMatchmakingConfigurationOutcomeCallable CreateMatchmakingConfigurationCallable(const Model::CreateMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Defines a new matchmaking configuration for use with FlexMatch. A matchmaking
+         * configuration sets out guidelines for matching players and getting the matches
+         * into games. You can set up multiple matchmaking configurations to handle the
+         * scenarios needed for your game. Each matchmaking request
+         * (<a>StartMatchmaking</a>) specifies a configuration for the match and provides
+         * player attributes to support the configuration being used. </p> <p>To create a
+         * matchmaking configuration, at a minimum you must specify the following:
+         * configuration name; a rule set that governs how to evaluate players and find
+         * acceptable matches; a game session queue to use when placing a new game session
+         * for the match; and the maximum time allowed for a matchmaking attempt.</p> <p>
+         * <b>Player acceptance</b> -- In each configuration, you have the option to
+         * require that all players accept participation in a proposed match. To enable
+         * this feature, set <i>AcceptanceRequired</i> to true and specify a time limit for
+         * player acceptance. Players have the option to accept or reject a proposed match,
+         * and a match does not move ahead to game session placement unless all matched
+         * players accept. </p> <p> <b>Matchmaking status notification</b> -- There are two
+         * ways to track the progress of matchmaking tickets: (1) polling ticket status
+         * with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
+         * Simple Notification Service (SNS). To use notifications, you first need to set
+         * up an SNS topic to receive the notifications, and provide the topic ARN in the
+         * matchmaking configuration (see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * Setting up Notifications for Matchmaking</a>). Since notifications promise only
+         * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
+         * no notifications are received within 30 seconds.</p> <p>Operations related to
+         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMatchmakingConfigurationAsync(const Model::CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
+         * type of match to create, such as the number and size of teams, and sets the
+         * parameters for acceptable player matches, such as minimum skill level or
+         * character type. Rule sets are used in matchmaking configurations, which define
+         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
+         * one rule set; you can set up multiple rule sets to handle the scenarios that
+         * suit your game (such as for different game modes), and create a separate
+         * matchmaking configuration for each rule set. See additional information on rule
+         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
+         * sets, including useful examples, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
+         * cannot be changed or deleted, so we recommend checking the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
+         * must be defined in the same region as the matchmaking configuration they will be
+         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
+         * set, create a new one with the necessary edits and then update matchmaking
+         * configurations to use the new rule set.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMatchmakingRuleSetOutcome CreateMatchmakingRuleSet(const Model::CreateMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
+         * type of match to create, such as the number and size of teams, and sets the
+         * parameters for acceptable player matches, such as minimum skill level or
+         * character type. Rule sets are used in matchmaking configurations, which define
+         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
+         * one rule set; you can set up multiple rule sets to handle the scenarios that
+         * suit your game (such as for different game modes), and create a separate
+         * matchmaking configuration for each rule set. See additional information on rule
+         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
+         * sets, including useful examples, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
+         * cannot be changed or deleted, so we recommend checking the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
+         * must be defined in the same region as the matchmaking configuration they will be
+         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
+         * set, create a new one with the necessary edits and then update matchmaking
+         * configurations to use the new rule set.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMatchmakingRuleSetOutcomeCallable CreateMatchmakingRuleSetCallable(const Model::CreateMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
+         * type of match to create, such as the number and size of teams, and sets the
+         * parameters for acceptable player matches, such as minimum skill level or
+         * character type. Rule sets are used in matchmaking configurations, which define
+         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
+         * one rule set; you can set up multiple rule sets to handle the scenarios that
+         * suit your game (such as for different game modes), and create a separate
+         * matchmaking configuration for each rule set. See additional information on rule
+         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
+         * sets, including useful examples, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
+         * cannot be changed or deleted, so we recommend checking the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a>before creating the rule set.</p> <p>To create
+         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
+         * must be defined in the same region as the matchmaking configuration they will be
+         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
+         * set, create a new one with the necessary edits and then update matchmaking
+         * configurations to use the new rule set.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMatchmakingRuleSetAsync(const Model::CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a player to a game session and creates a player session record. Before a
@@ -1384,6 +1780,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGameSessionQueueAsync(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
+         * the configuration name. A matchmaking configuration cannot be deleted if it is
+         * being used in any active matchmaking tickets.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMatchmakingConfigurationOutcome DeleteMatchmakingConfiguration(const Model::DeleteMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
+         * the configuration name. A matchmaking configuration cannot be deleted if it is
+         * being used in any active matchmaking tickets.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMatchmakingConfigurationOutcomeCallable DeleteMatchmakingConfigurationCallable(const Model::DeleteMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
+         * the configuration name. A matchmaking configuration cannot be deleted if it is
+         * being used in any active matchmaking tickets.</p> <p>Operations related to match
+         * configurations and rule sets include:</p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMatchmakingConfigurationAsync(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
@@ -2432,6 +2883,192 @@ namespace Model
         virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
+         * retrieve ticket information, including status and--once a successful match is
+         * made--acquire connection information for the resulting new game session. </p>
+         * <p>You can use this operation to track the progress of matchmaking requests
+         * (through polling) as an alternative to using event notifications. See more
+         * details on tracking matchmaking requests through polling or notifications in
+         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
+         * ticket IDs. If the request is successful, a ticket object is returned for each
+         * requested ID. When specifying a list of ticket IDs, objects are returned only
+         * for tickets that currently exist. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMatchmakingOutcome DescribeMatchmaking(const Model::DescribeMatchmakingRequest& request) const;
+
+        /**
+         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
+         * retrieve ticket information, including status and--once a successful match is
+         * made--acquire connection information for the resulting new game session. </p>
+         * <p>You can use this operation to track the progress of matchmaking requests
+         * (through polling) as an alternative to using event notifications. See more
+         * details on tracking matchmaking requests through polling or notifications in
+         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
+         * ticket IDs. If the request is successful, a ticket object is returned for each
+         * requested ID. When specifying a list of ticket IDs, objects are returned only
+         * for tickets that currently exist. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMatchmakingOutcomeCallable DescribeMatchmakingCallable(const Model::DescribeMatchmakingRequest& request) const;
+
+        /**
+         * <p>Retrieves a set of one or more matchmaking tickets. Use this operation to
+         * retrieve ticket information, including status and--once a successful match is
+         * made--acquire connection information for the resulting new game session. </p>
+         * <p>You can use this operation to track the progress of matchmaking requests
+         * (through polling) as an alternative to using event notifications. See more
+         * details on tracking matchmaking requests through polling or notifications in
+         * <a>StartMatchmaking</a>. </p> <p>You can request data for a one or a list of
+         * ticket IDs. If the request is successful, a ticket object is returned for each
+         * requested ID. When specifying a list of ticket IDs, objects are returned only
+         * for tickets that currently exist. </p> <p>Matchmaking-related operations
+         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
+         * <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMatchmakingAsync(const Model::DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the details of FlexMatch matchmaking configurations. with this
+         * operation, you have the following options: (1) retrieve all existing
+         * configurations, (2) provide the names of one or more configurations to retrieve,
+         * or (3) retrieve all configurations that use a specified rule set name. When
+         * requesting multiple items, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a configuration is returned for each
+         * requested name. When specifying a list of names, only configurations that
+         * currently exist are returned. </p> <p>Operations related to match configurations
+         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
+         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMatchmakingConfigurationsOutcome DescribeMatchmakingConfigurations(const Model::DescribeMatchmakingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Retrieves the details of FlexMatch matchmaking configurations. with this
+         * operation, you have the following options: (1) retrieve all existing
+         * configurations, (2) provide the names of one or more configurations to retrieve,
+         * or (3) retrieve all configurations that use a specified rule set name. When
+         * requesting multiple items, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a configuration is returned for each
+         * requested name. When specifying a list of names, only configurations that
+         * currently exist are returned. </p> <p>Operations related to match configurations
+         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
+         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMatchmakingConfigurationsOutcomeCallable DescribeMatchmakingConfigurationsCallable(const Model::DescribeMatchmakingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Retrieves the details of FlexMatch matchmaking configurations. with this
+         * operation, you have the following options: (1) retrieve all existing
+         * configurations, (2) provide the names of one or more configurations to retrieve,
+         * or (3) retrieve all configurations that use a specified rule set name. When
+         * requesting multiple items, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a configuration is returned for each
+         * requested name. When specifying a list of names, only configurations that
+         * currently exist are returned. </p> <p>Operations related to match configurations
+         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
+         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMatchmakingConfigurationsAsync(const Model::DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request
+         * all existing rule sets for the region, or provide a list of one or more rule set
+         * names. When requesting multiple items, use the pagination parameters to retrieve
+         * results as a set of sequential pages. If successful, a rule set is returned for
+         * each requested name. </p> <p>Operations related to match configurations and rule
+         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMatchmakingRuleSetsOutcome DescribeMatchmakingRuleSets(const Model::DescribeMatchmakingRuleSetsRequest& request) const;
+
+        /**
+         * <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request
+         * all existing rule sets for the region, or provide a list of one or more rule set
+         * names. When requesting multiple items, use the pagination parameters to retrieve
+         * results as a set of sequential pages. If successful, a rule set is returned for
+         * each requested name. </p> <p>Operations related to match configurations and rule
+         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMatchmakingRuleSetsOutcomeCallable DescribeMatchmakingRuleSetsCallable(const Model::DescribeMatchmakingRuleSetsRequest& request) const;
+
+        /**
+         * <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request
+         * all existing rule sets for the region, or provide a list of one or more rule set
+         * names. When requesting multiple items, use the pagination parameters to retrieve
+         * results as a set of sequential pages. If successful, a rule set is returned for
+         * each requested name. </p> <p>Operations related to match configurations and rule
+         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMatchmakingRuleSetsAsync(const Model::DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves properties for one or more player sessions. This action can be used
          * in several ways: (1) provide a <code>PlayerSessionId</code> to request
          * properties for a specific player session; (2) provide a
@@ -2677,8 +3314,8 @@ namespace Model
         /**
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
-         * the logs in Amazon S3. Use this URL to download the logs.</p> <note> <p>See the
-         * <a
+         * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
+         * logs.</p> <note> <p>See the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
          * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
@@ -2699,8 +3336,8 @@ namespace Model
         /**
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
-         * the logs in Amazon S3. Use this URL to download the logs.</p> <note> <p>See the
-         * <a
+         * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
+         * logs.</p> <note> <p>See the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
          * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
@@ -2723,8 +3360,8 @@ namespace Model
         /**
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
-         * the logs in Amazon S3. Use this URL to download the logs.</p> <note> <p>See the
-         * <a
+         * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
+         * logs.</p> <note> <p>See the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
          * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
@@ -3360,7 +3997,7 @@ namespace Model
          * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
          * game session placement is created.</p> <p>To track the status of a placement
          * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * status. If the status is <code>FULFILLED</code>, a new game session has been
          * created and a game session ARN and region are referenced. If the placement
          * request times out, you can resubmit the request or retry it with a different
          * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
@@ -3403,7 +4040,7 @@ namespace Model
          * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
          * game session placement is created.</p> <p>To track the status of a placement
          * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * status. If the status is <code>FULFILLED</code>, a new game session has been
          * created and a game session ARN and region are referenced. If the placement
          * request times out, you can resubmit the request or retry it with a different
          * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
@@ -3448,7 +4085,7 @@ namespace Model
          * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
          * game session placement is created.</p> <p>To track the status of a placement
          * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * status. If the status is <code>FULFILLED</code>, a new game session has been
          * created and a game session ARN and region are referenced. If the placement
          * request times out, you can resubmit the request or retry it with a different
          * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
@@ -3468,11 +4105,192 @@ namespace Model
         virtual void StartGameSessionPlacementAsync(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a game session placement that is in Pending status. To stop a
-         * placement, provide the placement ID values. If successful, the placement is
-         * moved to Cancelled status.</p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <p>Uses FlexMatch to create a game match for a group of players based on custom
+         * matchmaking rules, and starts a new game for the matched players. Each
+         * matchmaking request specifies the type of match to build (team configuration,
+         * rules for an acceptable match, etc.). The request also specifies the players to
+         * find a match for and where to host the new game session for optimal performance.
+         * A matchmaking request might start with a single player or a group of players who
+         * want to play together. FlexMatch finds additional players as needed to fill the
+         * match. Match type, rules, and the queue used to place a new game session are
+         * defined in a <code>MatchmakingConfiguration</code>. For complete information on
+         * setting up and using FlexMatch, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
+         * ticket ID, specify a matchmaking configuration, and include the players to be
+         * matched. You must also include a set of player attributes relevant for the
+         * matchmaking configuration. If successful, a matchmaking ticket is returned with
+         * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
+         * needed and acquire game session connection information for sucessfully completed
+         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
+         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
+         * full ticket object, including current status and (for completed tickets) game
+         * session connection info. We recommend polling no more than once every 10
+         * seconds.</p> </li> <li> <p>Notifications -- Get event notifications for changes
+         * in ticket status using Amazon Simple Notification Service (SNS). Notifications
+         * are easy to set up (see <a>CreateMatchmakingConfiguration</a>) and typically
+         * deliver match status changes faster and more efficiently than polling. We
+         * recommend that you use polling to back up to notifications (since delivery is
+         * not guaranteed) and call <code>DescribeMatchmaking</code> only when
+         * notifications are not received within 30 seconds.</p> </li> </ul> <p>
+         * <b>Processing a matchmaking request</b> -- FlexMatch handles a matchmaking
+         * request as follows: </p> <ol> <li> <p>Your client code submits a
+         * <code>StartMatchmaking</code> request for one or more players and tracks the
+         * status of the request ticket. </p> </li> <li> <p>FlexMatch uses this ticket and
+         * others in process to build an acceptable match. When a potential match is
+         * identified, all tickets in the proposed match are advanced to the next status.
+         * </p> </li> <li> <p>If the match requires player acceptance (set in the
+         * matchmaking configuration), the tickets move into status
+         * <code>REQUIRES_ACCEPTANCE</code>. This status triggers your client code to
+         * solicit acceptance from all players in every ticket involved in the match, and
+         * then call <a>AcceptMatch</a> for each player. If any player rejects or fails to
+         * accept the match before a specified timeout, the proposed match is dropped (see
+         * <code>AcceptMatch</code> for more details).</p> </li> <li> <p>Once a match is
+         * proposed and accepted, the matchmaking tickets move into status
+         * <code>PLACING</code>. FlexMatch locates resources for a new game session using
+         * the game session queue (set in the matchmaking configuration) and creates the
+         * game session based on the match data. </p> </li> <li> <p>When the match is
+         * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
+         * status. Connection information (including game session endpoint and player
+         * session) is added to the matchmaking tickets. Matched players can use the
+         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMatchmakingOutcome StartMatchmaking(const Model::StartMatchmakingRequest& request) const;
+
+        /**
+         * <p>Uses FlexMatch to create a game match for a group of players based on custom
+         * matchmaking rules, and starts a new game for the matched players. Each
+         * matchmaking request specifies the type of match to build (team configuration,
+         * rules for an acceptable match, etc.). The request also specifies the players to
+         * find a match for and where to host the new game session for optimal performance.
+         * A matchmaking request might start with a single player or a group of players who
+         * want to play together. FlexMatch finds additional players as needed to fill the
+         * match. Match type, rules, and the queue used to place a new game session are
+         * defined in a <code>MatchmakingConfiguration</code>. For complete information on
+         * setting up and using FlexMatch, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
+         * ticket ID, specify a matchmaking configuration, and include the players to be
+         * matched. You must also include a set of player attributes relevant for the
+         * matchmaking configuration. If successful, a matchmaking ticket is returned with
+         * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
+         * needed and acquire game session connection information for sucessfully completed
+         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
+         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
+         * full ticket object, including current status and (for completed tickets) game
+         * session connection info. We recommend polling no more than once every 10
+         * seconds.</p> </li> <li> <p>Notifications -- Get event notifications for changes
+         * in ticket status using Amazon Simple Notification Service (SNS). Notifications
+         * are easy to set up (see <a>CreateMatchmakingConfiguration</a>) and typically
+         * deliver match status changes faster and more efficiently than polling. We
+         * recommend that you use polling to back up to notifications (since delivery is
+         * not guaranteed) and call <code>DescribeMatchmaking</code> only when
+         * notifications are not received within 30 seconds.</p> </li> </ul> <p>
+         * <b>Processing a matchmaking request</b> -- FlexMatch handles a matchmaking
+         * request as follows: </p> <ol> <li> <p>Your client code submits a
+         * <code>StartMatchmaking</code> request for one or more players and tracks the
+         * status of the request ticket. </p> </li> <li> <p>FlexMatch uses this ticket and
+         * others in process to build an acceptable match. When a potential match is
+         * identified, all tickets in the proposed match are advanced to the next status.
+         * </p> </li> <li> <p>If the match requires player acceptance (set in the
+         * matchmaking configuration), the tickets move into status
+         * <code>REQUIRES_ACCEPTANCE</code>. This status triggers your client code to
+         * solicit acceptance from all players in every ticket involved in the match, and
+         * then call <a>AcceptMatch</a> for each player. If any player rejects or fails to
+         * accept the match before a specified timeout, the proposed match is dropped (see
+         * <code>AcceptMatch</code> for more details).</p> </li> <li> <p>Once a match is
+         * proposed and accepted, the matchmaking tickets move into status
+         * <code>PLACING</code>. FlexMatch locates resources for a new game session using
+         * the game session queue (set in the matchmaking configuration) and creates the
+         * game session based on the match data. </p> </li> <li> <p>When the match is
+         * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
+         * status. Connection information (including game session endpoint and player
+         * session) is added to the matchmaking tickets. Matched players can use the
+         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMatchmakingOutcomeCallable StartMatchmakingCallable(const Model::StartMatchmakingRequest& request) const;
+
+        /**
+         * <p>Uses FlexMatch to create a game match for a group of players based on custom
+         * matchmaking rules, and starts a new game for the matched players. Each
+         * matchmaking request specifies the type of match to build (team configuration,
+         * rules for an acceptable match, etc.). The request also specifies the players to
+         * find a match for and where to host the new game session for optimal performance.
+         * A matchmaking request might start with a single player or a group of players who
+         * want to play together. FlexMatch finds additional players as needed to fill the
+         * match. Match type, rules, and the queue used to place a new game session are
+         * defined in a <code>MatchmakingConfiguration</code>. For complete information on
+         * setting up and using FlexMatch, see the topic <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
+         * ticket ID, specify a matchmaking configuration, and include the players to be
+         * matched. You must also include a set of player attributes relevant for the
+         * matchmaking configuration. If successful, a matchmaking ticket is returned with
+         * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
+         * needed and acquire game session connection information for sucessfully completed
+         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
+         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
+         * full ticket object, including current status and (for completed tickets) game
+         * session connection info. We recommend polling no more than once every 10
+         * seconds.</p> </li> <li> <p>Notifications -- Get event notifications for changes
+         * in ticket status using Amazon Simple Notification Service (SNS). Notifications
+         * are easy to set up (see <a>CreateMatchmakingConfiguration</a>) and typically
+         * deliver match status changes faster and more efficiently than polling. We
+         * recommend that you use polling to back up to notifications (since delivery is
+         * not guaranteed) and call <code>DescribeMatchmaking</code> only when
+         * notifications are not received within 30 seconds.</p> </li> </ul> <p>
+         * <b>Processing a matchmaking request</b> -- FlexMatch handles a matchmaking
+         * request as follows: </p> <ol> <li> <p>Your client code submits a
+         * <code>StartMatchmaking</code> request for one or more players and tracks the
+         * status of the request ticket. </p> </li> <li> <p>FlexMatch uses this ticket and
+         * others in process to build an acceptable match. When a potential match is
+         * identified, all tickets in the proposed match are advanced to the next status.
+         * </p> </li> <li> <p>If the match requires player acceptance (set in the
+         * matchmaking configuration), the tickets move into status
+         * <code>REQUIRES_ACCEPTANCE</code>. This status triggers your client code to
+         * solicit acceptance from all players in every ticket involved in the match, and
+         * then call <a>AcceptMatch</a> for each player. If any player rejects or fails to
+         * accept the match before a specified timeout, the proposed match is dropped (see
+         * <code>AcceptMatch</code> for more details).</p> </li> <li> <p>Once a match is
+         * proposed and accepted, the matchmaking tickets move into status
+         * <code>PLACING</code>. FlexMatch locates resources for a new game session using
+         * the game session queue (set in the matchmaking configuration) and creates the
+         * game session based on the match data. </p> </li> <li> <p>When the match is
+         * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
+         * status. Connection information (including game session endpoint and player
+         * session) is added to the matchmaking tickets. Matched players can use the
+         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
+         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
+         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMatchmakingAsync(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
+         * stop a placement, provide the placement ID values. If successful, the placement
+         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3486,11 +4304,11 @@ namespace Model
         virtual Model::StopGameSessionPlacementOutcome StopGameSessionPlacement(const Model::StopGameSessionPlacementRequest& request) const;
 
         /**
-         * <p>Cancels a game session placement that is in Pending status. To stop a
-         * placement, provide the placement ID values. If successful, the placement is
-         * moved to Cancelled status.</p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
+         * stop a placement, provide the placement ID values. If successful, the placement
+         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3506,11 +4324,11 @@ namespace Model
         virtual Model::StopGameSessionPlacementOutcomeCallable StopGameSessionPlacementCallable(const Model::StopGameSessionPlacementRequest& request) const;
 
         /**
-         * <p>Cancels a game session placement that is in Pending status. To stop a
-         * placement, provide the placement ID values. If successful, the placement is
-         * moved to Cancelled status.</p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
+         * stop a placement, provide the placement ID values. If successful, the placement
+         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
+         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3524,6 +4342,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopGameSessionPlacementAsync(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
+         * matchmaking operation, specify the ticket ID. If successful, work on the ticket
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
+         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMatchmakingOutcome StopMatchmaking(const Model::StopMatchmakingRequest& request) const;
+
+        /**
+         * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
+         * matchmaking operation, specify the ticket ID. If successful, work on the ticket
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
+         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopMatchmakingOutcomeCallable StopMatchmakingCallable(const Model::StopMatchmakingRequest& request) const;
+
+        /**
+         * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
+         * matchmaking operation, specify the ticket ID. If successful, work on the ticket
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
+         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopMatchmakingAsync(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates properties for an alias. To update properties, specify the alias ID
@@ -4013,6 +4874,58 @@ namespace Model
         virtual void UpdateGameSessionQueueAsync(const Model::UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates settings for a FlexMatch matchmaking configuration. To update
+         * settings, specify the configuration name to be updated and provide the new
+         * settings. </p> <p>Operations related to match configurations and rule sets
+         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMatchmakingConfigurationOutcome UpdateMatchmakingConfiguration(const Model::UpdateMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates settings for a FlexMatch matchmaking configuration. To update
+         * settings, specify the configuration name to be updated and provide the new
+         * settings. </p> <p>Operations related to match configurations and rule sets
+         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMatchmakingConfigurationOutcomeCallable UpdateMatchmakingConfigurationCallable(const Model::UpdateMatchmakingConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates settings for a FlexMatch matchmaking configuration. To update
+         * settings, specify the configuration name to be updated and provide the new
+         * settings. </p> <p>Operations related to match configurations and rule sets
+         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
+         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMatchmakingConfigurationAsync(const Model::UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the current run-time configuration for the specified fleet, which
          * tells Amazon GameLift how to launch server processes on instances in the fleet.
          * You can update a fleet's run-time configuration at any time after the fleet is
@@ -4127,22 +5040,81 @@ namespace Model
          */
         virtual void UpdateRuntimeConfigurationAsync(const Model::UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
+         * that the rule set uses syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set string.</p>
+         * <p>Operations related to match configurations and rule sets include:</p> <ul>
+         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidateMatchmakingRuleSetOutcome ValidateMatchmakingRuleSet(const Model::ValidateMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
+         * that the rule set uses syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set string.</p>
+         * <p>Operations related to match configurations and rule sets include:</p> <ul>
+         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ValidateMatchmakingRuleSetOutcomeCallable ValidateMatchmakingRuleSetCallable(const Model::ValidateMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
+         * that the rule set uses syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set string.</p>
+         * <p>Operations related to match configurations and rule sets include:</p> <ul>
+         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ValidateMatchmakingRuleSetAsync(const Model::ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AcceptMatchAsyncHelper(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBuildAsyncHelper(const Model::CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGameSessionAsyncHelper(const Model::CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGameSessionQueueAsyncHelper(const Model::CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMatchmakingConfigurationAsyncHelper(const Model::CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMatchmakingRuleSetAsyncHelper(const Model::CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlayerSessionAsyncHelper(const Model::CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlayerSessionsAsyncHelper(const Model::CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBuildAsyncHelper(const Model::DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGameSessionQueueAsyncHelper(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMatchmakingConfigurationAsyncHelper(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScalingPolicyAsyncHelper(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAliasAsyncHelper(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBuildAsyncHelper(const Model::DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4157,6 +5129,9 @@ namespace Model
         void DescribeGameSessionQueuesAsyncHelper(const Model::DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionsAsyncHelper(const Model::DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMatchmakingAsyncHelper(const Model::DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMatchmakingConfigurationsAsyncHelper(const Model::DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMatchmakingRuleSetsAsyncHelper(const Model::DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlayerSessionsAsyncHelper(const Model::DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuntimeConfigurationAsyncHelper(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPoliciesAsyncHelper(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4170,7 +5145,9 @@ namespace Model
         void ResolveAliasAsyncHelper(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchGameSessionsAsyncHelper(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartGameSessionPlacementAsyncHelper(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMatchmakingAsyncHelper(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopGameSessionPlacementAsyncHelper(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopMatchmakingAsyncHelper(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBuildAsyncHelper(const Model::UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetAttributesAsyncHelper(const Model::UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4178,7 +5155,9 @@ namespace Model
         void UpdateFleetPortSettingsAsyncHelper(const Model::UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGameSessionAsyncHelper(const Model::UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGameSessionQueueAsyncHelper(const Model::UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMatchmakingConfigurationAsyncHelper(const Model::UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRuntimeConfigurationAsyncHelper(const Model::UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ValidateMatchmakingRuleSetAsyncHelper(const Model::ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

@@ -43,65 +43,65 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline UpdateGameSessionQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline UpdateGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline UpdateGameSessionQueueRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
      * <p>Maximum time, in seconds, that a new game session placement request remains
      * in the queue. When a request exceeds this time, the game session placement
-     * changes to a TIMED_OUT status.</p>
+     * changes to a <code>TIMED_OUT</code> status.</p>
      */
     inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
 
     /**
      * <p>Maximum time, in seconds, that a new game session placement request remains
      * in the queue. When a request exceeds this time, the game session placement
-     * changes to a TIMED_OUT status.</p>
+     * changes to a <code>TIMED_OUT</code> status.</p>
      */
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
 
     /**
      * <p>Maximum time, in seconds, that a new game session placement request remains
      * in the queue. When a request exceeds this time, the game session placement
-     * changes to a TIMED_OUT status.</p>
+     * changes to a <code>TIMED_OUT</code> status.</p>
      */
     inline UpdateGameSessionQueueRequest& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
 

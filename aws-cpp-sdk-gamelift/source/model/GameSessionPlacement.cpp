@@ -46,7 +46,8 @@ GameSessionPlacement::GameSessionPlacement() :
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_placedPlayerSessionsHasBeenSet(false)
+    m_placedPlayerSessionsHasBeenSet(false),
+    m_gameSessionDataHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ GameSessionPlacement::GameSessionPlacement(const JsonValue& jsonValue) :
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_placedPlayerSessionsHasBeenSet(false)
+    m_placedPlayerSessionsHasBeenSet(false),
+    m_gameSessionDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -189,6 +191,13 @@ GameSessionPlacement& GameSessionPlacement::operator =(const JsonValue& jsonValu
     m_placedPlayerSessionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GameSessionData"))
+  {
+    m_gameSessionData = jsonValue.GetString("GameSessionData");
+
+    m_gameSessionDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -295,6 +304,12 @@ JsonValue GameSessionPlacement::Jsonize() const
      placedPlayerSessionsJsonList[placedPlayerSessionsIndex].AsObject(m_placedPlayerSessions[placedPlayerSessionsIndex].Jsonize());
    }
    payload.WithArray("PlacedPlayerSessions", std::move(placedPlayerSessionsJsonList));
+
+  }
+
+  if(m_gameSessionDataHasBeenSet)
+  {
+   payload.WithString("GameSessionData", m_gameSessionData);
 
   }
 

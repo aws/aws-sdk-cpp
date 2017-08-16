@@ -48,32 +48,32 @@ namespace Model
     StopGameSessionPlacementResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object that describes the canceled game session placement, with Cancelled
-     * status and an end time stamp. </p>
+     * <p>Object that describes the canceled game session placement, with
+     * <code>CANCELLED</code> status and an end time stamp. </p>
      */
     inline const GameSessionPlacement& GetGameSessionPlacement() const{ return m_gameSessionPlacement; }
 
     /**
-     * <p>Object that describes the canceled game session placement, with Cancelled
-     * status and an end time stamp. </p>
+     * <p>Object that describes the canceled game session placement, with
+     * <code>CANCELLED</code> status and an end time stamp. </p>
      */
     inline void SetGameSessionPlacement(const GameSessionPlacement& value) { m_gameSessionPlacement = value; }
 
     /**
-     * <p>Object that describes the canceled game session placement, with Cancelled
-     * status and an end time stamp. </p>
+     * <p>Object that describes the canceled game session placement, with
+     * <code>CANCELLED</code> status and an end time stamp. </p>
      */
     inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = std::move(value); }
 
     /**
-     * <p>Object that describes the canceled game session placement, with Cancelled
-     * status and an end time stamp. </p>
+     * <p>Object that describes the canceled game session placement, with
+     * <code>CANCELLED</code> status and an end time stamp. </p>
      */
     inline StopGameSessionPlacementResult& WithGameSessionPlacement(const GameSessionPlacement& value) { SetGameSessionPlacement(value); return *this;}
 
     /**
-     * <p>Object that describes the canceled game session placement, with Cancelled
-     * status and an end time stamp. </p>
+     * <p>Object that describes the canceled game session placement, with
+     * <code>CANCELLED</code> status and an end time stamp. </p>
      */
     inline StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 

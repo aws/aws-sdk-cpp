@@ -66,7 +66,8 @@ enum class GameLiftErrors
   LIMIT_EXCEEDED,
   NOT_FOUND,
   TERMINAL_ROUTING_STRATEGY,
-  UNAUTHORIZED
+  UNAUTHORIZED,
+  UNSUPPORTED_REGION
 };
 namespace GameLiftErrorMapper
 {

@@ -92,44 +92,44 @@ namespace Model
     inline GameSessionPlacement& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline const Aws::String& GetGameSessionQueueName() const{ return m_gameSessionQueueName; }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetGameSessionQueueName(const Aws::String& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline void SetGameSessionQueueName(const char* value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline GameSessionPlacement& WithGameSessionQueueName(const Aws::String& value) { SetGameSessionQueueName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline GameSessionPlacement& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with queue. Queue names must be unique
-     * within each region.</p>
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
      */
     inline GameSessionPlacement& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
 
@@ -199,44 +199,72 @@ namespace Model
     inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSessionPlacement& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSessionPlacement& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSessionPlacement& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>Set of developer-defined properties for a game session. These properties are
-     * passed to the server process hosting the game session.</p>
+     * <p>Set of developer-defined properties for a game session, formatted as a set of
+     * type:value pairs. These properties are included in the <a>GameSession</a>
+     * object, which is passed to the game server with a request to start a new game
+     * session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
      */
     inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
@@ -302,190 +330,190 @@ namespace Model
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is Fulfilled).</p>
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is Fulfilled). This
-     * identifier is unique across all regions. You can use this value as a
-     * <code>GameSessionId</code> value as needed.</p>
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline const Aws::String& GetGameSessionRegion() const{ return m_gameSessionRegion; }
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionRegion(const Aws::String& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = value; }
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionRegion(Aws::String&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = std::move(value); }
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline void SetGameSessionRegion(const char* value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion.assign(value); }
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(const Aws::String& value) { SetGameSessionRegion(value); return *this;}
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(Aws::String&& value) { SetGameSessionRegion(std::move(value)); return *this;}
 
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
-     * status is Fulfilled).</p>
+     * status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(const char* value) { SetGameSessionRegion(value); return *this;}
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline void SetPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { SetPlayerLatencies(value); return *this;}
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(const PlayerLatency& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that players are experiencing when connected to AWS regions.</p>
+     * that a player experiences when connected to AWS regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
@@ -557,142 +585,212 @@ namespace Model
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline GameSessionPlacement& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline GameSessionPlacement& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is Fulfilled). </p>
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is Fulfilled).</p>
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is Fulfilled).</p>
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is Fulfilled).</p>
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const{ return m_placedPlayerSessions; }
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline void SetPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = value; }
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline void SetPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = std::move(value); }
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { SetPlacedPlayerSessions(value); return *this;}
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { SetPlacedPlayerSessions(std::move(value)); return *this;}
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(const PlacedPlayerSession& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(value); return *this; }
 
     /**
      * <p>Collection of information on player sessions created in response to the game
      * session placement request. These player sessions are created only once a new
-     * game session is successfully placed (placement status is Fulfilled). This
-     * information includes the player ID (as provided in the placement request) and
-     * the corresponding player session ID. Retrieve full player sessions by calling
-     * <a>DescribePlayerSessions</a> with the player session ID.</p>
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSession&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline GameSessionPlacement& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline GameSessionPlacement& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
+
+    /**
+     * <p>Set of developer-defined game session properties, formatted as a single
+     * string value. This data is included in the <a>GameSession</a> object, which is
+     * passed to the game server with a request to start a new game session (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline GameSessionPlacement& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
     Aws::String m_placementId;
@@ -725,6 +823,8 @@ namespace Model
     bool m_portHasBeenSet;
     Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
     bool m_placedPlayerSessionsHasBeenSet;
+    Aws::String m_gameSessionData;
+    bool m_gameSessionDataHasBeenSet;
   };
 
 } // namespace Model

@@ -162,50 +162,50 @@ namespace Model
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline ListAliasesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline ListAliasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To specify the
-     * start of the result set, do not specify a value.</p>
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
      */
     inline ListAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -30,7 +30,8 @@ StartGameSessionPlacementRequest::StartGameSessionPlacementRequest() :
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_gameSessionNameHasBeenSet(false),
     m_playerLatenciesHasBeenSet(false),
-    m_desiredPlayerSessionsHasBeenSet(false)
+    m_desiredPlayerSessionsHasBeenSet(false),
+    m_gameSessionDataHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String StartGameSessionPlacementRequest::SerializePayload() const
      desiredPlayerSessionsJsonList[desiredPlayerSessionsIndex].AsObject(m_desiredPlayerSessions[desiredPlayerSessionsIndex].Jsonize());
    }
    payload.WithArray("DesiredPlayerSessions", std::move(desiredPlayerSessionsJsonList));
+
+  }
+
+  if(m_gameSessionDataHasBeenSet)
+  {
+   payload.WithString("GameSessionData", m_gameSessionData);
 
   }
 

@@ -1,0 +1,122 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/gamelift/model/MatchmakingConfigurationStatus.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+
+using namespace Aws::Utils;
+
+
+namespace Aws
+{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace MatchmakingConfigurationStatusMapper
+      {
+
+        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
+        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int PLACING_HASH = HashingUtils::HashString("PLACING");
+        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
+        static const int REQUIRES_ACCEPTANCE_HASH = HashingUtils::HashString("REQUIRES_ACCEPTANCE");
+        static const int SEARCHING_HASH = HashingUtils::HashString("SEARCHING");
+        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+
+
+        MatchmakingConfigurationStatus GetMatchmakingConfigurationStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CANCELED_HASH)
+          {
+            return MatchmakingConfigurationStatus::CANCELED;
+          }
+          else if (hashCode == COMPLETE_HASH)
+          {
+            return MatchmakingConfigurationStatus::COMPLETE;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return MatchmakingConfigurationStatus::FAILED;
+          }
+          else if (hashCode == PLACING_HASH)
+          {
+            return MatchmakingConfigurationStatus::PLACING;
+          }
+          else if (hashCode == QUEUED_HASH)
+          {
+            return MatchmakingConfigurationStatus::QUEUED;
+          }
+          else if (hashCode == REQUIRES_ACCEPTANCE_HASH)
+          {
+            return MatchmakingConfigurationStatus::REQUIRES_ACCEPTANCE;
+          }
+          else if (hashCode == SEARCHING_HASH)
+          {
+            return MatchmakingConfigurationStatus::SEARCHING;
+          }
+          else if (hashCode == TIMED_OUT_HASH)
+          {
+            return MatchmakingConfigurationStatus::TIMED_OUT;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MatchmakingConfigurationStatus>(hashCode);
+          }
+
+          return MatchmakingConfigurationStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForMatchmakingConfigurationStatus(MatchmakingConfigurationStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case MatchmakingConfigurationStatus::CANCELED:
+            return "CANCELED";
+          case MatchmakingConfigurationStatus::COMPLETE:
+            return "COMPLETE";
+          case MatchmakingConfigurationStatus::FAILED:
+            return "FAILED";
+          case MatchmakingConfigurationStatus::PLACING:
+            return "PLACING";
+          case MatchmakingConfigurationStatus::QUEUED:
+            return "QUEUED";
+          case MatchmakingConfigurationStatus::REQUIRES_ACCEPTANCE:
+            return "REQUIRES_ACCEPTANCE";
+          case MatchmakingConfigurationStatus::SEARCHING:
+            return "SEARCHING";
+          case MatchmakingConfigurationStatus::TIMED_OUT:
+            return "TIMED_OUT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MatchmakingConfigurationStatusMapper
+    } // namespace Model
+  } // namespace GameLift
+} // namespace Aws

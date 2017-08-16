@@ -27,17 +27,21 @@
 #include <aws/gamelift/GameLiftClient.h>
 #include <aws/gamelift/GameLiftEndpoint.h>
 #include <aws/gamelift/GameLiftErrorMarshaller.h>
+#include <aws/gamelift/model/AcceptMatchRequest.h>
 #include <aws/gamelift/model/CreateAliasRequest.h>
 #include <aws/gamelift/model/CreateBuildRequest.h>
 #include <aws/gamelift/model/CreateFleetRequest.h>
 #include <aws/gamelift/model/CreateGameSessionRequest.h>
 #include <aws/gamelift/model/CreateGameSessionQueueRequest.h>
+#include <aws/gamelift/model/CreateMatchmakingConfigurationRequest.h>
+#include <aws/gamelift/model/CreateMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionsRequest.h>
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
+#include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
@@ -52,6 +56,9 @@
 #include <aws/gamelift/model/DescribeGameSessionQueuesRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionsRequest.h>
 #include <aws/gamelift/model/DescribeInstancesRequest.h>
+#include <aws/gamelift/model/DescribeMatchmakingRequest.h>
+#include <aws/gamelift/model/DescribeMatchmakingConfigurationsRequest.h>
+#include <aws/gamelift/model/DescribeMatchmakingRuleSetsRequest.h>
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationRequest.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
@@ -65,7 +72,9 @@
 #include <aws/gamelift/model/ResolveAliasRequest.h>
 #include <aws/gamelift/model/SearchGameSessionsRequest.h>
 #include <aws/gamelift/model/StartGameSessionPlacementRequest.h>
+#include <aws/gamelift/model/StartMatchmakingRequest.h>
 #include <aws/gamelift/model/StopGameSessionPlacementRequest.h>
+#include <aws/gamelift/model/StopMatchmakingRequest.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>
 #include <aws/gamelift/model/UpdateBuildRequest.h>
 #include <aws/gamelift/model/UpdateFleetAttributesRequest.h>
@@ -73,7 +82,9 @@
 #include <aws/gamelift/model/UpdateFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionQueueRequest.h>
+#include <aws/gamelift/model/UpdateMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/UpdateRuntimeConfigurationRequest.h>
+#include <aws/gamelift/model/ValidateMatchmakingRuleSetRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -137,6 +148,41 @@ void GameLiftClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AcceptMatchOutcome GameLiftClient::AcceptMatch(const AcceptMatchRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AcceptMatchOutcome(AcceptMatchResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AcceptMatchOutcome(outcome.GetError());
+  }
+}
+
+AcceptMatchOutcomeCallable GameLiftClient::AcceptMatchCallable(const AcceptMatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptMatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptMatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::AcceptMatchAsync(const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptMatchAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::AcceptMatchAsyncHelper(const AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptMatch(request), context);
 }
 
 CreateAliasOutcome GameLiftClient::CreateAlias(const CreateAliasRequest& request) const
@@ -312,6 +358,76 @@ void GameLiftClient::CreateGameSessionQueueAsync(const CreateGameSessionQueueReq
 void GameLiftClient::CreateGameSessionQueueAsyncHelper(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateGameSessionQueue(request), context);
+}
+
+CreateMatchmakingConfigurationOutcome GameLiftClient::CreateMatchmakingConfiguration(const CreateMatchmakingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateMatchmakingConfigurationOutcome(CreateMatchmakingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMatchmakingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+CreateMatchmakingConfigurationOutcomeCallable GameLiftClient::CreateMatchmakingConfigurationCallable(const CreateMatchmakingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMatchmakingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMatchmakingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateMatchmakingConfigurationAsync(const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateMatchmakingConfigurationAsyncHelper(const CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMatchmakingConfiguration(request), context);
+}
+
+CreateMatchmakingRuleSetOutcome GameLiftClient::CreateMatchmakingRuleSet(const CreateMatchmakingRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateMatchmakingRuleSetOutcome(CreateMatchmakingRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMatchmakingRuleSetOutcome(outcome.GetError());
+  }
+}
+
+CreateMatchmakingRuleSetOutcomeCallable GameLiftClient::CreateMatchmakingRuleSetCallable(const CreateMatchmakingRuleSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMatchmakingRuleSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMatchmakingRuleSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateMatchmakingRuleSetAsync(const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMatchmakingRuleSetAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateMatchmakingRuleSetAsyncHelper(const CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMatchmakingRuleSet(request), context);
 }
 
 CreatePlayerSessionOutcome GameLiftClient::CreatePlayerSession(const CreatePlayerSessionRequest& request) const
@@ -522,6 +638,41 @@ void GameLiftClient::DeleteGameSessionQueueAsync(const DeleteGameSessionQueueReq
 void GameLiftClient::DeleteGameSessionQueueAsyncHelper(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteGameSessionQueue(request), context);
+}
+
+DeleteMatchmakingConfigurationOutcome GameLiftClient::DeleteMatchmakingConfiguration(const DeleteMatchmakingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteMatchmakingConfigurationOutcome(DeleteMatchmakingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteMatchmakingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteMatchmakingConfigurationOutcomeCallable GameLiftClient::DeleteMatchmakingConfigurationCallable(const DeleteMatchmakingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMatchmakingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMatchmakingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteMatchmakingConfigurationAsync(const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteMatchmakingConfigurationAsyncHelper(const DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMatchmakingConfiguration(request), context);
 }
 
 DeleteScalingPolicyOutcome GameLiftClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const
@@ -1014,6 +1165,111 @@ void GameLiftClient::DescribeInstancesAsyncHelper(const DescribeInstancesRequest
   handler(this, request, DescribeInstances(request), context);
 }
 
+DescribeMatchmakingOutcome GameLiftClient::DescribeMatchmaking(const DescribeMatchmakingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMatchmakingOutcome(DescribeMatchmakingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMatchmakingOutcome(outcome.GetError());
+  }
+}
+
+DescribeMatchmakingOutcomeCallable GameLiftClient::DescribeMatchmakingCallable(const DescribeMatchmakingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMatchmakingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMatchmaking(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeMatchmakingAsync(const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeMatchmakingAsyncHelper(const DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMatchmaking(request), context);
+}
+
+DescribeMatchmakingConfigurationsOutcome GameLiftClient::DescribeMatchmakingConfigurations(const DescribeMatchmakingConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMatchmakingConfigurationsOutcome(DescribeMatchmakingConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMatchmakingConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeMatchmakingConfigurationsOutcomeCallable GameLiftClient::DescribeMatchmakingConfigurationsCallable(const DescribeMatchmakingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMatchmakingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMatchmakingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeMatchmakingConfigurationsAsync(const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeMatchmakingConfigurationsAsyncHelper(const DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMatchmakingConfigurations(request), context);
+}
+
+DescribeMatchmakingRuleSetsOutcome GameLiftClient::DescribeMatchmakingRuleSets(const DescribeMatchmakingRuleSetsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMatchmakingRuleSetsOutcome(DescribeMatchmakingRuleSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMatchmakingRuleSetsOutcome(outcome.GetError());
+  }
+}
+
+DescribeMatchmakingRuleSetsOutcomeCallable GameLiftClient::DescribeMatchmakingRuleSetsCallable(const DescribeMatchmakingRuleSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMatchmakingRuleSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMatchmakingRuleSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeMatchmakingRuleSetsAsync(const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMatchmakingRuleSetsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeMatchmakingRuleSetsAsyncHelper(const DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMatchmakingRuleSets(request), context);
+}
+
 DescribePlayerSessionsOutcome GameLiftClient::DescribePlayerSessions(const DescribePlayerSessionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1469,6 +1725,41 @@ void GameLiftClient::StartGameSessionPlacementAsyncHelper(const StartGameSession
   handler(this, request, StartGameSessionPlacement(request), context);
 }
 
+StartMatchmakingOutcome GameLiftClient::StartMatchmaking(const StartMatchmakingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartMatchmakingOutcome(StartMatchmakingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartMatchmakingOutcome(outcome.GetError());
+  }
+}
+
+StartMatchmakingOutcomeCallable GameLiftClient::StartMatchmakingCallable(const StartMatchmakingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMatchmakingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMatchmaking(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StartMatchmakingAsync(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMatchmakingAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StartMatchmakingAsyncHelper(const StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMatchmaking(request), context);
+}
+
 StopGameSessionPlacementOutcome GameLiftClient::StopGameSessionPlacement(const StopGameSessionPlacementRequest& request) const
 {
   Aws::StringStream ss;
@@ -1502,6 +1793,41 @@ void GameLiftClient::StopGameSessionPlacementAsync(const StopGameSessionPlacemen
 void GameLiftClient::StopGameSessionPlacementAsyncHelper(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopGameSessionPlacement(request), context);
+}
+
+StopMatchmakingOutcome GameLiftClient::StopMatchmaking(const StopMatchmakingRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopMatchmakingOutcome(StopMatchmakingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopMatchmakingOutcome(outcome.GetError());
+  }
+}
+
+StopMatchmakingOutcomeCallable GameLiftClient::StopMatchmakingCallable(const StopMatchmakingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopMatchmakingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMatchmaking(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StopMatchmakingAsync(const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopMatchmakingAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StopMatchmakingAsyncHelper(const StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopMatchmaking(request), context);
 }
 
 UpdateAliasOutcome GameLiftClient::UpdateAlias(const UpdateAliasRequest& request) const
@@ -1749,6 +2075,41 @@ void GameLiftClient::UpdateGameSessionQueueAsyncHelper(const UpdateGameSessionQu
   handler(this, request, UpdateGameSessionQueue(request), context);
 }
 
+UpdateMatchmakingConfigurationOutcome GameLiftClient::UpdateMatchmakingConfiguration(const UpdateMatchmakingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMatchmakingConfigurationOutcome(UpdateMatchmakingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMatchmakingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateMatchmakingConfigurationOutcomeCallable GameLiftClient::UpdateMatchmakingConfigurationCallable(const UpdateMatchmakingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMatchmakingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMatchmakingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::UpdateMatchmakingConfigurationAsync(const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMatchmakingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::UpdateMatchmakingConfigurationAsyncHelper(const UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMatchmakingConfiguration(request), context);
+}
+
 UpdateRuntimeConfigurationOutcome GameLiftClient::UpdateRuntimeConfiguration(const UpdateRuntimeConfigurationRequest& request) const
 {
   Aws::StringStream ss;
@@ -1782,5 +2143,40 @@ void GameLiftClient::UpdateRuntimeConfigurationAsync(const UpdateRuntimeConfigur
 void GameLiftClient::UpdateRuntimeConfigurationAsyncHelper(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRuntimeConfiguration(request), context);
+}
+
+ValidateMatchmakingRuleSetOutcome GameLiftClient::ValidateMatchmakingRuleSet(const ValidateMatchmakingRuleSetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+ uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ValidateMatchmakingRuleSetOutcome(ValidateMatchmakingRuleSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ValidateMatchmakingRuleSetOutcome(outcome.GetError());
+  }
+}
+
+ValidateMatchmakingRuleSetOutcomeCallable GameLiftClient::ValidateMatchmakingRuleSetCallable(const ValidateMatchmakingRuleSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ValidateMatchmakingRuleSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidateMatchmakingRuleSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ValidateMatchmakingRuleSetAsync(const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ValidateMatchmakingRuleSetAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ValidateMatchmakingRuleSetAsyncHelper(const ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ValidateMatchmakingRuleSet(request), context);
 }
 
