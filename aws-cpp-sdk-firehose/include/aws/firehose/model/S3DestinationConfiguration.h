@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -134,8 +134,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -145,8 +145,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -156,8 +156,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -167,8 +167,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -178,8 +178,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
@@ -189,8 +189,8 @@ namespace Model
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
      * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
-     * S3 bucket. For more information, see <a
+     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
+     * bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>

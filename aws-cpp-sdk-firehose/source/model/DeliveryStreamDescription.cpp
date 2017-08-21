@@ -33,9 +33,12 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
+    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
+    m_deliveryStreamTypeHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_hasMoreDestinations(false),
     m_hasMoreDestinationsHasBeenSet(false)
@@ -47,9 +50,12 @@ DeliveryStreamDescription::DeliveryStreamDescription(const JsonValue& jsonValue)
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
+    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
+    m_deliveryStreamTypeHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_hasMoreDestinations(false),
     m_hasMoreDestinationsHasBeenSet(false)
@@ -80,6 +86,13 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(const JsonValue
     m_deliveryStreamStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeliveryStreamType"))
+  {
+    m_deliveryStreamType = DeliveryStreamTypeMapper::GetDeliveryStreamTypeForName(jsonValue.GetString("DeliveryStreamType"));
+
+    m_deliveryStreamTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
@@ -99,6 +112,13 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(const JsonValue
     m_lastUpdateTimestamp = jsonValue.GetDouble("LastUpdateTimestamp");
 
     m_lastUpdateTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Source"))
+  {
+    m_source = jsonValue.GetObject("Source");
+
+    m_sourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Destinations"))
@@ -142,6 +162,11 @@ JsonValue DeliveryStreamDescription::Jsonize() const
    payload.WithString("DeliveryStreamStatus", DeliveryStreamStatusMapper::GetNameForDeliveryStreamStatus(m_deliveryStreamStatus));
   }
 
+  if(m_deliveryStreamTypeHasBeenSet)
+  {
+   payload.WithString("DeliveryStreamType", DeliveryStreamTypeMapper::GetNameForDeliveryStreamType(m_deliveryStreamType));
+  }
+
   if(m_versionIdHasBeenSet)
   {
    payload.WithString("VersionId", m_versionId);
@@ -156,6 +181,12 @@ JsonValue DeliveryStreamDescription::Jsonize() const
   if(m_lastUpdateTimestampHasBeenSet)
   {
    payload.WithDouble("LastUpdateTimestamp", m_lastUpdateTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithObject("Source", m_source.Jsonize());
+
   }
 
   if(m_destinationsHasBeenSet)

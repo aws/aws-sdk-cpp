@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 ListDeliveryStreamsRequest::ListDeliveryStreamsRequest() : 
     m_limit(0),
     m_limitHasBeenSet(false),
+    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
+    m_deliveryStreamTypeHasBeenSet(false),
     m_exclusiveStartDeliveryStreamNameHasBeenSet(false)
 {
 }
@@ -37,6 +39,11 @@ Aws::String ListDeliveryStreamsRequest::SerializePayload() const
   {
    payload.WithInteger("Limit", m_limit);
 
+  }
+
+  if(m_deliveryStreamTypeHasBeenSet)
+  {
+   payload.WithString("DeliveryStreamType", DeliveryStreamTypeMapper::GetNameForDeliveryStreamType(m_deliveryStreamType));
   }
 
   if(m_exclusiveStartDeliveryStreamNameHasBeenSet)

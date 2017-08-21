@@ -17,7 +17,9 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/DeliveryStreamStatus.h>
+#include <aws/firehose/model/DeliveryStreamType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/firehose/model/SourceDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/DestinationDescription.h>
 #include <utility>
@@ -145,6 +147,46 @@ namespace Model
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(DeliveryStreamStatus&& value) { SetDeliveryStreamStatus(std::move(value)); return *this;}
 
     /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     */
+    inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     */
+    inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     */
+    inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     */
+    inline DeliveryStreamDescription& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
+     */
+    inline DeliveryStreamDescription& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
+
+    /**
      * <p>Each time the destination is updated for a delivery stream, the version ID is
      * changed, and the current version ID is required when updating the destination.
      * This is so that the service knows it is applying the changes to the correct
@@ -251,6 +293,41 @@ namespace Model
     inline DeliveryStreamDescription& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
 
     /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis stream.</p>
+     */
+    inline const SourceDescription& GetSource() const{ return m_source; }
+
+    /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis stream.</p>
+     */
+    inline void SetSource(const SourceDescription& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis stream.</p>
+     */
+    inline void SetSource(SourceDescription&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+
+    /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis stream.</p>
+     */
+    inline DeliveryStreamDescription& WithSource(const SourceDescription& value) { SetSource(value); return *this;}
+
+    /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis stream.</p>
+     */
+    inline DeliveryStreamDescription& WithSource(SourceDescription&& value) { SetSource(std::move(value)); return *this;}
+
+    /**
      * <p>The destinations.</p>
      */
     inline const Aws::Vector<DestinationDescription>& GetDestinations() const{ return m_destinations; }
@@ -307,12 +384,16 @@ namespace Model
     bool m_deliveryStreamARNHasBeenSet;
     DeliveryStreamStatus m_deliveryStreamStatus;
     bool m_deliveryStreamStatusHasBeenSet;
+    DeliveryStreamType m_deliveryStreamType;
+    bool m_deliveryStreamTypeHasBeenSet;
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet;
+    SourceDescription m_source;
+    bool m_sourceHasBeenSet;
     Aws::Vector<DestinationDescription> m_destinations;
     bool m_destinationsHasBeenSet;
     bool m_hasMoreDestinations;

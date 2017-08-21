@@ -36,7 +36,8 @@ namespace Model
     PTR,
     SRV,
     SPF,
-    AAAA
+    AAAA,
+    CAA
   };
 
 namespace RRTypeMapper

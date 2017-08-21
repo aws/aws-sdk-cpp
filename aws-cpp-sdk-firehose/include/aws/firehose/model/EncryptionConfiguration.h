@@ -48,32 +48,32 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Specifically override existing encryption information to ensure no encryption
-     * is used.</p>
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
      */
     inline const NoEncryptionConfig& GetNoEncryptionConfig() const{ return m_noEncryptionConfig; }
 
     /**
-     * <p>Specifically override existing encryption information to ensure no encryption
-     * is used.</p>
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
      */
     inline void SetNoEncryptionConfig(const NoEncryptionConfig& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = value; }
 
     /**
-     * <p>Specifically override existing encryption information to ensure no encryption
-     * is used.</p>
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
      */
     inline void SetNoEncryptionConfig(NoEncryptionConfig&& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = std::move(value); }
 
     /**
-     * <p>Specifically override existing encryption information to ensure no encryption
-     * is used.</p>
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
      */
     inline EncryptionConfiguration& WithNoEncryptionConfig(const NoEncryptionConfig& value) { SetNoEncryptionConfig(value); return *this;}
 
     /**
-     * <p>Specifically override existing encryption information to ensure no encryption
-     * is used.</p>
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
      */
     inline EncryptionConfiguration& WithNoEncryptionConfig(NoEncryptionConfig&& value) { SetNoEncryptionConfig(std::move(value)); return *this;}
 

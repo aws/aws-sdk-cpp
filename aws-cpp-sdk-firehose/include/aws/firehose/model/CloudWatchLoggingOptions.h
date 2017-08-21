@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the CloudWatch logging options for your delivery
+   * <p>Describes the Amazon CloudWatch logging options for your delivery
    * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CloudWatchLoggingOptions">AWS
    * API Reference</a></p>

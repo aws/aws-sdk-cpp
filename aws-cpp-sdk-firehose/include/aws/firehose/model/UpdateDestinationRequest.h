@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -127,7 +127,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-     * to perform conditional operations. For example, if there is a interleaving
+     * to perform conditional operations. For example, if there is an interleaving
      * update and this value is null, then the update destination fails. After the
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>

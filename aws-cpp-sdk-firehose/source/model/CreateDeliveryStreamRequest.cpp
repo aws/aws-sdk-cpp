@@ -24,6 +24,9 @@ using namespace Aws::Utils;
 
 CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() : 
     m_deliveryStreamNameHasBeenSet(false),
+    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
+    m_deliveryStreamTypeHasBeenSet(false),
+    m_kinesisStreamSourceConfigurationHasBeenSet(false),
     m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false)
@@ -37,6 +40,17 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_deliveryStreamNameHasBeenSet)
   {
    payload.WithString("DeliveryStreamName", m_deliveryStreamName);
+
+  }
+
+  if(m_deliveryStreamTypeHasBeenSet)
+  {
+   payload.WithString("DeliveryStreamType", DeliveryStreamTypeMapper::GetNameForDeliveryStreamType(m_deliveryStreamType));
+  }
+
+  if(m_kinesisStreamSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("KinesisStreamSourceConfiguration", m_kinesisStreamSourceConfiguration.Jsonize());
 
   }
 

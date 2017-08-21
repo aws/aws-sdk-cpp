@@ -53,56 +53,63 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
+     * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
+     * Amazon ES Configuration API and for indexing documents. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
@@ -242,7 +249,7 @@ namespace Model
     inline ElasticsearchDestinationUpdate& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
      * to IndexName to facilitate the expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -252,7 +259,7 @@ namespace Model
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
      * to IndexName to facilitate the expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -262,7 +269,7 @@ namespace Model
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
      * to IndexName to facilitate the expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -272,7 +279,7 @@ namespace Model
     inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
      * to IndexName to facilitate the expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -282,7 +289,7 @@ namespace Model
     inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
      * to IndexName to facilitate the expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -322,32 +329,32 @@ namespace Model
     inline ElasticsearchDestinationUpdate& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationUpdate& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationUpdate& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 

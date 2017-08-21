@@ -182,32 +182,32 @@ namespace Model
     inline RedshiftDestinationDescription& WithUsername(const char* value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationDescription& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in the event that Firehose is unable to deliver documents
-     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
+     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationDescription& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 

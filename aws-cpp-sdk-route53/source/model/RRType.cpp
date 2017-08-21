@@ -41,6 +41,7 @@ namespace Aws
         static const int SRV_HASH = HashingUtils::HashString("SRV");
         static const int SPF_HASH = HashingUtils::HashString("SPF");
         static const int AAAA_HASH = HashingUtils::HashString("AAAA");
+        static const int CAA_HASH = HashingUtils::HashString("CAA");
 
 
         RRType GetRRTypeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return RRType::AAAA;
           }
+          else if (hashCode == CAA_HASH)
+          {
+            return RRType::CAA;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +131,8 @@ namespace Aws
             return "SPF";
           case RRType::AAAA:
             return "AAAA";
+          case RRType::CAA:
+            return "CAA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

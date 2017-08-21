@@ -17,6 +17,8 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/model/DeliveryStreamType.h>
+#include <aws/firehose/model/KinesisStreamSourceConfiguration.h>
 #include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
 #include <aws/firehose/model/RedshiftDestinationConfiguration.h>
 #include <aws/firehose/model/ElasticsearchDestinationConfiguration.h>
@@ -41,52 +43,132 @@ namespace Model
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. You can have multiple delivery streams with the same name if
-     * they are in different accounts or different regions.</p>
+     * the same region. If the delivery streams are in different accounts or different
+     * regions, you can have multiple delivery streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+     * a source.</p> </li> </ul>
+     */
+    inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+     * a source.</p> </li> </ul>
+     */
+    inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+     * a source.</p> </li> </ul>
+     */
+    inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+     * a source.</p> </li> </ul>
+     */
+    inline CreateDeliveryStreamRequest& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
+     * a source.</p> </li> </ul>
+     */
+    inline CreateDeliveryStreamRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
+
+    /**
+     * <p>When a Kinesis stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
+     * the role ARN for the source stream.</p>
+     */
+    inline const KinesisStreamSourceConfiguration& GetKinesisStreamSourceConfiguration() const{ return m_kinesisStreamSourceConfiguration; }
+
+    /**
+     * <p>When a Kinesis stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
+     * the role ARN for the source stream.</p>
+     */
+    inline void SetKinesisStreamSourceConfiguration(const KinesisStreamSourceConfiguration& value) { m_kinesisStreamSourceConfigurationHasBeenSet = true; m_kinesisStreamSourceConfiguration = value; }
+
+    /**
+     * <p>When a Kinesis stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
+     * the role ARN for the source stream.</p>
+     */
+    inline void SetKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration&& value) { m_kinesisStreamSourceConfigurationHasBeenSet = true; m_kinesisStreamSourceConfiguration = std::move(value); }
+
+    /**
+     * <p>When a Kinesis stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
+     * the role ARN for the source stream.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithKinesisStreamSourceConfiguration(const KinesisStreamSourceConfiguration& value) { SetKinesisStreamSourceConfiguration(value); return *this;}
+
+    /**
+     * <p>When a Kinesis stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
+     * the role ARN for the source stream.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration&& value) { SetKinesisStreamSourceConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
@@ -166,6 +248,10 @@ namespace Model
   private:
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+    DeliveryStreamType m_deliveryStreamType;
+    bool m_deliveryStreamTypeHasBeenSet;
+    KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
+    bool m_kinesisStreamSourceConfigurationHasBeenSet;
     ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
     bool m_extendedS3DestinationConfigurationHasBeenSet;
     RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;

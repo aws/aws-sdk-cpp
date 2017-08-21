@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
+#include <aws/firehose/model/DeliveryStreamType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -50,6 +51,56 @@ namespace Model
      * <p>The maximum number of delivery streams to list.</p>
      */
     inline ListDeliveryStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * types are returned.</p>
+     */
+    inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * types are returned.</p>
+     */
+    inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * types are returned.</p>
+     */
+    inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * types are returned.</p>
+     */
+    inline ListDeliveryStreamsRequest& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * types are returned.</p>
+     */
+    inline ListDeliveryStreamsRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream to start the list with.</p>
@@ -89,6 +140,8 @@ namespace Model
   private:
     int m_limit;
     bool m_limitHasBeenSet;
+    DeliveryStreamType m_deliveryStreamType;
+    bool m_deliveryStreamTypeHasBeenSet;
     Aws::String m_exclusiveStartDeliveryStreamName;
     bool m_exclusiveStartDeliveryStreamNameHasBeenSet;
   };
