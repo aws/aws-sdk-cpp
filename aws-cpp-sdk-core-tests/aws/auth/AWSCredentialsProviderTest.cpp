@@ -332,7 +332,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
+TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefresh)
 {
     auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
@@ -346,13 +346,12 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
 
     mockClient->SetMockedCredentialsValue(validCredentials.str());
 
-    // Set the refresh frequency to 15 seconds
-    TaskRoleCredentialsProvider provider(mockClient, 15 * 1000);
+    // Set the refresh frequency to 0s, immediately trying refresh each time GetAWSCredentials() get called.
+    // If the credential has not expired, it will not be refreshed.
+    TaskRoleCredentialsProvider provider(mockClient, 0);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(3 * 1000));
-
     // After sleeping for 3 seconds, the credentials will not be refreshed.
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
