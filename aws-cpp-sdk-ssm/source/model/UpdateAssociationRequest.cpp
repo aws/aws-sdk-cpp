@@ -29,7 +29,9 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_associationNameHasBeenSet(false),
+    m_associationVersionHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,18 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
    }
    payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_associationNameHasBeenSet)
+  {
+   payload.WithString("AssociationName", m_associationName);
+
+  }
+
+  if(m_associationVersionHasBeenSet)
+  {
+   payload.WithString("AssociationVersion", m_associationVersion);
 
   }
 

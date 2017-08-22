@@ -154,6 +154,41 @@ namespace Model
     inline InstanceAssociationStatusInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
     /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
+    /**
      * <p>The instance ID where the association was created.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -383,6 +418,41 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithOutputUrl(InstanceAssociationOutputUrl&& value) { SetOutputUrl(std::move(value)); return *this;}
 
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline InstanceAssociationStatusInfo& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
   private:
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
@@ -390,6 +460,8 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     Aws::Utils::DateTime m_executionDate;
@@ -404,6 +476,8 @@ namespace Model
     bool m_errorCodeHasBeenSet;
     InstanceAssociationOutputUrl m_outputUrl;
     bool m_outputUrlHasBeenSet;
+    Aws::String m_associationName;
+    bool m_associationNameHasBeenSet;
   };
 
 } // namespace Model

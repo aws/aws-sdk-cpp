@@ -36,6 +36,7 @@ namespace Aws
         static const int AssociationStatusName_HASH = HashingUtils::HashString("AssociationStatusName");
         static const int LastExecutedBefore_HASH = HashingUtils::HashString("LastExecutedBefore");
         static const int LastExecutedAfter_HASH = HashingUtils::HashString("LastExecutedAfter");
+        static const int AssociationName_HASH = HashingUtils::HashString("AssociationName");
 
 
         AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return AssociationFilterKey::LastExecutedAfter;
           }
+          else if (hashCode == AssociationName_HASH)
+          {
+            return AssociationFilterKey::AssociationName;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "LastExecutedBefore";
           case AssociationFilterKey::LastExecutedAfter:
             return "LastExecutedAfter";
+          case AssociationFilterKey::AssociationName:
+            return "AssociationName";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

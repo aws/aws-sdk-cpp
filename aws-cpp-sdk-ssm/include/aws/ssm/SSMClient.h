@@ -83,6 +83,7 @@
 #include <aws/ssm/model/GetParametersByPathResult.h>
 #include <aws/ssm/model/GetPatchBaselineResult.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupResult.h>
+#include <aws/ssm/model/ListAssociationVersionsResult.h>
 #include <aws/ssm/model/ListAssociationsResult.h>
 #include <aws/ssm/model/ListCommandInvocationsResult.h>
 #include <aws/ssm/model/ListCommandsResult.h>
@@ -223,6 +224,7 @@ namespace Model
         class GetParametersByPathRequest;
         class GetPatchBaselineRequest;
         class GetPatchBaselineForPatchGroupRequest;
+        class ListAssociationVersionsRequest;
         class ListAssociationsRequest;
         class ListCommandInvocationsRequest;
         class ListCommandsRequest;
@@ -319,6 +321,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetParametersByPathResult, Aws::Client::AWSError<SSMErrors>> GetParametersByPathOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineForPatchGroupResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineForPatchGroupOutcome;
+        typedef Aws::Utils::Outcome<ListAssociationVersionsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListAssociationsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListCommandInvocationsResult, Aws::Client::AWSError<SSMErrors>> ListCommandInvocationsOutcome;
         typedef Aws::Utils::Outcome<ListCommandsResult, Aws::Client::AWSError<SSMErrors>> ListCommandsOutcome;
@@ -415,6 +418,7 @@ namespace Model
         typedef std::future<GetParametersByPathOutcome> GetParametersByPathOutcomeCallable;
         typedef std::future<GetPatchBaselineOutcome> GetPatchBaselineOutcomeCallable;
         typedef std::future<GetPatchBaselineForPatchGroupOutcome> GetPatchBaselineForPatchGroupOutcomeCallable;
+        typedef std::future<ListAssociationVersionsOutcome> ListAssociationVersionsOutcomeCallable;
         typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
         typedef std::future<ListCommandInvocationsOutcome> ListCommandInvocationsOutcomeCallable;
         typedef std::future<ListCommandsOutcome> ListCommandsOutcomeCallable;
@@ -514,6 +518,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::GetParametersByPathRequest&, const Model::GetParametersByPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersByPathResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineRequest&, const Model::GetPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineForPatchGroupRequest&, const Model::GetPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineForPatchGroupResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ListAssociationVersionsRequest&, const Model::ListAssociationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationVersionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListCommandInvocationsRequest&, const Model::ListCommandInvocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommandInvocationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListCommandsRequest&, const Model::ListCommandsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommandsResponseReceivedHandler;
@@ -2531,6 +2536,34 @@ namespace Model
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves all versions of an association for a specific association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssociationVersionsOutcome ListAssociationVersions(const Model::ListAssociationVersionsRequest& request) const;
+
+        /**
+         * <p>Retrieves all versions of an association for a specific association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssociationVersionsOutcomeCallable ListAssociationVersionsCallable(const Model::ListAssociationVersionsRequest& request) const;
+
+        /**
+         * <p>Retrieves all versions of an association for a specific association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssociationVersionsAsync(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
@@ -2627,20 +2660,20 @@ namespace Model
         virtual void ListCommandsAsync(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For a specified resource ID, this API returns a list of compliance statuses
-         * for different resource types. Currently, you can only specify one resource ID
-         * per call. List results depend on the criteria specified in the filter.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>For a specified resource ID, this API action returns a list of compliance
+         * statuses for different resource types. Currently, you can only specify one
+         * resource ID per call. List results depend on the criteria specified in the
+         * filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">AWS
          * API Reference</a></p>
          */
         virtual Model::ListComplianceItemsOutcome ListComplianceItems(const Model::ListComplianceItemsRequest& request) const;
 
         /**
-         * <p>For a specified resource ID, this API returns a list of compliance statuses
-         * for different resource types. Currently, you can only specify one resource ID
-         * per call. List results depend on the criteria specified in the filter.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>For a specified resource ID, this API action returns a list of compliance
+         * statuses for different resource types. Currently, you can only specify one
+         * resource ID per call. List results depend on the criteria specified in the
+         * filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">AWS
          * API Reference</a></p>
          *
@@ -2649,10 +2682,10 @@ namespace Model
         virtual Model::ListComplianceItemsOutcomeCallable ListComplianceItemsCallable(const Model::ListComplianceItemsRequest& request) const;
 
         /**
-         * <p>For a specified resource ID, this API returns a list of compliance statuses
-         * for different resource types. Currently, you can only specify one resource ID
-         * per call. List results depend on the criteria specified in the filter.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>For a specified resource ID, this API action returns a list of compliance
+         * statuses for different resource types. Currently, you can only specify one
+         * resource ID per call. List results depend on the criteria specified in the
+         * filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">AWS
          * API Reference</a></p>
          *
@@ -2663,7 +2696,7 @@ namespace Model
         /**
          * <p>Returns a summary count of compliant and non-compliant resources for a
          * compliance type. For example, this call can return State Manager associations,
-         * patches, or custom compliance types according to the filter criteria you
+         * patches, or custom compliance types according to the filter criteria that you
          * specify. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">AWS
          * API Reference</a></p>
@@ -2673,7 +2706,7 @@ namespace Model
         /**
          * <p>Returns a summary count of compliant and non-compliant resources for a
          * compliance type. For example, this call can return State Manager associations,
-         * patches, or custom compliance types according to the filter criteria you
+         * patches, or custom compliance types according to the filter criteria that you
          * specify. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">AWS
          * API Reference</a></p>
@@ -2685,7 +2718,7 @@ namespace Model
         /**
          * <p>Returns a summary count of compliant and non-compliant resources for a
          * compliance type. For example, this call can return State Manager associations,
-         * patches, or custom compliance types according to the filter criteria you
+         * patches, or custom compliance types according to the filter criteria that you
          * specify. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">AWS
          * API Reference</a></p>
@@ -2922,9 +2955,9 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This API lets you register custom compliance details with a resource.
-         * This call overwrites existing compliance information on the resource, so you
-         * must provide a full list of compliance items each time you send the
+         * resource. This action lets you register custom compliance details with a
+         * resource. This call overwrites existing compliance information on the resource,
+         * so you must provide a full list of compliance items each time that you send the
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
@@ -2933,9 +2966,9 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This API lets you register custom compliance details with a resource.
-         * This call overwrites existing compliance information on the resource, so you
-         * must provide a full list of compliance items each time you send the
+         * resource. This action lets you register custom compliance details with a
+         * resource. This call overwrites existing compliance information on the resource,
+         * so you must provide a full list of compliance items each time that you send the
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
@@ -2946,9 +2979,9 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This API lets you register custom compliance details with a resource.
-         * This call overwrites existing compliance information on the resource, so you
-         * must provide a full list of compliance items each time you send the
+         * resource. This action lets you register custom compliance details with a
+         * resource. This call overwrites existing compliance information on the resource,
+         * so you must provide a full list of compliance items each time that you send the
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
@@ -3242,18 +3275,18 @@ namespace Model
         virtual void StopAutomationExecutionAsync(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an association. You can update the association name and version, the
+         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAssociationOutcome UpdateAssociation(const Model::UpdateAssociationRequest& request) const;
 
         /**
-         * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an association. You can update the association name and version, the
+         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -3262,9 +3295,9 @@ namespace Model
         virtual Model::UpdateAssociationOutcomeCallable UpdateAssociationCallable(const Model::UpdateAssociationRequest& request) const;
 
         /**
-         * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an association. You can update the association name and version, the
+         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -3381,10 +3414,10 @@ namespace Model
         /**
          * <p>Modifies the target of an existing Maintenance Window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>The IDs of an
-         * ID target.</p> <p>The tags of a Tag target.</p> <p>The Owner.</p> <p>The
-         * Name.</p> <p>The Description.</p> <p>Also note that if a parameter is null, then
-         * the corresponding field is not modified.</p><p><h3>See Also:</h3>   <a
+         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
+         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
+         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
+         * not modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          */
@@ -3393,10 +3426,10 @@ namespace Model
         /**
          * <p>Modifies the target of an existing Maintenance Window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>The IDs of an
-         * ID target.</p> <p>The tags of a Tag target.</p> <p>The Owner.</p> <p>The
-         * Name.</p> <p>The Description.</p> <p>Also note that if a parameter is null, then
-         * the corresponding field is not modified.</p><p><h3>See Also:</h3>   <a
+         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
+         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
+         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
+         * not modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          *
@@ -3407,10 +3440,10 @@ namespace Model
         /**
          * <p>Modifies the target of an existing Maintenance Window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>The IDs of an
-         * ID target.</p> <p>The tags of a Tag target.</p> <p>The Owner.</p> <p>The
-         * Name.</p> <p>The Description.</p> <p>Also note that if a parameter is null, then
-         * the corresponding field is not modified.</p><p><h3>See Also:</h3>   <a
+         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
+         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
+         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
+         * not modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          *
@@ -3420,15 +3453,14 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following:</p> <p>The Task Arn. For example, you
+         * type, but you can change the following values:</p> <p>Task ARN. For example, you
          * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>The service role ARN.</p> <p>The task parameters.</p>
-         * <p>The task priority.</p> <p>The task MaxConcurrency and MaxErrors.</p> <p>The
-         * log location.</p> <p>If a parameter is null, then the corresponding field is not
-         * modified. Also, if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow operation are required for this request.
-         * Optional fields that aren't specified are be set to null.</p><p><h3>See
-         * Also:</h3>   <a
+         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
+         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
+         * <p>If a parameter is null, then the corresponding field is not modified. Also,
+         * if you set Replace to true, then all fields required by the
+         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
+         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
@@ -3436,15 +3468,14 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following:</p> <p>The Task Arn. For example, you
+         * type, but you can change the following values:</p> <p>Task ARN. For example, you
          * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>The service role ARN.</p> <p>The task parameters.</p>
-         * <p>The task priority.</p> <p>The task MaxConcurrency and MaxErrors.</p> <p>The
-         * log location.</p> <p>If a parameter is null, then the corresponding field is not
-         * modified. Also, if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow operation are required for this request.
-         * Optional fields that aren't specified are be set to null.</p><p><h3>See
-         * Also:</h3>   <a
+         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
+         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
+         * <p>If a parameter is null, then the corresponding field is not modified. Also,
+         * if you set Replace to true, then all fields required by the
+         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
+         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3454,15 +3485,14 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
-         * type, but you can change the following:</p> <p>The Task Arn. For example, you
+         * type, but you can change the following values:</p> <p>Task ARN. For example, you
          * can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> <p>The service role ARN.</p> <p>The task parameters.</p>
-         * <p>The task priority.</p> <p>The task MaxConcurrency and MaxErrors.</p> <p>The
-         * log location.</p> <p>If a parameter is null, then the corresponding field is not
-         * modified. Also, if you set Replace to true, then all fields required by the
-         * RegisterTaskWithMaintenanceWindow operation are required for this request.
-         * Optional fields that aren't specified are be set to null.</p><p><h3>See
-         * Also:</h3>   <a
+         * AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task
+         * priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p>
+         * <p>If a parameter is null, then the corresponding field is not modified. Also,
+         * if you set Replace to true, then all fields required by the
+         * RegisterTaskWithMaintenanceWindow action are required for this request. Optional
+         * fields that aren't specified are set to null.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3593,6 +3623,7 @@ namespace Model
         void GetParametersByPathAsyncHelper(const Model::GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineAsyncHelper(const Model::GetPatchBaselineRequest& request, const GetPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineForPatchGroupAsyncHelper(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAssociationVersionsAsyncHelper(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationsAsyncHelper(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCommandInvocationsAsyncHelper(const Model::ListCommandInvocationsRequest& request, const ListCommandInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCommandsAsyncHelper(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

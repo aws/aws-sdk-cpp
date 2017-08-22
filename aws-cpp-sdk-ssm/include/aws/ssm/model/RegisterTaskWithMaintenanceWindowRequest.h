@@ -279,32 +279,32 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Parameters the task should use during execution. Populate only the fields
-     * that match the task type. All other fields should be empty. </p>
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
      */
     inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const{ return m_taskInvocationParameters; }
 
     /**
-     * <p>Parameters the task should use during execution. Populate only the fields
-     * that match the task type. All other fields should be empty. </p>
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
      */
     inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = value; }
 
     /**
-     * <p>Parameters the task should use during execution. Populate only the fields
-     * that match the task type. All other fields should be empty. </p>
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
      */
     inline void SetTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = std::move(value); }
 
     /**
-     * <p>Parameters the task should use during execution. Populate only the fields
-     * that match the task type. All other fields should be empty. </p>
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { SetTaskInvocationParameters(value); return *this;}
 
     /**
-     * <p>Parameters the task should use during execution. Populate only the fields
-     * that match the task type. All other fields should be empty. </p>
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ssm/model/CreateAssociationBatchRequestEntry.h>
+#include <aws/ssm/model/AssociationVersionInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,11 +28,13 @@ namespace SSM
 namespace Model
 {
 
-CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() : 
+AssociationVersionInfo::AssociationVersionInfo() : 
+    m_associationIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
@@ -40,11 +42,13 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() :
 {
 }
 
-CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(const JsonValue& jsonValue) : 
+AssociationVersionInfo::AssociationVersionInfo(const JsonValue& jsonValue) : 
+    m_associationIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
@@ -53,8 +57,29 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(const Jso
   *this = jsonValue;
 }
 
-CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator =(const JsonValue& jsonValue)
+AssociationVersionInfo& AssociationVersionInfo::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("AssociationId"))
+  {
+    m_associationId = jsonValue.GetString("AssociationId");
+
+    m_associationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationVersion"))
+  {
+    m_associationVersion = jsonValue.GetString("AssociationVersion");
+
+    m_associationVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -62,11 +87,11 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("InstanceId"))
+  if(jsonValue.ValueExists("DocumentVersion"))
   {
-    m_instanceId = jsonValue.GetString("InstanceId");
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
 
-    m_instanceIdHasBeenSet = true;
+    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Parameters"))
@@ -84,13 +109,6 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
       m_parameters[parametersItem.first] = std::move(parameterValueListList);
     }
     m_parametersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DocumentVersion"))
-  {
-    m_documentVersion = jsonValue.GetString("DocumentVersion");
-
-    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Targets"))
@@ -127,9 +145,26 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
   return *this;
 }
 
-JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
+JsonValue AssociationVersionInfo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_associationIdHasBeenSet)
+  {
+   payload.WithString("AssociationId", m_associationId);
+
+  }
+
+  if(m_associationVersionHasBeenSet)
+  {
+   payload.WithString("AssociationVersion", m_associationVersion);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -137,9 +172,9 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
 
   }
 
-  if(m_instanceIdHasBeenSet)
+  if(m_documentVersionHasBeenSet)
   {
-   payload.WithString("InstanceId", m_instanceId);
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 
@@ -156,12 +191,6 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
      parametersJsonMap.WithArray(parametersItem.first, std::move(parameterValueListJsonList));
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
-
-  }
-
-  if(m_documentVersionHasBeenSet)
-  {
-   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 

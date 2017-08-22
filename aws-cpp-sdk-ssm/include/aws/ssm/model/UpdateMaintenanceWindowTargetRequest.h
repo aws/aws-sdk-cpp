@@ -39,107 +39,107 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window ID for which you want to modify the target.</p>
+     * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline const Aws::String& GetWindowTargetId() const{ return m_windowTargetId; }
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline void SetWindowTargetId(const Aws::String& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = value; }
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = std::move(value); }
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline void SetWindowTargetId(const char* value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId.assign(value); }
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowTargetId(const Aws::String& value) { SetWindowTargetId(value); return *this;}
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>The target ID that you want to modify.</p>
+     * <p>The target ID to modify.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets that you want to add or replace.</p>
+     * <p>The targets to add or replace.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -256,23 +256,23 @@ namespace Model
     inline UpdateMaintenanceWindowTargetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow API are also required for this API request.
-     * Optional fields that are not specified will be set to null.</p>
+     * <p>If True, then all fields that are required by the
+     * RegisterTargetWithMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.</p>
      */
     inline bool GetReplace() const{ return m_replace; }
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow API are also required for this API request.
-     * Optional fields that are not specified will be set to null.</p>
+     * <p>If True, then all fields that are required by the
+     * RegisterTargetWithMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.</p>
      */
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * RegisterTargetWithMaintenanceWindow API are also required for this API request.
-     * Optional fields that are not specified will be set to null.</p>
+     * <p>If True, then all fields that are required by the
+     * RegisterTargetWithMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 

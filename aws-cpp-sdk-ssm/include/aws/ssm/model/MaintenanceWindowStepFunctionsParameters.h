@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Parameters for the STEP_FUNCTION execution.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for the STEP_FUNCTION execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowStepFunctionsParameters">AWS
    * API Reference</a></p>
    */

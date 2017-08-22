@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ssm/model/DescribeAssociationRequest.h>
+#include <aws/ssm/model/ListAssociationVersionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,29 +22,17 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssociationRequest::DescribeAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
+ListAssociationVersionsRequest::ListAssociationVersionsRequest() : 
     m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
-Aws::String DescribeAssociationRequest::SerializePayload() const
+Aws::String ListAssociationVersionsRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
-  }
 
   if(m_associationIdHasBeenSet)
   {
@@ -52,19 +40,25 @@ Aws::String DescribeAssociationRequest::SerializePayload() const
 
   }
 
-  if(m_associationVersionHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("AssociationVersion", m_associationVersion);
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 
   return payload.WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeAssociationRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection ListAssociationVersionsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.DescribeAssociation"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.ListAssociationVersions"));
   return headers;
 
 }

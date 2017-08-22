@@ -307,6 +307,41 @@ namespace Model
      */
     inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
 
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline CreateAssociationRequest& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline CreateAssociationRequest& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline CreateAssociationRequest& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -322,6 +357,8 @@ namespace Model
     bool m_scheduleExpressionHasBeenSet;
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+    Aws::String m_associationName;
+    bool m_associationNameHasBeenSet;
   };
 
 } // namespace Model

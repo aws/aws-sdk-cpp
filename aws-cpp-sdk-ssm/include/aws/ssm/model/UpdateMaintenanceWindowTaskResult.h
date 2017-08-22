@@ -48,72 +48,72 @@ namespace Model
     UpdateMaintenanceWindowTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowId(const char* value) { m_windowId.assign(value); }
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window ID that was updated.</p>
+     * <p>The ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowTaskId(const Aws::String& value) { m_windowTaskId = value; }
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline void SetWindowTaskId(const char* value) { m_windowTaskId.assign(value); }
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const Aws::String& value) { SetWindowTaskId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window task ID that was updated.</p>
+     * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 

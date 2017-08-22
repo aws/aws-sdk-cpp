@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationRequest& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution the task is part of.</p>
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 

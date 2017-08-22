@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Parameters for a LAMBDA task type.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for a LAMBDA task type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowLambdaParameters">AWS
    * API Reference</a></p>
    */
@@ -47,139 +47,132 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
     /**
-     * <p>Using the ClientContext you can pass client-specific information to the
-     * Lambda function you are invoking. You can then process the client information in
-     * your Lambda function as you choose through the context variable.</p>
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>JSON that you want to provide to your Lambda function as input.</p>
+     * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
 
     /**
-     * <p>JSON that you want to provide to your Lambda function as input.</p>
+     * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
-     * <p>JSON that you want to provide to your Lambda function as input.</p>
+     * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
-     * <p>JSON that you want to provide to your Lambda function as input.</p>
+     * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
 
     /**
-     * <p>JSON that you want to provide to your Lambda function as input.</p>
+     * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
 

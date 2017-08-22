@@ -53,49 +53,49 @@ namespace Model
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline ComplianceItem& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline ComplianceItem& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
 
     /**
      * <p>The compliance type. For example, Association (for a State Manager
-     * association), Patch, or Custom:<code>string</code> are all valide compliance
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
     inline ComplianceItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
@@ -307,31 +307,31 @@ namespace Model
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
-     * Critical, HIGH, Medium, Low, Informational, Unspecified.</p>
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline const ComplianceSeverity& GetSeverity() const{ return m_severity; }
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
-     * Critical, HIGH, Medium, Low, Informational, Unspecified.</p>
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline void SetSeverity(const ComplianceSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
-     * Critical, HIGH, Medium, Low, Informational, Unspecified.</p>
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline void SetSeverity(ComplianceSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
-     * Critical, HIGH, Medium, Low, Informational, Unspecified.</p>
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline ComplianceItem& WithSeverity(const ComplianceSeverity& value) { SetSeverity(value); return *this;}
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
-     * Critical, HIGH, Medium, Low, Informational, Unspecified.</p>
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline ComplianceItem& WithSeverity(ComplianceSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 

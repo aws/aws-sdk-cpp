@@ -163,6 +163,41 @@ namespace Model
     inline Association& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
     /**
+     * <p>The association version.</p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline Association& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline Association& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline Association& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
+    /**
      * <p>The version of the document used in the association.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
@@ -317,6 +352,41 @@ namespace Model
      */
     inline Association& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+    /**
+     * <p>The association name.</p>
+     */
+    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline Association& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline Association& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline Association& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -324,6 +394,8 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
     Aws::Vector<Target> m_targets;
@@ -334,6 +406,8 @@ namespace Model
     bool m_overviewHasBeenSet;
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+    Aws::String m_associationName;
+    bool m_associationNameHasBeenSet;
   };
 
 } // namespace Model

@@ -123,6 +123,41 @@ namespace Model
     inline AssociationDescription& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
+     * <p>The association version.</p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline AssociationDescription& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline AssociationDescription& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline AssociationDescription& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
+    /**
      * <p>The date when the association was made.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
@@ -497,11 +532,48 @@ namespace Model
      */
     inline AssociationDescription& WithLastSuccessfulExecutionDate(Aws::Utils::DateTime&& value) { SetLastSuccessfulExecutionDate(std::move(value)); return *this;}
 
+    /**
+     * <p>The association name.</p>
+     */
+    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline AssociationDescription& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline AssociationDescription& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline AssociationDescription& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
     Aws::Utils::DateTime m_lastUpdateAssociationDate;
@@ -526,6 +598,8 @@ namespace Model
     bool m_lastExecutionDateHasBeenSet;
     Aws::Utils::DateTime m_lastSuccessfulExecutionDate;
     bool m_lastSuccessfulExecutionDateHasBeenSet;
+    Aws::String m_associationName;
+    bool m_associationNameHasBeenSet;
   };
 
 } // namespace Model

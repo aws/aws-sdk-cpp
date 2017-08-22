@@ -154,58 +154,58 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>TaskArn is the resource that the task used during execution. For RUN_COMMAND
-     * and AUTOMATION task types, the TaskArn is the SSM Document Name/ARN. For LAMBDA
-     * tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION tasks, the TaskArn is
-     * the State Machine ARN.</p>
+     * <p>The resource that the task used during execution. For RUN_COMMAND and
+     * AUTOMATION task types, the TaskArn is the SSM Document name/ARN. For LAMBDA
+     * tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is
+     * the state machine ARN.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -445,27 +445,27 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where the task results will be logged.</p>
+     * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>The location in Amazon S3 where the task results will be logged.</p>
+     * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfo = value; }
 
     /**
-     * <p>The location in Amazon S3 where the task results will be logged.</p>
+     * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfo = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 where the task results will be logged.</p>
+     * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where the task results will be logged.</p>
+     * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 

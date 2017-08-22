@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Parameters for a RUN_COMMAND task type.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for a RUN_COMMAND task type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowRunCommandParameters">AWS
    * API Reference</a></p>
    */
@@ -85,99 +85,99 @@ namespace Model
     inline MaintenanceWindowRunCommandParameters& WithComment(const char* value) { SetComment(value); return *this;}
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline const Aws::String& GetDocumentHash() const{ return m_documentHash; }
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline void SetDocumentHash(const Aws::String& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline void SetDocumentHash(Aws::String&& value) { m_documentHashHasBeenSet = true; m_documentHash = std::move(value); }
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline void SetDocumentHash(const char* value) { m_documentHashHasBeenSet = true; m_documentHash.assign(value); }
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHash(const Aws::String& value) { SetDocumentHash(value); return *this;}
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHash(Aws::String&& value) { SetDocumentHash(std::move(value)); return *this;}
 
     /**
-     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * Sha1 hashes have been deprecated.</p>
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHash(const char* value) { SetDocumentHash(value); return *this;}
 
     /**
-     * <p>Sha256 or Sha1. Sha1 hashes have been deprecated.</p>
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline const DocumentHashType& GetDocumentHashType() const{ return m_documentHashType; }
 
     /**
-     * <p>Sha256 or Sha1. Sha1 hashes have been deprecated.</p>
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline void SetDocumentHashType(const DocumentHashType& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
 
     /**
-     * <p>Sha256 or Sha1. Sha1 hashes have been deprecated.</p>
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline void SetDocumentHashType(DocumentHashType&& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = std::move(value); }
 
     /**
-     * <p>Sha256 or Sha1. Sha1 hashes have been deprecated.</p>
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHashType(const DocumentHashType& value) { SetDocumentHashType(value); return *this;}
 
     /**
-     * <p>Sha256 or Sha1. Sha1 hashes have been deprecated.</p>
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per-instance basis.</p>
      */
     inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per-instance basis.</p>
      */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per-instance basis.</p>
      */
     inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per-instance basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per-instance basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
@@ -252,110 +252,110 @@ namespace Model
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM service role that to assume during task execution.</p>
+     * <p>The IAM service role to assume during task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * doesn not execute.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * doesn not execute.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
-     * will not execute.</p>
+     * doesn not execute.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 

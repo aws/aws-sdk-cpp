@@ -250,23 +250,23 @@ namespace Model
     inline UpdateMaintenanceWindowRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * CreateMaintenanceWindow API are also required for this API request. Optional
-     * fields that are not specified will be set to null. </p>
+     * <p>If True, then all fields that are required by the CreateMaintenanceWindow
+     * action are also required for this API request. Optional fields that are not
+     * specified are set to null. </p>
      */
     inline bool GetReplace() const{ return m_replace; }
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * CreateMaintenanceWindow API are also required for this API request. Optional
-     * fields that are not specified will be set to null. </p>
+     * <p>If True, then all fields that are required by the CreateMaintenanceWindow
+     * action are also required for this API request. Optional fields that are not
+     * specified are set to null. </p>
      */
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
 
     /**
-     * <p>If you specify True, then all fields that are required by the
-     * CreateMaintenanceWindow API are also required for this API request. Optional
-     * fields that are not specified will be set to null. </p>
+     * <p>If True, then all fields that are required by the CreateMaintenanceWindow
+     * action are also required for this API request. Optional fields that are not
+     * specified are set to null. </p>
      */
     inline UpdateMaintenanceWindowRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 

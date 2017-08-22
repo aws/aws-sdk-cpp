@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Parameters for an AUTOMATION task type.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for an AUTOMATION task type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowAutomationParameters">AWS
    * API Reference</a></p>
    */
@@ -48,92 +48,92 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of an SSM Automation document to use during task execution.</p>
+     * <p>The version of an Automation document to use during task execution.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters for the AUTOMATION task.</p>
+     * <p>The parameters for the AUTOMATION task.</p>
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

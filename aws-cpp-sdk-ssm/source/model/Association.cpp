@@ -32,11 +32,13 @@ Association::Association() :
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
     m_overviewHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false)
+    m_scheduleExpressionHasBeenSet(false),
+    m_associationNameHasBeenSet(false)
 {
 }
 
@@ -44,11 +46,13 @@ Association::Association(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
     m_overviewHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false)
+    m_scheduleExpressionHasBeenSet(false),
+    m_associationNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,13 @@ Association& Association::operator =(const JsonValue& jsonValue)
     m_associationId = jsonValue.GetString("AssociationId");
 
     m_associationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationVersion"))
+  {
+    m_associationVersion = jsonValue.GetString("AssociationVersion");
+
+    m_associationVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DocumentVersion"))
@@ -114,6 +125,13 @@ Association& Association::operator =(const JsonValue& jsonValue)
     m_scheduleExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationName"))
+  {
+    m_associationName = jsonValue.GetString("AssociationName");
+
+    m_associationNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +154,12 @@ JsonValue Association::Jsonize() const
   if(m_associationIdHasBeenSet)
   {
    payload.WithString("AssociationId", m_associationId);
+
+  }
+
+  if(m_associationVersionHasBeenSet)
+  {
+   payload.WithString("AssociationVersion", m_associationVersion);
 
   }
 
@@ -170,6 +194,12 @@ JsonValue Association::Jsonize() const
   if(m_scheduleExpressionHasBeenSet)
   {
    payload.WithString("ScheduleExpression", m_scheduleExpression);
+
+  }
+
+  if(m_associationNameHasBeenSet)
+  {
+   payload.WithString("AssociationName", m_associationName);
 
   }
 

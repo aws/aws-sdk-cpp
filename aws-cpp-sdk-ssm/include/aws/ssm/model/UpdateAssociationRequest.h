@@ -324,6 +324,97 @@ namespace Model
      */
     inline UpdateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the association that you want to update.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter is provided for concurrency control purposes. You must specify
+     * the latest association version in the service. If you want to ensure that this
+     * request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.</p>
+     */
+    inline UpdateAssociationRequest& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
   private:
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
@@ -339,6 +430,10 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+    Aws::String m_associationName;
+    bool m_associationNameHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
   };
 
 } // namespace Model

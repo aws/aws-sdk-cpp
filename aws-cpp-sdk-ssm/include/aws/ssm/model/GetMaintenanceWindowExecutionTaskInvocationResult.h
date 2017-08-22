@@ -215,37 +215,37 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parameters = value; }
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline void SetParameters(const char* value) { m_parameters.assign(value); }
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters used at the time the task executed.</p>
+     * <p>The parameters used at the time that the task executed.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(const char* value) { SetParameters(value); return *this;}
 
@@ -317,94 +317,94 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The time the task started executing on the target.</p>
+     * <p>The time that the task started executing on the target.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time the task started executing on the target.</p>
+     * <p>The time that the task started executing on the target.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>The time the task started executing on the target.</p>
+     * <p>The time that the task started executing on the target.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>The time the task started executing on the target.</p>
+     * <p>The time that the task started executing on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time the task started executing on the target.</p>
+     * <p>The time that the task started executing on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>The time the task finished executing on the target.</p>
+     * <p>The time that the task finished executing on the target.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time the task finished executing on the target.</p>
+     * <p>The time that the task finished executing on the target.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
 
     /**
-     * <p>The time the task finished executing on the target.</p>
+     * <p>The time that the task finished executing on the target.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
-     * <p>The time the task finished executing on the target.</p>
+     * <p>The time that the task finished executing on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time the task finished executing on the target.</p>
+     * <p>The time that the task finished executing on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformation = value; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformation = std::move(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformation.assign(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window. </p>
+     * <p>User-provided value to be included in any CloudWatch events raised while
+     * running tasks for these targets in this Maintenance Window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

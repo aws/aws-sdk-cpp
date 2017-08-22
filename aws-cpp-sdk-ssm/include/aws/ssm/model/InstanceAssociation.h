@@ -151,6 +151,41 @@ namespace Model
      */
     inline InstanceAssociation& WithContent(const char* value) { SetContent(value); return *this;}
 
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline InstanceAssociation& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline InstanceAssociation& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline InstanceAssociation& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
   private:
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
@@ -158,6 +193,8 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_content;
     bool m_contentHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
   };
 
 } // namespace Model

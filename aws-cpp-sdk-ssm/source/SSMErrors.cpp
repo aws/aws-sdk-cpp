@@ -61,6 +61,7 @@ static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("Ass
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
 static const int AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
+static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationVersionLimitExceeded");
 static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
 static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
@@ -76,6 +77,7 @@ static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterN
 static const int AUTOMATION_DEFINITION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionNotFoundException");
 static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
 static const int INVALID_ALLOWED_PATTERN_HASH = HashingUtils::HashString("InvalidAllowedPatternException");
+static const int INVALID_ASSOCIATION_VERSION_HASH = HashingUtils::HashString("InvalidAssociationVersion");
 static const int INVOCATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InvocationDoesNotExist");
 static const int UNSUPPORTED_OPERATING_SYSTEM_HASH = HashingUtils::HashString("UnsupportedOperatingSystem");
 static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
@@ -248,6 +250,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
   }
+  else if (hashCode == ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
@@ -307,6 +313,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ALLOWED_PATTERN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), false);
+  }
+  else if (hashCode == INVALID_ASSOCIATION_VERSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), false);
   }
   else if (hashCode == INVOCATION_DOES_NOT_EXIST_HASH)
   {

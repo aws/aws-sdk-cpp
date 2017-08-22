@@ -141,6 +141,69 @@ namespace Model
      */
     inline DescribeAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline DescribeAssociationRequest& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline DescribeAssociationRequest& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association,
+     * use ListAssociationVersions. </p>
+     */
+    inline DescribeAssociationRequest& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -148,6 +211,8 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+    Aws::String m_associationVersion;
+    bool m_associationVersionHasBeenSet;
   };
 
 } // namespace Model

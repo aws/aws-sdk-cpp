@@ -81,98 +81,98 @@ namespace Model
     inline ListComplianceItemsRequest& AddFilters(ComplianceStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline ListComplianceItemsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline ListComplianceItemsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline ListComplianceItemsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline ListComplianceItemsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID for the resources from which you want to get compliance information.
-     * Currently, you can only specify one resource ID.</p>
+     * <p>The ID for the resources from which to get compliance information. Currently,
+     * you can only specify one resource ID.</p>
      */
     inline ListComplianceItemsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline ListComplianceItemsRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline ListComplianceItemsRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline ListComplianceItemsRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline ListComplianceItemsRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The type of resource from which you want to get compliance information.
-     * Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+     * <p>The type of resource from which to get compliance information. Currently, the
+     * only supported resource type is <code>ManagedInstance</code>.</p>
      */
     inline ListComplianceItemsRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 

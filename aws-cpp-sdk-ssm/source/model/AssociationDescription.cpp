@@ -31,6 +31,7 @@ namespace Model
 AssociationDescription::AssociationDescription() : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
     m_dateHasBeenSet(false),
     m_lastUpdateAssociationDateHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -42,13 +43,15 @@ AssociationDescription::AssociationDescription() :
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
-    m_lastSuccessfulExecutionDateHasBeenSet(false)
+    m_lastSuccessfulExecutionDateHasBeenSet(false),
+    m_associationNameHasBeenSet(false)
 {
 }
 
 AssociationDescription::AssociationDescription(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_associationVersionHasBeenSet(false),
     m_dateHasBeenSet(false),
     m_lastUpdateAssociationDateHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -60,7 +63,8 @@ AssociationDescription::AssociationDescription(const JsonValue& jsonValue) :
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
-    m_lastSuccessfulExecutionDateHasBeenSet(false)
+    m_lastSuccessfulExecutionDateHasBeenSet(false),
+    m_associationNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +83,13 @@ AssociationDescription& AssociationDescription::operator =(const JsonValue& json
     m_instanceId = jsonValue.GetString("InstanceId");
 
     m_instanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationVersion"))
+  {
+    m_associationVersion = jsonValue.GetString("AssociationVersion");
+
+    m_associationVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Date"))
@@ -178,6 +189,13 @@ AssociationDescription& AssociationDescription::operator =(const JsonValue& json
     m_lastSuccessfulExecutionDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationName"))
+  {
+    m_associationName = jsonValue.GetString("AssociationName");
+
+    m_associationNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +212,12 @@ JsonValue AssociationDescription::Jsonize() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_associationVersionHasBeenSet)
+  {
+   payload.WithString("AssociationVersion", m_associationVersion);
 
   }
 
@@ -278,6 +302,12 @@ JsonValue AssociationDescription::Jsonize() const
   if(m_lastSuccessfulExecutionDateHasBeenSet)
   {
    payload.WithDouble("LastSuccessfulExecutionDate", m_lastSuccessfulExecutionDate.SecondsWithMSPrecision());
+  }
+
+  if(m_associationNameHasBeenSet)
+  {
+   payload.WithString("AssociationName", m_associationName);
+
   }
 
   return payload;

@@ -255,51 +255,51 @@ namespace Model
     inline PutComplianceItemsRequest& AddItems(ComplianceItemEntry&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline const Aws::String& GetItemContentHash() const{ return m_itemContentHash; }
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline void SetItemContentHash(const Aws::String& value) { m_itemContentHashHasBeenSet = true; m_itemContentHash = value; }
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline void SetItemContentHash(Aws::String&& value) { m_itemContentHashHasBeenSet = true; m_itemContentHash = std::move(value); }
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline void SetItemContentHash(const char* value) { m_itemContentHashHasBeenSet = true; m_itemContentHash.assign(value); }
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline PutComplianceItemsRequest& WithItemContentHash(const Aws::String& value) { SetItemContentHash(value); return *this;}
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline PutComplianceItemsRequest& WithItemContentHash(Aws::String&& value) { SetItemContentHash(std::move(value)); return *this;}
 
     /**
-     * <p>MD5 or Sha256 content hash. The content hash is used to determine if existing
-     * information should be overwritten or ignored. If the content hashes match, ,the
-     * request to put compliance information is ignored.</p>
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
      */
     inline PutComplianceItemsRequest& WithItemContentHash(const char* value) { SetItemContentHash(value); return *this;}
 

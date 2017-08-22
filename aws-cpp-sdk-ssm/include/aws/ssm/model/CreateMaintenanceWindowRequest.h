@@ -74,43 +74,43 @@ namespace Model
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline CreateMaintenanceWindowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline CreateMaintenanceWindowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
-     * description to help your organize your Maintenance Windows. </p>
+     * description to help you organize your Maintenance Windows. </p>
      */
     inline CreateMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -190,20 +190,32 @@ namespace Model
     inline CreateMaintenanceWindowRequest& WithCutoff(int value) { SetCutoff(value); return *this;}
 
     /**
-     * <p>Whether targets must be registered with the Maintenance Window before tasks
-     * can be defined for those targets.</p>
+     * <p>Enables a Maintenance Window task to execute on managed instances, even if
+     * you have not registered those instances as targets. If enabled, then you must
+     * specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window </p> <p>If you don't enable this option, then you
+     * must specify previously-registered targets when you register a task with the
+     * Maintenance Window. </p>
      */
     inline bool GetAllowUnassociatedTargets() const{ return m_allowUnassociatedTargets; }
 
     /**
-     * <p>Whether targets must be registered with the Maintenance Window before tasks
-     * can be defined for those targets.</p>
+     * <p>Enables a Maintenance Window task to execute on managed instances, even if
+     * you have not registered those instances as targets. If enabled, then you must
+     * specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window </p> <p>If you don't enable this option, then you
+     * must specify previously-registered targets when you register a task with the
+     * Maintenance Window. </p>
      */
     inline void SetAllowUnassociatedTargets(bool value) { m_allowUnassociatedTargetsHasBeenSet = true; m_allowUnassociatedTargets = value; }
 
     /**
-     * <p>Whether targets must be registered with the Maintenance Window before tasks
-     * can be defined for those targets.</p>
+     * <p>Enables a Maintenance Window task to execute on managed instances, even if
+     * you have not registered those instances as targets. If enabled, then you must
+     * specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window </p> <p>If you don't enable this option, then you
+     * must specify previously-registered targets when you register a task with the
+     * Maintenance Window. </p>
      */
     inline CreateMaintenanceWindowRequest& WithAllowUnassociatedTargets(bool value) { SetAllowUnassociatedTargets(value); return *this;}
 

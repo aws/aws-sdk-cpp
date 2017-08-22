@@ -29,7 +29,8 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_parametersHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+    m_outputLocationHasBeenSet(false),
+    m_associationNameHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_outputLocationHasBeenSet)
   {
    payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
+
+  }
+
+  if(m_associationNameHasBeenSet)
+  {
+   payload.WithString("AssociationName", m_associationName);
 
   }
 

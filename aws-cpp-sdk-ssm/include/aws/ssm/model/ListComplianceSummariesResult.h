@@ -46,49 +46,49 @@ namespace Model
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline const Aws::Vector<ComplianceSummaryItem>& GetComplianceSummaryItems() const{ return m_complianceSummaryItems; }
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline void SetComplianceSummaryItems(const Aws::Vector<ComplianceSummaryItem>& value) { m_complianceSummaryItems = value; }
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline void SetComplianceSummaryItems(Aws::Vector<ComplianceSummaryItem>&& value) { m_complianceSummaryItems = std::move(value); }
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline ListComplianceSummariesResult& WithComplianceSummaryItems(const Aws::Vector<ComplianceSummaryItem>& value) { SetComplianceSummaryItems(value); return *this;}
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline ListComplianceSummariesResult& WithComplianceSummaryItems(Aws::Vector<ComplianceSummaryItem>&& value) { SetComplianceSummaryItems(std::move(value)); return *this;}
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline ListComplianceSummariesResult& AddComplianceSummaryItems(const ComplianceSummaryItem& value) { m_complianceSummaryItems.push_back(value); return *this; }
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
      * types. For example, this call returns State Manager associations, patches, or
-     * custom compliance types according to the filter criteria you specified.</p>
+     * custom compliance types according to the filter criteria that you specified.</p>
      */
     inline ListComplianceSummariesResult& AddComplianceSummaryItems(ComplianceSummaryItem&& value) { m_complianceSummaryItems.push_back(std::move(value)); return *this; }
 
