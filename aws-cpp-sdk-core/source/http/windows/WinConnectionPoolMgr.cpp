@@ -22,6 +22,8 @@
 using namespace Aws::Utils::Logging;
 using namespace Aws::Http;
 
+const char WIN_CONNECTION_CONTAINER_TAG[] = "WinConnectionContainer";
+
 WinConnectionPoolMgr::WinConnectionPoolMgr(void* iOpenHandle,
                                                    unsigned maxConnectionsPerHost, 
                                                    long requestTimeoutMs,
@@ -125,12 +127,12 @@ void WinConnectionPoolMgr::ReleaseConnectionForHost(const Aws::String& host, uns
 
 bool WinConnectionPoolMgr::CheckAndGrowPool(const Aws::String& host, HostConnectionContainer& connectionContainer)
 {
+    std::lock_guard<std::mutex> locker(m_containerLock);
     if (connectionContainer.currentPoolSize < m_maxConnectionsPerHost)
     {
         unsigned multiplier = connectionContainer.currentPoolSize > 0 ? connectionContainer.currentPoolSize : 1;
         unsigned amountToAdd = (std::min)(multiplier * 2, m_maxConnectionsPerHost - connectionContainer.currentPoolSize);
-        connectionContainer.currentPoolSize += amountToAdd;
-
+        unsigned actuallyAdded = 0;
         for (unsigned i = 0; i < amountToAdd; ++i)
         {
             void* newConnection = CreateNewConnection(host, connectionContainer);
@@ -138,11 +140,20 @@ bool WinConnectionPoolMgr::CheckAndGrowPool(const Aws::String& host, HostConnect
             if (newConnection)
             {
                 connectionContainer.hostConnections.Release(newConnection);
+                ++actuallyAdded;
+            }
+            else
+            {
+                AWS_LOGSTREAM_ERROR(WIN_CONNECTION_CONTAINER_TAG, "CreateNewConnection failed to allocate Win Http connection handles.");
+                break;
             }
         }
+        AWS_LOGSTREAM_INFO(WIN_CONNECTION_CONTAINER_TAG, "Pool grown by " << actuallyAdded);
+        connectionContainer.currentPoolSize += actuallyAdded;
 
-        return true;
+        return actuallyAdded > 0;
     }
 
+    AWS_LOGSTREAM_INFO(WIN_CONNECTION_CONTAINER_TAG, "Pool cannot be grown any further, already at max size.");
     return false;
 }

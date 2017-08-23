@@ -65,6 +65,7 @@ private:
     unsigned long m_requestTimeout;
     unsigned long m_connectTimeout;
     unsigned m_poolSize;
+    std::mutex m_containerLock;
 };
 
 } // namespace Http

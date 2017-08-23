@@ -113,6 +113,7 @@ namespace Aws
             unsigned m_maxConnectionsPerHost;
             long m_requestTimeoutMs;
             long m_connectTimeoutMs;
+            std::mutex m_containerLock;
         };
 
     } // namespace Http

@@ -73,6 +73,7 @@ void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
 
 bool CurlHandleContainer::CheckAndGrowPool()
 {
+    std::lock_guard<std::mutex> locker(m_containerLock);
     if (m_poolSize < m_maxPoolSize)
     {
         unsigned multiplier = m_poolSize > 0 ? m_poolSize : 1;
@@ -92,11 +93,12 @@ bool CurlHandleContainer::CheckAndGrowPool()
             }
             else
             {
-                AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate. Will continue retrying until amount to add has exhausted.");
+                AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
+                break;
             }
         }
 
-        AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool successfully grown by " << actuallyAdded);
+        AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool grown by " << actuallyAdded);
         m_poolSize += actuallyAdded;
 
         return actuallyAdded > 0;
