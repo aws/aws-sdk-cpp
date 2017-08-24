@@ -26,8 +26,8 @@ namespace Model
   enum class GenderType
   {
     NOT_SET,
-    MALE,
-    FEMALE
+    Male,
+    Female
   };
 
 namespace GenderTypeMapper

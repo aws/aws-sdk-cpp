@@ -30,20 +30,20 @@ namespace Aws
       namespace GenderTypeMapper
       {
 
-        static const int MALE_HASH = HashingUtils::HashString("MALE");
-        static const int FEMALE_HASH = HashingUtils::HashString("FEMALE");
+        static const int Male_HASH = HashingUtils::HashString("Male");
+        static const int Female_HASH = HashingUtils::HashString("Female");
 
 
         GenderType GetGenderTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == MALE_HASH)
+          if (hashCode == Male_HASH)
           {
-            return GenderType::MALE;
+            return GenderType::Male;
           }
-          else if (hashCode == FEMALE_HASH)
+          else if (hashCode == Female_HASH)
           {
-            return GenderType::FEMALE;
+            return GenderType::Female;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,10 +59,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case GenderType::MALE:
-            return "MALE";
-          case GenderType::FEMALE:
-            return "FEMALE";
+          case GenderType::Male:
+            return "Male";
+          case GenderType::Female:
+            return "Female";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
