@@ -30,6 +30,7 @@ public class main {
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
+    static final String STANDALONE_OPTION = "standlone";
 
     public static void main(String[] args) throws IOException {
 
@@ -56,6 +57,7 @@ public class main {
                 return;
             }
 
+            boolean generateStandalonePakckage = argPairs.containsKey(STANDALONE_OPTION);
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
 
@@ -74,7 +76,10 @@ public class main {
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
                 try {
-                    File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson, languageBinding, serviceName);
+                    File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson,
+                            languageBinding,
+                            serviceName,
+                            generateStandalonePakckage);
                     System.out.println(outputLib.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {
                     e.printStackTrace();

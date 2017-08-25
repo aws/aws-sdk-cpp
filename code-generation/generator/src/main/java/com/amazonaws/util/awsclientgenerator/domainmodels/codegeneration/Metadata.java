@@ -36,4 +36,5 @@ public class Metadata {
     private String classNamePrefix;
     private String acceptHeader;
     private Map<String, String> additionalHeaders;
+    private boolean standalone;
 }

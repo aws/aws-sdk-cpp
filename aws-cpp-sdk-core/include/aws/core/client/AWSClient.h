@@ -65,6 +65,12 @@ namespace Aws
         class URI;
     } // namespace Http
 
+    namespace Auth
+    {
+        AWS_CORE_API extern const char SIGV4_SIGNER[];
+        AWS_CORE_API extern const char NULL_SIGNER[];
+    }
+
     class AmazonWebServiceRequest;
 
     namespace Client
@@ -96,7 +102,9 @@ namespace Aws
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             /**
-             * Customized client could pass a signerMap to ctor and choose one from it when making a request.
+             * configuration will be used for http client settings, retry strategy, throttles, and signing information.
+             * supplied signer map is used to determine the proper signer for a given request; aws services will use
+             * SigV4 signer. errorMarshaller tells the client how to convert error payloads into AWSError objects.
              */
             AWSClient(const Aws::Client::ClientConfiguration& configuration,
                 const Aws::Map<Aws::String, std::shared_ptr<Aws::Client::AWSAuthSigner>>& signerMap,
@@ -149,13 +157,16 @@ namespace Aws
              */
             HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod httpMethod) const;
+                Http::HttpMethod httpMethod,
+                const char* signerName) const;
 
             /**
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable. This method is for payloadless requests e.g. GET, DELETE, HEAD
              */
-            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, Http::HttpMethod httpMethod) const;
+            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, 
+                    Http::HttpMethod httpMethod,
+                    const char* signerName) const;
 
             /**
              * Constructs and Http Request from the uri and AmazonWebServiceRequest object. Signs the request, sends it accross the wire
@@ -163,13 +174,16 @@ namespace Aws
              */
             HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod httpMethod) const;
+                Http::HttpMethod httpMethod,
+                const char* signerName) const;
 
             /**
             * Constructs and Http Request from the uri and AmazonWebServiceRequest object. Signs the request, sends it accross the wire
             * then reports the http response. This method is for payloadless requests e.g. GET, DELETE, HEAD
             */
-            HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri, Http::HttpMethod httpMethod) const;
+            HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri, 
+                    Http::HttpMethod httpMethod,
+                    const char* signerName) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -177,7 +191,8 @@ namespace Aws
              */
             StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
@@ -199,9 +214,9 @@ namespace Aws
             }
 
             /**
-             * Gets the corresonding signer based on request's name
+             * Gets the corresonding signer from the signers map by name.
              */
-            Aws::Client::AWSAuthSigner* GetAuthSignerByName(const Aws::String& AuthSignerName) const;
+            Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
 
         private:
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
@@ -265,7 +280,8 @@ namespace Aws
              */
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
 
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
@@ -274,7 +290,8 @@ namespace Aws
              * method defaults to POST
              */
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors>> XmlOutcome;
@@ -313,7 +330,9 @@ namespace Aws
              */
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+
 
             /**
              * Returns an xml document or an error from the request. Does some marshalling xml and raw streams,
@@ -322,7 +341,8 @@ namespace Aws
              * method defaults to POST
              */
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST) const;
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
         };
 
     } // namespace Client

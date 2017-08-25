@@ -159,15 +159,14 @@ void AWSClient::EnableRequestProcessing()
     m_httpClient->EnableRequestProcessing();
 }
 
-Aws::Client::AWSAuthSigner* AWSClient::GetAuthSignerByName(const Aws::String& AuthSignerName) const
+Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
-    auto iter = m_signerMap.find(AuthSignerName);
+    auto iter = m_signerMap.find(name);
     if (iter == m_signerMap.end()) 
     {
-        // A NULL_SIGNER typed signer is plugged into m_signerMap during construction.
-        iter = m_signerMap.find(Aws::Auth::NULL_SIGNER);
-        assert(iter != m_signerMap.end());
-        return iter->second.get();
+        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request's signer: '" << name << "' is not found in the signer's map.");
+        assert(false);
+        return nullptr;
     }
     else
     {
@@ -177,11 +176,12 @@ Aws::Client::AWSAuthSigner* AWSClient::GetAuthSignerByName(const Aws::String& Au
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    HttpMethod method) const
+    HttpMethod method,
+    const char* signerName) const
 {
     for (long retries = 0;; retries++)
     {
-        HttpResponseOutcome outcome = AttemptOneRequest(uri, request, method);
+        HttpResponseOutcome outcome = AttemptOneRequest(uri, request, method, signerName);
         if (outcome.IsSuccess())
         {
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
@@ -195,7 +195,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
-            auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+            auto signer = GetSignerByName(signerName);
 
             //detect clock skew and try to correct.            
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
@@ -255,11 +255,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     }
 }
 
-HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method) const
+HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method, const char* signerName) const
 {
     for (long retries = 0;; retries++)
     {
-        HttpResponseOutcome outcome = AttemptOneRequest(uri, method);
+        HttpResponseOutcome outcome = AttemptOneRequest(uri, method, signerName);
         if (outcome.IsSuccess() || !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
             return outcome;
@@ -283,11 +283,12 @@ static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& respo
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    HttpMethod method) const
+    HttpMethod method,
+    const char* signerName) const
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
-    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    auto signer = GetSignerByName(signerName);
     if (!signer->SignRequest(*httpRequest, request.SignBody()))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
@@ -309,10 +310,10 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     return HttpResponseOutcome(httpResponse);
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method, const char* signerName) const
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    auto signer = GetSignerByName(signerName);
     if (!signer->SignRequest(*httpRequest))
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
@@ -339,9 +340,10 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, Http
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method) const
+    Http::HttpMethod method,
+    const char* signerName) const
 {
-    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method);
+    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName);
     if (httpResponseOutcome.IsSuccess())
     {
         return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
@@ -440,7 +442,7 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*request, expirationInSeconds))
     {
         return request->GetURIString();
@@ -452,7 +454,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
     {
         return request->GetURIString();
@@ -464,7 +466,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetAuthSignerByName(Aws::Auth::DEFAULT_AUTHV4_SIGNER);
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*request, region, expirationInSeconds))
     {
         return request->GetURIString();
@@ -478,7 +480,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*httpRequest, region, expirationInSeconds))
     {
         return httpRequest->GetURIString();
@@ -492,7 +494,7 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*httpRequest, region, serviceName, expirationInSeconds))
     {
         return httpRequest->GetURIString();
@@ -506,7 +508,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
 {
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetAuthSignerByName(request.GetAuthSignerName());
+    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
     if (signer->PresignRequest(*httpRequest, expirationInSeconds))
     {
         return httpRequest->GetURIString();
@@ -548,9 +550,10 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method) const
+    Http::HttpMethod method,
+    const char* signerName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName));
     if (!httpOutcome.IsSuccess())
     {
         return JsonOutcome(httpOutcome.GetError());
@@ -567,9 +570,10 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
 }
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method) const
+    Http::HttpMethod method,
+    const char* signerName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName));
     if (!httpOutcome.IsSuccess())
     {
         return JsonOutcome(httpOutcome.GetError());
@@ -651,9 +655,10 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method) const
+    Http::HttpMethod method,
+    const char* signerName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName));
     if (!httpOutcome.IsSuccess())
     {
         return XmlOutcome(httpOutcome.GetError());
@@ -677,9 +682,10 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
 }
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method) const
+    Http::HttpMethod method,
+    const char* signerName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName));
     if (!httpOutcome.IsSuccess())
     {
         return XmlOutcome(httpOutcome.GetError());

@@ -59,6 +59,15 @@ static const char* EMPTY_STRING_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41
 
 static const char* v4LogTag = "AWSAuthV4Signer";
 
+namespace Aws
+{
+    namespace Auth
+    {
+        const char SIGV4_SIGNER[] = "SignatureV4";
+        const char NULL_SIGNER[] = "NullSigner";
+    }
+}
+
 static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool urlEscapePath)
 {
     request.CanonicalizeRequest();

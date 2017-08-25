@@ -49,10 +49,8 @@ namespace Aws
     {
         class AWSCredentials;
         class AWSCredentialsProvider;
-
-        static const char DEFAULT_AUTHV4_SIGNER[] = "DefaultAuthV4Signer";
-        static const char NULL_SIGNER[] = "NullSigner";
-
+        AWS_CORE_API extern const char SIGV4_SIGNER[];
+        AWS_CORE_API extern const char NULL_SIGNER[];
     } // namespace Auth
 
     namespace Client
@@ -99,9 +97,9 @@ namespace Aws
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const = 0;
 
             /**
-             * Return Auth signer's name
+             * Return the signer's name
              */
-            virtual Aws::String GetName() const = 0;
+            virtual const char* GetName() const = 0;
 
             /**
              * This handles detection of clock skew between clients and the server and adjusts the clock so that the next request will not
@@ -145,7 +143,7 @@ namespace Aws
              * AWSAuthV4signer's implementation of virtual function from base class
              * Return Auth Signer's name, here the value is specified in Aws::Auth::DEFAULT_AUTHV4_SIGNER.
              */
-            Aws::String GetName() const override { return Aws::Auth::DEFAULT_AUTHV4_SIGNER; }
+            const char* GetName() const override { return Aws::Auth::SIGV4_SIGNER; }
 
             /**
              * Signs the request itself based on info in the request and uri.
@@ -217,7 +215,7 @@ namespace Aws
 
 
         /**
-         * Null Signer implementation of the AWSAuthSigner interface, basically doing nothing
+         * A no-op implementation of the AWSAuthSigner interface
          */
         class AWS_CORE_API AWSNullSigner : public AWSAuthSigner
         {
@@ -226,17 +224,17 @@ namespace Aws
              * AWSNullSigner's implementation of virtual function from base class
              * Here the returned value is specified in Aws::Auth::NULL_SIGNER.
              */
-            Aws::String GetName() const override { return Aws::Auth::NULL_SIGNER; }
+            const char* GetName() const override { return Aws::Auth::NULL_SIGNER; }
 
             /**
              * Do nothing
              */
-            bool SignRequest(Aws::Http::HttpRequest&) const override { return false; }
+            bool SignRequest(Aws::Http::HttpRequest&) const override { return true; }
 
             /**
              * Do nothing
              */
-            bool SignRequest(Aws::Http::HttpRequest&, bool) const override { return false; }
+            bool SignRequest(Aws::Http::HttpRequest&, bool) const override { return true; }
 
             /**
              * Do nothing

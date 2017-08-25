@@ -79,6 +79,7 @@ public class CppViewHelper {
         CORAL_TO_CONTENT_TYPE_MAPPING.put("rest-xml", "AMZN_XML_CONTENT_TYPE");
         CORAL_TO_CONTENT_TYPE_MAPPING.put("query", "FORM_CONTENT_TYPE");
         CORAL_TO_CONTENT_TYPE_MAPPING.put("ec2", "FORM_CONTENT_TYPE");
+        CORAL_TO_CONTENT_TYPE_MAPPING.put("application-json", "JSON_CONTENT_TYPE");
     }
 
     public static String computeExportValue(String classNamePrefix) {

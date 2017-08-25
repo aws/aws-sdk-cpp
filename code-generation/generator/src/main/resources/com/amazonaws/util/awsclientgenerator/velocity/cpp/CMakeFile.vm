@@ -1,5 +1,10 @@
 #set($metadata = $serviceModel.metadata)
+#if($metadata.standalone)
+find_package(AWSSDK)
 add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
+#else
+add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
+#end
 
 #set($projectNameCaps = $metadata.projectName.toUpperCase())
 file(GLOB AWS_${projectNameCaps}_HEADERS
@@ -53,20 +58,40 @@ set(${projectNameCaps}_INCLUDES
     "${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
-include_directories(${cmakeVarStart}${projectNameCaps}_INCLUDES})
-
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    add_definitions("-DAWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS")
-endif()
-
 add_library(${PROJECT_NAME} ${cmakeVarStart}LIBTYPE} ${cmakeVarStart}${projectNameCaps}_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS")
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
-  
+
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+#if($metadata.standalone)
+if(USE_WINDOWS_DLL_SEMANTICS)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
+
+    if(BUILD_SHARED_LIBS)
+        target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_IMPORT_EXPORT=1")
+    endif()
+endif()
+
+if(USE_GCC_FLAGS)
+    target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
+
+    if(NOT ENABLE_RTTI)
+        target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
+    endif()
+else()
+    if(NOT ENABLE_RTTI)
+        target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
+    endif()
+endif()
+#end
 
 setup_install()
 
