@@ -32,6 +32,7 @@ UpdateStackRequest::UpdateStackRequest() :
     m_capabilitiesHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
@@ -109,6 +110,11 @@ Aws::String UpdateStackRequest::SerializePayload() const
   if(m_roleARNHasBeenSet)
   {
     ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
+  }
+
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+    m_rollbackConfiguration.OutputToStream(ss, "RollbackConfiguration");
   }
 
   if(m_stackPolicyBodyHasBeenSet)

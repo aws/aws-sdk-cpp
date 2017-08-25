@@ -104,8 +104,8 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
   Aws::Http::URI uri = m_uri;
   ss << "/v1/lexicons/";
   ss << request.GetName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteLexiconOutcome(DeleteLexiconResult(outcome.GetResult()));
@@ -139,8 +139,8 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/v1/voices";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVoicesOutcome(DescribeVoicesResult(outcome.GetResult()));
@@ -175,8 +175,8 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
   Aws::Http::URI uri = m_uri;
   ss << "/v1/lexicons/";
   ss << request.GetName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLexiconOutcome(GetLexiconResult(outcome.GetResult()));
@@ -210,8 +210,8 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/v1/lexicons";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLexiconsOutcome(ListLexiconsResult(outcome.GetResult()));
@@ -246,8 +246,8 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
   Aws::Http::URI uri = m_uri;
   ss << "/v1/lexicons/";
   ss << request.GetName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutLexiconOutcome(PutLexiconResult(outcome.GetResult()));
@@ -281,7 +281,7 @@ SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequ
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/v1/speech";
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

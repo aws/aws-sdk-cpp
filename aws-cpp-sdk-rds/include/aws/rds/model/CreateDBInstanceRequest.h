@@ -335,13 +335,37 @@ namespace Model
      * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must
-     * be an integer from 5 to 6144.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must be
-     * an integer from 10 to 6144.</p> <p> <b>SQL Server</b> </p> <p>Constraints: Must
-     * be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from
-     * 20 to 4096 (Express Edition and Web Edition)</p>
+     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
+     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
+     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
+     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
+     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
+     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
+     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
+     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -350,13 +374,37 @@ namespace Model
      * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must
-     * be an integer from 5 to 6144.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must be
-     * an integer from 10 to 6144.</p> <p> <b>SQL Server</b> </p> <p>Constraints: Must
-     * be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from
-     * 20 to 4096 (Express Edition and Web Edition)</p>
+     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
+     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
+     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
+     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
+     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
+     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
+     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
+     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -365,13 +413,37 @@ namespace Model
      * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
-     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must be
-     * an integer from 5 to 6144.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must
-     * be an integer from 5 to 6144.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must be
-     * an integer from 10 to 6144.</p> <p> <b>SQL Server</b> </p> <p>Constraints: Must
-     * be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from
-     * 20 to 4096 (Express Edition and Web Edition)</p>
+     * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to
+     * 6144.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer from 5
+     * to 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
+     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
+     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
+     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
+     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
+     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -1482,10 +1554,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1564,10 +1638,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1646,10 +1722,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1728,10 +1806,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1810,10 +1890,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1892,10 +1974,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
@@ -1974,10 +2058,12 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
      * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS

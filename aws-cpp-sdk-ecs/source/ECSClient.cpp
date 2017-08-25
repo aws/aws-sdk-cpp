@@ -128,8 +128,8 @@ CreateClusterOutcome ECSClient::CreateCluster(const CreateClusterRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateClusterOutcome(CreateClusterResult(outcome.GetResult()));
@@ -163,8 +163,8 @@ CreateServiceOutcome ECSClient::CreateService(const CreateServiceRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateServiceOutcome(CreateServiceResult(outcome.GetResult()));
@@ -198,8 +198,8 @@ DeleteAttributesOutcome ECSClient::DeleteAttributes(const DeleteAttributesReques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAttributesOutcome(DeleteAttributesResult(outcome.GetResult()));
@@ -233,8 +233,8 @@ DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteClusterOutcome(DeleteClusterResult(outcome.GetResult()));
@@ -268,8 +268,8 @@ DeleteServiceOutcome ECSClient::DeleteService(const DeleteServiceRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteServiceOutcome(DeleteServiceResult(outcome.GetResult()));
@@ -303,8 +303,8 @@ DeregisterContainerInstanceOutcome ECSClient::DeregisterContainerInstance(const 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeregisterContainerInstanceOutcome(DeregisterContainerInstanceResult(outcome.GetResult()));
@@ -338,8 +338,8 @@ DeregisterTaskDefinitionOutcome ECSClient::DeregisterTaskDefinition(const Deregi
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeregisterTaskDefinitionOutcome(DeregisterTaskDefinitionResult(outcome.GetResult()));
@@ -373,8 +373,8 @@ DescribeClustersOutcome ECSClient::DescribeClusters(const DescribeClustersReques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeClustersOutcome(DescribeClustersResult(outcome.GetResult()));
@@ -408,8 +408,8 @@ DescribeContainerInstancesOutcome ECSClient::DescribeContainerInstances(const De
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeContainerInstancesOutcome(DescribeContainerInstancesResult(outcome.GetResult()));
@@ -443,8 +443,8 @@ DescribeServicesOutcome ECSClient::DescribeServices(const DescribeServicesReques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeServicesOutcome(DescribeServicesResult(outcome.GetResult()));
@@ -478,8 +478,8 @@ DescribeTaskDefinitionOutcome ECSClient::DescribeTaskDefinition(const DescribeTa
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTaskDefinitionOutcome(DescribeTaskDefinitionResult(outcome.GetResult()));
@@ -513,8 +513,8 @@ DescribeTasksOutcome ECSClient::DescribeTasks(const DescribeTasksRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTasksOutcome(DescribeTasksResult(outcome.GetResult()));
@@ -548,8 +548,8 @@ DiscoverPollEndpointOutcome ECSClient::DiscoverPollEndpoint(const DiscoverPollEn
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DiscoverPollEndpointOutcome(DiscoverPollEndpointResult(outcome.GetResult()));
@@ -583,8 +583,8 @@ ListAttributesOutcome ECSClient::ListAttributes(const ListAttributesRequest& req
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAttributesOutcome(ListAttributesResult(outcome.GetResult()));
@@ -618,8 +618,8 @@ ListClustersOutcome ECSClient::ListClusters(const ListClustersRequest& request) 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListClustersOutcome(ListClustersResult(outcome.GetResult()));
@@ -653,8 +653,8 @@ ListContainerInstancesOutcome ECSClient::ListContainerInstances(const ListContai
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListContainerInstancesOutcome(ListContainerInstancesResult(outcome.GetResult()));
@@ -688,8 +688,8 @@ ListServicesOutcome ECSClient::ListServices(const ListServicesRequest& request) 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListServicesOutcome(ListServicesResult(outcome.GetResult()));
@@ -723,8 +723,8 @@ ListTaskDefinitionFamiliesOutcome ECSClient::ListTaskDefinitionFamilies(const Li
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTaskDefinitionFamiliesOutcome(ListTaskDefinitionFamiliesResult(outcome.GetResult()));
@@ -758,8 +758,8 @@ ListTaskDefinitionsOutcome ECSClient::ListTaskDefinitions(const ListTaskDefiniti
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTaskDefinitionsOutcome(ListTaskDefinitionsResult(outcome.GetResult()));
@@ -793,8 +793,8 @@ ListTasksOutcome ECSClient::ListTasks(const ListTasksRequest& request) const
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTasksOutcome(ListTasksResult(outcome.GetResult()));
@@ -828,8 +828,8 @@ PutAttributesOutcome ECSClient::PutAttributes(const PutAttributesRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutAttributesOutcome(PutAttributesResult(outcome.GetResult()));
@@ -863,8 +863,8 @@ RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const Regi
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterContainerInstanceOutcome(RegisterContainerInstanceResult(outcome.GetResult()));
@@ -898,8 +898,8 @@ RegisterTaskDefinitionOutcome ECSClient::RegisterTaskDefinition(const RegisterTa
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterTaskDefinitionOutcome(RegisterTaskDefinitionResult(outcome.GetResult()));
@@ -933,8 +933,8 @@ RunTaskOutcome ECSClient::RunTask(const RunTaskRequest& request) const
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RunTaskOutcome(RunTaskResult(outcome.GetResult()));
@@ -968,8 +968,8 @@ StartTaskOutcome ECSClient::StartTask(const StartTaskRequest& request) const
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartTaskOutcome(StartTaskResult(outcome.GetResult()));
@@ -1003,8 +1003,8 @@ StopTaskOutcome ECSClient::StopTask(const StopTaskRequest& request) const
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopTaskOutcome(StopTaskResult(outcome.GetResult()));
@@ -1038,8 +1038,8 @@ SubmitContainerStateChangeOutcome ECSClient::SubmitContainerStateChange(const Su
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SubmitContainerStateChangeOutcome(SubmitContainerStateChangeResult(outcome.GetResult()));
@@ -1073,8 +1073,8 @@ SubmitTaskStateChangeOutcome ECSClient::SubmitTaskStateChange(const SubmitTaskSt
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SubmitTaskStateChangeOutcome(SubmitTaskStateChangeResult(outcome.GetResult()));
@@ -1108,8 +1108,8 @@ UpdateContainerAgentOutcome ECSClient::UpdateContainerAgent(const UpdateContaine
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateContainerAgentOutcome(UpdateContainerAgentResult(outcome.GetResult()));
@@ -1143,8 +1143,8 @@ UpdateContainerInstancesStateOutcome ECSClient::UpdateContainerInstancesState(co
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateContainerInstancesStateOutcome(UpdateContainerInstancesStateResult(outcome.GetResult()));
@@ -1178,8 +1178,8 @@ UpdateServiceOutcome ECSClient::UpdateService(const UpdateServiceRequest& reques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateServiceOutcome(UpdateServiceResult(outcome.GetResult()));

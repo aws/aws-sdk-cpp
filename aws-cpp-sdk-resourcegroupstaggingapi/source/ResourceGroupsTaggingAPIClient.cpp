@@ -102,8 +102,8 @@ GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResour
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
@@ -137,8 +137,8 @@ GetTagKeysOutcome ResourceGroupsTaggingAPIClient::GetTagKeys(const GetTagKeysReq
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTagKeysOutcome(GetTagKeysResult(outcome.GetResult()));
@@ -172,8 +172,8 @@ GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagVal
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTagValuesOutcome(GetTagValuesResult(outcome.GetResult()));
@@ -207,8 +207,8 @@ TagResourcesOutcome ResourceGroupsTaggingAPIClient::TagResources(const TagResour
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourcesOutcome(TagResourcesResult(outcome.GetResult()));
@@ -242,8 +242,8 @@ UntagResourcesOutcome ResourceGroupsTaggingAPIClient::UntagResources(const Untag
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourcesOutcome(UntagResourcesResult(outcome.GetResult()));

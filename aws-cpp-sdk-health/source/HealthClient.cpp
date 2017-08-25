@@ -103,8 +103,8 @@ DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const Des
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAffectedEntitiesOutcome(DescribeAffectedEntitiesResult(outcome.GetResult()));
@@ -138,8 +138,8 @@ DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const Des
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEntityAggregatesOutcome(DescribeEntityAggregatesResult(outcome.GetResult()));
@@ -173,8 +173,8 @@ DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const Descr
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEventAggregatesOutcome(DescribeEventAggregatesResult(outcome.GetResult()));
@@ -208,8 +208,8 @@ DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEve
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEventDetailsOutcome(DescribeEventDetailsResult(outcome.GetResult()));
@@ -243,8 +243,8 @@ DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTy
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEventTypesOutcome(DescribeEventTypesResult(outcome.GetResult()));
@@ -278,8 +278,8 @@ DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEventsOutcome(DescribeEventsResult(outcome.GetResult()));

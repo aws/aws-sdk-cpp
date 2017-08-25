@@ -27,6 +27,7 @@ CreateStackRequest::CreateStackRequest() :
     m_parametersHasBeenSet(false),
     m_disableRollback(false),
     m_disableRollbackHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
@@ -74,6 +75,11 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_disableRollbackHasBeenSet)
   {
     ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
+  }
+
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+    m_rollbackConfiguration.OutputToStream(ss, "RollbackConfiguration");
   }
 
   if(m_timeoutInMinutesHasBeenSet)

@@ -49,20 +49,19 @@ set(SQS_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
-include_directories(${SQS_INCLUDES})
-
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    add_definitions("-DAWS_SQS_EXPORTS")
-endif()
-
 add_library(${PROJECT_NAME} ${LIBTYPE} ${SQS_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_SQS_EXPORTS")
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
-  
+
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
 
 setup_install()
 

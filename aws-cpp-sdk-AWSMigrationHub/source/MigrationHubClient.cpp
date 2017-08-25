@@ -113,8 +113,8 @@ AssociateCreatedArtifactOutcome MigrationHubClient::AssociateCreatedArtifact(con
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateCreatedArtifactOutcome(AssociateCreatedArtifactResult(outcome.GetResult()));
@@ -148,8 +148,8 @@ AssociateDiscoveredResourceOutcome MigrationHubClient::AssociateDiscoveredResour
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateDiscoveredResourceOutcome(AssociateDiscoveredResourceResult(outcome.GetResult()));
@@ -183,8 +183,8 @@ CreateProgressUpdateStreamOutcome MigrationHubClient::CreateProgressUpdateStream
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateProgressUpdateStreamOutcome(CreateProgressUpdateStreamResult(outcome.GetResult()));
@@ -218,8 +218,8 @@ DeleteProgressUpdateStreamOutcome MigrationHubClient::DeleteProgressUpdateStream
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteProgressUpdateStreamOutcome(DeleteProgressUpdateStreamResult(outcome.GetResult()));
@@ -253,8 +253,8 @@ DescribeApplicationStateOutcome MigrationHubClient::DescribeApplicationState(con
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeApplicationStateOutcome(DescribeApplicationStateResult(outcome.GetResult()));
@@ -288,8 +288,8 @@ DescribeMigrationTaskOutcome MigrationHubClient::DescribeMigrationTask(const Des
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMigrationTaskOutcome(DescribeMigrationTaskResult(outcome.GetResult()));
@@ -323,8 +323,8 @@ DisassociateCreatedArtifactOutcome MigrationHubClient::DisassociateCreatedArtifa
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateCreatedArtifactOutcome(DisassociateCreatedArtifactResult(outcome.GetResult()));
@@ -358,8 +358,8 @@ DisassociateDiscoveredResourceOutcome MigrationHubClient::DisassociateDiscovered
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateDiscoveredResourceOutcome(DisassociateDiscoveredResourceResult(outcome.GetResult()));
@@ -393,8 +393,8 @@ ImportMigrationTaskOutcome MigrationHubClient::ImportMigrationTask(const ImportM
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ImportMigrationTaskOutcome(ImportMigrationTaskResult(outcome.GetResult()));
@@ -428,8 +428,8 @@ ListCreatedArtifactsOutcome MigrationHubClient::ListCreatedArtifacts(const ListC
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListCreatedArtifactsOutcome(ListCreatedArtifactsResult(outcome.GetResult()));
@@ -463,8 +463,8 @@ ListDiscoveredResourcesOutcome MigrationHubClient::ListDiscoveredResources(const
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDiscoveredResourcesOutcome(ListDiscoveredResourcesResult(outcome.GetResult()));
@@ -498,8 +498,8 @@ ListMigrationTasksOutcome MigrationHubClient::ListMigrationTasks(const ListMigra
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListMigrationTasksOutcome(ListMigrationTasksResult(outcome.GetResult()));
@@ -533,8 +533,8 @@ ListProgressUpdateStreamsOutcome MigrationHubClient::ListProgressUpdateStreams(c
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListProgressUpdateStreamsOutcome(ListProgressUpdateStreamsResult(outcome.GetResult()));
@@ -568,8 +568,8 @@ NotifyApplicationStateOutcome MigrationHubClient::NotifyApplicationState(const N
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return NotifyApplicationStateOutcome(NotifyApplicationStateResult(outcome.GetResult()));
@@ -603,8 +603,8 @@ NotifyMigrationTaskStateOutcome MigrationHubClient::NotifyMigrationTaskState(con
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return NotifyMigrationTaskStateOutcome(NotifyMigrationTaskStateResult(outcome.GetResult()));
@@ -638,8 +638,8 @@ PutResourceAttributesOutcome MigrationHubClient::PutResourceAttributes(const Put
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutResourceAttributesOutcome(PutResourceAttributesResult(outcome.GetResult()));

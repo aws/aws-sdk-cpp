@@ -114,8 +114,8 @@ AssociateConfigurationItemsToApplicationOutcome ApplicationDiscoveryServiceClien
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateConfigurationItemsToApplicationOutcome(AssociateConfigurationItemsToApplicationResult(outcome.GetResult()));
@@ -149,8 +149,8 @@ CreateApplicationOutcome ApplicationDiscoveryServiceClient::CreateApplication(co
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
@@ -184,8 +184,8 @@ CreateTagsOutcome ApplicationDiscoveryServiceClient::CreateTags(const CreateTags
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateTagsOutcome(CreateTagsResult(outcome.GetResult()));
@@ -219,8 +219,8 @@ DeleteApplicationsOutcome ApplicationDiscoveryServiceClient::DeleteApplications(
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationsOutcome(DeleteApplicationsResult(outcome.GetResult()));
@@ -254,8 +254,8 @@ DeleteTagsOutcome ApplicationDiscoveryServiceClient::DeleteTags(const DeleteTags
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteTagsOutcome(DeleteTagsResult(outcome.GetResult()));
@@ -289,8 +289,8 @@ DescribeAgentsOutcome ApplicationDiscoveryServiceClient::DescribeAgents(const De
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAgentsOutcome(DescribeAgentsResult(outcome.GetResult()));
@@ -324,8 +324,8 @@ DescribeConfigurationsOutcome ApplicationDiscoveryServiceClient::DescribeConfigu
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeConfigurationsOutcome(DescribeConfigurationsResult(outcome.GetResult()));
@@ -359,8 +359,8 @@ DescribeExportTasksOutcome ApplicationDiscoveryServiceClient::DescribeExportTask
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeExportTasksOutcome(DescribeExportTasksResult(outcome.GetResult()));
@@ -394,8 +394,8 @@ DescribeTagsOutcome ApplicationDiscoveryServiceClient::DescribeTags(const Descri
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -429,8 +429,8 @@ DisassociateConfigurationItemsFromApplicationOutcome ApplicationDiscoveryService
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateConfigurationItemsFromApplicationOutcome(DisassociateConfigurationItemsFromApplicationResult(outcome.GetResult()));
@@ -464,8 +464,8 @@ GetDiscoverySummaryOutcome ApplicationDiscoveryServiceClient::GetDiscoverySummar
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDiscoverySummaryOutcome(GetDiscoverySummaryResult(outcome.GetResult()));
@@ -499,8 +499,8 @@ ListConfigurationsOutcome ApplicationDiscoveryServiceClient::ListConfigurations(
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConfigurationsOutcome(ListConfigurationsResult(outcome.GetResult()));
@@ -534,8 +534,8 @@ ListServerNeighborsOutcome ApplicationDiscoveryServiceClient::ListServerNeighbor
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListServerNeighborsOutcome(ListServerNeighborsResult(outcome.GetResult()));
@@ -569,8 +569,8 @@ StartDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StartDat
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartDataCollectionByAgentIdsOutcome(StartDataCollectionByAgentIdsResult(outcome.GetResult()));
@@ -604,8 +604,8 @@ StartExportTaskOutcome ApplicationDiscoveryServiceClient::StartExportTask(const 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartExportTaskOutcome(StartExportTaskResult(outcome.GetResult()));
@@ -639,8 +639,8 @@ StopDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StopDataC
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopDataCollectionByAgentIdsOutcome(StopDataCollectionByAgentIdsResult(outcome.GetResult()));
@@ -674,8 +674,8 @@ UpdateApplicationOutcome ApplicationDiscoveryServiceClient::UpdateApplication(co
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));

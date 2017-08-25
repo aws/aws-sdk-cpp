@@ -100,8 +100,8 @@ BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMet
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchMeterUsageOutcome(BatchMeterUsageResult(outcome.GetResult()));
@@ -135,8 +135,8 @@ MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return MeterUsageOutcome(MeterUsageResult(outcome.GetResult()));
@@ -170,8 +170,8 @@ ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveC
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResolveCustomerOutcome(ResolveCustomerResult(outcome.GetResult()));

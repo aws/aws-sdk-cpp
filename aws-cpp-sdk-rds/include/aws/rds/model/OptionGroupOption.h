@@ -379,6 +379,66 @@ namespace Model
     inline OptionGroupOption& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
     /**
+     * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
+     * instance before you can use this option. You can enable Auto Minor Version
+     * Upgrade when you first create your DB instance, or by modifying your DB instance
+     * later. </p>
+     */
+    inline bool GetRequiresAutoMinorEngineVersionUpgrade() const{ return m_requiresAutoMinorEngineVersionUpgrade; }
+
+    /**
+     * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
+     * instance before you can use this option. You can enable Auto Minor Version
+     * Upgrade when you first create your DB instance, or by modifying your DB instance
+     * later. </p>
+     */
+    inline void SetRequiresAutoMinorEngineVersionUpgrade(bool value) { m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = true; m_requiresAutoMinorEngineVersionUpgrade = value; }
+
+    /**
+     * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
+     * instance before you can use this option. You can enable Auto Minor Version
+     * Upgrade when you first create your DB instance, or by modifying your DB instance
+     * later. </p>
+     */
+    inline OptionGroupOption& WithRequiresAutoMinorEngineVersionUpgrade(bool value) { SetRequiresAutoMinorEngineVersionUpgrade(value); return *this;}
+
+    /**
+     * <p>If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     */
+    inline bool GetVpcOnly() const{ return m_vpcOnly; }
+
+    /**
+     * <p>If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     */
+    inline void SetVpcOnly(bool value) { m_vpcOnlyHasBeenSet = true; m_vpcOnly = value; }
+
+    /**
+     * <p>If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     */
+    inline OptionGroupOption& WithVpcOnly(bool value) { SetVpcOnly(value); return *this;}
+
+    /**
+     * <p>If true, you can change the option to an earlier version of the option. This
+     * only applies to options that have different versions available. </p>
+     */
+    inline bool GetSupportsOptionVersionDowngrade() const{ return m_supportsOptionVersionDowngrade; }
+
+    /**
+     * <p>If true, you can change the option to an earlier version of the option. This
+     * only applies to options that have different versions available. </p>
+     */
+    inline void SetSupportsOptionVersionDowngrade(bool value) { m_supportsOptionVersionDowngradeHasBeenSet = true; m_supportsOptionVersionDowngrade = value; }
+
+    /**
+     * <p>If true, you can change the option to an earlier version of the option. This
+     * only applies to options that have different versions available. </p>
+     */
+    inline OptionGroupOption& WithSupportsOptionVersionDowngrade(bool value) { SetSupportsOptionVersionDowngrade(value); return *this;}
+
+    /**
      * <p>The option settings that are available (and the default value) for each
      * option in an option group.</p>
      */
@@ -478,6 +538,12 @@ namespace Model
     bool m_persistentHasBeenSet;
     bool m_permanent;
     bool m_permanentHasBeenSet;
+    bool m_requiresAutoMinorEngineVersionUpgrade;
+    bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet;
+    bool m_vpcOnly;
+    bool m_vpcOnlyHasBeenSet;
+    bool m_supportsOptionVersionDowngrade;
+    bool m_supportsOptionVersionDowngradeHasBeenSet;
     Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
     bool m_optionGroupOptionSettingsHasBeenSet;
     Aws::Vector<OptionVersion> m_optionGroupOptionVersions;

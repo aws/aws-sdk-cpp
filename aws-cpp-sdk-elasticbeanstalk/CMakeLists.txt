@@ -49,20 +49,19 @@ set(ELASTICBEANSTALK_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
-include_directories(${ELASTICBEANSTALK_INCLUDES})
-
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    add_definitions("-DAWS_ELASTICBEANSTALK_EXPORTS")
-endif()
-
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ELASTICBEANSTALK_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_ELASTICBEANSTALK_EXPORTS")
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
-  
+
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
 
 setup_install()
 

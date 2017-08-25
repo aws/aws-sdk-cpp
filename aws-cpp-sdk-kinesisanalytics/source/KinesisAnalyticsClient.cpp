@@ -112,8 +112,8 @@ AddApplicationCloudWatchLoggingOptionOutcome KinesisAnalyticsClient::AddApplicat
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddApplicationCloudWatchLoggingOptionOutcome(AddApplicationCloudWatchLoggingOptionResult(outcome.GetResult()));
@@ -147,8 +147,8 @@ AddApplicationInputOutcome KinesisAnalyticsClient::AddApplicationInput(const Add
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddApplicationInputOutcome(AddApplicationInputResult(outcome.GetResult()));
@@ -182,8 +182,8 @@ AddApplicationOutputOutcome KinesisAnalyticsClient::AddApplicationOutput(const A
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddApplicationOutputOutcome(AddApplicationOutputResult(outcome.GetResult()));
@@ -217,8 +217,8 @@ AddApplicationReferenceDataSourceOutcome KinesisAnalyticsClient::AddApplicationR
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddApplicationReferenceDataSourceOutcome(AddApplicationReferenceDataSourceResult(outcome.GetResult()));
@@ -252,8 +252,8 @@ CreateApplicationOutcome KinesisAnalyticsClient::CreateApplication(const CreateA
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
@@ -287,8 +287,8 @@ DeleteApplicationOutcome KinesisAnalyticsClient::DeleteApplication(const DeleteA
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationOutcome(DeleteApplicationResult(outcome.GetResult()));
@@ -322,8 +322,8 @@ DeleteApplicationCloudWatchLoggingOptionOutcome KinesisAnalyticsClient::DeleteAp
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationCloudWatchLoggingOptionOutcome(DeleteApplicationCloudWatchLoggingOptionResult(outcome.GetResult()));
@@ -357,8 +357,8 @@ DeleteApplicationOutputOutcome KinesisAnalyticsClient::DeleteApplicationOutput(c
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationOutputOutcome(DeleteApplicationOutputResult(outcome.GetResult()));
@@ -392,8 +392,8 @@ DeleteApplicationReferenceDataSourceOutcome KinesisAnalyticsClient::DeleteApplic
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApplicationReferenceDataSourceOutcome(DeleteApplicationReferenceDataSourceResult(outcome.GetResult()));
@@ -427,8 +427,8 @@ DescribeApplicationOutcome KinesisAnalyticsClient::DescribeApplication(const Des
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeApplicationOutcome(DescribeApplicationResult(outcome.GetResult()));
@@ -462,8 +462,8 @@ DiscoverInputSchemaOutcome KinesisAnalyticsClient::DiscoverInputSchema(const Dis
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DiscoverInputSchemaOutcome(DiscoverInputSchemaResult(outcome.GetResult()));
@@ -497,8 +497,8 @@ ListApplicationsOutcome KinesisAnalyticsClient::ListApplications(const ListAppli
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListApplicationsOutcome(ListApplicationsResult(outcome.GetResult()));
@@ -532,8 +532,8 @@ StartApplicationOutcome KinesisAnalyticsClient::StartApplication(const StartAppl
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartApplicationOutcome(StartApplicationResult(outcome.GetResult()));
@@ -567,8 +567,8 @@ StopApplicationOutcome KinesisAnalyticsClient::StopApplication(const StopApplica
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopApplicationOutcome(StopApplicationResult(outcome.GetResult()));
@@ -602,8 +602,8 @@ UpdateApplicationOutcome KinesisAnalyticsClient::UpdateApplication(const UpdateA
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));

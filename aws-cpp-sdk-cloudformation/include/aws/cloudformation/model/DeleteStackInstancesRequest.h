@@ -199,21 +199,27 @@ namespace Model
     /**
      * <p>Removes the stack instances from the specified stack set, but doesn't delete
      * the stacks. You can't reassociate a retained stack or add an existing, saved
-     * stack to a new stack set.</p>
+     * stack to a new stack set.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
      */
     inline bool GetRetainStacks() const{ return m_retainStacks; }
 
     /**
      * <p>Removes the stack instances from the specified stack set, but doesn't delete
      * the stacks. You can't reassociate a retained stack or add an existing, saved
-     * stack to a new stack set.</p>
+     * stack to a new stack set.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
      */
     inline void SetRetainStacks(bool value) { m_retainStacksHasBeenSet = true; m_retainStacks = value; }
 
     /**
      * <p>Removes the stack instances from the specified stack set, but doesn't delete
      * the stacks. You can't reassociate a retained stack or add an existing, saved
-     * stack to a new stack set.</p>
+     * stack to a new stack set.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
      */
     inline DeleteStackInstancesRequest& WithRetainStacks(bool value) { SetRetainStacks(value); return *this;}
 

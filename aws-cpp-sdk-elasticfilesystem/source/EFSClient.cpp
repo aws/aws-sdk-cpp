@@ -108,8 +108,8 @@ CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemReques
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/file-systems";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFileSystemOutcome(CreateFileSystemResult(outcome.GetResult()));
@@ -143,8 +143,8 @@ CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetReq
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/mount-targets";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateMountTargetOutcome(CreateMountTargetResult(outcome.GetResult()));
@@ -179,8 +179,8 @@ CreateTagsOutcome EFSClient::CreateTags(const CreateTagsRequest& request) const
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/create-tags/";
   ss << request.GetFileSystemId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateTagsOutcome(NoResult());
@@ -215,8 +215,8 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFileSystemOutcome(NoResult());
@@ -251,8 +251,8 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMountTargetOutcome(NoResult());
@@ -287,8 +287,8 @@ DeleteTagsOutcome EFSClient::DeleteTags(const DeleteTagsRequest& request) const
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/delete-tags/";
   ss << request.GetFileSystemId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteTagsOutcome(NoResult());
@@ -322,8 +322,8 @@ DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSyst
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/file-systems";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeFileSystemsOutcome(DescribeFileSystemsResult(outcome.GetResult()));
@@ -359,8 +359,8 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMountTargetSecurityGroupsOutcome(DescribeMountTargetSecurityGroupsResult(outcome.GetResult()));
@@ -394,8 +394,8 @@ DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountT
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-02-01/mount-targets";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMountTargetsOutcome(DescribeMountTargetsResult(outcome.GetResult()));
@@ -431,8 +431,8 @@ DescribeTagsOutcome EFSClient::DescribeTags(const DescribeTagsRequest& request) 
   ss << "/2015-02-01/tags/";
   ss << request.GetFileSystemId();
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -468,8 +468,8 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ModifyMountTargetSecurityGroupsOutcome(NoResult());

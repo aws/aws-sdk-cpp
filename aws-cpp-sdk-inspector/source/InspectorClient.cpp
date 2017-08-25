@@ -129,8 +129,8 @@ AddAttributesToFindingsOutcome InspectorClient::AddAttributesToFindings(const Ad
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddAttributesToFindingsOutcome(AddAttributesToFindingsResult(outcome.GetResult()));
@@ -164,8 +164,8 @@ CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const Crea
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAssessmentTargetOutcome(CreateAssessmentTargetResult(outcome.GetResult()));
@@ -199,8 +199,8 @@ CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAssessmentTemplateOutcome(CreateAssessmentTemplateResult(outcome.GetResult()));
@@ -234,8 +234,8 @@ CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateReso
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateResourceGroupOutcome(CreateResourceGroupResult(outcome.GetResult()));
@@ -269,8 +269,8 @@ DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAsse
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAssessmentRunOutcome(NoResult());
@@ -304,8 +304,8 @@ DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const Dele
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAssessmentTargetOutcome(NoResult());
@@ -339,8 +339,8 @@ DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAssessmentTemplateOutcome(NoResult());
@@ -374,8 +374,8 @@ DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const Desc
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAssessmentRunsOutcome(DescribeAssessmentRunsResult(outcome.GetResult()));
@@ -409,8 +409,8 @@ DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(cons
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAssessmentTargetsOutcome(DescribeAssessmentTargetsResult(outcome.GetResult()));
@@ -444,8 +444,8 @@ DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAssessmentTemplatesOutcome(DescribeAssessmentTemplatesResult(outcome.GetResult()));
@@ -479,7 +479,7 @@ DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAcces
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCrossAccountAccessRoleOutcome(DescribeCrossAccountAccessRoleResult(outcome.GetResult()));
@@ -513,8 +513,8 @@ DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindings
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeFindingsOutcome(DescribeFindingsResult(outcome.GetResult()));
@@ -548,8 +548,8 @@ DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const Desc
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeResourceGroupsOutcome(DescribeResourceGroupsResult(outcome.GetResult()));
@@ -583,8 +583,8 @@ DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const Descri
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeRulesPackagesOutcome(DescribeRulesPackagesResult(outcome.GetResult()));
@@ -618,8 +618,8 @@ GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessm
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAssessmentReportOutcome(GetAssessmentReportResult(outcome.GetResult()));
@@ -653,8 +653,8 @@ GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelem
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTelemetryMetadataOutcome(GetTelemetryMetadataResult(outcome.GetResult()));
@@ -688,8 +688,8 @@ ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const Li
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAssessmentRunAgentsOutcome(ListAssessmentRunAgentsResult(outcome.GetResult()));
@@ -723,8 +723,8 @@ ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessme
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAssessmentRunsOutcome(ListAssessmentRunsResult(outcome.GetResult()));
@@ -758,8 +758,8 @@ ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAs
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAssessmentTargetsOutcome(ListAssessmentTargetsResult(outcome.GetResult()));
@@ -793,8 +793,8 @@ ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const Li
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAssessmentTemplatesOutcome(ListAssessmentTemplatesResult(outcome.GetResult()));
@@ -828,8 +828,8 @@ ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const List
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListEventSubscriptionsOutcome(ListEventSubscriptionsResult(outcome.GetResult()));
@@ -863,8 +863,8 @@ ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& req
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFindingsOutcome(ListFindingsResult(outcome.GetResult()));
@@ -898,8 +898,8 @@ ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPacka
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListRulesPackagesOutcome(ListRulesPackagesResult(outcome.GetResult()));
@@ -933,8 +933,8 @@ ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsFo
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -968,8 +968,8 @@ PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& 
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PreviewAgentsOutcome(PreviewAgentsResult(outcome.GetResult()));
@@ -1003,8 +1003,8 @@ RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAcces
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterCrossAccountAccessRoleOutcome(NoResult());
@@ -1038,8 +1038,8 @@ RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFinding
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveAttributesFromFindingsOutcome(RemoveAttributesFromFindingsResult(outcome.GetResult()));
@@ -1073,8 +1073,8 @@ SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForRe
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SetTagsForResourceOutcome(NoResult());
@@ -1108,8 +1108,8 @@ StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessm
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartAssessmentRunOutcome(StartAssessmentRunResult(outcome.GetResult()));
@@ -1143,8 +1143,8 @@ StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessment
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopAssessmentRunOutcome(NoResult());
@@ -1178,8 +1178,8 @@ SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEvent
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SubscribeToEventOutcome(NoResult());
@@ -1213,8 +1213,8 @@ UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const Unsubscr
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UnsubscribeFromEventOutcome(NoResult());
@@ -1248,8 +1248,8 @@ UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const Upda
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAssessmentTargetOutcome(NoResult());

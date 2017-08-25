@@ -18,6 +18,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/OnFailure.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -332,6 +333,36 @@ namespace Model
      * <code>OnFailure</code>, but not both.</p> <p>Default: <code>false</code> </p>
      */
     inline CreateStackRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateStackRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
@@ -1250,6 +1281,8 @@ namespace Model
     bool m_parametersHasBeenSet;
     bool m_disableRollback;
     bool m_disableRollbackHasBeenSet;
+    RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet;
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;

@@ -18,6 +18,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/ChangeSetType.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -753,6 +754,36 @@ namespace Model
     inline CreateChangeSetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
     /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateChangeSetRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateChangeSetRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
+    /**
      * <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service
      * (Amazon SNS) topics that AWS CloudFormation associates with the stack. To remove
      * all associated notification topics, specify an empty list.</p>
@@ -1098,6 +1129,8 @@ namespace Model
     bool m_resourceTypesHasBeenSet;
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+    RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
     Aws::Vector<Tag> m_tags;

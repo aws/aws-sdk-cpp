@@ -46,6 +46,12 @@ OptionGroupOption::OptionGroupOption() :
     m_persistentHasBeenSet(false),
     m_permanent(false),
     m_permanentHasBeenSet(false),
+    m_requiresAutoMinorEngineVersionUpgrade(false),
+    m_requiresAutoMinorEngineVersionUpgradeHasBeenSet(false),
+    m_vpcOnly(false),
+    m_vpcOnlyHasBeenSet(false),
+    m_supportsOptionVersionDowngrade(false),
+    m_supportsOptionVersionDowngradeHasBeenSet(false),
     m_optionGroupOptionSettingsHasBeenSet(false),
     m_optionGroupOptionVersionsHasBeenSet(false)
 {
@@ -67,6 +73,12 @@ OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode) :
     m_persistentHasBeenSet(false),
     m_permanent(false),
     m_permanentHasBeenSet(false),
+    m_requiresAutoMinorEngineVersionUpgrade(false),
+    m_requiresAutoMinorEngineVersionUpgradeHasBeenSet(false),
+    m_vpcOnly(false),
+    m_vpcOnlyHasBeenSet(false),
+    m_supportsOptionVersionDowngrade(false),
+    m_supportsOptionVersionDowngradeHasBeenSet(false),
     m_optionGroupOptionSettingsHasBeenSet(false),
     m_optionGroupOptionVersionsHasBeenSet(false)
 {
@@ -156,6 +168,24 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     {
       m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
       m_permanentHasBeenSet = true;
+    }
+    XmlNode requiresAutoMinorEngineVersionUpgradeNode = resultNode.FirstChild("RequiresAutoMinorEngineVersionUpgrade");
+    if(!requiresAutoMinorEngineVersionUpgradeNode.IsNull())
+    {
+      m_requiresAutoMinorEngineVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(requiresAutoMinorEngineVersionUpgradeNode.GetText().c_str()).c_str());
+      m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = true;
+    }
+    XmlNode vpcOnlyNode = resultNode.FirstChild("VpcOnly");
+    if(!vpcOnlyNode.IsNull())
+    {
+      m_vpcOnly = StringUtils::ConvertToBool(StringUtils::Trim(vpcOnlyNode.GetText().c_str()).c_str());
+      m_vpcOnlyHasBeenSet = true;
+    }
+    XmlNode supportsOptionVersionDowngradeNode = resultNode.FirstChild("SupportsOptionVersionDowngrade");
+    if(!supportsOptionVersionDowngradeNode.IsNull())
+    {
+      m_supportsOptionVersionDowngrade = StringUtils::ConvertToBool(StringUtils::Trim(supportsOptionVersionDowngradeNode.GetText().c_str()).c_str());
+      m_supportsOptionVersionDowngradeHasBeenSet = true;
     }
     XmlNode optionGroupOptionSettingsNode = resultNode.FirstChild("OptionGroupOptionSettings");
     if(!optionGroupOptionSettingsNode.IsNull())
@@ -251,6 +281,21 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".Permanent=" << std::boolalpha << m_permanent << "&";
   }
 
+  if(m_requiresAutoMinorEngineVersionUpgradeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RequiresAutoMinorEngineVersionUpgrade=" << std::boolalpha << m_requiresAutoMinorEngineVersionUpgrade << "&";
+  }
+
+  if(m_vpcOnlyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcOnly=" << std::boolalpha << m_vpcOnly << "&";
+  }
+
+  if(m_supportsOptionVersionDowngradeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsOptionVersionDowngrade=" << std::boolalpha << m_supportsOptionVersionDowngrade << "&";
+  }
+
   if(m_optionGroupOptionSettingsHasBeenSet)
   {
       unsigned optionGroupOptionSettingsIdx = 1;
@@ -328,6 +373,18 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_permanentHasBeenSet)
   {
       oStream << location << ".Permanent=" << std::boolalpha << m_permanent << "&";
+  }
+  if(m_requiresAutoMinorEngineVersionUpgradeHasBeenSet)
+  {
+      oStream << location << ".RequiresAutoMinorEngineVersionUpgrade=" << std::boolalpha << m_requiresAutoMinorEngineVersionUpgrade << "&";
+  }
+  if(m_vpcOnlyHasBeenSet)
+  {
+      oStream << location << ".VpcOnly=" << std::boolalpha << m_vpcOnly << "&";
+  }
+  if(m_supportsOptionVersionDowngradeHasBeenSet)
+  {
+      oStream << location << ".SupportsOptionVersionDowngrade=" << std::boolalpha << m_supportsOptionVersionDowngrade << "&";
   }
   if(m_optionGroupOptionSettingsHasBeenSet)
   {

@@ -26,8 +26,8 @@ namespace Model
   enum class MatchmakingConfigurationStatus
   {
     NOT_SET,
-    CANCELED,
-    COMPLETE,
+    CANCELLED,
+    COMPLETED,
     FAILED,
     PLACING,
     QUEUED,

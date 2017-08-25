@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -284,6 +285,36 @@ namespace Model
      * stack has been updated at least once.</p>
      */
     inline Stack& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline Stack& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline Stack& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the stack.</p>
@@ -590,6 +621,8 @@ namespace Model
     bool m_creationTimeHasBeenSet;
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+    RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet;
     StackStatus m_stackStatus;
     bool m_stackStatusHasBeenSet;
     Aws::String m_stackStatusReason;

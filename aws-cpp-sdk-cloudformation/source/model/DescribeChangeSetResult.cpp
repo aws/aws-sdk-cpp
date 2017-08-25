@@ -119,6 +119,11 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const AmazonWebServ
       }
 
     }
+    XmlNode rollbackConfigurationNode = resultNode.FirstChild("RollbackConfiguration");
+    if(!rollbackConfigurationNode.IsNull())
+    {
+      m_rollbackConfiguration = rollbackConfigurationNode;
+    }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
     {

@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ExecutionStatus.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -490,6 +491,36 @@ namespace Model
     inline DescribeChangeSetResult& AddNotificationARNs(const char* value) { m_notificationARNs.push_back(value); return *this; }
 
     /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline DescribeChangeSetResult& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline DescribeChangeSetResult& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
+    /**
      * <p>If you execute the change set, the list of capabilities that were explicitly
      * acknowledged when the change set was created.</p>
      */
@@ -684,6 +715,7 @@ namespace Model
     ChangeSetStatus m_status;
     Aws::String m_statusReason;
     Aws::Vector<Aws::String> m_notificationARNs;
+    RollbackConfiguration m_rollbackConfiguration;
     Aws::Vector<Capability> m_capabilities;
     Aws::Vector<Tag> m_tags;
     Aws::Vector<Change> m_changes;

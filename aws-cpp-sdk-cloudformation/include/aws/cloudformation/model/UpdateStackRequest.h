@@ -18,6 +18,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -910,6 +911,36 @@ namespace Model
     inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
     /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline UpdateStackRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline UpdateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
+    /**
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
@@ -1336,6 +1367,8 @@ namespace Model
     bool m_resourceTypesHasBeenSet;
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+    RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet;
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
     Aws::String m_stackPolicyURL;

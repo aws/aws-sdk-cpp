@@ -209,8 +209,8 @@ CreateApiKeyOutcome APIGatewayClient::CreateApiKey(const CreateApiKeyRequest& re
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateApiKeyOutcome(CreateApiKeyResult(outcome.GetResult()));
@@ -246,8 +246,8 @@ CreateAuthorizerOutcome APIGatewayClient::CreateAuthorizer(const CreateAuthorize
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/authorizers";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAuthorizerOutcome(CreateAuthorizerResult(outcome.GetResult()));
@@ -283,8 +283,8 @@ CreateBasePathMappingOutcome APIGatewayClient::CreateBasePathMapping(const Creat
   ss << "/domainnames/";
   ss << request.GetDomainName();
   ss << "/basepathmappings";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateBasePathMappingOutcome(CreateBasePathMappingResult(outcome.GetResult()));
@@ -320,8 +320,8 @@ CreateDeploymentOutcome APIGatewayClient::CreateDeployment(const CreateDeploymen
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/deployments";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
@@ -357,8 +357,8 @@ CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const C
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/documentation/parts";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDocumentationPartOutcome(CreateDocumentationPartResult(outcome.GetResult()));
@@ -394,8 +394,8 @@ CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(c
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/documentation/versions";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDocumentationVersionOutcome(CreateDocumentationVersionResult(outcome.GetResult()));
@@ -429,8 +429,8 @@ CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNam
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/domainnames";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDomainNameOutcome(CreateDomainNameResult(outcome.GetResult()));
@@ -466,8 +466,8 @@ CreateModelOutcome APIGatewayClient::CreateModel(const CreateModelRequest& reque
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/models";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateModelOutcome(CreateModelResult(outcome.GetResult()));
@@ -503,8 +503,8 @@ CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const Cre
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/requestvalidators";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateRequestValidatorOutcome(CreateRequestValidatorResult(outcome.GetResult()));
@@ -541,8 +541,8 @@ CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceReque
   ss << request.GetRestApiId();
   ss << "/resources/";
   ss << request.GetParentId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateResourceOutcome(CreateResourceResult(outcome.GetResult()));
@@ -576,8 +576,8 @@ CreateRestApiOutcome APIGatewayClient::CreateRestApi(const CreateRestApiRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/restapis";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateRestApiOutcome(CreateRestApiResult(outcome.GetResult()));
@@ -613,8 +613,8 @@ CreateStageOutcome APIGatewayClient::CreateStage(const CreateStageRequest& reque
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/stages";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateStageOutcome(CreateStageResult(outcome.GetResult()));
@@ -648,8 +648,8 @@ CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRe
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/usageplans";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateUsagePlanOutcome(CreateUsagePlanResult(outcome.GetResult()));
@@ -685,8 +685,8 @@ CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsage
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
   ss << "/keys";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateUsagePlanKeyOutcome(CreateUsagePlanKeyResult(outcome.GetResult()));
@@ -721,8 +721,8 @@ DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& re
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys/";
   ss << request.GetApiKey();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteApiKeyOutcome(NoResult());
@@ -759,8 +759,8 @@ DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorize
   ss << request.GetRestApiId();
   ss << "/authorizers/";
   ss << request.GetAuthorizerId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAuthorizerOutcome(NoResult());
@@ -797,8 +797,8 @@ DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const Delet
   ss << request.GetDomainName();
   ss << "/basepathmappings/";
   ss << request.GetBasePath();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteBasePathMappingOutcome(NoResult());
@@ -833,8 +833,8 @@ DeleteClientCertificateOutcome APIGatewayClient::DeleteClientCertificate(const D
   Aws::Http::URI uri = m_uri;
   ss << "/clientcertificates/";
   ss << request.GetClientCertificateId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteClientCertificateOutcome(NoResult());
@@ -871,8 +871,8 @@ DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymen
   ss << request.GetRestApiId();
   ss << "/deployments/";
   ss << request.GetDeploymentId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDeploymentOutcome(NoResult());
@@ -909,8 +909,8 @@ DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const D
   ss << request.GetRestApiId();
   ss << "/documentation/parts/";
   ss << request.GetDocumentationPartId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDocumentationPartOutcome(NoResult());
@@ -947,8 +947,8 @@ DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(c
   ss << request.GetRestApiId();
   ss << "/documentation/versions/";
   ss << request.GetDocumentationVersion();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDocumentationVersionOutcome(NoResult());
@@ -983,8 +983,8 @@ DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNam
   Aws::Http::URI uri = m_uri;
   ss << "/domainnames/";
   ss << request.GetDomainName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDomainNameOutcome(NoResult());
@@ -1021,8 +1021,8 @@ DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const Delet
   ss << request.GetRestApiId();
   ss << "/gatewayresponses/";
   ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGatewayResponseOutcome(NoResult());
@@ -1062,8 +1062,8 @@ DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegra
   ss << "/methods/";
   ss << request.GetHttpMethod();
   ss << "/integration";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteIntegrationOutcome(NoResult());
@@ -1104,8 +1104,8 @@ DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(con
   ss << request.GetHttpMethod();
   ss << "/integration/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteIntegrationResponseOutcome(NoResult());
@@ -1144,8 +1144,8 @@ DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& re
   ss << request.GetResourceId();
   ss << "/methods/";
   ss << request.GetHttpMethod();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMethodOutcome(NoResult());
@@ -1186,8 +1186,8 @@ DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteM
   ss << request.GetHttpMethod();
   ss << "/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMethodResponseOutcome(NoResult());
@@ -1224,8 +1224,8 @@ DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& reque
   ss << request.GetRestApiId();
   ss << "/models/";
   ss << request.GetModelName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteModelOutcome(NoResult());
@@ -1262,8 +1262,8 @@ DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const Del
   ss << request.GetRestApiId();
   ss << "/requestvalidators/";
   ss << request.GetRequestValidatorId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteRequestValidatorOutcome(NoResult());
@@ -1300,8 +1300,8 @@ DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceReque
   ss << request.GetRestApiId();
   ss << "/resources/";
   ss << request.GetResourceId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteResourceOutcome(NoResult());
@@ -1336,8 +1336,8 @@ DeleteRestApiOutcome APIGatewayClient::DeleteRestApi(const DeleteRestApiRequest&
   Aws::Http::URI uri = m_uri;
   ss << "/restapis/";
   ss << request.GetRestApiId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteRestApiOutcome(NoResult());
@@ -1374,8 +1374,8 @@ DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& reque
   ss << request.GetRestApiId();
   ss << "/stages/";
   ss << request.GetStageName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteStageOutcome(NoResult());
@@ -1410,8 +1410,8 @@ DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRe
   Aws::Http::URI uri = m_uri;
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUsagePlanOutcome(NoResult());
@@ -1448,8 +1448,8 @@ DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsage
   ss << request.GetUsagePlanId();
   ss << "/keys/";
   ss << request.GetKeyId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUsagePlanKeyOutcome(NoResult());
@@ -1487,8 +1487,8 @@ FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(c
   ss << "/stages/";
   ss << request.GetStageName();
   ss << "/cache/authorizers";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return FlushStageAuthorizersCacheOutcome(NoResult());
@@ -1526,8 +1526,8 @@ FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRe
   ss << "/stages/";
   ss << request.GetStageName();
   ss << "/cache/data";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return FlushStageCacheOutcome(NoResult());
@@ -1561,8 +1561,8 @@ GenerateClientCertificateOutcome APIGatewayClient::GenerateClientCertificate(con
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/clientcertificates";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GenerateClientCertificateOutcome(GenerateClientCertificateResult(outcome.GetResult()));
@@ -1596,8 +1596,8 @@ GetAccountOutcome APIGatewayClient::GetAccount(const GetAccountRequest& request)
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/account";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAccountOutcome(GetAccountResult(outcome.GetResult()));
@@ -1632,8 +1632,8 @@ GetApiKeyOutcome APIGatewayClient::GetApiKey(const GetApiKeyRequest& request) co
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys/";
   ss << request.GetApiKey();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetApiKeyOutcome(GetApiKeyResult(outcome.GetResult()));
@@ -1667,8 +1667,8 @@ GetApiKeysOutcome APIGatewayClient::GetApiKeys(const GetApiKeysRequest& request)
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetApiKeysOutcome(GetApiKeysResult(outcome.GetResult()));
@@ -1705,8 +1705,8 @@ GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest&
   ss << request.GetRestApiId();
   ss << "/authorizers/";
   ss << request.GetAuthorizerId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAuthorizerOutcome(GetAuthorizerResult(outcome.GetResult()));
@@ -1742,8 +1742,8 @@ GetAuthorizersOutcome APIGatewayClient::GetAuthorizers(const GetAuthorizersReque
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/authorizers";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAuthorizersOutcome(GetAuthorizersResult(outcome.GetResult()));
@@ -1780,8 +1780,8 @@ GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePath
   ss << request.GetDomainName();
   ss << "/basepathmappings/";
   ss << request.GetBasePath();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBasePathMappingOutcome(GetBasePathMappingResult(outcome.GetResult()));
@@ -1817,8 +1817,8 @@ GetBasePathMappingsOutcome APIGatewayClient::GetBasePathMappings(const GetBasePa
   ss << "/domainnames/";
   ss << request.GetDomainName();
   ss << "/basepathmappings";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBasePathMappingsOutcome(GetBasePathMappingsResult(outcome.GetResult()));
@@ -1853,8 +1853,8 @@ GetClientCertificateOutcome APIGatewayClient::GetClientCertificate(const GetClie
   Aws::Http::URI uri = m_uri;
   ss << "/clientcertificates/";
   ss << request.GetClientCertificateId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetClientCertificateOutcome(GetClientCertificateResult(outcome.GetResult()));
@@ -1888,8 +1888,8 @@ GetClientCertificatesOutcome APIGatewayClient::GetClientCertificates(const GetCl
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/clientcertificates";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetClientCertificatesOutcome(GetClientCertificatesResult(outcome.GetResult()));
@@ -1926,8 +1926,8 @@ GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest&
   ss << request.GetRestApiId();
   ss << "/deployments/";
   ss << request.GetDeploymentId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeploymentOutcome(GetDeploymentResult(outcome.GetResult()));
@@ -1963,8 +1963,8 @@ GetDeploymentsOutcome APIGatewayClient::GetDeployments(const GetDeploymentsReque
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/deployments";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeploymentsOutcome(GetDeploymentsResult(outcome.GetResult()));
@@ -2001,8 +2001,8 @@ GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocu
   ss << request.GetRestApiId();
   ss << "/documentation/parts/";
   ss << request.GetDocumentationPartId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentationPartOutcome(GetDocumentationPartResult(outcome.GetResult()));
@@ -2038,8 +2038,8 @@ GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDo
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/documentation/parts";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentationPartsOutcome(GetDocumentationPartsResult(outcome.GetResult()));
@@ -2076,8 +2076,8 @@ GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const G
   ss << request.GetRestApiId();
   ss << "/documentation/versions/";
   ss << request.GetDocumentationVersion();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentationVersionOutcome(GetDocumentationVersionResult(outcome.GetResult()));
@@ -2113,8 +2113,8 @@ GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/documentation/versions";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentationVersionsOutcome(GetDocumentationVersionsResult(outcome.GetResult()));
@@ -2149,8 +2149,8 @@ GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest&
   Aws::Http::URI uri = m_uri;
   ss << "/domainnames/";
   ss << request.GetDomainName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDomainNameOutcome(GetDomainNameResult(outcome.GetResult()));
@@ -2184,8 +2184,8 @@ GetDomainNamesOutcome APIGatewayClient::GetDomainNames(const GetDomainNamesReque
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/domainnames";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDomainNamesOutcome(GetDomainNamesResult(outcome.GetResult()));
@@ -2224,7 +2224,7 @@ GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) co
   ss << request.GetStageName();
   ss << "/exports/";
   ss << request.GetExportType();
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
@@ -2262,8 +2262,8 @@ GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayR
   ss << request.GetRestApiId();
   ss << "/gatewayresponses/";
   ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGatewayResponseOutcome(GetGatewayResponseResult(outcome.GetResult()));
@@ -2299,8 +2299,8 @@ GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewa
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/gatewayresponses";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGatewayResponsesOutcome(GetGatewayResponsesResult(outcome.GetResult()));
@@ -2340,8 +2340,8 @@ GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationReque
   ss << "/methods/";
   ss << request.GetHttpMethod();
   ss << "/integration";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetIntegrationOutcome(GetIntegrationResult(outcome.GetResult()));
@@ -2382,8 +2382,8 @@ GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const Get
   ss << request.GetHttpMethod();
   ss << "/integration/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetIntegrationResponseOutcome(GetIntegrationResponseResult(outcome.GetResult()));
@@ -2422,8 +2422,8 @@ GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) co
   ss << request.GetResourceId();
   ss << "/methods/";
   ss << request.GetHttpMethod();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetMethodOutcome(GetMethodResult(outcome.GetResult()));
@@ -2464,8 +2464,8 @@ GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResp
   ss << request.GetHttpMethod();
   ss << "/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetMethodResponseOutcome(GetMethodResponseResult(outcome.GetResult()));
@@ -2502,8 +2502,8 @@ GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const
   ss << request.GetRestApiId();
   ss << "/models/";
   ss << request.GetModelName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetModelOutcome(GetModelResult(outcome.GetResult()));
@@ -2541,8 +2541,8 @@ GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplat
   ss << "/models/";
   ss << request.GetModelName();
   ss << "/default_template";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetModelTemplateOutcome(GetModelTemplateResult(outcome.GetResult()));
@@ -2578,8 +2578,8 @@ GetModelsOutcome APIGatewayClient::GetModels(const GetModelsRequest& request) co
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/models";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetModelsOutcome(GetModelsResult(outcome.GetResult()));
@@ -2616,8 +2616,8 @@ GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetReques
   ss << request.GetRestApiId();
   ss << "/requestvalidators/";
   ss << request.GetRequestValidatorId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRequestValidatorOutcome(GetRequestValidatorResult(outcome.GetResult()));
@@ -2653,8 +2653,8 @@ GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequ
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/requestvalidators";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRequestValidatorsOutcome(GetRequestValidatorsResult(outcome.GetResult()));
@@ -2691,8 +2691,8 @@ GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& reque
   ss << request.GetRestApiId();
   ss << "/resources/";
   ss << request.GetResourceId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourceOutcome(GetResourceResult(outcome.GetResult()));
@@ -2728,8 +2728,8 @@ GetResourcesOutcome APIGatewayClient::GetResources(const GetResourcesRequest& re
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/resources";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
@@ -2764,8 +2764,8 @@ GetRestApiOutcome APIGatewayClient::GetRestApi(const GetRestApiRequest& request)
   Aws::Http::URI uri = m_uri;
   ss << "/restapis/";
   ss << request.GetRestApiId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRestApiOutcome(GetRestApiResult(outcome.GetResult()));
@@ -2799,8 +2799,8 @@ GetRestApisOutcome APIGatewayClient::GetRestApis(const GetRestApisRequest& reque
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/restapis";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRestApisOutcome(GetRestApisResult(outcome.GetResult()));
@@ -2839,7 +2839,7 @@ GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const
   ss << request.GetStageName();
   ss << "/sdks/";
   ss << request.GetSdkType();
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
@@ -2875,8 +2875,8 @@ GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request)
   Aws::Http::URI uri = m_uri;
   ss << "/sdktypes/";
   ss << request.GetId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSdkTypeOutcome(GetSdkTypeResult(outcome.GetResult()));
@@ -2910,8 +2910,8 @@ GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& reque
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/sdktypes";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSdkTypesOutcome(GetSdkTypesResult(outcome.GetResult()));
@@ -2948,8 +2948,8 @@ GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
   ss << request.GetRestApiId();
   ss << "/stages/";
   ss << request.GetStageName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetStageOutcome(GetStageResult(outcome.GetResult()));
@@ -2985,8 +2985,8 @@ GetStagesOutcome APIGatewayClient::GetStages(const GetStagesRequest& request) co
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/stages";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetStagesOutcome(GetStagesResult(outcome.GetResult()));
@@ -3022,8 +3022,8 @@ GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
   ss << "/usage";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsageOutcome(GetUsageResult(outcome.GetResult()));
@@ -3058,8 +3058,8 @@ GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& re
   Aws::Http::URI uri = m_uri;
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsagePlanOutcome(GetUsagePlanResult(outcome.GetResult()));
@@ -3096,8 +3096,8 @@ GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRe
   ss << request.GetUsagePlanId();
   ss << "/keys/";
   ss << request.GetKeyId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsagePlanKeyOutcome(GetUsagePlanKeyResult(outcome.GetResult()));
@@ -3133,8 +3133,8 @@ GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKey
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
   ss << "/keys";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsagePlanKeysOutcome(GetUsagePlanKeysResult(outcome.GetResult()));
@@ -3168,8 +3168,8 @@ GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/usageplans";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsagePlansOutcome(GetUsagePlansResult(outcome.GetResult()));
@@ -3203,8 +3203,8 @@ ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys?mode=import";
- uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ImportApiKeysOutcome(ImportApiKeysResult(outcome.GetResult()));
@@ -3240,8 +3240,8 @@ ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const
   ss << "/restapis/";
   ss << request.GetRestApiId();
   ss << "/documentation/parts";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ImportDocumentationPartsOutcome(ImportDocumentationPartsResult(outcome.GetResult()));
@@ -3275,8 +3275,8 @@ ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/restapis?mode=import";
- uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ImportRestApiOutcome(ImportRestApiResult(outcome.GetResult()));
@@ -3313,8 +3313,8 @@ PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayR
   ss << request.GetRestApiId();
   ss << "/gatewayresponses/";
   ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutGatewayResponseOutcome(PutGatewayResponseResult(outcome.GetResult()));
@@ -3354,8 +3354,8 @@ PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationReque
   ss << "/methods/";
   ss << request.GetHttpMethod();
   ss << "/integration";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutIntegrationOutcome(PutIntegrationResult(outcome.GetResult()));
@@ -3396,8 +3396,8 @@ PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const Put
   ss << request.GetHttpMethod();
   ss << "/integration/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutIntegrationResponseOutcome(PutIntegrationResponseResult(outcome.GetResult()));
@@ -3436,8 +3436,8 @@ PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) co
   ss << request.GetResourceId();
   ss << "/methods/";
   ss << request.GetHttpMethod();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutMethodOutcome(PutMethodResult(outcome.GetResult()));
@@ -3478,8 +3478,8 @@ PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResp
   ss << request.GetHttpMethod();
   ss << "/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutMethodResponseOutcome(PutMethodResponseResult(outcome.GetResult()));
@@ -3514,8 +3514,8 @@ PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request)
   Aws::Http::URI uri = m_uri;
   ss << "/restapis/";
   ss << request.GetRestApiId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutRestApiOutcome(PutRestApiResult(outcome.GetResult()));
@@ -3552,8 +3552,8 @@ TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInv
   ss << request.GetRestApiId();
   ss << "/authorizers/";
   ss << request.GetAuthorizerId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TestInvokeAuthorizerOutcome(TestInvokeAuthorizerResult(outcome.GetResult()));
@@ -3592,8 +3592,8 @@ TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMetho
   ss << request.GetResourceId();
   ss << "/methods/";
   ss << request.GetHttpMethod();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TestInvokeMethodOutcome(TestInvokeMethodResult(outcome.GetResult()));
@@ -3627,8 +3627,8 @@ UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest&
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/account";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAccountOutcome(UpdateAccountResult(outcome.GetResult()));
@@ -3663,8 +3663,8 @@ UpdateApiKeyOutcome APIGatewayClient::UpdateApiKey(const UpdateApiKeyRequest& re
   Aws::Http::URI uri = m_uri;
   ss << "/apikeys/";
   ss << request.GetApiKey();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateApiKeyOutcome(UpdateApiKeyResult(outcome.GetResult()));
@@ -3701,8 +3701,8 @@ UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorize
   ss << request.GetRestApiId();
   ss << "/authorizers/";
   ss << request.GetAuthorizerId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAuthorizerOutcome(UpdateAuthorizerResult(outcome.GetResult()));
@@ -3739,8 +3739,8 @@ UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const Updat
   ss << request.GetDomainName();
   ss << "/basepathmappings/";
   ss << request.GetBasePath();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateBasePathMappingOutcome(UpdateBasePathMappingResult(outcome.GetResult()));
@@ -3775,8 +3775,8 @@ UpdateClientCertificateOutcome APIGatewayClient::UpdateClientCertificate(const U
   Aws::Http::URI uri = m_uri;
   ss << "/clientcertificates/";
   ss << request.GetClientCertificateId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateClientCertificateOutcome(UpdateClientCertificateResult(outcome.GetResult()));
@@ -3813,8 +3813,8 @@ UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymen
   ss << request.GetRestApiId();
   ss << "/deployments/";
   ss << request.GetDeploymentId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDeploymentOutcome(UpdateDeploymentResult(outcome.GetResult()));
@@ -3851,8 +3851,8 @@ UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const U
   ss << request.GetRestApiId();
   ss << "/documentation/parts/";
   ss << request.GetDocumentationPartId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDocumentationPartOutcome(UpdateDocumentationPartResult(outcome.GetResult()));
@@ -3889,8 +3889,8 @@ UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(c
   ss << request.GetRestApiId();
   ss << "/documentation/versions/";
   ss << request.GetDocumentationVersion();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDocumentationVersionOutcome(UpdateDocumentationVersionResult(outcome.GetResult()));
@@ -3925,8 +3925,8 @@ UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNam
   Aws::Http::URI uri = m_uri;
   ss << "/domainnames/";
   ss << request.GetDomainName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDomainNameOutcome(UpdateDomainNameResult(outcome.GetResult()));
@@ -3963,8 +3963,8 @@ UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const Updat
   ss << request.GetRestApiId();
   ss << "/gatewayresponses/";
   ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGatewayResponseOutcome(UpdateGatewayResponseResult(outcome.GetResult()));
@@ -4004,8 +4004,8 @@ UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegra
   ss << "/methods/";
   ss << request.GetHttpMethod();
   ss << "/integration";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateIntegrationOutcome(UpdateIntegrationResult(outcome.GetResult()));
@@ -4046,8 +4046,8 @@ UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(con
   ss << request.GetHttpMethod();
   ss << "/integration/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateIntegrationResponseOutcome(UpdateIntegrationResponseResult(outcome.GetResult()));
@@ -4086,8 +4086,8 @@ UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& re
   ss << request.GetResourceId();
   ss << "/methods/";
   ss << request.GetHttpMethod();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateMethodOutcome(UpdateMethodResult(outcome.GetResult()));
@@ -4128,8 +4128,8 @@ UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateM
   ss << request.GetHttpMethod();
   ss << "/responses/";
   ss << request.GetStatusCode();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateMethodResponseOutcome(UpdateMethodResponseResult(outcome.GetResult()));
@@ -4166,8 +4166,8 @@ UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& reque
   ss << request.GetRestApiId();
   ss << "/models/";
   ss << request.GetModelName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateModelOutcome(UpdateModelResult(outcome.GetResult()));
@@ -4204,8 +4204,8 @@ UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const Upd
   ss << request.GetRestApiId();
   ss << "/requestvalidators/";
   ss << request.GetRequestValidatorId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateRequestValidatorOutcome(UpdateRequestValidatorResult(outcome.GetResult()));
@@ -4242,8 +4242,8 @@ UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceReque
   ss << request.GetRestApiId();
   ss << "/resources/";
   ss << request.GetResourceId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateResourceOutcome(UpdateResourceResult(outcome.GetResult()));
@@ -4278,8 +4278,8 @@ UpdateRestApiOutcome APIGatewayClient::UpdateRestApi(const UpdateRestApiRequest&
   Aws::Http::URI uri = m_uri;
   ss << "/restapis/";
   ss << request.GetRestApiId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateRestApiOutcome(UpdateRestApiResult(outcome.GetResult()));
@@ -4316,8 +4316,8 @@ UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& reque
   ss << request.GetRestApiId();
   ss << "/stages/";
   ss << request.GetStageName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateStageOutcome(UpdateStageResult(outcome.GetResult()));
@@ -4355,8 +4355,8 @@ UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& reque
   ss << "/keys/";
   ss << request.GetKeyId();
   ss << "/usage";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUsageOutcome(UpdateUsageResult(outcome.GetResult()));
@@ -4391,8 +4391,8 @@ UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRe
   Aws::Http::URI uri = m_uri;
   ss << "/usageplans/";
   ss << request.GetUsagePlanId();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUsagePlanOutcome(UpdateUsagePlanResult(outcome.GetResult()));

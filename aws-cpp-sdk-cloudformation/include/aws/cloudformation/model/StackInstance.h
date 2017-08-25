@@ -207,12 +207,13 @@ namespace Model
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations.
-     * You might need to clean up the stack manually.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-     * because:</p> <ul> <li> <p>The associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
-     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated. </p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
@@ -225,12 +226,13 @@ namespace Model
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations.
-     * You might need to clean up the stack manually.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-     * because:</p> <ul> <li> <p>The associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
-     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated. </p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
@@ -243,12 +245,13 @@ namespace Model
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations.
-     * You might need to clean up the stack manually.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-     * because:</p> <ul> <li> <p>The associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
-     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated. </p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
@@ -261,12 +264,13 @@ namespace Model
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations.
-     * You might need to clean up the stack manually.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-     * because:</p> <ul> <li> <p>The associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
-     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated. </p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
@@ -279,12 +283,13 @@ namespace Model
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> and <code>DeleteStackInstances</code> operations.
-     * You might need to clean up the stack manually.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-     * because:</p> <ul> <li> <p>The associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
-     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated. </p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>

@@ -109,8 +109,8 @@ AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/tags";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddTagsOutcome(NoResult());
@@ -144,8 +144,8 @@ CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearch
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/domain";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateElasticsearchDomainOutcome(CreateElasticsearchDomainResult(outcome.GetResult()));
@@ -180,8 +180,8 @@ DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearch
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteElasticsearchDomainOutcome(DeleteElasticsearchDomainResult(outcome.GetResult()));
@@ -216,8 +216,8 @@ DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticse
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeElasticsearchDomainOutcome(DescribeElasticsearchDomainResult(outcome.GetResult()));
@@ -253,8 +253,8 @@ DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeEla
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
   ss << "/config";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeElasticsearchDomainConfigOutcome(DescribeElasticsearchDomainConfigResult(outcome.GetResult()));
@@ -288,8 +288,8 @@ DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElastics
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/domain-info";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeElasticsearchDomainsOutcome(DescribeElasticsearchDomainsResult(outcome.GetResult()));
@@ -326,8 +326,8 @@ DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::Descr
   ss << request.GetElasticsearchVersion();
   ss << "/";
   ss << ESPartitionInstanceTypeMapper::GetNameForESPartitionInstanceType(request.GetInstanceType());
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeElasticsearchInstanceTypeLimitsOutcome(DescribeElasticsearchInstanceTypeLimitsResult(outcome.GetResult()));
@@ -361,7 +361,7 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/domain";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET);
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDomainNamesOutcome(ListDomainNamesResult(outcome.GetResult()));
@@ -396,8 +396,8 @@ ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsea
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/instanceTypes/";
   ss << request.GetElasticsearchVersion();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListElasticsearchInstanceTypesOutcome(ListElasticsearchInstanceTypesResult(outcome.GetResult()));
@@ -431,8 +431,8 @@ ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVe
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/es/versions";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListElasticsearchVersionsOutcome(ListElasticsearchVersionsResult(outcome.GetResult()));
@@ -466,8 +466,8 @@ ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& requ
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/tags/";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
@@ -501,8 +501,8 @@ RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2015-01-01/tags-removal";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveTagsOutcome(NoResult());
@@ -538,8 +538,8 @@ UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElastic
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
   ss << "/config";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateElasticsearchDomainConfigOutcome(UpdateElasticsearchDomainConfigResult(outcome.GetResult()));

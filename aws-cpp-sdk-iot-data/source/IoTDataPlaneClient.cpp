@@ -103,7 +103,7 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
@@ -140,7 +140,7 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
@@ -176,8 +176,8 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
   Aws::Http::URI uri = m_uri;
   ss << "/topics/";
   ss << request.GetTopic();
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PublishOutcome(NoResult());
@@ -213,7 +213,7 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
