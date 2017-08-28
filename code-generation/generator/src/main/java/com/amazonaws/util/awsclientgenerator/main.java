@@ -84,7 +84,7 @@ public class main {
                     File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson,
                             languageBinding,
                             serviceName,
-                            namespace
+                            namespace,
                             generateStandalonePakckage);
                     System.out.println(outputLib.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {
