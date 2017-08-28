@@ -30,6 +30,7 @@ public class main {
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
+    static final String NAMESPACE = "namespace";
     static final String STANDALONE_OPTION = "standlone";
 
     public static void main(String[] args) throws IOException {
@@ -56,6 +57,10 @@ public class main {
                 System.out.println("Error: A service name must be specified with the --arbitrary option.");
                 return;
             }
+            String namespace = "Aws";
+            if (argPairs.containsKey(NAMESPACE) && !argPairs.get(NAMESPACE).isEmpty()) {
+                namespace = argPairs.get(NAMESPACE);
+            }
 
             boolean generateStandalonePakckage = argPairs.containsKey(STANDALONE_OPTION);
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
@@ -79,6 +84,7 @@ public class main {
                     File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson,
                             languageBinding,
                             serviceName,
+                            namespace
                             generateStandalonePakckage);
                     System.out.println(outputLib.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {

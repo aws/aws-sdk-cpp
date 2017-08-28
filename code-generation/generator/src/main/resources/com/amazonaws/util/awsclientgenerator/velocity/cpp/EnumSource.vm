@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${enumModel.name}.h>
 \#include <aws/core/utils/HashingUtils.h>
 \#include <aws/core/Globals.h>
@@ -9,9 +11,9 @@
 using namespace Aws::Utils;
 
 
-namespace Aws
+namespace ${rootNamespace}
 {
-  namespace ${metadata.namespace}
+  namespace ${serviceNamespace}
   {
     namespace Model
     {
@@ -155,5 +157,5 @@ namespace Aws
 
       } // namespace ${enumModel.name}Mapper
     } // namespace Model
-  } // namespace ${metadata.namespace}
-} // namespace Aws
+  } // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 #set($className = "${metadata.classNamePrefix}Client")
 \#include <aws/core/utils/Outcome.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
@@ -18,8 +20,8 @@
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
-using namespace Aws::${metadata.namespace};
-using namespace Aws::${metadata.namespace}::Model;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 

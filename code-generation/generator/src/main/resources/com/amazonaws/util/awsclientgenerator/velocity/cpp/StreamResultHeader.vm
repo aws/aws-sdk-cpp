@@ -2,6 +2,8 @@
 
 #pragma once
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/utils/stream/ResponseStream.h>
 #foreach($header in $typeInfo.headerIncludes)
@@ -13,7 +15,12 @@ namespace Aws
 template<typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace $metadata.namespace
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
 {
 namespace Model
 {
@@ -36,8 +43,8 @@ namespace Model
     ${classNameRef} operator=(const ${typeInfo.className}&) = delete;
 
 
-    ${typeInfo.className}(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    ${classNameRef} operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    ${typeInfo.className}(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    ${classNameRef} operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 #set($useRequiredField = false)
@@ -45,5 +52,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace $metadata.namespace
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

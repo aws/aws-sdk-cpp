@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/core/AmazonWebServiceResult.h>
@@ -12,7 +14,7 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
@@ -23,12 +25,12 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(const AmazonWebServiceResult<JsonValue>& result)$initializers
+${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<JsonValue>& result)$initializers
 {
   *this = result;
 }
 
-${typeInfo.className}& ${typeInfo.className}::operator =(const AmazonWebServiceResult<JsonValue>& result)
+${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
 #if($shape.hasPayloadMembers())
   const JsonValue& jsonValue = result.GetPayload();

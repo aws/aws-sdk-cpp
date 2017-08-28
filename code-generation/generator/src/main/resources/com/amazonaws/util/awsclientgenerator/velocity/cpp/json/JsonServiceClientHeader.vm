@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
@@ -50,7 +52,12 @@ namespace Client
   class RetryStrategy;
 } // namespace Client
 
-namespace ${metadata.namespace}
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
 {
 
 namespace Model
@@ -78,7 +85,7 @@ namespace Model
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
@@ -86,5 +93,5 @@ namespace Model
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
-} // namespace ${metadata.namespace}
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 #foreach($header in $typeInfo.sourceIncludes)
@@ -12,9 +14,9 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
+namespace ${rootNamespace}
 {
-namespace ${metadata.namespace}
+namespace ${serviceNamespace}
 {
 namespace Model
 {
@@ -50,5 +52,5 @@ JsonValue ${typeInfo.className}::Jsonize() const
 }
 
 } // namespace Model
-} // namespace ${metadata.namespace}
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

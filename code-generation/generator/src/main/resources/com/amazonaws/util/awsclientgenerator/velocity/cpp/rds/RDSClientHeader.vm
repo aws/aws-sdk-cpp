@@ -14,46 +14,44 @@
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
 \#include <future>
-    \#include <functional>
+\#include <functional>
 
-    namespace Aws
-    {
-
+namespace Aws
+{
     namespace Http
     {
-    class HttpClient;
-    class HttpClientFactory;
+        class HttpClient;
+        class HttpClientFactory;
     } // namespace Http
 
     namespace Utils
     {
-    template< typename R, typename E> class Outcome;
+        template< typename R, typename E> class Outcome;
 
-    namespace Threading
-    {
-    class Executor;
-    } // namespace Threading
+        namespace Threading
+        {
+            class Executor;
+        } // namespace Threading
 
-    namespace Xml
-    {
-    class XmlDocument;
-    } // namespace Xml
+        namespace Xml
+        {
+            class XmlDocument;
+        } // namespace Xml
     } // namespace Utils
 
     namespace Auth
     {
-    class AWSCredentials;
-    class AWSCredentialsProvider;
+        class AWSCredentials;
+        class AWSCredentialsProvider;
     } // namespace Auth
 
     namespace Client
     {
-    class RetryStrategy;
+        class RetryStrategy;
     } // namespace Client
 
     namespace ${metadata.namespace}
     {
-
     namespace Model
     {
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
@@ -65,9 +63,9 @@
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
 
     #if($serviceModel.documentation)
-        /**
-        * ${serviceModel.documentation}
-        */
+    /**
+     * ${serviceModel.documentation}
+     */
     #end
     class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className} : public Aws::Client::AWSXMLClient
     {
@@ -81,7 +79,7 @@
         /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
         /**
         * Generates an auth token for connecting to an rds instance.
@@ -92,13 +90,13 @@
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
     private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
     };
 
     } // namespace ${metadata.namespace}
-    } // namespace Aws
+} // namespace Aws

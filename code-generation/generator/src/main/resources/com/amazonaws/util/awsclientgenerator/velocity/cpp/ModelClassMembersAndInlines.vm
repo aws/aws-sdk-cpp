@@ -8,8 +8,9 @@
 #if($member.value.documentation)
 #set($memberDocumentation ="/**${nl}     * ${member.value.documentation}${nl}     */")
 #end
+
 #if((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.result)
-#set($cppType = "Utils::Stream::ResponseStream")
+#set($cppType = "Aws::Utils::Stream::ResponseStream")
 #set($isStream = true)
 #else
 #set($cppType = $CppViewHelper.computeCppType($member.value.shape))
@@ -153,8 +154,9 @@
 #if($shape.members.size() > 0)
   private:
 #foreach($member in $shape.members.entrySet())
+
 #if((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.result)
-    Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
+  Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
     $CppViewHelper.computeCppType($member.value.shape) $CppViewHelper.computeMemberVariableName($member.key);

@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/AmazonWebServiceResult.h>
 \#include <aws/core/utils/StringUtils.h>
@@ -10,7 +12,7 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
@@ -47,12 +49,12 @@ ${typeInfo.className}& ${typeInfo.className}::operator=(${typeInfo.className}&& 
    return *this;
 }
 
-${typeInfo.className}::${typeInfo.className}(AmazonWebServiceResult<ResponseStream>&& result)$initializers
+${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)$initializers
 {
   *this = std::move(result);
 }
 
-${typeInfo.className}& ${typeInfo.className}::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+${typeInfo.className}& ${typeInfo.className}::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   ${CppViewHelper.computeMemberVariableName($shape.payload)} = result.TakeOwnershipOfPayload();
 

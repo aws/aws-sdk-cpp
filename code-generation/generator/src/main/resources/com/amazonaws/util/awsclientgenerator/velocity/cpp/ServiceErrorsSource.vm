@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/HashingUtils.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
@@ -9,12 +11,12 @@
 #end
 
 using namespace Aws::Client;
-using namespace Aws::${metadata.namespace};
+using namespace ${rootNamespace}::${serviceNamespace};
 using namespace Aws::Utils;
 
-namespace Aws
+namespace ${rootNamespace}
 {
-namespace ${metadata.namespace}
+namespace ${serviceNamespace}
 {
 namespace ${metadata.classNamePrefix}ErrorMapper
 {
@@ -88,5 +90,5 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 }
 
 } // namespace ${metadata.classNamePrefix}ErrorMapper
-} // namespace ${metadata.namespace}
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}
