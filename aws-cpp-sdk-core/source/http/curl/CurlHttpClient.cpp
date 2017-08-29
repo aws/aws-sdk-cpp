@@ -74,7 +74,7 @@ static void* realloc_callback(void* ptr, size_t size)
         std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(rawMemory);
         *pointerToSize = size;
 
-        size_t copyLength = std::min(originalLen, size);
+        size_t copyLength = (std::min)(originalLen, size);
 #ifdef _MSC_VER
         memcpy_s(rawMemory + offset, size, ptr, copyLength);
 #else

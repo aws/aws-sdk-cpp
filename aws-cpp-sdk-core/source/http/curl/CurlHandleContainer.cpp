@@ -16,8 +16,6 @@
 #include <aws/core/http/curl/CurlHandleContainer.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
-#undef min
-
 #include <algorithm>
 
 using namespace Aws::Utils::Logging;
@@ -77,7 +75,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
     if (m_poolSize < m_maxPoolSize)
     {
         unsigned multiplier = m_poolSize > 0 ? m_poolSize : 1;
-        unsigned amountToAdd = std::min(multiplier * 2, m_maxPoolSize - m_poolSize);
+        unsigned amountToAdd = (std::min)(multiplier * 2, m_maxPoolSize - m_poolSize);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "attempting to grow pool size by " << amountToAdd);
 
         unsigned actuallyAdded = 0;

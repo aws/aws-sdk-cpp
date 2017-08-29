@@ -242,7 +242,7 @@ namespace Aws
 
                     for (uint64_t i = 0; i < partCount; ++i)
                     {
-                        uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
+                        uint64_t partSize = (std::min)(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
                         bool lastPart = (i == partCount - 1) ? true : false;
                         handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
                     }                    
@@ -358,7 +358,7 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
-            auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
+            auto lengthToWrite = (std::min)(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
